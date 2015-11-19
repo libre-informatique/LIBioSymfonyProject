@@ -1,0 +1,23 @@
+sonata_block:
+    default_contexts: [cms]
+    blocks:
+        sonata.admin.block.admin_list:
+
+sonata_admin:
+    dashboard:
+        groups:
+            Customers Relationship Management:
+                label: CRM
+                items:
+                    - crm.contact
+                    - crm.category
+                    - crm.organism
+                    - crm.role
+                    - crm.contactgroup
+            Application Management:
+                label: APP
+                items:
+                    - app.user
+                    - app.group
+    security:
+        handler: librinfo.security_bundle.sonata.voter
