@@ -44,6 +44,11 @@ Composer will install all vendors and will ask you your project parameters.
 
 If you don't have any Exceptions, you're done !
 
+##### Troubleshooting :
+- modify composer.json by adding "minimum-stability": "dev" if you have unmet dependencies
+
+- if your php version is < 5.6 use set phpunit version to "^4.8" in composer.json 
+
 ## Installation From Scratch
 
 See [this documentation](README-FROM-SCRATCH.md) to install the project into an existing (and already installed) Symfony 2 installation.
