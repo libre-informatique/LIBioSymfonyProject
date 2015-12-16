@@ -1,0 +1,3 @@
+librinfo_libio_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: LibrinfoLibioBundle:Default:index }

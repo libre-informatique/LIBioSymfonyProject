@@ -1,3 +1,7 @@
+librinfo_libio:
+    resource: "@LibrinfoLibioBundle/Resources/config/routing.yml"
+    prefix:   /libio
+
 librinfo_security:
     resource: "@LibrinfoSecurityBundle/Resources/config/routing.yml"
     prefix:   /
