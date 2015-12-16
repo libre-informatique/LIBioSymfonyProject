@@ -7,6 +7,7 @@
             "": "src/"
         }
     },
+    "minimum-stability": "dev",
     "require": {
         "php": ">=5.3.9",
         "symfony/symfony": "2.7.*",
@@ -27,7 +28,7 @@
         "sonata-project/datagrid-bundle": "dev-master",
         "knplabs/knp-menu-bundle": ">=2.0",
         "nostalgiaz/bootstrap-switch": "^3.3",
-        "phpunit/phpunit": "^5.0",
+        "phpunit/phpunit": "~4.8",
         "jms/security-extra-bundle": "dev-master",
         "gedmo/doctrine-extensions": "^2.4",
         "stof/doctrine-extensions-bundle": "^1.2",
