@@ -10,14 +10,19 @@ sonata_admin:
                 label: CRM
                 items:
                     - crm.contact
-                    - crm.category
                     - crm.organism
-                    - crm.role
-                    - crm.contactgroup
+                    - crm.circle                    
             Application Management:
                 label: APP
                 items:
                     - app.user
                     - app.group
+            Development tools:
+                label: DEV
+                items:
+                    - crm.category
+                    - crm.contactphone
+                    - crm.role      
+                    - crm.contactgroup                    
     security:
         handler: librinfo.security_bundle.sonata.voter
