@@ -12,7 +12,7 @@ sonata_admin:
                     - crm.contact
                     - crm.position
                     - crm.organism
-                    - crm.circle                    
+                    - crm.circle
             Application Management:
                 label: APP
                 items:
@@ -23,7 +23,8 @@ sonata_admin:
                 items:
                     - crm.category
                     - crm.contactphone
-                    - crm.role      
+                    - crm.organismphone
+                    - crm.role
                     - crm.contactgroup
                     - crm.position_type
     security:
