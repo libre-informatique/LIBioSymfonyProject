@@ -28,6 +28,8 @@ class AppKernel extends Kernel
 
             new FOS\UserBundle\FOSUserBundle(),
 
+            new JeroenDesloovere\Bundle\VCardBundle\JeroenDesloovereVCardBundle(),
+
             new Sonata\CoreBundle\SonataCoreBundle(),
             new Sonata\AdminBundle\SonataAdminBundle(),
             new Sonata\BlockBundle\SonataBlockBundle(),
