@@ -14,11 +14,22 @@ First thing, [get composer.phar](https://getcomposer.org/download/)
 $ curl -sS https://getcomposer.org/installer | php
 ```
 
+### Composer
+
 Then just run:
 
 ```
 $ composer require libre-informatique/libio-project dev-master
 ```
+
+### Git install (old school, but always working)
+
+```
+$ git clone https://github.com/libre-informatique/LIBioSymfonyProject .
+$ composer update
+```
+
+### Conclusion
 
 Then you would have get the following directory structure :
 
@@ -33,6 +44,14 @@ At this point, if you don't have any Exceptions, you're done !
 
 Troubleshooting
 ---------------
+
+### If you are running PHP 5.4.x
+
+You'll need some extra libraries:
+
+```
+$ composer require ircmaxell/password-compat
+```
 
 ### If you have unresolved dependencies:
 
