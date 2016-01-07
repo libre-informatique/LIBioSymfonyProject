@@ -1,10 +1,12 @@
-# ProjetLiBio
+LIBioSymfonyProject
+===================
 
-LiBio is an ERP specialized for seeds producers and craftmen
+LIBio is an ERP specialized for seeds producers and craftmen. It uses many libraries developped in generic ways.
 
 THIS PROJECT IS STILL UNUSABLE, IT'S YET A WORK IN PROGRESS
 
-## Installation :
+Installation
+------------
 
 First thing, [get composer.phar](https://getcomposer.org/download/)
 
@@ -12,43 +14,35 @@ First thing, [get composer.phar](https://getcomposer.org/download/)
 $ curl -sS https://getcomposer.org/installer | php
 ```
 
-Now clone the project repository into your local development / remote production environment.
+Then just run:
 
 ```
-$ cd /path/to/your/project/directory/
-
-git clone https://github.com/libre-informatique/LIBioSymfonyProject.git .
+$ composer require libre-informatique/libio-project dev-master
 ```
 
-##### Note :
-Don't forget to add the ``` .``` after the clone URL.
-It will clone the github repository into your directory without creating the sub directory ```LIBioSymfonyProject```
-
-You Will have the following directory structure :
+Then you would have get the following directory structure :
 
 ```
 .
 ├── app
 ├── src
 └── web
-
 ```
 
-Finalize the installation process by executing this command :
+At this point, if you don't have any Exceptions, you're done !
 
-```
-$ ./composer.phar update
-```
+Troubleshooting
+---------------
 
-Composer will install all vendors and will ask you your project parameters.
+# If you have unresolved dependencies:
 
-If you don't have any Exceptions, you're done !
+modify composer.json by adding ```"minimum-stability": "dev"```
 
-##### Troubleshooting :
-- modify composer.json by adding "minimum-stability": "dev" if you have unmet dependencies
+# If your php version is < 5.6
 
-- if your php version is < 5.6 use set phpunit version to "^4.8" in composer.json 
+Set phpunit version to "^4.8" in composer.json 
 
-## Installation From Scratch
-
+Installation From Scratch
+-------------------------
+ 
 See [this documentation](README-FROM-SCRATCH.md) to install the project into an existing (and already installed) Symfony 2 installation.
