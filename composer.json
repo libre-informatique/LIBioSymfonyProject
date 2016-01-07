@@ -40,7 +40,7 @@
         "libre-informatique/user-bundle": "dev-master",
         "libre-informatique/security-bundle": "dev-master",
         "libre-informatique/crm-bundle": "dev-master",
-        "libre-informatique/doctrine-pgsql-bundle": "dev-master"
+        "libre-informatique/doctrine-pgsql-bundle": "dev-master",
         "ircmaxell/password-compat": "^1.0"
     },
     "require-dev": {
