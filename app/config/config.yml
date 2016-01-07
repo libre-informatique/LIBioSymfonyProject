@@ -71,7 +71,6 @@ doctrine:
                 type: yml
             LibrinfoUserBundle:
                 type: yml
-
             # vendors bundles
             FOSUserBundle:
                 type: xml
