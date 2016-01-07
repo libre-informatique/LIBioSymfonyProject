@@ -11,7 +11,7 @@
     "require": {
         "php": ">=5.4.0",
         "symfony/symfony": "2.7.*",
-        "doctrine/orm": "^2.6",
+        "doctrine/orm": "dev-master / 2.6.x-dev",
         "doctrine/doctrine-bundle": "^1.6",
         "symfony/assetic-bundle": "~2.3",
         "symfony/swiftmailer-bundle": "~2.3",
