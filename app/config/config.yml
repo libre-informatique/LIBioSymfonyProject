@@ -75,6 +75,9 @@ doctrine:
             FOSUserBundle:
                 type: xml
             SonataUserBundle: ~
+        dql:
+            string_functions:
+                ilike: Librinfo\CoreBundle\DoctrineExtensions\Functions\Ilike
 
 # Swiftmailer Configuration
 swiftmailer:
