@@ -78,7 +78,7 @@ doctrine:
             SonataUserBundle: ~
         dql:
             string_functions:
-                ilike: Librinfo\CoreBundle\DoctrineExtensions\Functions\Ilike
+                ilike: Librinfo\DoctrinePgsqlBundle\DoctrineExtensions\Functions\Ilike
 
 # Swiftmailer Configuration
 swiftmailer:

@@ -39,7 +39,8 @@
         "libre-informatique/ui-bundle": "dev-master",
         "libre-informatique/user-bundle": "dev-master",
         "libre-informatique/security-bundle": "dev-master",
-        "libre-informatique/crm-bundle": "dev-master"
+        "libre-informatique/crm-bundle": "dev-master",
+        "libre-informatique/doctrine-pgsql-bundle": "dev-master"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3",
