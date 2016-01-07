@@ -34,11 +34,11 @@ At this point, if you don't have any Exceptions, you're done !
 Troubleshooting
 ---------------
 
-# If you have unresolved dependencies:
+### If you have unresolved dependencies:
 
 modify composer.json by adding ```"minimum-stability": "dev"```
 
-# If your php version is < 5.6
+### If your php version is < 5.6
 
 Set phpunit version to "^4.8" in composer.json 
 
