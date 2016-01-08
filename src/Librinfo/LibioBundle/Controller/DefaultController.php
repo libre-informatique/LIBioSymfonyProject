@@ -22,6 +22,13 @@ class DefaultController extends Controller
         $indexes = $contact->getSearchIndexes();
         dump(count($indexes));
 
+        $index = new \Librinfo\CRMBundle\Entity\ContactSearchIndex();
+        $index->setField('name');
+        $index->setKeyword($contact->getName());
+        $index->setObject($contact);
+        $em->persist($index);
+        $em->flush();
+
 
         return $this->render('LibrinfoLibioBundle:Default:test.html.twig', array('name' => $name));
     }
