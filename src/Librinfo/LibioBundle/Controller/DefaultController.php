@@ -6,9 +6,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class DefaultController extends Controller
 {
+
     public function indexAction($name)
     {
-        return $this->render('LibrinfoLibioBundle:Default:index.html.twig', array('name' => $name));
+        return $this->render('LibrinfoLibioBundle:Default:index.html.twig', array(
+                'name' => $name));
     }
 
     public function testAction($name)
@@ -19,17 +21,17 @@ class DefaultController extends Controller
             ->getRepository('LibrinfoCRMBundle:Contact')
             ->find('b419cf55-9ed6-4274-9cb6-b3d6f45c61d2');
 
-        $indexes = $contact->getSearchIndexes();
-        dump(count($indexes));
-
-        $index = new \Librinfo\CRMBundle\Entity\ContactSearchIndex();
-        $index->setField('name');
-        $index->setKeyword($contact->getName());
-        $index->setObject($contact);
-        $em->persist($index);
+        $contact->setName('Bezerra de Menezes');
+        $contact->setFirstname('Marcos');
+        $contact->setShortname('13 aa   bb cç@œ~Dd éÉ');
+        $contact->setEmail('marcos.bezerra@libre-informatique.fr');
+        $em->persist($contact);
         $em->flush();
+        $keywords = $contact->analyseField('shortname');
+        dump($keywords);
 
-
-        return $this->render('LibrinfoLibioBundle:Default:test.html.twig', array('name' => $name));
+        return $this->render('LibrinfoLibioBundle:Default:test.html.twig', array(
+                'name' => $name));
     }
+
 }
