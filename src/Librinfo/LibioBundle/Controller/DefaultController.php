@@ -19,27 +19,22 @@ class DefaultController extends Controller
 
         $contact = $this->getDoctrine()
             ->getRepository('LibrinfoCRMBundle:Contact')
-            ->find('d2ffab2d-2b6f-4b7d-bf40-8c753e49e716');
+            ->find('b419cf55-9ed6-4274-9cb6-b3d6f45c61d2');
 
-        $keywords = $contact->analyseField('shortname');
-        dump($keywords);
-//        foreach ( $keywords as $keyword )
-//        {
-//            $index = new \Librinfo\CRMBundle\Entity\ContactSearchIndex();
-//            $index->setObject($contact);
-//            $index->setField('shortname');
-//            $index->setKeyword($keyword);
-//            $em->persist($index);
-//            //dump($index);
-//        }
-//
-//        $contact->setName('Bezerra de Menezes');
-//        $contact->setFirstname('Marcos');
-//        $contact->setShortname('13 aa   bb cç@œ~Dd éÉ');
-//        $contact->setEmail('marcos.bezerra@libre-informatique.fr');
-//        $em->persist($contact);
-//        $em->flush();
+        $contact->setName($name);
+        $contact->setFirstname('Marcos');
+        $contact->setShortname($name);
+        $contact->setEmail('marcos.bezerra@libre-informatique.com3');
+        $contact->setTitle('Dr');
+        $em->persist($contact);
 
+        $organism = $this->getDoctrine()
+            ->getRepository('LibrinfoCRMBundle:Organism')
+            ->find('9285a971-77d1-44ef-aea1-4dd914e45a71');
+        $organism->setName($name . " ORG");
+
+
+        $em->flush();
 
 
         return $this->render('LibrinfoLibioBundle:Default:test.html.twig', array(
