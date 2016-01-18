@@ -40,7 +40,7 @@ class AppKernel extends Kernel
             new Librinfo\DoctrineBundle\LibrinfoDoctrineBundle(),
             new Librinfo\DecoratorBundle\LibrinfoDecoratorBundle(),
             new Librinfo\UIBundle\LibrinfoUIBundle(),
-            //new Librinfo\BaseEntitiesBundle\LibrinfoBaseEntitiesBundle(),
+            new Librinfo\BaseEntitiesBundle\LibrinfoBaseEntitiesBundle(),
             new Librinfo\SecurityBundle\LibrinfoSecurityBundle(),
             new Librinfo\CRMBundle\LibrinfoCRMBundle(),
             new Librinfo\UserBundle\LibrinfoUserBundle(),
