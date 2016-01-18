@@ -109,7 +109,7 @@ fos_user:
         user_manager: sonata.user.orm.user_manager
 
 # Enable BaseEntitiesBundle doctrine event listeners
-librinfo_base_entities:
+librinfo_doctrine:
     orm:
         default:
             naming: true
