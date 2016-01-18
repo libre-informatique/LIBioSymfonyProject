@@ -125,6 +125,8 @@ stof_doctrine_extensions:
 librinfo_base_entities:
     orm:
         default:
+            naming: true
+            guidable: true
             traceable: true
             addressable: true
             treeable: true
