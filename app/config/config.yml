@@ -108,19 +108,6 @@ fos_user:
     service:
         user_manager: sonata.user.orm.user_manager
 
-# Doctrine Extenstions Configuration
-# TODO: this should go in BaseEntitiesBundle ?
-stof_doctrine_extensions:
-    # This bundle needs a default locale used if the translation does not exists in the asked language.
-    # If you don't provide it explicitly, it will default to en.
-    default_locale: fr_FR
-    orm:
-        default:
-            loggable: true
-    class:
-        loggable: Librinfo\BaseEntitiesBundle\Loggable\LoggableListener
-
-
 # Enable BaseEntitiesBundle doctrine event listeners
 librinfo_base_entities:
     orm:

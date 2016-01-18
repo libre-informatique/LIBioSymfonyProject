@@ -19,8 +19,6 @@ class AppKernel extends Kernel
 
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
 
-            new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),  // for Loggable
-
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new Knp\DoctrineBehaviors\Bundle\DoctrineBehaviorsBundle(),
 
