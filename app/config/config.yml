@@ -119,3 +119,18 @@ stof_doctrine_extensions:
             loggable: true
     class:
         loggable: Librinfo\BaseEntitiesBundle\Loggable\LoggableListener
+
+
+# Enable BaseEntitiesBundle doctrine event listeners
+librinfo_base_entities:
+    orm:
+        default:
+            traceable: true
+            addressable: true
+            treeable: true
+            nameable: true
+            labelable: true
+            emailable: true
+            descriptible: true
+            searchable: true
+            loggable: true
