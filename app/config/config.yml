@@ -101,9 +101,9 @@ swiftmailer:
 fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: N/A
-    user_class: Librinfo\BaseEntitiesBundle\Entity\GenericEntity
+    user_class: Librinfo\DoctrineBundle\Entity\GenericEntity
     group:
-        group_class: Librinfo\BaseEntitiesBundle\Entity\GenericEntity
+        group_class: Librinfo\DoctrineBundle\Entity\GenericEntity
         group_manager: sonata.user.orm.group_manager
     service:
         user_manager: sonata.user.orm.user_manager
