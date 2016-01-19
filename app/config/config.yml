@@ -108,7 +108,7 @@ fos_user:
     service:
         user_manager: sonata.user.orm.user_manager
 
-# Enable BaseEntitiesBundle doctrine event listeners
+# Enable LibrinfoDocrineBundle event listeners
 librinfo_doctrine:
     orm:
         default:
