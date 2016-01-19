@@ -16,6 +16,7 @@ sonata_admin:
                 items:
                     - crm.category
                     - crm.position_type
+                    - crm.phone_type
             Application Management:
                 label: APP
                 items:
