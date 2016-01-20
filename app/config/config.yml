@@ -123,3 +123,4 @@ librinfo_doctrine:
             descriptible: true
             searchable: true
             loggable: true
+            sortable: true
