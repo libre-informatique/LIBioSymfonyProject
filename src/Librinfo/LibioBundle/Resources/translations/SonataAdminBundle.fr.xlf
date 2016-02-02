@@ -14,9 +14,17 @@
                 <source>APP Admin</source>
                 <target>Paramètres Généraux</target>
             </trans-unit>
+            <trans-unit id="menu_dev">
+                <source>DEV</source>
+                <target>DEV</target>
+            </trans-unit>
 
             <trans-unit id="dashboard">
                 <source>Dashboard</source>
+                <target>Tableau de Bord</target>
+            </trans-unit>
+            <trans-unit id="librinfo.link.dashboard">
+                <source>librinfo.link.dashboard</source>
                 <target>Tableau de Bord</target>
             </trans-unit>
         </body>
