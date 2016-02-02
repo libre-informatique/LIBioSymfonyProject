@@ -25,6 +25,7 @@ sonata_admin:
                     - app.group
             Development tools:
                 label: DEV
+                roles: [ROLE_SUPER_ADMIN]
                 items:
                     - crm.position
                     - crm.contactphone
