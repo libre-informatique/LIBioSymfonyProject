@@ -35,6 +35,7 @@ class AppKernel extends Kernel
             new Sonata\BlockBundle\SonataBlockBundle(),
             new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
+            new Sonata\IntlBundle\SonataIntlBundle(),
 
             new Librinfo\CoreBundle\LibrinfoCoreBundle(),
             new Librinfo\DoctrineBundle\LibrinfoDoctrineBundle(),

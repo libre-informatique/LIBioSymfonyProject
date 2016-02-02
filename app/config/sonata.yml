@@ -13,12 +13,13 @@ sonata_admin:
                     - crm.organism
                     - crm.circle
             CRM Admin:
+                label: CRM Admin
                 items:
                     - crm.category
                     - crm.position_type
                     - crm.phone_type
             Application Management:
-                label: APP
+                label: APP Admin
                 items:
                     - app.user
                     - app.group
