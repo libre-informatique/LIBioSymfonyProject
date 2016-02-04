@@ -6,8 +6,8 @@ librinfo_security:
     resource: "@LibrinfoSecurityBundle/Resources/config/routing.yml"
     prefix:   /
 
-librinfo_core:
-    resource: "@LibrinfoCoreBundle/Resources/config/routing.yml"
+librinfo_base_entities:
+    resource: "@LibrinfoBaseEntitiesBundle/Resources/config/routing.yml"
     prefix:   /
 
 librinfo_doctrine:
