@@ -40,7 +40,18 @@ Then you would have get the following directory structure :
 └── web
 ```
 
-At this point, if you don't have any Exceptions, you're done !
+In order to login to the dashboard you need to generate the database tables  :
+
+```
+$ app/console (bin/console on symfony 3+) doctrine:schema:update --force
+```
+
+Then you need to create a user with admin capabilities:
+
+```
+$ app/console fos:user:create
+$ app/console fos:user:promote --super [YOUR_USERNAME]
+```
 
 Troubleshooting
 ---------------
