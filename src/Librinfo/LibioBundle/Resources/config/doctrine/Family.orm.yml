@@ -1,0 +1,10 @@
+Librinfo\LibioBundle\Entity\Family:
+    type: entity
+    table: family
+    librinfo:
+        loggable: true
+    fields:
+        latin_name:
+            type:     string(255)
+        alias:
+            type:     string(255)

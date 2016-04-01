@@ -67,6 +67,8 @@ doctrine:
         auto_mapping: true
         mappings:
             # Librinfo bundles
+            LibrinfoLibioBundle:
+                type: yml
             LibrinfoCRMBundle:
                 type: yml
             LibrinfoDoctrineBundle:

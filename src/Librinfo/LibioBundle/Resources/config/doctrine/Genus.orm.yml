@@ -1,0 +1,8 @@
+Librinfo\LibioBundle\Entity\Genus:
+    type: entity
+    table: genus
+    fields:
+        latin_name:
+            type:     string(255)
+        alias:
+            type:     string(255)

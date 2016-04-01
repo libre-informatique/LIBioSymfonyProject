@@ -1,0 +1,76 @@
+parameters:
+    librinfo:
+
+
+##########
+# FAMILY
+##########
+
+        Librinfo\LibioBundle\Entity\Family:
+            Sonata\AdminBundle\Show\ShowMapper:
+                _copy: Sonata\AdminBundle\Form\FormMapper
+            Sonata\AdminBundle\Form\FormMapper:
+                add:
+                    form_group_general:
+                        '':
+                            latin_name:
+                                type: text
+                                required: false
+                            alias:
+                                type: text
+                                required: false
+            Sonata\AdminBundle\Datagrid\ListMapper:
+                remove: [createdAt]
+                add:
+                    latin_name: ~
+                    alias: ~
+                    description: ~
+                    _options:
+                        fieldsOrder:
+                            - name
+                            - latin_name
+                            - alias
+                            - description
+                    _export_format:
+                        csv: [name, latinName, alias, description, createdAt, updatedAt]
+                        xls: csv
+                        json: csv
+                        xml: csv
+#            Sonata\AdminBundle\Datagrid\DatagridMapper:
+#                add:
+
+
+##########
+# GENUS
+##########
+
+        Librinfo\LibioBundle\Entity\Genus:
+            Sonata\AdminBundle\Show\ShowMapper:
+                _copy: Sonata\AdminBundle\Form\FormMapper
+            Sonata\AdminBundle\Form\FormMapper:
+                add:
+                    form_group_general:
+                        '':
+                            latin_name:
+                                type: text
+                                required: false
+                            alias:
+                                type: text
+                                required: false
+            Sonata\AdminBundle\Datagrid\ListMapper:
+                remove: [createdAt]
+                add:
+                    latin_name: ~
+                    alias: ~
+                    description: ~
+                    _options:
+                        fieldsOrder:
+                            - name
+                            - latin_name
+                            - alias
+                            - description
+                    _export_format:
+                        csv: [name, latinName, alias, description, createdAt, updatedAt]
+                        xls: csv
+                        json: csv
+                        xml: csv
