@@ -39,6 +39,14 @@ Then you would have get the following directory structure :
 ├── src
 └── web
 ```
+###PostgreSQL
+
+If you are using PostgreSQL as your main database, you'll need to install postgresql-contrib and load the "uuid-ossp" extension :
+```
+  $ sudo apt-get install postgresql-contrib
+  $ echo 'CREATE EXTENSION "uuid-ossp";' | psql [DB]
+ ```
+
 
 In order to login to the dashboard you need to generate the database tables  :
 
