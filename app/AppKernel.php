@@ -47,6 +47,7 @@ class AppKernel extends Kernel
             new Librinfo\UserBundle\LibrinfoUserBundle(),
             new Librinfo\LibioBundle\LibrinfoLibioBundle(),
             new Librinfo\DoctrinePgsqlBundle\LibrinfoDoctrinePgsqlBundle(),
+            new Librinfo\VarietiesBundle\LibrinfoVarietiesBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test')))

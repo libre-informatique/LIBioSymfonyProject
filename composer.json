@@ -42,6 +42,7 @@
         "libre-informatique/security-bundle": "dev-master",
         "libre-informatique/crm-bundle": "dev-master",
         "libre-informatique/doctrine-pgsql-bundle": "dev-master",
+        "libre-informatique/varieties-bundle": "dev-master",
         "ircmaxell/password-compat": "^1.0",
         "nelmio/api-doc-bundle": "^2.11",
         "friendsofsymfony/rest-bundle": "^1.7"
