@@ -12,6 +12,11 @@ sonata_admin:
                     - crm.contact
                     - crm.organism
                     - crm.circle
+            Taxonomy:
+                label: Taxonomy
+                items:
+                    - librinfo_varieties.admin.family
+                    - librinfo_varieties.admin.genus
             CRM Admin:
                 label: CRM Admin
                 items:
@@ -34,3 +39,5 @@ sonata_admin:
                     - crm.contactgroup
     security:
         handler: librinfo.security_bundle.sonata.voter
+    options:
+        use_icheck: true
