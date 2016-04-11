@@ -17,6 +17,7 @@ sonata_admin:
                 items:
                     - librinfo_varieties.admin.family
                     - librinfo_varieties.admin.genus
+                    - librinfo_varieties.admin.species
             CRM Admin:
                 label: CRM Admin
                 items:
