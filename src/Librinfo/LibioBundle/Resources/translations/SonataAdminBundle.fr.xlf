@@ -18,6 +18,10 @@
                 <source>DEV</source>
                 <target>DEV</target>
             </trans-unit>
+            <trans-unit id="menu_taxonomy">
+                <source>Taxonomy</source>
+                <target>Taxonomie</target>
+            </trans-unit>            
 
             <trans-unit id="dashboard">
                 <source>Dashboard</source>
