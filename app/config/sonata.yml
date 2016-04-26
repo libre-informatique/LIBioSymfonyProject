@@ -17,6 +17,7 @@ sonata_admin:
                 items:
                     - librinfo_varieties.admin.family
                     - librinfo_varieties.admin.genus
+                    - librinfo_varieties.admin.plant_category
                     - librinfo_varieties.admin.species
                     - librinfo_varieties.admin.variety
                     - librinfo_varieties.admin.strain
