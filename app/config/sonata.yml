@@ -20,7 +20,7 @@ sonata_admin:
                     - librinfo_varieties.admin.plant_category
                     - librinfo_varieties.admin.species
                     - librinfo_varieties.admin.variety
-#                    - librinfo_varieties.admin.strain
+                    - librinfo_varieties.admin.strain
             CRM Admin:
                 label: CRM Admin
                 items:
