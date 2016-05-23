@@ -126,3 +126,10 @@ librinfo_doctrine:
             searchable: true
             loggable: true
             sortable: true
+
+librinfo_varieties:
+    variety_descriptions:
+        mygroup:
+            myfield: { widget: textarea }
+            myfield1: ~
+            myfield2: { widget: text, options: {required: false}, label: mylabel }

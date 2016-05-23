@@ -41,6 +41,7 @@ sonata_admin:
                     - crm.organismphone
                     - crm.role
                     - crm.contactgroup
+                    - librinfo_varieties.admin.variety_description
     security:
         handler: librinfo.security_bundle.sonata.voter
     options:
