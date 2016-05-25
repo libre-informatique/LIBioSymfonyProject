@@ -133,3 +133,5 @@ librinfo_varieties:
             myfield: { widget: textarea }
             myfield1: ~
             myfield2: { widget: text, options: {required: false}, label: mylabel }
+        grouptest:
+            fieldtest: ~
