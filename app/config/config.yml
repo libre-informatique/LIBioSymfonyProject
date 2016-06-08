@@ -129,9 +129,13 @@ librinfo_doctrine:
 
 librinfo_varieties:
     variety_descriptions:
-        mygroup:
-            myfield: { widget: textarea }
-            myfield1: ~
-            myfield2: { widget: text, options: {required: false}, label: mylabel }
-        grouptest:
-            fieldtest: ~
+        professional:
+            possible_sowing_periods: ~
+            cutting_period:
+                widget: text
+            sowing_date: { widget: text }
+            transplant_date: { widget: text }
+            cutting_date: { widget: text }
+            germination_conditions: ~
+        amateur:
+            amafield: ~
