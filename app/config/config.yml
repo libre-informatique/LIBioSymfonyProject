@@ -138,7 +138,8 @@ librinfo_varieties:
             on_line_distance: ~
             between_distance: ~
             exposure: ~
-            seedling_irrigation: { widget: number }
+            seedling_irrigation:
+                widget: number
             manure: ~
             cuttings_period: ~
             cutting_date: ~
@@ -152,13 +153,10 @@ librinfo_varieties:
             advised_outcome: ~
             possible_outcome: ~
             soil: ~
-            yield: ~
-            biodynamics: ~
-             
-            
-            
-            
-            
+            yield:
+                options:
+                    help: librinfo.help.yield
+            biodynamics: ~     
         amateur:
             possible_sowing_periods: ~
             cutting_period:

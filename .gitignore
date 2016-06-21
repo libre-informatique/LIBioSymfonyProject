@@ -40,6 +40,8 @@
 # PHPUnit
 /app/phpunit.xml
 /phpunit.xml
+/app/phpunit.xml.dist
+/phpunit.xml.dist
 
 # Build data
 /build/
