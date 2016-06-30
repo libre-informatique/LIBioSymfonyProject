@@ -3,6 +3,7 @@ imports:
     - { resource: security.yml }
     - { resource: services.yml }
     - { resource: sonata.yml }
+    - { resource: varieties.yml }
 
 parameters:
     locale: fr
@@ -126,38 +127,3 @@ librinfo_doctrine:
             searchable: true
             loggable: true
             sortable: true
-
-librinfo_varieties:
-    variety_descriptions:
-        professional:
-            possible_sowing_periods: ~
-            germination_conditions: ~
-            seed_storage: ~
-            transplant: ~
-            sowing_density: ~
-            on_line_distance: ~
-            between_distance: ~
-            exposure: ~
-            seedling_irrigation:
-                widget: number
-            manure: ~
-            cuttings_period: ~
-            cutting_date: ~
-            sowing_date: ~
-            transplant_date: ~
-            transplant_irrigation: ~
-            transplant_manure_quantity: ~
-            substratum: ~
-            treatments: ~
-            harvest_storage: ~
-            advised_outcome: ~
-            possible_outcome: ~
-            soil: ~
-            yield:
-                options:
-                    help: librinfo.help.yield
-            biodynamics: ~     
-        amateur:
-            possible_sowing_periods: ~
-            cutting_period:
-                widget: text
