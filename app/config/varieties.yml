@@ -49,6 +49,40 @@ librinfo_varieties:
             soil: ~
             yield: ~
             biodynamics: ~
+########### MISE EN PRODUCTION ##################
+        production:
+            possible_sowing_periods: ~
+            germination_conditions: ~
+            transplant: ~
+            sowing_density: ~
+            on_line_distance: ~
+            between_distance: ~
+            exposure: 
+                type: choice
+                options:
+                    choices:
+                        - nord
+                        - sud
+            seedling_irrigation:
+            transplant_irrigation: ~
+            manure: ~
+            cuttings_period: ~
+            cutting_date: ~
+            sowing_date: ~
+            transplant_date: ~
+            transplant_manure_quantity: ~
+            substratum: ~
+            treatments: ~
+            seed_storage: ~
+            harvest_storage: ~
+            advised_outcome: ~
+            possible_outcome: ~
+            soil: ~
+            yield:
+                options:
+                    help: librinfo.help.yield
+            biodynamics: ~  
+            tutoring: ~
 ########## TRI OFFRE COMMERCIAL ###################
         commercial: 
             taste_rating: ~
@@ -78,6 +112,9 @@ librinfo_varieties:
             foliage_type: ~
             foliage_color: ~
             required_size: ~    
+ ############## CULTURE ############################
+        culture:
+            location: ~
             
             
             
