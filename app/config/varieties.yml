@@ -1,19 +1,53 @@
+
+#CHOICE TYPE CONFIG           
+#options        expanded multiple
+
+#select tag 	false 	 false
+#select tag  	false 	 true
+#radio buttons 	true 	 false
+#checkboxes 	true 	 true
+
+#inline fields:
+#    attr:
+#        class: inline-block
+
+#checkboxes in column:
+#    attr:
+#        class: columns-2 (columns-3)
+
 librinfo_varieties:
     variety_descriptions:
 ########### CONSEILS PROS ##################
         professional:
-            possible_sowing_periods: ~
-            germination_conditions: ~
+            possible_sowing_periods: 
+                type: librinfo_custom_choice
+                options: 
+                    choices: 
+                        - début Mars
+                        - fin Mars
+                        - début Avril
+                        - fin Avril
+                        - début Mai
+                        - fin Mai
+                        - début Juin
+                        - fin Juin
+                    attr:    
+                        class: inline-block
+            germination_conditions: 
             transplant: ~
-            sowing_density: ~
+            sowing_density: 
             on_line_distance: ~
             between_distance: ~
             exposure: 
-                type: choice
+                type: librinfo_custom_choice
                 options:
                     choices:
-                        - nord
-                        - sud
+                        - Nord
+                        - Sud
+                        - Est
+                        - Ouest
+                    attr:
+                        class: inline-block
             seedling_irrigation:
             transplant_irrigation: ~
             manure: ~
@@ -30,10 +64,12 @@ librinfo_varieties:
             possible_outcome: ~
             soil: ~
             yield:
-                options:
-                    help: librinfo.help.yield
             biodynamics: ~  
             tutoring: ~
+            seedling_hotbed: ~
+            transplant_hotbed: ~
+            plant_transplant_hotbed: ~
+            
 ############# CONSEILS AMATEURS ####################
         amateur:
             possible_sowing_periods: ~
@@ -58,7 +94,7 @@ librinfo_varieties:
             on_line_distance: ~
             between_distance: ~
             exposure: 
-                type: choice
+                type: librinfo_custom_choice
                 options:
                     choices:
                         - nord
@@ -79,39 +115,197 @@ librinfo_varieties:
             possible_outcome: ~
             soil: ~
             yield:
-                options:
-                    help: librinfo.help.yield
             biodynamics: ~  
             tutoring: ~
 ########## TRI OFFRE COMMERCIAL ###################
         commercial: 
-            taste_rating: ~
-            taste: ~
-            texture: ~
-            nutrition_rating: ~
+            plant_type: 
+                type: librinfo_custom_choice
+                options:
+                    attr:
+                        class: inline-block
+                    choices:
+                        - Feuille
+                        - Fruit
+                        - Racine
+                        - Fleur
+            precocity: 
+                type: librinfo_custom_choice
+                options:
+                    attr:
+                        class: inline-block
+                    choices:
+                        - Précoce
+                        - Mi-saison
+                        - Tardive
+            grade: 
+                type: librinfo_custom_choice
+                options:
+                    attr:
+                        class: inline-block
+                    choices: [ 1, 2, 3, 4, 5 ]
+            rusticicty: 
+                type: librinfo_custom_choice
+                options:
+                    attr:
+                        class: inline-block
+                    choices: [ 1, 2, 3, 4, 5 ]
+            main_color: 
+                type: librinfo_custom_choice
+                options: 
+                    attr:
+                        class: inline-block
+                    choices:
+            secondary_color:
+                type: librinfo_custom_choice
+                options: 
+                    attr:
+                        class: inline-block
+                    choices:
+            taste: 
+                type: librinfo_custom_choice
+                options:
+                    attr:
+                        class: columns-2
+                    expanded: true
+                    multiple: true
+                    choices: 
+                        - Salé
+                        - Sucré
+                        - Acide
+                        - Amer
+                        - Equilibré (sucre, acidité)
+                        - Piquant
+                        - Frais
+                        - Astringent
+                        - Gras
+                        - Métallique
+                        - Amidonné
+                        
+            texture: 
+                type: librinfo_custom_choice
+                options: 
+                    attr:
+                        class: columns-2
+                    expanded: true
+                    multiple: true
+                    choices: 
+                        - Peau persistante
+                        - Farineux
+                        - Croquant
+                        - Fondant
+                        - Juteux
+                        - Ferme
             nutrients: 
-            main_color: ~
-            secondary_color: ~
-            yield: ~
-            max_harvest_span: ~
-            min_harvest_span: ~
-            prefered_zone: ~
-            # calibre
-            grade: ~
+                type: librinfo_custom_choice
+                options:
+                    attr:
+                        class: columns-3
+                    expanded: true
+                    multiple: true
+                    choices: 
+                        - Vitamine A
+                        - Vitamine B
+                        - Vitamine C
+                        - Vitamine D
+                        - Vitamine E
+                        - Thiamine (B1)
+                        - Riboflavine (B2)
+                        - Niacine (B3)
+                        - Acide pantothénique (B5)
+                        - Pyridoxine (B6)
+                        - Acide folique (B9)
+                        - Cobalamine (B12)
+                        - Calcium
+                        - Phosphore
+                        - Magnésium
+                        - Fer
+                        - Zinc
+                        - Iode
+                        - Cuivre
+                        - Manganèse
+                        - Sélénium
+                        - Chrome
+                        - Molybdène
+            taste_rating: 
+                type: librinfo_custom_choice
+                options:
+                    attr:
+                        class: inline-block
+                    choices: [ 1, 2, 3, 4, 5 ]
+            nutrition_rating: 
+                type: librinfo_custom_choice
+                options:
+                    attr:
+                        class: inline-block
+                        end-line: 'true'
+                        
+                    choices: [ 1, 2, 3, 4, 5 ]
+            max_harvest_span: 
+                type: number
+                options:
+            min_harvest_span:
+                type: number
+                options:
+            prefered_zone: 
+                type: librinfo_custom_choice
+                options:
+                    attr:
+                        class: inline-block
+                    choices: [ 1, 2, 3, 4, 5, 6 ]
+            yield_rating: 
+                type: librinfo_custom_choice
+                options:
+                    attr:
+                        class: inline-block
+                    choices: [ 1, 2, 3, 4, 5 ]
             main_usages: ~
-            usages: ~
-            plant_type: ~
-            targeted_audience: ~
-            precocity: ~
-            rusticicty: ~
-            cultivation_ease: ~
-            pot_cultivation_ease: ~
-            inner_commment: ~
+            usages: ~            
+            targeted_audience:
+                type: librinfo_custom_choice
+                options:
+                    attr:
+                        class: inline-block
+                    choices: [ Amateurs, Professionnels, Tout public ]
+            cultivation_ease: 
+                type: librinfo_custom_choice
+                options:
+                    attr:
+                        class: inline-block
+                    choices: [ 1, 2, 3, 4, 5 ]
+            pot_cultivation_ease: 
+                type: librinfo_custom_choice
+                options:
+                    attr:
+                        class: inline-block
+                    choices: [ Facile, Possible, Difficile ] 
+            inner_commment: 
+                type: textarea
  ############# CARACTERISTIQUES PLANTE #############
         plant: 
-            foliage_type: ~
-            foliage_color: ~
-            required_size: ~    
+            foliage_type:
+                type: librinfo_custom_choice
+                options: 
+                    attr:
+                        class: inline-block
+                    choices: [ Caduc, Persistant, Marcescent ]
+            foliage_color:
+                type: librinfo_custom_choice
+                options: 
+                    attr:
+                        class: inline-block
+                    choices:
+            required_size:
+                type: integer
+            development:
+                type: librinfo_custom_choice
+                options:
+                    choices:
+                        - Vigoureuse
+                        - Coureuse
+                        - Naine
+                        - A rame
+                        
  ############## CULTURE ############################
         culture:
             location: ~
