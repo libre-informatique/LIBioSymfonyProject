@@ -25,6 +25,9 @@ librinfo_decorator:
 librinfo_user:
     resource: "@LibrinfoUserBundle/Resources/config/routing.yml"
     prefix:   /
+librinfo_varieties:
+    resource: "@LibrinfoVarietiesBundle/Resources/config/routing.yml"
+    prefix:   /
 
 admin:
     resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
