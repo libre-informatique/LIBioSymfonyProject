@@ -2,6 +2,7 @@ sonata_block:
     default_contexts: [cms]
     blocks:
         sonata.admin.block.admin_list:
+#        sonata.admin.block.menu:
 
 sonata_admin:
     dashboard:
@@ -12,14 +13,24 @@ sonata_admin:
                     - crm.contact
                     - crm.organism
                     - crm.circle
-            Taxonomy:
-                label: Taxonomy
+#            Taxonomy:
+#                label: Taxonomy
+#                items:
+#                    - librinfo_varieties.admin.family
+#                    - librinfo_varieties.admin.genus
+#                    - librinfo_varieties.admin.plant_category
+#                    - librinfo_varieties.admin.species
+#                    - librinfo_varieties.admin.variety
+#                    - librinfo_varieties.admin.strain
+            Varieties:
+                label: ~
+                on_top: true
                 items:
-                    - librinfo_varieties.admin.family
-                    - librinfo_varieties.admin.genus
-                    - librinfo_varieties.admin.plant_category
-                    - librinfo_varieties.admin.species
                     - librinfo_varieties.admin.variety
+            Strains: 
+                label: ~
+                on_top: true
+                items:
                     - librinfo_varieties.admin.strain
             CRM Admin:
                 label: CRM Admin
@@ -32,16 +43,16 @@ sonata_admin:
                 items:
                     - app.user
                     - app.group
-            Development tools:
-                label: DEV
-                roles: [ROLE_SUPER_ADMIN]
-                items:
-                    - crm.position
-                    - crm.contactphone
-                    - crm.organismphone
-                    - crm.role
-                    - crm.contactgroup
-                    - librinfo_varieties.admin.variety_description
+#            Development tools:
+#                label: DEV
+#                roles: [ROLE_SUPER_ADMIN]
+#                items:
+#                    - crm.position
+#                    - crm.contactphone
+#                    - crm.organismphone
+#                    - crm.role
+#                    - crm.contactgroup
+#                    - librinfo_varieties.admin.variety_description
     security:
         handler: librinfo.security_bundle.sonata.voter
     options:

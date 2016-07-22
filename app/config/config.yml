@@ -36,6 +36,7 @@ twig:
     form:
         resources:
             - 'SonataCoreBundle:Form:datepicker.html.twig'
+            - 'SonataCoreBundle:Form:colorpicker.html.twig'
             - 'bootstrap_3_layout.html.twig'
 
 # Assetic Configuration
@@ -127,4 +128,9 @@ librinfo_doctrine:
             searchable: true
             loggable: true
             sortable: true
+<<<<<<< HEAD
+stfalcon_tinymce:
+    tinymce_jquery: true
+=======
 
+>>>>>>> 14e34cfbe1c3b32df68cf83458085aef6710b2b3
