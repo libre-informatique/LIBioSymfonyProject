@@ -2,6 +2,8 @@
 
 use Symfony\Component\HttpFoundation\Request;
 
+umask(0000); // Remove this on systems that support ACL
+
 /**
  * @var Composer\Autoload\ClassLoader
  */
