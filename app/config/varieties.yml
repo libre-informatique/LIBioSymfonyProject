@@ -15,6 +15,9 @@
 #    attr:
 #        class: columns-2 (columns-3)
 
+# width: in %
+# height: in px
+
 librinfo_varieties:
     variety_descriptions:
 ########### CONSEILS PROS ##################
@@ -33,7 +36,10 @@ librinfo_varieties:
                         - fin Juin
                     attr:    
                         class: inline-block
-            germination_conditions: 
+            germination_temperature:
+                type: text
+            germination_light:
+                type: text
             transplant: ~
             sowing_density: 
             on_line_distance: ~
@@ -48,8 +54,10 @@ librinfo_varieties:
                         - Ouest
                     attr:
                         class: inline-block
-            seedling_irrigation:
-            transplant_irrigation: ~
+            seedling_irrigation_quantity: ~
+            seedling_irrigation_frequency: ~
+            transplant_irrigation_quantity: ~
+            transplant_irrigation_frequency: ~
             manure: ~
             cuttings_period: ~
             cutting_date: ~
@@ -73,13 +81,19 @@ librinfo_varieties:
 ############# CONSEILS AMATEURS ####################
         amateur:
             possible_sowing_periods: ~
-            germination_conditions: ~
+            germination_temperature:
+                type: text
+            germination_light:
+                type: text
             seed_storage: ~
             transplant: ~
             sowing_density: ~
             on_line_distance: ~
             between_distance: ~
-            seedling_irrigation: ~
+            seedling_irrigation_quantity: ~
+            seedling_irrigation_frequency: ~
+            transplant_irrigation_quantity: ~
+            transplant_irrigation_frequency: ~
             exposure: ~
             manure: ~
             soil: ~
@@ -87,8 +101,12 @@ librinfo_varieties:
             biodynamics: ~
 ########### MISE EN PRODUCTION ##################
         production:
-            possible_sowing_periods: ~
-            germination_conditions: ~
+            possible_sowing_periods:
+                type: librinfo_custom_choice
+            germination_temperature:
+                type: text
+            germination_light:
+                type: text
             transplant: ~
             sowing_density: ~
             on_line_distance: ~
@@ -99,8 +117,10 @@ librinfo_varieties:
                     choices:
                         - nord
                         - sud
-            seedling_irrigation:
-            transplant_irrigation: ~
+            seedling_irrigation_quantity: ~
+            seedling_irrigation_frequency: ~
+            transplant_irrigation_quantity: ~
+            transplant_irrigation_frequency: ~
             manure: ~
             cuttings_period: ~
             cutting_date: ~
@@ -115,6 +135,8 @@ librinfo_varieties:
             possible_outcome: ~
             soil: ~
             yield:
+            seedling_hotbed: ~
+            plant_hotbed: ~
             biodynamics: ~  
             tutoring: ~
 ########## TRI OFFRE COMMERCIAL ###################
@@ -151,13 +173,13 @@ librinfo_varieties:
                         class: inline-block
                     choices: [ 1, 2, 3, 4, 5 ]
             main_color: 
-                type: librinfo_custom_choice
+                type: sonata_type_color_selector
                 options: 
                     attr:
                         class: inline-block
                     choices:
             secondary_color:
-                type: librinfo_custom_choice
+                type: sonata_type_color_selector
                 options: 
                     attr:
                         class: inline-block
@@ -290,7 +312,7 @@ librinfo_varieties:
                         class: inline-block
                     choices: [ Caduc, Persistant, Marcescent ]
             foliage_color:
-                type: librinfo_custom_choice
+                type: sonata_type_color_selector
                 options: 
                     attr:
                         class: inline-block
@@ -308,11 +330,16 @@ librinfo_varieties:
                         
  ############## CULTURE ############################
         culture:
-            location: ~
-            
-            
-            
-            
-            
-            
-           
+            location: 
+                type: text
+            strain_origin:
+                type: text
+            several_strains:
+                type: checkbox
+            description:
+                type: librinfo_tinymce
+                options:
+                    attr:
+                        class: new-line
+                        height: 150
+                   
