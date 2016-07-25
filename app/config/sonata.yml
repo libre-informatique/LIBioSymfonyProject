@@ -10,9 +10,8 @@ sonata_admin:
             Customers Relationship Management:
                 label: CRM
                 items:
-                    - crm.contact
                     - crm.organism
-                    - crm.circle
+                    - crm.contact
 #            Taxonomy:
 #                label: Taxonomy
 #                items:
@@ -27,7 +26,7 @@ sonata_admin:
                 on_top: true
                 items:
                     - librinfo_varieties.admin.variety
-            Strains: 
+            Strains:
                 label: ~
                 on_top: true
                 items:
@@ -35,6 +34,7 @@ sonata_admin:
             CRM Admin:
                 label: CRM Admin
                 items:
+                    - crm.circle
                     - crm.category
                     - crm.position_type
                     - crm.phone_type
