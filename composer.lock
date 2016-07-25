@@ -2329,12 +2329,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/SymfonyLibrinfoCRMBundle.git",
-                "reference": "09d8e9099d25c29405ba22327ebd333e17c270e2"
+                "reference": "63b9dfeefd97db544a2aad937c9dc70c290bac29"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/SymfonyLibrinfoCRMBundle/zipball/09d8e9099d25c29405ba22327ebd333e17c270e2",
-                "reference": "09d8e9099d25c29405ba22327ebd333e17c270e2",
+                "url": "https://api.github.com/repos/libre-informatique/SymfonyLibrinfoCRMBundle/zipball/63b9dfeefd97db544a2aad937c9dc70c290bac29",
+                "reference": "63b9dfeefd97db544a2aad937c9dc70c290bac29",
                 "shasum": ""
             },
             "require": {
@@ -2374,7 +2374,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2016-07-05 15:46:21"
+            "time": "2016-07-22 15:00:47"
         },
         {
             "name": "libre-informatique/decorator-bundle",
