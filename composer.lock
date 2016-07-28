@@ -2383,12 +2383,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/SymfonyLibrinfoDecoratorBundle.git",
-                "reference": "e36386baaec3f962daaf57feb260db2cf08ca00e"
+                "reference": "3fca4b451c3723019c513a91518f61250dc1c388"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/SymfonyLibrinfoDecoratorBundle/zipball/e36386baaec3f962daaf57feb260db2cf08ca00e",
-                "reference": "e36386baaec3f962daaf57feb260db2cf08ca00e",
+                "url": "https://api.github.com/repos/libre-informatique/SymfonyLibrinfoDecoratorBundle/zipball/3fca4b451c3723019c513a91518f61250dc1c388",
+                "reference": "3fca4b451c3723019c513a91518f61250dc1c388",
                 "shasum": ""
             },
             "require": {
@@ -2428,7 +2428,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2016-07-21 10:31:57"
+            "time": "2016-07-28 10:23:18"
         },
         {
             "name": "libre-informatique/doctrine-bundle",
