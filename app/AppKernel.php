@@ -47,6 +47,7 @@ class AppKernel extends Kernel
             new Librinfo\DoctrinePgsqlBundle\LibrinfoDoctrinePgsqlBundle(),
             new Librinfo\VarietiesBundle\LibrinfoVarietiesBundle(),
 
+            new Sparkling\VATBundle\SparklingVATBundle(),
             new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle()
         );
 
