@@ -2428,7 +2428,11 @@
                 "sonata",
                 "symfony"
             ],
+<<<<<<< HEAD
             "time": "2016-07-28 11:10:37"
+=======
+            "time": "2016-07-28 10:23:18"
+>>>>>>> 29fe0214eb47da2c7efcac02bcc1bf68e0171f96
         },
         {
             "name": "libre-informatique/doctrine-bundle",
