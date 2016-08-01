@@ -131,3 +131,9 @@ librinfo_doctrine:
             sortable: true
 stfalcon_tinymce:
     tinymce_jquery: true
+
+librinfo_crm:
+    circles:
+        organisms: true   # default: true
+        contacts: false    # default: false
+        positions: false  # default: false
