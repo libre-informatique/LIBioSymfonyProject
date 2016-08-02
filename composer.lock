@@ -1093,12 +1093,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSUserBundle.git",
-                "reference": "4f7ef384e8e4ffc2db34e4e681099ab597ade64c"
+                "reference": "5195070d513e9cf8721c83c70b0faa63a213de9e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/4f7ef384e8e4ffc2db34e4e681099ab597ade64c",
-                "reference": "4f7ef384e8e4ffc2db34e4e681099ab597ade64c",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/5195070d513e9cf8721c83c70b0faa63a213de9e",
+                "reference": "5195070d513e9cf8721c83c70b0faa63a213de9e",
                 "shasum": ""
             },
             "require": {
@@ -1151,7 +1151,7 @@
             "keywords": [
                 "User management"
             ],
-            "time": "2016-02-11 16:29:32"
+            "time": "2016-07-29 08:47:59"
         },
         {
             "name": "gedmo/doctrine-extensions",
@@ -2712,12 +2712,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/SymfonyLibrinfoVarietiesBundle.git",
-                "reference": "aa0fe419bc1a5c04fe42e1f542a5a6913034d1fe"
+                "reference": "bb9e392d96b4dd0cd432485a5daeb27f12fbcc71"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/SymfonyLibrinfoVarietiesBundle/zipball/aa0fe419bc1a5c04fe42e1f542a5a6913034d1fe",
-                "reference": "aa0fe419bc1a5c04fe42e1f542a5a6913034d1fe",
+                "url": "https://api.github.com/repos/libre-informatique/SymfonyLibrinfoVarietiesBundle/zipball/bb9e392d96b4dd0cd432485a5daeb27f12fbcc71",
+                "reference": "bb9e392d96b4dd0cd432485a5daeb27f12fbcc71",
                 "shasum": ""
             },
             "require": {
@@ -2764,7 +2764,7 @@
                 "taxonomy",
                 "variety"
             ],
-            "time": "2016-07-28 11:15:01"
+            "time": "2016-07-29 10:27:29"
         },
         {
             "name": "michelf/php-markdown",
@@ -4002,12 +4002,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/exporter.git",
-                "reference": "f6ff69768a988f419d1252f2ff08fcb56a88986d"
+                "reference": "c9df2191c4483feed9da6a280fa5122165cf486e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/exporter/zipball/f6ff69768a988f419d1252f2ff08fcb56a88986d",
-                "reference": "f6ff69768a988f419d1252f2ff08fcb56a88986d",
+                "url": "https://api.github.com/repos/sonata-project/exporter/zipball/c9df2191c4483feed9da6a280fa5122165cf486e",
+                "reference": "c9df2191c4483feed9da6a280fa5122165cf486e",
                 "shasum": ""
             },
             "require": {
@@ -4015,7 +4015,6 @@
             },
             "require-dev": {
                 "doctrine/dbal": "^2.2",
-                "doctrine/orm": "^2.2",
                 "matthiasnoback/symfony-config-test": "^1.2.1 || ^2.0",
                 "matthiasnoback/symfony-dependency-injection-test": "^0.7.6 || ^1.0",
                 "propel/propel1": "^1.6",
@@ -4064,7 +4063,7 @@
                 "export",
                 "xls"
             ],
-            "time": "2016-07-25 15:20:46"
+            "time": "2016-07-29 11:02:14"
         },
         {
             "name": "sonata-project/google-authenticator",
