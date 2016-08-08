@@ -129,5 +129,25 @@ librinfo_doctrine:
             searchable: true
             loggable: true
             sortable: true
+            normalize: true
+
 stfalcon_tinymce:
     tinymce_jquery: true
+
+librinfo_crm:
+    Circle:
+        allow_organisms: true   # default: true
+        allow_contacts: false    # default: false
+        allow_positions: false  # default: false
+    Organism:
+        normalize:
+            city: [uppercase]   # possible values: uppercase, titlecase
+            country: [uppercase]
+    Contact:
+        normalize:
+            firstname: [titlecase]
+            name: [uppercase]
+            city: [uppercase]
+            country: [uppercase]
+
+
