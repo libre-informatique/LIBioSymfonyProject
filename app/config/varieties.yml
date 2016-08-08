@@ -5,7 +5,7 @@
 #select tag 	false 	 false
 #select tag  	false 	 true
 #radio buttons 	true 	 false
-#checkboxes 	true 	 true
+#librinfo_customcheckboxes 	true 	 true
 
 #inline fields:
 #    attr:
@@ -23,7 +23,7 @@ librinfo_varieties:
 ########### CONSEILS PROS ##################
         professional:
             possible_sowing_periods: 
-                type: librinfo_customchoice
+                type: choice
                 options: 
                     choices: 
                         - début Mars
@@ -42,7 +42,7 @@ librinfo_varieties:
                     attr:
                         class: inline-block
             germination_light:
-                type: librinfo_customchoice
+                type: choice
                 options:
                     attr:
                         class: inline-block
@@ -67,7 +67,7 @@ librinfo_varieties:
                     attr:
                         class: inline-block
             exposure: 
-                type: librinfo_customchoice
+                type: choice
                 options:
                     choices:
                         - Nord
@@ -82,7 +82,7 @@ librinfo_varieties:
                     attr:
                         class: inline-block
             seedling_irrigation_frequency:
-                type: librinfo_customchoice
+                type: choice
                 options:
                     attr:
                         class: inline-block
@@ -92,17 +92,17 @@ librinfo_varieties:
                     attr:
                         class: inline-block
             transplant_irrigation_frequency:
-                type: librinfo_customchoice
+                type: choice
                 options:
                     attr:
                         class: inline-block
             manure:
-                type: librinfo_customchoice
+                type: choice
                 options:
                     attr:
                         class: inline-block
             cuttings_period:
-                type: librinfo_customchoice
+                type: choice
                 options:
                     attr:
                         class: inline-block
@@ -137,12 +137,12 @@ librinfo_varieties:
                     attr:
                         class: inline-block
             seed_storage:
-                type: librinfo_customchoice
+                type: choice
                 options:
                     attr:
                         class: inline-block
             harvest_storage:
-                type: librinfo_customchoice
+                type: choice
                 options:
                     attr:
                         class: inline-block
@@ -157,7 +157,7 @@ librinfo_varieties:
                     attr:
                         class: inline-block
             soil:
-                type: librinfo_customchoice
+                type: choice
                 options:
                     attr:
                         class: inline-block
@@ -167,27 +167,27 @@ librinfo_varieties:
                     attr:
                         class: inline-block
             biodynamics:
-                type: checkbox
+                type: librinfo_customcheckbox
                 options:
                     attr:
                         class: inline-block
             tutoring:
-                type: checkbox
+                type: librinfo_customcheckbox
                 options:
                     attr:
                         class: inline-block
             seedling_hotbed:
-                type: checkbox
+                type: librinfo_customcheckbox
                 options:
                     attr:
                         class: inline-block
             transplant_hotbed:
-                type: checkbox
+                type: librinfo_customcheckbox
                 options:
                     attr:
                         class: inline-block
             plant_transplant_hotbed:
-                type: checkbox
+                type: librinfo_customcheckbox
                 options:
                     attr:
                         class: inline-block
@@ -195,7 +195,7 @@ librinfo_varieties:
 ############# CONSEILS AMATEURS ####################
         amateur:
             possible_sowing_periods: 
-                type: librinfo_customchoice
+                type: choice
                 options: 
                     choices: 
                         - début Mars
@@ -214,7 +214,7 @@ librinfo_varieties:
                     attr:
                         class: inline-block
             germination_light:
-                type: librinfo_customchoice
+                type: choice
                 options:
                     attr:
                         class: inline-block
@@ -239,7 +239,7 @@ librinfo_varieties:
                     attr:
                         class: inline-block
             exposure: 
-                type: librinfo_customchoice
+                type: choice
                 options:
                     choices:
                         - Nord
@@ -254,7 +254,7 @@ librinfo_varieties:
                     attr:
                         class: inline-block
             seedling_irrigation_frequency:
-                type: librinfo_customchoice
+                type: choice
                 options:
                     attr:
                         class: inline-block
@@ -264,17 +264,17 @@ librinfo_varieties:
                     attr:
                         class: inline-block
             transplant_irrigation_frequency:
-                type: librinfo_customchoice
+                type: choice
                 options:
                     attr:
                         class: inline-block
             manure:
-                type: librinfo_customchoice
+                type: choice
                 options:
                     attr:
                         class: inline-block
             cuttings_period:
-                type: librinfo_customchoice
+                type: choice
                 options:
                     attr:
                         class: inline-block
@@ -309,12 +309,12 @@ librinfo_varieties:
                     attr:
                         class: inline-block
             seed_storage:
-                type: librinfo_customchoice
+                type: choice
                 options:
                     attr:
                         class: inline-block
             harvest_storage:
-                type: librinfo_customchoice
+                type: choice
                 options:
                     attr:
                         class: inline-block
@@ -323,7 +323,7 @@ librinfo_varieties:
             possible_outcome:
                 type: textarea
             soil:
-                type: librinfo_customchoice
+                type: choice
                 options:
                     attr:
                         class: inline-block
@@ -333,34 +333,39 @@ librinfo_varieties:
                     attr:
                         class: inline-block
             biodynamics:
-                type: checkbox
+                type: librinfo_customcheckbox
                 options:
                     attr:
                         class: inline-block
             tutoring:
-                type: checkbox
+                type: librinfo_customcheckbox
                 options:
                     attr:
                         class: inline-block
             seedling_hotbed:
-                type: checkbox
+                type: librinfo_customcheckbox
                 options:
                     attr:
                         class: inline-block
             transplant_hotbed:
-                type: checkbox
+                type: librinfo_customcheckbox
                 options:
                     attr:
                         class: inline-block
             plant_transplant_hotbed:
-                type: checkbox
+                type: librinfo_customcheckbox
                 options:
                     attr:
                         class: inline-block
 ########### MISE EN PRODUCTION ##################
         production:
             possible_sowing_periods:
-                type: librinfo_customchoice
+                type: choice
+                options:
+                    attr:
+                        class: inline-block
+            transplant:
+                type: choice
                 options:
                     attr:
                         class: inline-block
@@ -368,65 +373,85 @@ librinfo_varieties:
                 type: text
                 options:
                     attr:
-                        class: inline-block
+                        class: new-line
+                        width: 30
             germination_light:
                 type: text
                 options:
                     attr:
-                        class: inline-block
-            transplant:
-                type: librinfo_customchoice
-                options:
-                    attr:
-                        class: inline-block
+                        class: new-line
+                        width: 30
             sowing_density:
-                type: number
+                type: integer
                 options:
                     attr:
                         class: inline-block
             on_line_distance:
-                type: number
+                type: integer
                 options:
                     attr:
                         class: inline-block
             between_distance:
-                type: number
+                type: integer
                 options:
                     attr:
                         class: inline-block
             exposure: 
-                type: librinfo_customchoice
+                type: choice
                 options:
+                    attr:
+                        class: inline-block
                     choices:
                         - nord
                         - sud
+                        - est
+                        - ouest
+            substratum: 
+                type: choice
+                options:
+                    attr:
+                        class: inline-block
+                    choices: [terre, coco, tourbe]
+            soil:
+                type: choice
+                options:
+                    attr:
+                        class: inline-block
+                    choices: [terre, sable]
+            manure: 
+                type: choice
+                options:
+                    attr:
+                        class: inline-block
+            manure_quantity: 
+                type: integer
+                options:
+                    attr:
+                        class: inline-block            
             seedling_irrigation_quantity:
                 type: number
                 options:
                     attr:
                         class: inline-block
             seedling_irrigation_frequency: 
-                type: librinfo_customchoice
+                type: choice
                 options:
                     attr:
                         class: inline-block
+                    choices: [quotidien, hebdomadaire]
             transplant_irrigation_quantity: 
                 type: number
                 options:
                     attr:
                         class: inline-block
             transplant_irrigation_frequency: 
-                type: librinfo_customchoice
+                type: choice
                 options:
                     attr:
                         class: inline-block
-            manure: 
-                type: librinfo_customchoice
-                options:
-                    attr:
-                        class: inline-block
+                    choices: [quotidien, hebdomadaire]
             cuttings_period: 
-                type: text
+                type: integer
                 options:
                     attr:
                         class: inline-block
@@ -445,75 +470,64 @@ librinfo_varieties:
                 options:
                     attr:
                         class: inline-block
-            transplant_manure_quantity: 
-                type: number
-                options:
-                    attr:
-                        class: inline-block
-            substratum: 
-                type: librinfo_customchoice
-                options:
-                    attr:
-                        class: inline-block
             treatments: 
                 type: text
                 options:
                     attr:
                         class: inline-block
             seed_storage: 
-                type: sonata_type_date_picker
+                type: text
                 options:
                     attr:
-                        class: inline-block
+                        class: new-line
+                        width: 30
             harvest_storage:
-                type: sonata_type_date_picker
+                type: text
                 options:
                     attr:
-                        class: inline-block
+                        class: new-line
+                        width: 30
             advised_outcome:
                 type: textarea
                 options:
                     attr:
-                        class: inline-block
+                        class: new-line
+                        width: 50
             possible_outcome:
                 type: textarea
                 options:
                     attr:
-                        class: inline-block
-            soil:
-                type: sonata_type_date_picker
-                options:
-                    attr:
-                        class: inline-block
+                        class: new-line
+                        width: 50
             yield:
-                type: number
+                type: integer
                 options:
                     attr:
-                        class: inline-block
+                        class: new-line
             seedling_hotbed:
-                type: checkbox
+                type: librinfo_customcheckbox
                 options:
                     attr:
                         class: inline-block
             plant_hotbed:
-                type: checkbox
+                type: librinfo_customcheckbox
                 options:
                     attr:
                         class: inline-block
             biodynamics: 
-                type: checkbox
+                type: librinfo_customcheckbox
                 options:
                     attr:
                         class: inline-block
             tutoring: 
-                type: checkbox
+                type: librinfo_customcheckbox
                 options:
                     attr:
                         class: inline-block
 ########## TRI OFFRE COMMERCIAL ###################
         commercial: 
             plant_type: 
-                type: librinfo_customchoice
+                type: choice
                 options:
                     attr:
                         class: inline-block
@@ -523,7 +537,7 @@ librinfo_varieties:
                         - Racine
                         - Fleur
             precocity: 
-                type: librinfo_customchoice
+                type: choice
                 options:
                     attr:
                         class: inline-block
@@ -532,13 +546,13 @@ librinfo_varieties:
                         - Mi-saison
                         - Tardive
             grade: 
-                type: librinfo_customchoice
+                type: choice
                 options:
                     attr:
                         class: inline-block
                     choices: [ 1, 2, 3, 4, 5 ]
             rusticicty: 
-                type: librinfo_customchoice
+                type: choice
                 options:
                     attr:
                         class: inline-block
@@ -547,21 +561,42 @@ librinfo_varieties:
                 type: sonata_type_color_selector
                 options: 
                     attr:
-                        class: inline-block
+                        class: new-line
+                        width: 30
                     choices:
             secondary_color:
                 type: sonata_type_color_selector
                 options: 
                     attr:
+                        class: new-line
+                        width: 30
+                    choices:
+            taste_rating: 
+                type: choice
+                options:
+                    attr:
                         class: inline-block
                     choices:
+                        - 1
+                        - 2
+                        - 3
+                        - 4
+                        - 5
+            nutrition_rating: 
+                type: choice
+                options:
+                    attr:
+                        class: inline-block
+                        end-line: 'true'
+                        
+                    choices: [ 1, 2, 3, 4, 5 ]
             taste: 
-                type: librinfo_customchoice
+                type: choice
                 options:
                     attr:
                         class: columns-2
-                    expanded: true
-                    multiple: true
+                    expanded: false
+                    multiple: false
                     choices: 
                         - Salé
                         - Sucré
@@ -576,12 +611,12 @@ librinfo_varieties:
                         - Amidonné
                         
             texture: 
-                type: librinfo_customchoice
+                type: choice
                 options: 
                     attr:
                         class: columns-2
-                    expanded: true
-                    multiple: true
+                    expanded: false
+                    multiple: false
                     choices: 
                         - Peau persistante
                         - Farineux
@@ -590,12 +625,12 @@ librinfo_varieties:
                         - Juteux
                         - Ferme
             nutrients: 
-                type: librinfo_customchoice
+                type: choice
                 options:
                     attr:
                         class: columns-3
-                    expanded: true
-                    multiple: true
+                    expanded: false
+                    multiple: false
                     choices: 
                         - Vitamine A
                         - Vitamine B
@@ -620,78 +655,67 @@ librinfo_varieties:
                         - Sélénium
                         - Chrome
                         - Molybdène
-            taste_rating: 
-                type: librinfo_customchoice
-                options:
-                    attr:
-                        class: inline-block
-                    choices:
-                        - 1
-                        - 2
-                        - 3
-                        - 4
-                        - 5
-            nutrition_rating: 
-                type: librinfo_customchoice
-                options:
-                    attr:
-                        class: inline-block
-                        end-line: 'true'
-                        
-                    choices: [ 1, 2, 3, 4, 5 ]
             max_harvest_span: 
                 type: number
                 options:
+                    attr:
+                        class: new-line
+                        width: 30
             min_harvest_span:
                 type: number
                 options:
+                    attr:
+                        class: new-line
+                        width: 30
             prefered_zone: 
-                type: librinfo_customchoice
+                type: choice
                 options:
                     attr:
                         class: inline-block
                     choices: [ 1, 2, 3, 4, 5, 6 ]
             yield_rating: 
-                type: librinfo_customchoice
+                type: choice
                 options:
                     attr:
                         class: inline-block
                     choices: [ 1, 2, 3, 4, 5 ]
-            main_usages: ~
-            usages: ~            
             targeted_audience:
-                type: librinfo_customchoice
+                type: choice
                 options:
                     attr:
                         class: inline-block
                     choices: [ Amateurs, Professionnels, Tout public ]
             cultivation_ease: 
-                type: librinfo_customchoice
+                type: choice
                 options:
                     attr:
                         class: inline-block
                     choices: [ 1, 2, 3, 4, 5 ]
             pot_cultivation_ease: 
-                type: librinfo_customchoice
+                type: choice
                 options:
                     attr:
                         class: inline-block
-                    choices: [ Facile, Possible, Difficile ] 
+                    choices: [ Facile, Possible, Difficile ]
+            main_usages: ~
+            usages: ~             
             inner_commment: 
-                type: textarea
+                type: librinfo_tinymce
  ############# CARACTERISTIQUES PLANTE #############
         plant: 
             foliage_type:
-                type: librinfo_customchoice
+                type: choice
                 options: 
                     attr:
-                        class: inline-block
+                        class: new-line
+                        width: 30
                     choices: [ Caduc, Persistant, Marcescent ]
             foliage_color:
                 type: sonata_type_color_selector
                 options: 
                     attr:
-                        class: inline-block
+                        class: new-line
+                        width: 30
                     choices:
             required_size:
                 type: integer
@@ -700,7 +724,7 @@ librinfo_varieties:
                         class: new-line
                         width: 30
             development:
-                type: librinfo_customchoice
+                type: choice
                 options:
                     attr:
                         class: new-line
@@ -726,7 +750,7 @@ librinfo_varieties:
                         class: new-line
                         width: 30
             several_strains:
-                type: checkbox
+                type: librinfo_customcheckbox
             description:
                 type: librinfo_tinymce
                 options:
