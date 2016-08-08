@@ -1736,12 +1736,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/JMSSecurityExtraBundle.git",
-                "reference": "26c175a4429af626039f2fc97b59a6d2e40bd894"
+                "reference": "8d3b81d62601dcbafafc5e0c2d20f3383e475525"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/JMSSecurityExtraBundle/zipball/26c175a4429af626039f2fc97b59a6d2e40bd894",
-                "reference": "26c175a4429af626039f2fc97b59a6d2e40bd894",
+                "url": "https://api.github.com/repos/schmittjoh/JMSSecurityExtraBundle/zipball/8d3b81d62601dcbafafc5e0c2d20f3383e475525",
+                "reference": "8d3b81d62601dcbafafc5e0c2d20f3383e475525",
                 "shasum": ""
             },
             "require": {
@@ -1804,7 +1804,7 @@
                 "secure",
                 "security"
             ],
-            "time": "2016-07-28 13:27:55"
+            "time": "2016-08-04 14:40:55"
         },
         {
             "name": "jms/serializer",
@@ -2125,7 +2125,7 @@
                     "email": "stof@notk.org"
                 },
                 {
-                    "name": "KnpLabs",
+                    "name": "Knplabs",
                     "homepage": "http://knplabs.com"
                 },
                 {
@@ -3080,7 +3080,7 @@
         },
         {
             "name": "phpcollection/phpcollection",
-            "version": "dev-master",
+            "version": "0.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/php-collection.git",
@@ -3439,12 +3439,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataAdminBundle.git",
-                "reference": "d5f8d0b0058cc3ab88d75eda9982820a4c6b2c2b"
+                "reference": "f50ee2200b23dde4318146a4f2435eebcdf08429"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/d5f8d0b0058cc3ab88d75eda9982820a4c6b2c2b",
-                "reference": "d5f8d0b0058cc3ab88d75eda9982820a4c6b2c2b",
+                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/f50ee2200b23dde4318146a4f2435eebcdf08429",
+                "reference": "f50ee2200b23dde4318146a4f2435eebcdf08429",
                 "shasum": ""
             },
             "require": {
@@ -3528,7 +3528,7 @@
                 "bootstrap",
                 "sonata"
             ],
-            "time": "2016-08-03 09:39:31"
+            "time": "2016-08-05 10:17:52"
         },
         {
             "name": "sonata-project/block-bundle",
@@ -3671,12 +3671,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataCoreBundle.git",
-                "reference": "9152dcb7802585f1005e2f70b4477b6138703c3e"
+                "reference": "5b06f65ee7d6aa145821b51465b115dd2775a8c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataCoreBundle/zipball/9152dcb7802585f1005e2f70b4477b6138703c3e",
-                "reference": "9152dcb7802585f1005e2f70b4477b6138703c3e",
+                "url": "https://api.github.com/repos/sonata-project/SonataCoreBundle/zipball/5b06f65ee7d6aa145821b51465b115dd2775a8c5",
+                "reference": "5b06f65ee7d6aa145821b51465b115dd2775a8c5",
                 "shasum": ""
             },
             "require": {
@@ -3737,7 +3737,7 @@
             "keywords": [
                 "sonata"
             ],
-            "time": "2016-08-01 08:17:05"
+            "time": "2016-08-07 11:22:30"
         },
         {
             "name": "sonata-project/datagrid-bundle",
@@ -5209,12 +5209,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "068b0f161518eb6b1ba22648bbc72e0a699d2b6c"
+                "reference": "5e2093ac773397bb10df009fcc3980d54113d5ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/068b0f161518eb6b1ba22648bbc72e0a699d2b6c",
-                "reference": "068b0f161518eb6b1ba22648bbc72e0a699d2b6c",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/5e2093ac773397bb10df009fcc3980d54113d5ee",
+                "reference": "5e2093ac773397bb10df009fcc3980d54113d5ee",
                 "shasum": ""
             },
             "require": {
@@ -5335,7 +5335,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2016-07-30 09:09:16"
+            "time": "2016-08-07 15:15:52"
         },
         {
             "name": "twig/extensions",
