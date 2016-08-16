@@ -11,6 +11,12 @@ sonata_admin:
                 label: CRM
                 items:
                     - crm.organism
+                    - route:        admin_librinfo_crm_organism_list
+                      route_params: { 'filter[customer][value]': 1 }
+                      label:        librinfo.label.customers
+                    - route:        admin_librinfo_crm_organism_list
+                      route_params: { 'filter[supplier][value]': 1 }
+                      label:        librinfo.label.suppliers
                     - crm.contact
 #            Taxonomy:
 #                label: Taxonomy
