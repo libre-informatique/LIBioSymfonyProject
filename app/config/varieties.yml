@@ -22,160 +22,159 @@ librinfo_varieties:
     variety_descriptions:
 ########### CONSEILS PROS ##################
         professional:
-            possible_sowing_periods: 
-                type: choice
-                options: 
-                    choices: 
-                        - début Mars
-                        - fin Mars
-                        - début Avril
-                        - fin Avril
-                        - début Mai
-                        - fin Mai
-                        - début Juin
-                        - fin Juin
-                    attr:    
-                        class: inline-block
-            germination_temperature:
-                type: number
-                options:
-                    attr:
-                        class: inline-block
-            germination_light:
+            possible_sowing_periods:
                 type: choice
                 options:
                     attr:
                         class: inline-block
             transplant:
-                type: text
+                type: choice
                 options:
                     attr:
                         class: inline-block
-            sowing_density: 
-                type: number
+            germination_temperature:
+                type: text
+                options:
+                    attr:
+                        class: new-line
+                        width: 30
+            germination_light:
+                type: text
+                options:
+                    attr:
+                        class: new-line
+                        width: 30
+            sowing_density:
+                type: integer
                 options:
                     attr:
                         class: inline-block
             on_line_distance:
-                type: number
+                type: integer
                 options:
                     attr:
                         class: inline-block
             between_distance:
-                type: number
+                type: integer
                 options:
                     attr:
                         class: inline-block
-            exposure: 
-                type: choice
-                options:
-                    choices:
-                        - Nord
-                        - Sud
-                        - Est
-                        - Ouest
-                    attr:
-                        class: inline-block
-            seedling_irrigation_quantity:
-                type: number
-                options:
-                    attr:
-                        class: inline-block
-            seedling_irrigation_frequency:
-                type: choice
-                options:
-                    attr:
-                        class: inline-block
-            transplant_irrigation_quantity:
-                type: number
-                options:
-                    attr:
-                        class: inline-block
-            transplant_irrigation_frequency:
-                type: choice
-                options:
-                    attr:
-                        class: inline-block
-            manure:
-                type: choice
-                options:
-                    attr:
-                        class: inline-block
-            cuttings_period:
-                type: choice
-                options:
-                    attr:
-                        class: inline-block
-            cutting_date: 
-                type: sonata_type_date_picker
-                options:
-                    attr:
-                        class: inline-block
-            sowing_date:
-                type: sonata_type_date_picker
-                options:
-                    attr:
-                        class: inline-block
-            transplant_date:
-                type: sonata_type_date_picker
-                options:
-                    attr:
-                        class: inline-block
-            transplant_manure_quantity:
-                type: number
-                options:
-                    attr:
-                        class: inline-block
-            substratum:
-                type: number
-                options:
-                    attr:
-                        class: inline-block
-            treatments:
+            seed_storage: 
                 type: text
                 options:
                     attr:
-                        class: inline-block
-            seed_storage:
-                type: choice
-                options:
-                    attr:
-                        class: inline-block
+                        class: new-line
+                        width: 30
             harvest_storage:
+                type: text
+                options:
+                    attr:
+                        class: new-line
+                        width: 30
+            exposure: 
                 type: choice
                 options:
                     attr:
                         class: inline-block
-            advised_outcome:
-                type: textarea
+                    choices:
+                        - nord
+                        - sud
+                        - est
+                        - ouest
+            substratum: 
+                type: choice
                 options:
                     attr:
                         class: inline-block
-            possible_outcome:
-                type: textarea
-                options:
-                    attr:
-                        class: inline-block
+                    choices: [terre, coco, tourbe]
             soil:
                 type: choice
                 options:
                     attr:
                         class: inline-block
-            yield:
+                    choices: [terre, sable]
+            manure: 
+                type: choice
+                options:
+                    attr:
+                        class: inline-block
+            manure_quantity: 
+                type: integer
+                options:
+                    attr:
+                        class: new-line
+                        width: 30
+            seedling_irrigation_quantity:
                 type: number
                 options:
                     attr:
-                        class: inline-block
-            biodynamics:
-                type: librinfo_customcheckbox
+                        class: new-line
+                        width: 30
+            seedling_irrigation_frequency: 
+                type: choice
+                options:
+                    attr:
+                        class: new-line
+                        width: 30
+                    choices: [quotidien, hebdomadaire]
+            transplant_irrigation_quantity: 
+                type: number
+                options:
+                    attr:
+                        class: new-line
+                        width: 30
+            transplant_irrigation_frequency: 
+                type: choice
+                options:
+                    attr:
+                        class: new-line
+                        width: 30
+                    choices: [quotidien, hebdomadaire]
+            cuttings_period: 
+                type: integer
+                options:
+                    attr:
+                        class: new-line
+                        width: 30
+            cutting_date: 
+                type: sonata_type_date_picker
                 options:
                     attr:
                         class: inline-block
-            tutoring:
-                type: librinfo_customcheckbox
+            sowing_date: 
+                type: sonata_type_date_picker
                 options:
                     attr:
                         class: inline-block
+            transplant_date: 
+                type: sonata_type_date_picker
+                options:
+                    attr:
+                        class: inline-block
+            treatments: 
+                type: text
+                options:
+                    attr:
+                        class: new-line
+                        width: 30
+            yield:
+                type: integer
+                options:
+                    attr:
+                        class: new-line
+                        width: 30
+            advised_outcome:
+                type: textarea
+                options:
+                    attr:
+                        class: new-line
+                        width: 50
+            possible_outcome:
+                type: textarea
+                options:
+                    attr:
+                        class: new-line
+                        width: 50
             seedling_hotbed:
                 type: librinfo_customcheckbox
                 options:
@@ -186,7 +185,17 @@ librinfo_varieties:
                 options:
                     attr:
                         class: inline-block
-            plant_transplant_hotbed:
+            plant_hotbed:
+                type: librinfo_customcheckbox
+                options:
+                    attr:
+                        class: inline-block
+            biodynamics: 
+                type: librinfo_customcheckbox
+                options:
+                    attr:
+                        class: inline-block
+            tutoring: 
                 type: librinfo_customcheckbox
                 options:
                     attr:
@@ -194,154 +203,159 @@ librinfo_varieties:
             
 ############# CONSEILS AMATEURS ####################
         amateur:
-            possible_sowing_periods: 
-                type: choice
-                options: 
-                    choices: 
-                        - début Mars
-                        - fin Mars
-                        - début Avril
-                        - fin Avril
-                        - début Mai
-                        - fin Mai
-                        - début Juin
-                        - fin Juin
-                    attr:    
-                        class: inline-block
-            germination_temperature:
-                type: number
-                options:
-                    attr:
-                        class: inline-block
-            germination_light:
+            possible_sowing_periods:
                 type: choice
                 options:
                     attr:
                         class: inline-block
             transplant:
-                type: text
+                type: choice
                 options:
                     attr:
                         class: inline-block
-            sowing_density: 
-                type: number
+            germination_temperature:
+                type: text
+                options:
+                    attr:
+                        class: new-line
+                        width: 30
+            germination_light:
+                type: text
+                options:
+                    attr:
+                        class: new-line
+                        width: 30
+            sowing_density:
+                type: integer
                 options:
                     attr:
                         class: inline-block
             on_line_distance:
-                type: number
+                type: integer
                 options:
                     attr:
                         class: inline-block
             between_distance:
-                type: number
+                type: integer
                 options:
                     attr:
                         class: inline-block
-            exposure: 
-                type: choice
-                options:
-                    choices:
-                        - Nord
-                        - Sud
-                        - Est
-                        - Ouest
-                    attr:
-                        class: inline-block
-            seedling_irrigation_quantity:
-                type: number
-                options:
-                    attr:
-                        class: inline-block
-            seedling_irrigation_frequency:
-                type: choice
-                options:
-                    attr:
-                        class: inline-block
-            transplant_irrigation_quantity:
-                type: number
-                options:
-                    attr:
-                        class: inline-block
-            transplant_irrigation_frequency:
-                type: choice
-                options:
-                    attr:
-                        class: inline-block
-            manure:
-                type: choice
-                options:
-                    attr:
-                        class: inline-block
-            cuttings_period:
-                type: choice
-                options:
-                    attr:
-                        class: inline-block
-            cutting_date: 
-                type: sonata_type_date_picker
-                options:
-                    attr:
-                        class: inline-block
-            sowing_date:
-                type: sonata_type_date_picker
-                options:
-                    attr:
-                        class: inline-block
-            transplant_date:
-                type: sonata_type_date_picker
-                options:
-                    attr:
-                        class: inline-block
-            transplant_manure_quantity:
-                type: number
-                options:
-                    attr:
-                        class: inline-block
-            substratum:
-                type: number
-                options:
-                    attr:
-                        class: inline-block
-            treatments:
+            seed_storage: 
                 type: text
                 options:
                     attr:
-                        class: inline-block
-            seed_storage:
-                type: choice
-                options:
-                    attr:
-                        class: inline-block
+                        class: new-line
+                        width: 30
             harvest_storage:
+                type: text
+                options:
+                    attr:
+                        class: new-line
+                        width: 30
+            exposure: 
                 type: choice
                 options:
                     attr:
                         class: inline-block
-            advised_outcome:
-                type: textarea
-            possible_outcome:
-                type: textarea
+                    choices:
+                        - nord
+                        - sud
+                        - est
+                        - ouest
+            substratum: 
+                type: choice
+                options:
+                    attr:
+                        class: inline-block
+                    choices: [terre, coco, tourbe]
             soil:
                 type: choice
                 options:
                     attr:
                         class: inline-block
-            yield:
+                    choices: [terre, sable]
+            manure: 
+                type: choice
+                options:
+                    attr:
+                        class: inline-block
+            manure_quantity: 
+                type: integer
+                options:
+                    attr:
+                        class: new-line
+                        width: 30
+            seedling_irrigation_quantity:
                 type: number
                 options:
                     attr:
-                        class: inline-block
-            biodynamics:
-                type: librinfo_customcheckbox
+                        class: new-line
+                        width: 30
+            seedling_irrigation_frequency: 
+                type: choice
+                options:
+                    attr:
+                        class: new-line
+                        width: 30
+                    choices: [quotidien, hebdomadaire]
+            transplant_irrigation_quantity: 
+                type: number
+                options:
+                    attr:
+                        class: new-line
+                        width: 30
+            transplant_irrigation_frequency: 
+                type: choice
+                options:
+                    attr:
+                        class: new-line
+                        width: 30
+                    choices: [quotidien, hebdomadaire]
+            cuttings_period: 
+                type: integer
+                options:
+                    attr:
+                        class: new-line
+                        width: 30
+            cutting_date: 
+                type: sonata_type_date_picker
                 options:
                     attr:
                         class: inline-block
-            tutoring:
-                type: librinfo_customcheckbox
+            sowing_date: 
+                type: sonata_type_date_picker
                 options:
                     attr:
                         class: inline-block
+            transplant_date: 
+                type: sonata_type_date_picker
+                options:
+                    attr:
+                        class: inline-block
+            treatments: 
+                type: text
+                options:
+                    attr:
+                        class: new-line
+                        width: 30
+            yield:
+                type: integer
+                options:
+                    attr:
+                        class: new-line
+                        width: 30
+            advised_outcome:
+                type: textarea
+                options:
+                    attr:
+                        class: new-line
+                        width: 50
+            possible_outcome:
+                type: textarea
+                options:
+                    attr:
+                        class: new-line
+                        width: 50
             seedling_hotbed:
                 type: librinfo_customcheckbox
                 options:
@@ -352,7 +366,17 @@ librinfo_varieties:
                 options:
                     attr:
                         class: inline-block
-            plant_transplant_hotbed:
+            plant_hotbed:
+                type: librinfo_customcheckbox
+                options:
+                    attr:
+                        class: inline-block
+            biodynamics: 
+                type: librinfo_customcheckbox
+                options:
+                    attr:
+                        class: inline-block
+            tutoring: 
                 type: librinfo_customcheckbox
                 options:
                     attr:
@@ -396,6 +420,18 @@ librinfo_varieties:
                 options:
                     attr:
                         class: inline-block
+            seed_storage: 
+                type: text
+                options:
+                    attr:
+                        class: new-line
+                        width: 30
+            harvest_storage:
+                type: text
+                options:
+                    attr:
+                        class: new-line
+                        width: 30
             exposure: 
                 type: choice
                 options:
@@ -427,34 +463,40 @@ librinfo_varieties:
                 type: integer
                 options:
                     attr:
-                        class: inline-block            
+                        class: new-line
+                        width: 30
             seedling_irrigation_quantity:
                 type: number
                 options:
                     attr:
-                        class: inline-block
+                        class: new-line
+                        width: 30
             seedling_irrigation_frequency: 
                 type: choice
                 options:
                     attr:
-                        class: inline-block
+                        class: new-line
+                        width: 30
                     choices: [quotidien, hebdomadaire]
             transplant_irrigation_quantity: 
                 type: number
                 options:
                     attr:
-                        class: inline-block
+                        class: new-line
+                        width: 30
             transplant_irrigation_frequency: 
                 type: choice
                 options:
                     attr:
-                        class: inline-block
+                        class: new-line
+                        width: 30
                     choices: [quotidien, hebdomadaire]
             cuttings_period: 
                 type: integer
                 options:
                     attr:
-                        class: inline-block
+                        class: new-line
+                        width: 30
             cutting_date: 
                 type: sonata_type_date_picker
                 options:
@@ -474,15 +516,10 @@ librinfo_varieties:
                 type: text
                 options:
                     attr:
-                        class: inline-block
-            seed_storage: 
-                type: text
-                options:
-                    attr:
                         class: new-line
                         width: 30
-            harvest_storage:
-                type: text
+            yield:
+                type: integer
                 options:
                     attr:
                         class: new-line
@@ -499,12 +536,12 @@ librinfo_varieties:
                     attr:
                         class: new-line
                         width: 50
-            yield:
-                type: integer
+            seedling_hotbed:
+                type: librinfo_customcheckbox
                 options:
                     attr:
-                        class: new-line
-            seedling_hotbed:
+                        class: inline-block
+            transplant_hotbed:
                 type: librinfo_customcheckbox
                 options:
                     attr:
