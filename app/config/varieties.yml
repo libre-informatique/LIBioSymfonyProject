@@ -165,17 +165,17 @@ librinfo_varieties:
                         class: new-line
                         width: 30
             cutting_date: 
-                type: sonata_type_date_picker
+                type: integer
                 options:
                     attr:
                         class: inline-block
             sowing_date: 
-                type: sonata_type_date_picker
+                type: integer
                 options:
                     attr:
                         class: inline-block
             transplant_date: 
-                type: sonata_type_date_picker
+                type: integer
                 options:
                     attr:
                         class: inline-block
@@ -372,17 +372,17 @@ librinfo_varieties:
                         class: new-line
                         width: 30
             cutting_date: 
-                type: sonata_type_date_picker
+                type: integer
                 options:
                     attr:
                         class: inline-block
             sowing_date: 
-                type: sonata_type_date_picker
+                type: integer
                 options:
                     attr:
                         class: inline-block
             transplant_date: 
-                type: sonata_type_date_picker
+                type: integer
                 options:
                     attr:
                         class: inline-block
@@ -579,17 +579,17 @@ librinfo_varieties:
                         class: new-line
                         width: 30
             cutting_date: 
-                type: sonata_type_date_picker
+                type: integer
                 options:
                     attr:
                         class: inline-block
             sowing_date: 
-                type: sonata_type_date_picker
+                type: integer
                 options:
                     attr:
                         class: inline-block
             transplant_date: 
-                type: sonata_type_date_picker
+                type: integer
                 options:
                     attr:
                         class: inline-block
