@@ -23,15 +23,28 @@ librinfo_varieties:
 ########### CONSEILS PROS ##################
         professional:
             possible_sowing_periods:
-                type: choice
+                type: librinfo_customchoice
                 options:
                     attr:
                         class: inline-block
+                    choices_field: possible_sowing_periods
+                    librinfo_choices:
+                        - début Mars
+                        - fin Mars
+                        - début Avril
+                        - fin Avril
+                        - début Mai
+                        - fin Mai
+                        - début Juin
+                        - fin Juin
+                        - début Juillet
+                        - fin Juillet
             transplant:
-                type: choice
+                type: librinfo_customchoice
                 options:
                     attr:
                         class: inline-block
+                    choices_field: transplant
             germination_temperature:
                 type: text
                 options:
@@ -72,32 +85,45 @@ librinfo_varieties:
                         class: new-line
                         width: 30
             exposure: 
-                type: choice
+                type: librinfo_customchoice
                 options:
                     attr:
                         class: inline-block
-                    choices:
+                    librinfo_choices:
                         - nord
                         - sud
                         - est
                         - ouest
+                    choices_field: exposure
             substratum: 
-                type: choice
+                type: librinfo_customchoice
                 options:
                     attr:
                         class: inline-block
-                    choices: [terre, coco, tourbe]
+                    librinfo_choices: [terre, coco, tourbe]
+                    choices_field: substratum
             soil:
-                type: choice
+                type: librinfo_customchoice
                 options:
+                    multiple: true
                     attr:
                         class: inline-block
-                    choices: [terre, sable]
+                    librinfo_choices:
+                        - acide
+                        - basique
+                        - lourd
+                        - léger
+                        - limoneux
+                        - sableux
+                        - TOUS
+                    choices_field: soil
             manure: 
-                type: choice
+                type: librinfo_customchoice
                 options:
                     attr:
                         class: inline-block
+                    choices_field: manure
+                    librinfo_choices: [ compost, orga3]
             manure_quantity: 
                 type: integer
                 options:
@@ -111,12 +137,13 @@ librinfo_varieties:
                         class: new-line
                         width: 30
             seedling_irrigation_frequency: 
-                type: choice
+                type: librinfo_customchoice
                 options:
                     attr:
                         class: new-line
                         width: 30
-                    choices: [quotidien, hebdomadaire]
+                    librinfo_choices: [quotidien, hebdomadaire]
+                    choices_field: seedling_irrigation_frequency
             transplant_irrigation_quantity: 
                 type: number
                 options:
@@ -124,12 +151,13 @@ librinfo_varieties:
                         class: new-line
                         width: 30
             transplant_irrigation_frequency: 
-                type: choice
+                type: librinfo_customchoice
                 options:
                     attr:
                         class: new-line
                         width: 30
-                    choices: [quotidien, hebdomadaire]
+                    librinfo_choices: [quotidien, hebdomadaire]
+                    choices_field: transplant_irrigation_frequency
             cuttings_period: 
                 type: integer
                 options:
@@ -137,17 +165,17 @@ librinfo_varieties:
                         class: new-line
                         width: 30
             cutting_date: 
-                type: sonata_type_date_picker
+                type: integer
                 options:
                     attr:
                         class: inline-block
             sowing_date: 
-                type: sonata_type_date_picker
+                type: integer
                 options:
                     attr:
                         class: inline-block
             transplant_date: 
-                type: sonata_type_date_picker
+                type: integer
                 options:
                     attr:
                         class: inline-block
@@ -200,19 +228,31 @@ librinfo_varieties:
                 options:
                     attr:
                         class: inline-block
-            
 ############# CONSEILS AMATEURS ####################
         amateur:
             possible_sowing_periods:
-                type: choice
+                type: librinfo_customchoice
                 options:
                     attr:
                         class: inline-block
+                    choices_field: possible_sowing_periods
+                    librinfo_choices:
+                        - début Mars
+                        - fin Mars
+                        - début Avril
+                        - fin Avril
+                        - début Mai
+                        - fin Mai
+                        - début Juin
+                        - fin Juin
+                        - début Juillet
+                        - fin Juillet
             transplant:
-                type: choice
+                type: librinfo_customchoice
                 options:
                     attr:
                         class: inline-block
+                    choices_field: transplant
             germination_temperature:
                 type: text
                 options:
@@ -253,32 +293,44 @@ librinfo_varieties:
                         class: new-line
                         width: 30
             exposure: 
-                type: choice
+                type: librinfo_customchoice
                 options:
                     attr:
                         class: inline-block
-                    choices:
+                    librinfo_choices:
                         - nord
                         - sud
                         - est
                         - ouest
+                    choices_field: exposure
             substratum: 
-                type: choice
+                type: librinfo_customchoice
                 options:
                     attr:
                         class: inline-block
-                    choices: [terre, coco, tourbe]
+                    librinfo_choices: [terre, coco, tourbe]
+                    choices_field: substratum
             soil:
-                type: choice
+                type: librinfo_customchoice
                 options:
+                    multiple: true
                     attr:
                         class: inline-block
-                    choices: [terre, sable]
+                    librinfo_choices:
+                        - acide
+                        - basique
+                        - lourd
+                        - léger
+                        - limoneux
+                        - sableux
+                        - TOUS
+                    choices_field: soil
             manure: 
-                type: choice
+                type: librinfo_customchoice
                 options:
                     attr:
                         class: inline-block
+                    choices_field: manure
             manure_quantity: 
                 type: integer
                 options:
@@ -292,12 +344,13 @@ librinfo_varieties:
                         class: new-line
                         width: 30
             seedling_irrigation_frequency: 
-                type: choice
+                type: librinfo_customchoice
                 options:
                     attr:
                         class: new-line
                         width: 30
-                    choices: [quotidien, hebdomadaire]
+                    librinfo_choices: [quotidien, hebdomadaire]
+                    choices_field: seedling_irrigation_frequency
             transplant_irrigation_quantity: 
                 type: number
                 options:
@@ -305,12 +358,13 @@ librinfo_varieties:
                         class: new-line
                         width: 30
             transplant_irrigation_frequency: 
-                type: choice
+                type: librinfo_customchoice
                 options:
                     attr:
                         class: new-line
                         width: 30
-                    choices: [quotidien, hebdomadaire]
+                    librinfo_choices: [quotidien, hebdomadaire]
+                    choices_field: transplant_irrigation_frequency
             cuttings_period: 
                 type: integer
                 options:
@@ -318,17 +372,17 @@ librinfo_varieties:
                         class: new-line
                         width: 30
             cutting_date: 
-                type: sonata_type_date_picker
+                type: integer
                 options:
                     attr:
                         class: inline-block
             sowing_date: 
-                type: sonata_type_date_picker
+                type: integer
                 options:
                     attr:
                         class: inline-block
             transplant_date: 
-                type: sonata_type_date_picker
+                type: integer
                 options:
                     attr:
                         class: inline-block
@@ -384,15 +438,28 @@ librinfo_varieties:
 ########### MISE EN PRODUCTION ##################
         production:
             possible_sowing_periods:
-                type: choice
+                type: librinfo_customchoice
                 options:
                     attr:
                         class: inline-block
+                    choices_field: possible_sowing_periods
+                    librinfo_choices:
+                        - début Mars
+                        - fin Mars
+                        - début Avril
+                        - fin Avril
+                        - début Mai
+                        - fin Mai
+                        - début Juin
+                        - fin Juin
+                        - début Juillet
+                        - fin Juillet
             transplant:
-                type: choice
+                type: librinfo_customchoice
                 options:
                     attr:
                         class: inline-block
+                    choices_field: transplant
             germination_temperature:
                 type: text
                 options:
@@ -433,32 +500,44 @@ librinfo_varieties:
                         class: new-line
                         width: 30
             exposure: 
-                type: choice
+                type: librinfo_customchoice
                 options:
                     attr:
                         class: inline-block
-                    choices:
+                    librinfo_choices:
                         - nord
                         - sud
                         - est
                         - ouest
+                    choices_field: exposure
             substratum: 
-                type: choice
+                type: librinfo_customchoice
                 options:
                     attr:
                         class: inline-block
-                    choices: [terre, coco, tourbe]
+                    librinfo_choices: [terre, coco, tourbe]
+                    choices_field: substratum
             soil:
-                type: choice
+                type: librinfo_customchoice
                 options:
+                    multiple: true
                     attr:
                         class: inline-block
-                    choices: [terre, sable]
+                    librinfo_choices:
+                        - acide
+                        - basique
+                        - lourd
+                        - léger
+                        - limoneux
+                        - sableux
+                        - TOUS
+                    choices_field: soil
             manure: 
-                type: choice
+                type: librinfo_customchoice
                 options:
                     attr:
                         class: inline-block
+                    choices_field: manure
             manure_quantity: 
                 type: integer
                 options:
@@ -472,12 +551,13 @@ librinfo_varieties:
                         class: new-line
                         width: 30
             seedling_irrigation_frequency: 
-                type: choice
+                type: librinfo_customchoice
                 options:
                     attr:
                         class: new-line
                         width: 30
-                    choices: [quotidien, hebdomadaire]
+                    librinfo_choices: [quotidien, hebdomadaire]
+                    choices_field: seedling_irrigation_frequency
             transplant_irrigation_quantity: 
                 type: number
                 options:
@@ -485,12 +565,13 @@ librinfo_varieties:
                         class: new-line
                         width: 30
             transplant_irrigation_frequency: 
-                type: choice
+                type: librinfo_customchoice
                 options:
                     attr:
                         class: new-line
                         width: 30
-                    choices: [quotidien, hebdomadaire]
+                    librinfo_choices: [quotidien, hebdomadaire]
+                    choices_field: transplant_irrigation_frequency
             cuttings_period: 
                 type: integer
                 options:
@@ -498,17 +579,17 @@ librinfo_varieties:
                         class: new-line
                         width: 30
             cutting_date: 
-                type: sonata_type_date_picker
+                type: integer
                 options:
                     attr:
                         class: inline-block
             sowing_date: 
-                type: sonata_type_date_picker
+                type: integer
                 options:
                     attr:
                         class: inline-block
             transplant_date: 
-                type: sonata_type_date_picker
+                type: integer
                 options:
                     attr:
                         class: inline-block
@@ -564,77 +645,81 @@ librinfo_varieties:
 ########## TRI OFFRE COMMERCIAL ###################
         commercial: 
             plant_type: 
-                type: choice
+                type: librinfo_customchoice 
                 options:
                     attr:
                         class: inline-block
-                    choices:
+                    librinfo_choices:
                         - Feuille
                         - Fruit
                         - Racine
                         - Fleur
+                    choices_field: plant_type
             precocity: 
-                type: choice
+                type: librinfo_customchoice 
                 options:
                     attr:
                         class: inline-block
-                    choices:
+                    librinfo_choices:
                         - Précoce
                         - Mi-saison
                         - Tardive
+                    choices_field: precocity
             grade: 
-                type: choice
+                type: librinfo_customchoice 
                 options:
                     attr:
                         class: inline-block
-                    choices: [ 1, 2, 3, 4, 5 ]
+                    librinfo_choices: [ 1, 2, 3, 4, 5 ]
+                    choices_field: grade
             rusticicty: 
-                type: choice
+                type: librinfo_customchoice 
                 options:
                     attr:
                         class: inline-block
-                    choices: [ 1, 2, 3, 4, 5 ]
+                    librinfo_choices: [ 1, 2, 3, 4, 5 ]
+                    choices_field: rusticity
             main_color: 
                 type: sonata_type_color_selector
                 options: 
                     attr:
                         class: new-line
                         width: 30
-                    choices:
+                    librinfo_choices:
             secondary_color:
                 type: sonata_type_color_selector
                 options: 
                     attr:
                         class: new-line
                         width: 30
-                    choices:
+                    librinfo_choices:
             taste_rating: 
-                type: choice
+                type: librinfo_customchoice
                 options:
                     attr:
                         class: inline-block
-                    choices:
+                    librinfo_choices:
                         - 1
                         - 2
                         - 3
                         - 4
                         - 5
+                    choices_field: taste_rating
             nutrition_rating: 
-                type: choice
+                type: librinfo_customchoice
                 options:
                     attr:
                         class: inline-block
-                        end-line: 'true'
-                        
-                    choices: [ 1, 2, 3, 4, 5 ]
+                    librinfo_choices: [ 1, 2, 3, 4, 5 ]
+                    choices_field: nutrition_rating
             taste: 
-                type: choice
+                type: librinfo_customchoice
                 options:
                     attr:
-                        class: columns-2
-                    expanded: false
-                    multiple: false
-                    choices: 
+                        class: columns-2 multiple-checkbox
+                    expanded: true
+                    multiple: true
+                    librinfo_choices: 
                         - Salé
                         - Sucré
                         - Acide
@@ -646,29 +731,30 @@ librinfo_varieties:
                         - Gras
                         - Métallique
                         - Amidonné
-                        
+                    choices_field: taste
             texture: 
-                type: choice
+                type: librinfo_customchoice
                 options: 
                     attr:
-                        class: columns-2
-                    expanded: false
-                    multiple: false
-                    choices: 
+                        class: columns-2 multiple-checkbox
+                    expanded: true
+                    multiple: true
+                    librinfo_choices: 
                         - Peau persistante
                         - Farineux
                         - Croquant
                         - Fondant
                         - Juteux
                         - Ferme
+                    choices_field: texture
             nutrients: 
-                type: choice
+                type: librinfo_customchoice
                 options:
                     attr:
-                        class: columns-3
-                    expanded: false
-                    multiple: false
-                    choices: 
+                        class: columns-3 multiple-checkbox
+                    expanded: true
+                    multiple: true
+                    librinfo_choices: 
                         - Vitamine A
                         - Vitamine B
                         - Vitamine C
@@ -692,6 +778,7 @@ librinfo_varieties:
                         - Sélénium
                         - Chrome
                         - Molybdène
+                    choices_field: nutrients
             max_harvest_span: 
                 type: number
                 options:
@@ -705,55 +792,88 @@ librinfo_varieties:
                         class: new-line
                         width: 30
             prefered_zone: 
-                type: choice
+                type: librinfo_customchoice
                 options:
                     attr:
                         class: inline-block
-                    choices: [ 1, 2, 3, 4, 5, 6 ]
+                    librinfo_choices: [ 1, 2, 3, 4, 5, 6 ]
+                    choices_field: prefered_zone
             yield_rating: 
-                type: choice
+                type: librinfo_customchoice
                 options:
                     attr:
                         class: inline-block
-                    choices: [ 1, 2, 3, 4, 5 ]
-            targeted_audience:
-                type: choice
-                options:
-                    attr:
-                        class: inline-block
-                    choices: [ Amateurs, Professionnels, Tout public ]
+                    librinfo_choices: [ 1, 2, 3, 4, 5 ]
+                    choices_field: yield_rating
             cultivation_ease: 
-                type: choice
+                type: librinfo_customchoice
                 options:
                     attr:
                         class: inline-block
-                    choices: [ 1, 2, 3, 4, 5 ]
+                    librinfo_choices: [ 1, 2, 3, 4, 5 ]
+                    choices_field: cultivation_ease
             pot_cultivation_ease: 
-                type: choice
+                type: librinfo_customchoice
                 options:
                     attr:
                         class: inline-block
-                    choices: [ Facile, Possible, Difficile ]
-            main_usages: ~
-            usages: ~             
+                    librinfo_choices: [ Facile, Possible, Difficile ]
+                    choices_field: pot_cultivation_ease
+            targeted_audience:
+                type: librinfo_customchoice
+                options:
+                    attr:
+                        class: inline-block
+                    librinfo_choices: [ Amateurs, Professionnels, Tout public ]
+                    choices_field: targeted_audience
+            main_usages:
+                type: librinfo_customchoice
+                options:
+                    multiple: true
+                    expanded: true
+                    attr:
+                        class: columns-2 multiple-checkbox
+                    librinfo_choices:
+                        - culinaire
+                        - ornement
+                        - haie
+                        - engrais vert
+                        - médicinal
+                        - textile
+                    choices_field: main_usages
+            usages: 
+                type: librinfo_customchoice
+                options:
+                    multiple: true
+                    expanded: true
+                    attr:
+                        class: columns-2 multiple-checkbox
+                    librinfo_choices:
+                        - culinaire
+                        - ornement
+                        - haie
+                        - engrais vert
+                        - médicinal
+                        - textile
+                    choices_field: usages
             inner_commment: 
                 type: librinfo_tinymce
  ############# CARACTERISTIQUES PLANTE #############
         plant: 
             foliage_type:
-                type: choice
+                type: librinfo_customchoice
                 options: 
                     attr:
                         class: new-line
                         width: 30
-                    choices: [ Caduc, Persistant, Marcescent ]
+                    librinfo_choices: [ Caduc, Persistant, Marcescent ]
+                    choices_field: foliage_type
             foliage_color:
                 type: sonata_type_color_selector
                 options: 
                     attr:
                         class: new-line
                         width: 30
-                    choices:
             required_size:
                 type: integer
                 options:
@@ -761,17 +881,17 @@ librinfo_varieties:
                         class: new-line
                         width: 30
             development:
-                type: choice
+                type: librinfo_customchoice
                 options:
                     attr:
                         class: new-line
                         width: 30
-                    choices:
+                    librinfo_choices:
                         - Vigoureuse
                         - Coureuse
                         - Naine
                         - A rame
-                        
+                    choices_field: development
  ############## CULTURE ############################
         culture:
             location: 
