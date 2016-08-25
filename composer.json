@@ -33,7 +33,7 @@
         "knplabs/doctrine-behaviors": "^1.3",
         "jms/security-extra-bundle": "^1.6",
         "libre-informatique/crm-bundle": "dev-master",
-        "libre-informatique/email-bundle": "dev-master"
+        "libre-informatique/email-bundle": "dev-master",
         "libre-informatique/ui-bundle": "dev-master",
         "libre-informatique/varieties-bundle": "dev-master",
         "libre-informatique/security-bundle": "dev-master",
