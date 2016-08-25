@@ -2,6 +2,7 @@ sonata_block:
     default_contexts: [cms]
     blocks:
         sonata.admin.block.admin_list:
+        librinfo.email.block.emails_list: ~  # TODO: put this in Email bundle
 #        sonata.admin.block.menu:
 
 sonata_admin:
@@ -18,6 +19,7 @@ sonata_admin:
                       route_params: { 'filter[supplier][value]': 1 }
                       label:        librinfo.label.suppliers
                     - crm.contact
+                    - email.email
 #            Taxonomy:
 #                label: Taxonomy
 #                items:

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9cb28adfe34aaf63294e5d4c626d7a60",
-    "content-hash": "05eb71f88af3ec3431b297bb073d4c45",
+    "hash": "068431947e9144c5fd831c37b54bed4b",
+    "content-hash": "e456831c1299a97dcaa703f0fa8cd0da",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -1232,6 +1232,43 @@
                 "uploadable"
             ],
             "time": "2016-08-17 16:52:00"
+        },
+        {
+            "name": "html2text/html2text",
+            "version": "4.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mtibben/html2text.git",
+                "reference": "f55104b7c9f99b0937f0e20fe051b19f9c0ecad1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mtibben/html2text/zipball/f55104b7c9f99b0937f0e20fe051b19f9c0ecad1",
+                "reference": "f55104b7c9f99b0937f0e20fe051b19f9c0ecad1",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4"
+            },
+            "suggest": {
+                "ext-mbstring": "For best performance",
+                "symfony/polyfill-mbstring": "If you can't install ext-mbstring"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Html2Text\\": [
+                        "src/",
+                        "test/"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPLv2"
+            ],
+            "description": "Converts HTML to formatted plain text",
+            "time": "2016-03-16 23:24:34"
         },
         {
             "name": "incenteev/composer-parameter-handler",
@@ -2545,6 +2582,65 @@
             "time": "2016-07-22 07:32:23"
         },
         {
+            "name": "libre-informatique/email-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/libre-informatique/SymfonyLibrinfoEmailBundle.git",
+                "reference": "59acb670d58e1dd74fb5771be0c4bbf8add170a5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/libre-informatique/SymfonyLibrinfoEmailBundle/zipball/59acb670d58e1dd74fb5771be0c4bbf8add170a5",
+                "reference": "59acb670d58e1dd74fb5771be0c4bbf8add170a5",
+                "shasum": ""
+            },
+            "require": {
+                "html2text/html2text": "^4.0",
+                "libre-informatique/core-bundle": "dev-master",
+                "stfalcon/tinymce-bundle": "^2.1",
+                "symfony/swiftmailer-bundle": "~2.3"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "symfony-app-dir": "app",
+                "symfony-web-dir": "web",
+                "symfony-assets-install": "relative",
+                "incenteev-parameters": {
+                    "file": "app/config/parameters.yml"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Libre Informatique",
+                    "homepage": "http://www.libre-informatique.fr/"
+                },
+                {
+                    "name": "Romain SANCHEZ",
+                    "email": "romain.sanchez@libre-informatique.fr"
+                }
+            ],
+            "description": "Email Bundle for Symfony",
+            "homepage": "https://github.com/libre-informatique/SymfonyLibrinfoCRMBundle",
+            "keywords": [
+                "e-venement",
+                "email",
+                "sonata",
+                "spool",
+                "symfony"
+            ],
+            "time": "2016-08-23 10:50:35"
+        },
+        {
             "name": "libre-informatique/security-bundle",
             "version": "dev-master",
             "source": {
@@ -3537,12 +3633,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataBlockBundle.git",
-                "reference": "afa6eadff12cfe47f672870a08209028d3198d9c"
+                "reference": "da01e132d24d332428d70379dea7df92a10c4d10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataBlockBundle/zipball/afa6eadff12cfe47f672870a08209028d3198d9c",
-                "reference": "afa6eadff12cfe47f672870a08209028d3198d9c",
+                "url": "https://api.github.com/repos/sonata-project/SonataBlockBundle/zipball/da01e132d24d332428d70379dea7df92a10c4d10",
+                "reference": "da01e132d24d332428d70379dea7df92a10c4d10",
                 "shasum": ""
             },
             "require": {
@@ -3601,7 +3697,7 @@
                 "block",
                 "sonata"
             ],
-            "time": "2016-08-12 19:08:22"
+            "time": "2016-08-23 09:14:16"
         },
         {
             "name": "sonata-project/cache",
@@ -5555,7 +5651,8 @@
         "libre-informatique/varieties-bundle": 20,
         "libre-informatique/security-bundle": 20,
         "libre-informatique/user-bundle": 20,
-        "libre-informatique/doctrine-pgsql-bundle": 20
+        "libre-informatique/doctrine-pgsql-bundle": 20,
+        "libre-informatique/email-bundle": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
