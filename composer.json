@@ -36,6 +36,7 @@
         "libre-informatique/email-bundle": "dev-master",
         "libre-informatique/ui-bundle": "dev-master",
         "libre-informatique/varieties-bundle": "dev-master",
+        "libre-informatique/seed-batch-bundle": "dev-master",
         "libre-informatique/security-bundle": "dev-master",
         "libre-informatique/user-bundle": "dev-master",
         "libre-informatique/doctrine-pgsql-bundle": "dev-master",
