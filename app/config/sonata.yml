@@ -34,11 +34,6 @@ sonata_admin:
                 on_top: true
                 items:
                     - librinfo_varieties.admin.variety
-            Strains:
-                label: ~
-                on_top: true
-                items:
-                    - librinfo_varieties.admin.strain
             CRM Admin:
                 label: CRM Admin
                 items:
