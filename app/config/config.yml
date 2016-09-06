@@ -142,6 +142,8 @@ librinfo_doctrine:
 
 stfalcon_tinymce:
     tinymce_jquery: true
+    include_jquery: false
+    language: %locale%
 
 librinfo_crm:
     Circle:
