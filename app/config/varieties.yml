@@ -914,4 +914,7 @@ librinfo_varieties:
                     attr:
                         class: new-line
                         height: 300
-                   
+    strain_disabled_fields:
+        - species
+        - parent
+        - latin_name
