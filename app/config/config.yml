@@ -73,6 +73,8 @@ doctrine:
             # Librinfo bundles
             LibrinfoVarietiesBundle:
                 type: yml
+            LibrinfoSeedBatchBundle:
+                type: yml
             LibrinfoCRMBundle:
                 type: yml
             LibrinfoDoctrineBundle:

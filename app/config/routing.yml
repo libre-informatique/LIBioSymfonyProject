@@ -32,6 +32,10 @@ librinfo_varieties:
     resource: "@LibrinfoVarietiesBundle/Resources/config/routing.yml"
     prefix:   /
 
+librinfo_seed_batch:
+    resource: "@LibrinfoSeedBatchBundle/Resources/config/routing.yml"
+    prefix:   /
+
 librinfo_crm:
     resource: "@LibrinfoCRMBundle/Resources/config/routing.yml"
     prefix:   /
