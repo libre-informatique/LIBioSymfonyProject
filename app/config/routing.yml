@@ -39,7 +39,9 @@ librinfo_seed_batch:
 librinfo_crm:
     resource: "@LibrinfoCRMBundle/Resources/config/routing.yml"
     prefix:   /
-
+librinfo_media:
+    resource: "@LibrinfoMediaBundle/Resources/config/routing.yml"
+    prefix:   /
 admin:
     resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
     prefix: /

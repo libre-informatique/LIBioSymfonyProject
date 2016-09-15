@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d23d4b42964370f9f95e9d1fba35916b",
-    "content-hash": "4dc0d386b997ea902e1ec06dab7f7fc4",
+    "hash": "1118c7fd912bfc872b6e388bdcae9b8a",
+    "content-hash": "11059d7d2e26d82beca91c2353e794f8",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -2164,7 +2164,7 @@
                     "email": "stof@notk.org"
                 },
                 {
-                    "name": "KnpLabs",
+                    "name": "Knplabs",
                     "homepage": "http://knplabs.com"
                 },
                 {
@@ -2640,6 +2640,56 @@
                 "symfony"
             ],
             "time": "2016-09-07 07:22:11"
+        },
+        {
+            "name": "libre-informatique/media-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/libre-informatique/SymfonyLibrinfoMediaBundle.git",
+                "reference": "e08b35ee6515cead5899153e108a593f38d45bff"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/libre-informatique/SymfonyLibrinfoMediaBundle/zipball/e08b35ee6515cead5899153e108a593f38d45bff",
+                "reference": "e08b35ee6515cead5899153e108a593f38d45bff",
+                "shasum": ""
+            },
+            "require": {
+                "libre-informatique/core-bundle": "dev-master",
+                "php": ">=5.6.0",
+                "symfony/symfony": "2.8.*"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Librinfo\\MediaBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Libre Informatique",
+                    "homepage": "http://www.libre-informatique.fr/"
+                },
+                {
+                    "name": "Romain SANCHEZ",
+                    "email": "romain.sanchez@libre-informatique.fr"
+                }
+            ],
+            "description": "Media Bundle for Symfony",
+            "homepage": "https://github.com/libre-informatique/SymfonyLibrinfoMediaBundle",
+            "keywords": [
+                "e-venement",
+                "libio",
+                "media",
+                "sonata",
+                "symfony"
+            ],
+            "time": "2016-09-15 09:52:03"
         },
         {
             "name": "libre-informatique/security-bundle",
@@ -5706,7 +5756,8 @@
         "libre-informatique/seed-batch-bundle": 20,
         "libre-informatique/security-bundle": 20,
         "libre-informatique/user-bundle": 20,
-        "libre-informatique/doctrine-pgsql-bundle": 20
+        "libre-informatique/doctrine-pgsql-bundle": 20,
+        "libre-informatique/media-bundle": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

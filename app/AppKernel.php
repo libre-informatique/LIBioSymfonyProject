@@ -48,9 +48,10 @@ class AppKernel extends Kernel
             new Librinfo\VarietiesBundle\LibrinfoVarietiesBundle(),
             new Librinfo\SeedBatchBundle\LibrinfoSeedBatchBundle(),
             new Librinfo\EmailBundle\LibrinfoEmailBundle(),
+            new Librinfo\MediaBundle\LibrinfoMediaBundle(),
 
             new Sparkling\VATBundle\SparklingVATBundle(),
-            new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle()
+            new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test')))
