@@ -1,3 +1,4 @@
+
 app:
     resource: "@AppBundle/Resources/config/routing.yml"
     prefix:   /libioapp
@@ -40,11 +41,15 @@ librinfo_seed_batch:
 librinfo_crm:
     resource: "@LibrinfoCRMBundle/Resources/config/routing.yml"
     prefix:   /
-    
+
 librinfo_email:
     resource: "@LibrinfoEmailBundle/Resources/config/routing.yml"
     prefix:   /
-    
+
+librinfo_email_crm:
+    resource: "@LibrinfoEmailCRMBundle/Resources/config/routing.yml"
+    prefix:   /
+
 librinfo_media:
     resource: "@LibrinfoMediaBundle/Resources/config/routing.yml"
     prefix:   /

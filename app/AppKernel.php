@@ -47,6 +47,7 @@ class AppKernel extends Kernel
             new Librinfo\VarietiesBundle\LibrinfoVarietiesBundle(),
             new Librinfo\SeedBatchBundle\LibrinfoSeedBatchBundle(),
             new Librinfo\EmailBundle\LibrinfoEmailBundle(),
+            new Librinfo\EmailCRMBundle\LibrinfoEmailCRMBundle(),
             new Librinfo\MediaBundle\LibrinfoMediaBundle(),
             new AppBundle\AppBundle(),
 
