@@ -4,6 +4,7 @@ imports:
     - { resource: services.yml }
     - { resource: sonata.yml }
     - { resource: varieties.yml }
+    - { resource: "@AppBundle/Resources/config/services.yml" }
 
 parameters:
     locale: fr

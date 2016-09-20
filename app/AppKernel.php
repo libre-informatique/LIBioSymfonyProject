@@ -43,14 +43,14 @@ class AppKernel extends Kernel
             new Librinfo\SecurityBundle\LibrinfoSecurityBundle(),
             new Librinfo\CRMBundle\LibrinfoCRMBundle(),
             new Librinfo\UserBundle\LibrinfoUserBundle(),
-            new Librinfo\LibioBundle\LibrinfoLibioBundle(),
             new Librinfo\DoctrinePgsqlBundle\LibrinfoDoctrinePgsqlBundle(),
             new Librinfo\VarietiesBundle\LibrinfoVarietiesBundle(),
             new Librinfo\SeedBatchBundle\LibrinfoSeedBatchBundle(),
             new Librinfo\EmailBundle\LibrinfoEmailBundle(),
+            new AppBundle\AppBundle(),
 
             new Sparkling\VATBundle\SparklingVATBundle(),
-            new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle()
+            new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test')))
