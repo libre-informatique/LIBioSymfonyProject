@@ -1,8 +1,8 @@
 <?php
 
-namespace AppBundle\Entity\Traits;
+namespace AppBundle\Entity\Extension;
 
-trait HasEmailRecipients
+trait EmailExtension
 {
     use \Librinfo\EmailCRMBundle\Entity\Traits\HasEmailRecipients;
 }

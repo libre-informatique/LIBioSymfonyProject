@@ -1,8 +1,8 @@
 <?php
 
-namespace AppBundle\Entity\Traits;
+namespace AppBundle\Entity\Extension;
 
-trait HasEmailMessages
+trait PositionExtension
 {
     use \Librinfo\EmailCRMBundle\Entity\Traits\HasEmailMessages;
 }
