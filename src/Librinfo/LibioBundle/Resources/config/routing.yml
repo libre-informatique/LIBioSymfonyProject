@@ -1,7 +1,0 @@
-librinfo_libio_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: LibrinfoLibioBundle:Default:index }
-
-librinfo_libio_test:
-    path:     /test/{name}
-    defaults: { _controller: LibrinfoLibioBundle:Default:test }

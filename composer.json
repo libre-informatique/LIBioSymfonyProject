@@ -46,7 +46,7 @@
 
     },
     "require-dev": {
-
+        "alexandresalome/doctrine-extra-bundle": "^0.3.0"
     },
     "scripts": {
         "post-install-cmd": [
