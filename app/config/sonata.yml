@@ -34,6 +34,11 @@ sonata_admin:
                 on_top: true
                 items:
                     - librinfo_varieties.admin.variety
+            Seed Batches:
+                label: ~
+                on_top: true
+                items:
+                    - librinfo_seed_batch.admin.seed_batch
             CRM Admin:
                 label: CRM Admin
                 items:
