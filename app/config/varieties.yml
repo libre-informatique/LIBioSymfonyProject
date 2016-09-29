@@ -1,10 +1,4 @@
 
-#CHOICE TYPE CONFIG           
-#options        expanded multiple
-
-#select tag 	false 	 false
-#select tag  	false 	 true
-#radio buttons 	true 	 false
 #librinfo_customcheckboxes 	true 	 true
 
 #inline fields:
@@ -25,6 +19,7 @@ librinfo_varieties:
             possible_sowing_periods:
                 type: librinfo_customchoice
                 options:
+                    multiple: true
                     attr:
                         class: inline-block
                     choices_field: possible_sowing_periods
@@ -131,7 +126,7 @@ librinfo_varieties:
                         class: new-line
                         width: 30
             seedling_irrigation_quantity:
-                type: number
+                type: integer
                 options:
                     attr:
                         class: new-line
@@ -145,7 +140,7 @@ librinfo_varieties:
                     librinfo_choices: [quotidien, hebdomadaire]
                     choices_field: seedling_irrigation_frequency
             transplant_irrigation_quantity: 
-                type: number
+                type: integer
                 options:
                     attr:
                         class: new-line
@@ -233,6 +228,7 @@ librinfo_varieties:
             possible_sowing_periods:
                 type: librinfo_customchoice
                 options:
+                    multiple: true
                     attr:
                         class: inline-block
                     choices_field: possible_sowing_periods
@@ -338,7 +334,7 @@ librinfo_varieties:
                         class: new-line
                         width: 30
             seedling_irrigation_quantity:
-                type: number
+                type: integer
                 options:
                     attr:
                         class: new-line
@@ -352,7 +348,7 @@ librinfo_varieties:
                     librinfo_choices: [quotidien, hebdomadaire]
                     choices_field: seedling_irrigation_frequency
             transplant_irrigation_quantity: 
-                type: number
+                type: integer
                 options:
                     attr:
                         class: new-line
@@ -440,6 +436,7 @@ librinfo_varieties:
             possible_sowing_periods:
                 type: librinfo_customchoice
                 options:
+                    multiple: true
                     attr:
                         class: inline-block
                     choices_field: possible_sowing_periods
@@ -545,7 +542,7 @@ librinfo_varieties:
                         class: new-line
                         width: 30
             seedling_irrigation_quantity:
-                type: number
+                type: integer
                 options:
                     attr:
                         class: new-line
@@ -559,7 +556,7 @@ librinfo_varieties:
                     librinfo_choices: [quotidien, hebdomadaire]
                     choices_field: seedling_irrigation_frequency
             transplant_irrigation_quantity: 
-                type: number
+                type: integer
                 options:
                     attr:
                         class: new-line
@@ -780,13 +777,13 @@ librinfo_varieties:
                         - Molybdène
                     choices_field: nutrients
             max_harvest_span: 
-                type: number
+                type: integer
                 options:
                     attr:
                         class: new-line
                         width: 30
             min_harvest_span:
-                type: number
+                type: integer
                 options:
                     attr:
                         class: new-line
@@ -906,8 +903,8 @@ librinfo_varieties:
                     attr:
                         class: new-line
                         width: 30
-            several_strains:
-                type: librinfo_customcheckbox
+#            several_strains:
+#                type: librinfo_customcheckboxseversever
             description:
                 type: librinfo_tinymce
                 options:
