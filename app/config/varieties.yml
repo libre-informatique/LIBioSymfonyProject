@@ -327,6 +327,7 @@ librinfo_varieties:
                     attr:
                         class: inline-block
                     choices_field: manure
+                    librinfo_choices: [ compost, orga3]
             manure_quantity: 
                 type: integer
                 options:
@@ -535,6 +536,7 @@ librinfo_varieties:
                     attr:
                         class: inline-block
                     choices_field: manure
+                    librinfo_choices: [ compost, orga3]
             manure_quantity: 
                 type: integer
                 options:
