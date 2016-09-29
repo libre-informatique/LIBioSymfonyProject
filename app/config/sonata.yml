@@ -11,14 +11,14 @@ sonata_admin:
             Customers Relationship Management:
                 label: CRM
                 items:
-                    - librinfo_email_crm.admin.organism
+                    - librinfo_emailcrm.admin.organism
                     - route:        admin_librinfo_emailcrm_organism_list
                       route_params: { 'filter[customer][value]': 1 }
                       label:        librinfo.label.customers
                     - route:        admin_librinfo_emailcrm_organism_list
                       route_params: { 'filter[supplier][value]': 1 }
                       label:        librinfo.label.suppliers
-                    - librinfo_email_crm.admin.contact
+                    - librinfo_emailcrm.admin.contact
                     - email.email
 #            Taxonomy:
 #                label: Taxonomy
@@ -38,7 +38,7 @@ sonata_admin:
                 label: ~
                 on_top: true
                 items:
-                    - librinfo_seed_batch.admin.seed_batch
+                    - librinfo_seedbatch.admin.seedbatch
             CRM Admin:
                 label: CRM Admin
                 items:
