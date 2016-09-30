@@ -35,7 +35,7 @@ sonata_admin:
                 items:
                     - librinfo_varieties.admin.variety
             Seed Batches:
-                label: ~
+                label: librinfo.label.menu.seed_batches
                 on_top: true
                 items:
                     - librinfo_seedbatch.admin.seedbatch
