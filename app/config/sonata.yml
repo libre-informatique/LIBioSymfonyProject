@@ -11,11 +11,11 @@ sonata_admin:
             Customers Relationship Management:
                 label: CRM
                 items:
-                    - librinfo_emailcrm.admin.organism
-                    - route:        admin_librinfo_emailcrm_organism_list
+                    - librinfo_seedbatch.admin.organism
+                    - route:        admin_librinfo_seedbatch_organism_list
                       route_params: { 'filter[customer][value]': 1 }
                       label:        librinfo.label.customers
-                    - route:        admin_librinfo_emailcrm_organism_list
+                    - route:        admin_librinfo_seedbatch_organism_list
                       route_params: { 'filter[supplier][value]': 1 }
                       label:        librinfo.label.suppliers
                     - librinfo_emailcrm.admin.contact
