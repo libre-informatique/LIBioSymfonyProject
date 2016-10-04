@@ -34,6 +34,11 @@ sonata_admin:
                 on_top: true
                 items:
                     - librinfo_varieties.admin.variety
+            Plots:
+                label: librinfo.label.menu.plots
+                on_top: true
+                items:
+                    - librinfo_seedbatch.admin.plot
             Seed Batches:
                 label: librinfo.label.menu.seed_batches
                 on_top: true
