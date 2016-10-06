@@ -1,0 +1,10 @@
+# Copy this to users.yml (not versioned) and customize it to load your users with :
+# app/console hautelook_alice:doctrine:fixtures:load -b LibrinfoUserBundle --append
+
+Librinfo\UserBundle\Entity\User:
+    my_user:
+        username: myusername
+        plainPassword: mypassword
+        email: myemail@myemail.com
+        roles: [ROLE_SUPER_ADMIN]
+        enabled: true

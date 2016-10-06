@@ -46,7 +46,8 @@
 
     },
     "require-dev": {
-        "alexandresalome/doctrine-extra-bundle": "^0.3.0"
+        "alexandresalome/doctrine-extra-bundle": "^0.3.0",
+        "nelmio/alice": "^2.2"
     },
     "scripts": {
         "post-install-cmd": [
