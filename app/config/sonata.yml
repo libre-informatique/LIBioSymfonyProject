@@ -9,15 +9,15 @@ sonata_admin:
     dashboard:
         groups:
             Customers Relationship Management:
-                label: CRM
+                label: librinfo.menu_label.crm
                 items:
                     - librinfo_seedbatch.admin.organism
                     - route:        admin_librinfo_seedbatch_organism_list
                       route_params: { 'filter[customer][value]': 1 }
-                      label:        librinfo.label.customers
+                      label:        librinfo.menu_label.customers
                     - route:        admin_librinfo_seedbatch_organism_list
                       route_params: { 'filter[supplier][value]': 1 }
-                      label:        librinfo.label.suppliers
+                      label:        librinfo.menu_label.suppliers
                     - librinfo_emailcrm.admin.contact
                     - email.email
 #            Taxonomy:
@@ -35,24 +35,30 @@ sonata_admin:
                 items:
                     - librinfo_varieties.admin.variety
             Plots:
-                label: librinfo.label.menu.plots
+                label: librinfo.menu_label.plots
                 on_top: true
                 items:
                     - librinfo_seedbatch.admin.plot
             Seed Batches:
-                label: librinfo.label.menu.seed_batches
+                label: librinfo.menu_label.seed_batches
                 on_top: true
                 items:
                     - librinfo_seedbatch.admin.seedbatch
             CRM Admin:
-                label: CRM Admin
+                label: librinfo.menu_label.crm_admin
                 items:
                     - crm.circle
                     - crm.category
                     - crm.position_type
                     - crm.phone_type
+            Variety Admin:
+                label: librinfo.menu_label.variety_admin
+                items:
+                    - librinfo_varieties.admin.family
+                    - librinfo_varieties.admin.genus
+                    - librinfo_varieties.admin.species
             Application Management:
-                label: APP Admin
+                label: librinfo.menu_label.app_admin
                 items:
                     - app.user
                     - app.group

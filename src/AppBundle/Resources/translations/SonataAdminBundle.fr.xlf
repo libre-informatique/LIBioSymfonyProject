@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="dashboard">
+                <source>Dashboard</source>
+                <target>Tableau de Bord</target>
+            </trans-unit>
+            <trans-unit id="librinfo.link.dashboard">
+                <source>librinfo.link.dashboard</source>
+                <target>Tableau de Bord</target>
+            </trans-unit>            
+
+            <trans-unit id="Strains">
+                <source>Strains</source>
+                <target>Souches</target>
+            </trans-unit>  
+            <trans-unit id="Varieties">
+                <source>Varieties</source>
+                <target>Variétés</target>
+            </trans-unit> 
+            
+            <trans-unit id="librinfo.menu_label.crm">
+                <source>librinfo.menu_label.crm</source>
+                <target>Relations Publiques</target>
+            </trans-unit>
+            <trans-unit id="librinfo.menu_label.customers">
+                <source>librinfo.menu_label.customers</source>
+                <target>Tiers (Clients)</target>
+            </trans-unit>                                                        
+            <trans-unit id="librinfo.menu_label.suppliers">
+                <source>librinfo.menu_label.suppliers</source>
+                <target>Tiers (Fournisseurs)</target>
+            </trans-unit>   
+            <trans-unit id="librinfo.menu_label.crm_admin">
+                <source>librinfo.menu_label.crm_admin</source>
+                <target>Paramètres R.P.</target>
+            </trans-unit>
+            <trans-unit id="librinfo.menu_label.variety_admin">
+                <source>librinfo.menu_label.variety_admin</source>
+                <target>Paramètres Variétés</target>
+            </trans-unit>
+            <trans-unit id="librinfo.menu_label.app_admin">
+                <source>librinfo.menu_label.app_admin</source>
+                <target>Paramètres Généraux</target>
+            </trans-unit>
+                        
+        </body>
+    </file>
+</xliff>
