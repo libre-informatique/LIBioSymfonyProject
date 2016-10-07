@@ -2,8 +2,8 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
-    - { resource: sonata.yml }
     - { resource: varieties.yml }
+    - { resource: "@AppBundle/Resources/config/sonata.yml" }
     - { resource: "@AppBundle/Resources/config/services.yml" }
 
 parameters:
