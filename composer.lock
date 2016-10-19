@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "78bd90d58c9fe75b15aceece72cf741f",
-    "content-hash": "96e75c3bf86be04e874356fe4bbad786",
+    "hash": "8d03741440d1d45103c076cb288e39be",
+    "content-hash": "3fe2c115a9c9895ca2553918079e5728",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -2853,6 +2853,57 @@
                 "symfony"
             ],
             "time": "2016-10-12 13:45:28"
+        },
+        {
+            "name": "libre-informatique/product-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/libre-informatique/SymfonyLibrinfoProductBundle.git",
+                "reference": "3f3bd804304b9cfadee73dc1fbe5a26a440656aa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/libre-informatique/SymfonyLibrinfoProductBundle/zipball/3f3bd804304b9cfadee73dc1fbe5a26a440656aa",
+                "reference": "3f3bd804304b9cfadee73dc1fbe5a26a440656aa",
+                "shasum": ""
+            },
+            "require": {
+                "libre-informatique/base-entities-bundle": "dev-master",
+                "libre-informatique/core-bundle": "dev-master",
+                "libre-informatique/doctrine-bundle": "dev-master",
+                "php": ">=5.4.0",
+                "symfony/symfony": "2.8.*"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Librinfo\\ProductBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Libre Informatique",
+                    "homepage": "http://www.libre-informatique.fr/"
+                },
+                {
+                    "name": "Marcos Bezerra de Menezes",
+                    "email": "marcos.bezerra@libre-informatique.fr"
+                }
+            ],
+            "description": "Product Bundle for Symfony",
+            "homepage": "https://github.com/libre-informatique/SymfonyLibrinfoProductBundle",
+            "keywords": [
+                "e-commerce",
+                "libio",
+                "sonata",
+                "symfony"
+            ],
+            "time": "2016-10-19 16:34:04"
         },
         {
             "name": "libre-informatique/security-bundle",
@@ -6268,7 +6319,8 @@
         "libre-informatique/user-bundle": 20,
         "libre-informatique/doctrine-pgsql-bundle": 20,
         "libre-informatique/media-bundle": 20,
-        "libre-informatique/outer-extension-bundle": 20
+        "libre-informatique/outer-extension-bundle": 20,
+        "libre-informatique/product-bundle": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
