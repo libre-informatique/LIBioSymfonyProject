@@ -5,6 +5,8 @@ imports:
     - { resource: varieties.yml }
     - { resource: "@AppBundle/Resources/config/sonata.yml" }
     - { resource: "@AppBundle/Resources/config/services.yml" }
+    - { resource: "@AppBundle/Resources/config/app/config.yml" }
+    - { resource: "@LibrinfoProductBundle/Resources/config/app/config.yml" }
 
 parameters:
     locale: fr
@@ -82,7 +84,8 @@ doctrine:
                 type: yml
             LibrinfoUserBundle:
                 type: yml
-            # vendors bundles
+            LibrinfoProductBundle:
+                type: yml
             FOSUserBundle:
                 type: xml
             SonataUserBundle: ~
