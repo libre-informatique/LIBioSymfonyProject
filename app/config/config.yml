@@ -146,6 +146,7 @@ librinfo_doctrine:
             loggable: true
             sortable: true
             normalize: true
+            syliusGuidable: true
 
 stfalcon_tinymce:
     tinymce_jquery: true
