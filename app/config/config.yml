@@ -6,10 +6,16 @@ imports:
     - { resource: "@AppBundle/Resources/config/sonata.yml" }
     - { resource: "@AppBundle/Resources/config/services.yml" }
     - { resource: "@AppBundle/Resources/config/app/config.yml" }
-    - { resource: "@LibrinfoProductBundle/Resources/config/app/config.yml" }
+#    - { resource: "@LibrinfoProductBundle/Resources/config/app/config.yml" }
+
+    - { resource: "@SyliusCoreBundle/Resources/config/app/config.yml" }
+    - { resource: "@SyliusAdminBundle/Resources/config/app/config.yml" }
+    - { resource: "@SyliusShopBundle/Resources/config/app/config.yml" }
+    - { resource: "@SyliusApiBundle/Resources/config/app/config.yml" }
 
 parameters:
-    locale: fr
+    locale: fr_FR
+    currency: EUR
     # TODO : this should be configured in BaseEntities bundle :
     #doctrine.orm.metadata.yml.class: Librinfo\BaseEntitiesBundle\Doctrine\ORM\Driver\SearchableYamlDriver
 
@@ -85,8 +91,8 @@ doctrine:
                 type: yml
             LibrinfoUserBundle:
                 type: yml
-            LibrinfoProductBundle:
-                type: yml
+#            LibrinfoProductBundle:
+#                type: yml
             FOSUserBundle:
                 type: xml
             SonataUserBundle: ~

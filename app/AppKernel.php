@@ -1,6 +1,6 @@
 <?php
 
-use Symfony\Component\HttpKernel\Kernel;
+use Sylius\Bundle\CoreBundle\Application\Kernel;
 use Symfony\Component\Config\Loader\LoaderInterface;
 
 class AppKernel extends Kernel
@@ -8,34 +8,33 @@ class AppKernel extends Kernel
     public function registerBundles()
     {
         $bundles = array(
-            new Sylius\Bundle\ProductBundle\SyliusProductBundle(),
-            new Sylius\Bundle\AssociationBundle\SyliusAssociationBundle(),
-            new Sylius\Bundle\LocaleBundle\SyliusLocaleBundle(),
-            new Sylius\Bundle\ResourceBundle\SyliusResourceBundle(),
-            new Sylius\Bundle\AttributeBundle\SyliusAttributeBundle(),
+            new Sylius\Bundle\AdminBundle\SyliusAdminBundle(),
+            new Sylius\Bundle\ShopBundle\SyliusShopBundle(),
+            new FOS\OAuthServerBundle\FOSOAuthServerBundle(), // Required by SyliusApiBundle
+            new Sylius\Bundle\ApiBundle\SyliusApiBundle(),
 
-            new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
-            new Symfony\Bundle\SecurityBundle\SecurityBundle(),
-            new Symfony\Bundle\TwigBundle\TwigBundle(),
-            new Symfony\Bundle\MonologBundle\MonologBundle(),
-            new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
+//            new Symfony\Bundle\FrameworkBundle\FrameworkBundle(), provided by Sylius
+//            new Symfony\Bundle\SecurityBundle\SecurityBundle(), provided by Sylius
+//            new Symfony\Bundle\TwigBundle\TwigBundle(), provided by Sylius
+//            new Symfony\Bundle\MonologBundle\MonologBundle(), provided by Sylius
+//            new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(), provided by Sylius
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
 
-            new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
+//            new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(), provided by Sylius
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
 
-            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+//            new Knp\Bundle\MenuBundle\KnpMenuBundle(), provided by Sylius
             new Knp\DoctrineBehaviors\Bundle\DoctrineBehaviorsBundle(),
 
             new JMS\AopBundle\JMSAopBundle(),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new JMS\DiExtraBundle\JMSDiExtraBundle($this),
-            new JMS\SerializerBundle\JMSSerializerBundle($this),
+//            new JMS\SerializerBundle\JMSSerializerBundle($this), provided by Sylius
 
-            new winzou\Bundle\StateMachineBundle\winzouStateMachineBundle(),
+//            new winzou\Bundle\StateMachineBundle\winzouStateMachineBundle(), provided by Sylius
 
             new FOS\UserBundle\FOSUserBundle(),
-            new FOS\RestBundle\FOSRestBundle(),
+//            new FOS\RestBundle\FOSRestBundle(),
 
             new JeroenDesloovere\Bundle\VCardBundle\JeroenDesloovereVCardBundle(),
 
@@ -44,7 +43,7 @@ class AppKernel extends Kernel
             new Sonata\BlockBundle\SonataBlockBundle(),
             new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
-            new Sonata\IntlBundle\SonataIntlBundle(),
+//            new Sonata\IntlBundle\SonataIntlBundle(), provided by Sylius
 
             new Librinfo\CoreBundle\LibrinfoCoreBundle(),
             new Librinfo\DoctrineBundle\LibrinfoDoctrineBundle(),
@@ -61,7 +60,7 @@ class AppKernel extends Kernel
             new Librinfo\EmailBundle\LibrinfoEmailBundle(),
             new Librinfo\EmailCRMBundle\LibrinfoEmailCRMBundle(),
             new Librinfo\MediaBundle\LibrinfoMediaBundle(),
-            new Librinfo\ProductBundle\LibrinfoProductBundle(),
+//            new Librinfo\ProductBundle\LibrinfoProductBundle(),
             new AppBundle\AppBundle(),
 
             new Sparkling\VATBundle\SparklingVATBundle(),
@@ -70,16 +69,16 @@ class AppKernel extends Kernel
 
         if (in_array($this->getEnvironment(), array('dev', 'test')))
         {
-            $bundles[] = new Symfony\Bundle\DebugBundle\DebugBundle();
-            $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
+//            $bundles[] = new Symfony\Bundle\DebugBundle\DebugBundle(); provided by Sylius
+//            $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle(); provided by Sylius
             $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
-            $bundles[] = new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle();
+//            $bundles[] = new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(); provided by Sylius
             $bundles[] = new Alex\DoctrineExtraBundle\AlexDoctrineExtraBundle();
             $bundles[] = new Hautelook\AliceBundle\HautelookAliceBundle();
         }
 
-        return $bundles;
+        return array_merge(parent::registerBundles(), $bundles);
     }
 
     public function registerContainerConfiguration(LoaderInterface $loader)
