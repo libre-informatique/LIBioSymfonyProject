@@ -3,15 +3,77 @@
 security:
     encoders:
         FOS\UserBundle\Model\UserInterface: bcrypt
+        Sylius\Component\User\Model\UserInterface: sha512
 
     providers:
+        # Sonata providers
         fos_userbundle:
             id: fos_user.user_provider.username_email
+        # Sylius providers
+        sylius_admin_user_provider:
+            id: sylius.admin_user_provider.email_or_name_based
+        sylius_shop_user_provider:
+            id: sylius.shop_user_provider.email_or_name_based
 
     firewalls:
         dev:
             pattern:  ^/(_(profiler|wdt)|css|images|js)/
             security: false
+
+        # Sylius firewalls
+        admin:
+            switch_user: true
+            context: admin
+            pattern: /sylius-admin(?:/.*)?$
+            form_login:
+                provider: sylius_admin_user_provider
+                login_path: sylius_admin_login
+                check_path: sylius_admin_login_check
+                failure_path: sylius_admin_login
+                default_target_path: sylius_admin_dashboard
+                use_forward: false
+                use_referer: true
+            logout:
+                path: sylius_admin_logout
+                target: sylius_admin_login
+            anonymous: true
+
+        oauth_token:
+            pattern:  ^/sylius-api/oauth/v2/token
+            security: false
+
+        api:
+            pattern:    ^/sylius-api
+            fos_oauth:  true
+            stateless:  true
+            anonymous:  true
+
+        shop:
+            switch_user: { role: ROLE_ALLOWED_TO_SWITCH }
+            context: shop
+            pattern: /sylius-shop/*
+            form_login:
+                success_handler: sylius.authentication.success_handler
+                failure_handler: sylius.authentication.failure_handler
+                provider: sylius_shop_user_provider
+                login_path: sylius_shop_login
+                check_path: sylius_shop_login_check
+                failure_path: sylius_shop_login
+                default_target_path: sylius_shop_homepage
+                use_forward: false
+                use_referer: true
+            remember_me:
+                secret: "%secret%"
+                name: APP_REMEMBER_ME
+                lifetime: 31536000
+                always_remember_me: true
+                remember_me_parameter: _remember_me
+            logout:
+                path: sylius_shop_logout
+                target: sylius_shop_login
+            anonymous: true
+
+        # Sonata main firewall
         main:
             pattern: ^/
             form_login:
@@ -26,11 +88,21 @@ security:
                 path:     /
 
     access_control:
+        # Sonata access control
         - { path: ^/(css|images|js), role: IS_AUTHENTICATED_ANONYMOUSLY } # allow assets for anonymous users
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY } # allow login for anonymous users
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY } # allow resetting password for anonymous users
-        - { path: ^/, roles: IS_AUTHENTICATED_REMEMBERED } # filter entire application
+#        - { path: ^/, roles: IS_AUTHENTICATED_REMEMBERED } # filter entire application
 
+        # Sylius access control
+        - { path: ^/sylius-shop/login.*, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/sylius-shop/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/sylius-shop/verify, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: "/sylius-shop/account.*", role: ROLE_USER }
+        - { path: ^/sylius-admin/login, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/sylius-admin/login-check, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: "^/sylius-admin.*", role: ROLE_ADMINISTRATION_ACCESS }
+        - { path: ^/sylius-api, role: ROLE_API_ACCESS }
 
 
 jms_security_extra:

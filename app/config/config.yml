@@ -8,11 +8,6 @@ imports:
     - { resource: "@AppBundle/Resources/config/app/config.yml" }
 #    - { resource: "@LibrinfoProductBundle/Resources/config/app/config.yml" }
 
-    - { resource: "@SyliusCoreBundle/Resources/config/app/config.yml" }
-    - { resource: "@SyliusAdminBundle/Resources/config/app/config.yml" }
-    - { resource: "@SyliusShopBundle/Resources/config/app/config.yml" }
-    - { resource: "@SyliusApiBundle/Resources/config/app/config.yml" }
-
 parameters:
     locale: fr_FR
     currency: EUR
@@ -114,12 +109,12 @@ swiftmailer:
     mailers:
         direct_mailer:
             transport: "%mailer_transport%"
-            host:      "%mailer_host%"
+#            host:      "%mailer_host%" # removed for gmail
             username:  "%mailer_user%"
             password:  "%mailer_password%"
         spool_mailer:
             transport: "%mailer_transport%"
-            host:      "%mailer_host%"
+#            host:      "%mailer_host%" # removed for gmail
             username:  "%mailer_user%"
             password:  "%mailer_password%"
             spool: { type: db }
