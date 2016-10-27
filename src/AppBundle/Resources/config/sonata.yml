@@ -19,7 +19,7 @@ sonata_admin:
                       route_params: { 'filter[supplier][value]': 1 }
                       label:        librinfo.menu_label.suppliers
                     - librinfo_emailcrm.admin.contact
-                    - email.email
+                    - librinfo_email.admin.email
 #            Taxonomy:
 #                label: Taxonomy
 #                items:
