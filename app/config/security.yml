@@ -91,10 +91,12 @@ security:
         # Sonata access control
         - { path: ^/(css|images|js), role: IS_AUTHENTICATED_ANONYMOUSLY } # allow assets for anonymous users
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY } # allow login for anonymous users
-        - { path: ^/tracking, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY } # allow resetting password for anonymous users
 #        - { path: ^/, roles: IS_AUTHENTICATED_REMEMBERED } # filter entire application
-
+        
+        # EmailBundle tracking
+        - { path: ^/tracking, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        
         # Sylius access control
         - { path: ^/sylius-shop/login.*, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/sylius-shop/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
