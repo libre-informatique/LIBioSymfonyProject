@@ -4,7 +4,6 @@ Librinfo\MediaBundle\Entity\File:
         variety:
             targetEntity: Librinfo\VarietiesBundle\Entity\Variety
             inversedBy: images
-            cascade: [ persist ]
         email:
             targetEntity: Librinfo\EmailBundle\Entity\Email
             inversedBy: attachments
