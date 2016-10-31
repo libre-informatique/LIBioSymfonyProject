@@ -20,15 +20,6 @@ sonata_admin:
                       label:        librinfo.menu_label.suppliers
                     - librinfo_emailcrm.admin.contact
                     - librinfo_email.admin.email
-#            Taxonomy:
-#                label: Taxonomy
-#                items:
-#                    - librinfo_varieties.admin.family
-#                    - librinfo_varieties.admin.genus
-#                    - librinfo_varieties.admin.plant_category
-#                    - librinfo_varieties.admin.species
-#                    - librinfo_varieties.admin.variety
-#                    - librinfo_varieties.admin.strain
             Varieties:
                 label: ~
                 on_top: true
