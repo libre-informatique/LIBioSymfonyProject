@@ -24,7 +24,8 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
 
 //            new Knp\Bundle\MenuBundle\KnpMenuBundle(), provided by Sylius
-            new Knp\DoctrineBehaviors\Bundle\DoctrineBehaviorsBundle(),
+
+//            new Knp\DoctrineBehaviors\Bundle\DoctrineBehaviorsBundle(),
 
             new JMS\AopBundle\JMSAopBundle(),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),

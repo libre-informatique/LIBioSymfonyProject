@@ -5,7 +5,3 @@ imports:
     - { resource: "@SyliusApiBundle/Resources/config/app/config.yml" }
 
     - { resource: "@LibrinfoProductBundle/Resources/config/app/config.yml" }
-
-knp_doctrine_behaviors:
-    tree: true
-    # all other doctrine behaviours are disabled by default
