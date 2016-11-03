@@ -5,4 +5,3 @@ imports:
     - { resource: "@SyliusApiBundle/Resources/config/app/config.yml" }
 
     - { resource: "@LibrinfoProductBundle/Resources/config/app/config.yml" }
-
