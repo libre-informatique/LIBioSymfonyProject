@@ -1,0 +1,7 @@
+AppBundle\Entity\VarietyPackaging:
+    type: entity
+
+    manyToOne:
+        variety:
+            targetEntity: Librinfo\VarietiesBundle\Entity\Variety
+            inversedBy: packagings

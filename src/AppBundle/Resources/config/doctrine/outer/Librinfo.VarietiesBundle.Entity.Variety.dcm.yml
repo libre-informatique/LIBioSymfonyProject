@@ -1,10 +1,9 @@
-Librinfo\MediaBundle\Entity\File:
+Librinfo\VarietiesBundle\Entity\Variety:
     type: entity
-    manyToOne:
-        variety:
-            targetEntity: Librinfo\VarietiesBundle\Entity\Variety
-            inversedBy: images
-        email:
-            targetEntity: Librinfo\EmailBundle\Entity\Email
-            inversedBy: attachments
-            cascade: [ persist ]
+
+    oneToMany:
+        packagings:
+            targetEntity: AppBundle\Entity\VarietyPackaging
+            mappedBy: variety
+            cascade: [persist, remove]
+            orphanRemoval:  true

@@ -1,0 +1,19 @@
+AppBundle\Entity\Packaging:
+    type: mappedSuperclass
+
+    fields:
+        code:
+            type:     string(255)
+            nullable: false
+        bulk:
+            type:     boolean
+            nullable: true
+        weight:
+            type:     integer
+            nullable: true
+        seeds:
+            type:     integer
+            nullable: true
+        loss:
+            type:     float
+            nullable: true
