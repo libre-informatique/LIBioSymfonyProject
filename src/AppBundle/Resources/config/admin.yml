@@ -6,10 +6,20 @@ services:
         tags:
             - name: sonata.admin
               manager_type: orm
-              group: admin2
-              label: librinfo.varieties.variety_admin.label2
+              group: admin
+              label: librinfo.varieties.variety_admin.label
               label_translator_strategy: librinfo_core.label.strategy.librinfo
         calls:
             - [ setTemplate, [ list, LibrinfoVarietiesBundle:CRUD:list.html.twig ] ]
             - [ setTemplate, [ edit, LibrinfoVarietiesBundle:CRUD:variety_edit.html.twig ] ]
             - [ setTemplate, [ show, LibrinfoVarietiesBundle:CRUD:show.html.twig ] ]
+
+    libio.admin.variety_packaging:
+        class: AppBundle\Admin\VarietyPackagingAdminConcrete
+        arguments: [~, AppBundle\Entity\VarietyPackaging, SonataAdminBundle:CRUD]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: admin
+              label: librinfo.libio.variety_packaging_admin.label
+              label_translator_strategy: librinfo_core.label.strategy.librinfo

@@ -15,3 +15,32 @@ parameters:
             Sonata\AdminBundle\Datagrid\DatagridMapper:
                 add: ~
 
+#####################
+# VARIETY PACKAGING
+#####################
+
+        AppBundle\Admin\VarietyPackagingAdminConcrete:
+            Sonata\AdminBundle\Show\ShowMapper:
+                add:
+                    show_group_general:
+                        '':
+                            code: ~
+                            weight: ~
+                            bulk: ~
+            Sonata\AdminBundle\Form\FormMapper:
+                add:
+                    form_group_general:
+                        '':
+                            code: ~
+                            weight: ~
+                            bulk: ~
+            Sonata\AdminBundle\Datagrid\ListMapper:
+                add:
+                    code: ~
+                    weight: ~
+                    bulk: ~
+            Sonata\AdminBundle\Datagrid\DatagridMapper:
+                add:
+                    code: ~
+                    weight: ~
+                    bulk: ~
