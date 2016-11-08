@@ -1,3 +1,17 @@
 parameters:
     librinfo:
 
+############
+# VARIETY
+############
+
+        AdminBundle\Admin\VarietyAdminConcrete:
+            Sonata\AdminBundle\Show\ShowMapper:
+                add: ~
+            Sonata\AdminBundle\Form\FormMapper:
+                add: ~
+            Sonata\AdminBundle\Datagrid\ListMapper:
+                add: ~
+            Sonata\AdminBundle\Datagrid\DatagridMapper:
+                add: ~
+

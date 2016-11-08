@@ -24,7 +24,7 @@ sonata_admin:
                 label: ~
                 on_top: true
                 items:
-                    - librinfo_varieties.admin.variety
+                    - libio.admin.variety
             Plots:
                 label: librinfo.menu_label.plots
                 on_top: true

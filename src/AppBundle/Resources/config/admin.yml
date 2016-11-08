@@ -1,0 +1,15 @@
+services:
+
+    libio.admin.variety:
+        class: AppBundle\Admin\VarietyAdminConcrete
+        arguments: [~, Librinfo\VarietiesBundle\Entity\Variety, LibrinfoVarietiesBundle:VarietyCRUD]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: admin2
+              label: librinfo.varieties.variety_admin.label2
+              label_translator_strategy: librinfo_core.label.strategy.librinfo
+        calls:
+            - [ setTemplate, [ list, LibrinfoVarietiesBundle:CRUD:list.html.twig ] ]
+            - [ setTemplate, [ edit, LibrinfoVarietiesBundle:CRUD:variety_edit.html.twig ] ]
+            - [ setTemplate, [ show, LibrinfoVarietiesBundle:CRUD:show.html.twig ] ]

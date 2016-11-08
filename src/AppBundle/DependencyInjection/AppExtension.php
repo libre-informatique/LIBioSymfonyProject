@@ -2,12 +2,10 @@
 
 namespace AppBundle\DependencyInjection;
 
-use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\Config\FileLocator;
-use Symfony\Component\DependencyInjection\Loader;
-use Symfony\Component\Yaml\Yaml;
 use Librinfo\CoreBundle\DependencyInjection\LibrinfoCoreExtension;
-use Librinfo\CoreBundle\DependencyInjection\DefaultParameters;
+use Symfony\Component\Config\FileLocator;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Loader;
 
 /**
  * This is the class that loads and manages your bundle configuration
@@ -26,9 +24,8 @@ class AppExtension extends LibrinfoCoreExtension
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('services.yml');
-        //$loader->load('admin.yml');
+        $loader->load('admin.yml');
         //$loader->load('config.yml');
-        //$loader->load('librinfo.yml');
 
         if ($container->getParameter('kernel.environment') == 'test')
         {
@@ -36,7 +33,5 @@ class AppExtension extends LibrinfoCoreExtension
         }
 
         $this->mergeParameter('librinfo', $container, __DIR__ . '/../Resources/config');
-
-//        var_dump($container->getParameter('librinfo')); die();
     }
 }
