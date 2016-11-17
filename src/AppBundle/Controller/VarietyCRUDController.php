@@ -10,15 +10,14 @@
  * file that was distributed with this source code.
  */
 
-namespace AppBundle\Admin;
+namespace AppBundle\Controller;
 
-use Librinfo\CoreBundle\Admin\Traits\EmbeddedAdmin;
+use Librinfo\VarietiesBundle\Controller\VarietyCRUDController as BaseController;
 
-class VarietyPackagingAdminConcrete extends VarietyPackagingAdmin
+/**
+ * @author Marcos Bezerra de Menezes <marcos.bezerra@libre-informatique.fr>
+ */
+class VarietyCRUDController extends BaseController
 {
-    use EmbeddedAdmin;
 
-    protected $baseRouteName = 'admin_libio_varietypackaging';
-    protected $baseRoutePattern = 'librinfo/libio/varietypackaging';
 }
-

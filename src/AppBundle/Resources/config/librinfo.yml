@@ -5,13 +5,52 @@ parameters:
 # VARIETY
 ############
 
-        AdminBundle\Admin\VarietyAdminConcrete:
+        AppBundle\Admin\VarietyAdminConcrete:
             Sonata\AdminBundle\Show\ShowMapper:
                 add: ~
             Sonata\AdminBundle\Form\FormMapper:
                 add: ~
             Sonata\AdminBundle\Datagrid\ListMapper:
                 add: ~
+            Sonata\AdminBundle\Datagrid\DatagridMapper:
+                add: ~
+
+
+
+        AppBundle\Admin\VarietyAdminPackagings:
+            Sonata\AdminBundle\Show\ShowMapper:
+                remove: ['*']
+                add:
+                    packagings: ~
+            Sonata\AdminBundle\Form\FormMapper:
+                remove: ['*']
+                add:
+                    form_group_packagings:
+                        '':
+                            packagings:
+                                type: sonata_type_collection
+                                label: false
+                                by_reference: false
+                                type_options:
+                                    btn_add: false
+                                    delete_options:
+                                        type: checkbox
+                                        type_options:
+                                            mapped: false
+                                            required: false
+                                required: true    # if not true, child form fields cannot be required (why ??)
+                                _options:
+                                    edit: inline
+                                    inline: table
+            Sonata\AdminBundle\Datagrid\ListMapper:
+                remove: ['*']
+                add:
+                    name:
+                        label: librinfo.label.variety
+                        identifier: true
+                        template: AppBundle:VarietyAdminPackagings:list_field_name.html.twig
+                    packagings:
+                        template: AppBundle:VarietyAdminPackagings:list_field_packagings.html.twig
             Sonata\AdminBundle\Datagrid\DatagridMapper:
                 add: ~
 

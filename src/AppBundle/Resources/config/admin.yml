@@ -2,12 +2,26 @@ services:
 
     libio.admin.variety:
         class: AppBundle\Admin\VarietyAdminConcrete
-        arguments: [~, Librinfo\VarietiesBundle\Entity\Variety, LibrinfoVarietiesBundle:VarietyCRUD]
+        arguments: [~, Librinfo\VarietiesBundle\Entity\Variety, AppBundle:VarietyCRUD]
         tags:
             - name: sonata.admin
               manager_type: orm
               group: admin
               label: librinfo.varieties.variety_admin.label
+              label_translator_strategy: librinfo_core.label.strategy.librinfo
+        calls:
+            - [ setTemplate, [ list, LibrinfoVarietiesBundle:CRUD:list.html.twig ] ]
+            - [ setTemplate, [ edit, LibrinfoVarietiesBundle:CRUD:variety_edit.html.twig ] ]
+            - [ setTemplate, [ show, LibrinfoVarietiesBundle:CRUD:show.html.twig ] ]
+
+    libio.admin.packagings_by_variety:
+        class: AppBundle\Admin\VarietyAdminPackagings
+        arguments: [~, Librinfo\VarietiesBundle\Entity\Variety, AppBundle:VarietyCRUD]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: admin
+              label: libio.packagings_by_variety.label
               label_translator_strategy: librinfo_core.label.strategy.librinfo
         calls:
             - [ setTemplate, [ list, LibrinfoVarietiesBundle:CRUD:list.html.twig ] ]

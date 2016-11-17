@@ -5,3 +5,4 @@ AppBundle\Entity\VarietyPackaging:
         variety:
             targetEntity: Librinfo\VarietiesBundle\Entity\Variety
             inversedBy: packagings
+            cascade: [ persist ]
