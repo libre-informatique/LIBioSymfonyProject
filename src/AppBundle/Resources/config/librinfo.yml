@@ -1,3 +1,9 @@
+# Copyright (C) 2015-2016 Libre Informatique
+#
+# This file is licenced under the GNU GPL v3.
+# For the full copyright and license information, please view the LICENSE
+# file that was distributed with this source code.
+
 parameters:
     librinfo:
 
@@ -14,95 +20,3 @@ parameters:
                 add: ~
             Sonata\AdminBundle\Datagrid\DatagridMapper:
                 add: ~
-
-
-
-        AppBundle\Admin\VarietyAdminPackagings:
-            Sonata\AdminBundle\Show\ShowMapper:
-                title: libio.packagings_by_variety.show_title
-                remove: ['*']
-                add:
-                    packagings: ~
-            Sonata\AdminBundle\Form\FormMapper:
-                title: libio.packagings_by_variety.form_title
-                remove: ['*']
-                add:
-                    form_group_packagings:
-                        '':
-                            packagings:
-                                type: sonata_type_collection
-                                label: false
-                                by_reference: false
-                                type_options:
-                                    btn_add: false
-                                    delete_options:
-                                        type: checkbox
-                                        type_options:
-                                            mapped: false
-                                            required: false
-                                required: true    # if not true, child form fields cannot be required (why ??)
-                                _options:
-                                    edit: inline
-                                    inline: table
-            Sonata\AdminBundle\Datagrid\ListMapper:
-                remove: ['*', _list_action]
-                title: libio.packagings_by_variety.list_title
-                add:
-                    name:
-                        label: librinfo.label.variety
-                        identifier: true
-                        template: AppBundle:VarietyAdminPackagings:list_field_name.html.twig
-                    packagings:
-                        template: AppBundle:VarietyAdminPackagings:list_field_packagings.html.twig
-                    _action:
-                        type: actions
-                        label: Action
-                        actions:
-                            show: ~
-                            edit: ~
-                            duplicate:
-                                template: LibrinfoCoreBundle:CRUD:list__action_duplicate.html.twig
-                    _options:
-                        fieldsOrder:
-                            - name
-                            - packagings
-
-                    _list_action:
-                        test:
-                            route: admin_libio_packagings_by_variety_list
-#                        test2:
-#                            route: admin_libio_packagings_by_variety_list
-
-            Sonata\AdminBundle\Datagrid\DatagridMapper:
-                remove: ['*']
-                add: ~
-
-#####################
-# VARIETY PACKAGING
-#####################
-
-        AppBundle\Admin\VarietyPackagingAdminConcrete:
-            Sonata\AdminBundle\Show\ShowMapper:
-                add:
-                    show_group_general:
-                        '':
-                            code: ~
-                            weight: ~
-                            bulk: ~
-            Sonata\AdminBundle\Form\FormMapper:
-                add:
-                    form_group_general:
-                        '':
-                            code: ~
-                            weight: ~
-                            bulk: ~
-            Sonata\AdminBundle\Datagrid\ListMapper:
-                add:
-                    code: ~
-                    weight: ~
-                    bulk: ~
-            Sonata\AdminBundle\Datagrid\DatagridMapper:
-                add:
-                    code: ~
-                    weight: ~
-                    bulk: ~

@@ -1,9 +1,0 @@
-Librinfo\VarietiesBundle\Entity\Variety:
-    type: entity
-
-    oneToMany:
-        packagings:
-            targetEntity: AppBundle\Entity\VarietyPackaging
-            mappedBy: variety
-            cascade: [persist, remove]
-            orphanRemoval:  true

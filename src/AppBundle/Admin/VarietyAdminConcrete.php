@@ -44,6 +44,5 @@ class VarietyAdminConcrete extends BaseAdmin
     protected function configureRoutes(RouteCollection $collection)
     {
         parent::configureRoutes($collection);
-        //$collection->add('add_packaging', 'add_packaging');
     }
 }

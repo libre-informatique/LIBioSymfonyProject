@@ -1,3 +1,9 @@
+# Copyright (C) 2015-2016 Libre Informatique
+#
+# This file is licenced under the GNU GPL v3.
+# For the full copyright and license information, please view the LICENSE
+# file that was distributed with this source code.
+
 services:
 
     libio.admin.variety:
@@ -12,23 +18,3 @@ services:
         calls:
             - [ setTemplate, [ list, LibrinfoVarietiesBundle:VarietyAdmin:list.html.twig ] ]
             - [ setTemplate, [ edit, LibrinfoVarietiesBundle:VarietyAdmin:edit.html.twig ] ]
-
-    libio.admin.packagings_by_variety:
-        class: AppBundle\Admin\VarietyAdminPackagings
-        arguments: [~, Librinfo\VarietiesBundle\Entity\Variety, AppBundle:VarietyCRUD]
-        tags:
-            - name: sonata.admin
-              manager_type: orm
-              group: admin
-              label: libio.packagings_by_variety.label
-              label_translator_strategy: librinfo_core.label.strategy.librinfo
-
-    libio.admin.variety_packaging:
-        class: AppBundle\Admin\VarietyPackagingAdminConcrete
-        arguments: [~, AppBundle\Entity\VarietyPackaging, SonataAdminBundle:CRUD]
-        tags:
-            - name: sonata.admin
-              manager_type: orm
-              group: admin
-              label: librinfo.libio.variety_packaging_admin.label
-              label_translator_strategy: librinfo_core.label.strategy.librinfo
