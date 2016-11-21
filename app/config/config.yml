@@ -129,6 +129,24 @@ fos_user:
     service:
         user_manager: sonata.user.orm.user_manager
 
+sylius_taxonomy:
+    driver: doctrine/orm
+
+sylius_locale:
+    locale: fr_FR
+
+stof_doctrine_extensions:
+    orm:
+        default:
+            tree: true
+            sluggable: true
+            
+#Tinymce configuration
+stfalcon_tinymce:
+    tinymce_jquery: true
+    include_jquery: false
+    language: %locale%
+
 # Enable LibrinfoDocrineBundle event listeners
 librinfo_doctrine:
     orm:
@@ -137,7 +155,8 @@ librinfo_doctrine:
             guidable: true
             traceable: true
             addressable: true
-            treeable: true
+            treeable: false
+            nested_treeable: true
             nameable: true
             labelable: true
             emailable: true
@@ -147,11 +166,6 @@ librinfo_doctrine:
             sortable: true
             normalize: true
             syliusGuidable: true
-
-stfalcon_tinymce:
-    tinymce_jquery: true
-    include_jquery: false
-    language: %locale%
 
 librinfo_crm:
     Circle:
