@@ -10,9 +10,8 @@ services:
               label: librinfo.varieties.variety_admin.label
               label_translator_strategy: librinfo_core.label.strategy.librinfo
         calls:
-            - [ setTemplate, [ list, LibrinfoVarietiesBundle:CRUD:list.html.twig ] ]
-            - [ setTemplate, [ edit, LibrinfoVarietiesBundle:CRUD:variety_edit.html.twig ] ]
-            - [ setTemplate, [ show, LibrinfoVarietiesBundle:CRUD:show.html.twig ] ]
+            - [ setTemplate, [ list, LibrinfoVarietiesBundle:VarietyAdmin:list.html.twig ] ]
+            - [ setTemplate, [ edit, LibrinfoVarietiesBundle:VarietyAdmin:edit.html.twig ] ]
 
     libio.admin.packagings_by_variety:
         class: AppBundle\Admin\VarietyAdminPackagings
@@ -23,10 +22,6 @@ services:
               group: admin
               label: libio.packagings_by_variety.label
               label_translator_strategy: librinfo_core.label.strategy.librinfo
-        calls:
-            - [ setTemplate, [ list, LibrinfoVarietiesBundle:CRUD:list.html.twig ] ]
-            - [ setTemplate, [ edit, LibrinfoVarietiesBundle:CRUD:variety_edit.html.twig ] ]
-            - [ setTemplate, [ show, LibrinfoVarietiesBundle:CRUD:show.html.twig ] ]
 
     libio.admin.variety_packaging:
         class: AppBundle\Admin\VarietyPackagingAdminConcrete
