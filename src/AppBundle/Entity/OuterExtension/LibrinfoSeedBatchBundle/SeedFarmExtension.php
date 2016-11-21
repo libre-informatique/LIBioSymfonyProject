@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Entity\Extension\LibrinfoSeedBatchBundle;
+namespace AppBundle\Entity\OuterExtension\LibrinfoSeedBatchBundle;
 
 trait SeedFarmExtension
 {
