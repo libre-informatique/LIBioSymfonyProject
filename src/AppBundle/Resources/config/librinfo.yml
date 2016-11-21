@@ -19,10 +19,12 @@ parameters:
 
         AppBundle\Admin\VarietyAdminPackagings:
             Sonata\AdminBundle\Show\ShowMapper:
+                title: libio.packagings_by_variety.show_title
                 remove: ['*']
                 add:
                     packagings: ~
             Sonata\AdminBundle\Form\FormMapper:
+                title: libio.packagings_by_variety.form_title
                 remove: ['*']
                 add:
                     form_group_packagings:
@@ -43,7 +45,8 @@ parameters:
                                     edit: inline
                                     inline: table
             Sonata\AdminBundle\Datagrid\ListMapper:
-                remove: ['*']
+                remove: ['*', _list_action]
+                title: libio.packagings_by_variety.list_title
                 add:
                     name:
                         label: librinfo.label.variety
@@ -51,7 +54,27 @@ parameters:
                         template: AppBundle:VarietyAdminPackagings:list_field_name.html.twig
                     packagings:
                         template: AppBundle:VarietyAdminPackagings:list_field_packagings.html.twig
+                    _action:
+                        type: actions
+                        label: Action
+                        actions:
+                            show: ~
+                            edit: ~
+                            duplicate:
+                                template: LibrinfoCoreBundle:CRUD:list__action_duplicate.html.twig
+                    _options:
+                        fieldsOrder:
+                            - name
+                            - packagings
+
+                    _list_action:
+                        test:
+                            route: admin_libio_packagings_by_variety_list
+#                        test2:
+#                            route: admin_libio_packagings_by_variety_list
+
             Sonata\AdminBundle\Datagrid\DatagridMapper:
+                remove: ['*']
                 add: ~
 
 #####################
