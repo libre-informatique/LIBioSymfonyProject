@@ -18,10 +18,6 @@ librinfo_base_entities:
     resource: "@LibrinfoBaseEntitiesBundle/Resources/config/routing.yml"
     prefix:   /
 
-librinfo_doctrine:
-    resource: "@LibrinfoDoctrineBundle/Resources/config/routing.yml"
-    prefix:   /
-
 librinfo_ui:
     resource: "@LibrinfoUIBundle/Resources/config/routing.yml"
     prefix:   /

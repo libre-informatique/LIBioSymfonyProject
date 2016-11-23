@@ -81,7 +81,7 @@ doctrine:
                 type: yml
             LibrinfoCRMBundle:
                 type: yml
-            LibrinfoDoctrineBundle:
+            LibrinfoBaseEntitiesBundle:
                 type: yml
             LibrinfoUserBundle:
                 type: yml
@@ -148,7 +148,7 @@ stfalcon_tinymce:
     language: %locale%
 
 # Enable LibrinfoDocrineBundle event listeners
-librinfo_doctrine:
+librinfo_base_entities:
     orm:
         default:
             naming: true
