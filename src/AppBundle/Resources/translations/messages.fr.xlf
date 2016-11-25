@@ -2,14 +2,118 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
     <file source-language="en" datatype="plaintext" original="file.ext">
         <body>
-            <trans-unit id="librinfo.menu_label.seed_batches">
-                <source>librinfo.menu_label.seed_batches</source>
+            
+            <!-- Admin settings sidebar menu -->            
+        
+            <trans-unit id="libio.menu_label.admin_settings">
+                <source>libio.menu_label.admin_settings</source>
+                <target>Application</target>
+            </trans-unit>
+            <trans-unit id="libio.menu_label.user_users">
+                <source>libio.menu_label.user_users</source>
+                <target>Utilisateurs</target>
+            </trans-unit>
+            <trans-unit id="libio.menu_label.user_groups">
+                <source>libio.menu_label.user_groups</source>
+                <target>Groupes</target>
+            </trans-unit>
+            <trans-unit id="libio.menu_label.user_roles">
+                <source>libio.menu_label.user_roles</source>
+                <target>Profils</target>
+            </trans-unit>
+            
+            <!-- CRM settings sidebar menu -->            
+            
+            <trans-unit id="libio.menu_label.crm_settings">
+                <source>libio.menu_label.crm_settings</source>
+                <target>Relations publiques</target>
+            </trans-unit>            
+            <trans-unit id="libio.menu_label.crm_circles_list">
+                <source>libio.menu_label.crm_circles_list</source>
+                <target>Groupes</target>
+            </trans-unit>            
+            <trans-unit id="libio.menu_label.crm_categories_list">
+                <source>libio.menu_label.crm_categories_list</source>
+                <target>Categories</target>
+            </trans-unit>            
+            <trans-unit id="libio.menu_label.position_types_list">
+                <source>libio.menu_label.position_types_list</source>
+                <target>Types de fonctions</target>
+            </trans-unit>            
+            <trans-unit id="libio.menu_label.phone_types_list">
+                <source>libio.menu_label.phone_types_list</source>
+                <target>Types de téléphone</target>
+            </trans-unit>        
+            
+            <!-- Varieties settings sidebar menu -->                
+            
+            <trans-unit id="libio.menu_label.varieties_settings">
+                <source>libio.menu_label.varieties_settings</source>
+                <target>Variétés</target>
+            </trans-unit>      
+            <trans-unit id="libio.menu_label.families_list">
+                <source>libio.menu_label.families_list</source>
+                <target>Familles</target>
+            </trans-unit>                       
+            <trans-unit id="libio.menu_label.genuses_list">
+                <source>libio.menu_label.genuses_list</source>
+                <target>Genres</target>
+            </trans-unit>                       
+            <trans-unit id="libio.menu_label.plant_categories_list">
+                <source>libio.menu_label.plant_categories_list</source>
+                <target>Catégories de plantes</target>
+            </trans-unit>   
+            
+            <!-- Seed batches settings sidebar menu -->                
+            
+            <trans-unit id="libio.menu_label.seed_batches_settings">
+                <source>libio.menu_label.seed_batches_settings</source>
                 <target>Lots</target>
-            </trans-unit>
-            <trans-unit id="librinfo.menu_label.plots">
-                <source>librinfo.menu_label.plots</source>
-                <target>Parcelles</target>
-            </trans-unit>
+            </trans-unit>      
+            <trans-unit id="libio.menu_label.certifications_list">
+                <source>libio.menu_label.certifications_list</source>
+                <target>Certifications</target>
+            </trans-unit>                       
+            <trans-unit id="libio.menu_label.certificators_list">
+                <source>libio.menu_label.certificators_list</source>
+                <target>Organismes certificateurs</target>
+            </trans-unit>                       
+            
+            <!-- Shop settings sidebar menu -->            
+            
+            <trans-unit id="libio.menu_label.shop_settings">
+                <source>libio.menu_label.shop_settings</source>
+                <target>Boutique</target>
+            </trans-unit>    
+            <trans-unit id="libio.menu_label.channels_list">
+                <source>libio.menu_label.channels_list</source>
+                <target>Canaux de vente</target>
+            </trans-unit>                                         
+            <trans-unit id="libio.menu_label.rates_list">
+                <source>libio.menu_label.rates_list</source>
+                <target>Tarifs forfaits</target>
+            </trans-unit>                                         
+            <trans-unit id="libio.menu_label.zones_list">
+                <source>libio.menu_label.zones_list</source>
+                <target>Zones géographiques</target>
+            </trans-unit>                                         
+            <trans-unit id="libio.menu_label.payment_methods_list">
+                <source>libio.menu_label.payment_methods_list</source>
+                <target>Méthodes de paiement</target>
+            </trans-unit>                                         
+            <trans-unit id="libio.menu_label.shipping_methods_list">
+                <source>libio.menu_label.shipping_methods_list</source>
+                <target>Méthodes de livraison</target>
+            </trans-unit>                                         
+            <trans-unit id="libio.menu_label.tax_categories_list">
+                <source>libio.menu_label.tax_categories_list</source>
+                <target>Catégories de TVA</target>
+            </trans-unit>                                         
+            <trans-unit id="libio.menu_label.tax_rates_list">
+                <source>libio.menu_label.tax_rates_list</source>
+                <target>Taux de TVA</target>
+            </trans-unit>                                         
+            
         </body>
     </file>
 </xliff>

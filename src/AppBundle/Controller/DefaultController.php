@@ -12,6 +12,11 @@ class DefaultController extends Controller
                 'name' => $name));
     }
 
+    public function notImplementedAction()
+    {
+        throw $this->createNotFoundException('This functionality has not been implemented yet');
+    }
+
     public function testAction($name)
     {
         $em = $this->getDoctrine()->getManager();

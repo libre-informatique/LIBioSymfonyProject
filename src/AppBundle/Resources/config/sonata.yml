@@ -9,51 +9,93 @@ sonata_admin:
     dashboard:
         groups:
             Customers Relationship Management:
-                label: librinfo.menu_label.crm
+                label: libio.menu_label.crm
+                icon:  '<i class="fa fa-address-card"></i>'
                 items:
-                    - librinfo_seedbatch.admin.organism
+                    - route: admin_librinfo_seedbatch_organism_list
+                      label: libio.menu_label.organisms_list
+                    - route: admin_librinfo_seedbatch_organism_create
+                      label: libio.menu_label.create_organism
+                    - route: admin_librinfo_emailcrm_contact_list
+                      label: libio.menu_label.contacts_list
+                    - route: admin_librinfo_emailcrm_contact_create
+                      label: libio.menu_label.create_contact
+                    - route: admin_librinfo_email_email_list
+                      label: libio.menu_label.emails_list
+                    - route: admin_librinfo_email_email_create
+                      label: libio.menu_label.create_email
+            Varieties:
+                label: libio.menu_label.varieties
+                icon:  '<i class="fa fa-pagelines"></i>'
+                items:
+                    - route: admin_libio_variety_list
+                      label: libio.menu_label.varieties_list
+                    - route: admin_libio_variety_create
+                      label: libio.menu_label.create_variety
+                    - route: admin_librinfo_varieties_species_list
+                      label: libio.menu_label.species_list
+                    - route: admin_librinfo_varieties_species_create
+                      label: libio.menu_label.create_species
+            Seed Batches:
+                label: libio.menu_label.seed_batches
+                icon:  '<i class="fa fa-shopping-bag"></i>'
+                items:
+                    - route: admin_librinfo_seedbatch_seedbatch_list
+                      label: libio.menu_label.seed_batches_list
+                    - route: admin_librinfo_seedbatch_seedbatch_create
+                      label: libio.menu_label.create_seed_batch
+                    - label: libio.menu_label.producers_list
+                      route: libio_not_implemented
+                    - label: libio.menu_label.create_producer
+                      route: libio_not_implemented
+                    - route: admin_librinfo_seedbatch_plot_list
+                      label: libio.menu_label.plots_list
+                    - route: admin_librinfo_seedbatch_plot_create
+                      label: libio.menu_label.create_plot
+                    - label: libio.menu_label.germination_tests
+                      route: libio_not_implemented
+            Products:
+                label: libio.menu_label.products
+                icon:  '<i class="fa fa-cube"></i>'
+                items:
+                    - label: libio.menu_label.seed_products_list
+                      route: libio_not_implemented
+                    - label: libio.menu_label.create_seed_product
+                      route: libio_not_implemented
+                    - label: libio.menu_label.other_products_list
+                      route: libio_not_implemented
+                    - label: libio.menu_label.create_other_product
+                      route: libio_not_implemented
+                    - label: libio.menu_label.packagings
+                      route: libio_not_implemented
+                    - label: libio.menu_label.inventory
+                      route: libio_not_implemented
+                    - label: libio.menu_label.catalogs
+                      route: libio_not_implemented
+            Orders:
+                label: libio.menu_label.orders
+                icon:  '<i class="fa fa-shopping-cart"></i>'
+                items:
+                    - label: libio.menu_label.orders_list
+                      route: libio_not_implemented
+                    - label: libio.menu_label.create_order
+                      route: libio_not_implemented
                     - route:        admin_librinfo_seedbatch_organism_list
                       route_params: { 'filter[customer][value]': 1 }
-                      label:        librinfo.menu_label.customers
-                    - route:        admin_librinfo_seedbatch_organism_list
-                      route_params: { 'filter[supplier][value]': 1 }
-                      label:        librinfo.menu_label.suppliers
-                    - librinfo_emailcrm.admin.contact
-                    - librinfo_email.admin.email
-            Varieties:
-                label: ~
-                on_top: true
+                      label:        libio.menu_label.customers_list
+                    - label: libio.menu_label.create_customer
+                      route: libio_not_implemented
+            Accounting:
+                label: libio.menu_label.accounting
+                icon:  '<i class="fa fa-balance-scale"></i>'
                 items:
-                    - libio.admin.variety
-            Plots:
-                label: librinfo.menu_label.plots
-                on_top: true
-                items:
-                    - librinfo_seedbatch.admin.plot
-            Seed Batches:
-                label: librinfo.menu_label.seed_batches
-                on_top: true
-                items:
-                    - librinfo_seedbatch.admin.seedbatch
-            CRM Admin:
-                label: librinfo.menu_label.crm_admin
-                items:
-                    - crm.circle
-                    - crm.category
-                    - crm.position_type
-                    - crm.phone_type
-            Variety Admin:
-                label: librinfo.menu_label.variety_admin
-                items:
-                    - librinfo_varieties.admin.family
-                    - librinfo_varieties.admin.genus
-                    - librinfo_varieties.admin.species
-                    - librinfo_varieties.admin.plant_category
-            Application Management:
-                label: librinfo.menu_label.app_admin
-                items:
-                    - app.user
-                    - app.group
+                    - label: libio.menu_label.sales_journal
+                      route: libio_not_implemented
+                    - label: libio.menu_label.cash_book
+                      route: libio_not_implemented
+            App settings:
+                provider: parameters_sidebar_menu
+                icon:     '<i class="fa fa-sliders"></i>'
 #            Development tools:
 #                label: DEV
 #                roles: [ROLE_SUPER_ADMIN]

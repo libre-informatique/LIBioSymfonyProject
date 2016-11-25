@@ -1,10 +1,10 @@
-app_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: AppBundle:Default:index }
-
-app_test:
+libio_test:
     path:     /test/{name}
     defaults: { _controller: AppBundle:Default:test }
+
+libio_not_implemented:
+    path:   /libio/not_implemented
+    defaults: { _controller: AppBundle:Default:notImplemented }
 
 librinfo_core:
     resource: "@LibrinfoCoreBundle/Resources/config/routing.yml"
@@ -57,7 +57,7 @@ librinfo_email_crm:
 librinfo_media:
     resource: "@LibrinfoMediaBundle/Resources/config/routing.yml"
     prefix:   /
-    
+
 admin:
     resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
     prefix: /
