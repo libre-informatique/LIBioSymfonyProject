@@ -41,7 +41,6 @@
         "doctrine/doctrine-fixtures-bundle": "^2.3",
         "jms/serializer-bundle": "^1.1",
         "libre-informatique/media-bundle": "dev-master",
-        "libre-informatique/outer-extension-bundle": "dev-master",
         "libre-informatique/product-bundle": "dev-master",
         "sylius/sylius": "^1.0"
     },
