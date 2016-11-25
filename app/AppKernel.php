@@ -50,7 +50,7 @@ class AppKernel extends Kernel
             new Librinfo\DecoratorBundle\LibrinfoDecoratorBundle(),
             new Librinfo\UIBundle\LibrinfoUIBundle(),
             new Librinfo\BaseEntitiesBundle\LibrinfoBaseEntitiesBundle(),
-            new Blast\OuterExtensionBundle\LibrinfoOuterExtensionBundle(),
+            new Blast\OuterExtensionBundle\BlastOuterExtensionBundle(),
             new Librinfo\SecurityBundle\LibrinfoSecurityBundle(),
             new Librinfo\CRMBundle\LibrinfoCRMBundle(),
             new Librinfo\UserBundle\LibrinfoUserBundle(),
@@ -71,7 +71,7 @@ class AppKernel extends Kernel
         {
 //            $bundles[] = new Symfony\Bundle\DebugBundle\DebugBundle(); provided by Sylius
 //            $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle(); provided by Sylius
-            $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
+//            $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
 //            $bundles[] = new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(); provided by Sylius
             $bundles[] = new Alex\DoctrineExtraBundle\AlexDoctrineExtraBundle();

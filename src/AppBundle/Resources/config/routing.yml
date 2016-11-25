@@ -6,7 +6,7 @@ app_test:
     path:     /test/{name}
     defaults: { _controller: AppBundle:Default:test }
 
-librinfo_core:
+blast_core:
     resource: "@BlastCoreBundle/Resources/config/routing.yml"
     prefix:   /
 
