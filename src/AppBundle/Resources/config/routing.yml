@@ -7,7 +7,7 @@ app_test:
     defaults: { _controller: AppBundle:Default:test }
 
 librinfo_core:
-    resource: "@LibrinfoCoreBundle/Resources/config/routing.yml"
+    resource: "@BlastCoreBundle/Resources/config/routing.yml"
     prefix:   /
 
 librinfo_security:

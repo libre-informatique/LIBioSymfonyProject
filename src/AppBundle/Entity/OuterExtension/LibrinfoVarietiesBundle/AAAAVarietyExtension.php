@@ -2,7 +2,7 @@
 
 namespace AppBundle\Entity\OuterExtension\LibrinfoVarietiesBundle;
 
-trait VarietyExtension
+trait AAAVarietyExtension
 {
     use \Librinfo\SeedBatchBundle\Entity\OuterExtension\HasSeedBatches;
     use \Librinfo\MediaBundle\Entity\OuterExtension\HasImages;
