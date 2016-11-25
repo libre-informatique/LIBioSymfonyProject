@@ -3160,12 +3160,12 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/libre-informatique/SymfonyLibrinfoCoreBundle.git",
+                "url": "https://github.com/symfony-blast/CoreBundle.git",
                 "reference": "4fadf7931b48d91f2d6d591a437f540be22cffc2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/SymfonyLibrinfoCoreBundle/zipball/4fadf7931b48d91f2d6d591a437f540be22cffc2",
+                "url": "https://api.github.com/repos/symfony-blast/CoreBundle/zipball/4fadf7931b48d91f2d6d591a437f540be22cffc2",
                 "reference": "4fadf7931b48d91f2d6d591a437f540be22cffc2",
                 "shasum": ""
             },
@@ -5832,12 +5832,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataCoreBundle.git",
-                "reference": "d7a777079425d79092734ba889360f3eff9fc456"
+                "reference": "79464049e7e5573b0eed5e7a0d581309ea4585c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataCoreBundle/zipball/d7a777079425d79092734ba889360f3eff9fc456",
-                "reference": "d7a777079425d79092734ba889360f3eff9fc456",
+                "url": "https://api.github.com/repos/sonata-project/SonataCoreBundle/zipball/79464049e7e5573b0eed5e7a0d581309ea4585c9",
+                "reference": "79464049e7e5573b0eed5e7a0d581309ea4585c9",
                 "shasum": ""
             },
             "require": {
@@ -5899,7 +5899,7 @@
             "keywords": [
                 "sonata"
             ],
-            "time": "2016-11-20 16:58:49"
+            "time": "2016-11-24 01:20:06"
         },
         {
             "name": "sonata-project/datagrid-bundle",
