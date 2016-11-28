@@ -10,18 +10,19 @@
 
 namespace AppBundle\Admin;
 
-use Librinfo\VarietiesBundle\Admin\VarietyAdminConcrete as BaseAdmin;
+use Librinfo\ProductBundle\Admin\ProductAdminConcrete as BaseAdmin;
 use Sonata\AdminBundle\Route\RouteCollection;
 
 /**
- * Libio Sonata admin for varieties
+ * Libio Sonata admin for seeds products
  *
  * @author Marcos Bezerra de Menezes <marcos.bezerra@libre-informatique.fr>
  */
-class VarietyAdminConcrete extends BaseAdmin
+class SeedsProductAdminConcrete extends BaseAdmin
 {
-    protected $baseRouteName = 'admin_libio_variety';
-    protected $baseRoutePattern = 'libio/variety';
+    protected $baseRouteName = 'admin_libio_seeds_product';
+    protected $baseRoutePattern = 'libio/seeds_product';
+    protected $classnameLabel = 'SeedsProduct';
 
     /**
      * @return array
@@ -29,8 +30,7 @@ class VarietyAdminConcrete extends BaseAdmin
     public function getFormTheme()
     {
         return array_merge(
-            parent::getFormTheme(),
-            array('AppBundle:VarietyAdmin:form_admin_fields.html.twig')
+            parent::getFormTheme(), []
         );
     }
 
@@ -42,5 +42,16 @@ class VarietyAdminConcrete extends BaseAdmin
     protected function configureRoutes(RouteCollection $collection)
     {
         parent::configureRoutes($collection);
+    }
+
+
+    public function createQuery($context = 'list')
+    {
+        $query = parent::createQuery($context);
+        $alias = $query->getRootAliases()[0];
+        $query->andWhere(
+            $query->expr()->isNotNull("$alias.variety")
+        );
+        return $query;
     }
 }

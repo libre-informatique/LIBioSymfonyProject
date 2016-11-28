@@ -20,3 +20,38 @@ parameters:
                 add: ~
             Sonata\AdminBundle\Datagrid\DatagridMapper:
                 add: ~
+
+################
+# SEEDS PRODUCT
+################
+
+        AppBundle\Admin\SeedsProductAdminConcrete:
+            Sonata\AdminBundle\Show\ShowMapper:
+                add: ~
+            Sonata\AdminBundle\Form\FormMapper:
+                add:
+                    form_group_general:
+                        '':
+                            variety:
+                                type: sonata_type_model_autocomplete
+#                                route: { name: searchable_admin_retrieve_autocomplete_items }
+                                by_reference: false
+                                property: name
+                                _options:
+                                    admin_code: librinfo_varieties.admin.variety
+                            _options:
+                                fieldsOrder: [variety, available]
+
+            Sonata\AdminBundle\Datagrid\ListMapper:
+                remove: [name]
+                add:
+                    code:
+                        label: libio.label.product_code
+                        identifier: true
+                    variety:
+                        admin_code: librinfo_varieties.admin.variety
+                    _options:
+                        fieldsOrder: [code, variety, available]
+
+            Sonata\AdminBundle\Datagrid\DatagridMapper:
+                add: ~

@@ -1,0 +1,6 @@
+Librinfo\VarietiesBundle\Entity\Variety:
+    type: entity
+    oneToMany:
+        products:
+            targetEntity: Librinfo\ProductBundle\Entity\Product
+            mappedBy: variety

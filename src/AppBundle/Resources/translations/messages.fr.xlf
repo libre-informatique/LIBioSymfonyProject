@@ -112,8 +112,31 @@
             <trans-unit id="libio.menu_label.tax_rates_list">
                 <source>libio.menu_label.tax_rates_list</source>
                 <target>Taux de TVA</target>
-            </trans-unit>                                         
+            </trans-unit>             
             
+            <!-- Seeds products --> 
+            
+            <trans-unit id="libio.seeds_product_admin.label">
+                <source>libio.seeds_product_admin.label</source>
+                <target>Article (semences)</target>
+            </trans-unit>     
+            <trans-unit id="libio.label.product_code">
+                <source>libio.label.product_code</source>
+                <target>Code article</target>
+            </trans-unit>     
+            <trans-unit id="librinfo.link.seed_product_list">
+                <source>librinfo.link.seed_product_list</source>
+                <target>Liste des articles (semences)</target>
+            </trans-unit>     
+            <trans-unit id="librinfo.link.seeds_product_list">
+                <source>librinfo.link.seeds_product_list</source>
+                <target>Liste des articles (semences)</target>
+            </trans-unit>     
+            <trans-unit id="librinfo.link.seedsproduct_list">
+                <source>librinfo.link.seedsproduct_list</source>
+                <target>Liste des articles (semences)</target>
+            </trans-unit>     
+                        
         </body>
     </file>
 </xliff>

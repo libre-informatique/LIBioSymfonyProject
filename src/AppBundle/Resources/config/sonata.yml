@@ -58,10 +58,10 @@ sonata_admin:
                 label: libio.menu_label.products
                 icon:  '<i class="fa fa-cube"></i>'
                 items:
-                    - label: libio.menu_label.seed_products_list
-                      route: libio_not_implemented
-                    - label: libio.menu_label.create_seed_product
-                      route: libio_not_implemented
+                    - route: admin_libio_seeds_product_list
+                      label: libio.menu_label.seed_products_list
+                    - route: admin_libio_seeds_product_create
+                      label: libio.menu_label.create_seed_product
                     - label: libio.menu_label.other_products_list
                       route: libio_not_implemented
                     - label: libio.menu_label.create_other_product

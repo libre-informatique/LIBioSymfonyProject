@@ -1,0 +1,6 @@
+Librinfo\ProductBundle\Entity\Product:
+    type: entity
+    manyToOne:
+        variety:
+            targetEntity: Librinfo\VarietiesBundle\Entity\Variety
+            inversedBy: products
