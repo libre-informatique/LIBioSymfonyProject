@@ -6,8 +6,8 @@ libio_not_implemented:
     path:   /libio/not_implemented
     defaults: { _controller: AppBundle:Default:notImplemented }
 
-librinfo_core:
-    resource: "@LibrinfoCoreBundle/Resources/config/routing.yml"
+blast_core:
+    resource: "@BlastCoreBundle/Resources/config/routing.yml"
     prefix:   /
 
 librinfo_security:
@@ -16,10 +16,6 @@ librinfo_security:
 
 librinfo_base_entities:
     resource: "@LibrinfoBaseEntitiesBundle/Resources/config/routing.yml"
-    prefix:   /
-
-librinfo_doctrine:
-    resource: "@LibrinfoDoctrineBundle/Resources/config/routing.yml"
     prefix:   /
 
 librinfo_ui:

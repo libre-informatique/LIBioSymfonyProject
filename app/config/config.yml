@@ -41,7 +41,7 @@ twig:
         - 'SonataCoreBundle:Form:datepicker.html.twig'
         - 'SonataCoreBundle:Form:colorpicker.html.twig'
 #        - 'bootstrap_3_layout.html.twig'  # is not used (?) and conflicts with Sylius forms
-        - 'LibrinfoCoreBundle:Admin/Form:fields.html.twig'
+        - 'BlastCoreBundle:Admin/Form:fields.html.twig'
         - 'LibrinfoMediaBundle:Form:fields.html.twig'
         - 'LibrinfoVarietiesBundle:Form:fields.html.twig'
 
@@ -81,7 +81,7 @@ doctrine:
                 type: yml
             LibrinfoCRMBundle:
                 type: yml
-            LibrinfoDoctrineBundle:
+            LibrinfoBaseEntitiesBundle:
                 type: yml
             LibrinfoUserBundle:
                 type: yml
@@ -148,7 +148,7 @@ stfalcon_tinymce:
     language: %locale%
 
 # Enable LibrinfoDocrineBundle event listeners
-librinfo_doctrine:
+librinfo_base_entities:
     orm:
         default:
             naming: true

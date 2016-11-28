@@ -14,7 +14,7 @@ services:
               manager_type: orm
               group: admin
               label: librinfo.varieties.variety_admin.label
-              label_translator_strategy: librinfo_core.label.strategy.librinfo
+              label_translator_strategy: blast_core.label.strategy.librinfo
         calls:
             - [ setTemplate, [ list, LibrinfoVarietiesBundle:VarietyAdmin:list.html.twig ] ]
             - [ setTemplate, [ edit, LibrinfoVarietiesBundle:VarietyAdmin:edit.html.twig ] ]

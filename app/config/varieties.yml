@@ -19,7 +19,7 @@ librinfo_varieties:
             possible_sowing_periods:
                 type: librinfo_customchoice
                 show:
-                    template: LibrinfoCoreBundle:CRUD:show_field_multiple_choices.html.twig
+                    template: BlastCoreBundle:CRUD:show_field_multiple_choices.html.twig
                 options:
                     multiple: true
                     attr:
@@ -102,7 +102,7 @@ librinfo_varieties:
             soil:
                 type: librinfo_customchoice
                 show:
-                    template: LibrinfoCoreBundle:CRUD:show_field_multiple_choices.html.twig
+                    template: BlastCoreBundle:CRUD:show_field_multiple_choices.html.twig
                 options:
                     multiple: true
                     attr:
@@ -242,7 +242,7 @@ librinfo_varieties:
             possible_sowing_periods:
                 type: librinfo_customchoice
                 show:
-                    template: LibrinfoCoreBundle:CRUD:show_field_multiple_choices.html.twig
+                    template: BlastCoreBundle:CRUD:show_field_multiple_choices.html.twig
                 options:
                     multiple: true
                     attr:
@@ -325,7 +325,7 @@ librinfo_varieties:
             soil:
                 type: librinfo_customchoice
                 show:
-                    template: LibrinfoCoreBundle:CRUD:show_field_multiple_choices.html.twig
+                    template: BlastCoreBundle:CRUD:show_field_multiple_choices.html.twig
                 options:
                     multiple: true
                     attr:
@@ -465,7 +465,7 @@ librinfo_varieties:
             possible_sowing_periods:
                 type: librinfo_customchoice
                 show:
-                    template: LibrinfoCoreBundle:CRUD:show_field_multiple_choices.html.twig
+                    template: BlastCoreBundle:CRUD:show_field_multiple_choices.html.twig
                 options:
                     multiple: true
                     attr:
@@ -548,7 +548,7 @@ librinfo_varieties:
             soil:
                 type: librinfo_customchoice
                 show:
-                    template: LibrinfoCoreBundle:CRUD:show_field_multiple_choices.html.twig
+                    template: BlastCoreBundle:CRUD:show_field_multiple_choices.html.twig
                 options:
                     multiple: true
                     attr:
@@ -754,7 +754,7 @@ librinfo_varieties:
             taste: 
                 type: librinfo_customchoice
                 show:
-                        template: LibrinfoCoreBundle:CRUD:show_field_multiple_choices.html.twig    
+                        template: BlastCoreBundle:CRUD:show_field_multiple_choices.html.twig    
                 options:
                     attr:
                         class: columns-2 multiple-checkbox
@@ -776,7 +776,7 @@ librinfo_varieties:
             texture: 
                 type: librinfo_customchoice
                 show:
-                    template: LibrinfoCoreBundle:CRUD:show_field_multiple_choices.html.twig
+                    template: BlastCoreBundle:CRUD:show_field_multiple_choices.html.twig
                 options: 
                     attr:
                         class: columns-2 multiple-checkbox
@@ -793,7 +793,7 @@ librinfo_varieties:
             nutrients: 
                 type: librinfo_customchoice
                 show:
-                    template: LibrinfoCoreBundle:CRUD:show_field_multiple_choices.html.twig
+                    template: BlastCoreBundle:CRUD:show_field_multiple_choices.html.twig
                 options:
                     attr:
                         class: columns-3 multiple-checkbox
@@ -874,7 +874,7 @@ librinfo_varieties:
             main_usages:
                 type: librinfo_customchoice
                 show:
-                    template: LibrinfoCoreBundle:CRUD:show_field_multiple_choices.html.twig
+                    template: BlastCoreBundle:CRUD:show_field_multiple_choices.html.twig
                 options:
                     multiple: true
                     expanded: true
@@ -891,7 +891,7 @@ librinfo_varieties:
             usages: 
                 type: librinfo_customchoice
                 show:
-                    template: LibrinfoCoreBundle:CRUD:show_field_multiple_choices.html.twig
+                    template: BlastCoreBundle:CRUD:show_field_multiple_choices.html.twig
                 options:
                     multiple: true
                     expanded: true
@@ -908,7 +908,7 @@ librinfo_varieties:
             inner_commment: 
                 type: librinfo_tinymce
                 show:
-                    template: LibrinfoCoreBundle:CRUD:show_field_tinymce.html.twig
+                    template: BlastCoreBundle:CRUD:show_field_tinymce.html.twig
  ############# CARACTERISTIQUES PLANTE #############
         plant: 
             foliage_type:
@@ -962,7 +962,7 @@ librinfo_varieties:
             description:
                 type: librinfo_tinymce
                 show:
-                    template: LibrinfoCoreBundle:CRUD:show_field_tinymce.html.twig
+                    template: BlastCoreBundle:CRUD:show_field_tinymce.html.twig
                 options:
                     attr:
                         class: new-line
