@@ -89,6 +89,14 @@
                 <source>libio.menu_label.channels_list</source>
                 <target>Canaux de vente</target>
             </trans-unit>                                         
+            <trans-unit id="libio.menu_label.product_attributes">
+                <source>libio.menu_label.product_attributes</source>
+                <target>Attributs des articles</target>
+            </trans-unit>                                         
+            <trans-unit id="libio.menu_label.product_options">
+                <source>libio.menu_label.product_options</source>
+                <target>Options des articles</target>
+            </trans-unit>                                         
             <trans-unit id="libio.menu_label.rates_list">
                 <source>libio.menu_label.rates_list</source>
                 <target>Tarifs forfaits</target>
