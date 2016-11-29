@@ -13,11 +13,23 @@ parameters:
 
         AppBundle\Admin\VarietyAdminConcrete:
             Sonata\AdminBundle\Show\ShowMapper:
-                add: ~
+                add:
+                    _helper_links:
+                        - url: https://framacalc.org/libio_validation_varietes
+                          title: Framacalc de validation (Variétés)
+                          class: framacalc
             Sonata\AdminBundle\Form\FormMapper:
-                add: ~
+                add:
+                    _helper_links:
+                        - url: https://framacalc.org/libio_validation_varietes
+                          title: Framacalc de validation (Variétés)
+                          class: framacalc
             Sonata\AdminBundle\Datagrid\ListMapper:
-                add: ~
+                add:
+                    _helper_links:
+                        - url: https://framacalc.org/libio_validation_varietes
+                          title: Framacalc de validation (Variétés)
+                          class: framacalc
             Sonata\AdminBundle\Datagrid\DatagridMapper:
                 add: ~
 
