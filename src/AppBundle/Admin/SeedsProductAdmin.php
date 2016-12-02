@@ -10,15 +10,17 @@
 
 namespace AppBundle\Admin;
 
-use Librinfo\ProductBundle\Admin\ProductAdminConcrete as BaseAdmin;
+use Librinfo\ProductBundle\Admin\ProductAdmin;
 use Sonata\AdminBundle\Route\RouteCollection;
+use Sylius\Component\Product\Factory\ProductFactoryInterface;
+use Sylius\Component\Product\Model\ProductInterface;
 
 /**
- * Libio Sonata admin for seeds products
+ * Sonata admin for seeds products
  *
  * @author Marcos Bezerra de Menezes <marcos.bezerra@libre-informatique.fr>
  */
-class SeedsProductAdminConcrete extends BaseAdmin
+class SeedsProductAdmin extends ProductAdmin
 {
     protected $baseRouteName = 'admin_libio_seeds_product';
     protected $baseRoutePattern = 'libio/seeds_product';
@@ -44,7 +46,6 @@ class SeedsProductAdminConcrete extends BaseAdmin
         parent::configureRoutes($collection);
     }
 
-
     public function createQuery($context = 'list')
     {
         $query = parent::createQuery($context);
@@ -53,5 +54,24 @@ class SeedsProductAdminConcrete extends BaseAdmin
             $query->expr()->isNotNull("$alias.variety")
         );
         return $query;
+    }
+
+    /**
+     * @return ProductInterface
+     */
+    public function getNewInstance()
+    {
+        $factory = $this->getConfigurationPool()->getContainer()->get('libio.factory.seeds_product');
+        $object = $factory->createNew();
+
+        foreach ($this->getExtensions() as $extension) {
+            $extension->alterNewInstance($this, $object);
+        }
+        return $object;
+    }
+
+    public function prePersistOrUpdate($object, $method)
+    {
+        parent::prePersistOrUpdate($object, $method);
     }
 }
