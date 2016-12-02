@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "27d0d7f4df3d897ff4b947bf7f3e9dc1",
-    "content-hash": "c683f4cf3f8b3264fcb658d02ca31b49",
+    "hash": "93d4c78ac723fe4cae45acdd3b003fc5",
+    "content-hash": "0644126d7e4a50bd436b9dcd772142ce",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -167,6 +167,59 @@
                 "symfony"
             ],
             "time": "2016-12-02 14:20:36"
+        },
+        {
+            "name": "blast-project/doctrine-pgsql-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/blast-project/DoctrinePgsqlBundle.git",
+                "reference": "d2adb16bae02fdd307880a191db68d48c5885d7f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/blast-project/DoctrinePgsqlBundle/zipball/d2adb16bae02fdd307880a191db68d48c5885d7f",
+                "reference": "d2adb16bae02fdd307880a191db68d48c5885d7f",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/doctrine-bundle": "dev-master",
+                "doctrine/orm": "^2.4.8,<2.5",
+                "php": ">=5.3.9",
+                "sonata-project/admin-bundle": "^3.4",
+                "sonata-project/doctrine-orm-admin-bundle": "^3.0",
+                "symfony/symfony": "2.8.*"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Blast\\DoctrinePgsqlBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Libre Informatique",
+                    "homepage": "http://www.libre-informatique.fr/"
+                },
+                {
+                    "name": "Marcos BEZERRA de MENEZES",
+                    "email": "marcos.bezerra@libre-informatique.fr"
+                }
+            ],
+            "description": "This bundle extends the Postgresql functionalities of Doctrine and Sonata projects",
+            "homepage": "https://github.com/blast-project/DoctrinePgsqlBundle",
+            "keywords": [
+                "blast",
+                "doctrine",
+                "postgresql",
+                "sonata",
+                "symfony"
+            ],
+            "time": "2016-12-02 15:50:41"
         },
         {
             "name": "blast-project/outer-extension-bundle",
@@ -3445,59 +3498,6 @@
                 "symfony"
             ],
             "time": "2016-11-28 11:15:45"
-        },
-        {
-            "name": "libre-informatique/doctrine-pgsql-bundle",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/libre-informatique/SymfonyLibrinfoDoctrinePgsqlBundle.git",
-                "reference": "db41285f5e198c6bb39e5185de3f5bafe4825596"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/SymfonyLibrinfoDoctrinePgsqlBundle/zipball/db41285f5e198c6bb39e5185de3f5bafe4825596",
-                "reference": "db41285f5e198c6bb39e5185de3f5bafe4825596",
-                "shasum": ""
-            },
-            "require": {
-                "doctrine/doctrine-bundle": "dev-master",
-                "doctrine/orm": "^2.4.8,<2.5",
-                "php": ">=5.3.9",
-                "sonata-project/admin-bundle": "^3.4",
-                "sonata-project/doctrine-orm-admin-bundle": "^3.0",
-                "symfony/symfony": "2.8.*"
-            },
-            "type": "symfony-bundle",
-            "autoload": {
-                "psr-4": {
-                    "Librinfo\\DoctrinePgsqlBundle\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0"
-            ],
-            "authors": [
-                {
-                    "name": "Libre Informatique",
-                    "homepage": "http://www.libre-informatique.fr/"
-                },
-                {
-                    "name": "Marcos BEZERRA de MENEZES",
-                    "email": "marcos.bezerra@libre-informatique.fr"
-                }
-            ],
-            "description": "This bundle extends the Postgresql functionalities of Doctrine and Sonata projects",
-            "homepage": "https://github.com/libre-informatique/SymfonyLibrinfoDoctrinePgsqlBundle",
-            "keywords": [
-                "e-venement",
-                "libio",
-                "postgresql",
-                "sonata",
-                "symfony"
-            ],
-            "time": "2016-11-18 15:55:34"
         },
         {
             "name": "libre-informatique/email-bundle",
@@ -8724,7 +8724,7 @@
         "libre-informatique/seed-batch-bundle": 20,
         "libre-informatique/security-bundle": 20,
         "libre-informatique/user-bundle": 20,
-        "libre-informatique/doctrine-pgsql-bundle": 20,
+        "blast-project/doctrine-pgsql-bundle": 20,
         "libre-informatique/media-bundle": 20,
         "libre-informatique/product-bundle": 20,
         "blast-project/utils-bundle": 20
