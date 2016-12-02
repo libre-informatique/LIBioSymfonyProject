@@ -47,10 +47,11 @@ class AppKernel extends Kernel
 //            new Sonata\IntlBundle\SonataIntlBundle(), provided by Sylius
 
             new Blast\CoreBundle\BlastCoreBundle(),
+            new Blast\OuterExtensionBundle\BlastOuterExtensionBundle(),
+            new Blast\BaseEntitiesBundle\BlastBaseEntitiesBundle(),
+            
             new Librinfo\DecoratorBundle\LibrinfoDecoratorBundle(),
             new Librinfo\UIBundle\LibrinfoUIBundle(),
-            new Librinfo\BaseEntitiesBundle\LibrinfoBaseEntitiesBundle(),
-            new Blast\OuterExtensionBundle\BlastOuterExtensionBundle(),
             new Librinfo\SecurityBundle\LibrinfoSecurityBundle(),
             new Librinfo\CRMBundle\LibrinfoCRMBundle(),
             new Librinfo\UserBundle\LibrinfoUserBundle(),
