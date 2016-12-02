@@ -49,6 +49,7 @@ class AppKernel extends Kernel
             new Blast\CoreBundle\BlastCoreBundle(),
             new Blast\OuterExtensionBundle\BlastOuterExtensionBundle(),
             new Blast\BaseEntitiesBundle\BlastBaseEntitiesBundle(),
+            new Blast\UtilsBundle\BlastUtilsBundle(),
             
             new Librinfo\DecoratorBundle\LibrinfoDecoratorBundle(),
             new Librinfo\UIBundle\LibrinfoUIBundle(),
