@@ -19,9 +19,9 @@ services:
             - [ setTemplate, [ list, LibrinfoVarietiesBundle:VarietyAdmin:list.html.twig ] ]
             - [ setTemplate, [ edit, LibrinfoVarietiesBundle:VarietyAdmin:edit.html.twig ] ]
 
-    libio.admin.seed_product:
-        class: AppBundle\Admin\SeedsProductAdminConcrete
-        arguments: [~, Librinfo\ProductBundle\Entity\Product, SonataAdminBundle:CRUD]
+    libio.admin.seeds_product:
+        class: AppBundle\Admin\SeedsProductAdmin
+        arguments: [~, AppBundle\Entity\SeedsProduct, SonataAdminBundle:CRUD]
         tags:
             - name: sonata.admin
               manager_type: orm

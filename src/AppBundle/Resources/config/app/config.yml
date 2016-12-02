@@ -5,3 +5,9 @@ imports:
     - { resource: "@SyliusApiBundle/Resources/config/app/config.yml" }
 
     - { resource: "@LibrinfoProductBundle/Resources/config/app/config.yml" }
+
+sylius_resource:
+    resources:
+        app.seeds_product:
+            classes:
+                model: AppBundle\Entity\SeedsProduct

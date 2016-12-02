@@ -37,7 +37,7 @@ parameters:
 # SEEDS PRODUCT
 ################
 
-        AppBundle\Admin\SeedsProductAdminConcrete:
+        AppBundle\Admin\SeedsProductAdmin:
             Sonata\AdminBundle\Show\ShowMapper:
                 add: ~
             Sonata\AdminBundle\Form\FormMapper:
@@ -51,8 +51,10 @@ parameters:
                                 property: name
                                 _options:
                                     admin_code: librinfo_varieties.admin.variety
+                            weight:
+                                type: integer
                             _options:
-                                fieldsOrder: [variety, available]
+                                fieldsOrder: [variety, weight]
 
             Sonata\AdminBundle\Datagrid\ListMapper:
                 remove: [name]
