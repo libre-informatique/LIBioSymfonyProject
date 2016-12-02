@@ -1,5 +1,5 @@
 
-#librinfo_customcheckboxes 	true 	 true
+#blast_custom_checkboxes 	true 	 true
 
 #inline fields:
 #    attr:
@@ -17,7 +17,7 @@ librinfo_varieties:
 ########### CONSEILS PROS ##################
         professional:
             possible_sowing_periods:
-                type: librinfo_customchoice
+                type: blast_custom_choice
                 show:
                     template: BlastCoreBundle:CRUD:show_field_multiple_choices.html.twig
                 options:
@@ -25,7 +25,7 @@ librinfo_varieties:
                     attr:
                         class: inline-block
                     choices_field: possible_sowing_periods
-                    librinfo_choices:
+                    blast_choices:
                         - début Mars
                         - fin Mars
                         - début Avril
@@ -37,7 +37,7 @@ librinfo_varieties:
                         - début Juillet
                         - fin Juillet
             transplant:
-                type: librinfo_customchoice
+                type: blast_custom_choice
                 options:
                     attr:
                         class: inline-block
@@ -82,32 +82,32 @@ librinfo_varieties:
                         class: new-line
                         width: 30
             exposure: 
-                type: librinfo_customchoice
+                type: blast_custom_choice
                 options:
                     attr:
                         class: inline-block
-                    librinfo_choices:
+                    blast_choices:
                         - nord
                         - sud
                         - est
                         - ouest
                     choices_field: exposure
             substratum: 
-                type: librinfo_customchoice
+                type: blast_custom_choice
                 options:
                     attr:
                         class: inline-block
-                    librinfo_choices: [terre, coco, tourbe]
+                    blast_choices: [terre, coco, tourbe]
                     choices_field: substratum
             soil:
-                type: librinfo_customchoice
+                type: blast_custom_choice
                 show:
                     template: BlastCoreBundle:CRUD:show_field_multiple_choices.html.twig
                 options:
                     multiple: true
                     attr:
                         class: inline-block
-                    librinfo_choices:
+                    blast_choices:
                         - acide
                         - basique
                         - lourd
@@ -117,12 +117,12 @@ librinfo_varieties:
                         - TOUS
                     choices_field: soil
             manure: 
-                type: librinfo_customchoice
+                type: blast_custom_choice
                 options:
                     attr:
                         class: inline-block
                     choices_field: manure
-                    librinfo_choices: [ compost, orga3]
+                    blast_choices: [ compost, orga3]
             manure_quantity: 
                 type: integer
                 options:
@@ -136,12 +136,12 @@ librinfo_varieties:
                         class: new-line
                         width: 30
             seedling_irrigation_frequency: 
-                type: librinfo_customchoice
+                type: blast_custom_choice
                 options:
                     attr:
                         class: new-line
                         width: 30
-                    librinfo_choices: [quotidien, hebdomadaire]
+                    blast_choices: [quotidien, hebdomadaire]
                     choices_field: seedling_irrigation_frequency
             transplant_irrigation_quantity: 
                 type: integer
@@ -150,12 +150,12 @@ librinfo_varieties:
                         class: new-line
                         width: 30
             transplant_irrigation_frequency: 
-                type: librinfo_customchoice
+                type: blast_custom_choice
                 options:
                     attr:
                         class: new-line
                         width: 30
-                    librinfo_choices: [quotidien, hebdomadaire]
+                    blast_choices: [quotidien, hebdomadaire]
                     choices_field: transplant_irrigation_frequency
             cuttings_period: 
                 type: integer
@@ -203,35 +203,35 @@ librinfo_varieties:
                         class: new-line
                         width: 50
             seedling_hotbed:
-                type: librinfo_customcheckbox
+                type: blast_custom_checkbox
                 show:
                     type: boolean
                 options:
                     attr:
                         class: inline-block
             transplant_hotbed:
-                type: librinfo_customcheckbox
+                type: blast_custom_checkbox
                 show:
                     type: boolean
                 options:
                     attr:
                         class: inline-block
             plant_hotbed:
-                type: librinfo_customcheckbox
+                type: blast_custom_checkbox
                 options:
                     attr:
                         class: inline-block
                 show:
                     type: boolean
             biodynamics: 
-                type: librinfo_customcheckbox
+                type: blast_custom_checkbox
                 options:
                     attr:
                         class: inline-block
                 show:
                     type: boolean
             tutoring: 
-                type: librinfo_customcheckbox
+                type: blast_custom_checkbox
                 options:
                     attr:
                         class: inline-block
@@ -240,7 +240,7 @@ librinfo_varieties:
 ############# CONSEILS AMATEURS ####################
         amateur:
             possible_sowing_periods:
-                type: librinfo_customchoice
+                type: blast_custom_choice
                 show:
                     template: BlastCoreBundle:CRUD:show_field_multiple_choices.html.twig
                 options:
@@ -248,7 +248,7 @@ librinfo_varieties:
                     attr:
                         class: inline-block
                     choices_field: possible_sowing_periods
-                    librinfo_choices:
+                    blast_choices:
                         - début Mars
                         - fin Mars
                         - début Avril
@@ -260,7 +260,7 @@ librinfo_varieties:
                         - début Juillet
                         - fin Juillet
             transplant:
-                type: librinfo_customchoice
+                type: blast_custom_choice
                 options:
                     attr:
                         class: inline-block
@@ -305,32 +305,32 @@ librinfo_varieties:
                         class: new-line
                         width: 30
             exposure: 
-                type: librinfo_customchoice
+                type: blast_custom_choice
                 options:
                     attr:
                         class: inline-block
-                    librinfo_choices:
+                    blast_choices:
                         - nord
                         - sud
                         - est
                         - ouest
                     choices_field: exposure
             substratum: 
-                type: librinfo_customchoice
+                type: blast_custom_choice
                 options:
                     attr:
                         class: inline-block
-                    librinfo_choices: [terre, coco, tourbe]
+                    blast_choices: [terre, coco, tourbe]
                     choices_field: substratum
             soil:
-                type: librinfo_customchoice
+                type: blast_custom_choice
                 show:
                     template: BlastCoreBundle:CRUD:show_field_multiple_choices.html.twig
                 options:
                     multiple: true
                     attr:
                         class: inline-block
-                    librinfo_choices:
+                    blast_choices:
                         - acide
                         - basique
                         - lourd
@@ -340,12 +340,12 @@ librinfo_varieties:
                         - TOUS
                     choices_field: soil
             manure: 
-                type: librinfo_customchoice
+                type: blast_custom_choice
                 options:
                     attr:
                         class: inline-block
                     choices_field: manure
-                    librinfo_choices: [ compost, orga3]
+                    blast_choices: [ compost, orga3]
             manure_quantity: 
                 type: integer
                 options:
@@ -359,12 +359,12 @@ librinfo_varieties:
                         class: new-line
                         width: 30
             seedling_irrigation_frequency: 
-                type: librinfo_customchoice
+                type: blast_custom_choice
                 options:
                     attr:
                         class: new-line
                         width: 30
-                    librinfo_choices: [quotidien, hebdomadaire]
+                    blast_choices: [quotidien, hebdomadaire]
                     choices_field: seedling_irrigation_frequency
             transplant_irrigation_quantity: 
                 type: integer
@@ -373,12 +373,12 @@ librinfo_varieties:
                         class: new-line
                         width: 30
             transplant_irrigation_frequency: 
-                type: librinfo_customchoice
+                type: blast_custom_choice
                 options:
                     attr:
                         class: new-line
                         width: 30
-                    librinfo_choices: [quotidien, hebdomadaire]
+                    blast_choices: [quotidien, hebdomadaire]
                     choices_field: transplant_irrigation_frequency
             cuttings_period: 
                 type: integer
@@ -426,35 +426,35 @@ librinfo_varieties:
                         class: new-line
                         width: 50
             seedling_hotbed:
-                type: librinfo_customcheckbox
+                type: blast_custom_checkbox
                 show:
                     type: boolean
                 options:
                     attr:
                         class: inline-block
             transplant_hotbed:
-                type: librinfo_customcheckbox
+                type: blast_custom_checkbox
                 show:
                     type: boolean
                 options:
                     attr:
                         class: inline-block
             plant_hotbed:
-                type: librinfo_customcheckbox
+                type: blast_custom_checkbox
                 options:
                     attr:
                         class: inline-block
                 show:
                     type: boolean
             biodynamics: 
-                type: librinfo_customcheckbox
+                type: blast_custom_checkbox
                 options:
                     attr:
                         class: inline-block
                 show:
                     type: boolean
             tutoring: 
-                type: librinfo_customcheckbox
+                type: blast_custom_checkbox
                 options:
                     attr:
                         class: inline-block
@@ -463,7 +463,7 @@ librinfo_varieties:
 ########### MISE EN PRODUCTION ##################
         production:
             possible_sowing_periods:
-                type: librinfo_customchoice
+                type: blast_custom_choice
                 show:
                     template: BlastCoreBundle:CRUD:show_field_multiple_choices.html.twig
                 options:
@@ -471,7 +471,7 @@ librinfo_varieties:
                     attr:
                         class: inline-block
                     choices_field: possible_sowing_periods
-                    librinfo_choices:
+                    blast_choices:
                         - début Mars
                         - fin Mars
                         - début Avril
@@ -483,7 +483,7 @@ librinfo_varieties:
                         - début Juillet
                         - fin Juillet
             transplant:
-                type: librinfo_customchoice
+                type: blast_custom_choice
                 options:
                     attr:
                         class: inline-block
@@ -528,32 +528,32 @@ librinfo_varieties:
                         class: new-line
                         width: 30
             exposure: 
-                type: librinfo_customchoice
+                type: blast_custom_choice
                 options:
                     attr:
                         class: inline-block
-                    librinfo_choices:
+                    blast_choices:
                         - nord
                         - sud
                         - est
                         - ouest
                     choices_field: exposure
             substratum: 
-                type: librinfo_customchoice
+                type: blast_custom_choice
                 options:
                     attr:
                         class: inline-block
-                    librinfo_choices: [terre, coco, tourbe]
+                    blast_choices: [terre, coco, tourbe]
                     choices_field: substratum
             soil:
-                type: librinfo_customchoice
+                type: blast_custom_choice
                 show:
                     template: BlastCoreBundle:CRUD:show_field_multiple_choices.html.twig
                 options:
                     multiple: true
                     attr:
                         class: inline-block
-                    librinfo_choices:
+                    blast_choices:
                         - acide
                         - basique
                         - lourd
@@ -563,12 +563,12 @@ librinfo_varieties:
                         - TOUS
                     choices_field: soil
             manure: 
-                type: librinfo_customchoice
+                type: blast_custom_choice
                 options:
                     attr:
                         class: inline-block
                     choices_field: manure
-                    librinfo_choices: [ compost, orga3]
+                    blast_choices: [ compost, orga3]
             manure_quantity: 
                 type: integer
                 options:
@@ -582,12 +582,12 @@ librinfo_varieties:
                         class: new-line
                         width: 30
             seedling_irrigation_frequency: 
-                type: librinfo_customchoice
+                type: blast_custom_choice
                 options:
                     attr:
                         class: new-line
                         width: 30
-                    librinfo_choices: [quotidien, hebdomadaire]
+                    blast_choices: [quotidien, hebdomadaire]
                     choices_field: seedling_irrigation_frequency
             transplant_irrigation_quantity: 
                 type: integer
@@ -596,12 +596,12 @@ librinfo_varieties:
                         class: new-line
                         width: 30
             transplant_irrigation_frequency: 
-                type: librinfo_customchoice
+                type: blast_custom_choice
                 options:
                     attr:
                         class: new-line
                         width: 30
-                    librinfo_choices: [quotidien, hebdomadaire]
+                    blast_choices: [quotidien, hebdomadaire]
                     choices_field: transplant_irrigation_frequency
             cuttings_period: 
                 type: integer
@@ -649,35 +649,35 @@ librinfo_varieties:
                         class: new-line
                         width: 50
             seedling_hotbed:
-                type: librinfo_customcheckbox
+                type: blast_custom_checkbox
                 show:
                     type: boolean
                 options:
                     attr:
                         class: inline-block
             transplant_hotbed:
-                type: librinfo_customcheckbox
+                type: blast_custom_checkbox
                 show:
                     type: boolean
                 options:
                     attr:
                         class: inline-block
             plant_hotbed:
-                type: librinfo_customcheckbox
+                type: blast_custom_checkbox
                 options:
                     attr:
                         class: inline-block
                 show:
                     type: boolean
             biodynamics: 
-                type: librinfo_customcheckbox
+                type: blast_custom_checkbox
                 options:
                     attr:
                         class: inline-block
                 show:
                     type: boolean
             tutoring: 
-                type: librinfo_customcheckbox
+                type: blast_custom_checkbox
                 options:
                     attr:
                         class: inline-block
@@ -686,39 +686,39 @@ librinfo_varieties:
 ########## TRI OFFRE COMMERCIAL ###################
         commercial: 
             plant_type: 
-                type: librinfo_customchoice 
+                type: blast_custom_choice 
                 options:
                     attr:
                         class: inline-block
-                    librinfo_choices:
+                    blast_choices:
                         - Feuille
                         - Fruit
                         - Racine
                         - Fleur
                     choices_field: plant_type
             precocity: 
-                type: librinfo_customchoice 
+                type: blast_custom_choice 
                 options:
                     attr:
                         class: inline-block
-                    librinfo_choices:
+                    blast_choices:
                         - Précoce
                         - Mi-saison
                         - Tardive
                     choices_field: precocity
             grade: 
-                type: librinfo_customchoice 
+                type: blast_custom_choice 
                 options:
                     attr:
                         class: inline-block
-                    librinfo_choices: [ 1, 2, 3, 4, 5 ]
+                    blast_choices: [ 1, 2, 3, 4, 5 ]
                     choices_field: grade
             rusticicty: 
-                type: librinfo_customchoice 
+                type: blast_custom_choice 
                 options:
                     attr:
                         class: inline-block
-                    librinfo_choices: [ 1, 2, 3, 4, 5 ]
+                    blast_choices: [ 1, 2, 3, 4, 5 ]
                     choices_field: rusticity
             main_color: 
                 type: text
@@ -733,11 +733,11 @@ librinfo_varieties:
                         class: new-line
                         width: 30
             taste_rating: 
-                type: librinfo_customchoice
+                type: blast_custom_choice
                 options:
                     attr:
                         class: inline-block
-                    librinfo_choices:
+                    blast_choices:
                         - 1
                         - 2
                         - 3
@@ -745,14 +745,14 @@ librinfo_varieties:
                         - 5
                     choices_field: taste_rating
             nutrition_rating: 
-                type: librinfo_customchoice
+                type: blast_custom_choice
                 options:
                     attr:
                         class: inline-block
-                    librinfo_choices: [ 1, 2, 3, 4, 5 ]
+                    blast_choices: [ 1, 2, 3, 4, 5 ]
                     choices_field: nutrition_rating
             taste: 
-                type: librinfo_customchoice
+                type: blast_custom_choice
                 show:
                         template: BlastCoreBundle:CRUD:show_field_multiple_choices.html.twig    
                 options:
@@ -760,7 +760,7 @@ librinfo_varieties:
                         class: columns-2 multiple-checkbox
                     expanded: true
                     multiple: true
-                    librinfo_choices: 
+                    blast_choices: 
                         - Salé
                         - Sucré
                         - Acide
@@ -774,7 +774,7 @@ librinfo_varieties:
                         - Amidonné
                     choices_field: taste
             texture: 
-                type: librinfo_customchoice
+                type: blast_custom_choice
                 show:
                     template: BlastCoreBundle:CRUD:show_field_multiple_choices.html.twig
                 options: 
@@ -782,7 +782,7 @@ librinfo_varieties:
                         class: columns-2 multiple-checkbox
                     expanded: true
                     multiple: true
-                    librinfo_choices: 
+                    blast_choices: 
                         - Peau persistante
                         - Farineux
                         - Croquant
@@ -791,7 +791,7 @@ librinfo_varieties:
                         - Ferme
                     choices_field: texture
             nutrients: 
-                type: librinfo_customchoice
+                type: blast_custom_choice
                 show:
                     template: BlastCoreBundle:CRUD:show_field_multiple_choices.html.twig
                 options:
@@ -799,7 +799,7 @@ librinfo_varieties:
                         class: columns-3 multiple-checkbox
                     expanded: true
                     multiple: true
-                    librinfo_choices: 
+                    blast_choices: 
                         - Vitamine A
                         - Vitamine B
                         - Vitamine C
@@ -837,42 +837,42 @@ librinfo_varieties:
                         class: new-line
                         width: 30
             prefered_zone: 
-                type: librinfo_customchoice
+                type: blast_custom_choice
                 options:
                     attr:
                         class: inline-block
-                    librinfo_choices: [ 1, 2, 3, 4, 5, 6 ]
+                    blast_choices: [ 1, 2, 3, 4, 5, 6 ]
                     choices_field: prefered_zone
             yield_rating: 
-                type: librinfo_customchoice
+                type: blast_custom_choice
                 options:
                     attr:
                         class: inline-block
-                    librinfo_choices: [ 1, 2, 3, 4, 5 ]
+                    blast_choices: [ 1, 2, 3, 4, 5 ]
                     choices_field: yield_rating
             cultivation_ease: 
-                type: librinfo_customchoice
+                type: blast_custom_choice
                 options:
                     attr:
                         class: inline-block
-                    librinfo_choices: [ 1, 2, 3, 4, 5 ]
+                    blast_choices: [ 1, 2, 3, 4, 5 ]
                     choices_field: cultivation_ease
             pot_cultivation_ease: 
-                type: librinfo_customchoice
+                type: blast_custom_choice
                 options:
                     attr:
                         class: inline-block
-                    librinfo_choices: [ Facile, Possible, Difficile ]
+                    blast_choices: [ Facile, Possible, Difficile ]
                     choices_field: pot_cultivation_ease
             targeted_audience:
-                type: librinfo_customchoice
+                type: blast_custom_choice
                 options:
                     attr:
                         class: inline-block
-                    librinfo_choices: [ Amateurs, Professionnels, Tout public ]
+                    blast_choices: [ Amateurs, Professionnels, Tout public ]
                     choices_field: targeted_audience
             main_usages:
-                type: librinfo_customchoice
+                type: blast_custom_choice
                 show:
                     template: BlastCoreBundle:CRUD:show_field_multiple_choices.html.twig
                 options:
@@ -880,7 +880,7 @@ librinfo_varieties:
                     expanded: true
                     attr:
                         class: columns-2 multiple-checkbox
-                    librinfo_choices:
+                    blast_choices:
                         - culinaire
                         - ornement
                         - haie
@@ -889,7 +889,7 @@ librinfo_varieties:
                         - textile
                     choices_field: main_usages
             usages: 
-                type: librinfo_customchoice
+                type: blast_custom_choice
                 show:
                     template: BlastCoreBundle:CRUD:show_field_multiple_choices.html.twig
                 options:
@@ -897,7 +897,7 @@ librinfo_varieties:
                     expanded: true
                     attr:
                         class: columns-2 multiple-checkbox
-                    librinfo_choices:
+                    blast_choices:
                         - culinaire
                         - ornement
                         - haie
@@ -906,18 +906,18 @@ librinfo_varieties:
                         - textile
                     choices_field: usages
             inner_commment: 
-                type: librinfo_tinymce
+                type: blast_tinymce
                 show:
                     template: BlastCoreBundle:CRUD:show_field_tinymce.html.twig
  ############# CARACTERISTIQUES PLANTE #############
         plant: 
             foliage_type:
-                type: librinfo_customchoice
+                type: blast_custom_choice
                 options: 
                     attr:
                         class: new-line
                         width: 30
-                    librinfo_choices: [ Caduc, Persistant, Marcescent ]
+                    blast_choices: [ Caduc, Persistant, Marcescent ]
                     choices_field: foliage_type
             foliage_color:
                 type: text
@@ -932,12 +932,12 @@ librinfo_varieties:
                         class: new-line
                         width: 30
             development:
-                type: librinfo_customchoice
+                type: blast_custom_choice
                 options:
                     attr:
                         class: new-line
                         width: 30
-                    librinfo_choices:
+                    blast_choices:
                         - Vigoureuse
                         - Coureuse
                         - Naine
@@ -958,9 +958,9 @@ librinfo_varieties:
                         class: new-line
                         width: 30
 #            several_strains:
-#                type: librinfo_customcheckboxseversever
+#                type: blast_custom_checkboxseversever
             description:
-                type: librinfo_tinymce
+                type: blast_tinymce
                 show:
                     template: BlastCoreBundle:CRUD:show_field_tinymce.html.twig
                 options:

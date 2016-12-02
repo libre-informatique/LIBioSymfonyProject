@@ -42,7 +42,8 @@
         "jms/serializer-bundle": "^1.1",
         "libre-informatique/media-bundle": "dev-master",
         "libre-informatique/product-bundle": "dev-master",
-        "sylius/sylius": "^1.0"
+        "sylius/sylius": "^1.0",
+        "blast-project/utils-bundle": "dev-master"
     },
     "require-dev": {
         "alexandresalome/doctrine-extra-bundle": "^0.3.0",

@@ -9,13 +9,13 @@ libio_not_implemented:
 blast_core:
     resource: "@BlastCoreBundle/Resources/config/routing.yml"
     prefix:   /
+    
+blast_base_entities:
+    resource: "@BlastBaseEntitiesBundle/Resources/config/routing.yml"
+    prefix:   /
 
 librinfo_security:
     resource: "@LibrinfoSecurityBundle/Resources/config/routing.yml"
-    prefix:   /
-
-librinfo_base_entities:
-    resource: "@LibrinfoBaseEntitiesBundle/Resources/config/routing.yml"
     prefix:   /
 
 librinfo_ui:
