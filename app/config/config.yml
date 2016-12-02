@@ -74,6 +74,8 @@ doctrine:
         naming_strategy: doctrine.orm.naming_strategy.underscore
         auto_mapping: true
         mappings:
+            BlastBaseEntitiesBundle:
+                type: yml
             # Librinfo bundles
             LibrinfoVarietiesBundle:
                 type: yml
@@ -81,8 +83,7 @@ doctrine:
                 type: yml
             LibrinfoCRMBundle:
                 type: yml
-            LibrinfoBaseEntitiesBundle:
-                type: yml
+            
             LibrinfoUserBundle:
                 type: yml
 #            LibrinfoProductBundle:
@@ -122,9 +123,9 @@ swiftmailer:
 fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: N/A
-    user_class: Librinfo\BaseEntitiesBundle\Entity\GenericEntity
+    user_class: Blast\BaseEntitiesBundle\Entity\GenericEntity
     group:
-        group_class: Librinfo\BaseEntitiesBundle\Entity\GenericEntity
+        group_class: Blast\BaseEntitiesBundle\Entity\GenericEntity
         group_manager: sonata.user.orm.group_manager
     service:
         user_manager: sonata.user.orm.user_manager
@@ -147,8 +148,8 @@ stfalcon_tinymce:
     include_jquery: false
     language: %locale%
 
-# Enable LibrinfoDocrineBundle event listeners
-librinfo_base_entities:
+# Enable BlastBaseEntitiesBundle event listeners
+blast_base_entities:
     orm:
         default:
             naming: true
