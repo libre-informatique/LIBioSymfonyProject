@@ -37,7 +37,7 @@
         "libre-informatique/seed-batch-bundle": "dev-master",
         "libre-informatique/security-bundle": "dev-master",
         "libre-informatique/user-bundle": "dev-master",
-        "libre-informatique/doctrine-pgsql-bundle": "dev-master",
+        "blast-project/doctrine-pgsql-bundle": "dev-master",
         "doctrine/doctrine-fixtures-bundle": "^2.3",
         "jms/serializer-bundle": "^1.1",
         "libre-informatique/media-bundle": "dev-master",
