@@ -10,6 +10,9 @@ blast_core:
     resource: "@BlastCoreBundle/Resources/config/routing.yml"
     prefix:   /
     
+blast_utils:
+    resource: "@BlastUtilsBundle/Resources/config/routing.yml"
+    
 blast_base_entities:
     resource: "@BlastBaseEntitiesBundle/Resources/config/routing.yml"
     prefix:   /
