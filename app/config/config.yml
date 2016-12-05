@@ -42,6 +42,7 @@ twig:
         - 'SonataCoreBundle:Form:colorpicker.html.twig'
 #        - 'bootstrap_3_layout.html.twig'  # is not used (?) and conflicts with Sylius forms
         - 'BlastCoreBundle:Admin/Form:fields.html.twig'
+        - 'BlastUtilsBundle:Form:fields.html.twig'
         - 'LibrinfoMediaBundle:Form:fields.html.twig'
         - 'LibrinfoVarietiesBundle:Form:fields.html.twig'
 
