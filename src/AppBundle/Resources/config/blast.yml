@@ -57,7 +57,8 @@ parameters:
                                 fieldsOrder: [variety, weight]
 
             Sonata\AdminBundle\Datagrid\ListMapper:
-                remove: [name]
+                remove:
+                    name: ~
                 add:
                     code:
                         label: libio.label.product_code
