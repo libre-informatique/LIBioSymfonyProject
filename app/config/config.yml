@@ -12,7 +12,7 @@ parameters:
     locale: fr_FR
     currency: EUR
     # TODO : this should be configured in BaseEntities bundle :
-    #doctrine.orm.metadata.yml.class: Librinfo\BaseEntitiesBundle\Doctrine\ORM\Driver\SearchableYamlDriver
+    #doctrine.orm.metadata.yml.class: Blast\BaseEntitiesBundle\Doctrine\ORM\Driver\SearchableYamlDriver
 
 framework:
     secret:          "%secret%"
@@ -102,7 +102,7 @@ doctrine:
 
         dql:
             string_functions:
-                ilike: Librinfo\DoctrinePgsqlBundle\DoctrineExtensions\Functions\Ilike
+                ilike: Blast\DoctrinePgsqlBundle\DoctrineExtensions\Functions\Ilike
 
 # Swiftmailer Configuration
 swiftmailer:
