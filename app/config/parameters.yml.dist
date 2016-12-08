@@ -17,3 +17,9 @@ parameters:
 
     # A secret key that's used to generate certain security-related tokens
     secret:            ThisTokenIsNotSoSecretChangeIt
+
+    # Default SuperAdmin
+    libio.user.datafixtures:
+        username: libio
+        password: libio
+        email: libio@lisem.eu

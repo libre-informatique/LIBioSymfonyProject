@@ -51,7 +51,7 @@ class AppKernel extends Kernel
             new Blast\BaseEntitiesBundle\BlastBaseEntitiesBundle(),
             new Blast\UtilsBundle\BlastUtilsBundle(),
             new Blast\DoctrinePgsqlBundle\BlastDoctrinePgsqlBundle(),
-            
+
             new Librinfo\DecoratorBundle\LibrinfoDecoratorBundle(),
             new Librinfo\UIBundle\LibrinfoUIBundle(),
             new Librinfo\SecurityBundle\LibrinfoSecurityBundle(),
@@ -77,7 +77,6 @@ class AppKernel extends Kernel
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
 //            $bundles[] = new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(); provided by Sylius
             $bundles[] = new Alex\DoctrineExtraBundle\AlexDoctrineExtraBundle();
-            $bundles[] = new Hautelook\AliceBundle\HautelookAliceBundle();
         }
 
         return array_merge(parent::registerBundles(), $bundles);

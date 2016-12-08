@@ -1,0 +1,7 @@
+Librinfo\UserBundle\Entity\User:
+    lisem_user:
+        username: lisem
+        plainPassword: lisem
+        email: lisem@lisem.eu
+        enabled: true
+        superAdmin: true
