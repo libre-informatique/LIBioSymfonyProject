@@ -6,7 +6,17 @@
 
 parameters:
     blast:
-
+        configuration:
+            search:
+                add:
+                    - librinfo_emailcrm.admin.organism
+                    - librinfo_emailcrm.admin.contact
+                    - librinfo_varieties.admin.species
+                    - libio.admin.variety
+                    - libio.admin.seeds_product
+                    - librinfo_seedbatch.admin.organism
+                    - librinfo_seedbatch.admin.seedfarm
+                    - librinfo_seedbatch.admin.seedbatch
 ############
 # VARIETY
 ############

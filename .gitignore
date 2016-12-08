@@ -57,3 +57,5 @@
 /vendor_BAK/
 *~
 
+# npm
+/node_modules/
