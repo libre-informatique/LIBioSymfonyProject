@@ -10,24 +10,64 @@ Librinfo\VarietiesBundle\Entity\PlantCategory:
     plcat_legume_fruit (extends plcat_tpl):
         code: LFR
         name: Légumes fruits
-        treeLft: 3
-        treeRgt: 4
+        treeLft: 1
+        treeRgt: 2
     plcat_legume_racine (extends plcat_tpl):
         code: LRA
         name: Légumes racines et bulbes
-        treeLft: 5
+        treeLft: 1
         treeRgt: 6
     plcat_condiment (extends plcat_tpl):
         code: CAM
         name: Condimentaires, alimentaires et médicinales
-        treeLft: 7
+        treeLft: 1
         treeRgt: 8
     plcat_engrais_vert (extends plcat_tpl):
         code: EVF
         name: Engrais verts et fourragères
-        treeLft: 9
-        treeRgt: 10
-
+        treeLft: 1
+        treeRgt: 2
+    plcat_condimentaires:
+        code : COD
+        name: Condimentaires
+        treeLft: 2
+        treeRgt: 3
+        treeLvl: 1
+        treeRoot: "@plcat_condiment"
+        treeParent: "@plcat_condiment"
+    plcat_alimentaires: 
+        code: ALI
+        name: Alimentaires
+        treeLft: 4
+        treeRgt: 5
+        treeLvl: 1
+        treeRoot: "@plcat_condiment"
+        treeParent: "@plcat_condiment"
+    plcat_medicinales:
+        code: MED
+        name: Médicinales
+        treeLft: 6
+        treeRgt: 7
+        treeLvl: 1
+        treeRoot: "@plcat_condiment"
+        treeParent: "@plcat_condiment"
+    plcat_racines:
+        code: LRAC
+        name: Légumes racines
+        treeLft: 2
+        treeRgt: 3
+        treeLvl: 1
+        treeRoot: "@plcat_legume_racine"
+        treeParent: "@plcat_legume_racine"
+    plcat_bulbes:
+        code: LBU
+        name: Légumes bulbes
+        treeLft: 4
+        treeRgt: 5
+        treeLvl: 1
+        treeRoot: "@plcat_legume_racine"
+        treeParent: "@plcat_legume_racine"
+        
 Librinfo\VarietiesBundle\Entity\Family:
     fam_user (template):
         createdBy: "@lisem_user"
