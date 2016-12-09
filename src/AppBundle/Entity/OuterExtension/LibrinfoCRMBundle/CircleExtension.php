@@ -10,7 +10,7 @@
 
 namespace AppBundle\Entity\OuterExtension\LibrinfoCRMBundle;
 
-trait ContactExtension
+trait CircleExtension
 {
-    use \Librinfo\EmailCRMBundle\Entity\OuterExtension\HasEmailMessages;
+    use Librinfo\UserBundle\Entity\Traits\Traceable;
 }

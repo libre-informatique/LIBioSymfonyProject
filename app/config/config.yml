@@ -84,7 +84,7 @@ doctrine:
                 type: yml
             LibrinfoCRMBundle:
                 type: yml
-            
+
             LibrinfoUserBundle:
                 type: yml
 #            LibrinfoProductBundle:
@@ -155,7 +155,7 @@ blast_base_entities:
         default:
             naming: true
             guidable: true
-            traceable: true
+            timestampable: true
             addressable: true
             treeable: false
             nested_treeable: true
