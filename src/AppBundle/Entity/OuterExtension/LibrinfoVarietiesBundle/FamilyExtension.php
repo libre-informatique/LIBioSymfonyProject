@@ -10,10 +10,7 @@
 
 namespace AppBundle\Entity\OuterExtension\LibrinfoVarietiesBundle;
 
-trait VarietyExtension
+trait FamilyExtension
 {
-    use \Librinfo\SeedBatchBundle\Entity\OuterExtension\HasSeedBatches;
-    use \Librinfo\MediaBundle\Entity\OuterExtension\HasImages;
-    use \Librinfo\ProductBundle\Entity\OuterExtension\HasProducts;
     use \Librinfo\UserBundle\Entity\Traits\Traceable;
 }
