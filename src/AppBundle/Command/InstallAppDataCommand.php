@@ -25,10 +25,10 @@ class InstallAppDataCommand extends ContainerAwareCommand
     protected function configure()
     {
         $this
-            // the name of the command (the part after "bin/console")
+            // the name of the command (the part after "app/console")
             ->setName('libio:install:app-data')
 
-            // the short description shown while running "php bin/console list"
+            // the short description shown while running "php app/console list"
             ->setDescription('Initializes the database for Libio project.')
 
             // the full command description shown when running the command with
@@ -51,13 +51,44 @@ class InstallAppDataCommand extends ContainerAwareCommand
         return $command->run($circlesInput, $output);
     }
 
+    /**
+     * Create application product attributes
+     * @param OutputInterface $output
+     *
+     * @todo Hardcoded attributes should be moved to application params (same way as initCircles...)
+     */
     protected function initProductAttributes(OutputInterface $output)
     {
-        $attributeFactory = $this->container->get('sylius.factory.product_attribute');
-        $attribute = $attributeFactory->createWithType('integer')
-            ->setCode('_libio_weight')
-            ->setName('Poids')
-        ;
-        $this->container->get('sylius.repository.product_attribute')->add($attribute);
+        $attributes = [
+            ['code' => '_libio_weight',     'name' => 'Poids', 'type' => 'integer'],
+            ['code' => '_libio_base_price', 'name' => 'Prix',  'type' => 'integer'],
+            ['code' => '_libio_bulk',       'name' => 'Vrac',  'type' => 'checkbox'],
+        ];
+        $em = $this->getContainer()->get('doctrine')->getEntityManager();
+        $repository = $this->getContainer()->get('sylius.repository.product_attribute');
+        $factory = $this->getContainer()->get('sylius.factory.product_attribute');
+        $registry = $this->getContainer()->get('sylius.registry.attribute_type');
+
+        foreach ($attributes as $a) {
+            $attribute = $repository->findOneByCode($a['code']);
+            if (!$attribute) {
+                $output->write(sprintf('Creating product attribute with code "%s"', $a['code']));
+                $attribute = $factory->createTyped($a['type']);
+                $attribute->setCode($a['code']);
+                $attribute->setName($a['name']);
+                $repository->add($attribute);
+            }
+            else {
+                $output->write(sprintf('Updating product attribute with code "%s"', $a['code']));
+                $storageType = $registry->get($a['type'])->getStorageType();
+                $attribute->setCode($a['code']);
+                $attribute->setName($a['name']);
+                $attribute->setType($a['type']);
+                $attribute->setStorageType($storageType);
+                $em->persist($attribute);
+                $em->flush();
+            }
+            $output->writeln('<info> done.</info>');
+        }
     }
 }
