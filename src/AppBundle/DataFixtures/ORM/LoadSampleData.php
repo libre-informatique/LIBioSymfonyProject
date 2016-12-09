@@ -58,21 +58,4 @@ class LoadSampleData extends AbstractFixture implements OrderedFixtureInterface,
         $adminUser = Fixtures::load(__DIR__.'/user.yml', $manager);
         $objects = Fixtures::load(__DIR__.'/variety.yml', $manager);
     }
-
-    private function loadAdminUser()
-    {
-        $fixturesData = $this->container->getParameter('libio.user.datafixtures');
-        $adminUser = new User();
-        $adminUser
-            ->setUsername($fixturesData['username'])
-            ->setPlainPassword($fixturesData['password'])
-            ->setEmail($fixturesData['email'])
-            ->setEnabled(true)
-            ->setSuperAdmin(true);
-
-        $this->manager->persist($adminUser);
-        $this->manager->flush();
-        $this->addReference('admin-user', $adminUser);
-    }
-
 }
