@@ -10,8 +10,7 @@
 
 namespace AppBundle\Entity\OuterExtension\LibrinfoEmailBundle;
 
-trait EmailExtension
+trait EmailTemplateExtension
 {
     use \Librinfo\UserBundle\Entity\Traits\Traceable;
-    use \Librinfo\EmailCRMBundle\Entity\OuterExtension\HasEmailRecipients;
 }
