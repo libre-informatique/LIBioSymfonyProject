@@ -18,8 +18,15 @@ parameters:
     # A secret key that's used to generate certain security-related tokens
     secret:            ThisTokenIsNotSoSecretChangeIt
 
-    # Default SuperAdmin
+    # Default Users
     libio.user.datafixtures:
-        username: libio
-        password: libio
-        email: libio@lisem.eu
+        libio:
+            username: libio
+            password: libio
+            email: libio@libio.eu
+            super: true
+        lisem:
+            username: lisem
+            password: lisem
+            email: lisem@lisem.eu
+            super: true
