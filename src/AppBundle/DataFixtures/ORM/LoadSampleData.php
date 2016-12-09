@@ -34,6 +34,11 @@ class LoadSampleData extends AbstractFixture implements OrderedFixtureInterface,
     private $manager;
 
     /**
+     * @var User
+     */
+    private $user;
+
+    /**
      * Sets the Container.
      *
      * @param ContainerInterface|null $container A ContainerInterface instance or null
@@ -55,7 +60,18 @@ class LoadSampleData extends AbstractFixture implements OrderedFixtureInterface,
      */
     public function load(ObjectManager $manager)
     {
-        $adminUser = Fixtures::load(__DIR__.'/user.yml', $manager);
-        $objects = Fixtures::load(__DIR__.'/variety.yml', $manager);
+        $this->manager = $manager;
+        $userFixtures = $this->loadYml('user.yml');
+        $this->user = $userFixtures['user'];
+
+        $varietyFixtures = $this->loadYml('variety.yml');
+
+        $crmFixtures = $this->loadYml('crm.yml');
+    }
+
+    protected function loadYml($filename)
+    {
+        $objects = Fixtures::load(__DIR__.'/'.$filename, $this->manager);
+        return $objects;
     }
 }

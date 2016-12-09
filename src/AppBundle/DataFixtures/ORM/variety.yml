@@ -35,7 +35,7 @@ Librinfo\VarietiesBundle\Entity\PlantCategory:
         treeLvl: 1
         treeRoot: "@plcat_condiment"
         treeParent: "@plcat_condiment"
-    plcat_alimentaires: 
+    plcat_alimentaires:
         code: ALI
         name: Alimentaires
         treeLft: 4
@@ -67,11 +67,11 @@ Librinfo\VarietiesBundle\Entity\PlantCategory:
         treeLvl: 1
         treeRoot: "@plcat_legume_racine"
         treeParent: "@plcat_legume_racine"
-        
+
 Librinfo\VarietiesBundle\Entity\Family:
     fam_user (template):
-        createdBy: "@lisem_user"
-        updatedBy: "@lisem_user"
+        createdBy: "@user"
+        updatedBy: "@user"
 
     fam_apiacees (extends fam_user):
         name (unique): Apiacées
@@ -83,8 +83,8 @@ Librinfo\VarietiesBundle\Entity\Family:
 
 Librinfo\VarietiesBundle\Entity\Genus:
     gen_user (template):
-        created_by: "@lisem_user"
-        updated_by: "@lisem_user"
+        created_by: "@user"
+        updated_by: "@user"
 
     gen_coriandrum (extends gen_user):
         name (unique): coriandrum
