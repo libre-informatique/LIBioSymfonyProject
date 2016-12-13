@@ -7,4 +7,3 @@ Librinfo\MediaBundle\Entity\File:
         email:
             targetEntity: Librinfo\EmailBundle\Entity\Email
             inversedBy: attachments
-            cascade: [ persist ]
