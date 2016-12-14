@@ -15,6 +15,8 @@ use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Librinfo\UserBundle\Entity\User;
 use Nelmio\Alice\Fixtures;
+use Nelmio\Alice\Fixtures\Loader;
+use Nelmio\Alice\Persister\Doctrine as DoctrinePersister;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -39,6 +41,16 @@ class LoadSampleData extends AbstractFixture implements OrderedFixtureInterface,
     private $user;
 
     /**
+     * @var Loader
+     */
+    private $aliceLoader;
+
+    /**
+     * @var DoctrinePersister
+     */
+    private $alicePersister;
+
+    /**
      * Sets the Container.
      *
      * @param ContainerInterface|null $container A ContainerInterface instance or null
@@ -61,6 +73,10 @@ class LoadSampleData extends AbstractFixture implements OrderedFixtureInterface,
     public function load(ObjectManager $manager)
     {
         $this->manager = $manager;
+        $locale = $this->container->getParameter('locale');
+        $this->aliceLoader = new Loader($locale);
+        $this->alicePersister = new DoctrinePersister($manager);
+
         $userFixtures = $this->loadYml('user.yml');
         $this->user = $userFixtures['user'];
 
@@ -71,7 +87,9 @@ class LoadSampleData extends AbstractFixture implements OrderedFixtureInterface,
 
     protected function loadYml($filename)
     {
-        $objects = Fixtures::load(__DIR__.'/'.$filename, $this->manager);
+        $loader = new \Nelmio\Alice\Fixtures\Loader();
+        $objects = $this->aliceLoader->load(__DIR__.'/'.$filename);
+        $this->alicePersister->persist($objects);
         return $objects;
     }
 }
