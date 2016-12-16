@@ -47,6 +47,7 @@ EOT
         $this->setupSylius($output);
         $this->setupCircles($output);
         $this->setupProductAttributes($output);
+        $this->setupCities($output);
     }
 
     /**
@@ -167,5 +168,47 @@ EOT
             $output->writeln('<info> done.</info>');
         }
         return 0;
+    }
+
+    /**
+     * @param OutputInterface $output
+     * @todo  Optimize the "clean" way of importing cities
+     */
+    protected function setupCities(OutputInterface $output)
+    {
+        $em = $this->getContainer()->get('doctrine')->getEntityManager();
+        $conn = $em->getConnection();
+        $file = __DIR__ . '/../DataFixtures/ORM/Cities/france.csv';
+        $output->writeln(['', sprintf('Importing <info>cities</info> from %s...', realpath($file))]);
+
+        // This is not clean, but it is FAST:
+        $conn->exec("TRUNCATE TABLE librinfo_crm_city");
+        $num_rows_effected = $conn->exec("COPY librinfo_crm_city (id, country_code, city, zip) FROM '$file' delimiter ',';");
+        $output->writeln(sprintf('<info> done (%d cities).</info>', $num_rows_effected));
+
+        // This is clean but it is SLOW:
+        /*
+        $em->getConnection()->getConfiguration()->setSQLLogger(null);
+        $em->createQuery('DELETE FROM LibrinfoCRMBundle:City')->execute();
+        $handle = fopen($file, 'r');
+        $i = 0;
+        $batchSize = 20;
+        while (($line = fgetcsv($handle)) !== FALSE) {
+            $i++;
+            $city = new \Librinfo\CRMBundle\Entity\City();
+            $city->setCountryCode($line[1]);
+            $city->setCity($line[2]);
+            $city->setZip($line[3]);
+            $em->persist($city);
+            if (($i % $batchSize) === 0) {
+                $em->flush();
+                $em->clear();
+            }
+        }
+        fclose($handle);
+        $em->flush();
+        $em->clear();
+        $output->writeln(sprintf('<info> done (%d cities).</info>', $i));
+        */
     }
 }
