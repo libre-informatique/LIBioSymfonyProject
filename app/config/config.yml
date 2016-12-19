@@ -146,6 +146,11 @@ stof_doctrine_extensions:
             tree: true
             sluggable: true
 
+# JMS serializer
+jms_serializer:
+    metadata:
+        auto_detection: true
+
 #Tinymce configuration
 stfalcon_tinymce:
     tinymce_jquery: true
