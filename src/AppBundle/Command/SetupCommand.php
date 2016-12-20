@@ -49,13 +49,15 @@ EOT
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        if ($input->getOption('with-samples'))
+            $this->clearDatabase($output);
         $this->setupSylius($output);
+        $this->setupUsers($output);
         $this->setupCircles($output);
         $this->setupProductAttributes($output);
         $this->setupCities($output);
         if ($input->getOption('with-samples'))
             $this->setupSampleData($output);
-        $this->setupUsers($output);
     }
 
     /**
@@ -218,6 +220,32 @@ EOT
         $em->clear();
         $output->writeln(sprintf('<info> done (%d cities).</info>', $i));
         */
+    }
+
+    /**
+     * @param OutputInterface $output
+     */
+    protected function clearDatabase(OutputInterface $output)
+    {
+        $em = $this->getContainer()->get('doctrine')->getEntityManager();
+        $conn = $em->getConnection();
+        $entities = [
+            'LibrinfoVarietiesBundle:PlantCategory',
+            'LibrinfoVarietiesBundle:Variety',
+            'LibrinfoVarietiesBundle:Species',
+            'LibrinfoVarietiesBundle:Genus',
+            'LibrinfoVarietiesBundle:Family',
+            'LibrinfoCRMBundle:Position',
+            'LibrinfoCRMBundle:Contact',
+            'LibrinfoCRMBundle:Organism',
+            'LibrinfoUserBundle:User',
+        ];
+
+        foreach($entities as $entity) {
+            $query = sprintf("TRUNCATE TABLE %s CASCADE", $em->getClassMetadata($entity)->getTableName());
+            $output->writeln("$query ... ");
+            $conn->exec($query);
+        }
     }
 
     /**
