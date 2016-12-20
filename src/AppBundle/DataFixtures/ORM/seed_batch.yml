@@ -1,0 +1,4 @@
+Librinfo\SeedBatchBundle\Entity\SeedFarm:
+    seedfarm1:
+        name: LiSem AS
+        code: LIS

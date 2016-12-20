@@ -1,25 +1,62 @@
 Librinfo\CRMBundle\Entity\Contact:
-    con{1..50}:
+    con_tpl (template):
         firstname: '<firstname()>'
         name: '<lastname()>'
+        address: '50%? <streetAddress()>'
+    con_cus_1_{1..20} (extends con_tpl): ~
+    con_cus_2_{1..20} (extends con_tpl): ~
+    con_cus_3_{1..20} (extends con_tpl): ~
+    con_sup_1_{1..20} (extends con_tpl): ~
+    con_sup_2_{1..20} (extends con_tpl): ~
+    con_sup_3_{1..20} (extends con_tpl): ~
 
 
 Librinfo\CRMBundle\Entity\Organism:
-    org{1..50}:
-        name: '@con<current()>'
-        individual: true
+    org_tpl (template):
         email: '90%? <email()>'
         url: '20%? <safeEmail()>'
-        alert: '10%? <realText(100)>'
+        alert: '10%? Ceci est une alerte...'
+    org_ind_cus_{1..20} (extends org_tpl):
+        individual: true
+        customer: true
+        supplier: false
+        name: toto
+    org_ind_sup_{1..20} (extends org_tpl):
+        individual: true
+        customer: false
+        supplier: true
+        name: toto
+    org_com_cus_{1..20} (extends org_tpl):
+        individual: false
+        customer: true
+        supplier: false
+        name: '<company()>'
         address: '50%? <streetAddress()>'
-        zip: '80%? <postcode()>'
-        city: '80%? <city()>'
-        country: '30%? France'
-        customer: '50%? true : false'
-        customerCode (unique): 'CLI<numberBetween(1, 100)>'
+    org_com_sup_{1..20} (extends org_tpl):
+        individual: false
+        customer: false
+        supplier: true
+        name: '<company()>'
+        address: '50%? <streetAddress()>'
 
 
 Librinfo\CRMBundle\Entity\Position:
-    pos{1..50}:
-        contact: '@con<current()>'
-        organism: '@org<current()>'
+    pos_ind_cus_{1..20}:
+        organism: '@org_ind_cus_<current()>'
+        contact:  '@con_cus_1_<current()>'
+    pos_ind_sup_{1..20}:
+        organism: '@org_ind_sup_<current()>'
+        contact: '@con_sup_1_<current()>'
+    pos_com_cus_1_{1..20}:
+        organism: '@org_com_cus_<current()>'
+        contact:  '@con_cus_2_<current()>'
+    pos_com_cus_2_{1..20}:
+        organism: '@org_com_cus_<current()>'
+        contact:  '@con_cus_3_<current()>'
+    pos_com_sup_1_{1..20}:
+        organism: '@org_com_sup_<current()>'
+        contact:  '@con_sup_2_<current()>'
+    pos_com_sup_2_{1..20}:
+        organism: '@org_com_sup_<current()>'
+        contact:  '@con_sup_3_<current()>'
+

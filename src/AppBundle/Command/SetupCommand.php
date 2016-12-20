@@ -13,7 +13,9 @@ namespace AppBundle\Command;
 use Librinfo\UserBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\ArrayInput;
+use Symfony\Component\Console\Input\InputDefinition;
 use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
@@ -28,6 +30,10 @@ class SetupCommand extends ContainerAwareCommand
         $this
             ->setName('libio:install:setup')
             ->setDescription('Libio configuration setup.')
+            ->setDefinition(
+                new InputDefinition([
+                    new InputOption('with-samples', null, InputOption::VALUE_NONE, 'Load sample data fixture'),
+                ]))
             ->setHelp(<<<EOT
 The <info>%command.name%</info> command allows user to configure basic Libio application data.
 EOT
@@ -48,6 +54,8 @@ EOT
         $this->setupCircles($output);
         $this->setupProductAttributes($output);
         $this->setupCities($output);
+        if ($input->getOption('with-samples'))
+            $this->setupSampleData($output);
     }
 
     /**
@@ -210,5 +218,41 @@ EOT
         $em->clear();
         $output->writeln(sprintf('<info> done (%d cities).</info>', $i));
         */
+    }
+
+    /**
+     * @param OutputInterface $output
+     */
+    protected function setupSampleData(OutputInterface $output)
+    {
+        $em = $this->getContainer()->get('doctrine')->getEntityManager();
+        $conn = $em->getConnection();
+        $entities = [
+            'LibrinfoVarietiesBundle:PlantCategory',
+            'LibrinfoVarietiesBundle:Variety',
+            'LibrinfoVarietiesBundle:Species',
+            'LibrinfoVarietiesBundle:Genus',
+            'LibrinfoVarietiesBundle:Family',
+            'LibrinfoCRMBundle:Position',
+            'LibrinfoCRMBundle:Contact',
+            'LibrinfoCRMBundle:Organism',
+            'LibrinfoUserBundle:User'
+        ];
+
+        foreach($entities as $entity) {
+            $query = sprintf("TRUNCATE TABLE %s CASCADE", $em->getClassMetadata($entity)->getTableName());
+            $output->writeln("$query ... ");
+            $conn->exec($query);
+        }
+
+        $output->writeln(['', 'Running <info>doctrine:fixtures:load --append --fixtures=src/AppBundle/DataFixtures</info> command...']);
+        $fixturesCommand = $this->getApplication()->find('doctrine:fixtures:load');
+        $fixturesInput = new ArrayInput([
+            '--append' => true,
+            '--fixtures' => 'src/AppBundle/DataFixtures'
+        ]);
+        $fixturesInput->setInteractive(false);
+        $fixturesCommand->run($fixturesInput, $output);
+
     }
 }
