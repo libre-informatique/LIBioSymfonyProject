@@ -49,13 +49,15 @@ EOT
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        if ($input->getOption('with-samples'))
+            $this->clearDatabase($output);
         $this->setupSylius($output);
+        $this->setupUsers($output);
         $this->setupCircles($output);
         $this->setupProductAttributes($output);
         $this->setupCities($output);
         if ($input->getOption('with-samples'))
             $this->setupSampleData($output);
-        $this->setupUsers($output);
     }
 
     /**
@@ -223,7 +225,7 @@ EOT
     /**
      * @param OutputInterface $output
      */
-    protected function setupSampleData(OutputInterface $output)
+    protected function clearDatabase(OutputInterface $output)
     {
         $em = $this->getContainer()->get('doctrine')->getEntityManager();
         $conn = $em->getConnection();
@@ -244,7 +246,13 @@ EOT
             $output->writeln("$query ... ");
             $conn->exec($query);
         }
+    }
 
+    /**
+     * @param OutputInterface $output
+     */
+    protected function setupSampleData(OutputInterface $output)
+    {
         $output->writeln(['', 'Running <info>doctrine:fixtures:load --append --fixtures=src/AppBundle/DataFixtures</info> command...']);
         $fixturesCommand = $this->getApplication()->find('doctrine:fixtures:load');
         $fixturesInput = new ArrayInput([
