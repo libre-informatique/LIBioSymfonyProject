@@ -91,8 +91,8 @@ class LoadSampleData extends AbstractFixture implements OrderedFixtureInterface,
         $this->user = $userFixtures['user'];
 
         $varietyFixtures = $this->loadYml('variety.yml');
-
         $crmFixtures = $this->loadYml('crm.yml', 'prePersistCRM', 'postPersistCRM');
+        $seedBatchFixtures = $this->loadYml('seed_batch.yml');
     }
 
     protected function loadYml($filename, $prePersist = null, $postPersist = null)
@@ -115,6 +115,8 @@ class LoadSampleData extends AbstractFixture implements OrderedFixtureInterface,
                 $this->$postPersist($name, $object);
             }
         }
+
+        return $objects;
     }
 
     protected function percent($max)
@@ -147,7 +149,6 @@ class LoadSampleData extends AbstractFixture implements OrderedFixtureInterface,
             ->setFirstResult(rand(0, $this->nbCities - 1))
             ->getOneOrNullResult();
     }
-
 
     /**
      * @param string $name
