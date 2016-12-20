@@ -13,7 +13,9 @@ namespace AppBundle\Command;
 use Librinfo\UserBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\ArrayInput;
+use Symfony\Component\Console\Input\InputDefinition;
 use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
@@ -28,6 +30,10 @@ class SetupCommand extends ContainerAwareCommand
         $this
             ->setName('libio:install:setup')
             ->setDescription('Libio configuration setup.')
+            ->setDefinition(
+                new InputDefinition([
+                    new InputOption('no-cities', null, InputOption::VALUE_NONE, 'Do not load cities data'),
+                ]))
             ->setHelp(<<<EOT
 The <info>%command.name%</info> command allows user to configure basic Libio application data.
 EOT
@@ -47,7 +53,8 @@ EOT
         $this->setupSylius($output);
         $this->setupCircles($output);
         $this->setupProductAttributes($output);
-        $this->setupCities($output);
+        if (!$input->getOption('no-cities'))
+            $this->setupCities($output);
     }
 
     /**

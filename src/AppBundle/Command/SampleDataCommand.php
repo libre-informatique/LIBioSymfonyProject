@@ -55,9 +55,9 @@ EOT
         $fixturesInput->setInteractive(false);
         $fixturesCommand->run($fixturesInput, $output);
 
-        $output->writeln(['', 'Running <info>libio:install:setup</info> command...']);
+        $output->writeln(['', 'Running <info>libio:install:setup --no-cities</info> command...']);
         $setupCommand = $this->getApplication()->find('libio:install:setup');
-        $setupInput = new ArrayInput([]);
+        $setupInput = new ArrayInput(['--no-cities' => true]); // cities are already loaded by doctrine:fixtures:load
         $setupCommand->run($setupInput, $output);
     }
 }
