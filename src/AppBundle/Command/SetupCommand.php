@@ -49,13 +49,13 @@ EOT
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $this->setupUsers($output);
         $this->setupSylius($output);
         $this->setupCircles($output);
         $this->setupProductAttributes($output);
         $this->setupCities($output);
         if ($input->getOption('with-samples'))
             $this->setupSampleData($output);
+        $this->setupUsers($output);
     }
 
     /**
@@ -236,7 +236,7 @@ EOT
             'LibrinfoCRMBundle:Position',
             'LibrinfoCRMBundle:Contact',
             'LibrinfoCRMBundle:Organism',
-            'LibrinfoUserBundle:User'
+            'LibrinfoUserBundle:User',
         ];
 
         foreach($entities as $entity) {
