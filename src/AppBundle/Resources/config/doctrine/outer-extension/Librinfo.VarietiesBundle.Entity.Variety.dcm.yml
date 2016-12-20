@@ -7,3 +7,5 @@ Librinfo\VarietiesBundle\Entity\Variety:
         channelDescriptions:
             targetEntity: AppBundle\Entity\ChannelDescription
             mappedBy: variety
+            cascade: [ persist, remove ]
+            orphanRemoval: true
