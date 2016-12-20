@@ -1,0 +1,7 @@
+AppBundle\Entity\ChannelDescription:
+    type: entity
+    blast:
+        loggable: true
+    fields:
+        value:
+            type: string

@@ -3,7 +3,6 @@ imports:
     - { resource: "@SyliusAdminBundle/Resources/config/app/config.yml" }
     - { resource: "@SyliusShopBundle/Resources/config/app/config.yml" }
     - { resource: "@SyliusApiBundle/Resources/config/app/config.yml" }
-
     - { resource: "@LibrinfoProductBundle/Resources/config/app/config.yml" }
 
 sylius_resource:
@@ -11,3 +10,10 @@ sylius_resource:
         app.seeds_product:
             classes:
                 model: AppBundle\Entity\SeedsProduct
+
+sylius_channel:
+    driver: doctrine/orm
+    resources:
+        channel:
+            classes:
+                model: AppBundle\Entity\Channel

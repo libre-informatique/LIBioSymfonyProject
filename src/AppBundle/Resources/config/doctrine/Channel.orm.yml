@@ -1,0 +1,5 @@
+AppBundle\Entity\Channel:
+    type: entity
+    table: sylius_channel
+    blast:
+        loggable: true
