@@ -253,26 +253,6 @@ EOT
      */
     protected function setupSampleData(OutputInterface $output)
     {
-        $em = $this->getContainer()->get('doctrine')->getEntityManager();
-        $conn = $em->getConnection();
-        $entities = [
-            'LibrinfoVarietiesBundle:PlantCategory',
-            'LibrinfoVarietiesBundle:Variety',
-            'LibrinfoVarietiesBundle:Species',
-            'LibrinfoVarietiesBundle:Genus',
-            'LibrinfoVarietiesBundle:Family',
-            'LibrinfoCRMBundle:Position',
-            'LibrinfoCRMBundle:Contact',
-            'LibrinfoCRMBundle:Organism',
-            'LibrinfoUserBundle:User',
-        ];
-
-        foreach($entities as $entity) {
-            $query = sprintf("TRUNCATE TABLE %s CASCADE", $em->getClassMetadata($entity)->getTableName());
-            $output->writeln("$query ... ");
-            $conn->exec($query);
-        }
-
         $output->writeln(['', 'Running <info>doctrine:fixtures:load --append --fixtures=src/AppBundle/DataFixtures</info> command...']);
         $fixturesCommand = $this->getApplication()->find('doctrine:fixtures:load');
         $fixturesInput = new ArrayInput([
