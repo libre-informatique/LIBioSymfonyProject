@@ -57,5 +57,10 @@ trait HasChannelDescriptions
     {
         return $this->channelDescriptions;
     }
+    
+    protected function initChannelDescriptions()
+    {
+        $this->channelDescriptions = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
 }
