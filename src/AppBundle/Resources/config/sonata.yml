@@ -45,9 +45,9 @@ sonata_admin:
                     - route: admin_librinfo_seedbatch_seedbatch_create
                       label: libio.menu_label.create_seed_batch
                     - label: libio.menu_label.producers_list
-                      route: libio_not_implemented
+                      route: admin_librinfo_seedbatch_seedProducer_list
                     - label: libio.menu_label.create_producer
-                      route: libio_not_implemented
+                      route: admin_librinfo_seedbatch_seedProducer_create
                     - route: admin_librinfo_seedbatch_plot_list
                       label: libio.menu_label.plots_list
                     - route: admin_librinfo_seedbatch_plot_create
@@ -80,11 +80,10 @@ sonata_admin:
                       route: libio_not_implemented
                     - label: libio.menu_label.create_order
                       route: libio_not_implemented
-                    - route:        admin_librinfo_seedbatch_organism_list
-                      route_params: { 'filter[customer][value]': 1 }
-                      label:        libio.menu_label.customers_list
+                    - label: libio.menu_label.customers_list
+                      route: admin_librinfo_crm_customer_list
                     - label: libio.menu_label.create_customer
-                      route: libio_not_implemented
+                      route: admin_librinfo_crm_customer_create
             Accounting:
                 label: libio.menu_label.accounting
                 icon:  '<i class="fa fa-balance-scale"></i>'
