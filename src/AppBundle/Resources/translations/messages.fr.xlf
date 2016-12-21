@@ -143,7 +143,27 @@
             <trans-unit id="librinfo.link.seedsproduct_list">
                 <source>librinfo.link.seedsproduct_list</source>
                 <target>Liste des articles (semences)</target>
-            </trans-unit>     
+            </trans-unit>
+            
+             <!-- Channel descriptions -->
+             
+            <trans-unit id="librinfo.label.value">
+                <source>librinfo.label.value</source>
+                <target>Contenu</target>
+            </trans-unit>
+            <trans-unit id="librinfo.label.channel">
+                <source>librinfo.label.channel</source>
+                <target>Utilisation</target>
+            </trans-unit>
+           
+            <trans-unit id="form_group_channel_descriptions">
+                <source>form_group_channel_descriptions</source>
+                <target>Descriptions spécifiques</target>
+            </trans-unit>
+            <trans-unit id="form_tab_channel_descriptions">
+                <source>form_tab_channel_descriptions</source>
+                <target>Déscriptions spécifiques</target>
+            </trans-unit>    
                         
         </body>
     </file>

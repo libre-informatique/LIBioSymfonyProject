@@ -30,6 +30,32 @@ parameters:
                           class: framacalc
             Sonata\AdminBundle\Form\FormMapper:
                 add:
+                    form_tab_channel_descriptions:
+                        form_group_channel_descriptions:
+                            channelDescriptions:
+                                type: sonata_type_collection
+                                by_reference: false
+                                required: false
+                                label: false
+                                attr:
+                                    class: new-line
+                                    width: 100
+                                _options:
+                                    edit: inline
+                                    inline: table
+                    _options:
+                        tabsOrder:
+                            - form_group_general
+                            - form_tab_seeds_production
+                            - form_tab_channel_descriptions
+                            - form_tab_inner
+                            - form_tab_plant
+                            - form_tab_culture
+                            - form_tab_commercial
+                            - form_tab_production
+                            - form_tab_professional
+                            - form_tab_amateur
+                            - form_group_specific
                     _helper_links:
                         - url: https://framacalc.org/libio_validation_varietes
                           title: Framacalc de validation (Variétés)
@@ -80,3 +106,25 @@ parameters:
 
             Sonata\AdminBundle\Datagrid\DatagridMapper:
                 add: ~
+               
+#####################
+# CHANNEL DESCRIPTION
+#####################
+
+        AppBundle\Entity\ChannelDescription:
+            # SHOW
+            Sonata\AdminBundle\Show\ShowMapper:
+                add:
+                    value: ~
+                    id: ~
+    
+            # FORM    
+            Sonata\AdminBundle\Form\FormMapper:
+                add:
+                    main_tab:
+                        main_group:
+                            channel:
+                                type: entity
+                                class: AppBundle\Entity\Channel
+                            value:
+                                type: blast_tinymce

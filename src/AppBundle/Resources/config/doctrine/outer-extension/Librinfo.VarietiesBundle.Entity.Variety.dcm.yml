@@ -4,3 +4,8 @@ Librinfo\VarietiesBundle\Entity\Variety:
         products:
             targetEntity: Librinfo\ProductBundle\Entity\Product
             mappedBy: variety
+        channelDescriptions:
+            targetEntity: AppBundle\Entity\ChannelDescription
+            mappedBy: variety
+            cascade: [ persist, remove ]
+            orphanRemoval: true

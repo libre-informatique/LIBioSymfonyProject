@@ -20,22 +20,26 @@ Librinfo\CRMBundle\Entity\Organism:
         individual: true
         customer: true
         supplier: false
+        seedProducer: false
         name: toto
     org_ind_sup_{1..20} (extends org_tpl):
         individual: true
         customer: false
         supplier: true
+        seedProducer: false
         name: toto
     org_com_cus_{1..20} (extends org_tpl):
         individual: false
         customer: true
         supplier: false
+        seedProducer: false
         name: '<company()>'
         address: '50%? <streetAddress()>'
     org_com_sup_{1..20} (extends org_tpl):
         individual: false
         customer: false
         supplier: true
+        seedProducer: true
         name: '<company()>'
         address: '50%? <streetAddress()>'
 
