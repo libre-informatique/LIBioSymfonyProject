@@ -17,6 +17,7 @@ use Symfony\Component\Console\Input\InputDefinition;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Question\ConfirmationQuestion;
 
 /**
  * Initializes the database for Libio project
@@ -49,8 +50,16 @@ EOT
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        if ($input->getOption('with-samples'))
+        if ($input->getOption('with-samples')) {
+            $output->writeln(['', '<question>This will erease part of your data.</question>']);
+            $helper = $this->getHelper('question');
+            $question = new ConfirmationQuestion('Continue with this action [y|N] ? ', false);
+            if (!$helper->ask($input, $output, $question))
+                return;
+
             $this->clearDatabase($output);
+        }
+
         $this->setupSylius($output);
         $this->setupUsers($output);
         $this->setupCircles($output);
@@ -227,8 +236,11 @@ EOT
      */
     protected function clearDatabase(OutputInterface $output)
     {
+        $output->writeln(['', 'Cleaning database...']);
         $em = $this->getContainer()->get('doctrine')->getEntityManager();
         $conn = $em->getConnection();
+        $conn->getConfiguration()->setSQLLogger(null);
+
         $entities = [
             'LibrinfoVarietiesBundle:PlantCategory',
             'LibrinfoVarietiesBundle:Variety',
@@ -243,8 +255,9 @@ EOT
 
         foreach($entities as $entity) {
             $query = sprintf("TRUNCATE TABLE %s CASCADE", $em->getClassMetadata($entity)->getTableName());
-            $output->writeln("$query ... ");
+            $output->write("$query ... ");
             $conn->exec($query);
+            $output->writeln('<info> done.</info>');
         }
     }
 
