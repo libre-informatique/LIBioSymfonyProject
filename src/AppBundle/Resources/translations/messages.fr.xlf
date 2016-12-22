@@ -155,7 +155,14 @@
                 <source>librinfo.label.channel</source>
                 <target>Utilisation</target>
             </trans-unit>
-           
+           <trans-unit id="show_group_channel_descriptions">
+                <source>show_group_channel_descriptions</source>
+                <target>Descriptions spécifiques</target>
+            </trans-unit>
+            <trans-unit id="show_tab_channel_descriptions">
+                <source>show_tab_channel_descriptions</source>
+                <target>Descriptions spécifiques</target>
+            </trans-unit>
             <trans-unit id="form_group_channel_descriptions">
                 <source>form_group_channel_descriptions</source>
                 <target>Descriptions spécifiques</target>
