@@ -77,7 +77,7 @@ class MenuBuilder
 
         // Seed batches settings
         $submenu = $menu->addChild('libio.menu_label.seed_batches_settings');
-        $submenu->addChild('libio.menu_label.certifications_list', ['route' => 'libio_not_implemented']);
+        $submenu->addChild('libio.menu_label.certifications_list', ['route' => 'admin_librinfo_seedbatch_certificationtype_list']);
         $submenu->addChild('libio.menu_label.certificators_list', ['route' => 'libio_not_implemented']);
 
         // Shop settings
@@ -91,7 +91,6 @@ class MenuBuilder
         $submenu->addChild('libio.menu_label.shipping_methods_list', ['route' => 'libio_not_implemented']);
         $submenu->addChild('libio.menu_label.tax_categories_list', ['route' => 'libio_not_implemented']);
         $submenu->addChild('libio.menu_label.tax_rates_list', ['route' => 'libio_not_implemented']);
-
 
         return $menu;
     }
