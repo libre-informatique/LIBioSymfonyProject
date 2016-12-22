@@ -77,6 +77,7 @@ class AppKernel extends Kernel
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
 //            $bundles[] = new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(); provided by Sylius
             $bundles[] = new Alex\DoctrineExtraBundle\AlexDoctrineExtraBundle();
+            $bundles[] = new Trappar\AliceGeneratorBundle\TrapparAliceGeneratorBundle();
         }
 
         return array_merge(parent::registerBundles(), $bundles);

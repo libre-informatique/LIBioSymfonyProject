@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "93d4c78ac723fe4cae45acdd3b003fc5",
-    "content-hash": "0644126d7e4a50bd436b9dcd772142ce",
+    "hash": "825031d1a9bbeb974b48f61226d532b4",
+    "content-hash": "ffd1847be2e10bf2173eeae5bad35ad5",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -6992,6 +6992,64 @@
             "time": "2016-11-06 18:54:50"
         },
         {
+            "name": "symfony/phpunit-bridge",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/phpunit-bridge.git",
+                "reference": "acd56b8bd397537177a37f2c52efb74df52d844d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/phpunit-bridge/zipball/acd56b8bd397537177a37f2c52efb74df52d844d",
+                "reference": "acd56b8bd397537177a37f2c52efb74df52d844d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "suggest": {
+                "symfony/debug": "For tracking deprecated interfaces usages at runtime with DebugClassLoader"
+            },
+            "bin": [
+                "bin/simple-phpunit"
+            ],
+            "type": "symfony-bridge",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.3-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ],
+                "psr-4": {
+                    "Symfony\\Bridge\\PhpUnit\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony PHPUnit Bridge",
+            "homepage": "https://symfony.com",
+            "time": "2016-12-13 09:39:51"
+        },
+        {
             "name": "symfony/polyfill-apcu",
             "version": "dev-master",
             "source": {
@@ -7755,6 +7813,115 @@
                 "framework"
             ],
             "time": "2016-12-02 09:28:14"
+        },
+        {
+            "name": "trappar/alice-generator",
+            "version": "v0.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/trappar/AliceGenerator.git",
+                "reference": "1abef571430ffabf48fb18f6cf8183b960736415"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/trappar/AliceGenerator/zipball/1abef571430ffabf48fb18f6cf8183b960736415",
+                "reference": "1abef571430ffabf48fb18f6cf8183b960736415",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/common": "^2.6",
+                "jms/metadata": "^1.5",
+                "php": "^5.6||^7.0",
+                "symfony/yaml": "^2.3||^3.0"
+            },
+            "require-dev": {
+                "doctrine/orm": "^2.5",
+                "nelmio/alice": "^2.2",
+                "phpunit/phpunit": "^5.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Trappar\\AliceGenerator\\": "src/Trappar/AliceGenerator"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jeff Way",
+                    "email": "jeff.way@me.com"
+                }
+            ],
+            "description": "Automatically generates alice fixture based on a set of objects",
+            "keywords": [
+                "Fixture",
+                "alice",
+                "data",
+                "doctrine",
+                "generator",
+                "orm",
+                "test"
+            ],
+            "time": "2016-11-09 03:59:16"
+        },
+        {
+            "name": "trappar/alice-generator-bundle",
+            "version": "v1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/trappar/AliceGeneratorBundle.git",
+                "reference": "b7eebeed6ed98c55a73fbd6af62edf5556e14f19"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/trappar/AliceGeneratorBundle/zipball/b7eebeed6ed98c55a73fbd6af62edf5556e14f19",
+                "reference": "b7eebeed6ed98c55a73fbd6af62edf5556e14f19",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/doctrine-bundle": "^1.6",
+                "doctrine/orm": "~2.4",
+                "php": "^5.6||^7.0",
+                "symfony/console": "~2.5|~3.0",
+                "symfony/finder": "^2.5|~3.0",
+                "symfony/framework-bundle": "~2.5|~3.0",
+                "symfony/phpunit-bridge": "^2.7.4|~3.0",
+                "symfony/validator": "~2.5|~3.0",
+                "symfony/yaml": "~2.5|~3.0",
+                "trappar/alice-generator": "^0.2"
+            },
+            "require-dev": {
+                "matthiasnoback/symfony-dependency-injection-test": "0.*",
+                "phpunit/phpunit": "5.5.*"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Trappar\\AliceGeneratorBundle\\": "src/Trappar/AliceGeneratorBundle"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jeff Way",
+                    "email": "jeff.way@me.com"
+                }
+            ],
+            "description": "Symfony bundle for generating Alice fixtures from Doctrine entities",
+            "keywords": [
+                "Fixture",
+                "data",
+                "doctrine",
+                "orm",
+                "test"
+            ],
+            "time": "2016-11-09 04:05:49"
         },
         {
             "name": "twig/extensions",
