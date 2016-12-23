@@ -1,9 +1,0 @@
-Librinfo\MediaBundle\Entity\File:
-    type: entity
-    manyToOne:
-        variety:
-            targetEntity: Librinfo\VarietiesBundle\Entity\Variety
-            inversedBy: images
-        email:
-            targetEntity: Librinfo\EmailBundle\Entity\Email
-            inversedBy: attachments
