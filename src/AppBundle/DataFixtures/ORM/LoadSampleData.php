@@ -185,6 +185,11 @@ class LoadSampleData extends AbstractFixture implements OrderedFixtureInterface,
             $object->setSupplierCode($supplierCodeGenerator::generate($object));
             $this->alicePersister->persist([$object]);
         }
+        if ($object instanceof Organism && $object->isSeedProducer()) {
+            $producerCodeGenerator = $registry->getCodeGenerator(Organism::class, 'seedProducerCode');
+            $object->setSeedProducerCode($producerCodeGenerator::generate($object));
+            $this->alicePersister->persist([$object]);
+        }
         if (strpos($name, 'pos_ind_') === 0) {
             $contact = $object->getContact();
             $organism = $object->getOrganism();
