@@ -4,7 +4,6 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "825031d1a9bbeb974b48f61226d532b4",
     "content-hash": "ffd1847be2e10bf2173eeae5bad35ad5",
     "packages": [
         {
@@ -384,7 +383,7 @@
                 "stream_filter_append",
                 "stream_filter_register"
             ],
-            "time": "2015-11-08 23:41:30"
+            "time": "2015-11-08T23:41:30+00:00"
         },
         {
             "name": "cocur/slugify",
@@ -593,20 +592,20 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/collections.git",
-                "reference": "d7414669e9e3f6d467eaef88893e4deec7e4a0b8"
+                "reference": "1a4fb7e902202c33cce8c55989b945612943c2ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/collections/zipball/d7414669e9e3f6d467eaef88893e4deec7e4a0b8",
-                "reference": "d7414669e9e3f6d467eaef88893e4deec7e4a0b8",
+                "url": "https://api.github.com/repos/doctrine/collections/zipball/1a4fb7e902202c33cce8c55989b945612943c2ba",
+                "reference": "1a4fb7e902202c33cce8c55989b945612943c2ba",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.5 || ^7.0"
+                "php": "^5.6 || ^7.0"
             },
             "require-dev": {
                 "doctrine/coding-standard": "~0.1@dev",
-                "phpunit/phpunit": "~4.0"
+                "phpunit/phpunit": "^5.7"
             },
             "type": "library",
             "extra": {
@@ -652,7 +651,7 @@
                 "collections",
                 "iterator"
             ],
-            "time": "2016-12-17 22:35:33"
+            "time": "2017-01-03 10:49:41"
         },
         {
             "name": "doctrine/common",
@@ -782,7 +781,7 @@
             "keywords": [
                 "database"
             ],
-            "time": "2015-03-30 12:14:13"
+            "time": "2015-03-30T12:14:13+00:00"
         },
         {
             "name": "doctrine/dbal",
@@ -1022,7 +1021,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2016-01-26 17:28:51"
+            "time": "2016-01-26T17:28:51+00:00"
         },
         {
             "name": "doctrine/doctrine-fixtures-bundle",
@@ -1079,7 +1078,7 @@
                 "Fixture",
                 "persistence"
             ],
-            "time": "2015-11-04 21:23:23"
+            "time": "2015-11-04T21:23:23+00:00"
         },
         {
             "name": "doctrine/doctrine-migrations-bundle",
@@ -1680,7 +1679,7 @@
             "keywords": [
                 "rest"
             ],
-            "time": "2015-12-29 16:02:50"
+            "time": "2015-12-29T16:02:50+00:00"
         },
         {
             "name": "friendsofsymfony/user-bundle",
@@ -2139,7 +2138,7 @@
                 "GPLv2"
             ],
             "description": "Converts HTML to formatted plain text",
-            "time": "2016-03-16 23:24:34"
+            "time": "2016-03-16T23:24:34+00:00"
         },
         {
             "name": "imagine/imagine",
@@ -2196,7 +2195,7 @@
                 "image manipulation",
                 "image processing"
             ],
-            "time": "2015-09-19 16:54:05"
+            "time": "2015-09-19T16:54:05+00:00"
         },
         {
             "name": "incenteev/composer-parameter-handler",
@@ -2404,7 +2403,7 @@
                 "domain parsing",
                 "url parsing"
             ],
-            "time": "2015-03-30 12:49:45"
+            "time": "2015-03-30T12:49:45+00:00"
         },
         {
             "name": "jeroendesloovere/vcard",
@@ -2453,7 +2452,7 @@
                 "php",
                 "vCard"
             ],
-            "time": "2016-08-16 14:22:48"
+            "time": "2016-08-16T14:22:48+00:00"
         },
         {
             "name": "jeroendesloovere/vcard-bundle",
@@ -2504,7 +2503,7 @@
                 "php",
                 "vCard"
             ],
-            "time": "2015-12-22 12:45:25"
+            "time": "2015-12-22T12:45:25+00:00"
         },
         {
             "name": "jms/aop-bundle",
@@ -2554,7 +2553,7 @@
                 "annotations",
                 "aop"
             ],
-            "time": "2015-12-09 16:30:46"
+            "time": "2015-12-09T16:30:46+00:00"
         },
         {
             "name": "jms/cg",
@@ -2601,7 +2600,7 @@
             "keywords": [
                 "code generation"
             ],
-            "time": "2016-04-07 10:21:44"
+            "time": "2016-04-07T10:21:44+00:00"
         },
         {
             "name": "jms/di-extra-bundle",
@@ -2722,7 +2721,7 @@
                 "xml",
                 "yaml"
             ],
-            "time": "2016-12-05 10:18:33"
+            "time": "2016-12-05T10:18:33+00:00"
         },
         {
             "name": "jms/parser-lib",
@@ -2908,7 +2907,7 @@
                 "serialization",
                 "xml"
             ],
-            "time": "2016-11-13 10:20:11"
+            "time": "2016-11-13T10:20:11+00:00"
         },
         {
             "name": "jms/serializer-bundle",
@@ -3401,17 +3400,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/SymfonyLibrinfoCRMBundle.git",
-                "reference": "83ef685f82426d3ae16d40f58092a58ec93b7019"
+                "reference": "d6c3e7fe1471929fe1faf7238d186ea593017019"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/SymfonyLibrinfoCRMBundle/zipball/83ef685f82426d3ae16d40f58092a58ec93b7019",
-                "reference": "83ef685f82426d3ae16d40f58092a58ec93b7019",
+                "url": "https://api.github.com/repos/libre-informatique/SymfonyLibrinfoCRMBundle/zipball/d6c3e7fe1471929fe1faf7238d186ea593017019",
+                "reference": "d6c3e7fe1471929fe1faf7238d186ea593017019",
                 "shasum": ""
             },
             "require": {
                 "blast-project/base-entities-bundle": "dev-master",
                 "blast-project/core-bundle": "dev-master",
+                "blast-project/utils-bundle": "dev-master",
                 "jeroendesloovere/vcard-bundle": "^1.2",
                 "php": ">=5.4.0",
                 "sparkling/vat-bundle": "~0.1",
@@ -3446,7 +3446,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-01-03 08:42:02"
+            "time": "2017-01-03 09:10:25"
         },
         {
             "name": "libre-informatique/decorator-bundle",
@@ -3507,12 +3507,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/SymfonyLibrinfoEmailBundle.git",
-                "reference": "40f42bca832ae1bda1f5a4567403ad1f61f52448"
+                "reference": "5df7635cd479cd4df5862fb33b02edd058881c4f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/SymfonyLibrinfoEmailBundle/zipball/40f42bca832ae1bda1f5a4567403ad1f61f52448",
-                "reference": "40f42bca832ae1bda1f5a4567403ad1f61f52448",
+                "url": "https://api.github.com/repos/libre-informatique/SymfonyLibrinfoEmailBundle/zipball/5df7635cd479cd4df5862fb33b02edd058881c4f",
+                "reference": "5df7635cd479cd4df5862fb33b02edd058881c4f",
                 "shasum": ""
             },
             "require": {
@@ -3560,7 +3560,7 @@
                 "spool",
                 "symfony"
             ],
-            "time": "2016-12-23 09:08:55"
+            "time": "2017-01-03 11:59:06"
         },
         {
             "name": "libre-informatique/email-crm-bundle",
@@ -3568,12 +3568,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/SymfonyLibrinfoEmailCRMBundle.git",
-                "reference": "2b380f0851268c90ab2d429be3f707b212e04c2a"
+                "reference": "48a12570574b06e7a690febae2937ac1b5c8cb20"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/SymfonyLibrinfoEmailCRMBundle/zipball/2b380f0851268c90ab2d429be3f707b212e04c2a",
-                "reference": "2b380f0851268c90ab2d429be3f707b212e04c2a",
+                "url": "https://api.github.com/repos/libre-informatique/SymfonyLibrinfoEmailCRMBundle/zipball/48a12570574b06e7a690febae2937ac1b5c8cb20",
+                "reference": "48a12570574b06e7a690febae2937ac1b5c8cb20",
                 "shasum": ""
             },
             "require": {
@@ -3597,7 +3597,7 @@
                     "homepage": "http://www.libre-informatique.fr/"
                 },
                 {
-                    "name": "Marcos BEZERRA DE MENEZES",
+                    "name": "Marcos Bezerra de Menezes",
                     "email": "marcos.bezerra@libre-informatique.fr"
                 }
             ],
@@ -3611,7 +3611,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2016-12-21 10:01:14"
+            "time": "2017-01-03 11:53:05"
         },
         {
             "name": "libre-informatique/media-bundle",
@@ -3772,15 +3772,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/SymfonyLibrinfoSeedBatchBundle.git",
-                "reference": "8d0cdd1d9d2dc3c76ecfcce3bcecafa5438238cc"
+                "reference": "0801804bcb166ff5f827db3a84e2b9e7652aa98b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/SymfonyLibrinfoSeedBatchBundle/zipball/8d0cdd1d9d2dc3c76ecfcce3bcecafa5438238cc",
-                "reference": "8d0cdd1d9d2dc3c76ecfcce3bcecafa5438238cc",
+                "url": "https://api.github.com/repos/libre-informatique/SymfonyLibrinfoSeedBatchBundle/zipball/0801804bcb166ff5f827db3a84e2b9e7652aa98b",
+                "reference": "0801804bcb166ff5f827db3a84e2b9e7652aa98b",
                 "shasum": ""
             },
             "require": {
+                "blast-project/utils-bundle": "dev-master",
                 "libre-informatique/varieties-bundle": "dev-master",
                 "php": ">=5.6.0",
                 "symfony/symfony": "2.8.*"
@@ -3813,7 +3814,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2016-12-23 14:36:41"
+            "time": "2017-01-03 16:09:48"
         },
         {
             "name": "libre-informatique/ui-bundle",
@@ -3879,12 +3880,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/SymfonyLibrinfoUserBundle.git",
-                "reference": "b20b5f6428fa811194949534c8c55a038bb5fca8"
+                "reference": "b07450e99f47d9e30d37a8ef3de653dee87a37ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/SymfonyLibrinfoUserBundle/zipball/b20b5f6428fa811194949534c8c55a038bb5fca8",
-                "reference": "b20b5f6428fa811194949534c8c55a038bb5fca8",
+                "url": "https://api.github.com/repos/libre-informatique/SymfonyLibrinfoUserBundle/zipball/b07450e99f47d9e30d37a8ef3de653dee87a37ea",
+                "reference": "b07450e99f47d9e30d37a8ef3de653dee87a37ea",
                 "shasum": ""
             },
             "require": {
@@ -3925,7 +3926,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2016-12-09 10:19:41"
+            "time": "2017-01-03 11:46:38"
         },
         {
             "name": "libre-informatique/varieties-bundle",
@@ -3933,17 +3934,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/SymfonyLibrinfoVarietiesBundle.git",
-                "reference": "381ecc025a41db4da25f76723d287d1955da4e9d"
+                "reference": "40aa7742e290be24d864d9a6e70a26fd15a68dca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/SymfonyLibrinfoVarietiesBundle/zipball/381ecc025a41db4da25f76723d287d1955da4e9d",
-                "reference": "381ecc025a41db4da25f76723d287d1955da4e9d",
+                "url": "https://api.github.com/repos/libre-informatique/SymfonyLibrinfoVarietiesBundle/zipball/40aa7742e290be24d864d9a6e70a26fd15a68dca",
+                "reference": "40aa7742e290be24d864d9a6e70a26fd15a68dca",
                 "shasum": ""
             },
             "require": {
                 "blast-project/base-entities-bundle": "dev-master",
                 "blast-project/core-bundle": "dev-master",
+                "blast-project/utils-bundle": "dev-master",
                 "libre-informatique/media-bundle": "dev-master",
                 "php": ">=5.3.0",
                 "symfony/symfony": "2.8.*"
@@ -3967,7 +3969,7 @@
                     "homepage": "http://www.libre-informatique.fr/"
                 },
                 {
-                    "name": "Marcos BEZERRA DE MENEZES",
+                    "name": "Marcos Bezerra de Menezes",
                     "email": "marcos.bezerra@libre-informatique.fr"
                 }
             ],
@@ -3986,7 +3988,7 @@
                 "taxonomy",
                 "variety"
             ],
-            "time": "2016-12-23 09:09:42"
+            "time": "2017-01-03 09:10:55"
         },
         {
             "name": "liip/imagine-bundle",
@@ -4115,7 +4117,7 @@
             "keywords": [
                 "markdown"
             ],
-            "time": "2016-10-29 18:58:20"
+            "time": "2016-10-29T18:58:20+00:00"
         },
         {
             "name": "mockery/mockery",
@@ -4123,12 +4125,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/padraic/mockery.git",
-                "reference": "89f77081d6eba6274b290c3fcc09f58be94d3a8a"
+                "reference": "d4f0db56642357c87e967beba75157fcdb9b0cca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/padraic/mockery/zipball/89f77081d6eba6274b290c3fcc09f58be94d3a8a",
-                "reference": "89f77081d6eba6274b290c3fcc09f58be94d3a8a",
+                "url": "https://api.github.com/repos/padraic/mockery/zipball/d4f0db56642357c87e967beba75157fcdb9b0cca",
+                "reference": "d4f0db56642357c87e967beba75157fcdb9b0cca",
                 "shasum": ""
             },
             "require": {
@@ -4180,7 +4182,7 @@
                 "test double",
                 "testing"
             ],
-            "time": "2016-12-20 13:50:22"
+            "time": "2017-01-03 20:33:07"
         },
         {
             "name": "monolog/monolog",
@@ -4343,7 +4345,7 @@
                 "documentation",
                 "rest"
             ],
-            "time": "2016-06-13 09:12:09"
+            "time": "2016-06-13T09:12:09+00:00"
         },
         {
             "name": "nostalgiaz/bootstrap-switch",
@@ -4392,7 +4394,7 @@
                 "javascript",
                 "switch"
             ],
-            "time": "2015-01-25 13:46:30"
+            "time": "2015-01-25T13:46:30+00:00"
         },
         {
             "name": "ocramius/proxy-manager",
@@ -4570,7 +4572,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2016-11-07 23:38:38"
+            "time": "2016-11-07T23:38:38+00:00"
         },
         {
             "name": "payum/iso4217",
@@ -5192,7 +5194,7 @@
                 "sequence",
                 "set"
             ],
-            "time": "2015-05-17 12:39:23"
+            "time": "2015-05-17T12:39:23+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -5242,7 +5244,7 @@
                 "php",
                 "type"
             ],
-            "time": "2015-07-25 16:39:46"
+            "time": "2015-07-25T16:39:46+00:00"
         },
         {
             "name": "polishsymfonycommunity/symfony-mocker-container",
@@ -5294,7 +5296,7 @@
                 "mockery",
                 "test"
             ],
-            "time": "2016-03-04 08:53:43"
+            "time": "2016-03-04T08:53:43+00:00"
         },
         {
             "name": "psr/http-message",
@@ -5615,7 +5617,7 @@
                 }
             ],
             "description": "A security checker for your composer.lock",
-            "time": "2015-11-07 08:07:40"
+            "time": "2015-11-07T08:07:40+00:00"
         },
         {
             "name": "sonata-project/admin-bundle",
@@ -6515,7 +6517,7 @@
                 "validation",
                 "vat"
             ],
-            "time": "2015-01-12 20:29:23"
+            "time": "2015-01-12T20:29:23+00:00"
         },
         {
             "name": "stfalcon/tinymce-bundle",
@@ -6575,7 +6577,7 @@
                 "tinymce",
                 "wysiwyg"
             ],
-            "time": "2016-05-18 14:48:11"
+            "time": "2016-05-18T14:48:11+00:00"
         },
         {
             "name": "stof/doctrine-extensions-bundle",
@@ -6867,7 +6869,7 @@
             ],
             "description": "E-Commerce platform for PHP, based on Symfony framework.",
             "homepage": "http://sylius.org",
-            "time": "2016-11-21 14:07:04"
+            "time": "2016-11-21T14:07:04+00:00"
         },
         {
             "name": "symfony/assetic-bundle",
@@ -7005,12 +7007,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/phpunit-bridge.git",
-                "reference": "f354ff5902afa678e4cab82835707ea979f9b433"
+                "reference": "4f2aa873d2872a3b9782b25879fd628a0c418bc9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/phpunit-bridge/zipball/f354ff5902afa678e4cab82835707ea979f9b433",
-                "reference": "f354ff5902afa678e4cab82835707ea979f9b433",
+                "url": "https://api.github.com/repos/symfony/phpunit-bridge/zipball/4f2aa873d2872a3b9782b25879fd628a0c418bc9",
+                "reference": "4f2aa873d2872a3b9782b25879fd628a0c418bc9",
                 "shasum": ""
             },
             "require": {
@@ -7055,7 +7057,7 @@
             ],
             "description": "Symfony PHPUnit Bridge",
             "homepage": "https://symfony.com",
-            "time": "2017-01-02 20:33:09"
+            "time": "2017-01-03 13:44:13"
         },
         {
             "name": "symfony/polyfill-apcu",
@@ -7693,12 +7695,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "5ea8f3f147294f697f557eb34002592db804885b"
+                "reference": "1fc445a5e964c567faae4a9239d6a79f70a40dce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/5ea8f3f147294f697f557eb34002592db804885b",
-                "reference": "5ea8f3f147294f697f557eb34002592db804885b",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/1fc445a5e964c567faae4a9239d6a79f70a40dce",
+                "reference": "1fc445a5e964c567faae4a9239d6a79f70a40dce",
                 "shasum": ""
             },
             "require": {
@@ -7820,7 +7822,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2017-01-02 20:30:51"
+            "time": "2017-01-03 16:39:35"
         },
         {
             "name": "trappar/alice-generator",
@@ -7873,7 +7875,7 @@
                 "orm",
                 "test"
             ],
-            "time": "2016-11-09 03:59:16"
+            "time": "2016-11-09T03:59:16+00:00"
         },
         {
             "name": "trappar/alice-generator-bundle",
@@ -7929,7 +7931,7 @@
                 "orm",
                 "test"
             ],
-            "time": "2016-11-09 04:05:49"
+            "time": "2016-11-09T04:05:49+00:00"
         },
         {
             "name": "twig/extensions",
@@ -8302,7 +8304,7 @@
                 }
             ],
             "description": "JSONP callback validator.",
-            "time": "2014-01-20 22:35:06"
+            "time": "2014-01-20T22:35:06+00:00"
         },
         {
             "name": "willdurand/negotiation",
@@ -8405,7 +8407,7 @@
                 "state",
                 "statemachine"
             ],
-            "time": "2016-11-03 13:24:00"
+            "time": "2016-11-03T13:24:00+00:00"
         },
         {
             "name": "winzou/state-machine-bundle",
@@ -8451,7 +8453,7 @@
                 "statemachine",
                 "symfony"
             ],
-            "time": "2016-10-28 03:32:52"
+            "time": "2016-10-28T03:32:52+00:00"
         },
         {
             "name": "zendframework/zend-code",
@@ -8503,7 +8505,7 @@
                 "code",
                 "zf2"
             ],
-            "time": "2016-04-20 17:26:42"
+            "time": "2016-04-20T17:26:42+00:00"
         },
         {
             "name": "zendframework/zend-eventmanager",
@@ -8698,7 +8700,7 @@
                 "MIT"
             ],
             "description": "Extra features for Doctrine, as a Symfony bundle",
-            "time": "2016-07-16 09:54:44"
+            "time": "2016-07-16T09:54:44+00:00"
         },
         {
             "name": "alom/graphviz",
@@ -8743,7 +8745,7 @@
                 "dot",
                 "graphviz"
             ],
-            "time": "2016-07-11 22:16:41"
+            "time": "2016-07-11T22:16:41+00:00"
         },
         {
             "name": "nelmio/alice",
