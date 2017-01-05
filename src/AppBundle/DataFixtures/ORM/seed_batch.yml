@@ -2,3 +2,51 @@ Librinfo\SeedBatchBundle\Entity\SeedFarm:
     seedfarm1:
         name: LiSem AS
         code: LIS
+
+Librinfo\SeedBatchBundle\Entity\CertificationType:
+    certtype_1:
+        name: AB
+        code: AB
+        description: >
+            Label officiel français du bio répondant au cahier des charges européen
+            de l'agriculture biologique et label européen. Interdiction des pesticides
+            et des engrais chimiques de synthèse. Mixité des productions bio et non bio
+            acceptée sous certaines conditions. Les produits transformés contiennent
+            au moins 95 % d’ingrédients bio. Tolérance d’une contamination par les OGM
+            à hauteur de 0,9 % des produits transformés. Site web: www.agencebio.org
+    certtype_2:
+        name: Nature et Progrès
+        code: NP
+    certtype_3:
+        name: Demeter
+        code: DEM
+        description: >
+            Demeter est une garantie privée pour les produits issus d’exploitations
+            certifiées AB et utilisant les principes de l’agriculture biodynamique.
+            La certification va plus loin que le label AB : Mixité et traces d’OGM
+            sont interdites, les produits composés doivent comporter au moins 90 %
+            d’ingrédients certifiés Demeter, l’alimentation des animaux doit se faire
+            à 2/3 avec des produits certifiés Demeter et 80% des aliments doivent
+            être produits sur la ferme. Site web: www.demeter.fr
+    certtype_4:
+        name: Bio Cohérence
+        code: BC
+
+
+Librinfo\SeedBatchBundle\Entity\Plot:
+    plot_tpl (template):
+        name: 'Parcelle <city()>'
+        address: '50%? <streetAddress()>'
+    plot_1_{1..10} (extends plot_tpl):
+        producer: '@org_ind_prod_<current()>'
+    plot_2_{1..10} (extends plot_tpl):
+        producer: '@org_com_prod_<current()>'
+    plot_3_{1..5} (extends plot_tpl):
+        producer: '@org_com_prod_<current()>'
+    plot_4_{1..5} (extends plot_tpl):
+        producer: '@org_com_prod_<current()>'
+
+#Librinfo\SeedBatchBundle\Entity\Certification:
+#    cert_1_{1..10}:
+#        plot: '@plot_1_<current()>'
+#        certificationType: '@certtype_1'

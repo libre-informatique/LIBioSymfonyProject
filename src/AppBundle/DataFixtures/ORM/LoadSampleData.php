@@ -14,9 +14,8 @@ use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Librinfo\CRMBundle\Entity\City;
-use Librinfo\CRMBundle\Entity\Contact;
 use Librinfo\CRMBundle\Entity\Organism;
-use Librinfo\UserBundle\Entity\User;
+use Librinfo\SeedBatchBundle\Entity\Plot;
 use Nelmio\Alice\Fixtures\Loader;
 use Nelmio\Alice\Persister\Doctrine as DoctrinePersister;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
@@ -37,11 +36,6 @@ class LoadSampleData extends AbstractFixture implements OrderedFixtureInterface,
      * @var ObjectManager
      */
     private $manager;
-
-    /**
-     * @var User
-     */
-    private $user;
 
     /**
      * @var Loader
@@ -87,38 +81,71 @@ class LoadSampleData extends AbstractFixture implements OrderedFixtureInterface,
 
         $this->nbCities = $this->countCities();
 
-        $userFixtures = $this->loadYml('user.yml');
-        $this->user = $userFixtures['user'];
+        $objects = $this->loadYml('sample_data.yml');
+        $user = $objects['user'];
 
-        $varietyFixtures = $this->loadYml('variety.yml');
-        $crmFixtures = $this->loadYml('crm.yml', 'prePersistCRM', 'postPersistCRM');
-        $seedBatchFixtures = $this->loadYml('seed_batch.yml');
-    }
-
-    protected function loadYml($filename, $prePersist = null, $postPersist = null)
-    {
-        $objects = $this->aliceLoader->load(__DIR__.'/'.$filename);
-
-        foreach($objects as $name => $object) {
+        // Created by, Updated by
+        foreach($objects as $object) {
             if (method_exists($object, 'setCreatedBy'))
-                $object->setCreatedBy($this->user);
+                $object->setCreatedBy($user);
             if (method_exists($object, 'setUpdatedBy'))
-                $object->setUpdatedBy($this->user);
-            if ($prePersist) {
-                $this->$prePersist($name, $object);
-            }
+                $object->setUpdatedBy($user);
         }
+
+        // Zip, city, country (from database, not using Faker data)
+        foreach($objects as $object) if (method_exists($object, 'setCity') )
+            $this->setZipCityCountry($object);
+
+        // Individual organisms have the same address as their unique contact
+        foreach($objects as $name => $object) if (strpos($name, 'pos_ind_') === 0) {
+            $contact = $object->getContact();
+            $organism = $object->getOrganism();
+            $organism->setName($contact->getFirstname() . ' ' . strtoupper($contact->getName()));
+            $organism->setAddress($contact->getAddress());
+            $organism->setZip($contact->getZip());
+            $organism->setCity($contact->getCity());
+            $organism->setCountry($contact->getCountry());
+        }
+
+        // Persist objects (before setting codes)
         $this->alicePersister->persist($objects);
 
-        if ($postPersist) {
-            foreach($objects as $name => $object){
-                $this->$postPersist($name, $object);
+        // Codes
+        $registry = $this->container->get('blast_core.code_generators');
+        $customerCodeGenerator = $registry->getCodeGenerator(Organism::class, 'customerCode');
+        $supplierCodeGenerator = $registry->getCodeGenerator(Organism::class, 'supplierCode');
+        $producerCodeGenerator = $registry->getCodeGenerator(Organism::class, 'seedProducerCode');
+        $plotCodeGenerator = $registry->getCodeGenerator(Plot::class, 'code');
+        foreach($objects as $object) if ($object instanceof Organism) {
+            if ($object->isCustomer()) {
+                $object->setCustomerCode($customerCodeGenerator::generate($object));
+                $this->alicePersister->persist([$object]);
+            }
+            if ($object->isSupplier()) {
+                $object->setSupplierCode($supplierCodeGenerator::generate($object));
+                $this->alicePersister->persist([$object]);
+            }
+            if ($object->isSeedProducer()) {
+                $object->setSeedProducerCode($producerCodeGenerator::generate($object));
+                $this->alicePersister->persist([$object]);
             }
         }
+        foreach($objects as $object) if ($object instanceof Plot) {
+            $object->setCode($plotCodeGenerator::generate($object));
+            $this->alicePersister->persist([$object]);
+        }
 
+    }
+
+    protected function loadYml($filename)
+    {
+        $objects = $this->aliceLoader->load(__DIR__.'/'.$filename);
         return $objects;
     }
 
+    /**
+     * @return boolean
+     */
     protected function percent($max)
     {
         return rand(1, 100) <= $max;
@@ -154,52 +181,14 @@ class LoadSampleData extends AbstractFixture implements OrderedFixtureInterface,
      * @param string $name
      * @param mixed  $object
      */
-    protected function prePersistCRM($name, $object)
+    protected function setZipCityCountry($object)
     {
-        if ($object instanceof Contact) {
-            if ($this->percent(80)) {
-                $city = $this->randomCity();
-                $object
-                    ->setZip($city->getZip())
-                    ->setCity($city->getCity())
-                    ->setCountry(Intl::getRegionBundle()->getCountryName($city->getCountryCode()));
-            }
-        }
-    }
-
-    /**
-     * @param  string $name
-     * @param  mixed  $object
-     */
-    protected function postPersistCRM($name, $object)
-    {
-        $registry = $this->container->get('blast_core.code_generators');
-
-        if ($object instanceof Organism && $object->isCustomer()) {
-            $customerCodeGenerator = $registry->getCodeGenerator(Organism::class, 'customerCode');
-            $object->setCustomerCode($customerCodeGenerator::generate($object));
-            $this->alicePersister->persist([$object]);
-        }
-        if ($object instanceof Organism && $object->isSupplier()) {
-            $supplierCodeGenerator = $registry->getCodeGenerator(Organism::class, 'supplierCode');
-            $object->setSupplierCode($supplierCodeGenerator::generate($object));
-            $this->alicePersister->persist([$object]);
-        }
-        if ($object instanceof Organism && $object->isSeedProducer()) {
-            $producerCodeGenerator = $registry->getCodeGenerator(Organism::class, 'seedProducerCode');
-            $object->setSeedProducerCode($producerCodeGenerator::generate($object));
-            $this->alicePersister->persist([$object]);
-        }
-        if (strpos($name, 'pos_ind_') === 0) {
-            $contact = $object->getContact();
-            $organism = $object->getOrganism();
-            $organism->setName($contact->getFirstname() . ' ' . strtoupper($contact->getName()));
-            $organism->setAddress($contact->getAddress());
-            $organism->setZip($contact->getZip());
-            $organism->setCity($contact->getCity());
-            $organism->setCountry($contact->getCountry());
-            $this->alicePersister->persist([$organism]);
-        }
-
+        $city = $this->randomCity();
+        if (method_exists($object, 'setZip'))
+            $object->setZip($city->getZip());
+        if (method_exists($object, 'setCity'))
+            $object->setCity($city->getCity());
+        if (method_exists($object, 'setCountry'))
+            $object->setCountry(Intl::getRegionBundle()->getCountryName($city->getCountryCode()));
     }
 }

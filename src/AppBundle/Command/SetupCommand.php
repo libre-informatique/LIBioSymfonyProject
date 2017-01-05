@@ -10,6 +10,7 @@
 
 namespace AppBundle\Command;
 
+use Doctrine\Common\DataFixtures\Purger\ORMPurger;
 use Librinfo\UserBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\ArrayInput;
@@ -51,13 +52,13 @@ EOT
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         if ($input->getOption('with-samples')) {
-            $output->writeln(['', '<question>This will erease part of your data.</question>']);
+            $output->writeln(['', '<question>This will erease the existing data.</question>']);
             $helper = $this->getHelper('question');
             $question = new ConfirmationQuestion('Continue with this action [y|N] ? ', false);
             if (!$helper->ask($input, $output, $question))
                 return;
 
-            $this->clearDatabase($output);
+            $this->purgeDatabase($output);
         }
 
         $this->setupSylius($output);
@@ -234,31 +235,15 @@ EOT
     /**
      * @param OutputInterface $output
      */
-    protected function clearDatabase(OutputInterface $output)
+    protected function purgeDatabase(OutputInterface $output)
     {
-        $output->writeln(['', 'Cleaning database...']);
+        $output->writeln('');
+        $output->write('Purging database...');
         $em = $this->getContainer()->get('doctrine')->getEntityManager();
-        $conn = $em->getConnection();
-        $conn->getConfiguration()->setSQLLogger(null);
-
-        $entities = [
-            'LibrinfoVarietiesBundle:PlantCategory',
-            'LibrinfoVarietiesBundle:Variety',
-            'LibrinfoVarietiesBundle:Species',
-            'LibrinfoVarietiesBundle:Genus',
-            'LibrinfoVarietiesBundle:Family',
-            'LibrinfoCRMBundle:Position',
-            'LibrinfoCRMBundle:Contact',
-            'LibrinfoCRMBundle:Organism',
-            'LibrinfoUserBundle:User',
-        ];
-
-        foreach($entities as $entity) {
-            $query = sprintf("TRUNCATE TABLE %s CASCADE", $em->getClassMetadata($entity)->getTableName());
-            $output->write("$query ... ");
-            $conn->exec($query);
-            $output->writeln('<info> done.</info>');
-        }
+        $purger = new ORMPurger($em);
+        $purger->setPurgeMode(ORMPurger::PURGE_MODE_DELETE); // Seems faster than PURGE_MODE_TRUNCATE
+        $purger->purge();
+        $output->writeln('<info> done.</info>');
     }
 
     /**
