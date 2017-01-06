@@ -104,6 +104,14 @@
                 <source>libio.menu_label.create_plot</source>
                 <target>Ajouter une Parcelle</target>
             </trans-unit>
+            <trans-unit id="libio.menu_label.certifications_list">
+                <source>libio.menu_label.certifications_list</source>
+                <target>Liste des Certificats</target>
+            </trans-unit>
+            <trans-unit id="libio.menu_label.create_certification">
+                <source>libio.menu_label.create_certification</source>
+                <target>Ajouter un Certificat</target>
+            </trans-unit>
             <trans-unit id="libio.menu_label.germination_tests">
                 <source>libio.menu_label.germination_tests</source>
                 <target>Tests de germination</target>
