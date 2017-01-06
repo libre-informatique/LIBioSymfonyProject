@@ -10,7 +10,7 @@
 
 namespace AppBundle\Admin;
 
-use Librinfo\VarietiesBundle\Admin\VarietyAdminConcrete as BaseAdmin;
+use Librinfo\VarietiesBundle\Admin\VarietyAdmin as BaseAdmin;
 use Sonata\AdminBundle\Route\RouteCollection;
 
 /**
@@ -18,7 +18,7 @@ use Sonata\AdminBundle\Route\RouteCollection;
  *
  * @author Marcos Bezerra de Menezes <marcos.bezerra@libre-informatique.fr>
  */
-class VarietyAdminConcrete extends BaseAdmin
+class VarietyAdmin extends BaseAdmin
 {
     protected $baseRouteName = 'admin_libio_variety';
     protected $baseRoutePattern = 'libio/variety';

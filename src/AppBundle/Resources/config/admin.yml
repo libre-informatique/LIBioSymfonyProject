@@ -7,7 +7,7 @@
 services:
 
     libio.admin.variety:
-        class: AppBundle\Admin\VarietyAdminConcrete
+        class: AppBundle\Admin\VarietyAdmin
         arguments: [~, Librinfo\VarietiesBundle\Entity\Variety, AppBundle:VarietyCRUD]
         tags:
             - name: sonata.admin
