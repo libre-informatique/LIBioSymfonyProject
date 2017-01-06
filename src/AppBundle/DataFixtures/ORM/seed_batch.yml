@@ -64,7 +64,14 @@ Librinfo\SeedBatchBundle\Entity\Plot:
         producer: '@org_com_prod_<current()>'
 
 Librinfo\SeedBatchBundle\Entity\Certification:
-    cert_1_{1..10}:
+    cert_tpl (template):
+        certificationType: '@certtype_<numberBetween(1,4)>'
+        certifyingBody: '@certbody_<numberBetween(1,4)>'
+        code: <numerify('##/#####/######')>
+        certificationDate: <dateTimeBetween('-2 years', '-1 year')>
+        startDate: <dateTimeBetween('-11 months', '-6 months')>
+        expiryDate: <dateTimeBetween('-5 months', '+1 year')>
+    cert_1_{1..10} (extends cert_tpl):
         plot: '@plot_1_<current()>'
-        certificationType: '@certtype_1'
-        certifyingBody: '@certbody_1'
+    cert_2_{1..10} (extends cert_tpl):
+        plot: '@plot_2_<current()>'
