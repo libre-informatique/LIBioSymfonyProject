@@ -80,6 +80,8 @@ libio:
         zones_list: Zones géographiques
     seeds_product_admin:
         label: Article (semences)
+    other_product_admin:
+        label: Article (autres)
 
 librinfo:
     label:
@@ -89,6 +91,9 @@ librinfo:
         value: Contenu
     link:
         dashboard: Tableau de Bord
+        other_product_create: Ajouter un article (autres)
+        other_product_list: Liste des articles (autres)
+        otherproduct_list: Liste des articles (autres)
         seed_product_list: Liste des articles (semences)
         seeds_product_create: Ajouter un article (semences)
         seeds_product_list: Liste des articles (semences)
