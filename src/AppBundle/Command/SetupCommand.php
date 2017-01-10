@@ -64,7 +64,7 @@ EOT
         $this->setupSylius($output);
         $this->setupUsers($output);
         $this->setupCircles($output);
-        $this->setupProductAttributes($output);
+        $this->setupProductOptions($output);
         $this->setupCities($output);
         if ($input->getOption('with-samples'))
             $this->setupSampleData($output);
@@ -147,7 +147,78 @@ EOT
     }
 
     /**
+     * Create application product application
+     * @param OutputInterface $output
+     * @return int
+     *
+     * @todo Hardcoded product options should be moved to application params (same way as initCircles...)
+     */
+    protected function setupProductOptions(OutputInterface $output)
+    {
+        $output->writeln(['', 'Initializing application specific <info>Product Options</info>...']);
+        $options = [
+            ['code' => '_libio_packaging',  'name' => 'Conditionnement', 'type' => 'text', 'values' => [
+                'BULK' => ['locale' => 'fr_FR', 'value' => 'Vrac'],
+                '1G' => ['locale' => 'fr_FR', 'value' => '1g'],
+                '5G' => ['locale' => 'fr_FR', 'value' => '5g'],
+                '20S' => ['locale' => 'fr_FR', 'value' => '20 graines'],
+                '50S' => ['locale' => 'fr_FR', 'value' => '50 graines'],
+            ]],
+            ['code' => '_libio_seedbatch',  'name' => 'Lot', 'type' => 'text'],
+        ];
+
+        $em = $this->getContainer()->get('doctrine')->getEntityManager();
+        $optionRepository = $this->getContainer()->get('sylius.repository.product_option');
+        $optionFactory = $this->getContainer()->get('sylius.factory.product_option');
+        $optionValueRepository = $this->getContainer()->get('sylius.repository.product_option_value');
+        $optionValueFactory = $this->getContainer()->get('sylius.factory.product_option_value');
+
+        foreach ($options as $o) {
+            $option = $optionRepository->findOneByCode($o['code']);
+            if (!$option) {
+                $output->write(sprintf('Creating product option "%s"', $o['code']));
+                $option = $optionFactory->createNew();
+                $option->setCode($o['code']);
+                $option->setName($o['name']);
+                $optionRepository->add($option);
+            }
+            else {
+                $output->write(sprintf('Updating product option "%s"', $o['code']));
+                $option->setName($o['name']);
+                $em->persist($option);
+            }
+
+            if (!empty($o['values'])) foreach ($o['values'] as $code => $v) {
+                $optionValue = $optionValueRepository->findOneByCode($code);
+                if (!$optionValue || !$option->hasValue($optionValue)) {
+                    $output->write(sprintf(' - Creating product option value "%s"', $code));
+                    $optionValue = $optionValueFactory->createNew();
+                    $optionValue->setCode($code);
+                    $optionValue->setValue($v['value']);
+                    $optionValue->setFallbackLocale($v['locale']);
+                    $optionValue->setCurrentLocale($v['locale']);
+                    $option->addValue($optionValue);
+                    $optionValueRepository->add($optionValue);
+                }
+                else {
+                    $output->write(sprintf(' - Updating product option value "%s"', $code));
+                    $optionValue->setValue($v['value']);
+                    $optionValue->setFallbackLocale($v['locale']);
+                    $optionValue->setCurrentLocale($v['locale']);
+                    $em->persist($optionValue);
+                }
+            }
+
+            $em->flush();
+            $output->writeln('<info> done.</info>');
+        }
+        return 0;
+    }
+
+    /**
      * Create application product attributes
+     * Not used anymore. Left here as an example...
+     *
      * @param OutputInterface $output
      * @return int
      *
