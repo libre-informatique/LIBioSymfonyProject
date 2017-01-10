@@ -13,8 +13,7 @@ namespace AppBundle\Entity\OuterExtension\LibrinfoProductBundle;
 /**
  * @author Marcos Bezerra de Menezes <marcos.bezerra@libre-informatique.fr>
  */
-trait ProductExtension
+trait ProductVariantExtension
 {
-    use \Librinfo\VarietiesBundle\Entity\OuterExtension\HasVariety;
     use \Librinfo\UserBundle\Entity\Traits\Traceable;
 }
