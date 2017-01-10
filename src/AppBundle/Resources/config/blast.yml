@@ -17,6 +17,16 @@ parameters:
                     - librinfo_seedbatch.admin.organism
                     - librinfo_seedbatch.admin.seedfarm
                     - librinfo_seedbatch.admin.seedbatch
+                    
+###########
+#  ALL
+###########
+        all:
+            Sonata\AdminBundle\Datagrid\ListMapper:
+                remove:
+                    _actions: [delete]
+            
+
 ############
 # VARIETY
 ############
@@ -82,6 +92,8 @@ parameters:
                           title: Framacalc de validation (Variétés)
                           class: framacalc
             Sonata\AdminBundle\Datagrid\ListMapper:
+                remove:
+                    _actions: [duplicate]
                 add:
                     _helper_links:
                         - url: https://framacalc.org/libio_validation_varietes
