@@ -96,7 +96,17 @@ parameters:
 
         AppBundle\Admin\SeedsProductAdmin:
             Sonata\AdminBundle\Show\ShowMapper:
-                add: ~
+                add:
+                    form_group_general:
+                        '':
+                            variety:
+                                admin_code: libio.admin.variety
+                            packaging: ~
+                            price: ~
+                            _options:
+                                fieldsOrder: [name, code, variety, packaging, price]
+                    _options:
+                        tabsOrder: [form_group_general, form_group_specifics]
             Sonata\AdminBundle\Form\FormMapper:
                 add:
                     form_group_general:
@@ -107,11 +117,19 @@ parameters:
                                 by_reference: false
                                 property: name
                                 _options:
-                                    admin_code: librinfo_varieties.admin.variety
-                            weight:
+                                    admin_code: libio.admin.variety
+                            packaging:
+                                type: text
+                                help: libio.help.packaging
+                                attr:
+                                    style: 'width: 100px'
+                            price:
                                 type: integer
+                                help: libio.help.product_price
+                                attr:
+                                    style: 'width: 100px'
                             _options:
-                                fieldsOrder: [variety, weight]
+                                fieldsOrder: [variety, name, packaging, code, price]
 
             Sonata\AdminBundle\Datagrid\ListMapper:
                 remove:
@@ -127,7 +145,7 @@ parameters:
 
             Sonata\AdminBundle\Datagrid\DatagridMapper:
                 add: ~
-               
+
 #####################
 # CHANNEL DESCRIPTION
 #####################
@@ -138,8 +156,8 @@ parameters:
                 add:
                     value: ~
                     id: ~
-    
-            # FORM    
+
+            # FORM
             Sonata\AdminBundle\Form\FormMapper:
                 add:
                     main_tab:

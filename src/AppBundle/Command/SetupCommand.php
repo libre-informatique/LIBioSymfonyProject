@@ -157,9 +157,8 @@ EOT
     {
         $output->writeln(['', 'Initializing application specific <info>Product Attributes</info>...']);
         $attributes = [
-            ['code' => '_libio_weight',     'name' => 'Poids', 'type' => 'integer'],
+            ['code' => '_libio_packaging',  'name' => 'Conditionnement', 'type' => 'text'],
             ['code' => '_libio_base_price', 'name' => 'Prix',  'type' => 'integer'],
-            ['code' => '_libio_bulk',       'name' => 'Vrac',  'type' => 'checkbox'],
         ];
         $em = $this->getContainer()->get('doctrine')->getEntityManager();
         $repository = $this->getContainer()->get('sylius.repository.product_attribute');

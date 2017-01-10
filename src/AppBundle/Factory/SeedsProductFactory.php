@@ -74,13 +74,20 @@ class SeedsProductFactory extends ProductFactory
      */
     private function setDefaultAttributes(SeedsProduct $seedsProduct)
     {
-        $weightAttribute = $this->attributeRepository->findOneBy(['code' => '_libio_weight']);
-        if (!$weightAttribute) {
-            throw new \Exception('Product attribute with code "_libio_weight" does not exist in database. You should create it in order to use SeedsProduct entity.');
+        $packagingAttribute = $this->attributeRepository->findOneBy(['code' => '_libio_packaging']);
+        if (!$packagingAttribute) {
+            throw new \Exception('Product attribute with code "_libio_packaging" does not exist in database. You should create it in order to use SeedsProduct entity.');
         }
-        $weight = $this->attributeValueFactory->createNew();
-        $weight->setAttribute($weightAttribute);
-        $weight->setValue(0);
-        $seedsProduct->addAttribute($weight);
+        $packaging = $this->attributeValueFactory->createNew();
+        $packaging->setAttribute($packagingAttribute);
+        $seedsProduct->addAttribute($packaging);
+
+        $basePriceAttribute = $this->attributeRepository->findOneBy(['code' => '_libio_base_price']);
+        if (!$basePriceAttribute) {
+            throw new \Exception('Product attribute with code "_libio_base_price" does not exist in database. You should create it in order to use SeedsProduct entity.');
+        }
+        $basePrice = $this->attributeValueFactory->createNew();
+        $basePrice->setAttribute($basePriceAttribute);
+        $seedsProduct->addAttribute($basePrice);
     }
 }

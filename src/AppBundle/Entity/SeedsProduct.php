@@ -18,16 +18,38 @@ use Librinfo\ProductBundle\Entity\Product;
 class SeedsProduct extends Product
 {
     /**
-     * @return integer
+     * @return string
      */
-    public function getWeight()
+    public function getPackaging()
     {
-        return (int)$this->getAttributeByCode('_libio_weight')->getValue();
+        return $this->getAttributeByCode('_libio_packaging')->getValue();
     }
 
-    public function setWeight($weight)
+    /**
+     * @param string $packaging
+     * @return SeedsProduct
+     */
+    public function setPackaging($packaging)
     {
-        $this->getAttributeByCode('_libio_weight')->setValue((int)$weight);
+        $this->getAttributeByCode('_libio_packaging')->setValue($packaging);
+        return $this;
+    }
+
+    /**
+     * @return int   Price in cents
+     */
+    public function getPrice()
+    {
+        return $this->getAttributeByCode('_libio_base_price')->getValue();
+    }
+
+    /**
+     * @param int $price    Price in cents
+     * @return SeedsProduct
+     */
+    public function setPrice($price)
+    {
+        $this->getAttributeByCode('_libio_base_price')->setValue($price);
         return $this;
     }
 }

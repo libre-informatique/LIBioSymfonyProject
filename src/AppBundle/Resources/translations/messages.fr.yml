@@ -8,6 +8,9 @@ show_group_channel_descriptions: Descriptions spécifiques
 show_tab_channel_descriptions: Descriptions spécifiques
 
 libio:
+    help:
+        product_price: en Centimes
+        packaging: ex. 5g / 20 graines / vrac
     label:
         product_code: Code article
     menu_label:
@@ -81,10 +84,13 @@ libio:
 librinfo:
     label:
         channel: Utilisation
+        packaging: Conditionnement
+        price: Prix
         value: Contenu
     link:
         dashboard: Tableau de Bord
         seed_product_list: Liste des articles (semences)
+        seeds_product_create: Ajouter un article (semences)
         seeds_product_list: Liste des articles (semences)
         seedsproduct_list: Liste des articles (semences)
 
