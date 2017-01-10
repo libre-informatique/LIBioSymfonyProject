@@ -108,22 +108,26 @@ parameters:
 
         AppBundle\Admin\SeedsProductAdmin:
             Sonata\AdminBundle\Show\ShowMapper:
-                add: ~
+                add:
+                    form_group_general:
+                        '':
+                            variety:
+                                admin_code: libio.admin.variety
+                            _options:
+                                fieldsOrder: [name, code, variety]
+                    _options:
+                        tabsOrder: [form_group_general, form_group_specifics]
             Sonata\AdminBundle\Form\FormMapper:
                 add:
                     form_group_general:
                         '':
                             variety:
                                 type: sonata_type_model_autocomplete
-#                                route: { name: searchable_admin_retrieve_autocomplete_items }
-                                by_reference: false
-                                property: name
+                                property: [name, code]
                                 _options:
-                                    admin_code: librinfo_varieties.admin.variety
-                            weight:
-                                type: integer
+                                    admin_code: libio.admin.variety
                             _options:
-                                fieldsOrder: [variety, weight]
+                                fieldsOrder: [variety, name, code]
 
             Sonata\AdminBundle\Datagrid\ListMapper:
                 remove:
@@ -139,7 +143,7 @@ parameters:
 
             Sonata\AdminBundle\Datagrid\DatagridMapper:
                 add: ~
-               
+
 #####################
 # CHANNEL DESCRIPTION
 #####################
@@ -150,8 +154,8 @@ parameters:
                 add:
                     value: ~
                     id: ~
-    
-            # FORM    
+
+            # FORM
             Sonata\AdminBundle\Form\FormMapper:
                 add:
                     main_tab:

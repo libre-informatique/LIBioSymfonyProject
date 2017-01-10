@@ -17,17 +17,6 @@ use Librinfo\ProductBundle\Entity\Product;
  */
 class SeedsProduct extends Product
 {
-    /**
-     * @return integer
-     */
-    public function getWeight()
-    {
-        return (int)$this->getAttributeByCode('_libio_weight')->getValue();
-    }
 
-    public function setWeight($weight)
-    {
-        $this->getAttributeByCode('_libio_weight')->setValue((int)$weight);
-        return $this;
-    }
+    
 }

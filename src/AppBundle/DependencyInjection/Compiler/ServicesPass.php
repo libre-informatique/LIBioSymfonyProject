@@ -47,6 +47,7 @@ final class ServicesPass implements CompilerPassInterface
             new Reference('sylius.factory.product_variant'),
             new Reference('sylius.factory.product_attribute_value'),
             new Reference('sylius.repository.product_attribute'),
+            new Reference('sylius.repository.product_option'),
         ]);
         $container->setDefinition('libio.factory.seeds_product', $seedsProductFactoryDefinition);
     }
