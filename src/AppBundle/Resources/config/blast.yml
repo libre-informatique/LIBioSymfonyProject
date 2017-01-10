@@ -113,9 +113,7 @@ parameters:
                         '':
                             variety:
                                 type: sonata_type_model_autocomplete
-#                                route: { name: searchable_admin_retrieve_autocomplete_items }
-                                by_reference: false
-                                property: name
+                                property: [name, code]
                                 _options:
                                     admin_code: libio.admin.variety
                             packaging:
