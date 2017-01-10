@@ -21,7 +21,7 @@ parameters:
 # VARIETY
 ############
 
-        AppBundle\Admin\VarietyAdminConcrete:
+        AppBundle\Admin\VarietyAdmin:
             Sonata\AdminBundle\Show\ShowMapper:
                 add:
                     show_tab_channel_descriptions:
