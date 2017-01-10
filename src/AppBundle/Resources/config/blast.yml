@@ -101,10 +101,8 @@ parameters:
                         '':
                             variety:
                                 admin_code: libio.admin.variety
-                            packaging: ~
-                            price: ~
                             _options:
-                                fieldsOrder: [name, code, variety, packaging, price]
+                                fieldsOrder: [name, code, variety]
                     _options:
                         tabsOrder: [form_group_general, form_group_specifics]
             Sonata\AdminBundle\Form\FormMapper:
@@ -116,18 +114,8 @@ parameters:
                                 property: [name, code]
                                 _options:
                                     admin_code: libio.admin.variety
-                            packaging:
-                                type: text
-                                help: libio.help.packaging
-                                attr:
-                                    style: 'width: 100px'
-                            price:
-                                type: integer
-                                help: libio.help.product_price
-                                attr:
-                                    style: 'width: 100px'
                             _options:
-                                fieldsOrder: [variety, name, packaging, code, price]
+                                fieldsOrder: [variety, name, code]
 
             Sonata\AdminBundle\Datagrid\ListMapper:
                 remove:
