@@ -67,9 +67,9 @@ sonata_admin:
                     - route: admin_libio_seeds_product_create
                       label: libio.menu_label.create_seed_product
                     - label: libio.menu_label.other_products_list
-                      route: libio_not_implemented
+                      route: admin_libio_other_product_list
                     - label: libio.menu_label.create_other_product
-                      route: libio_not_implemented
+                      route: admin_libio_other_product_create
                     - label: libio.menu_label.packagings
                       route: libio_not_implemented
                     - label: libio.menu_label.inventory

@@ -28,7 +28,17 @@ services:
               group: admin
               label: libio.seeds_product_admin.label
               label_translator_strategy: blast_core.label.strategy.librinfo
-              
+
+    libio.admin.other_product:
+        class: AppBundle\Admin\OtherProductAdmin
+        arguments: [~, Librinfo\ProductBundle\Entity\Product, SonataAdminBundle:CRUD]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: admin
+              label: libio.other_product_admin.label
+              label_translator_strategy: blast_core.label.strategy.librinfo
+
     lisem.admin.channel_description:
         class: AppBundle\Admin\ChannelDescriptionAdmin
         arguments: [~, AppBundle\Entity\ChannelDescription, BlastCoreBundle:CRUD ]

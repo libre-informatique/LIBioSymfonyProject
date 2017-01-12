@@ -13,10 +13,7 @@ namespace AppBundle\Entity\OuterExtension\LibrinfoProductBundle;
 /**
  * @author Marcos Bezerra de Menezes <marcos.bezerra@libre-informatique.fr>
  */
-trait ProductExtension
+trait ProductVariantExtension
 {
-    use \Librinfo\VarietiesBundle\Entity\OuterExtension\HasVariety;
-
-    // TODO: temporarily removed because it conflicts with Sylius AdminUser
-    //use \Librinfo\UserBundle\Entity\Traits\Traceable;
+    use \Librinfo\UserBundle\Entity\Traits\Traceable;
 }

@@ -84,7 +84,7 @@ class MenuBuilder
         $submenu = $menu->addChild('libio.menu_label.shop_settings');
         $submenu->addChild('libio.menu_label.channels_list', ['route' => 'libio_not_implemented']);
         $submenu->addChild('libio.menu_label.product_attributes', ['route' => 'admin_librinfo_product_productattribute_list']);
-        $submenu->addChild('libio.menu_label.product_options', ['route' => 'libio_not_implemented']);
+        $submenu->addChild('libio.menu_label.product_options', ['route' => 'admin_librinfo_product_productoption_list']);
         $submenu->addChild('libio.menu_label.rates_list', ['route' => 'libio_not_implemented']);
         $submenu->addChild('libio.menu_label.zones_list', ['route' => 'libio_not_implemented']);
         $submenu->addChild('libio.menu_label.payment_methods_list', ['route' => 'libio_not_implemented']);
