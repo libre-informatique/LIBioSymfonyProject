@@ -15,7 +15,7 @@ use Sonata\AdminBundle\Route\RouteCollection;
 use Sylius\Component\Product\Model\ProductInterface;
 
 /**
- * Sonata admin for seeds products
+ * Sonata admin for other products (not seeds)
  *
  * @author Marcos Bezerra de Menezes <marcos.bezerra@libre-informatique.fr>
  */

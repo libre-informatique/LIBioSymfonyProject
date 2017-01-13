@@ -17,7 +17,7 @@ parameters:
                     - librinfo_seedbatch.admin.organism
                     - librinfo_seedbatch.admin.seedfarm
                     - librinfo_seedbatch.admin.seedbatch
-                    
+
 ###########
 #  ALL
 ###########
@@ -25,7 +25,7 @@ parameters:
             Sonata\AdminBundle\Datagrid\ListMapper:
                 remove:
                     _actions: [delete]
-            
+
 
 ############
 # VARIETY
@@ -107,6 +107,7 @@ parameters:
 ################
 
         AppBundle\Admin\SeedsProductAdmin:
+            # SHOW
             Sonata\AdminBundle\Show\ShowMapper:
                 add:
                     form_group_general:
@@ -115,9 +116,16 @@ parameters:
                                 admin_code: libio.admin.variety
                             _options:
                                 fieldsOrder: [name, code, variety]
+                    show_tab_variants:
+                        '':
+                            variants:
+                                admin_code: libio.admin.seeds_product_variant
                     _options:
-                        tabsOrder: [form_group_general, form_group_specifics]
+                        tabsOrder: [form_group_general, show_tab_variants, form_group_specifics]
+            # FORM
             Sonata\AdminBundle\Form\FormMapper:
+                remove:
+                    variants: ~
                 add:
                     form_group_general:
                         '':
@@ -128,7 +136,25 @@ parameters:
                                     admin_code: libio.admin.variety
                             _options:
                                 fieldsOrder: [variety, name, code]
-
+                    form_tab_variants:
+                        '':
+                            variants:
+                                type: sonata_type_collection
+                                label: false
+                                by_reference: false
+                                type_options:
+                                    btn_add: false
+                                    delete_options:
+                                        type: checkbox
+                                        type_options:
+                                            mapped: false
+                                            required: false
+                                required: true    # if not true, child form fields cannot be required (why ??)
+                                _options:
+                                    edit: inline
+                                    inline: table
+                                    admin_code: libio.admin.seeds_product_variant
+            #LIST
             Sonata\AdminBundle\Datagrid\ListMapper:
                 remove:
                     name: ~
@@ -140,7 +166,148 @@ parameters:
                         admin_code: librinfo_varieties.admin.variety
                     _options:
                         fieldsOrder: [code, variety, available]
+                    _actions:
+                        variants:
+                            template: 'AppBundle:SeedsProductAdmin:list__action_variants.html.twig'
 
+            Sonata\AdminBundle\Datagrid\DatagridMapper:
+                add: ~
+
+################
+# OTHER PRODUCT
+################
+
+        AppBundle\Admin\OtherProductAdmin:
+            # SHOW
+            Sonata\AdminBundle\Show\ShowMapper:
+                add:
+                    show_tab_variants:
+                        '':
+                            variants:
+                                admin_code: libio.admin.other_product_variant
+
+            # FORM
+            Sonata\AdminBundle\Form\FormMapper:
+                remove:
+                    variants: ~
+                add:
+                    form_tab_variants:
+                        '':
+                            variants:
+                                type: sonata_type_collection
+                                label: false
+                                by_reference: false
+                                type_options:
+                                    btn_add: false
+                                    delete_options:
+                                        type: checkbox
+                                        type_options:
+                                            mapped: false
+                                            required: false
+                                required: true    # if not true, child form fields cannot be required (why ??)
+                                _options:
+                                    edit: inline
+                                    inline: table
+                                    admin_code: libio.admin.other_product_variant
+
+            # LIST
+            Sonata\AdminBundle\Datagrid\ListMapper:
+                add:
+                    _actions:
+                        variants:
+                            template: 'AppBundle:OtherProductAdmin:list__action_variants.html.twig'
+
+            # FILTER
+            Sonata\AdminBundle\Datagrid\DatagridMapper:
+                add: ~
+
+########################
+# SEEDS PRODUCT VARIANT
+########################
+
+        AppBundle\Admin\SeedsProductVariantAdmin:
+            # SHOW
+            Sonata\AdminBundle\Show\ShowMapper:
+                add:
+                    form_group_general:
+                        '':
+                            product:
+                                admin_code: libio.admin.seeds_product
+            # FORM
+            Sonata\AdminBundle\Form\FormMapper:
+                add:
+                    form_group_general:
+                        '':
+                            product:
+                                type: sonata_type_model_autocomplete
+                                property: [translations.name, code]
+                                read_only: true
+                                _options:
+                                    admin_code: libio.admin.seeds_product
+                            _options:
+                                fieldsOrder: [product, name, code, price, optionValues]
+            # LIST
+            Sonata\AdminBundle\Datagrid\ListMapper:
+                add:
+                    product:
+                        admin_code: libio.admin.seeds_product
+                    _options:
+                        fieldsOrder:
+                            - code
+                            - name
+                            - product
+                            - available
+                            - price
+                            - optionValues
+                            - onHand
+                            - onHold
+                            - tracked
+            # FILTER
+            Sonata\AdminBundle\Datagrid\DatagridMapper:
+                add: ~
+
+########################
+# OTHER PRODUCT VARIANT
+########################
+
+        AppBundle\Admin\OtherProductVariantAdmin:
+            # SHOW
+            Sonata\AdminBundle\Show\ShowMapper:
+                add:
+                    form_group_general:
+                        '':
+                            product:
+                                admin_code: libio.admin.other_product
+            # FORM
+            Sonata\AdminBundle\Form\FormMapper:
+                add:
+                    form_group_general:
+                        '':
+                            product:
+                                type: sonata_type_model_autocomplete
+                                property: [translations.name, code]
+                                read_only: true
+                                _options:
+                                    admin_code: libio.admin.other_product
+                            _options:
+                                fieldsOrder: [product, name, code, price, optionValues]
+            # LIST
+            Sonata\AdminBundle\Datagrid\ListMapper:
+                add:
+                    product:
+                        admin_code: libio.admin.other_product
+                    _options:
+                        fieldsOrder:
+                            - code
+                            - name
+                            - product
+                            - available
+                            - price
+                            - optionValues
+                            - onHand
+                            - onHold
+                            - tracked
+            # FILTER
             Sonata\AdminBundle\Datagrid\DatagridMapper:
                 add: ~
 

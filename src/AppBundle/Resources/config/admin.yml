@@ -21,7 +21,7 @@ services:
 
     libio.admin.seeds_product:
         class: AppBundle\Admin\SeedsProductAdmin
-        arguments: [~, AppBundle\Entity\SeedsProduct, SonataAdminBundle:CRUD]
+        arguments: [~, AppBundle\Entity\SeedsProduct, BlastCoreBundle:CRUD]
         tags:
             - name: sonata.admin
               manager_type: orm
@@ -31,12 +31,32 @@ services:
 
     libio.admin.other_product:
         class: AppBundle\Admin\OtherProductAdmin
-        arguments: [~, Librinfo\ProductBundle\Entity\Product, SonataAdminBundle:CRUD]
+        arguments: [~, Librinfo\ProductBundle\Entity\Product, BlastCoreBundle:CRUD]
         tags:
             - name: sonata.admin
               manager_type: orm
               group: admin
               label: libio.other_product_admin.label
+              label_translator_strategy: blast_core.label.strategy.librinfo
+
+    libio.admin.seeds_product_variant:
+        class: AppBundle\Admin\SeedsProductVariantAdmin
+        arguments: [~, Librinfo\ProductBundle\Entity\ProductVariant, LibrinfoProductBundle:ProductVariantAdmin]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: admin
+              label: libio.seeds_product_variant_admin.label
+              label_translator_strategy: blast_core.label.strategy.librinfo
+
+    libio.admin.other_product_variant:
+        class: AppBundle\Admin\OtherProductVariantAdmin
+        arguments: [~, Librinfo\ProductBundle\Entity\ProductVariant, LibrinfoProductBundle:ProductVariantAdmin]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: admin
+              label: libio.other_product_variant_admin.label
               label_translator_strategy: blast_core.label.strategy.librinfo
 
     lisem.admin.channel_description:
