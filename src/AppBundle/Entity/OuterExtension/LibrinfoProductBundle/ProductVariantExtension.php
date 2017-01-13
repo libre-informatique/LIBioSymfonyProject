@@ -15,5 +15,6 @@ namespace AppBundle\Entity\OuterExtension\LibrinfoProductBundle;
  */
 trait ProductVariantExtension
 {
-    use \Librinfo\UserBundle\Entity\Traits\Traceable;
+    // TODO: temporarily removed because it conflicts with Sylius AdminUser
+    // use \Librinfo\UserBundle\Entity\Traits\Traceable;
 }
