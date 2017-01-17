@@ -50,6 +50,8 @@ services:
               group: admin
               label: libio.seeds_product_variant_admin.label
               label_translator_strategy: blast_core.label.strategy.librinfo
+        calls:
+            - [ setTemplate, [ edit, LibrinfoProductBundle:ProductVariantAdmin:edit.html.twig ] ]
 
     libio.admin.other_product_variant:
         class: AppBundle\Admin\OtherProductVariantAdmin
@@ -60,6 +62,8 @@ services:
               group: admin
               label: libio.other_product_variant_admin.label
               label_translator_strategy: blast_core.label.strategy.librinfo
+        calls:
+            - [ setTemplate, [ edit, LibrinfoProductBundle:ProductVariantAdmin:edit.html.twig ] ]
 
     lisem.admin.channel_description:
         class: AppBundle\Admin\ChannelDescriptionAdmin

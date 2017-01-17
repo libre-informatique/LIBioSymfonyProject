@@ -96,12 +96,16 @@ librinfo:
         dashboard: Tableau de Bord
         other_product_create: Ajouter un article (autres)
         other_product_list: Liste des articles (autres)
+        other_product_variant_create: Nouvelle déclinaisons d'article (autres)
         other_product_variant_list: Liste des déclinaisons d'article (autres)
         otherproduct_list: Liste des articles (autres)
         otherproductvariant_list: Liste des déclinaison d'article (autres)
         seed_product_list: Liste des articles (semences)
         seeds_product_create: Ajouter un article (semences)
         seeds_product_list: Liste des articles (semences)
+        seeds_product_variant_create: Nouvelle déclinaisons d'article (semences)
+        seeds_product_variant_list: Liste des déclinaisons d'article (semences)
         seedsproduct_list: Liste des articles (semences)
+        seedsproductvariant_list: Liste des déclinaisons d'article (semences)
 
 
