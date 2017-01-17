@@ -21,7 +21,7 @@ services:
 
     libio.admin.seeds_product:
         class: AppBundle\Admin\SeedsProductAdmin
-        arguments: [~, AppBundle\Entity\SeedsProduct, AppBundle:SeedsProductCRUD]
+        arguments: [~, Librinfo\ProductBundle\Entity\Product, AppBundle:SeedsProductCRUD]
         tags:
             - name: sonata.admin
               manager_type: orm

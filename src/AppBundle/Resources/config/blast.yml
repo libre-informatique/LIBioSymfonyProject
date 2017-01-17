@@ -131,7 +131,6 @@ parameters:
             Sonata\AdminBundle\Form\FormMapper:
                 remove:
                     variants: ~
-                    options: ~
                 add:
                     form_group_general:
                         '':

@@ -13,7 +13,7 @@ namespace AppBundle\Admin;
 use Librinfo\ProductBundle\Admin\ProductAdmin;
 use Librinfo\VarietiesBundle\Entity\Variety;
 use Sonata\AdminBundle\Form\FormMapper;
-use Sonata\DatagridBundle\Filter\FilterInterface;
+use Sonata\DatagridBundle\ProxyQuery\ProxyQueryInterface;
 use Sylius\Component\Product\Model\ProductInterface;
 
 /**
@@ -49,6 +49,21 @@ class SeedsProductAdmin extends ProductAdmin
 
         // Regular edit/create form
         parent::configureFormFields($mapper);
+    }
+
+    /**
+     * @param string $context NEXT_MAJOR: remove this argument
+     *
+     * @return ProxyQueryInterface
+     */
+    public function createQuery($context = 'list')
+    {
+        $query = parent::createQuery($context);
+        $alias = $query->getRootAliases()[0];
+        $query->andWhere(
+            $query->expr()->isNotNull("$alias.variety")
+        );
+        return $query;
     }
 
     /**

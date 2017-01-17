@@ -25,26 +25,6 @@ class OtherProductAdmin extends ProductAdmin
     protected $baseRoutePattern = 'libio/other_product';
     protected $classnameLabel = 'OtherProduct';
 
-    /**
-     * @return array
-     */
-    public function getFormTheme()
-    {
-        return array_merge(
-            parent::getFormTheme(), []
-        );
-    }
-
-    /**
-     * Configure routes for list actions
-     *
-     * @param RouteCollection $collection
-     */
-    protected function configureRoutes(RouteCollection $collection)
-    {
-        parent::configureRoutes($collection);
-    }
-
     public function createQuery($context = 'list')
     {
         $query = parent::createQuery($context);
@@ -82,6 +62,5 @@ class OtherProductAdmin extends ProductAdmin
             ))
             ->setParameter('value', "%$value%")
         ;
-        dump($qb);
     }
 }
