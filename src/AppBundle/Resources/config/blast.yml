@@ -25,6 +25,9 @@ parameters:
             Sonata\AdminBundle\Datagrid\ListMapper:
                 remove:
                     _actions: [delete]
+                add:
+                    _batch_actions:
+                        delete: ~
 
 
 ############
