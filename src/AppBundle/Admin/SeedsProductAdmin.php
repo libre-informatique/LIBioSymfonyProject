@@ -11,8 +11,8 @@
 namespace AppBundle\Admin;
 
 use Librinfo\ProductBundle\Admin\ProductAdmin;
-use Sonata\AdminBundle\Route\RouteCollection;
-use Sylius\Component\Product\Factory\ProductFactoryInterface;
+use Librinfo\VarietiesBundle\Entity\Variety;
+use Sonata\AdminBundle\Form\FormMapper;
 use Sylius\Component\Product\Model\ProductInterface;
 
 /**
@@ -27,23 +27,46 @@ class SeedsProductAdmin extends ProductAdmin
     protected $classnameLabel = 'SeedsProduct';
 
     /**
-     * @return array
+     * @var Variety
      */
-    public function getFormTheme()
-    {
-        return array_merge(
-            parent::getFormTheme(), []
-        );
-    }
+    private $variety;
 
-    /**
-     * Configure routes for list actions
-     *
-     * @param RouteCollection $collection
-     */
-    protected function configureRoutes(RouteCollection $collection)
+    public function configureFormFields(FormMapper $mapper)
     {
-        parent::configureRoutes($collection);
+        $variety = $this->getVariety();
+        $request = $this->getRequest();
+        if ($request->getMethod() == 'GET' && !$request->get($this->getIdParameter()) && !$variety) {
+            // First step creation form with just the Variety field
+            $mapper
+                ->with('form_tab_new_variety_variant')
+                    ->add('variety', 'sonata_type_model_autocomplete',
+                        ['property' => ['name', 'code'],  'required' => true],
+                        ['admin_code' => 'libio.admin.variety'])
+            ;
+            return;
+        }
+
+        // Regular edit/create form
+        parent::configureFormFields($mapper);
+
+        /*
+        // Limit the seedbatch values to the variety seedbatches
+        if ($variety) {
+            $repository = $this->modelManager->getEntityManager('LibrinfoVarietiesBundle:SeedBatch')->getRepository('LibrinfoVarietiesBundle:SeedBatch');
+            $qb = $repository->createQueryBuilder('sb')
+                ->andWhere('sb.variety = :variety)')
+                ->setParameter('variety', $variety)
+            ;
+
+            $mapper->add('seedBatch', 'entity', [
+                'query_builder' => $qb,
+                'class' => 'Librinfo\\VarietiesBundle\\Entity\\SeedBatch',
+                'multiple' => false,
+                'required' => false,
+                //'choice_label' => 'fullName',
+            ]);
+        }
+        */
     }
 
     public function createQuery($context = 'list')
@@ -64,14 +87,41 @@ class SeedsProductAdmin extends ProductAdmin
         $factory = $this->getConfigurationPool()->getContainer()->get('libio.factory.seeds_product');
         $object = $factory->createNew();
 
+        if ($this->getVariety()) {
+            $object->setVariety($this->getVariety());
+        }
+
         foreach ($this->getExtensions() as $extension) {
             $extension->alterNewInstance($this, $object);
         }
         return $object;
     }
 
-    public function prePersistOrUpdate($object, $method)
+    /**
+     * @return Variety|null
+     * @throws \Exception
+     */
+    public function getVariety()
     {
-        parent::prePersistOrUpdate($object, $method);
+        if ($this->variety)
+            return $this->variety;
+
+        if ($this->subject && $variety = $this->subject->getVariety()) {
+            $this->variety = $variety;
+            return $variety;
+        }
+
+        if ($variety_id = $this->getRequest()->get('variety_id')) {
+            $variety = $this->modelManager
+                ->getEntityManager('LibrinfoVarietiesBundle:Variety')
+                ->getRepository('LibrinfoVarietiesBundle:Variety')
+                ->find($variety_id);
+            if (!$variety)
+                throw new \Exception(sprintf('Unable to find Variety with id : %s', $variety_id));
+            $this->variety = $variety;
+            return $variety;
+        }
+
+        return null;
     }
 }

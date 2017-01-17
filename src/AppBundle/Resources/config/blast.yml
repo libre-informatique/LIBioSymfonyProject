@@ -109,6 +109,8 @@ parameters:
         AppBundle\Admin\SeedsProductAdmin:
             # SHOW
             Sonata\AdminBundle\Show\ShowMapper:
+                remove:
+                    options: ~
                 add:
                     form_group_general:
                         '':
@@ -126,12 +128,14 @@ parameters:
             Sonata\AdminBundle\Form\FormMapper:
                 remove:
                     variants: ~
+                    options: ~
                 add:
                     form_group_general:
                         '':
                             variety:
                                 type: sonata_type_model_autocomplete
                                 property: [name, code]
+                                read_only: true
                                 _options:
                                     admin_code: libio.admin.variety
                             _options:
