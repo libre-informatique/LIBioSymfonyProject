@@ -40,7 +40,6 @@
         "blast-project/doctrine-pgsql-bundle": "dev-master",
         "doctrine/doctrine-fixtures-bundle": "^2.3",
         "jms/serializer-bundle": "^1.1",
-        "libre-informatique/media-bundle": "dev-master",
         "libre-informatique/product-bundle": "dev-master",
         "sylius/sylius": "^1.0",
         "blast-project/utils-bundle": "dev-master",
