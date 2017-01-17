@@ -13,6 +13,7 @@ namespace AppBundle\Admin;
 use Librinfo\ProductBundle\Admin\ProductAdmin;
 use Librinfo\VarietiesBundle\Entity\Variety;
 use Sonata\AdminBundle\Form\FormMapper;
+use Sonata\DatagridBundle\Filter\FilterInterface;
 use Sylius\Component\Product\Model\ProductInterface;
 
 /**
@@ -48,35 +49,6 @@ class SeedsProductAdmin extends ProductAdmin
 
         // Regular edit/create form
         parent::configureFormFields($mapper);
-
-        /*
-        // Limit the seedbatch values to the variety seedbatches
-        if ($variety) {
-            $repository = $this->modelManager->getEntityManager('LibrinfoVarietiesBundle:SeedBatch')->getRepository('LibrinfoVarietiesBundle:SeedBatch');
-            $qb = $repository->createQueryBuilder('sb')
-                ->andWhere('sb.variety = :variety)')
-                ->setParameter('variety', $variety)
-            ;
-
-            $mapper->add('seedBatch', 'entity', [
-                'query_builder' => $qb,
-                'class' => 'Librinfo\\VarietiesBundle\\Entity\\SeedBatch',
-                'multiple' => false,
-                'required' => false,
-                //'choice_label' => 'fullName',
-            ]);
-        }
-        */
-    }
-
-    public function createQuery($context = 'list')
-    {
-        $query = parent::createQuery($context);
-        $alias = $query->getRootAliases()[0];
-        $query->andWhere(
-            $query->expr()->isNotNull("$alias.variety")
-        );
-        return $query;
     }
 
     /**
@@ -123,5 +95,20 @@ class SeedsProductAdmin extends ProductAdmin
         }
 
         return null;
+    }
+
+    public function SonataTypeModelAutocompleteCallback($admin, $property, $value)
+    {
+        $datagrid = $admin->getDatagrid();
+        $qb = $datagrid->getQuery();
+        $alias = $qb->getRootAlias();
+        $qb
+            ->leftJoin("$alias.translations", 'translations')
+            ->andWhere($qb->expr()->orX(
+                'translations.name LIKE :value',
+                $alias . '.code LIKE :value'
+            ))
+            ->setParameter('value', "%$value%")
+        ;
     }
 }

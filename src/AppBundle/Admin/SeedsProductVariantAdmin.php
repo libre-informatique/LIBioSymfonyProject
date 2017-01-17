@@ -23,6 +23,32 @@ class SeedsProductVariantAdmin extends ProductVariantAdmin
     protected $baseRoutePattern = 'libio/seeds_productvariant';
     protected $classnameLabel = 'SeedsProductVariant';
 
+    protected $productAdminCode = 'libio.admin.seeds_product';
+
+    public function configureFormFields(\Sonata\AdminBundle\Form\FormMapper $mapper)
+    {
+        parent::configureFormFields($mapper);
+
+        /*
+        // Limit the seedbatch values to the variety seedbatches
+        if ($variety) {
+            $repository = $this->modelManager->getEntityManager('LibrinfoVarietiesBundle:SeedBatch')->getRepository('LibrinfoVarietiesBundle:SeedBatch');
+            $qb = $repository->createQueryBuilder('sb')
+                ->andWhere('sb.variety = :variety)')
+                ->setParameter('variety', $variety)
+            ;
+
+            $mapper->add('seedBatch', 'entity', [
+                'query_builder' => $qb,
+                'class' => 'Librinfo\\VarietiesBundle\\Entity\\SeedBatch',
+                'multiple' => false,
+                'required' => false,
+                //'choice_label' => 'fullName',
+            ]);
+        }
+        */
+    }
+
     public function createQuery($context = 'list')
     {
         $query = parent::createQuery($context);

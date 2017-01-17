@@ -33,7 +33,7 @@ services:
 
     libio.admin.other_product:
         class: AppBundle\Admin\OtherProductAdmin
-        arguments: [~, Librinfo\ProductBundle\Entity\Product, BlastCoreBundle:CRUD]
+        arguments: [~, Librinfo\ProductBundle\Entity\Product, LibrinfoProductBundle:ProductCRUD]
         tags:
             - name: sonata.admin
               manager_type: orm

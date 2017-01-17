@@ -69,8 +69,19 @@ class OtherProductAdmin extends ProductAdmin
         return $object;
     }
 
-    public function prePersistOrUpdate($object, $method)
+    public function SonataTypeModelAutocompleteCallback($admin, $property, $value)
     {
-        parent::prePersistOrUpdate($object, $method);
+        $datagrid = $admin->getDatagrid();
+        $qb = $datagrid->getQuery();
+        $alias = $qb->getRootAlias();
+        $qb
+            ->leftJoin("$alias.translations", 'translations')
+            ->andWhere($qb->expr()->orX(
+                'translations.name LIKE :value',
+                $alias . '.code LIKE :value'
+            ))
+            ->setParameter('value', "%$value%")
+        ;
+        dump($qb);
     }
 }
