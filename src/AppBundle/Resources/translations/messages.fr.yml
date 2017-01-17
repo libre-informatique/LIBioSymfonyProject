@@ -4,6 +4,7 @@ Strains: Souches
 Varieties: Variétés
 form_group_channel_descriptions: Descriptions spécifiques
 form_tab_channel_descriptions: Déscriptions spécifiques
+form_tab_new_variety_variant : Ajouter un article (semences)
 show_group_channel_descriptions: Descriptions spécifiques
 show_tab_channel_descriptions: Descriptions spécifiques
 
@@ -95,12 +96,16 @@ librinfo:
         dashboard: Tableau de Bord
         other_product_create: Ajouter un article (autres)
         other_product_list: Liste des articles (autres)
+        other_product_variant_create: Nouvelle déclinaisons d'article (autres)
         other_product_variant_list: Liste des déclinaisons d'article (autres)
         otherproduct_list: Liste des articles (autres)
         otherproductvariant_list: Liste des déclinaison d'article (autres)
         seed_product_list: Liste des articles (semences)
         seeds_product_create: Ajouter un article (semences)
         seeds_product_list: Liste des articles (semences)
+        seeds_product_variant_create: Nouvelle déclinaisons d'article (semences)
+        seeds_product_variant_list: Liste des déclinaisons d'article (semences)
         seedsproduct_list: Liste des articles (semences)
+        seedsproductvariant_list: Liste des déclinaisons d'article (semences)
 
 

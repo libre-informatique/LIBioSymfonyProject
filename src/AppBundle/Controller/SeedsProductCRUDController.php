@@ -12,19 +12,22 @@
 
 namespace AppBundle\Controller;
 
-use Librinfo\VarietiesBundle\Controller\VarietyCRUDController as BaseController;
+use Librinfo\ProductBundle\Controller\ProductCRUDController;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 /**
  * @author Marcos Bezerra de Menezes <marcos.bezerra@libre-informatique.fr>
  */
-class VarietyCRUDController extends BaseController
+class SeedsProductCRUDController extends ProductCRUDController
 {
     public function createAction($object = null)
     {
         $request = $this->getRequest();
 
         if (null !== $request->get('btn_create_for_variety')) {
+            $object = $this->admin->getNewInstance();
             $form = $this->admin->getForm();
+            $form->setData($object);
             $form->handleRequest($request);
             $variety_id = $form->getData()->getVariety()->getId();
             $url =  $this->admin->generateUrl('create', ['variety_id' => $variety_id]);

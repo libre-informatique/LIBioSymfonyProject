@@ -21,13 +21,15 @@ services:
 
     libio.admin.seeds_product:
         class: AppBundle\Admin\SeedsProductAdmin
-        arguments: [~, AppBundle\Entity\SeedsProduct, BlastCoreBundle:CRUD]
+        arguments: [~, AppBundle\Entity\SeedsProduct, AppBundle:SeedsProductCRUD]
         tags:
             - name: sonata.admin
               manager_type: orm
               group: admin
               label: libio.seeds_product_admin.label
               label_translator_strategy: blast_core.label.strategy.librinfo
+        calls:
+            - [ setTemplate, [ edit, AppBundle:SeedsProductAdmin:edit.html.twig ] ]
 
     libio.admin.other_product:
         class: AppBundle\Admin\OtherProductAdmin
@@ -41,23 +43,27 @@ services:
 
     libio.admin.seeds_product_variant:
         class: AppBundle\Admin\SeedsProductVariantAdmin
-        arguments: [~, Librinfo\ProductBundle\Entity\ProductVariant, LibrinfoProductBundle:ProductVariantAdmin]
+        arguments: [~, Librinfo\ProductBundle\Entity\ProductVariant, LibrinfoProductBundle:ProductVariantCRUD]
         tags:
             - name: sonata.admin
               manager_type: orm
               group: admin
               label: libio.seeds_product_variant_admin.label
               label_translator_strategy: blast_core.label.strategy.librinfo
+        calls:
+            - [ setTemplate, [ edit, LibrinfoProductBundle:ProductVariantAdmin:edit.html.twig ] ]
 
     libio.admin.other_product_variant:
         class: AppBundle\Admin\OtherProductVariantAdmin
-        arguments: [~, Librinfo\ProductBundle\Entity\ProductVariant, LibrinfoProductBundle:ProductVariantAdmin]
+        arguments: [~, Librinfo\ProductBundle\Entity\ProductVariant, LibrinfoProductBundle:ProductVariantCRUD]
         tags:
             - name: sonata.admin
               manager_type: orm
               group: admin
               label: libio.other_product_variant_admin.label
               label_translator_strategy: blast_core.label.strategy.librinfo
+        calls:
+            - [ setTemplate, [ edit, LibrinfoProductBundle:ProductVariantAdmin:edit.html.twig ] ]
 
     lisem.admin.channel_description:
         class: AppBundle\Admin\ChannelDescriptionAdmin
