@@ -71,11 +71,13 @@ class SeedsProductAdmin extends ProductAdmin
      */
     public function getNewInstance()
     {
-        $factory = $this->getConfigurationPool()->getContainer()->get('libio.factory.seeds_product');
-        $object = $factory->createNew();
+        $factory = $this->getConfigurationPool()->getContainer()->get('sylius.factory.product');
+        $object = $factory->createNew(true);
 
         if ($this->getVariety()) {
-            $object->setVariety($this->getVariety());
+            $object->setVariety($this->variety);
+            $object->setName($this->variety->getName());
+            $object->setCode($this->variety->getCode());
         }
 
         foreach ($this->getExtensions() as $extension) {
