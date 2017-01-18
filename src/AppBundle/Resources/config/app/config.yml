@@ -5,11 +5,11 @@ imports:
     - { resource: "@SyliusApiBundle/Resources/config/app/config.yml" }
     - { resource: "@LibrinfoProductBundle/Resources/config/app/config.yml" }
 
-sylius_resource:
+sylius_product:
     resources:
-        app.seeds_product:
+        product:
             classes:
-                model: AppBundle\Entity\SeedsProduct
+                factory: AppBundle\Factory\ProductFactory
 
 sylius_channel:
     driver: doctrine/orm

@@ -10,14 +10,9 @@
 
 namespace AppBundle\DependencyInjection\Compiler;
 
-use AppBundle\Entity\SeedsProduct;
-use AppBundle\Factory\SeedsProductFactory;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Reference;
-use Sylius\Component\Resource\Factory\Factory;
-use Sylius\Component\Resource\Factory\TranslatableFactory;
 
 
 /**
@@ -30,25 +25,8 @@ final class ServicesPass implements CompilerPassInterface
      */
     public function process(ContainerBuilder $container)
     {
-        // SeedsProduct object factory service
-
-        $factoryDefinition = new Definition(Factory::class);
-        $factoryDefinition->addArgument(SeedsProduct::class);
-
-        $translatableFactoryDefinition = new Definition(TranslatableFactory::class);
-        $translatableFactoryDefinition->setArguments([
-            $factoryDefinition,
-            new Reference('sylius.locale_provider'),
-        ]);
-
-        $seedsProductFactoryDefinition = new Definition(SeedsProductFactory::class);
-        $seedsProductFactoryDefinition->setArguments([
-            $translatableFactoryDefinition,
-            new Reference('sylius.factory.product_variant'),
-            new Reference('sylius.factory.product_attribute_value'),
-            new Reference('sylius.repository.product_attribute'),
-            new Reference('sylius.repository.product_option'),
-        ]);
-        $container->setDefinition('libio.factory.seeds_product', $seedsProductFactoryDefinition);
+        // Inject services to the Product factory
+        $productFactory = $container->findDefinition('sylius.factory.product');
+        $productFactory->addMethodCall('setProductOptionRepository', [new Reference('sylius.repository.product_option')]);
     }
 }
