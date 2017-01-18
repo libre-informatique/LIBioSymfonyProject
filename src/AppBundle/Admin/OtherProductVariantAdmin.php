@@ -23,6 +23,8 @@ class OtherProductVariantAdmin extends ProductVariantAdmin
     protected $baseRoutePattern = 'libio/other_productvariant';
     protected $classnameLabel = 'OtherProductVariant';
 
+    protected $productAdminCode = 'libio.admin.other_product';
+
     public function createQuery($context = 'list')
     {
         $query = parent::createQuery($context);
