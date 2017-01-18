@@ -25,10 +25,6 @@ parameters:
             Sonata\AdminBundle\Datagrid\ListMapper:
                 remove:
                     _actions: [delete]
-                add:
-                    _batch_actions:
-                        delete: ~
-
 
 ############
 # VARIETY
@@ -95,8 +91,6 @@ parameters:
                           title: Framacalc de validation (Variétés)
                           class: framacalc
             Sonata\AdminBundle\Datagrid\ListMapper:
-                remove:
-                    _actions: [duplicate]
                 add:
                     _helper_links:
                         - url: https://framacalc.org/libio_validation_varietes
