@@ -65,9 +65,9 @@ EOT
         $this->setupUsers($output);
         $this->setupCircles($output);
         $this->setupProductOptions($output);
-        $this->setupCities($output);
         if ($input->getOption('with-samples'))
             $this->setupSampleData($output);
+        $this->setupCities($output);
     }
 
     /**
@@ -278,6 +278,7 @@ EOT
             $output->writeln(sprintf('<info> done (%d cities).</info>', $num_rows_effected));
         }catch(\Exception $e){
             // This is clean but it is SLOW:
+            $output->writeln(sprintf('<info> Using fallback method to import cities</info>'));
             $em->getConnection()->getConfiguration()->setSQLLogger(null);
             $em->createQuery('DELETE FROM LibrinfoCRMBundle:City')->execute();
             $handle = fopen($file, 'r');
