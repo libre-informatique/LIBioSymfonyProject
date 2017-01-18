@@ -270,12 +270,19 @@ EOT
         $conn = $em->getConnection();
         $file = __DIR__ . '/../DataFixtures/ORM/Cities/france.csv';
         $output->writeln(['', sprintf('Importing <info>cities</info> from %s...', realpath($file))]);
-
-        // This is not clean, but it is FAST:
+        
+        // This is not clean, but it is FAST: 
+        $tmp = '/tmp/cities.csv';
         $conn->exec("TRUNCATE TABLE librinfo_crm_city");
-        $num_rows_effected = $conn->exec("COPY librinfo_crm_city (id, country_code, city, zip) FROM '$file' delimiter ',';");
-        $output->writeln(sprintf('<info> done (%d cities).</info>', $num_rows_effected));
-
+        
+        //copy the file to '/tmp/' dir to avoid access right issues
+        if( copy($file, $tmp) )
+        {
+            $num_rows_effected = $conn->exec("COPY librinfo_crm_city (id, country_code, city, zip) FROM '$tmp' delimiter ',';");
+            $output->writeln(sprintf('<info> done (%d cities).</info>', $num_rows_effected));
+            unlink($tmp);
+        }
+        
         // This is clean but it is SLOW:
         /*
         $em->getConnection()->getConfiguration()->setSQLLogger(null);
