@@ -47,7 +47,7 @@ trait ProductVariantExtension
 
     /**
      * @param ProductOptionValue $packaging
-     * @return $this
+     * @return self
      */
     public function setPackaging(ProductOptionValue $packaging)
     {
