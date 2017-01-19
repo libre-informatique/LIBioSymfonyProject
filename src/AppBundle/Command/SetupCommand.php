@@ -66,9 +66,9 @@ EOT
         $this->setupUsers($output);
         $this->setupCircles($output);
         $this->setupProductOptions($output);
-        $this->setupCities($output);
         if ($input->getOption('with-samples'))
             $this->setupSampleData($output);
+        $this->setupCities($output);
     }
 
     /**
@@ -271,35 +271,36 @@ EOT
         $file = __DIR__ . '/../DataFixtures/ORM/Cities/france.csv';
         $output->writeln(['', sprintf('Importing <info>cities</info> from %s...', realpath($file))]);
 
-        // This is not clean, but it is FAST:
-        $conn->exec("TRUNCATE TABLE librinfo_crm_city");
-        $num_rows_effected = $conn->exec("COPY librinfo_crm_city (id, country_code, city, zip) FROM '$file' delimiter ',';");
-        $output->writeln(sprintf('<info> done (%d cities).</info>', $num_rows_effected));
-
-        // This is clean but it is SLOW:
-        /*
-        $em->getConnection()->getConfiguration()->setSQLLogger(null);
-        $em->createQuery('DELETE FROM LibrinfoCRMBundle:City')->execute();
-        $handle = fopen($file, 'r');
-        $i = 0;
-        $batchSize = 20;
-        while (($line = fgetcsv($handle)) !== FALSE) {
-            $i++;
-            $city = new \Librinfo\CRMBundle\Entity\City();
-            $city->setCountryCode($line[1]);
-            $city->setCity($line[2]);
-            $city->setZip($line[3]);
-            $em->persist($city);
-            if (($i % $batchSize) === 0) {
-                $em->flush();
-                $em->clear();
+        try{
+            // This is not clean, but it is FAST:
+            $conn->exec("TRUNCATE TABLE librinfo_crm_city");
+            $num_rows_effected = $conn->exec("COPY librinfo_crm_city (id, country_code, city, zip) FROM '$file' delimiter ',';");
+            $output->writeln(sprintf('<info> done (%d cities).</info>', $num_rows_effected));
+        }catch(\Exception $e){
+            // This is clean but it is SLOW:
+            $output->writeln(sprintf('<info> Using fallback method to import cities</info>'));
+            $em->getConnection()->getConfiguration()->setSQLLogger(null);
+            $em->createQuery('DELETE FROM LibrinfoCRMBundle:City')->execute();
+            $handle = fopen($file, 'r');
+            $i = 0;
+            $batchSize = 20;
+            while (($line = fgetcsv($handle)) !== FALSE) {
+                $i++;
+                $city = new \Librinfo\CRMBundle\Entity\City();
+                $city->setCountryCode($line[1]);
+                $city->setCity($line[2]);
+                $city->setZip($line[3]);
+                $em->persist($city);
+                if (($i % $batchSize) === 0) {
+                    $em->flush();
+                    $em->clear();
+                }
             }
+            fclose($handle);
+            $em->flush();
+            $em->clear();
+            $output->writeln(sprintf('<info> done (%d cities).</info>', $i));
         }
-        fclose($handle);
-        $em->flush();
-        $em->clear();
-        $output->writeln(sprintf('<info> done (%d cities).</info>', $i));
-        */
     }
 
     /**
