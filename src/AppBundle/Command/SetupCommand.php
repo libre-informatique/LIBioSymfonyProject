@@ -11,6 +11,7 @@
 namespace AppBundle\Command;
 
 use Doctrine\Common\DataFixtures\Purger\ORMPurger;
+use Librinfo\ProductBundle\Entity\Product;
 use Librinfo\UserBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\ArrayInput;
@@ -157,7 +158,7 @@ EOT
     {
         $output->writeln(['', 'Initializing application specific <info>Product Options</info>...']);
         $options = [
-            ['code' => '_libio_packaging',  'name' => 'Conditionnement', 'type' => 'text', 'values' => [
+            ['code' => Product::$PACKAGING_OPTION_CODE,  'name' => 'Conditionnement', 'type' => 'text', 'values' => [
                 'BULK' => ['locale' => 'fr_FR', 'value' => 'Vrac'],
                 '1G' => ['locale' => 'fr_FR', 'value' => '1g'],
                 '5G' => ['locale' => 'fr_FR', 'value' => '5g'],
@@ -228,8 +229,7 @@ EOT
     {
         $output->writeln(['', 'Initializing application specific <info>Product Attributes</info>...']);
         $attributes = [
-            ['code' => '_libio_packaging',  'name' => 'Conditionnement', 'type' => 'text'],
-            ['code' => '_libio_base_price', 'name' => 'Prix',  'type' => 'integer'],
+            ['code' => Product::$PACKAGING_OPTION_CODE,  'name' => 'Conditionnement', 'type' => 'text'],
         ];
         $em = $this->getContainer()->get('doctrine')->getEntityManager();
         $repository = $this->getContainer()->get('sylius.repository.product_attribute');

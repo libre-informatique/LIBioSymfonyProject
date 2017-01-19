@@ -79,12 +79,14 @@ libio:
         varieties_list: Liste des Variétés
         varieties_settings: Variétés
         zones_list: Zones géographiques
-    seeds_product_admin:
-        label: Article (semences)
     other_product_admin:
         label: Article (autres)
     other_product_variant_admin:
-        label: Déclinaison d'article
+        label: Déclinaison d'article (autres)
+    seeds_product_admin:
+        label: Article (semences)
+    seeds_product_variant_admin:
+        label: Déclinaison d'article (semences)
 
 librinfo:
     label:

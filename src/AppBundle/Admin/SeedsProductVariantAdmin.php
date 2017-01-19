@@ -11,6 +11,7 @@
 namespace AppBundle\Admin;
 
 use Librinfo\ProductBundle\Admin\ProductVariantAdmin;
+use Librinfo\ProductBundle\Entity\Product;
 
 /**
  * Sonata admin for product variants from seeds products
@@ -28,6 +29,14 @@ class SeedsProductVariantAdmin extends ProductVariantAdmin
     public function configureFormFields(\Sonata\AdminBundle\Form\FormMapper $mapper)
     {
         parent::configureFormFields($mapper);
+
+        $mapper->add('packaging', 'entity', [
+            'query_builder' => $this->optionValuesQueryBuilder(),
+            'class' => 'Librinfo\\ProductBundle\\Entity\\ProductOptionValue',
+            'multiple' => false,
+            'required' => true,
+            'choice_label' => 'value',
+        ]);
 
         /*
         // Limit the seedbatch values to the variety seedbatches
@@ -49,6 +58,9 @@ class SeedsProductVariantAdmin extends ProductVariantAdmin
         */
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function createQuery($context = 'list')
     {
         $query = parent::createQuery($context);
@@ -58,6 +70,20 @@ class SeedsProductVariantAdmin extends ProductVariantAdmin
             $query->expr()->isNotNull("prod.variety")
         );
         return $query;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function optionValuesQueryBuilder()
+    {
+        $repository = $this->getConfigurationPool()->getContainer()->get('sylius.repository.product_option_value');
+        $queryBuilder = $repository->createQueryBuilder('pov')
+            ->leftJoin('pov.option', 'option')
+            ->andWhere('option.code = :packagingCode')
+            ->setParameter('packagingCode', Product::$PACKAGING_OPTION_CODE)
+        ;
+        return $queryBuilder;
     }
 
 }

@@ -125,6 +125,7 @@ parameters:
             Sonata\AdminBundle\Form\FormMapper:
                 remove:
                     variants: ~
+                    options: ~
                 add:
                     form_group_general:
                         '':
@@ -228,13 +229,20 @@ parameters:
         AppBundle\Admin\SeedsProductVariantAdmin:
             # SHOW
             Sonata\AdminBundle\Show\ShowMapper:
+                remove:
+                    optionValues: ~
                 add:
                     form_group_general:
                         '':
                             product:
                                 admin_code: libio.admin.seeds_product
+                            packaging: ~
+                            _options:
+                                fieldsOrder: [product, packaging, name, code, price]
             # FORM
             Sonata\AdminBundle\Form\FormMapper:
+                remove:
+                    optionValues: ~
                 add:
                     form_group_general:
                         '':
@@ -244,21 +252,27 @@ parameters:
                                 read_only: true
                                 _options:
                                     admin_code: libio.admin.seeds_product
+                            packaging:  # overridden in SeedsProductVariantAdmin::configureFormFields()
+                                type: entity
+                                class: Librinfo\ProductBundle\Entity\ProductOptionValue
                             _options:
-                                fieldsOrder: [product, name, code, price, optionValues]
+                                fieldsOrder: [product, packaging, name, code, price]
             # LIST
             Sonata\AdminBundle\Datagrid\ListMapper:
+                remove:
+                    optionValues: ~
                 add:
                     product:
                         admin_code: libio.admin.seeds_product
+                    packaging: ~
                     _options:
                         fieldsOrder:
                             - code
                             - name
                             - product
+                            - packaging
                             - available
                             - price
-                            - optionValues
                             - onHand
                             - onHold
                             - tracked

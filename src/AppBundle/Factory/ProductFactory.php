@@ -62,9 +62,9 @@ class ProductFactory extends BaseProductFactory
      */
     private function setDefaultOptions($product)
     {
-        $packagingOption = $this->productOptionRepository->findOneBy(['code' => '_libio_packaging']);
+        $packagingOption = $this->productOptionRepository->findOneBy(['code' => Product::$PACKAGING_OPTION_CODE]);
         if (!$packagingOption) {
-            throw new \Exception('Product option with code "_libio_packaging" does not exist in database. You should create it in order to use SeedsProduct entity.');
+            throw new \RuntimeException(sprintf('Product option with code "%s" does not exist in database. It is required for LISem project.'), Product::$PACKAGING_OPTION_CODE);
         }
         $product->addOption($packagingOption);
     }

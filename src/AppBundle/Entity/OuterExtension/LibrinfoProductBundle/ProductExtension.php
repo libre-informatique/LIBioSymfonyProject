@@ -17,6 +17,28 @@ trait ProductExtension
 {
     use \Librinfo\VarietiesBundle\Entity\OuterExtension\HasVariety;
 
-    // TODO: temporarily removed because it conflicts with Sylius AdminUser
-    //use \Librinfo\UserBundle\Entity\Traits\Traceable;
+    public static $PACKAGING_OPTION_CODE = "_libio_packaging";
+
+    /**
+     * @param string $optionCode
+     * @return boolean
+     */
+    public function hasOptionByCode($optionCode)
+    {
+        foreach ($this->options as $option) {
+            if ($option->getCode() === $optionCode) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function hasPackagingOption()
+    {
+        return $this->hasOptionByCode(self::$PACKAGING_OPTION_CODE);
+    }
 }
