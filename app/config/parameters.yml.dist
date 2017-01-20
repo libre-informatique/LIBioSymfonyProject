@@ -18,6 +18,10 @@ parameters:
     # A secret key that's used to generate certain security-related tokens
     secret:            ThisTokenIsNotSoSecretChangeIt
 
+    # custom directories
+    cache_dir: /foo    
+    logs_dir: /bar # the logs will end up in /bar/{name-of-this-instance/cache}/{environment}
+
     # Default Users
     libio.user.datafixtures:
         libio:
