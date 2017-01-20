@@ -237,8 +237,11 @@ parameters:
                             product:
                                 admin_code: libio.admin.seeds_product
                             packaging: ~
+                            seedBatch:
+                                admin_code: librinfo_seedbatch.admin.seedbatch
+                            code: ~
                             _options:
-                                fieldsOrder: [product, packaging, name, code, price]
+                                fieldsOrder: [product, packaging, seedBatch, name, code, price]
             # FORM
             Sonata\AdminBundle\Form\FormMapper:
                 remove:
@@ -255,8 +258,15 @@ parameters:
                             packaging:  # overridden in SeedsProductVariantAdmin::configureFormFields()
                                 type: entity
                                 class: Librinfo\ProductBundle\Entity\ProductOptionValue
+                            seedBatch:  # overridden in SeedsProductVariantAdmin::configureFormFields()
+                                type: entity
+                                class: Librinfo\SeedBatchBundle\Entity\SeedBatch
+                                _options:
+                                    admin_code: librinfo_seedbatch.admin.seedbatch
+                            code:
+                                type: librinfo_entitycode
                             _options:
-                                fieldsOrder: [product, packaging, name, code, price]
+                                fieldsOrder: [product, packaging, seedBatch, name, code, price]
             # LIST
             Sonata\AdminBundle\Datagrid\ListMapper:
                 remove:
@@ -265,12 +275,15 @@ parameters:
                     product:
                         admin_code: libio.admin.seeds_product
                     packaging: ~
+                    seedBatch:
+                        admin_code: librinfo_seedbatch.admin.seedbatch
                     _options:
                         fieldsOrder:
                             - code
                             - name
                             - product
                             - packaging
+                            - seedBatch
                             - available
                             - price
                             - onHand

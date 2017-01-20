@@ -30,6 +30,7 @@ class SeedsProductVariantAdmin extends ProductVariantAdmin
     {
         parent::configureFormFields($mapper);
 
+        // packaging field
         $mapper->add('packaging', 'entity', [
             'query_builder' => $this->optionValuesQueryBuilder(),
             'class' => 'Librinfo\\ProductBundle\\Entity\\ProductOptionValue',
@@ -38,24 +39,21 @@ class SeedsProductVariantAdmin extends ProductVariantAdmin
             'choice_label' => 'value',
         ]);
 
-        /*
-        // Limit the seedbatch values to the variety seedbatches
-        if ($variety) {
-            $repository = $this->modelManager->getEntityManager('LibrinfoVarietiesBundle:SeedBatch')->getRepository('LibrinfoVarietiesBundle:SeedBatch');
-            $qb = $repository->createQueryBuilder('sb')
-                ->andWhere('sb.variety = :variety)')
-                ->setParameter('variety', $variety)
-            ;
-
-            $mapper->add('seedBatch', 'entity', [
-                'query_builder' => $qb,
-                'class' => 'Librinfo\\VarietiesBundle\\Entity\\SeedBatch',
-                'multiple' => false,
-                'required' => false,
-                //'choice_label' => 'fullName',
-            ]);
-        }
-        */
+        // seedBatch field
+        $mapper->remove('optionValues');
+        $product = $this->getProduct();
+        $options = [
+            'property' => 'code',
+            'required' => true,
+            'callback' => function ($admin, $property, $value) use ($product) {
+                $datagrid = $admin->getDatagrid();
+                $datagrid->setValue($property, null, $value);
+                if ($product && $variety = $product->getVariety)
+                    $datagrid->setValue('variety', null, $variety);
+            },
+        ];
+        $fieldDescriptionOptions = ['admin_code' => 'librinfo_seedbatch.admin.seedbatch'];
+        $mapper->add('seedBatch', 'sonata_type_model_autocomplete', $options, $fieldDescriptionOptions);
     }
 
     /**

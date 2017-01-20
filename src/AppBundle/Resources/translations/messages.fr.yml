@@ -93,6 +93,7 @@ librinfo:
         channel: Utilisation
         packaging: Conditionnement
         price: Prix
+        seed_batch: Lot
         value: Contenu
     link:
         dashboard: Tableau de Bord

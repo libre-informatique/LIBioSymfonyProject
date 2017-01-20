@@ -6,7 +6,7 @@
 
 services:
 
-    # custom sidebar menus
+    # CUSTOM SIDEBAR MENUS
 
     libio.menu_builder:
         class: AppBundle\Menu\MenuBuilder
