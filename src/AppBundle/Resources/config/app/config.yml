@@ -17,3 +17,7 @@ sylius_channel:
         channel:
             classes:
                 model: AppBundle\Entity\Channel
+
+librinfo_product:
+    code_generator:
+        product_variant: AppBundle\CodeGenerator\ProductVariantCodeGenerator
