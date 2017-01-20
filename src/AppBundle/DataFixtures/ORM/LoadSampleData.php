@@ -16,6 +16,9 @@ use Doctrine\Common\Persistence\ObjectManager;
 use Librinfo\CRMBundle\Entity\City;
 use Librinfo\CRMBundle\Entity\Organism;
 use Librinfo\SeedBatchBundle\Entity\Plot;
+use Librinfo\SeedBatchBundle\Entity\SeedBatch;
+use Librinfo\SeedBatchBundle\Entity\SeedFarm;
+use Librinfo\VarietiesBundle\Entity\Variety;
 use Nelmio\Alice\Fixtures\Loader;
 use Nelmio\Alice\Persister\Doctrine as DoctrinePersister;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
@@ -107,15 +110,19 @@ class LoadSampleData extends AbstractFixture implements OrderedFixtureInterface,
             $organism->setCountry($contact->getCountry());
         }
 
-        // Persist objects (before setting codes)
-        $this->alicePersister->persist($objects);
+        // Persist objects without code generator
+        $registry = $this->container->get('blast_core.code_generators');
+        $this->alicePersister->persist(array_filter($objects, function($o) use ($registry) {
+            $class = get_class($o);
+            return !$registry->hasGeneratorForClass($class) || in_array($class, [SeedFarm::class, Variety::class]);
+        }));
 
         // Codes
-        $registry = $this->container->get('blast_core.code_generators');
         $customerCodeGenerator = $registry->getCodeGenerator(Organism::class, 'customerCode');
         $supplierCodeGenerator = $registry->getCodeGenerator(Organism::class, 'supplierCode');
         $producerCodeGenerator = $registry->getCodeGenerator(Organism::class, 'seedProducerCode');
         $plotCodeGenerator = $registry->getCodeGenerator(Plot::class, 'code');
+        $seedBatchCodeGenerator = $registry->getCodeGenerator(SeedBatch::class, 'code');
         foreach($objects as $object) if ($object instanceof Organism) {
             if ($object->isCustomer()) {
                 $object->setCustomerCode($customerCodeGenerator::generate($object));
@@ -134,6 +141,12 @@ class LoadSampleData extends AbstractFixture implements OrderedFixtureInterface,
             $object->setCode($plotCodeGenerator::generate($object));
             $this->alicePersister->persist([$object]);
         }
+        foreach($objects as $object) if ($object instanceof SeedBatch) {
+            $object->setCode($seedBatchCodeGenerator::generate($object));
+            $this->alicePersister->persist([$object]);
+        }
+
+
 
     }
 

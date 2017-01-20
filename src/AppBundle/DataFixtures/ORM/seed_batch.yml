@@ -75,3 +75,13 @@ Librinfo\SeedBatchBundle\Entity\Certification:
         plot: '@plot_1_<current()>'
     cert_2_{1..10} (extends cert_tpl):
         plot: '@plot_2_<current()>'
+
+Librinfo\SeedBatchBundle\Entity\SeedBatch:
+    sb_1_{1..10}_stp:
+        seedFarm: '@seedfarm1'
+        variety: '@var_tomate_st_pierre'
+        producer: '@org_ind_prod_<current()>'
+        productionYear: 2016
+        plot: '@plot_1_<current()>'
+        batchNumber: 1
+        description: <current() + 1>
