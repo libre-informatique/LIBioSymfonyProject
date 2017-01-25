@@ -2,6 +2,7 @@
 
 use Sylius\Bundle\CoreBundle\Application\Kernel;
 use Symfony\Component\Config\Loader\LoaderInterface;
+use Symfony\Component\Yaml\Yaml;
 
 class AppKernel extends Kernel
 {
@@ -86,5 +87,32 @@ class AppKernel extends Kernel
     public function registerContainerConfiguration(LoaderInterface $loader)
     {
         $loader->load($this->getRootDir() . '/config/config_' . $this->getEnvironment() . '.yml');
+    }
+
+    public function getCacheDir()
+    {
+        $yaml = Yaml::parse(file_get_contents($this->getRootDir().'/config/parameters.yml'));
+
+        if( isset($yaml['parameters']['cache_dir']) )
+            return $yaml['parameters']['cache_dir'] . '/' . $this->getInstance() . '/cache/' . $this->environment;
+
+        return $this->rootDir . '/cache/'. $this->environment;
+    }
+
+    public function getLogDir()
+    {
+        $yaml = Yaml::parse(file_get_contents($this->getRootDir().'/config/parameters.yml'));
+
+        if( isset($yaml['parameters']['logs_dir']) )
+            return $yaml['parameters']['logs_dir'] . '/' . $this->getInstance() . '/logs';
+
+        return $this->rootDir . '/logs';
+    }
+
+    private function getInstance()
+    {
+        $parts = explode('/', dirname(__DIR__));
+
+        return $parts[count($parts) - 1];
     }
 }
