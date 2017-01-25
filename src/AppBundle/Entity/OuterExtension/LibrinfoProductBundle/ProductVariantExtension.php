@@ -8,11 +8,11 @@
  * file that was distributed with this source code.
  */
 
-namespace AppBundle\Entity\OuterExtension\LibrinfoProductBundle;
+namespace AppBundle\Entity\OuterExtension\LibrinfoEcommerceBundle;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Librinfo\ProductBundle\Entity\ProductOptionValue;
-use Librinfo\ProductBundle\Entity\Product;
+use Librinfo\EcommerceBundle\Entity\ProductOptionValue;
+use Librinfo\EcommerceBundle\Entity\Product;
 
 /**
  * @author Marcos Bezerra de Menezes <marcos.bezerra@libre-informatique.fr>

@@ -10,7 +10,7 @@
 
 namespace AppBundle\Admin;
 
-use Librinfo\ProductBundle\Admin\ProductAdmin;
+use Librinfo\EcommerceBundle\Admin\ProductAdmin;
 use Librinfo\VarietiesBundle\Entity\Variety;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\DatagridBundle\ProxyQuery\ProxyQueryInterface;

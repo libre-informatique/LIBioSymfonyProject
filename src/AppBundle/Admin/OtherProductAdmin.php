@@ -10,7 +10,7 @@
 
 namespace AppBundle\Admin;
 
-use Librinfo\ProductBundle\Admin\ProductAdmin;
+use Librinfo\EcommerceBundle\Admin\ProductAdmin;
 use Sonata\AdminBundle\Route\RouteCollection;
 use Sylius\Component\Product\Model\ProductInterface;
 

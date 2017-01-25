@@ -63,7 +63,7 @@ class AppKernel extends Kernel
             new Librinfo\EmailBundle\LibrinfoEmailBundle(),
             new Librinfo\EmailCRMBundle\LibrinfoEmailCRMBundle(),
             new Librinfo\MediaBundle\LibrinfoMediaBundle(),
-            new Librinfo\ProductBundle\LibrinfoProductBundle(),
+            new Librinfo\EcommerceBundle\LibrinfoEcommerceBundle(),
             new AppBundle\AppBundle(),
 
             new Sparkling\VATBundle\SparklingVATBundle(),

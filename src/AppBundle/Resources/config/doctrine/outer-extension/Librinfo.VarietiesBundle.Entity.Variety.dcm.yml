@@ -2,7 +2,7 @@ Librinfo\VarietiesBundle\Entity\Variety:
     type: entity
     oneToMany:
         products:
-            targetEntity: Librinfo\ProductBundle\Entity\Product
+            targetEntity: Librinfo\EcommerceBundle\Entity\Product
             mappedBy: variety
         channelDescriptions:
             targetEntity: AppBundle\Entity\ChannelDescription

@@ -13,5 +13,5 @@ namespace AppBundle\Entity\OuterExtension\LibrinfoSeedBatchBundle;
 trait SeedBatchExtension
 {
     use \Librinfo\UserBundle\Entity\Traits\Traceable;
-    use \Librinfo\ProductBundle\Entity\OuterExtension\HasProductVariants;
+    use \Librinfo\EcommerceBundle\Entity\OuterExtension\HasProductVariants;
 }

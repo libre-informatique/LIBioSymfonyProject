@@ -10,7 +10,7 @@
 
 namespace AppBundle\Admin;
 
-use Librinfo\ProductBundle\Admin\ProductVariantAdmin;
+use Librinfo\EcommerceBundle\Admin\ProductVariantAdmin;
 
 /**
  * Sonata admin for product variants from non-seed products

@@ -17,7 +17,7 @@ trait VarietyExtension
 {
     use \Librinfo\SeedBatchBundle\Entity\OuterExtension\HasSeedBatches;
     use \Librinfo\MediaBundle\Entity\OuterExtension\HasImages;
-    use \Librinfo\ProductBundle\Entity\OuterExtension\HasProducts;
+    use \Librinfo\EcommerceBundle\Entity\OuterExtension\HasProducts;
     use \Librinfo\UserBundle\Entity\Traits\Traceable;
     use \AppBundle\Entity\OuterExtension\HasChannelDescriptions;
 }
