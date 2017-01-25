@@ -60,15 +60,21 @@ EOT
                 return;
 
             $this->purgeDatabase($output);
+
+            $this->setupUsers($output);
+            $this->setupCircles($output);
+            $this->setupProductOptions($output);
+            $this->setupSampleData($output);
+            $this->setupCities($output);
+        }
+        else {
+            $this->setupSylius($output);
+            $this->setupUsers($output);
+            $this->setupCircles($output);
+            $this->setupProductOptions($output);
+            $this->setupCities($output);
         }
 
-        $this->setupSylius($output);
-        $this->setupUsers($output);
-        $this->setupCircles($output);
-        $this->setupProductOptions($output);
-        if ($input->getOption('with-samples'))
-            $this->setupSampleData($output);
-        $this->setupCities($output);
     }
 
     /**
@@ -322,14 +328,22 @@ EOT
      */
     protected function setupSampleData(OutputInterface $output)
     {
-        $output->writeln(['', 'Running <info>doctrine:fixtures:load --append --fixtures=src/AppBundle/DataFixtures</info> command...']);
-        $fixturesCommand = $this->getApplication()->find('doctrine:fixtures:load');
+//        $output->writeln(['', 'Running <info>doctrine:fixtures:load --append --fixtures=src/AppBundle/DataFixtures</info> command...']);
+//        $fixturesCommand = $this->getApplication()->find('doctrine:fixtures:load');
+//        $fixturesInput = new ArrayInput([
+//            '--append' => true,
+//            '--fixtures' => 'src/AppBundle/DataFixtures'
+//        ]);
+//        $fixturesInput->setInteractive(false);
+//        $fixturesCommand->run($fixturesInput, $output);
+
+        $output->write('Running <info>sylius:fixtures:load lisem</info> command...');
+        $fixturesCommand = $this->getApplication()->find('sylius:fixtures:load');
         $fixturesInput = new ArrayInput([
-            '--append' => true,
-            '--fixtures' => 'src/AppBundle/DataFixtures'
+            'suite' => 'lisem'
         ]);
         $fixturesInput->setInteractive(false);
         $fixturesCommand->run($fixturesInput, $output);
-
+        $output->writeln('<info> done.</info>');
     }
 }

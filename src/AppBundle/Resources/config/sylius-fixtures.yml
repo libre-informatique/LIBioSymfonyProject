@@ -1,0 +1,126 @@
+# Copyright (C) 2015-2016 Libre Informatique
+#
+# This file is licenced under the GNU GPL v3.
+# For the full copyright and license information, please view the LICENSE
+# file that was distributed with this source code.
+
+sylius_fixtures:
+    suites:
+        lisem:
+            listeners:
+#                orm_purger: ~
+                logger: ~
+
+            fixtures:
+
+                locale: ~
+                currency: ~
+
+                geographical:
+                    options:
+                        countries:
+                            - "FR"
+                        zones:
+                            FR:
+                                name: "France métropolitaine"
+                                countries:
+                                    - "FR"
+
+                channel:
+                    options:
+                        custom:
+                            us_web_store:
+                                name: "VEL FR"
+                                code: "FR_WEB"
+                                locales:
+                                    - "%locale%"
+                                currencies:
+                                    - "%currency%"
+                                enabled: true
+
+                payment_method:
+                    options:
+                        custom:
+                            cash_on_delivery:
+                                code: "cash_on_delivery"
+                                name: "Envoi contre remboursement"
+                                channels:
+                                    - "FR_WEB"
+                            bank_transfer:
+                                code: "bank_transfer"
+                                name: "Virement bancaire"
+                                channels:
+                                    - "FR_WEB"
+                                enabled: true
+
+                shipping_method:
+                    options:
+                        custom:
+                            ups:
+                                code: "ups"
+                                name: "UPS"
+                                enabled: true
+                                channels:
+                                    - "FR_WEB"
+                            dhl_express:
+                                code: "dhl_express"
+                                name: "DHL Express"
+                                channels:
+                                    - "FR_WEB"
+                            fedex:
+                                code: "fedex"
+                                name: "FedEx"
+                                channels:
+                                    - "FR_WEB"
+
+                tax_category:
+                    options:
+                        custom:
+                            clothing:
+                                code: "clothing"
+                                name: "Vêtements"
+                            books:
+                                code: "books"
+                                name: "Livres"
+                            seeds:
+                                code: "seeds"
+                                name: "Semences"
+                            other:
+                                code: "other"
+                                name: "Autres"
+
+                tax_rate:
+                    options:
+                        custom:
+                            clothing_tax:
+                                code: "clothing_sales_tax_10"
+                                name: "TVA Vêtements 10%"
+                                zone: "FR"
+                                category: "clothing"
+                                amount: 0.10
+                            books_tax:
+                                code: "books_sales_tax_055"
+                                name: "TVA Livres 5,5%"
+                                zone: "FR"
+                                category: "books"
+                                amount: 0.055
+                            seeds_tax:
+                                code: "seeds_sales_tax_20"
+                                name: "TVA Semences 20%"
+                                zone: "FR"
+                                category: "seeds"
+                                amount: 0.20
+                            default_sales_tax:
+                                code: "sales_tax_20"
+                                name: "TVA 20%"
+                                zone: "FR"
+                                category: "other"
+                                amount: 0.20
+
+                book_product:
+                    options:
+                        amount: 8
+
+                tshirt_product:
+                    options:
+                        amount: 8

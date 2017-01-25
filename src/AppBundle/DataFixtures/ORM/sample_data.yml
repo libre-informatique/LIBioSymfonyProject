@@ -3,3 +3,4 @@ include:
     - variety.yml
     - crm.yml
     - seed_batch.yml
+    - product.yml

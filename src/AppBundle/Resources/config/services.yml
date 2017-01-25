@@ -18,3 +18,28 @@ services:
         arguments: ["@request_stack"]
         tags:
             - { name: knp_menu.menu, alias: parameters_sidebar_menu }   # The alias is what is used to retrieve the menu
+
+    # SYLIUS FIXTURES
+
+    lisem.fixture.channel:
+        class: AppBundle\DataFixtures\Sylius\ChannelFixture
+        arguments: ["@sylius.manager.channel", "@sylius.fixture.example_factory.channel"]
+        tags:
+            - { name: sylius_fixtures.fixture }
+
+    lisem.fixture.payment_method:
+        class: AppBundle\DataFixtures\Sylius\PaymentMethodFixture
+        arguments: ["@sylius.manager.payment_method", "@sylius.fixture.example_factory.payment_method"]
+        tags:
+            - { name: sylius_fixtures.fixture }
+
+#    lisem.fixture.tshirt_product:
+#        class: AppBundle\DataFixtures\Sylius\TshirtProductFixture
+#        arguments:
+#            - "@sylius.fixture.taxon"
+#            - "@sylius.fixture.product_attribute"
+#            - "@sylius.fixture.product_option"
+#            - "@sylius.fixture.product"
+#        tags:
+#            - { name: sylius_fixtures.fixture }
+

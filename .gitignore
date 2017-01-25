@@ -59,3 +59,6 @@
 
 # npm
 /node_modules/
+
+# Sylius images
+/web/media/*

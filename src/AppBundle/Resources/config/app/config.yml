@@ -4,6 +4,7 @@ imports:
     - { resource: "@SyliusShopBundle/Resources/config/app/config.yml" }
     - { resource: "@SyliusApiBundle/Resources/config/app/config.yml" }
     - { resource: "@LibrinfoProductBundle/Resources/config/app/config.yml" }
+    - { resource: "@AppBundle/Resources/config/sylius-fixtures.yml" }
 
 sylius_product:
     resources:
