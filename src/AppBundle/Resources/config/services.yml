@@ -6,7 +6,8 @@
 
 services:
 
-    # CUSTOM SIDEBAR MENUS
+### CUSTOM SIDEBAR MENUS ###
+
     libio.menu_builder:
         class: AppBundle\Menu\MenuBuilder
         arguments: ["@knp_menu.factory"]
@@ -18,7 +19,26 @@ services:
         tags:
             - { name: knp_menu.menu, alias: parameters_sidebar_menu }   # The alias is what is used to retrieve the menu
 
-    # SYLIUS FIXTURES
+### SYLIUS FIXTURE FACTORIES ###
+
+    lisem.fixture.example_factory.seeds_product:
+        class: AppBundle\DataFixtures\Sylius\Factory\ProductExampleFactory
+        arguments:
+            - "@sylius.factory.product"
+            - "@sylius.factory.product_variant"
+            - "@sylius.generator.product_variant"
+            - "@sylius.factory.product_attribute_value"
+            - "@sylius.factory.product_image"
+            - "@sylius.image_uploader"
+            - "@sylius.generator.slug"
+            - "@sylius.repository.taxon"
+            - "@sylius.repository.product_attribute"
+            - "@sylius.repository.product_option"
+            - "@sylius.repository.channel"
+            - "@sylius.repository.locale"
+
+### SYLIUS FIXTURES ###
+
     lisem.fixture.channel:
         class: AppBundle\DataFixtures\Sylius\ChannelFixture
         arguments: ["@sylius.manager.channel", "@sylius.fixture.example_factory.channel"]
@@ -50,8 +70,17 @@ services:
         tags:
             - { name: sylius_fixtures.fixture }
 
+    lisem.fixture.seeds_product:
+        class: AppBundle\DataFixtures\Sylius\SeedsProductFixture
+        arguments:
+            - "@sylius.fixture.taxon"
+            - "@sylius.fixture.product"
+            - "@doctrine.orm.entity_manager"
+        tags:
+            - { name: sylius_fixtures.fixture }
 
-#### FORM ####
+#### FORMS ####
+
     app.form.extension.customer_profile:
         class: AppBundle\Form\Extension\CustomerProfileTypeExtension
         tags:
