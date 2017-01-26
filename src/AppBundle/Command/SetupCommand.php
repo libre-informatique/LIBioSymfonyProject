@@ -327,14 +327,14 @@ EOT
      */
     protected function setupSampleData(OutputInterface $output)
     {
-//        $output->writeln(['', 'Running <info>doctrine:fixtures:load --append --fixtures=src/AppBundle/DataFixtures</info> command...']);
-//        $fixturesCommand = $this->getApplication()->find('doctrine:fixtures:load');
-//        $fixturesInput = new ArrayInput([
-//            '--append' => true,
-//            '--fixtures' => 'src/AppBundle/DataFixtures'
-//        ]);
-//        $fixturesInput->setInteractive(false);
-//        $fixturesCommand->run($fixturesInput, $output);
+        $output->writeln(['', 'Running <info>doctrine:fixtures:load --append --fixtures=src/AppBundle/DataFixtures</info> command...']);
+        $fixturesCommand = $this->getApplication()->find('doctrine:fixtures:load');
+        $fixturesInput = new ArrayInput([
+            '--append' => true,
+            '--fixtures' => 'src/AppBundle/DataFixtures'
+        ]);
+        $fixturesInput->setInteractive(false);
+        $fixturesCommand->run($fixturesInput, $output);
 
         $output->write('Running <info>sylius:fixtures:load lisem</info> command...');
         $fixturesCommand = $this->getApplication()->find('sylius:fixtures:load');
