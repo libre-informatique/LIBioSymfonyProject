@@ -11,6 +11,7 @@
 namespace AppBundle\Factory;
 
 use Librinfo\EcommerceBundle\Entity\Product;
+use Librinfo\VarietiesBundle\Entity\Variety;
 use Sylius\Component\Product\Factory\ProductFactory as BaseProductFactory;
 use Sylius\Component\Product\Repository\ProductOptionRepositoryInterface;
 
@@ -30,6 +31,7 @@ class ProductFactory extends BaseProductFactory
     }
 
     /**
+     * @param  boolean $seedsProduct
      * @return Product
      */
     public function createNew($seedsProduct = false)
@@ -44,6 +46,7 @@ class ProductFactory extends BaseProductFactory
     }
 
     /**
+     * @param  boolean $seedsProduct
      * @return Product
      */
     public function createWithVariant($seedsProduct = false)
@@ -54,6 +57,19 @@ class ProductFactory extends BaseProductFactory
             $this->setDefaultOptions($product);
         }
 
+        return $product;
+    }
+
+    /**
+     * @param  Variety $variety
+     * @return Product
+     */
+    public function createNewForVariety(Variety $variety)
+    {
+        $product = $this->createNew(true);
+        $product->setVariety($variety);
+        $product->setName((string)$variety);
+        $product->setCode($variety->getCode());
         return $product;
     }
 

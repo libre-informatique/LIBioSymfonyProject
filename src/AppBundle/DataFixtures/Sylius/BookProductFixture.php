@@ -11,8 +11,8 @@
 
 namespace AppBundle\DataFixtures\Sylius;
 
+use AppBundle\DataFixtures\Sylius\ProductFixture;
 use Sylius\Bundle\CoreBundle\Fixture\ProductAttributeFixture;
-use Sylius\Bundle\CoreBundle\Fixture\ProductFixture;
 use Sylius\Bundle\CoreBundle\Fixture\TaxonFixture;
 use Sylius\Bundle\FixturesBundle\Fixture\AbstractFixture;
 use Sylius\Component\Attribute\AttributeType\IntegerAttributeType;

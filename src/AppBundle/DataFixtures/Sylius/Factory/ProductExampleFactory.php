@@ -11,6 +11,7 @@
 
 namespace AppBundle\DataFixtures\Sylius\Factory;
 
+use Librinfo\EcommerceBundle\Entity\Product;
 use Sylius\Bundle\CoreBundle\Fixture\Factory\ExampleFactoryInterface;
 use Sylius\Bundle\CoreBundle\Fixture\OptionsResolver\LazyOption;
 use Sylius\Component\Core\Formatter\StringInflector;
@@ -181,6 +182,9 @@ class ProductExampleFactory implements ExampleFactoryInterface
 
                 ->setDefault('images', [])
                 ->setAllowedTypes('images', 'array')
+
+                ->setDefault('variety', null)
+                ->setAllowedTypes('variety', ['null', "Librinfo\VarietiesBundle\Entity\Variety"])
         ;
     }
 
@@ -190,11 +194,14 @@ class ProductExampleFactory implements ExampleFactoryInterface
     public function create(array $options = [])
     {
         $options = $this->optionsResolver->resolve($options);
+        $variety = $options['variety'];
 
-        /** @var ProductInterface $product */
-        $product = $this->productFactory->createNew();
+        /** @var Product $product */
+        $product = $variety ? $this->productFactory->createNewForVariety($variety) :
+            $this->productFactory->createNew();
         $product->setVariantSelectionMethod(ProductInterface::VARIANT_SELECTION_MATCH);
-        $product->setCode($options['code']);
+        if (!$variety)
+            $product->setCode($options['code']);
         $product->setEnabled($options['enabled']);
         $product->setMainTaxon($options['main_taxon']);
         $product->setCreatedAt($this->faker->dateTimeBetween('-1 week', 'now'));
@@ -203,32 +210,35 @@ class ProductExampleFactory implements ExampleFactoryInterface
         $this->createRelations($product, $options);
         $this->createVariants($product, $options);
         $this->createImages($product, $options);
+        if ($variety)
+            $product->setVariety($variety);
 
         return $product;
     }
 
     /**
-     * @param ProductInterface $product
+     * @param Product $product
      * @param array $options
      */
-    private function createTranslations(ProductInterface $product, array $options)
+    private function createTranslations(Product $product, array $options)
     {
         foreach ($this->getLocales() as $localeCode) {
             $product->setCurrentLocale($localeCode);
             $product->setFallbackLocale($localeCode);
 
-            $product->setName($options['name']);
-            $product->setSlug($this->slugGenerator->generate($options['name']));
+            if (!$product->getVariety())
+                $product->setName($options['name']);
+            $product->setSlug($this->slugGenerator->generate($product->getName()));
             $product->setShortDescription($options['short_description']);
             $product->setDescription($options['description']);
         }
     }
 
     /**
-     * @param ProductInterface $product
+     * @param Product $product
      * @param array $options
      */
-    private function createRelations(ProductInterface $product, array $options)
+    private function createRelations(Product $product, array $options)
     {
         foreach ($options['taxons'] as $taxon) {
             $product->addTaxon($taxon);
@@ -245,13 +255,14 @@ class ProductExampleFactory implements ExampleFactoryInterface
         foreach ($options['product_attributes'] as $attribute) {
             $product->addAttribute($attribute);
         }
+
     }
 
     /**
-     * @param ProductInterface $product
+     * @param Product $product
      * @param array $options
      */
-    private function createVariants(ProductInterface $product, array $options)
+    private function createVariants(Product $product, array $options)
     {
         try {
             $this->variantGenerator->generate($product);
@@ -275,10 +286,10 @@ class ProductExampleFactory implements ExampleFactoryInterface
     }
 
     /**
-     * @param ProductInterface $product
+     * @param Product $product
      * @param array $options
      */
-    private function createImages(ProductInterface $product, array $options)
+    private function createImages(Product $product, array $options)
     {
         foreach ($options['images'] as $imageCode => $imagePath) {
             /** @var ImageInterface $productImage */

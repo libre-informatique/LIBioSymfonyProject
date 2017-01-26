@@ -11,8 +11,8 @@
 
 namespace AppBundle\DataFixtures\Sylius;
 
+use AppBundle\DataFixtures\Sylius\ProductFixture;
 use Doctrine\ORM\EntityManager;
-use Sylius\Bundle\CoreBundle\Fixture\ProductFixture;
 use Sylius\Bundle\CoreBundle\Fixture\TaxonFixture;
 use Sylius\Bundle\FixturesBundle\Fixture\AbstractFixture;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
@@ -107,14 +107,13 @@ final class SeedsProductFixture extends AbstractFixture
         $varieties = $this->getVarieties($options['amount']);
         foreach ($varieties as $variety) {
             $products[] = [
-                'name' => (string)$variety,
-                'code' => $this->faker->uuid, // TODO in listener
                 'main_taxon' => 'seeds_LFR',      // TODO (Variety taxon)
                 'taxons' => ['seeds_LFR'],        // TODO (Variety taxon)
                 'images' => [
                     'main' => sprintf('%s/../../Resources/fixtures/%s', __DIR__, 'tomate-stpierre.jpg'),  // TODO (Variety media)
                     'thumbnail' => sprintf('%s/../../Resources/fixtures/%s', __DIR__, 'tomate-stpierre.jpg'),  // TODO (Variety media)
                 ],
+                'variety' => $variety
             ];
         }
 

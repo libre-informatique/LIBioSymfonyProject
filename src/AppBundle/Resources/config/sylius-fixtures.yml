@@ -119,12 +119,12 @@ sylius_fixtures:
 
                 lisem_book_product:
                     options:
-                        amount: 1
+                        amount: 4
 
                 lisem_tshirt_product:
                     options:
-                        amount: 1
+                        amount: 4
 
                 seeds_product:
                     options:
-                        amount: 1
+                        amount: 6
