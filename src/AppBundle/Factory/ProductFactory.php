@@ -10,7 +10,7 @@
 
 namespace AppBundle\Factory;
 
-use Librinfo\ProductBundle\Entity\Product;
+use Librinfo\EcommerceBundle\Entity\Product;
 use Sylius\Component\Product\Factory\ProductFactory as BaseProductFactory;
 use Sylius\Component\Product\Repository\ProductOptionRepositoryInterface;
 

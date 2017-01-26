@@ -12,7 +12,7 @@
 
 namespace AppBundle\Controller;
 
-use Librinfo\ProductBundle\Controller\ProductCRUDController;
+use Librinfo\EcommerceBundle\Controller\ProductCRUDController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
 /**

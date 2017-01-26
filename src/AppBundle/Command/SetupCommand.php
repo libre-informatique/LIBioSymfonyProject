@@ -11,7 +11,7 @@
 namespace AppBundle\Command;
 
 use Doctrine\Common\DataFixtures\Purger\ORMPurger;
-use Librinfo\ProductBundle\Entity\Product;
+use Librinfo\EcommerceBundle\Entity\Product;
 use Librinfo\UserBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\ArrayInput;

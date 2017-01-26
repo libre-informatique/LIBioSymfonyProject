@@ -1,4 +1,4 @@
-Librinfo\ProductBundle\Entity\Product:
+Librinfo\EcommerceBundle\Entity\Product:
     type: entity
 
     manyToOne:

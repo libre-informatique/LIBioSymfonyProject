@@ -10,8 +10,8 @@
 namespace AppBundle\CodeGenerator;
 
 use Blast\CoreBundle\Exception\InvalidEntityCodeException;
-use Librinfo\ProductBundle\Entity\ProductVariant;
-use Librinfo\ProductBundle\CodeGenerator\ProductVariantCodeGenerator as BaseCodeGenerator;
+use Librinfo\EcommerceBundle\Entity\ProductVariant;
+use Librinfo\EcommerceBundle\CodeGenerator\ProductVariantCodeGenerator as BaseCodeGenerator;
 
 class ProductVariantCodeGenerator extends BaseCodeGenerator
 {

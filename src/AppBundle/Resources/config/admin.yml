@@ -21,7 +21,7 @@ services:
 
     libio.admin.seeds_product:
         class: AppBundle\Admin\SeedsProductAdmin
-        arguments: [~, Librinfo\ProductBundle\Entity\Product, AppBundle:SeedsProductCRUD]
+        arguments: [~, Librinfo\EcommerceBundle\Entity\Product, AppBundle:SeedsProductCRUD]
         tags:
             - name: sonata.admin
               manager_type: orm
@@ -33,7 +33,7 @@ services:
 
     libio.admin.other_product:
         class: AppBundle\Admin\OtherProductAdmin
-        arguments: [~, Librinfo\ProductBundle\Entity\Product, LibrinfoProductBundle:ProductCRUD]
+        arguments: [~, Librinfo\EcommerceBundle\Entity\Product, LibrinfoEcommerceBundle:ProductCRUD]
         tags:
             - name: sonata.admin
               manager_type: orm
@@ -43,7 +43,7 @@ services:
 
     libio.admin.seeds_product_variant:
         class: AppBundle\Admin\SeedsProductVariantAdmin
-        arguments: [~, Librinfo\ProductBundle\Entity\ProductVariant, LibrinfoProductBundle:ProductVariantCRUD]
+        arguments: [~, Librinfo\EcommerceBundle\Entity\ProductVariant, LibrinfoEcommerceBundle:ProductVariantCRUD]
         tags:
             - name: sonata.admin
               manager_type: orm
@@ -51,11 +51,11 @@ services:
               label: libio.seeds_product_variant_admin.label
               label_translator_strategy: blast_core.label.strategy.librinfo
         calls:
-            - [ setTemplate, [ edit, LibrinfoProductBundle:ProductVariantAdmin:edit.html.twig ] ]
+            - [ setTemplate, [ edit, LibrinfoEcommerceBundle:ProductVariantAdmin:edit.html.twig ] ]
 
     libio.admin.other_product_variant:
         class: AppBundle\Admin\OtherProductVariantAdmin
-        arguments: [~, Librinfo\ProductBundle\Entity\ProductVariant, LibrinfoProductBundle:ProductVariantCRUD]
+        arguments: [~, Librinfo\EcommerceBundle\Entity\ProductVariant, LibrinfoEcommerceBundle:ProductVariantCRUD]
         tags:
             - name: sonata.admin
               manager_type: orm
@@ -63,7 +63,7 @@ services:
               label: libio.other_product_variant_admin.label
               label_translator_strategy: blast_core.label.strategy.librinfo
         calls:
-            - [ setTemplate, [ edit, LibrinfoProductBundle:ProductVariantAdmin:edit.html.twig ] ]
+            - [ setTemplate, [ edit, LibrinfoEcommerceBundle:ProductVariantAdmin:edit.html.twig ] ]
 
     lisem.admin.channel_description:
         class: AppBundle\Admin\ChannelDescriptionAdmin

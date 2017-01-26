@@ -19,8 +19,8 @@ parameters:
     secret:            ThisTokenIsNotSoSecretChangeIt
 
     # custom directories
-    cache_dir: /foo    
-    logs_dir: /bar # the logs will end up in /bar/{name-of-this-instance/cache}/{environment}
+    #cache_dir: /foo    
+    #logs_dir: /bar # the logs will end up in /bar/{name-of-this-instance}/cache/{environment}
 
     # Default Users
     libio.user.datafixtures:

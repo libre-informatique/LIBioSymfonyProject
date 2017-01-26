@@ -257,7 +257,7 @@ parameters:
                                     admin_code: libio.admin.seeds_product
                             packaging:  # overridden in SeedsProductVariantAdmin::configureFormFields()
                                 type: entity
-                                class: Librinfo\ProductBundle\Entity\ProductOptionValue
+                                class: Librinfo\EcommerceBundle\Entity\ProductOptionValue
                             seedBatch:  # overridden in SeedsProductVariantAdmin::configureFormFields()
                                 type: entity
                                 class: Librinfo\SeedBatchBundle\Entity\SeedBatch

@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace AppBundle\Entity\OuterExtension\LibrinfoProductBundle;
+namespace AppBundle\Entity\OuterExtension\LibrinfoEcommerceBundle;
 
 /**
  * @author Marcos Bezerra de Menezes <marcos.bezerra@libre-informatique.fr>

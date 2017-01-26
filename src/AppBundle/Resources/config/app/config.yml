@@ -3,8 +3,9 @@ imports:
     - { resource: "@SyliusAdminBundle/Resources/config/app/config.yml" }
     - { resource: "@SyliusShopBundle/Resources/config/app/config.yml" }
     - { resource: "@SyliusApiBundle/Resources/config/app/config.yml" }
-    - { resource: "@LibrinfoProductBundle/Resources/config/app/config.yml" }
+    - { resource: "@LibrinfoEcommerceBundle/Resources/config/app/config.yml" }
     - { resource: "@AppBundle/Resources/config/sylius-fixtures.yml" }
+    - { resource: "@AppBundle/Resources/config/grids.yml" }
 
 sylius_product:
     resources:
@@ -19,6 +20,6 @@ sylius_channel:
             classes:
                 model: AppBundle\Entity\Channel
 
-librinfo_product:
+librinfo_ecommerce:
     code_generator:
         product_variant: AppBundle\CodeGenerator\ProductVariantCodeGenerator

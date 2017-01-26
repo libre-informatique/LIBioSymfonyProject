@@ -7,7 +7,6 @@
 services:
 
     # CUSTOM SIDEBAR MENUS
-
     libio.menu_builder:
         class: AppBundle\Menu\MenuBuilder
         arguments: ["@knp_menu.factory"]
@@ -20,7 +19,6 @@ services:
             - { name: knp_menu.menu, alias: parameters_sidebar_menu }   # The alias is what is used to retrieve the menu
 
     # SYLIUS FIXTURES
-
     lisem.fixture.channel:
         class: AppBundle\DataFixtures\Sylius\ChannelFixture
         arguments: ["@sylius.manager.channel", "@sylius.fixture.example_factory.channel"]
@@ -52,3 +50,9 @@ services:
         tags:
             - { name: sylius_fixtures.fixture }
 
+
+#### FORM ####
+    app.form.extension.customer_profile:
+        class: AppBundle\Form\Extension\CustomerProfileTypeExtension
+        tags:
+            - { name: form.type_extension, extended_type: Sylius\Bundle\CustomerBundle\Form\Type\CustomerProfileType }
