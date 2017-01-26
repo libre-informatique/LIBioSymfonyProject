@@ -39,18 +39,6 @@ services:
 
 ### SYLIUS FIXTURES ###
 
-    lisem.fixture.channel:
-        class: AppBundle\DataFixtures\Sylius\ChannelFixture
-        arguments: ["@sylius.manager.channel", "@sylius.fixture.example_factory.channel"]
-        tags:
-            - { name: sylius_fixtures.fixture }
-
-    lisem.fixture.payment_method:
-        class: AppBundle\DataFixtures\Sylius\PaymentMethodFixture
-        arguments: ["@sylius.manager.payment_method", "@sylius.fixture.example_factory.payment_method"]
-        tags:
-            - { name: sylius_fixtures.fixture }
-
     lisem.fixture.tshirt_product:
         class: AppBundle\DataFixtures\Sylius\TshirtProductFixture
         arguments:
