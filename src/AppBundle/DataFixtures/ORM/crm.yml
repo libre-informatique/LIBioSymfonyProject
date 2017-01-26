@@ -24,44 +24,44 @@ Librinfo\CRMBundle\Entity\Organism:
         alert: '10%? Ceci est une alerte...'
     # Customers (individuals)
     org_ind_cus_{1..10} (extends org_tpl):
-        individual: true
-        customer: true
-        supplier: false
+        isIndividual: true
+        isCustomer: true
+        isSupplier: false
         seedProducer: false
     # Suppliers (individuals)
     org_ind_sup_{1..10} (extends org_tpl):
-        individual: true
-        customer: false
-        supplier: true
+        isIndividual: true
+        isCustomer: false
+        isSupplier: true
         seedProducer: false
     # Seed producers (individuals)
     org_ind_prod_{1..10} (extends org_tpl):
-        individual: true
-        customer: false
-        supplier: false
+        isIndividual: true
+        isCustomer: false
+        isSupplier: false
         seedProducer: true
         positions: ['@pos_ind_prod_<current()>']
     # Customers (companies)
     org_com_cus_{1..10} (extends org_tpl):
-        individual: false
-        customer: true
-        supplier: false
+        isIndividual: false
+        isCustomer: true
+        isSupplier: false
         seedProducer: false
         name: '<company()>'
         address: '50%? <streetAddress()>'
     # Suppliers (companies)
     org_com_sup_{1..10} (extends org_tpl):
-        individual: false
-        customer: false
-        supplier: true
+        isIndividual: false
+        isCustomer: false
+        isSupplier: true
         seedProducer: false
         name: '<company()>'
         address: '50%? <streetAddress()>'
     # Seed producers (companies)
     org_com_prod_{1..10} (extends org_tpl):
-        individual: false
-        customer: false
-        supplier: false
+        isIndividual: false
+        isCustomer: false
+        isSupplier: false
         seedProducer: true
         name: '<company()>'
         address: '50%? <streetAddress()>'
