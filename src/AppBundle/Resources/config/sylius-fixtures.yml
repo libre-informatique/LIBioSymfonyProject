@@ -117,10 +117,10 @@ sylius_fixtures:
                                 category: "other"
                                 amount: 0.20
 
-                book_product:
+                lisem_book_product:
                     options:
                         amount: 8
 
-                tshirt_product:
+                lisem_tshirt_product:
                     options:
                         amount: 8

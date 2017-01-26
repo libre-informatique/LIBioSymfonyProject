@@ -33,13 +33,22 @@ services:
         tags:
             - { name: sylius_fixtures.fixture }
 
-#    lisem.fixture.tshirt_product:
-#        class: AppBundle\DataFixtures\Sylius\TshirtProductFixture
-#        arguments:
-#            - "@sylius.fixture.taxon"
-#            - "@sylius.fixture.product_attribute"
-#            - "@sylius.fixture.product_option"
-#            - "@sylius.fixture.product"
-#        tags:
-#            - { name: sylius_fixtures.fixture }
+    lisem.fixture.tshirt_product:
+        class: AppBundle\DataFixtures\Sylius\TshirtProductFixture
+        arguments:
+            - "@sylius.fixture.taxon"
+            - "@sylius.fixture.product_attribute"
+            - "@sylius.fixture.product_option"
+            - "@sylius.fixture.product"
+        tags:
+            - { name: sylius_fixtures.fixture }
+
+    lisem.fixture.book_product:
+        class: AppBundle\DataFixtures\Sylius\BookProductFixture
+        arguments:
+            - "@sylius.fixture.taxon"
+            - "@sylius.fixture.product_attribute"
+            - "@sylius.fixture.product"
+        tags:
+            - { name: sylius_fixtures.fixture }
 

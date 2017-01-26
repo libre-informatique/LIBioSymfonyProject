@@ -13,9 +13,9 @@ namespace AppBundle\DataFixtures\Sylius;
 
 use Sylius\Bundle\CoreBundle\Fixture\ProductAttributeFixture;
 use Sylius\Bundle\CoreBundle\Fixture\ProductFixture;
-use Sylius\Bundle\CoreBundle\Fixture\ProductOptionFixture;
 use Sylius\Bundle\CoreBundle\Fixture\TaxonFixture;
 use Sylius\Bundle\FixturesBundle\Fixture\AbstractFixture;
+use Sylius\Component\Attribute\AttributeType\IntegerAttributeType;
 use Sylius\Component\Attribute\AttributeType\TextAttributeType;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -24,7 +24,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
  * @author Kamil Kokot <kamil.kokot@lakion.com>
  * @author Marcos Bezerra de Menezes <marcos.bezerra@libre-informatique.fr>
  */
-final class TshirtProductFixture extends AbstractFixture
+final class BookProductFixture extends AbstractFixture
 {
     /**
      * @var TaxonFixture
@@ -35,11 +35,6 @@ final class TshirtProductFixture extends AbstractFixture
      * @var ProductAttributeFixture
      */
     private $productAttributeFixture;
-
-    /**
-     * @var ProductOptionFixture
-     */
-    private $productOptionFixture;
 
     /**
      * @var ProductFixture
@@ -59,18 +54,15 @@ final class TshirtProductFixture extends AbstractFixture
     /**
      * @param TaxonFixture $taxonFixture
      * @param ProductAttributeFixture $productAttributeFixture
-     * @param ProductOptionFixture $productOptionFixture
      * @param ProductFixture $productFixture
      */
     public function __construct(
         TaxonFixture $taxonFixture,
         ProductAttributeFixture $productAttributeFixture,
-        ProductOptionFixture $productOptionFixture,
         ProductFixture $productFixture
     ) {
         $this->taxonFixture = $taxonFixture;
         $this->productAttributeFixture = $productAttributeFixture;
-        $this->productOptionFixture = $productOptionFixture;
         $this->productFixture = $productFixture;
 
         $this->faker = \Faker\Factory::create();
@@ -86,7 +78,7 @@ final class TshirtProductFixture extends AbstractFixture
      */
     public function getName()
     {
-        return 'lisem_tshirt_product';
+        return 'lisem_book_product';
     }
 
     /**
@@ -101,70 +93,36 @@ final class TshirtProductFixture extends AbstractFixture
             'name' => 'Catégorie',
             'children' => [
                 [
-                    'code' => 't_shirts',
-                    'name' => 'T-Shirts',
-                    'children' => [
-                        [
-                            'code' => 'mens_t_shirts',
-                            'name' => 'Homme',
-                        ],
-                        [
-                            'code' => 'womens_t_shirts',
-                            'name' => 'Femme',
-                        ],
-                    ],
-                ],
-            ],
+                    'code' => 'books',
+                    'name' => 'Livres',
+                ]
+            ]
         ]]]);
 
         $this->productAttributeFixture->load(['custom' => [
-            ['name' => 'Marque', 'code' => 't_shirt_brand', 'type' => TextAttributeType::TYPE],
-            ['name' => 'Collection', 'code' => 't_shirt_collection', 'type' => TextAttributeType::TYPE],
-            ['name' => 'Matériau', 'code' => 't_shirt_material', 'type' => TextAttributeType::TYPE],
-        ]]);
-
-        $this->productOptionFixture->load(['custom' => [
-            [
-                'name' => 'Couleur',
-                'code' => 't_shirt_color',
-                'values' => [
-                    't_shirt_color_red' => 'Rouge',
-                    't_shirt_color_black' => 'Noir',
-                    't_shirt_color_white' => 'Blanc',
-                ],
-            ],
-            [
-                'name' => 'Taille',
-                'code' => 't_shirt_size',
-                'values' => [
-                    't_shirt_size_s' => 'S',
-                    't_shirt_size_m' => 'M',
-                    't_shirt_size_l' => 'L',
-                    't_shirt_size_xl' => 'XL',
-                    't_shirt_size_xxl' => 'XXL',
-                ],
-            ],
+            ['name' => 'Auteur', 'code' => 'book_author', 'type' => TextAttributeType::TYPE],
+            ['name' => 'ISBN', 'code' => 'book_isbn', 'type' => TextAttributeType::TYPE],
+            ['name' => 'Nombre de pages', 'code' => 'book_pages', 'type' => IntegerAttributeType::TYPE],
         ]]);
 
         $products = [];
         $productsNames = $this->getUniqueNames($options['amount']);
         for ($i = 0; $i < $options['amount']; ++$i) {
-            $categoryTaxonCode = $this->faker->randomElement(['mens_t_shirts', 'womens_t_shirts']);
+            $authorName = $this->faker->name;
 
             $products[] = [
-                'name' => sprintf('T-Shirt "%s"', $productsNames[$i]),
+                'name' => sprintf('Book "%s" by %s', $productsNames[$i], $authorName),
                 'code' => $this->faker->uuid,
-                'main_taxon' => $categoryTaxonCode,
-                'taxons' => [$categoryTaxonCode],
+                'main_taxon' => 'books',
+                'taxons' => ['books'],
                 'product_attributes' => [
-                    't_shirt_brand' => $this->faker->randomElement(['Nike', 'Adidas', 'JKM-476 Streetwear', 'Potato', 'Centipede Wear']),
-                    't_shirt_collection' => sprintf('Sylius %s %s', $this->faker->randomElement(['ÉTE', 'hIVER', 'Printemps', 'Automne']), mt_rand(1995, 2012)),
-                    't_shirt_material' => $this->faker->randomElement(['Centipede', 'Laine', 'Centipede 10% / Laine 90%', 'Pomme de terre 100%']),
+                    'book_author' => $authorName,
+                    'book_isbn' => $this->faker->isbn13,
+                    'book_pages' => $this->faker->numberBetween(42, 1024),
                 ],
-                'product_options' => ['t_shirt_color', 't_shirt_size'],
                 'images' => [
-                    'main' => sprintf('%s/../../Resources/fixtures/%s', __DIR__, 't-shirts.jpg'),
-                    'thumbnail' => sprintf('%s/../../Resources/fixtures/%s', __DIR__, 't-shirts.jpg'),
+                    'main' => sprintf('%s/../../Resources/fixtures/%s', __DIR__, 'books.jpg'),
+                    'thumbnail' => sprintf('%s/../../Resources/fixtures/%s', __DIR__, 'books.jpg'),
                 ],
             ];
         }
