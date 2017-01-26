@@ -3170,7 +3170,7 @@
                     "email": "stof@notk.org"
                 },
                 {
-                    "name": "Knplabs",
+                    "name": "KnpLabs",
                     "homepage": "http://knplabs.com"
                 },
                 {
@@ -3448,12 +3448,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/SymfonyLibrinfoDecoratorBundle.git",
-                "reference": "2f0ea510b801d3d0906b89908a160842dce7cef1"
+                "reference": "5bb16256e8c5a8d006a77946697a8550c6d64172"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/SymfonyLibrinfoDecoratorBundle/zipball/2f0ea510b801d3d0906b89908a160842dce7cef1",
-                "reference": "2f0ea510b801d3d0906b89908a160842dce7cef1",
+                "url": "https://api.github.com/repos/libre-informatique/SymfonyLibrinfoDecoratorBundle/zipball/5bb16256e8c5a8d006a77946697a8550c6d64172",
+                "reference": "5bb16256e8c5a8d006a77946697a8550c6d64172",
                 "shasum": ""
             },
             "require": {
@@ -3493,7 +3493,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-01-11 14:07:42"
+            "time": "2017-01-25 13:21:38"
         },
         {
             "name": "libre-informatique/ecommerce-bundle",
@@ -3614,12 +3614,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/SymfonyLibrinfoEmailCRMBundle.git",
-                "reference": "9197083966b307ab7678c6d9ea9436e3d4b2a7dd"
+                "reference": "84e28936257c33b559eefc06a2c827a5f4c2a359"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/SymfonyLibrinfoEmailCRMBundle/zipball/9197083966b307ab7678c6d9ea9436e3d4b2a7dd",
-                "reference": "9197083966b307ab7678c6d9ea9436e3d4b2a7dd",
+                "url": "https://api.github.com/repos/libre-informatique/SymfonyLibrinfoEmailCRMBundle/zipball/84e28936257c33b559eefc06a2c827a5f4c2a359",
+                "reference": "84e28936257c33b559eefc06a2c827a5f4c2a359",
                 "shasum": ""
             },
             "require": {
@@ -3657,7 +3657,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-01-24 15:13:04"
+            "time": "2017-01-25 13:22:58"
         },
         {
             "name": "libre-informatique/media-bundle",
@@ -3874,12 +3874,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/SymfonyLibrinfoUserBundle.git",
-                "reference": "bcdc287256e0d82256c56eb5b9375d9e6f198789"
+                "reference": "3c5ca09de52bcedb1127eacbecc1f8a07ad2bf89"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/SymfonyLibrinfoUserBundle/zipball/bcdc287256e0d82256c56eb5b9375d9e6f198789",
-                "reference": "bcdc287256e0d82256c56eb5b9375d9e6f198789",
+                "url": "https://api.github.com/repos/libre-informatique/SymfonyLibrinfoUserBundle/zipball/3c5ca09de52bcedb1127eacbecc1f8a07ad2bf89",
+                "reference": "3c5ca09de52bcedb1127eacbecc1f8a07ad2bf89",
                 "shasum": ""
             },
             "require": {
@@ -3920,7 +3920,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-01-19 11:47:10"
+            "time": "2017-01-25 17:00:07"
         },
         {
             "name": "libre-informatique/varieties-bundle",
@@ -4123,12 +4123,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/padraic/mockery.git",
-                "reference": "d1aa034003b51b3462239e2559437ebf3ccdc0d5"
+                "reference": "1d2886532678ae58ea516cbedbbbdf44e3f3887f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/padraic/mockery/zipball/d1aa034003b51b3462239e2559437ebf3ccdc0d5",
-                "reference": "d1aa034003b51b3462239e2559437ebf3ccdc0d5",
+                "url": "https://api.github.com/repos/padraic/mockery/zipball/1d2886532678ae58ea516cbedbbbdf44e3f3887f",
+                "reference": "1d2886532678ae58ea516cbedbbbdf44e3f3887f",
                 "shasum": ""
             },
             "require": {
@@ -4180,7 +4180,7 @@
                 "test double",
                 "testing"
             ],
-            "time": "2017-01-24 09:36:52"
+            "time": "2017-01-25 19:46:03"
         },
         {
             "name": "monolog/monolog",
@@ -7695,12 +7695,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "c56f547c7d9d81829bf85bfb4826992558e08556"
+                "reference": "21f1be16d56329dd61aeea45a052bf1cad018468"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/c56f547c7d9d81829bf85bfb4826992558e08556",
-                "reference": "c56f547c7d9d81829bf85bfb4826992558e08556",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/21f1be16d56329dd61aeea45a052bf1cad018468",
+                "reference": "21f1be16d56329dd61aeea45a052bf1cad018468",
                 "shasum": ""
             },
             "require": {
@@ -7822,7 +7822,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2017-01-24 13:02:12"
+            "time": "2017-01-25 15:08:36"
         },
         {
             "name": "trappar/alice-generator",
