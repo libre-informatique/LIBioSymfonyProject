@@ -171,7 +171,6 @@ EOT
                 '20S' => ['locale' => 'fr_FR', 'value' => '20 graines'],
                 '50S' => ['locale' => 'fr_FR', 'value' => '50 graines'],
             ]],
-            ['code' => '_libio_seedbatch',  'name' => 'Lot', 'type' => 'text'],
         ];
 
         $em = $this->getContainer()->get('doctrine')->getEntityManager();
