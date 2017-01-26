@@ -111,8 +111,8 @@ final class BookProductFixture extends AbstractFixture
             $authorName = $this->faker->name;
 
             $products[] = [
-                'name' => sprintf('Book "%s" by %s', $productsNames[$i], $authorName),
-                'code' => $this->faker->uuid,
+                'name' => sprintf('Livre "%s", par %s', $productsNames[$i], $authorName),
+                'code' => sprintf('LIV-%04d', $i + 1),
                 'main_taxon' => 'books',
                 'taxons' => ['books'],
                 'product_attributes' => [

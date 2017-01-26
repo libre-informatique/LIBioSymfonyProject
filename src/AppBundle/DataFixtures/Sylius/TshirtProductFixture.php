@@ -153,7 +153,7 @@ final class TshirtProductFixture extends AbstractFixture
 
             $products[] = [
                 'name' => sprintf('T-Shirt "%s"', $productsNames[$i]),
-                'code' => $this->faker->uuid,
+                'code' => sprintf('TSH-%04d', $i + 1),
                 'main_taxon' => $categoryTaxonCode,
                 'taxons' => [$categoryTaxonCode],
                 'product_attributes' => [
