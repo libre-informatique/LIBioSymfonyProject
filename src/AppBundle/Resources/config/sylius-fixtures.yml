@@ -13,8 +13,8 @@ sylius_fixtures:
 
             fixtures:
 
-                locale: ~
-                currency: ~
+#                locale: ~
+#                currency: ~
 
                 geographical:
                     options:

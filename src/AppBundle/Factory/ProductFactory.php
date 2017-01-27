@@ -51,7 +51,7 @@ class ProductFactory extends BaseProductFactory
      */
     public function createWithVariant($seedsProduct = false)
     {
-        $product = parent::createNewWithVariant();
+        $product = parent::createWithVariant();
 
         if ($seedsProduct) {
             $this->setDefaultOptions($product);
@@ -63,13 +63,16 @@ class ProductFactory extends BaseProductFactory
     /**
      * @param  Variety $variety
      * @return Product
+     * @todo   Add default taxonomy based on variety taxonomy
      */
     public function createNewForVariety(Variety $variety)
     {
         $product = $this->createNew(true);
         $product->setVariety($variety);
         $product->setName((string)$variety);
-        $product->setCode($variety->getCode());
+        $product->setCode(sprintf('%s-%s', $variety->getSpecies()->getCode(), $variety->getCode()));
+        // TODO: default taxonomy
+        
         return $product;
     }
 

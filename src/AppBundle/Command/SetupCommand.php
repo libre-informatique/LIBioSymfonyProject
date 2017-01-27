@@ -61,6 +61,7 @@ EOT
 
             $this->purgeDatabase($output);
 
+            $this->setupSylius($output);
             $this->setupUsers($output);
             $this->setupCircles($output);
             $this->setupProductOptions($output);

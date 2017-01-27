@@ -85,11 +85,10 @@ doctrine:
                 type: yml
             LibrinfoCRMBundle:
                 type: yml
-
             LibrinfoUserBundle:
                 type: yml
-#            LibrinfoProductBundle:
-#                type: yml
+            LibrinfoEcommerceBundle:
+                type: yml
             FOSUserBundle:
                 type: xml
             SonataUserBundle: ~

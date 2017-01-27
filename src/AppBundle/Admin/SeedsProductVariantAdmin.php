@@ -33,7 +33,7 @@ class SeedsProductVariantAdmin extends ProductVariantAdmin
         // packaging field
         $mapper->add('packaging', 'entity', [
             'query_builder' => $this->optionValuesQueryBuilder(),
-            'class' => 'Librinfo\\ProductBundle\\Entity\\ProductOptionValue',
+            'class' => 'Librinfo\\EcommerceBundle\\Entity\\ProductOptionValue',
             'multiple' => false,
             'required' => true,
             'choice_label' => 'value',
