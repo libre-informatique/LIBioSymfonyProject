@@ -72,13 +72,10 @@ class SeedsProductAdmin extends ProductAdmin
     public function getNewInstance()
     {
         $factory = $this->getConfigurationPool()->getContainer()->get('sylius.factory.product');
-        $object = $factory->createNew(true);
-
-        if ($this->getVariety()) {
-            $object->setVariety($this->variety);
-            $object->setName($this->variety->getName());
-            $object->setCode($this->variety->getCode());
-        }
+        $object = $this->getVariety() ?
+            $factory->createNewForVariety($this->getVariety()) :
+            $factory->createNew(true)
+        ;
 
         foreach ($this->getExtensions() as $extension) {
             $extension->alterNewInstance($this, $object);

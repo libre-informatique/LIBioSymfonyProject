@@ -21,7 +21,7 @@ services:
 
 ### SYLIUS FIXTURE FACTORIES ###
 
-    lisem.fixture.example_factory.seeds_product:
+    lisem.fixture.example_factory.product:
         class: AppBundle\DataFixtures\Sylius\Factory\ProductExampleFactory
         arguments:
             - "@sylius.factory.product"
@@ -39,13 +39,21 @@ services:
 
 ### SYLIUS FIXTURES ###
 
+    lisem.fixture.product:
+        class: AppBundle\DataFixtures\Sylius\ProductFixture
+        arguments:
+            - "@sylius.manager.product"
+            - "@lisem.fixture.example_factory.product"
+        tags:
+            - { name: sylius_fixtures.fixture }
+
     lisem.fixture.tshirt_product:
         class: AppBundle\DataFixtures\Sylius\TshirtProductFixture
         arguments:
             - "@sylius.fixture.taxon"
             - "@sylius.fixture.product_attribute"
             - "@sylius.fixture.product_option"
-            - "@sylius.fixture.product"
+            - "@lisem.fixture.product"
         tags:
             - { name: sylius_fixtures.fixture }
 
@@ -54,7 +62,7 @@ services:
         arguments:
             - "@sylius.fixture.taxon"
             - "@sylius.fixture.product_attribute"
-            - "@sylius.fixture.product"
+            - "@lisem.fixture.product"
         tags:
             - { name: sylius_fixtures.fixture }
 
@@ -62,8 +70,8 @@ services:
         class: AppBundle\DataFixtures\Sylius\SeedsProductFixture
         arguments:
             - "@sylius.fixture.taxon"
-            - "@sylius.fixture.product"
-            - "@doctrine.orm.entity_manager"
+            - "@lisem.fixture.product"
+            - "@doctrine.orm.entity_manager"  # for Varieties
         tags:
             - { name: sylius_fixtures.fixture }
 

@@ -61,6 +61,7 @@ EOT
 
             $this->purgeDatabase($output);
 
+            $this->setupSylius($output);
             $this->setupUsers($output);
             $this->setupCircles($output);
             $this->setupProductOptions($output);
@@ -336,13 +337,13 @@ EOT
         $fixturesInput->setInteractive(false);
         $fixturesCommand->run($fixturesInput, $output);
 
-        $output->write('Running <info>sylius:fixtures:load lisem</info> command...');
+        $output->writeln('Running <info>sylius:fixtures:load lisem</info> command...');
         $fixturesCommand = $this->getApplication()->find('sylius:fixtures:load');
         $fixturesInput = new ArrayInput([
             'suite' => 'lisem'
         ]);
         $fixturesInput->setInteractive(false);
         $fixturesCommand->run($fixturesInput, $output);
-        $output->writeln('<info> done.</info>');
+        $output->writeln('<info>done.</info>');
     }
 }

@@ -11,6 +11,7 @@
 namespace AppBundle\Factory;
 
 use Librinfo\EcommerceBundle\Entity\Product;
+use Librinfo\VarietiesBundle\Entity\Variety;
 use Sylius\Component\Product\Factory\ProductFactory as BaseProductFactory;
 use Sylius\Component\Product\Repository\ProductOptionRepositoryInterface;
 
@@ -30,6 +31,7 @@ class ProductFactory extends BaseProductFactory
     }
 
     /**
+     * @param  boolean $seedsProduct
      * @return Product
      */
     public function createNew($seedsProduct = false)
@@ -44,16 +46,33 @@ class ProductFactory extends BaseProductFactory
     }
 
     /**
+     * @param  boolean $seedsProduct
      * @return Product
      */
     public function createWithVariant($seedsProduct = false)
     {
-        $product = parent::createNewWithVariant();
+        $product = parent::createWithVariant();
 
         if ($seedsProduct) {
             $this->setDefaultOptions($product);
         }
 
+        return $product;
+    }
+
+    /**
+     * @param  Variety $variety
+     * @return Product
+     * @todo   Add default taxonomy based on variety taxonomy
+     */
+    public function createNewForVariety(Variety $variety)
+    {
+        $product = $this->createNew(true);
+        $product->setVariety($variety);
+        $product->setName((string)$variety);
+        $product->setCode(sprintf('%s-%s', $variety->getSpecies()->getCode(), $variety->getCode()));
+        // TODO: default taxonomy
+        
         return $product;
     }
 
