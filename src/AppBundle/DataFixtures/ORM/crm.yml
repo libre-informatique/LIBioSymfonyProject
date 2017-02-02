@@ -19,7 +19,8 @@ Librinfo\CRMBundle\Entity\Contact:
 
 Librinfo\CRMBundle\Entity\Organism:
     org_tpl (template):
-        email: '90%? <email()>'
+        email: '<email()>'
+        emailCanonical: '<$email>'
         url: '20%? <url()>'
         alert: '10%? Ceci est une alerte...'
     # Customers (individuals)
