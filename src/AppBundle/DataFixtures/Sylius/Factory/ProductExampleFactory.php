@@ -11,6 +11,7 @@
 
 namespace AppBundle\DataFixtures\Sylius\Factory;
 
+use Blast\CoreBundle\CodeGenerator\CodeGeneratorInterface;
 use Librinfo\EcommerceBundle\Entity\Product;
 use Sylius\Bundle\CoreBundle\Fixture\Factory\ExampleFactoryInterface;
 use Sylius\Bundle\CoreBundle\Fixture\OptionsResolver\LazyOption;
@@ -36,7 +37,7 @@ use Webmozart\Assert\Assert;
  * @author Kamil Kokot <kamil.kokot@lakion.com>
  * @author Marcos Bezerra de Menezes <marcos.bezerra@libre-informatique.fr>
  */
-class ProductExampleFactory implements ExampleFactoryInterface
+final class ProductExampleFactory implements ExampleFactoryInterface
 {
     /**
      * @var FactoryInterface
@@ -84,6 +85,11 @@ class ProductExampleFactory implements ExampleFactoryInterface
     private $optionsResolver;
 
     /**
+     * @var CodeGeneratorInterface
+     */
+    private $productVariantCodeGenerator;
+
+    /**
      * @param FactoryInterface $productFactory
      * @param FactoryInterface $productVariantFactory
      * @param ProductVariantGeneratorInterface $variantGenerator
@@ -109,7 +115,8 @@ class ProductExampleFactory implements ExampleFactoryInterface
         RepositoryInterface $productAttributeRepository,
         RepositoryInterface $productOptionRepository,
         RepositoryInterface $channelRepository,
-        RepositoryInterface $localeRepository
+        RepositoryInterface $localeRepository,
+        CodeGeneratorInterface $productVariantCodeGenerator
     ) {
         $this->productFactory = $productFactory;
         $this->productVariantFactory = $productVariantFactory;
@@ -118,6 +125,7 @@ class ProductExampleFactory implements ExampleFactoryInterface
         $this->imageUploader = $imageUploader;
         $this->slugGenerator = $slugGenerator;
         $this->localeRepository = $localeRepository;
+        $this->productVariantCodeGenerator = $productVariantCodeGenerator;
 
         $this->faker = \Faker\Factory::create();
         $this->optionsResolver =
@@ -255,7 +263,6 @@ class ProductExampleFactory implements ExampleFactoryInterface
         foreach ($options['product_attributes'] as $attribute) {
             $product->addAttribute($attribute);
         }
-
     }
 
     /**
@@ -267,10 +274,11 @@ class ProductExampleFactory implements ExampleFactoryInterface
         try {
             $this->variantGenerator->generate($product);
         } catch (\InvalidArgumentException $exception) {
-            /** @var ProductVariantInterface $productVariant */
-            $productVariant = $this->productVariantFactory->createNew();
-
-            $product->addVariant($productVariant);
+            if (!$product->getVariety()) {
+                /** @var ProductVariantInterface $productVariant */
+                $productVariant = $this->productVariantFactory->createNew();
+                $product->addVariant($productVariant);
+            }
         }
 
         $i = 0;
@@ -278,7 +286,10 @@ class ProductExampleFactory implements ExampleFactoryInterface
         foreach ($product->getVariants() as $productVariant) {
             $productVariant->setAvailableOn($this->faker->dateTimeThisYear);
             $productVariant->setPrice($this->faker->randomNumber(4));
-            $productVariant->setCode(sprintf('%s-variant#%d', $options['code'], $i));
+            $code = $product->getVariety() ?
+                $this->productVariantCodeGenerator->generate($productVariant) :
+                sprintf('%s-variant#%d', $options['code'], $i);
+            $productVariant->setCode($code);
             $productVariant->setOnHand($this->faker->randomNumber(1));
 
             ++$i;

@@ -19,6 +19,19 @@ services:
         tags:
             - { name: knp_menu.menu, alias: parameters_sidebar_menu }   # The alias is what is used to retrieve the menu
 
+#### SYLIUS CHECKERS ####
+
+    lisem.checker.product_variants_parity:
+        class: AppBundle\Checker\ProductVariantsParityChecker
+
+#### SYLIUS GENERATORS ####
+
+    lisem.generator.product_variant:
+        class: AppBundle\Generator\ProductVariantGenerator
+        arguments:
+            - "@sylius.factory.product_variant"
+            - "@lisem.checker.product_variants_parity"
+
 ### SYLIUS FIXTURE FACTORIES ###
 
     lisem.fixture.example_factory.product:
@@ -26,7 +39,7 @@ services:
         arguments:
             - "@sylius.factory.product"
             - "@sylius.factory.product_variant"
-            - "@sylius.generator.product_variant"
+            - "@lisem.generator.product_variant"
             - "@sylius.factory.product_attribute_value"
             - "@sylius.factory.product_image"
             - "@sylius.image_uploader"
@@ -36,6 +49,7 @@ services:
             - "@sylius.repository.product_option"
             - "@sylius.repository.channel"
             - "@sylius.repository.locale"
+            - "@librinfo_ecommerce.code_generator.product_variant"
 
 ### SYLIUS FIXTURES ###
 
@@ -74,6 +88,7 @@ services:
             - "@doctrine.orm.entity_manager"  # for Varieties
         tags:
             - { name: sylius_fixtures.fixture }
+
 
 #### FORMS ####
 
