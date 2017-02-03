@@ -58,6 +58,11 @@ parameters:
                           class: framacalc
             Sonata\AdminBundle\Form\FormMapper:
                 add:
+                    form_group_general:
+                        '':
+                            packagings:   # overridden in AppBundle\Admin\VarietyAdmin::configureFormFields()
+                                _options:
+                                    admin_code: lisem.admin.packaging
                     form_tab_channel_descriptions:
                         form_group_channel_descriptions:
                             channelDescriptions:

@@ -92,6 +92,7 @@ librinfo:
     label:
         channel: Utilisation
         packaging: Conditionnement
+        packagings: Conditionnements
         price: Prix
         seed_batch: Lot
         value: Contenu

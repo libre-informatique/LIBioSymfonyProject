@@ -9,3 +9,7 @@ Librinfo\VarietiesBundle\Entity\Variety:
             mappedBy: variety
             cascade: [ persist, remove ]
             orphanRemoval: true
+    manyToMany:
+        packagings:
+            targetEntity: Librinfo\EcommerceBundle\Entity\ProductOptionValue
+            cascade: [ persist, remove ]

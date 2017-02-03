@@ -76,3 +76,13 @@ services:
               group: admin
               label: lisem.channel_description_admin.label
               label_translator_strategy: blast_core.label.strategy.librinfo
+
+    lisem.admin.packaging:
+        class: AppBundle\Admin\PackagingAdmin
+        arguments: [~, Librinfo\EcommerceBundle\Entity\ProductOptionValue, BlastCoreBundle:CRUD ]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: admin
+              label: lisem.packaging_admin.label
+              label_translator_strategy: blast_core.label.strategy.librinfo
