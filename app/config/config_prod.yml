@@ -14,3 +14,7 @@ monolog:
         console:
             type:  console
 
+swiftmailer:
+    delivery_addresses: ['jardinenvie@lisem.eu']
+
+
