@@ -15,6 +15,19 @@ monolog:
             type:  console
 
 swiftmailer:
-    delivery_addresses: ['jardinenvie@lisem.eu']
-
+    default_mailer: direct_mailer
+    mailers:
+        direct_mailer:
+            transport: "%mailer_transport%"
+            host:      "%mailer_host%" # removed for gmail
+            username:  "%mailer_user%"
+            password:  "%mailer_password%"
+            delivery_addresses: ['jardinenvie@lisem.eu']
+        spool_mailer:
+            transport: "%mailer_transport%"
+            host:      "%mailer_host%" # removed for gmail
+            username:  "%mailer_user%"
+            password:  "%mailer_password%"
+            spool: { type: db }
+            delivery_addresses: ['jardinenvie@lisem.eu']
 
