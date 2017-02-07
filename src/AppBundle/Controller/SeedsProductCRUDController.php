@@ -1,8 +1,6 @@
 <?php
 
 /*
- * This file is part of the BLAST package <http://blast.libre-informatique.fr>.
- *
  * Copyright (C) 2015-2016 Libre Informatique
  *
  * This file is licenced under the GNU GPL v3.

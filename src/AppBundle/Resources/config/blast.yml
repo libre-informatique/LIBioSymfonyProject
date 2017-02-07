@@ -364,3 +364,46 @@ parameters:
                                 class: AppBundle\Entity\Channel
                             value:
                                 type: blast_tinymce
+
+############
+# PACKAGING
+############
+
+        AppBundle\Admin\PackagingAdmin:
+            # SHOW
+            Sonata\AdminBundle\Show\ShowMapper:
+                remove:
+                    option: ~
+            # FORM
+            Sonata\AdminBundle\Form\FormMapper:
+                add:
+                    form_group_general:
+                        '':
+                            code:
+                                type: hidden
+                            value:
+                                type: hidden
+                            option:
+                                type: sonata_type_model_hidden
+                            quantity:
+                                type: integer
+                                mapped: false
+                            unit:
+                                type: choice
+                                choices:
+                                    grams: lisem.packaging_unit.grams
+                                    seeds: lisem.packaging_unit.seeds
+                                translation_domain: null
+                                mapped: false
+                                label: false
+                            bulk:
+                                type: checkbox
+                                required: false
+                                mapped: false
+            # LIST
+            Sonata\AdminBundle\Datagrid\ListMapper:
+                remove:
+                    option: ~
+            # FILTERS
+            Sonata\AdminBundle\Datagrid\DatagridMapper:
+                add: ~

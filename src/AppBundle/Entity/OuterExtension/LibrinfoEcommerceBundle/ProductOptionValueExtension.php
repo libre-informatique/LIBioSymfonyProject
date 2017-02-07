@@ -1,0 +1,58 @@
+<?php
+
+/*
+ * Copyright (C) 2015-2016 Libre Informatique
+ *
+ * This file is licenced under the GNU GPL v3.
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace AppBundle\Entity\OuterExtension\LibrinfoEcommerceBundle;
+
+use Librinfo\EcommerceBundle\Entity\Product;
+
+/**
+ * @author Marcos Bezerra de Menezes <marcos.bezerra@libre-informatique.fr>
+ */
+trait ProductOptionValueExtension
+{
+    /**
+     * @return boolean
+     */
+    public function isPackaging()
+    {
+        return $this->option && $this->option->getCode() == Product::$PACKAGING_OPTION_CODE;
+    }
+
+    /**
+     * @return int
+     */
+    public function getQuantity()
+    {
+        $match = [];
+        if ($this->isPackaging() && preg_match('/^([0-9]+)(G|S)$/', $this->code, $match))
+            return (int) $match[1];
+        return 0;
+    }
+
+    /**
+     * @return string  "grams"|"seeds"|""
+     */
+    public function getUnit()
+    {
+        $match = [];
+        if ($this->isPackaging() && preg_match('/^([0-9]+)(G|S)$/', $this->code, $match))
+            return $match[2] == 'S' ? 'seeds' : 'grams';
+
+        return '';
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isBulk()
+    {
+        return $this->isPackaging() && $this->code == "BULK";
+    }
+}
