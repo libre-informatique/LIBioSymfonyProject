@@ -79,10 +79,12 @@ services:
 
     lisem.admin.packaging:
         class: AppBundle\Admin\PackagingAdmin
-        arguments: [~, Librinfo\EcommerceBundle\Entity\ProductOptionValue, BlastCoreBundle:CRUD ]
+        arguments: [~, Librinfo\EcommerceBundle\Entity\ProductOptionValue, AppBundle:PackagingCRUD ]
         tags:
             - name: sonata.admin
               manager_type: orm
               group: admin
               label: lisem.packaging_admin.label
               label_translator_strategy: blast_core.label.strategy.librinfo
+        calls:
+            - [ setTemplate, [ edit, AppBundle:PackagingAdmin:edit.html.twig ] ]

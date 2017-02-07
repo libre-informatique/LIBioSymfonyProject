@@ -90,10 +90,12 @@ libio:
 
 librinfo:
     label:
+        bulk: Vrac
         channel: Utilisation
         packaging: Conditionnement
         packagings: Conditionnements
         price: Prix
+        quantity: Quantité
         seed_batch: Lot
         value: Contenu
     link:
@@ -104,6 +106,8 @@ librinfo:
         other_product_variant_list: Liste des déclinaisons d'article (autres)
         otherproduct_list: Liste des articles (autres)
         otherproductvariant_list: Liste des déclinaison d'article (autres)
+        packaging_create: Nouveau conditionnement
+        packaging_list: Liste des conditionnements
         seed_product_list: Liste des articles (semences)
         seeds_product_create: Ajouter un article (semences)
         seeds_product_list: Liste des articles (semences)
@@ -111,5 +115,12 @@ librinfo:
         seeds_product_variant_list: Liste des déclinaisons d'article (semences)
         seedsproduct_list: Liste des articles (semences)
         seedsproductvariant_list: Liste des déclinaisons d'article (semences)
+
+lisem:
+    packaging_admin:
+        label: Conditionnement
+    packaging_unit:
+        grams: grammes
+        seeds: graines
 
 
