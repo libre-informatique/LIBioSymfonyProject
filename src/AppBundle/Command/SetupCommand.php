@@ -12,7 +12,7 @@ namespace AppBundle\Command;
 
 use Doctrine\Common\DataFixtures\Purger\ORMPurger;
 use Librinfo\EcommerceBundle\Entity\Product;
-use Librinfo\UserBundle\Entity\User;
+use Librinfo\EcommerceBundle\Entity\AdminUser;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Input\InputDefinition;
@@ -101,7 +101,7 @@ EOT
         $output->writeln(['', 'Setting up application users...']);
 
         $em = $this->getContainer()->get('doctrine')->getEntityManager();
-        $repo = $em->getRepository('LibrinfoUserBundle:User');
+        $repo = $em->getRepository('LibrinfoEcommerceBundle:AdminUser');
 
         $warn = false;
         if (!$this->getContainer()->getParameter('libio.user.datafixtures'))
@@ -123,13 +123,15 @@ EOT
                 $output->writeln(' <info>exists</info>');
                 continue;
             }
-            $adminUser = new User();
-            $adminUser
-                ->setUsername($u['username'])
-                ->setPlainPassword($u['password'])
-                ->setEmail($u['email'])
-                ->setEnabled(true)
-                ->setSuperAdmin(empty($u['super']) ? false : true);
+            $adminUser = new AdminUser();
+            $adminUser->setUsername($u['email']);
+            $adminUser->setUsernameCanonical($u['email']);
+            $adminUser->setPlainPassword($u['password']);
+            $adminUser->setEmail($u['email']);
+            $adminUser->setEnabled(true);
+            $adminUser->addRole('ROLE_SUPER_ADMIN');
+            $adminUser->addRole('ROLE_ADMINISTRATION_ACCESS');
+            $adminUser->setLocaleCode('fr_FR');
             $em->persist($adminUser);
             $created = true;
             $output->writeln(' <info>added</info>');

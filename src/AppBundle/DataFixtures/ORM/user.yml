@@ -1,7 +1,7 @@
-Librinfo\UserBundle\Entity\User:
+Librinfo\EcommerceBundle\Entity\AdminUser:
     user:
         username: DataFixtures
         plainPassword: DataFixtures
         email: datafixture@example.com
-        enabled: false
-        superAdmin: false
+        locale_code: fr_FR
+        roles: [ROLE_ADMINISTRATION_ACCESS, ROLE_SUPER_ADMIN]

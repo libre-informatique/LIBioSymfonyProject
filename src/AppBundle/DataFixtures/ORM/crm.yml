@@ -103,4 +103,3 @@ Librinfo\CRMBundle\Entity\Position:
     pos_com_prod_2_{1..10}:
         organism: '@org_com_prod_<current()>'
         contact:  '@con_prod_3_<current()>'
-
