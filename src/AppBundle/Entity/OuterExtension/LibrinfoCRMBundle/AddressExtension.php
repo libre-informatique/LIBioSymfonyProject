@@ -8,11 +8,10 @@
  * file that was distributed with this source code.
  */
 
-namespace AppBundle\Entity\OuterExtension\LibrinfoEcommerceBundle;
+namespace AppBundle\Entity\OuterExtension\LibrinfoCRMBundle;
 
-/**
- * @author Roman SANCHEZ <romain.sanchez@libre-informatique.fr>
- */
-trait CustomerExtension
+trait AddressExtension
 {
+    use \Librinfo\EcommerceBundle\Entity\OuterExtension\LibrinfoCRMBundle\AddressExtension;
+    use \Librinfo\UserBundle\Entity\Traits\Traceable;
 }
