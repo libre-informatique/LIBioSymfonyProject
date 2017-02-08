@@ -20,6 +20,15 @@ sylius_channel:
             classes:
                 model: AppBundle\Entity\Channel
 
+sylius_theme:
+    sources:
+        filesystem:
+            enabled: true
+            filename: composer.json
+            directories:
+                - "%kernel.root_dir%/themes"
+    context: lisem.theme.context.channel_based       # theme context service id
+
 librinfo_ecommerce:
     code_generator:
         product_variant: AppBundle\CodeGenerator\ProductVariantCodeGenerator

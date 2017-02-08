@@ -90,6 +90,15 @@ services:
             - { name: sylius_fixtures.fixture }
 
 
+### SYLIUS THEMES ###
+
+    lisem.theme.context.channel_based:
+        class: AppBundle\Theme\ChannelBasedThemeContext
+        arguments:
+            - "@sylius.context.channel"
+            - "@sylius.repository.theme"
+
+
 #### FORMS ####
 
     app.form.extension.customer_profile:
