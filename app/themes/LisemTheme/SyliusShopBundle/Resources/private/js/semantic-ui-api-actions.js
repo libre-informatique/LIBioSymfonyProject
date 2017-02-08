@@ -13,7 +13,7 @@
     $.fn.api.settings.api = {
         'user check': '/sylius-shop/user-check',
         'login check': '/sylius-shop/login-check',
-        'cart': '/sylius-shop/cart1212',
+        'cart': '/sylius-shop/cart',
         'address book': '/sylius-shop/account/address-book?_format=json'
     };
 })(jQuery);
