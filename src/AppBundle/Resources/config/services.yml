@@ -34,6 +34,34 @@ services:
 
 ### SYLIUS FIXTURE FACTORIES ###
 
+    lisem.fixture.example_factory.family:
+        class: AppBundle\DataFixtures\Sylius\Factory\FamilyExampleFactory
+        arguments:
+            - "@doctrine.orm.entity_manager"
+
+    lisem.fixture.example_factory.genus:
+        class: AppBundle\DataFixtures\Sylius\Factory\GenusExampleFactory
+        arguments:
+            - "@doctrine.orm.entity_manager"
+
+    lisem.fixture.example_factory.species:
+        class: AppBundle\DataFixtures\Sylius\Factory\SpeciesExampleFactory
+        arguments:
+            - "@doctrine.orm.entity_manager"
+
+    lisem.fixture.example_factory.variety:
+        class: AppBundle\DataFixtures\Sylius\Factory\VarietyExampleFactory
+        arguments:
+            - "@doctrine.orm.entity_manager"
+
+    lisem.fixture.example_factory.seed_batch:
+        class: AppBundle\DataFixtures\Sylius\Factory\SeedBatchExampleFactory
+        arguments:
+            - "@doctrine.orm.entity_manager"
+            - "@librinfo_seed_batch.code_generator.seed_batch"
+            - "@librinfo_seed_batch.code_generator.seed_producer"
+            - "@librinfo_seed_batch.code_generator.plot"
+
     lisem.fixture.example_factory.product:
         class: AppBundle\DataFixtures\Sylius\Factory\ProductExampleFactory
         arguments:
@@ -52,6 +80,46 @@ services:
             - "@librinfo_ecommerce.code_generator.product_variant"
 
 ### SYLIUS FIXTURES ###
+
+    lisem.fixture.family:
+        class: AppBundle\DataFixtures\Sylius\FamilyFixture
+        arguments:
+            - "@doctrine.orm.entity_manager"
+            - "@lisem.fixture.example_factory.family"
+        tags:
+            - { name: sylius_fixtures.fixture }
+
+    lisem.fixture.genus:
+        class: AppBundle\DataFixtures\Sylius\GenusFixture
+        arguments:
+            - "@doctrine.orm.entity_manager"
+            - "@lisem.fixture.example_factory.genus"
+        tags:
+            - { name: sylius_fixtures.fixture }
+
+    lisem.fixture.species:
+        class: AppBundle\DataFixtures\Sylius\SpeciesFixture
+        arguments:
+            - "@doctrine.orm.entity_manager"
+            - "@lisem.fixture.example_factory.species"
+        tags:
+            - { name: sylius_fixtures.fixture }
+
+    lisem.fixture.variety:
+        class: AppBundle\DataFixtures\Sylius\VarietyFixture
+        arguments:
+            - "@doctrine.orm.entity_manager"
+            - "@lisem.fixture.example_factory.variety"
+        tags:
+            - { name: sylius_fixtures.fixture }
+
+    lisem.fixture.seed_batch:
+        class: AppBundle\DataFixtures\Sylius\SeedBatchFixture
+        arguments:
+            - "@doctrine.orm.entity_manager"
+            - "@lisem.fixture.example_factory.seed_batch"
+        tags:
+            - { name: sylius_fixtures.fixture }
 
     lisem.fixture.product:
         class: AppBundle\DataFixtures\Sylius\ProductFixture

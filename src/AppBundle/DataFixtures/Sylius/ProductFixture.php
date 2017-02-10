@@ -11,14 +11,14 @@
 
 namespace AppBundle\DataFixtures\Sylius;
 
-use Sylius\Bundle\CoreBundle\Fixture\AbstractResourceFixture;
+use Sylius\Bundle\CoreBundle\Fixture\AbstractResourceFixture as BaseAbstractFixture;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 
 /**
  * @author Kamil Kokot <kamil.kokot@lakion.com>
  * @author Marcos Bezerra de Menezes <marcos.bezerra@libre-informatique.fr>
  */
-final class ProductFixture extends AbstractResourceFixture
+final class ProductFixture extends BaseAbstractFixture
 {
     /**
      * {@inheritdoc}

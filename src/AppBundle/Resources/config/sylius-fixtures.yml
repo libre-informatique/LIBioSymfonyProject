@@ -16,6 +16,98 @@ sylius_fixtures:
 #                locale: ~
 #                currency: ~
 
+                family:
+                    options:
+                        custom:
+                            apiacees:
+                                name: Apiacées
+                                latin_name: Apiaceae
+                                alias: Ombellifères (Umbelliferae)
+                            solanacees:
+                                name: Solanacées
+                                latin_name: Solanaceae Juss.
+
+                genus:
+                    options:
+                        custom:
+                            coriandrum:
+                                name: coriandrum
+                                family: Apiacées
+                            daucus:
+                                name: daucus
+                                family: Apiacées
+                            solanum:
+                                name: solanum
+                                family: Solanacées
+                species:
+                    options:
+                        custom:
+                            coriandre:
+                                name: coriandre
+                                latin_name: coriandrum sativum
+                                alias: coriandre cultivée
+                                code: COR
+                                genus: coriandrum
+                            carotte:
+                                name: carotte
+                                latin_name: Daucus carota
+                                alias: faux chervis, gironille, pastenade, moulette, passenaille, patenaille
+                                code: CAC
+                                genus: daucus
+                            sub_carotte:
+                                name: carotte cultivée
+                                latin_name: Daucus carota subsp. sativus
+                                alias: faux chervis, gironille, pastenade, moulette, passenaille, patenaille
+                                code: CAR
+                                genus: daucus
+                                parent_species: carotte
+                            tomate:
+                                name: tomate
+                                latin_name: Solanum lycopersicum L.
+                                alias: pomme d'amour, pomme d'or
+                                code: TOM
+                                genus: solanum
+
+                variety:
+                    options:
+                        custom:
+                            coriandre:
+                                name: Coriandre
+                                latin_name: coriandrum sativum
+                                alias: coriandre cultivée
+                                code: COR
+                                species: coriandre
+                            carotte_nantaise:
+                                name: Carotte nantaise
+                                latin_name: Daucus carota subsp. sativus var sativus
+                                alias: carotte de l'Ouest
+                                code: OUE
+                                species: carotte cultivée
+                            carotte_est:
+                                name: Carotte de l'Est
+                                latin_name: Daucus carota subsp. sativus var atrorubens
+                                code: EST
+                                species: carotte cultivée
+                                description: >
+                                    Cette variété est le plus communément cultivée en Asie ;
+                                    elle se caractérise par des organes de réserve pourpres ou jaunes,
+                                    exceptionnellement jaunâtres ou jaune-orange et par des feuilles
+                                    vert glauque relativement peu découpées.
+                            tomate_st_pierre:
+                                name: Tomate Saint Pierre
+                                latin_name: Lycopersicum esculentum
+                                code: STP
+                                species: tomate
+                            tomate_merveille_marches:
+                                name: Tomate merveille des marchés
+                                latin_name: Lycopersicum esculentum
+                                code: MMA
+                                species: tomate
+
+                seed_batch:
+                    options:
+                        random: 30
+
                 geographical:
                     options:
                         countries:
@@ -37,6 +129,7 @@ sylius_fixtures:
                                 currencies:
                                     - "%currency%"
                                 enabled: true
+                                theme_name: vendor/lisem-theme
 
                 payment_method:
                     options:
