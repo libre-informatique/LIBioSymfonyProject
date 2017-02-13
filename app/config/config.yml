@@ -44,6 +44,7 @@ twig:
         - 'BlastCoreBundle:Admin/Form:fields.html.twig'
         - 'BlastUtilsBundle:Form:fields.html.twig'
         - 'BlastBaseEntitiesBundle:Form:fields.html.twig'
+        - 'LibrinfoCRMBundle:Form:fields.html.twig'
         - 'LibrinfoMediaBundle:Form:fields.html.twig'
         - 'LibrinfoVarietiesBundle:Form:fields.html.twig'
 
