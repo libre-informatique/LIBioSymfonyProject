@@ -119,7 +119,7 @@ EOT
         $created = false;
         foreach ($users as $u) {
             $output->write(sprintf('%s <%s>', $u['username'], $u['email']));
-            if (null !== $repo->findOneByUsername($u['username'])) {
+            if (null !== $repo->findOneByUsername($u['email'])) {
                 $output->writeln(' <info>exists</info>');
                 continue;
             }
