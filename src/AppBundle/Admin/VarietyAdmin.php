@@ -37,17 +37,6 @@ class VarietyAdmin extends BaseAdmin
     }
 
     /**
-     * @return array
-     */
-    public function getFormTheme()
-    {
-        return array_merge(
-            parent::getFormTheme(),
-            array('AppBundle:VarietyAdmin:form_admin_fields.html.twig')
-        );
-    }
-
-    /**
      * Configure routes for list actions
      *
      * @param RouteCollection $collection

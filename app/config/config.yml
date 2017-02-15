@@ -38,15 +38,14 @@ twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
     form_themes:
+        # TODO: move all these form themes to the bundles (not here !)
         - 'SonataCoreBundle:Form:datepicker.html.twig'
         - 'SonataCoreBundle:Form:colorpicker.html.twig'
-#        - 'bootstrap_3_layout.html.twig'  # is not used (?) and conflicts with Sylius forms
+#        - 'bootstrap_3_layout.html.twig'  # is not used (?) and conflicts with Sylius forms (?)
         - 'BlastCoreBundle:Admin/Form:fields.html.twig'
         - 'BlastUtilsBundle:Form:fields.html.twig'
         - 'BlastBaseEntitiesBundle:Form:fields.html.twig'
-        - 'LibrinfoCRMBundle:Form:fields.html.twig'
         - 'LibrinfoMediaBundle:Form:fields.html.twig'
-        - 'LibrinfoVarietiesBundle:Form:fields.html.twig'
 
 # Assetic Configuration
 assetic:
