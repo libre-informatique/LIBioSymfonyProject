@@ -56,6 +56,10 @@ librinfo_email_crm:
 librinfo_media:
     resource: "@LibrinfoMediaBundle/Resources/config/routing.yml"
     prefix:   /
+    
+librinfo_ecommerce:
+    resource: "@LibrinfoEcommerceBundle/Resources/config/routing.yml"
+    prefix:   /
 
 admin:
     resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
