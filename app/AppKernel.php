@@ -68,6 +68,7 @@ class AppKernel extends Kernel
 
             new Sparkling\VATBundle\SparklingVATBundle(),
             new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
+            new Blast\DoctrineSessionBundle\BlastDoctrineSessionBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test')))
