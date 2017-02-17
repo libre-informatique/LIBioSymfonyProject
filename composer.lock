@@ -227,15 +227,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/blast-project/doctrine-session-bundle.git",
-                "reference": "036a29139c2f0c363ded878820d850393ac81609"
+                "reference": "873a4e31e3e644db22a0958efab7fed62b36b394"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blast-project/doctrine-session-bundle/zipball/036a29139c2f0c363ded878820d850393ac81609",
-                "reference": "036a29139c2f0c363ded878820d850393ac81609",
+                "url": "https://api.github.com/repos/blast-project/doctrine-session-bundle/zipball/873a4e31e3e644db22a0958efab7fed62b36b394",
+                "reference": "873a4e31e3e644db22a0958efab7fed62b36b394",
                 "shasum": ""
             },
             "require": {
+                "blast-project/base-entities-bundle": "dev-master",
                 "php": "~5.5|~7.0",
                 "symfony/config": "~2.8|~3.0",
                 "symfony/dependency-injection": "~2.8|~3.0",
@@ -274,7 +275,7 @@
                 "libio",
                 "symfony"
             ],
-            "time": "2017-02-15 16:52:24"
+            "time": "2017-02-16 17:01:23"
         },
         {
             "name": "blast-project/outer-extension-bundle",
@@ -908,12 +909,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/DoctrineBundle.git",
-                "reference": "2fbd346b548e7142b773a5d1b98e74f0ac57192d"
+                "reference": "076fe5a95557f5ae461d60222af7efdecd1d0e45"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/2fbd346b548e7142b773a5d1b98e74f0ac57192d",
-                "reference": "2fbd346b548e7142b773a5d1b98e74f0ac57192d",
+                "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/076fe5a95557f5ae461d60222af7efdecd1d0e45",
+                "reference": "076fe5a95557f5ae461d60222af7efdecd1d0e45",
                 "shasum": ""
             },
             "require": {
@@ -981,7 +982,7 @@
                 "orm",
                 "persistence"
             ],
-            "time": "2017-02-15 16:13:20"
+            "time": "2017-02-15 17:00:00"
         },
         {
             "name": "doctrine/doctrine-cache-bundle",
@@ -1262,12 +1263,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/instantiator.git",
-                "reference": "68099b02b60bbf3b088ff5cb67bf506770ef9cac"
+                "reference": "5acd2bd8c2b600ad5cc4c9180ebf0a930604d6a5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/instantiator/zipball/68099b02b60bbf3b088ff5cb67bf506770ef9cac",
-                "reference": "68099b02b60bbf3b088ff5cb67bf506770ef9cac",
+                "url": "https://api.github.com/repos/doctrine/instantiator/zipball/5acd2bd8c2b600ad5cc4c9180ebf0a930604d6a5",
+                "reference": "5acd2bd8c2b600ad5cc4c9180ebf0a930604d6a5",
                 "shasum": ""
             },
             "require": {
@@ -1308,7 +1309,7 @@
                 "constructor",
                 "instantiate"
             ],
-            "time": "2017-01-23 09:23:06"
+            "time": "2017-02-16 16:15:51"
         },
         {
             "name": "doctrine/lexer",
@@ -3453,12 +3454,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/SymfonyLibrinfoCRMBundle.git",
-                "reference": "0908b0bfc35cfc8e8733dc87f1ad451d4f81ec39"
+                "reference": "7a354380d43fab036f09c9a0fedb7d3f92af75d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/SymfonyLibrinfoCRMBundle/zipball/0908b0bfc35cfc8e8733dc87f1ad451d4f81ec39",
-                "reference": "0908b0bfc35cfc8e8733dc87f1ad451d4f81ec39",
+                "url": "https://api.github.com/repos/libre-informatique/SymfonyLibrinfoCRMBundle/zipball/7a354380d43fab036f09c9a0fedb7d3f92af75d4",
+                "reference": "7a354380d43fab036f09c9a0fedb7d3f92af75d4",
                 "shasum": ""
             },
             "require": {
@@ -3499,7 +3500,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-02-15 11:14:25"
+            "time": "2017-02-16 14:16:17"
         },
         {
             "name": "libre-informatique/decorator-bundle",
@@ -3560,12 +3561,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/SymfonyLibrinfoEcommerceBundle.git",
-                "reference": "69d3966480e2920e0fe68710d26dbf4bf3359409"
+                "reference": "8f195c364928d1827af5afda9ce9d584645b50e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/SymfonyLibrinfoEcommerceBundle/zipball/69d3966480e2920e0fe68710d26dbf4bf3359409",
-                "reference": "69d3966480e2920e0fe68710d26dbf4bf3359409",
+                "url": "https://api.github.com/repos/libre-informatique/SymfonyLibrinfoEcommerceBundle/zipball/8f195c364928d1827af5afda9ce9d584645b50e2",
+                "reference": "8f195c364928d1827af5afda9ce9d584645b50e2",
                 "shasum": ""
             },
             "require": {
@@ -3605,7 +3606,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-02-15 11:18:14"
+            "time": "2017-02-16 14:17:22"
         },
         {
             "name": "libre-informatique/email-bundle",
@@ -4187,12 +4188,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/padraic/mockery.git",
-                "reference": "0653a4f0c50149e7b89e9978f04c941de82c7549"
+                "reference": "e20e6dc435a9ef68fcf566dad8b232f170a1e3c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/padraic/mockery/zipball/0653a4f0c50149e7b89e9978f04c941de82c7549",
-                "reference": "0653a4f0c50149e7b89e9978f04c941de82c7549",
+                "url": "https://api.github.com/repos/padraic/mockery/zipball/e20e6dc435a9ef68fcf566dad8b232f170a1e3c1",
+                "reference": "e20e6dc435a9ef68fcf566dad8b232f170a1e3c1",
                 "shasum": ""
             },
             "require": {
@@ -4244,7 +4245,7 @@
                 "test double",
                 "testing"
             ],
-            "time": "2017-02-14 17:09:25"
+            "time": "2017-02-16 08:49:25"
         },
         {
             "name": "monolog/monolog",
@@ -7762,12 +7763,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "03194300ed06fcb2c7e3693f0c195143176bdac8"
+                "reference": "f53672f82be819882b8d9d784dceb7ac2c9db692"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/03194300ed06fcb2c7e3693f0c195143176bdac8",
-                "reference": "03194300ed06fcb2c7e3693f0c195143176bdac8",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/f53672f82be819882b8d9d784dceb7ac2c9db692",
+                "reference": "f53672f82be819882b8d9d784dceb7ac2c9db692",
                 "shasum": ""
             },
             "require": {
@@ -7890,7 +7891,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2017-02-14 16:24:56"
+            "time": "2017-02-16 22:43:37"
         },
         {
             "name": "trappar/alice-generator",
@@ -8170,12 +8171,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/whiteoctober/WhiteOctoberPagerfantaBundle.git",
-                "reference": "fc0eac740b90059dd18f8c78bdd2756dca7cb783"
+                "reference": "8b21c730392992f41c5d613f1a5edb57b99ad53a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/whiteoctober/WhiteOctoberPagerfantaBundle/zipball/fc0eac740b90059dd18f8c78bdd2756dca7cb783",
-                "reference": "fc0eac740b90059dd18f8c78bdd2756dca7cb783",
+                "url": "https://api.github.com/repos/whiteoctober/WhiteOctoberPagerfantaBundle/zipball/8b21c730392992f41c5d613f1a5edb57b99ad53a",
+                "reference": "8b21c730392992f41c5d613f1a5edb57b99ad53a",
                 "shasum": ""
             },
             "require": {
@@ -8214,7 +8215,7 @@
                 "page",
                 "paging"
             ],
-            "time": "2017-02-14 09:51:03"
+            "time": "2017-02-16 16:45:55"
         },
         {
             "name": "willdurand/hateoas",
