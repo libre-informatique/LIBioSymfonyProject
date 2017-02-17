@@ -30,4 +30,3 @@ swiftmailer:
             password:  "%mailer_password%"
             spool: { type: db }
             delivery_addresses: ['jardinenvie@lisem.eu']
-
