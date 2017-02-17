@@ -87,33 +87,55 @@ class AppKernel extends Kernel
 
     public function registerContainerConfiguration(LoaderInterface $loader)
     {
-        $loader->load($this->getRootDir() . '/config/config_' . $this->getEnvironment() . '.yml');
+        $loader->load(sprintf(
+            '%s/config/config_%s.yml',
+            $this->getRootDir(),
+            $this->getEnvironment()
+        ));
     }
 
     public function getCacheDir()
     {
-        $yaml = Yaml::parse(file_get_contents($this->getRootDir().'/config/parameters.yml'));
+        $yaml = Yaml::parse(file_get_contents(sprintf('%s/config/parameters.yml', $this->getRootDir())));
 
         if( isset($yaml['parameters']['cache_dir']) )
-            return $yaml['parameters']['cache_dir'] . '/' . $this->getInstance() . '/cache/' . $this->environment;
+            return sprintf(
+                '%s/%s/cache/%s',
+                $yaml['parameters']['cache_dir'],
+                $this->getInstance(),
+                $this->environment
+            );
 
-        return $this->rootDir . '/cache/'. $this->environment;
+        return sprintf(
+            '%s/cache/%s',
+            $this->rootDir,
+            $this->environment
+        );
     }
 
     public function getLogDir()
     {
-        $yaml = Yaml::parse(file_get_contents($this->getRootDir().'/config/parameters.yml'));
+        $yaml = Yaml::parse(file_get_contents(sprintf('%s/config/parameters.yml', $this->getRootDir())));
 
         if( isset($yaml['parameters']['logs_dir']) )
-            return $yaml['parameters']['logs_dir'] . '/' . $this->getInstance() . '/logs';
+            return sprintf(
+                '%s/%s/logs',
+                $yaml['parameters']['logs_dir'],
+                $this->getInstance()
+            );
 
-        return $this->rootDir . '/logs';
+        return sprintf('%s/logs', $this->rootDir); 
     }
 
     private function getInstance()
     {
         $parts = explode('/', dirname(__DIR__));
-
-        return $parts[count($parts) - 1];
+        
+        return sprintf(
+            '%s-%s',
+            $parts[count($parts) - 1],
+            md5(dirname(__DIR__))
+        );
     }
+    
 }
