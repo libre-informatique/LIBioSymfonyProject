@@ -1,4 +1,4 @@
-*#!/bin/bash
+#!/bin/bash
 
 LINE=1
 TMP=1;
