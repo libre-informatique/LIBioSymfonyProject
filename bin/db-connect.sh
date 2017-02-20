@@ -8,22 +8,22 @@ TMP=1;
 # user
 echo $PGUSER;
 [ -z "$PGUSER" ] && \
-export PGUSER=`grep database_user app/config/parameters.yml | grep -v '^#' | sed "s/\s*database_user:[^a-Z]*\(\w*\)$/\1/g" | head -n$LINE | tail -n1`
+export PGUSER=`grep database_user app/config/parameters.yml | grep -v '^#' | sed "s/\s*database_user:\s\s*['\"]\{0,1\}\(\w*\)['\"]\{0,1\}$/\1/g" | head -n$LINE | tail -n1`
 
 # passwd
 [ -z "$PGPASSWORD" ] && \
-export PGPASSWORD=`grep database_password app/config/parameters.yml | grep -v '^#' | sed "s/\s*database_password:[^a-Z^0-9]*\(.*\)$/\1/g" | head -n$LINE | tail -n1`
+export PGPASSWORD=`grep database_password app/config/parameters.yml | grep -v '^#' | sed "s/\s*database_password:\s\s*['\"]\{0,1\}\([^'^\"]*\)['\"]\{0,1\}$/\1/g" | head -n$LINE | tail -n1`
 
 # host
 [ -z "$PGHOST" ] && \
-export PGHOST=`grep database_host app/config/parameters.yml | grep -v '^#' | sed "s/\s*database_host:[^a-Z^0-9]*\(.*\)$/\1/g" | head -n$LINE | tail -n1`
+export PGHOST=`grep database_host app/config/parameters.yml | grep -v '^#' | sed "s/\s*database_host:\s\s*['\"]\{0,1\}\([^'^\"]*\)['\"]\{0,1\}$/\1/g" | head -n$LINE | tail -n1`
 
 # db
 [ -z "$PGDATABASE" ] && \
-export PGDATABASE=`grep database_name app/config/parameters.yml | grep -v '^#' | sed "s/\s*database_name:[^a-Z^0-9]*\(.*\)$/\1/g" | head -n$LINE | tail -n1`
+export PGDATABASE=`grep database_name app/config/parameters.yml | grep -v '^#' | sed "s/\s*database_name:\s\s*['\"]\{0,1\}\([^'^\"]*\)['\"]\{0,1\}$/\1/g" | head -n$LINE | tail -n1`
 
 # host & db
-#CONN=`grep dsn app/config/parameters.yml | grep -v '^#' | sed "s/\s*dsn:\s*'\(.*\):host=\(.*\);dbname=\(\w*\).*/\1:\2:\3/g" | head -n$LINE | tail -n1`
+#CONN=`grep dsn app/config/parameters.yml | grep -v '^#' | sed "s/\s*dsn:\s\s*'\(.*\):host=\(.*\);dbname=\(\w*\).*/\1:\2:\3/g" | head -n$LINE | tail -n1`
 #if [ "`echo $CONN | cut -d : -f 1`" = 'pgsql' ]; then
 #  CMD=psql
 #fi
@@ -33,7 +33,6 @@ export PGDATABASE=`grep database_name app/config/parameters.yml | grep -v '^#' |
 
 # db
 #export PGDATABASE=`echo $CONN | cut -d : -f 3`
-echo "$PGPASSWORD"
 echo "+------------------------------------------------+"
 echo "| Host    : $PGHOST"
 echo "| Database: $PGDATABASE"
