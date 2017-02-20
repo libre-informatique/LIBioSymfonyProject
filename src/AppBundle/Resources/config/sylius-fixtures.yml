@@ -139,12 +139,12 @@ sylius_fixtures:
                                 code: "cash_on_delivery"
                                 name: "Envoi contre remboursement"
                                 channels:
-                                    - "US_WEB"
+                                    - "default"
                             bank_transfer:
                                 code: "bank_transfer"
                                 name: "Virement bancaire"
                                 channels:
-                                    - "US_WEB"
+                                    - "default"
                                 enabled: true
 
                 shipping_method:
@@ -155,17 +155,17 @@ sylius_fixtures:
                                 name: "UPS"
                                 enabled: true
                                 channels:
-                                    - "US_WEB"
+                                    - "default"
                             dhl_express:
                                 code: "dhl_express"
                                 name: "DHL Express"
                                 channels:
-                                    - "US_WEB"
+                                    - "default"
                             fedex:
                                 code: "fedex"
                                 name: "FedEx"
                                 channels:
-                                    - "US_WEB"
+                                    - "default"
 
                 tax_category:
                     options:
