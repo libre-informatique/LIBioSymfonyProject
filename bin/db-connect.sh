@@ -1,4 +1,4 @@
-#!/bin/bash
+*#!/bin/bash
 
 LINE=1
 TMP=1;
@@ -22,17 +22,6 @@ export PGHOST=`grep database_host app/config/parameters.yml | grep -v '^#' | sed
 [ -z "$PGDATABASE" ] && \
 export PGDATABASE=`grep database_name app/config/parameters.yml | grep -v '^#' | sed "s/\s*database_name:\s\s*['\"]\{0,1\}\([^'^\"]*\)['\"]\{0,1\}$/\1/g" | head -n$LINE | tail -n1`
 
-# host & db
-#CONN=`grep dsn app/config/parameters.yml | grep -v '^#' | sed "s/\s*dsn:\s\s*'\(.*\):host=\(.*\);dbname=\(\w*\).*/\1:\2:\3/g" | head -n$LINE | tail -n1`
-#if [ "`echo $CONN | cut -d : -f 1`" = 'pgsql' ]; then
-#  CMD=psql
-#fi
-
-# host
-#export PGHOST=`echo $CONN | cut -d : -f 2`
-
-# db
-#export PGDATABASE=`echo $CONN | cut -d : -f 3`
 echo "+------------------------------------------------+"
 echo "| Host    : $PGHOST"
 echo "| Database: $PGDATABASE"
