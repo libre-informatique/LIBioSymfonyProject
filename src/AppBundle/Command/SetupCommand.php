@@ -67,6 +67,7 @@ EOT
             $this->setupProductOptions($output);
             $this->setupSampleData($output);
             $this->setupCities($output);
+            $this->setupAssets($output);
         }
         else {
             $this->setupSylius($output);
@@ -74,6 +75,7 @@ EOT
             $this->setupCircles($output);
             $this->setupProductOptions($output);
             $this->setupCities($output);
+            $this->setupAssets($output);
         }
 
     }
@@ -88,6 +90,7 @@ EOT
         $output->writeln(['', 'Running <info>sylius:install:setup --no-interaction</info> command...']);
         $command = $this->getApplication()->find('sylius:install:setup');
         $commandInput = new ArrayInput(['--no-interaction' => true]);
+        
         return $command->run($commandInput, $output);
     }
 
@@ -347,5 +350,27 @@ EOT
         $fixturesInput->setInteractive(false);
         $fixturesCommand->run($fixturesInput, $output);
         $output->writeln('<info>done.</info>');
+    }
+    
+    /**
+     * @param OutputInterface $output
+     */
+    protected function setupAssets(OutputInterface $output)
+    {
+        $output->writeln(['', 'Running <info>sylius:theme:assets:install --symlink</info> command...']);
+        $themeCommand = $this->getApplication()->find('sylius:theme:assets:install');
+        $themeInput = new ArrayInput([
+            '--symlink' => true,
+        ]);
+        $themeCommand->setInteractive(false);
+        $themeCommand->run($themeInput, $output);
+        
+        $output->writeln(['', 'Running <info>assets:install --symlink</info> command...']);
+        $asseticCommand = $this->getApplication()->find('assets:install');
+        $asseticInput = new ArrayInput([
+            '--symlink' => true,
+        ]);
+        $asseticInput->setInteractive(false);
+        $asseticCommand->run($asseticInput, $output);
     }
 }
