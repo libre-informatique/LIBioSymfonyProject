@@ -21,10 +21,16 @@ parameters:
 ###########
 #  ALL
 ###########
-        all:
+        Blast\CoreBundle\Admin\CoreAdmin:
             Sonata\AdminBundle\Datagrid\ListMapper:
-                remove:
-                    _actions: [delete]
+                add:
+                    _action:
+                        type: actions
+                        actions:
+                            show: ~
+                            edit: ~
+                            duplicate:
+                                template: BlastCoreBundle:CRUD:list__action_duplicate.html.twig
 
 ############
 # VARIETY
