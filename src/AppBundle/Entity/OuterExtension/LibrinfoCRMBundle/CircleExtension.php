@@ -10,8 +10,35 @@
 
 namespace AppBundle\Entity\OuterExtension\LibrinfoCRMBundle;
 
+use Librinfo\UserBundle\Entity\Traits\Traceable;
+use Librinfo\UserBundle\Entity\Traits\Ownable;
+use Librinfo\UserBundle\Entity\OuterExtension\HasUsers;
+
 trait CircleExtension
 {
-    use \Librinfo\UserBundle\Entity\Traits\Traceable;
-    use \Librinfo\UserBundle\Entity\Traits\Ownable;
+    use Traceable,
+        Ownable,
+        HasUsers;
+    
+    /**
+     * @param UserInterface $user
+     * @return boolean
+     */
+    public function isAccessibleBy(UserInterface $user)
+    {
+        // no owner and no users : everybody has access to the circle
+        if ( !$this->getOwner() && $this->getUsers()->isEmpty() )
+            return true;
+
+        // current user is the circle owner
+        if ( $this->getOwner() && $user->getId() === $this->getOwner()->getId() )
+            return true;
+
+        // current user belongs to the circle users
+        foreach ( $this->getUsers() as $u)
+        if ( $user->getId() === $u->getId() )
+            return true;
+
+        return false;
+    }
 }
