@@ -362,7 +362,6 @@ EOT
         $themeInput = new ArrayInput([
             '--symlink' => true,
         ]);
-        $themeCommand->setInteractive(false);
         $themeCommand->run($themeInput, $output);
         
         $output->writeln(['', 'Running <info>assets:install --symlink</info> command...']);
