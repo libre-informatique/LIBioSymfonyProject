@@ -47,7 +47,7 @@ final class SeedBatchExampleFactory extends ExampleFactory implements ExampleFac
     /**
      * @var SeedProducerCodeGenerator
      */
-    protected $seedProducerGenerator;
+    protected $seedProducerCodeGenerator;
 
     /**
      * @var PlotCodeGenerator
@@ -62,12 +62,12 @@ final class SeedBatchExampleFactory extends ExampleFactory implements ExampleFac
     public function __construct(
         EntityManager $entityManager,
         SeedBatchCodeGenerator $seedBatchCodeGenerator,
-        SeedProducerCodeGenerator $seedProducerGenerator,
+        SeedProducerCodeGenerator $seedProducerCodeGenerator,
         PlotCodeGenerator $plotCodeGenerator
     ) {
         $this->entityManager = $entityManager;
         $this->seedBatchCodeGenerator = $seedBatchCodeGenerator;
-        $this->seedProducerGenerator = $seedProducerGenerator;
+        $this->seedProducerCodeGenerator = $seedProducerCodeGenerator;
         $this->plotCodeGenerator = $plotCodeGenerator;
         $this->faker = \Faker\Factory::create();
         $varietyRepository = $entityManager->getRepository('LibrinfoVarietiesBundle:Variety');
@@ -149,9 +149,9 @@ final class SeedBatchExampleFactory extends ExampleFactory implements ExampleFac
         $producer = new Organism();
         $producer->setName($this->faker->company)
             ->setSeedProducer(true)
-            ->setSeedProducerCode($this->faker->uuid) // TODO
             ->setEmail($email = $this->faker->email)
             ->setEmailCanonical($email);
+        $producer->setSeedProducerCode($this->seedProducerCodeGenerator->generate($producer));
         $this->entityManager->persist($producer);
         return $producer;
     }
