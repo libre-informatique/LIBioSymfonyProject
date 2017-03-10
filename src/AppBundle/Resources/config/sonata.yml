@@ -6,6 +6,7 @@ sonata_block:
 #        sonata.admin.block.menu:
 
 sonata_admin:
+    show_mosaic_button: false
     dashboard:
         groups:
             Customers Relationship Management:
