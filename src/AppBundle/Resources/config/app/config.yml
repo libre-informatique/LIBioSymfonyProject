@@ -32,3 +32,13 @@ sylius_theme:
 librinfo_ecommerce:
     code_generator:
         product_variant: AppBundle\CodeGenerator\ProductVariantCodeGenerator
+
+payum:
+    gateways:
+        paybox:
+            factory: paybox
+            site: 1999888
+            rang: 32
+            identifiant: 3
+            hmac: 0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF
+            sandbox: true

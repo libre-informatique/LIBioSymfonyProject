@@ -124,18 +124,18 @@ class AppKernel extends Kernel
                 $this->getInstance()
             );
 
-        return sprintf('%s/logs', $this->rootDir); 
+        return sprintf('%s/logs', $this->rootDir);
     }
 
     private function getInstance()
     {
         $parts = explode('/', dirname(__DIR__));
-        
+
         return sprintf(
             '%s-%s',
             $parts[count($parts) - 1],
             md5(dirname(__DIR__))
         );
     }
-    
+
 }
