@@ -10,9 +10,10 @@
 
 namespace AppBundle\Entity\OuterExtension\LibrinfoCRMBundle;
 
-use \Librinfo\SonataSyliusUserBundle\Entity\Traits\Traceable;
+use Librinfo\SonataSyliusUserBundle\Entity\Traits\Traceable;
 use Librinfo\SonataSyliusUserBundle\Entity\Traits\Ownable;
-use Librinfo\SonataSyliusUserBundle\Entity\OuterExtension\HasUsers;
+use Librinfo\SonataSyliusUserBundle\Entity\Traits\OuterExtension\HasUsers;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 trait CircleExtension
 {
