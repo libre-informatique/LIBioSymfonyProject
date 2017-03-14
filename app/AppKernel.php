@@ -35,7 +35,6 @@ class AppKernel extends Kernel
 
 //            new winzou\Bundle\StateMachineBundle\winzouStateMachineBundle(), provided by Sylius
 
-            new FOS\UserBundle\FOSUserBundle(),
 //            new FOS\RestBundle\FOSRestBundle(),
 
             new JeroenDesloovere\Bundle\VCardBundle\JeroenDesloovereVCardBundle(),
@@ -43,7 +42,6 @@ class AppKernel extends Kernel
             new Sonata\CoreBundle\SonataCoreBundle(),
             new Sonata\AdminBundle\SonataAdminBundle(),
             new Sonata\BlockBundle\SonataBlockBundle(),
-            new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
 //            new Sonata\IntlBundle\SonataIntlBundle(), provided by Sylius
 
@@ -57,7 +55,7 @@ class AppKernel extends Kernel
             new Librinfo\UIBundle\LibrinfoUIBundle(),
             new Librinfo\SecurityBundle\LibrinfoSecurityBundle(),
             new Librinfo\CRMBundle\LibrinfoCRMBundle(),
-            new Librinfo\UserBundle\LibrinfoUserBundle(),
+            new Librinfo\SonataSyliusUserBundle\SonataSyliusUserBundle(),
             new Librinfo\VarietiesBundle\LibrinfoVarietiesBundle(),
             new Librinfo\SeedBatchBundle\LibrinfoSeedBatchBundle(),
             new Librinfo\EmailBundle\LibrinfoEmailBundle(),
