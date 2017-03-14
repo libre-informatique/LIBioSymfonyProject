@@ -28,8 +28,10 @@ framework:
     translator: { fallback: %locale% }
     trusted_hosts:   ~
     trusted_proxies: ~
-    session:
-        handler_id: blast_doctrine_handler
+    session: ~
+# Temporarily disabled until blast_doctrine_handler is fixed:
+#    session:
+#        handler_id: blast_doctrine_handler
     fragments:       ~
     http_method_override: true
 
