@@ -110,7 +110,10 @@ sonata_admin:
 #                    - crm.role
 #                    - crm.contactgroup
 #                    - librinfo_varieties.admin.variety_description
-    security:
-        handler: librinfo.security_bundle.sonata.voter
+
+    # Not used any more
+#    security:
+#        handler: librinfo.security_bundle.sonata.voter
+
     options:
         use_icheck: true
