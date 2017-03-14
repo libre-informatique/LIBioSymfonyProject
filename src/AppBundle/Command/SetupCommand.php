@@ -12,7 +12,7 @@ namespace AppBundle\Command;
 
 use Doctrine\Common\DataFixtures\Purger\ORMPurger;
 use Librinfo\EcommerceBundle\Entity\Product;
-use Librinfo\EcommerceBundle\Entity\AdminUser;
+use Librinfo\SonataSyliusUserBundle\Entity\SonataUser;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Input\InputDefinition;
@@ -22,7 +22,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\ConfirmationQuestion;
 
 /**
- * Initializes the database for Libio project
+ * Initializes the database for LiSem project
  *
  * @author Marcos Bezerra de Menezes <marcos.bezerra@libre-informatique.fr>
  */
@@ -31,14 +31,14 @@ class SetupCommand extends ContainerAwareCommand
     protected function configure()
     {
         $this
-            ->setName('libio:install:setup')
-            ->setDescription('Libio configuration setup.')
+            ->setName('lisem:install:setup')
+            ->setDescription('LiSem configuration setup.')
             ->setDefinition(
                 new InputDefinition([
                     new InputOption('with-samples', null, InputOption::VALUE_NONE, 'Load sample data fixture'),
                 ]))
             ->setHelp(<<<EOT
-The <info>%command.name%</info> command allows user to configure basic Libio application data.
+The <info>%command.name%</info> command allows user to configure basic LiSem application data.
 EOT
             )
         ;
@@ -87,10 +87,10 @@ EOT
      */
     protected function setupSylius(OutputInterface $output)
     {
-        $output->writeln(['', 'Running <info>sylius:install:setup --no-interaction</info> command...']);
-        $command = $this->getApplication()->find('sylius:install:setup');
+        $output->writeln(['', 'Running <info>lisem:sylius:setup --no-interaction</info> command...']);
+        $command = $this->getApplication()->find('lisem:sylius:setup');
         $commandInput = new ArrayInput(['--no-interaction' => true]);
-        
+
         return $command->run($commandInput, $output);
     }
 
@@ -104,15 +104,15 @@ EOT
         $output->writeln(['', 'Setting up application users...']);
 
         $em = $this->getContainer()->get('doctrine')->getEntityManager();
-        $repo = $em->getRepository('LibrinfoEcommerceBundle:AdminUser');
+        $repo = $em->getRepository('SonataSyliusUserBundle:SonataUser');
 
         $warn = false;
-        if (!$this->getContainer()->getParameter('libio.user.datafixtures'))
-            $warn = 'Parameter libio.user.datafixtures is not defined.';
+        if (!$this->getContainer()->getParameter('lisem.user.datafixtures'))
+            $warn = 'Parameter lisem.user.datafixtures is not defined.';
         else {
-            $users = $this->getContainer()->getParameter('libio.user.datafixtures');
+            $users = $this->getContainer()->getParameter('lisem.user.datafixtures');
             if (empty($users))
-                $warn = 'Parameter libio.user.datafixtures is empty.';
+                $warn = 'Parameter lisem.user.datafixtures is empty.';
         }
         if ($warn) {
             $output->writeln(['<comment>', $warn, 'See app/config/parameters.yml.dist for an example.', '</comment>']);
@@ -126,16 +126,16 @@ EOT
                 $output->writeln(' <info>exists</info>');
                 continue;
             }
-            $adminUser = new AdminUser();
-            $adminUser->setUsername($u['email']);
-            $adminUser->setUsernameCanonical($u['email']);
-            $adminUser->setPlainPassword($u['password']);
-            $adminUser->setEmail($u['email']);
-            $adminUser->setEnabled(true);
-            $adminUser->addRole('ROLE_SUPER_ADMIN');
-            $adminUser->addRole('ROLE_ADMINISTRATION_ACCESS');
-            $adminUser->setLocaleCode('fr_FR');
-            $em->persist($adminUser);
+            $sonataUser = new SonataUser();
+            $sonataUser->setUsername($u['email']);
+            $sonataUser->setUsernameCanonical($u['email']);
+            $sonataUser->setPlainPassword($u['password']);
+            $sonataUser->setEmail($u['email']);
+            $sonataUser->setEnabled(true);
+            $sonataUser->addRole('ROLE_SUPER_ADMIN');
+            $sonataUser->addRole('ROLE_ADMINISTRATION_ACCESS');
+            $sonataUser->setLocaleCode('fr_FR');
+            $em->persist($sonataUser);
             $created = true;
             $output->writeln(' <info>added</info>');
         }
@@ -351,7 +351,7 @@ EOT
         $fixturesCommand->run($fixturesInput, $output);
         $output->writeln('<info>done.</info>');
     }
-    
+
     /**
      * @param OutputInterface $output
      */
@@ -363,7 +363,7 @@ EOT
             '--symlink' => true,
         ]);
         $themeCommand->run($themeInput, $output);
-        
+
         $output->writeln(['', 'Running <info>assets:install --symlink</info> command...']);
         $asseticCommand = $this->getApplication()->find('assets:install');
         $asseticInput = new ArrayInput([

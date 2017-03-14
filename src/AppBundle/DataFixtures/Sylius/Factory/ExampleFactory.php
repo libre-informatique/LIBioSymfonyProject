@@ -35,9 +35,9 @@ class ExampleFactory
 
     protected function setCreator($object, $userName = 'DataFixtures')
     {
-        $repository = $this->entityManager->getRepository('LibrinfoEcommerceBundle:AdminUser');
+        $repository = $this->entityManager->getRepository('SonataSyliusUserBundle:SonataUser');
         $user = $repository->findOneByUsername($userName);
-        Assert::notNull($user, sprintf('Could not find AdminUser with user name "%s"', $userName));
+        Assert::notNull($user, sprintf('Could not find SonataUser with user name "%s"', $userName));
         $object->setCreatedBy($user);
         $object->setUpdatedBy($user);
     }

@@ -1,4 +1,4 @@
-Librinfo\EcommerceBundle\Entity\AdminUser:
+Librinfo\SonataSyliusUserBundle\Entity\SonataUser:
     user:
         username: DataFixtures
         plainPassword: DataFixtures

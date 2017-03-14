@@ -23,7 +23,7 @@ parameters:
     #logs_dir: /bar # the logs will end up in /bar/{name-of-this-instance}/cache/{environment}
 
     # Default Users
-    libio.user.datafixtures:
+    lisem.user.datafixtures:
         libio:
             username: libio
             password: libio
