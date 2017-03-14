@@ -143,6 +143,7 @@ stof_doctrine_extensions:
         default:
             tree: true
             sluggable: true
+            timestampable: true
 
 # JMS serializer
 jms_serializer:

@@ -9,17 +9,18 @@ libio_not_implemented:
 blast_core:
     resource: "@BlastCoreBundle/Resources/config/routing.yml"
     prefix:   /
-    
+
 blast_utils:
     resource: "@BlastUtilsBundle/Resources/config/routing.yml"
-    
+
 blast_base_entities:
     resource: "@BlastBaseEntitiesBundle/Resources/config/routing.yml"
     prefix:   /
 
-librinfo_security:
-    resource: "@LibrinfoSecurityBundle/Resources/config/routing.yml"
-    prefix:   /
+# not used any more
+#librinfo_security:
+#    resource: "@LibrinfoSecurityBundle/Resources/config/routing.yml"
+#    prefix:   /
 
 librinfo_ui:
     resource: "@LibrinfoUIBundle/Resources/config/routing.yml"
@@ -29,9 +30,10 @@ librinfo_decorator:
     resource: "@LibrinfoDecoratorBundle/Resources/config/routing.yml"
     prefix:   /
 
-librinfo_user:
-    resource: "@LibrinfoUserBundle/Resources/config/routing.yml"
-    prefix:   /
+# not used any more
+#librinfo_user:
+#    resource: "@LibrinfoUserBundle/Resources/config/routing.yml"
+#    prefix:   /
 
 librinfo_varieties:
     resource: "@LibrinfoVarietiesBundle/Resources/config/routing.yml"
@@ -56,7 +58,7 @@ librinfo_email_crm:
 librinfo_media:
     resource: "@LibrinfoMediaBundle/Resources/config/routing.yml"
     prefix:   /
-    
+
 librinfo_ecommerce:
     resource: "@LibrinfoEcommerceBundle/Resources/config/routing.yml"
     prefix:   /
@@ -68,4 +70,10 @@ admin:
 _sonata_admin:
     resource: .
     type: sonata_admin
+    prefix: /
+
+# Security routing for SyliusUserBundle
+# (defines login, logout and login_check routes)
+sonata_sylius_user_security:
+    resource: "@SonataSyliusUserBundle/Resources/config/routing/security.yml"
     prefix: /
