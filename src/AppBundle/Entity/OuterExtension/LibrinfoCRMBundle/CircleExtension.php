@@ -11,8 +11,8 @@
 namespace AppBundle\Entity\OuterExtension\LibrinfoCRMBundle;
 
 use \Librinfo\SonataSyliusUserBundle\Entity\Traits\Traceable;
-use Librinfo\UserBundle\Entity\Traits\Ownable;
-use Librinfo\UserBundle\Entity\OuterExtension\HasUsers;
+use Librinfo\SonataSyliusUserBundle\Entity\Traits\Ownable;
+use Librinfo\SonataSyliusUserBundle\Entity\OuterExtension\HasUsers;
 
 trait CircleExtension
 {

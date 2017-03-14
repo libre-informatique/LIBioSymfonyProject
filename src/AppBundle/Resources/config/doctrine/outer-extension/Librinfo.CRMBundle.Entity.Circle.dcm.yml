@@ -3,4 +3,4 @@ Librinfo\CRMBundle\Entity\Circle:
 
     manyToMany:
         users:
-            targetEntity: Librinfo\UserBundle\Entity\User
+            targetEntity: Librinfo\SonataSyliusUserBundle\Entity\User
