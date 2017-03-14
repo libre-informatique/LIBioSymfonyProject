@@ -6,9 +6,10 @@ security:
         Sylius\Component\User\Model\UserInterface: sha512
 
     providers:
-        # Sonata providers
-        fos_userbundle:
-            id: fos_user.user_provider.username_email
+        # Sonata providers # not used any more
+#        fos_userbundle:
+#            id: fos_user.user_provider.username_email
+
         # Sylius providers
         sylius_admin_user_provider:
             id: sylius.admin_user_provider.email_or_name_based
@@ -93,10 +94,10 @@ security:
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY } # allow login for anonymous users
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY } # allow resetting password for anonymous users
 #        - { path: ^/, roles: IS_AUTHENTICATED_REMEMBERED } # filter entire application
-        
+
         # EmailBundle tracking
         - { path: ^/tracking, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        
+
         # Sylius access control
         - { path: ^/sylius-shop/login.*, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/sylius-shop/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
