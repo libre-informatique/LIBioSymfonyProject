@@ -12,5 +12,5 @@ namespace AppBundle\Entity\OuterExtension\LibrinfoVarietiesBundle;
 
 trait FamilyExtension
 {
-    use \Librinfo\UserBundle\Entity\Traits\Traceable;
+    use \Librinfo\SonataSyliusUserBundle\Entity\Traits\Traceable;
 }

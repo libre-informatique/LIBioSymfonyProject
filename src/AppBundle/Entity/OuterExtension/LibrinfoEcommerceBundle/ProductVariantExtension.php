@@ -20,7 +20,7 @@ use Librinfo\EcommerceBundle\Entity\Product;
 trait ProductVariantExtension
 {
     // TODO: temporarily removed because it conflicts with Sylius AdminUser
-    // use \Librinfo\UserBundle\Entity\Traits\Traceable;
+    // use \Librinfo\SonataSyliusUserBundle\Entity\Traits\Traceable;
 
     use \Librinfo\SeedBatchBundle\Entity\OuterExtension\HasSeedBatch;
 

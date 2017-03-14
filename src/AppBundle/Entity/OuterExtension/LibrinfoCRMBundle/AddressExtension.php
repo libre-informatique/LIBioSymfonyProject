@@ -13,5 +13,5 @@ namespace AppBundle\Entity\OuterExtension\LibrinfoCRMBundle;
 trait AddressExtension
 {
     use \Librinfo\EcommerceBundle\Entity\OuterExtension\LibrinfoCRMBundle\AddressExtension;
-    use \Librinfo\UserBundle\Entity\Traits\Traceable;
+    use \Librinfo\SonataSyliusUserBundle\Entity\Traits\Traceable;
 }

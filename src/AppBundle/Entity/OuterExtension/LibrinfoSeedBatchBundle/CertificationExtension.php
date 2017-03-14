@@ -12,5 +12,5 @@ namespace AppBundle\Entity\OuterExtension\LibrinfoSeedBatchBundle;
 
 trait CertificationExtension
 {
-    use \Librinfo\UserBundle\Entity\Traits\Traceable;
+    use \Librinfo\SonataSyliusUserBundle\Entity\Traits\Traceable;
 }

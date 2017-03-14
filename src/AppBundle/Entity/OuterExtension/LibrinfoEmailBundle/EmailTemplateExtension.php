@@ -12,5 +12,5 @@ namespace AppBundle\Entity\OuterExtension\LibrinfoEmailBundle;
 
 trait EmailTemplateExtension
 {
-    use \Librinfo\UserBundle\Entity\Traits\Traceable;
+    use \Librinfo\SonataSyliusUserBundle\Entity\Traits\Traceable;
 }

@@ -12,6 +12,6 @@ namespace AppBundle\Entity\OuterExtension\LibrinfoSeedBatchBundle;
 
 trait SeedBatchExtension
 {
-    use \Librinfo\UserBundle\Entity\Traits\Traceable;
+    use \Librinfo\SonataSyliusUserBundle\Entity\Traits\Traceable;
     use \Librinfo\EcommerceBundle\Entity\OuterExtension\HasProductVariants;
 }

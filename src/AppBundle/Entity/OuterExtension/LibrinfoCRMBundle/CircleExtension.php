@@ -10,7 +10,7 @@
 
 namespace AppBundle\Entity\OuterExtension\LibrinfoCRMBundle;
 
-use Librinfo\UserBundle\Entity\Traits\Traceable;
+use \Librinfo\SonataSyliusUserBundle\Entity\Traits\Traceable;
 use Librinfo\UserBundle\Entity\Traits\Ownable;
 use Librinfo\UserBundle\Entity\OuterExtension\HasUsers;
 
@@ -19,7 +19,7 @@ trait CircleExtension
     use Traceable,
         Ownable,
         HasUsers;
-    
+
     /**
      * @param UserInterface $user
      * @return boolean

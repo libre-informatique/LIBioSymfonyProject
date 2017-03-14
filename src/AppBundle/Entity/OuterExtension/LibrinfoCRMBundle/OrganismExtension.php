@@ -14,6 +14,6 @@ trait OrganismExtension
 {
     use \Librinfo\EmailCRMBundle\Entity\OuterExtension\HasEmailMessages;
     use \Librinfo\SeedBatchBundle\Entity\OuterExtension\OrganismExtension;
-    use \Librinfo\UserBundle\Entity\Traits\Traceable;
+    use \Librinfo\SonataSyliusUserBundle\Entity\Traits\Traceable;
     use \Librinfo\EcommerceBundle\Entity\OuterExtension\LibrinfoCRMBundle\OrganismExtension;
 }
