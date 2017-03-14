@@ -35,7 +35,6 @@
         "libre-informatique/ui-bundle": "dev-sf3.2",
         "libre-informatique/varieties-bundle": "dev-sf3.2",
         "libre-informatique/seed-batch-bundle": "dev-sf3.2",
-        "libre-informatique/security-bundle": "dev-sf3.2",
         "libre-informatique/sonata-sylius-user-bundle": "dev-master",
         "blast-project/doctrine-pgsql-bundle": "dev-sf3.2",
         "doctrine/doctrine-fixtures-bundle": "^2.3",

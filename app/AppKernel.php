@@ -53,7 +53,6 @@ class AppKernel extends Kernel
 
             new Librinfo\DecoratorBundle\LibrinfoDecoratorBundle(),
             new Librinfo\UIBundle\LibrinfoUIBundle(),
-            new Librinfo\SecurityBundle\LibrinfoSecurityBundle(),
             new Librinfo\CRMBundle\LibrinfoCRMBundle(),
             new Librinfo\SonataSyliusUserBundle\SonataSyliusUserBundle(),
             new Librinfo\VarietiesBundle\LibrinfoVarietiesBundle(),
