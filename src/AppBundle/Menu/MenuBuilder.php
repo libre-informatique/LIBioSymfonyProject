@@ -58,9 +58,10 @@ class MenuBuilder
 
         // Admin settings
         $submenu = $menu->addChild('libio.menu_label.admin_settings');
-        $submenu->addChild('libio.menu_label.user_users', ['route' => 'admin_librinfo_user_user_list']);
-        $submenu->addChild('libio.menu_label.user_groups', ['route' => 'admin_librinfo_user_group_list']);
-        $submenu->addChild('libio.menu_label.user_roles', ['route' => 'libio_not_implemented']);
+        // TODO (we are not using LibrinfoUserBundle any more. Adapt this for SonataSyliusUserBundle) :
+        //$submenu->addChild('libio.menu_label.user_users', ['route' => 'admin_librinfo_user_user_list']);
+        //$submenu->addChild('libio.menu_label.user_groups', ['route' => 'admin_librinfo_user_group_list']);
+        //$submenu->addChild('libio.menu_label.user_roles', ['route' => 'libio_not_implemented']);
 
         // CRM settings
         $submenu = $menu->addChild('libio.menu_label.crm_settings');
