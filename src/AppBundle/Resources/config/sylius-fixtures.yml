@@ -104,9 +104,10 @@ sylius_fixtures:
                                 code: MMA
                                 species: tomate
 
-                seed_batch:
-                    options:
-                        random: 30
+# Temporarily removed
+#                seed_batch:
+#                    options:
+#                        random: 30
 
                 geographical:
                     options:

@@ -67,9 +67,11 @@ services:
         arguments:
             - "@sylius.factory.product"
             - "@sylius.factory.product_variant"
+            - "@sylius.factory.channel_pricing"
             - "@lisem.generator.product_variant"
             - "@sylius.factory.product_attribute_value"
             - "@sylius.factory.product_image"
+            - "@sylius.factory.product_taxon"
             - "@sylius.image_uploader"
             - "@sylius.generator.slug"
             - "@sylius.repository.taxon"

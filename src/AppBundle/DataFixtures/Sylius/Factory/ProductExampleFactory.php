@@ -16,6 +16,8 @@ use Librinfo\EcommerceBundle\Entity\Product;
 use Sylius\Bundle\CoreBundle\Fixture\Factory\ExampleFactoryInterface;
 use Sylius\Bundle\CoreBundle\Fixture\OptionsResolver\LazyOption;
 use Sylius\Component\Core\Formatter\StringInflector;
+use Sylius\Component\Core\Model\ChannelInterface;
+use Sylius\Component\Core\Model\ChannelPricingInterface;
 use Sylius\Component\Core\Model\ImageInterface;
 use Sylius\Component\Core\Model\ProductInterface;
 use Sylius\Component\Core\Model\ProductVariantInterface;
@@ -50,9 +52,24 @@ final class ProductExampleFactory implements ExampleFactoryInterface
     private $productVariantFactory;
 
     /**
+     * @var FactoryInterface
+     */
+    private $channelPricingFactory;
+
+    /**
+     * @var FactoryInterface
+     */
+    private $productTaxonFactory;
+
+    /**
      * @var ProductVariantGeneratorInterface
      */
     private $variantGenerator;
+
+    /**
+     * @var FactoryInterface
+     */
+    private $productAttributeValueFactory;
 
     /**
      * @var FactoryInterface
@@ -65,14 +82,34 @@ final class ProductExampleFactory implements ExampleFactoryInterface
     private $imageUploader;
 
     /**
-     * @var RepositoryInterface
-     */
-    private $localeRepository;
-
-    /**
      * @var SlugGeneratorInterface
      */
     private $slugGenerator;
+
+    /**
+     * @var RepositoryInterface
+     */
+    private $taxonRepository;
+
+    /**
+     * @var RepositoryInterface
+     */
+    private $productAttributeRepository;
+
+    /**
+     * @var RepositoryInterface
+     */
+    private $productOptionRepository;
+
+    /**
+     * @var RepositoryInterface
+     */
+    private $channelRepository;
+
+    /**
+     * @var RepositoryInterface
+     */
+    private $localeRepository;
 
     /**
      * @var \Faker\Generator
@@ -92,9 +129,11 @@ final class ProductExampleFactory implements ExampleFactoryInterface
     /**
      * @param FactoryInterface $productFactory
      * @param FactoryInterface $productVariantFactory
+     * @param FactoryInterface $channelPricing
      * @param ProductVariantGeneratorInterface $variantGenerator
      * @param FactoryInterface $productAttributeValueFactory
      * @param FactoryInterface $productImageFactory
+     * @param FactoryInterface $productTaxonFactory
      * @param ImageUploaderInterface $imageUploader
      * @param SlugGeneratorInterface $slugGenerator
      * @param RepositoryInterface $taxonRepository
@@ -102,13 +141,16 @@ final class ProductExampleFactory implements ExampleFactoryInterface
      * @param RepositoryInterface $productOptionRepository
      * @param RepositoryInterface $channelRepository
      * @param RepositoryInterface $localeRepository
+     * @param CodeGeneratorInterface $productVariantCodeGenerator
      */
     public function __construct(
         FactoryInterface $productFactory,
         FactoryInterface $productVariantFactory,
+        FactoryInterface $channelPricing,
         ProductVariantGeneratorInterface $variantGenerator,
         FactoryInterface $productAttributeValueFactory,
         FactoryInterface $productImageFactory,
+        FactoryInterface $productTaxonFactory,
         ImageUploaderInterface $imageUploader,
         SlugGeneratorInterface $slugGenerator,
         RepositoryInterface $taxonRepository,
@@ -120,80 +162,24 @@ final class ProductExampleFactory implements ExampleFactoryInterface
     ) {
         $this->productFactory = $productFactory;
         $this->productVariantFactory = $productVariantFactory;
+        $this->channelPricingFactory = $channelPricing;
         $this->variantGenerator = $variantGenerator;
+        $this->productAttributeValueFactory = $productAttributeValueFactory;
         $this->productImageFactory = $productImageFactory;
+        $this->productTaxonFactory = $productTaxonFactory;
         $this->imageUploader = $imageUploader;
         $this->slugGenerator = $slugGenerator;
+        $this->taxonRepository = $taxonRepository;
+        $this->productAttributeRepository = $productAttributeRepository;
+        $this->productOptionRepository = $productOptionRepository;
+        $this->channelRepository = $channelRepository;
         $this->localeRepository = $localeRepository;
         $this->productVariantCodeGenerator = $productVariantCodeGenerator;
 
         $this->faker = \Faker\Factory::create();
-        $this->optionsResolver =
-            (new OptionsResolver())
-                ->setDefault('name', function (Options $options) {
-                    return $this->faker->words(3, true);
-                })
+        $this->optionsResolver = new OptionsResolver();
 
-                ->setDefault('code', function (Options $options) {
-                    return StringInflector::nameToCode($options['name']);
-                })
-
-                ->setDefault('enabled', function (Options $options) {
-                    return $this->faker->boolean(90);
-                })
-                ->setAllowedTypes('enabled', 'bool')
-
-                ->setDefault('short_description', function (Options $options) {
-                    return $this->faker->paragraph;
-                })
-
-                ->setDefault('description', function (Options $options) {
-                    return $this->faker->paragraphs(3, true);
-                })
-
-                ->setDefault('main_taxon', LazyOption::randomOne($taxonRepository))
-                ->setAllowedTypes('main_taxon', ['null', 'string', TaxonInterface::class])
-                ->setNormalizer('main_taxon', LazyOption::findOneBy($taxonRepository, 'code'))
-
-                ->setDefault('taxons', LazyOption::randomOnes($taxonRepository, 3))
-                ->setAllowedTypes('taxons', 'array')
-                ->setNormalizer('taxons', LazyOption::findBy($taxonRepository, 'code'))
-
-                ->setDefault('channels', LazyOption::randomOnes($channelRepository, 3))
-                ->setAllowedTypes('channels', 'array')
-                ->setNormalizer('channels', LazyOption::findBy($channelRepository, 'code'))
-
-                ->setDefault('product_attributes', [])
-                ->setAllowedTypes('product_attributes', 'array')
-                ->setNormalizer('product_attributes', function (Options $options, array $productAttributes) use ($productAttributeRepository, $productAttributeValueFactory) {
-                    $productAttributesValues = [];
-                    foreach ($productAttributes as $code => $value) {
-                        /** @var ProductAttributeInterface $productAttribute */
-                        $productAttribute = $productAttributeRepository->findOneBy(['code' => $code]);
-
-                        Assert::notNull($productAttribute);
-
-                        /** @var ProductAttributeValueInterface $productAttributeValue */
-                        $productAttributeValue = $productAttributeValueFactory->createNew();
-                        $productAttributeValue->setAttribute($productAttribute);
-                        $productAttributeValue->setValue($value ?: $this->getRandomValueForProductAttribute($productAttribute));
-
-                        $productAttributesValues[] = $productAttributeValue;
-                    }
-
-                    return $productAttributesValues;
-                })
-
-                ->setDefault('product_options', [])
-                ->setAllowedTypes('product_options', 'array')
-                ->setNormalizer('product_options', LazyOption::findBy($productOptionRepository, 'code'))
-
-                ->setDefault('images', [])
-                ->setAllowedTypes('images', 'array')
-
-                ->setDefault('variety', null)
-                ->setAllowedTypes('variety', ['null', "Librinfo\VarietiesBundle\Entity\Variety"])
-        ;
+        $this->configureOptions($this->optionsResolver);
     }
 
     /**
@@ -220,15 +206,91 @@ final class ProductExampleFactory implements ExampleFactoryInterface
         $this->createImages($product, $options);
         if ($variety)
             $product->setVariety($variety);
+        $this->createProductTaxons($product, $options);
 
         return $product;
     }
 
     /**
-     * @param Product $product
+     * {@inheritdoc}
+     */
+    protected function configureOptions(OptionsResolver $resolver)
+    {
+        $resolver
+            ->setDefault('name', function (Options $options) {
+                return $this->faker->words(3, true);
+            })
+
+            ->setDefault('code', function (Options $options) {
+                return StringInflector::nameToCode($options['name']);
+            })
+
+            ->setDefault('enabled', function (Options $options) {
+                return $this->faker->boolean(90);
+            })
+            ->setAllowedTypes('enabled', 'bool')
+
+            ->setDefault('short_description', function (Options $options) {
+                return $this->faker->paragraph;
+            })
+
+            ->setDefault('description', function (Options $options) {
+                return $this->faker->paragraphs(3, true);
+            })
+
+            ->setDefault('main_taxon', LazyOption::randomOne($this->taxonRepository))
+            ->setAllowedTypes('main_taxon', ['null', 'string', TaxonInterface::class])
+            ->setNormalizer('main_taxon', LazyOption::findOneBy($this->taxonRepository, 'code'))
+
+            ->setDefault('taxons', LazyOption::randomOnes($this->taxonRepository, 3))
+            ->setAllowedTypes('taxons', 'array')
+            ->setNormalizer('taxons', LazyOption::findBy($this->taxonRepository, 'code'))
+
+            ->setDefault('channels', LazyOption::randomOnes($this->channelRepository, 3))
+            ->setAllowedTypes('channels', 'array')
+            ->setNormalizer('channels', LazyOption::findBy($this->channelRepository, 'code'))
+
+            ->setDefault('variant_selection_method', ProductInterface::VARIANT_SELECTION_MATCH)
+            ->setAllowedValues('variant_selection_method', [ProductInterface::VARIANT_SELECTION_MATCH, ProductInterface::VARIANT_SELECTION_CHOICE])
+
+            ->setDefault('product_attributes', [])
+            ->setAllowedTypes('product_attributes', 'array')
+            ->setNormalizer('product_attributes', function (Options $options, array $productAttributes) {
+                $productAttributesValues = [];
+                foreach ($productAttributes as $code => $value) {
+                    /** @var ProductAttributeInterface $productAttribute */
+                    $productAttribute = $this->productAttributeRepository->findOneBy(['code' => $code]);
+
+                    Assert::notNull($productAttribute);
+
+                    /** @var ProductAttributeValueInterface $productAttributeValue */
+                    $productAttributeValue = $this->productAttributeValueFactory->createNew();
+                    $productAttributeValue->setAttribute($productAttribute);
+                    $productAttributeValue->setValue($value ?: $this->getRandomValueForProductAttribute($productAttribute));
+
+                    $productAttributesValues[] = $productAttributeValue;
+                }
+
+                return $productAttributesValues;
+            })
+
+            ->setDefault('product_options', [])
+            ->setAllowedTypes('product_options', 'array')
+            ->setNormalizer('product_options', LazyOption::findBy($this->productOptionRepository, 'code'))
+
+            ->setDefault('images', [])
+            ->setAllowedTypes('images', 'array')
+
+            ->setDefault('variety', null)
+            ->setAllowedTypes('variety', ['null', "Librinfo\VarietiesBundle\Entity\Variety"])
+        ;
+    }
+
+    /**
+     * @param ProductInterface $product
      * @param array $options
      */
-    private function createTranslations(Product $product, array $options)
+    private function createTranslations(ProductInterface $product, array $options)
     {
         foreach ($this->getLocales() as $localeCode) {
             $product->setCurrentLocale($localeCode);
@@ -243,15 +305,11 @@ final class ProductExampleFactory implements ExampleFactoryInterface
     }
 
     /**
-     * @param Product $product
+     * @param ProductInterface $product
      * @param array $options
      */
-    private function createRelations(Product $product, array $options)
+    private function createRelations(ProductInterface $product, array $options)
     {
-        foreach ($options['taxons'] as $taxon) {
-            $product->addTaxon($taxon);
-        }
-
         foreach ($options['channels'] as $channel) {
             $product->addChannel($channel);
         }
@@ -266,10 +324,10 @@ final class ProductExampleFactory implements ExampleFactoryInterface
     }
 
     /**
-     * @param Product $product
+     * @param ProductInterface $product
      * @param array $options
      */
-    private function createVariants(Product $product, array $options)
+    private function createVariants(ProductInterface $product, array $options)
     {
         try {
             $this->variantGenerator->generate($product);
@@ -277,6 +335,7 @@ final class ProductExampleFactory implements ExampleFactoryInterface
             if (!$product->getVariety()) {
                 /** @var ProductVariantInterface $productVariant */
                 $productVariant = $this->productVariantFactory->createNew();
+
                 $product->addVariant($productVariant);
             }
         }
@@ -285,22 +344,39 @@ final class ProductExampleFactory implements ExampleFactoryInterface
         /** @var ProductVariantInterface $productVariant */
         foreach ($product->getVariants() as $productVariant) {
             $productVariant->setAvailableOn($this->faker->dateTimeThisYear);
-            $productVariant->setPrice($this->faker->randomNumber(4));
             $code = $product->getVariety() ?
                 $this->productVariantCodeGenerator->generate($productVariant) :
-                sprintf('%s-variant#%d', $options['code'], $i);
+                sprintf('%s-variant-%d', $options['code'], $i);
             $productVariant->setCode($code);
             $productVariant->setOnHand($this->faker->randomNumber(1));
+
+            foreach ($this->channelRepository->findAll() as $channel) {
+                $this->createChannelPricings($productVariant, $channel);
+            }
 
             ++$i;
         }
     }
 
     /**
-     * @param Product $product
+     * @param ProductVariantInterface $productVariant
+     * @param ChannelInterface $channel
+     */
+    private function createChannelPricings(ProductVariantInterface $productVariant, ChannelInterface $channel)
+    {
+        /** @var ChannelPricingInterface $channelPricing */
+        $channelPricing = $this->channelPricingFactory->createNew();
+        $channelPricing->setChannel($channel);
+        $channelPricing->setPrice($this->faker->randomNumber(3));
+
+        $productVariant->addChannelPricing($channelPricing);
+    }
+
+    /**
+     * @param ProductInterface $product
      * @param array $options
      */
-    private function createImages(Product $product, array $options)
+    private function createImages(ProductInterface $product, array $options)
     {
         foreach ($options['images'] as $imageCode => $imagePath) {
             /** @var ImageInterface $productImage */
@@ -311,6 +387,21 @@ final class ProductExampleFactory implements ExampleFactoryInterface
             $this->imageUploader->upload($productImage);
 
             $product->addImage($productImage);
+        }
+    }
+
+    /**
+     * @param ProductInterface $product
+     * @param array $options
+     */
+    private function createProductTaxons(ProductInterface $product, array $options)
+    {
+        foreach ($options['taxons'] as $taxon) {
+            $productTaxon = $this->productTaxonFactory->createNew();
+            $productTaxon->setProduct($product);
+            $productTaxon->setTaxon($taxon);
+
+            $product->addProductTaxon($productTaxon);
         }
     }
 
