@@ -125,7 +125,7 @@ sylius_fixtures:
                             fr_web_store:
                                 name: "VEL FR"
                                 code: "FR_WEB"
-                                hostname: "%sylius_default_channel_hostname%"
+                                hostname: "%sylius_fr_web_channel_hostname%"
                                 locales:
                                     - "%locale%"
                                 currencies:
