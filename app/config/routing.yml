@@ -12,7 +12,7 @@ sylius_admin_dashboard_redirect:
 
 sylius_shop:
     resource: "@SyliusShopBundle/Resources/config/routing.yml"
-    prefix: /sylius-shop
+    prefix: /
 
 sylius_admin:
     resource: "@SyliusAdminBundle/Resources/config/routing.yml"
