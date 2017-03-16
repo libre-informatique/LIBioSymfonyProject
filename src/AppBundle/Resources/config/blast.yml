@@ -275,7 +275,7 @@ parameters:
                                 _options:
                                     admin_code: librinfo_seedbatch.admin.seedbatch
                             code:
-                                type: librinfo_entitycode
+                                type: Blast\CoreBundle\Form\Type\EntityCodeType
                             _options:
                                 fieldsOrder: [product, packaging, seedBatch, name, code, price]
             # LIST
@@ -369,7 +369,7 @@ parameters:
                                 type: entity
                                 class: AppBundle\Entity\Channel
                             value:
-                                type: blast_tinymce
+                                type: Blast\UtilsBundle\Form\Type\TinyMceType
 
 ############
 # PACKAGING
