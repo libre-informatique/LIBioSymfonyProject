@@ -168,6 +168,14 @@ services:
             - "@sylius.context.channel"
             - "@sylius.repository.theme"
 
+### SYLIUS INSTALLER ###
+
+    lisem.sylius.setup.currency:
+        class: AppBundle\Installer\Setup\CurrencySetup
+        arguments:
+            - "@sylius.repository.currency"
+            - "@sylius.factory.currency"
+            - %sylius_currency.currency%
 
 #### FORMS ####
 

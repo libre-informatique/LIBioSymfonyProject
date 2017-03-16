@@ -11,6 +11,7 @@ imports:
 parameters:
     locale: fr_FR
     currency: EUR
+
     # TODO : this should be configured in BaseEntities bundle :
     #doctrine.orm.metadata.yml.class: Blast\BaseEntitiesBundle\Doctrine\ORM\Driver\SearchableYamlDriver
 

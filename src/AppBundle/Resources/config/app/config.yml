@@ -21,6 +21,13 @@ sylius_channel:
             classes:
                 model: AppBundle\Entity\Channel
 
+sylius_currency:
+    currency: EUR
+
+sylius_money:
+    locale: fr
+    currency: EUR
+
 sylius_theme:
     sources:
         filesystem:
