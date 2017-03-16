@@ -175,7 +175,7 @@ services:
         arguments:
             - "@sylius.repository.currency"
             - "@sylius.factory.currency"
-            - %sylius_currency.currency%
+            - "%sylius_currency.currency%"
 
 #### FORMS ####
 
