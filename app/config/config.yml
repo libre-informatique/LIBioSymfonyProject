@@ -179,22 +179,22 @@ blast_base_entities:
 
 librinfo_crm:
     Circle:
-        allow_organisms: true   # default: true
-        allow_contacts: false    # default: false
+#        allow_organisms: true   # default: true
+#        allow_contacts: false    # default: false
         allow_positions: false  # default: false
         app_circles:
             group1:
                 id: 517d53b9-9bb9-4b26-9e82-a850ea26a746
                 name: Groupe 22
-    Organism:
-        normalize:
-            city: [uppercase]   # possible values: uppercase, titlecase
-            country: [uppercase]
-    Contact:
-        normalize:
-            firstname: [titlecase]
-            name: [uppercase]
-            city: [uppercase]
-            country: [uppercase]
+#    Organism:
+#        normalize:
+#            city: [uppercase]   # possible values: uppercase, titlecase
+#            country: [uppercase]
+#    Contact:
+#        normalize:
+#            firstname: [titlecase]
+#            name: [uppercase]
+#            city: [uppercase]
+#            country: [uppercase]
 
 
