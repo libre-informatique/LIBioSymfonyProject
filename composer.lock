@@ -56,12 +56,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/blast-project/BaseEntitiesBundle.git",
-                "reference": "c5c9bc52c498f52044bcc33006e0d97c7b5887b0"
+                "reference": "3d9d2023ff393b969420766f0b947bfc2ad880ad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blast-project/BaseEntitiesBundle/zipball/c5c9bc52c498f52044bcc33006e0d97c7b5887b0",
-                "reference": "c5c9bc52c498f52044bcc33006e0d97c7b5887b0",
+                "url": "https://api.github.com/repos/blast-project/BaseEntitiesBundle/zipball/3d9d2023ff393b969420766f0b947bfc2ad880ad",
+                "reference": "3d9d2023ff393b969420766f0b947bfc2ad880ad",
                 "shasum": ""
             },
             "require": {
@@ -104,7 +104,7 @@
                 "libio",
                 "symfony"
             ],
-            "time": "2017-03-16 14:49:14"
+            "time": "2017-03-17 09:38:56"
         },
         {
             "name": "blast-project/core-bundle",
@@ -112,12 +112,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/blast-project/CoreBundle.git",
-                "reference": "f0f906cad79e005d11809f7431d40b7a2c1dbf0d"
+                "reference": "3105777056d0009683bc5a2f3306c29b067f01ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blast-project/CoreBundle/zipball/f0f906cad79e005d11809f7431d40b7a2c1dbf0d",
-                "reference": "f0f906cad79e005d11809f7431d40b7a2c1dbf0d",
+                "url": "https://api.github.com/repos/blast-project/CoreBundle/zipball/3105777056d0009683bc5a2f3306c29b067f01ea",
+                "reference": "3105777056d0009683bc5a2f3306c29b067f01ea",
                 "shasum": ""
             },
             "require": {
@@ -165,7 +165,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-03-16 14:41:05"
+            "time": "2017-03-17 09:04:51"
         },
         {
             "name": "blast-project/doctrine-pgsql-bundle",
@@ -173,12 +173,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/blast-project/DoctrinePgsqlBundle.git",
-                "reference": "833a76248009eadf38742a62697820da6c0584ad"
+                "reference": "7047fa5716d729edaa46b824a1cf9a965b6768ef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blast-project/DoctrinePgsqlBundle/zipball/833a76248009eadf38742a62697820da6c0584ad",
-                "reference": "833a76248009eadf38742a62697820da6c0584ad",
+                "url": "https://api.github.com/repos/blast-project/DoctrinePgsqlBundle/zipball/7047fa5716d729edaa46b824a1cf9a965b6768ef",
+                "reference": "7047fa5716d729edaa46b824a1cf9a965b6768ef",
                 "shasum": ""
             },
             "require": {
@@ -216,7 +216,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-03-16 14:28:52"
+            "time": "2017-03-17 09:12:16"
         },
         {
             "name": "blast-project/doctrine-session-bundle",
@@ -3731,12 +3731,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/SonataSyliusUserBundle.git",
-                "reference": "685245926e20e7a9a23726104478d5d9087d9502"
+                "reference": "de7d987979174770133eb49f7a20288ef412a430"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/SonataSyliusUserBundle/zipball/685245926e20e7a9a23726104478d5d9087d9502",
-                "reference": "685245926e20e7a9a23726104478d5d9087d9502",
+                "url": "https://api.github.com/repos/libre-informatique/SonataSyliusUserBundle/zipball/de7d987979174770133eb49f7a20288ef412a430",
+                "reference": "de7d987979174770133eb49f7a20288ef412a430",
                 "shasum": ""
             },
             "require": {
@@ -3772,7 +3772,7 @@
                 "sylius",
                 "symfony"
             ],
-            "time": "2017-03-16 14:51:30"
+            "time": "2017-03-17 12:37:05"
         },
         {
             "name": "libre-informatique/ui-bundle",
@@ -5632,12 +5632,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataAdminBundle.git",
-                "reference": "8165fcedcd6dbcfd18dff47b83ce56469f0d6489"
+                "reference": "91474b14f985837865fd7aa45137bce51ecaf8bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/8165fcedcd6dbcfd18dff47b83ce56469f0d6489",
-                "reference": "8165fcedcd6dbcfd18dff47b83ce56469f0d6489",
+                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/91474b14f985837865fd7aa45137bce51ecaf8bb",
+                "reference": "91474b14f985837865fd7aa45137bce51ecaf8bb",
                 "shasum": ""
             },
             "require": {
@@ -5724,7 +5724,7 @@
                 "bootstrap",
                 "sonata"
             ],
-            "time": "2017-03-16 14:12:16"
+            "time": "2017-03-17 13:44:53"
         },
         {
             "name": "sonata-project/block-bundle",
@@ -7346,12 +7346,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "067ce70b34d7034bbf54c4d54537cbe34318ef2c"
+                "reference": "3fe34be1ed0711cd84a2fbc27f4ceaf247367880"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/067ce70b34d7034bbf54c4d54537cbe34318ef2c",
-                "reference": "067ce70b34d7034bbf54c4d54537cbe34318ef2c",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/3fe34be1ed0711cd84a2fbc27f4ceaf247367880",
+                "reference": "3fe34be1ed0711cd84a2fbc27f4ceaf247367880",
                 "shasum": ""
             },
             "require": {
@@ -7482,7 +7482,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2017-03-16 10:26:54"
+            "time": "2017-03-17 12:00:40"
         },
         {
             "name": "trappar/alice-generator",
