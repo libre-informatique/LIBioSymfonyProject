@@ -166,7 +166,11 @@
                 "sonata",
                 "symfony"
             ],
+<<<<<<< HEAD
             "time": "2017-03-21 11:21:20"
+=======
+            "time": "2017-03-17 09:04:51"
+>>>>>>> ee184ec8adff56de3881ac8fd8e527053f1c6e75
         },
         {
             "name": "blast-project/doctrine-pgsql-bundle",
@@ -174,12 +178,21 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/blast-project/DoctrinePgsqlBundle.git",
+<<<<<<< HEAD
                 "reference": "9d19a909c1c7e775e42c66df1d94824b5788c2c0"
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/blast-project/DoctrinePgsqlBundle/zipball/9d19a909c1c7e775e42c66df1d94824b5788c2c0",
                 "reference": "9d19a909c1c7e775e42c66df1d94824b5788c2c0",
+=======
+                "reference": "7047fa5716d729edaa46b824a1cf9a965b6768ef"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/blast-project/DoctrinePgsqlBundle/zipball/7047fa5716d729edaa46b824a1cf9a965b6768ef",
+                "reference": "7047fa5716d729edaa46b824a1cf9a965b6768ef",
+>>>>>>> ee184ec8adff56de3881ac8fd8e527053f1c6e75
                 "shasum": ""
             },
             "require": {
@@ -217,7 +230,11 @@
                 "sonata",
                 "symfony"
             ],
+<<<<<<< HEAD
             "time": "2017-03-20 13:00:34"
+=======
+            "time": "2017-03-17 09:12:16"
+>>>>>>> ee184ec8adff56de3881ac8fd8e527053f1c6e75
         },
         {
             "name": "blast-project/doctrine-session-bundle",
@@ -5635,12 +5652,21 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataAdminBundle.git",
+<<<<<<< HEAD
                 "reference": "283e3ef6566416e79416de08802b3278d6be549a"
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/283e3ef6566416e79416de08802b3278d6be549a",
                 "reference": "283e3ef6566416e79416de08802b3278d6be549a",
+=======
+                "reference": "91474b14f985837865fd7aa45137bce51ecaf8bb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/91474b14f985837865fd7aa45137bce51ecaf8bb",
+                "reference": "91474b14f985837865fd7aa45137bce51ecaf8bb",
+>>>>>>> ee184ec8adff56de3881ac8fd8e527053f1c6e75
                 "shasum": ""
             },
             "require": {
@@ -5726,7 +5752,11 @@
                 "bootstrap",
                 "sonata"
             ],
+<<<<<<< HEAD
             "time": "2017-03-23 07:33:44"
+=======
+            "time": "2017-03-17 13:44:53"
+>>>>>>> ee184ec8adff56de3881ac8fd8e527053f1c6e75
         },
         {
             "name": "sonata-project/block-bundle",
@@ -7348,12 +7378,21 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
+<<<<<<< HEAD
                 "reference": "f29664893dce91b2cfc0fb107ae7fc3ab9712d48"
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/symfony/zipball/f29664893dce91b2cfc0fb107ae7fc3ab9712d48",
                 "reference": "f29664893dce91b2cfc0fb107ae7fc3ab9712d48",
+=======
+                "reference": "3fe34be1ed0711cd84a2fbc27f4ceaf247367880"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/3fe34be1ed0711cd84a2fbc27f4ceaf247367880",
+                "reference": "3fe34be1ed0711cd84a2fbc27f4ceaf247367880",
+>>>>>>> ee184ec8adff56de3881ac8fd8e527053f1c6e75
                 "shasum": ""
             },
             "require": {
@@ -7484,7 +7523,11 @@
             "keywords": [
                 "framework"
             ],
+<<<<<<< HEAD
             "time": "2017-03-22 20:39:24"
+=======
+            "time": "2017-03-17 12:00:40"
+>>>>>>> ee184ec8adff56de3881ac8fd8e527053f1c6e75
         },
         {
             "name": "trappar/alice-generator",

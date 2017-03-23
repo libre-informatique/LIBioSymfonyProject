@@ -1,5 +1,5 @@
 
-#blast_custom_checkboxes 	true 	 true
+#Blast\UtilsBundle\Form\Type\CustomCheckboxTypees 	true 	 true
 
 #inline fields:
 #    attr:
@@ -17,7 +17,7 @@ librinfo_varieties:
 ########### CONSEILS PROS ##################
         professional:
             possible_sowing_periods:
-                type: blast_custom_choice
+                type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 show:
                     template: BlastCoreBundle:CRUD:show_field_multiple_choices.html.twig
                 options:
@@ -37,7 +37,7 @@ librinfo_varieties:
                         - début Juillet
                         - fin Juillet
             transplant:
-                type: blast_custom_choice
+                type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 options:
                     attr:
                         class: inline-block
@@ -69,7 +69,7 @@ librinfo_varieties:
                 options:
                     attr:
                         class: inline-block
-            seed_storage: 
+            seed_storage:
                 type: text
                 options:
                     attr:
@@ -81,8 +81,8 @@ librinfo_varieties:
                     attr:
                         class: new-line
                         width: 30
-            exposure: 
-                type: blast_custom_choice
+            exposure:
+                type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 options:
                     attr:
                         class: inline-block
@@ -92,15 +92,15 @@ librinfo_varieties:
                         - est
                         - ouest
                     choices_field: exposure
-            substratum: 
-                type: blast_custom_choice
+            substratum:
+                type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 options:
                     attr:
                         class: inline-block
                     blast_choices: [terre, coco, tourbe]
                     choices_field: substratum
             soil:
-                type: blast_custom_choice
+                type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 show:
                     template: BlastCoreBundle:CRUD:show_field_multiple_choices.html.twig
                 options:
@@ -116,14 +116,14 @@ librinfo_varieties:
                         - sableux
                         - TOUS
                     choices_field: soil
-            manure: 
-                type: blast_custom_choice
+            manure:
+                type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 options:
                     attr:
                         class: inline-block
                     choices_field: manure
                     blast_choices: [ compost, orga3]
-            manure_quantity: 
+            manure_quantity:
                 type: integer
                 options:
                     attr:
@@ -135,50 +135,50 @@ librinfo_varieties:
                     attr:
                         class: new-line
                         width: 30
-            seedling_irrigation_frequency: 
-                type: blast_custom_choice
+            seedling_irrigation_frequency:
+                type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 options:
                     attr:
                         class: new-line
                         width: 30
                     blast_choices: [quotidien, hebdomadaire]
                     choices_field: seedling_irrigation_frequency
-            transplant_irrigation_quantity: 
+            transplant_irrigation_quantity:
                 type: integer
                 options:
                     attr:
                         class: new-line
                         width: 30
-            transplant_irrigation_frequency: 
-                type: blast_custom_choice
+            transplant_irrigation_frequency:
+                type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 options:
                     attr:
                         class: new-line
                         width: 30
                     blast_choices: [quotidien, hebdomadaire]
                     choices_field: transplant_irrigation_frequency
-            cuttings_period: 
+            cuttings_period:
                 type: integer
                 options:
                     attr:
                         class: new-line
                         width: 30
-            cutting_date: 
+            cutting_date:
                 type: integer
                 options:
                     attr:
                         class: inline-block
-            sowing_date: 
+            sowing_date:
                 type: integer
                 options:
                     attr:
                         class: inline-block
-            transplant_date: 
+            transplant_date:
                 type: integer
                 options:
                     attr:
                         class: inline-block
-            treatments: 
+            treatments:
                 type: text
                 options:
                     attr:
@@ -203,35 +203,35 @@ librinfo_varieties:
                         class: new-line
                         width: 50
             seedling_hotbed:
-                type: blast_custom_checkbox
+                type: Blast\UtilsBundle\Form\Type\CustomCheckboxType
                 show:
                     type: boolean
                 options:
                     attr:
                         class: inline-block
             transplant_hotbed:
-                type: blast_custom_checkbox
+                type: Blast\UtilsBundle\Form\Type\CustomCheckboxType
                 show:
                     type: boolean
                 options:
                     attr:
                         class: inline-block
             plant_hotbed:
-                type: blast_custom_checkbox
+                type: Blast\UtilsBundle\Form\Type\CustomCheckboxType
                 options:
                     attr:
                         class: inline-block
                 show:
                     type: boolean
-            biodynamics: 
-                type: blast_custom_checkbox
+            biodynamics:
+                type: Blast\UtilsBundle\Form\Type\CustomCheckboxType
                 options:
                     attr:
                         class: inline-block
                 show:
                     type: boolean
-            tutoring: 
-                type: blast_custom_checkbox
+            tutoring:
+                type: Blast\UtilsBundle\Form\Type\CustomCheckboxType
                 options:
                     attr:
                         class: inline-block
@@ -240,7 +240,7 @@ librinfo_varieties:
 ############# CONSEILS AMATEURS ####################
         amateur:
             possible_sowing_periods:
-                type: blast_custom_choice
+                type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 show:
                     template: BlastCoreBundle:CRUD:show_field_multiple_choices.html.twig
                 options:
@@ -260,7 +260,7 @@ librinfo_varieties:
                         - début Juillet
                         - fin Juillet
             transplant:
-                type: blast_custom_choice
+                type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 options:
                     attr:
                         class: inline-block
@@ -292,7 +292,7 @@ librinfo_varieties:
                 options:
                     attr:
                         class: inline-block
-            seed_storage: 
+            seed_storage:
                 type: text
                 options:
                     attr:
@@ -304,8 +304,8 @@ librinfo_varieties:
                     attr:
                         class: new-line
                         width: 30
-            exposure: 
-                type: blast_custom_choice
+            exposure:
+                type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 options:
                     attr:
                         class: inline-block
@@ -315,15 +315,15 @@ librinfo_varieties:
                         - est
                         - ouest
                     choices_field: exposure
-            substratum: 
-                type: blast_custom_choice
+            substratum:
+                type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 options:
                     attr:
                         class: inline-block
                     blast_choices: [terre, coco, tourbe]
                     choices_field: substratum
             soil:
-                type: blast_custom_choice
+                type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 show:
                     template: BlastCoreBundle:CRUD:show_field_multiple_choices.html.twig
                 options:
@@ -339,14 +339,14 @@ librinfo_varieties:
                         - sableux
                         - TOUS
                     choices_field: soil
-            manure: 
-                type: blast_custom_choice
+            manure:
+                type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 options:
                     attr:
                         class: inline-block
                     choices_field: manure
                     blast_choices: [ compost, orga3]
-            manure_quantity: 
+            manure_quantity:
                 type: integer
                 options:
                     attr:
@@ -358,50 +358,50 @@ librinfo_varieties:
                     attr:
                         class: new-line
                         width: 30
-            seedling_irrigation_frequency: 
-                type: blast_custom_choice
+            seedling_irrigation_frequency:
+                type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 options:
                     attr:
                         class: new-line
                         width: 30
                     blast_choices: [quotidien, hebdomadaire]
                     choices_field: seedling_irrigation_frequency
-            transplant_irrigation_quantity: 
+            transplant_irrigation_quantity:
                 type: integer
                 options:
                     attr:
                         class: new-line
                         width: 30
-            transplant_irrigation_frequency: 
-                type: blast_custom_choice
+            transplant_irrigation_frequency:
+                type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 options:
                     attr:
                         class: new-line
                         width: 30
                     blast_choices: [quotidien, hebdomadaire]
                     choices_field: transplant_irrigation_frequency
-            cuttings_period: 
+            cuttings_period:
                 type: integer
                 options:
                     attr:
                         class: new-line
                         width: 30
-            cutting_date: 
+            cutting_date:
                 type: integer
                 options:
                     attr:
                         class: inline-block
-            sowing_date: 
+            sowing_date:
                 type: integer
                 options:
                     attr:
                         class: inline-block
-            transplant_date: 
+            transplant_date:
                 type: integer
                 options:
                     attr:
                         class: inline-block
-            treatments: 
+            treatments:
                 type: text
                 options:
                     attr:
@@ -426,35 +426,35 @@ librinfo_varieties:
                         class: new-line
                         width: 50
             seedling_hotbed:
-                type: blast_custom_checkbox
+                type: Blast\UtilsBundle\Form\Type\CustomCheckboxType
                 show:
                     type: boolean
                 options:
                     attr:
                         class: inline-block
             transplant_hotbed:
-                type: blast_custom_checkbox
+                type: Blast\UtilsBundle\Form\Type\CustomCheckboxType
                 show:
                     type: boolean
                 options:
                     attr:
                         class: inline-block
             plant_hotbed:
-                type: blast_custom_checkbox
+                type: Blast\UtilsBundle\Form\Type\CustomCheckboxType
                 options:
                     attr:
                         class: inline-block
                 show:
                     type: boolean
-            biodynamics: 
-                type: blast_custom_checkbox
+            biodynamics:
+                type: Blast\UtilsBundle\Form\Type\CustomCheckboxType
                 options:
                     attr:
                         class: inline-block
                 show:
                     type: boolean
-            tutoring: 
-                type: blast_custom_checkbox
+            tutoring:
+                type: Blast\UtilsBundle\Form\Type\CustomCheckboxType
                 options:
                     attr:
                         class: inline-block
@@ -463,7 +463,7 @@ librinfo_varieties:
 ########### MISE EN PRODUCTION ##################
         production:
             possible_sowing_periods:
-                type: blast_custom_choice
+                type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 show:
                     template: BlastCoreBundle:CRUD:show_field_multiple_choices.html.twig
                 options:
@@ -483,7 +483,7 @@ librinfo_varieties:
                         - début Juillet
                         - fin Juillet
             transplant:
-                type: blast_custom_choice
+                type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 options:
                     attr:
                         class: inline-block
@@ -515,7 +515,7 @@ librinfo_varieties:
                 options:
                     attr:
                         class: inline-block
-            seed_storage: 
+            seed_storage:
                 type: text
                 options:
                     attr:
@@ -527,8 +527,8 @@ librinfo_varieties:
                     attr:
                         class: new-line
                         width: 30
-            exposure: 
-                type: blast_custom_choice
+            exposure:
+                type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 options:
                     attr:
                         class: inline-block
@@ -538,15 +538,15 @@ librinfo_varieties:
                         - est
                         - ouest
                     choices_field: exposure
-            substratum: 
-                type: blast_custom_choice
+            substratum:
+                type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 options:
                     attr:
                         class: inline-block
                     blast_choices: [terre, coco, tourbe]
                     choices_field: substratum
             soil:
-                type: blast_custom_choice
+                type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 show:
                     template: BlastCoreBundle:CRUD:show_field_multiple_choices.html.twig
                 options:
@@ -562,14 +562,14 @@ librinfo_varieties:
                         - sableux
                         - TOUS
                     choices_field: soil
-            manure: 
-                type: blast_custom_choice
+            manure:
+                type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 options:
                     attr:
                         class: inline-block
                     choices_field: manure
                     blast_choices: [ compost, orga3]
-            manure_quantity: 
+            manure_quantity:
                 type: integer
                 options:
                     attr:
@@ -581,50 +581,50 @@ librinfo_varieties:
                     attr:
                         class: new-line
                         width: 30
-            seedling_irrigation_frequency: 
-                type: blast_custom_choice
+            seedling_irrigation_frequency:
+                type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 options:
                     attr:
                         class: new-line
                         width: 30
                     blast_choices: [quotidien, hebdomadaire]
                     choices_field: seedling_irrigation_frequency
-            transplant_irrigation_quantity: 
+            transplant_irrigation_quantity:
                 type: integer
                 options:
                     attr:
                         class: new-line
                         width: 30
-            transplant_irrigation_frequency: 
-                type: blast_custom_choice
+            transplant_irrigation_frequency:
+                type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 options:
                     attr:
                         class: new-line
                         width: 30
                     blast_choices: [quotidien, hebdomadaire]
                     choices_field: transplant_irrigation_frequency
-            cuttings_period: 
+            cuttings_period:
                 type: integer
                 options:
                     attr:
                         class: new-line
                         width: 30
-            cutting_date: 
+            cutting_date:
                 type: integer
                 options:
                     attr:
                         class: inline-block
-            sowing_date: 
+            sowing_date:
                 type: integer
                 options:
                     attr:
                         class: inline-block
-            transplant_date: 
+            transplant_date:
                 type: integer
                 options:
                     attr:
                         class: inline-block
-            treatments: 
+            treatments:
                 type: text
                 options:
                     attr:
@@ -649,44 +649,44 @@ librinfo_varieties:
                         class: new-line
                         width: 50
             seedling_hotbed:
-                type: blast_custom_checkbox
+                type: Blast\UtilsBundle\Form\Type\CustomCheckboxType
                 show:
                     type: boolean
                 options:
                     attr:
                         class: inline-block
             transplant_hotbed:
-                type: blast_custom_checkbox
+                type: Blast\UtilsBundle\Form\Type\CustomCheckboxType
                 show:
                     type: boolean
                 options:
                     attr:
                         class: inline-block
             plant_hotbed:
-                type: blast_custom_checkbox
+                type: Blast\UtilsBundle\Form\Type\CustomCheckboxType
                 options:
                     attr:
                         class: inline-block
                 show:
                     type: boolean
-            biodynamics: 
-                type: blast_custom_checkbox
+            biodynamics:
+                type: Blast\UtilsBundle\Form\Type\CustomCheckboxType
                 options:
                     attr:
                         class: inline-block
                 show:
                     type: boolean
-            tutoring: 
-                type: blast_custom_checkbox
+            tutoring:
+                type: Blast\UtilsBundle\Form\Type\CustomCheckboxType
                 options:
                     attr:
                         class: inline-block
                 show:
                     type: boolean
 ########## TRI OFFRE COMMERCIAL ###################
-        commercial: 
-            plant_type: 
-                type: blast_custom_choice 
+        commercial:
+            plant_type:
+                type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 options:
                     attr:
                         class: inline-block
@@ -696,8 +696,8 @@ librinfo_varieties:
                         - Racine
                         - Fleur
                     choices_field: plant_type
-            precocity: 
-                type: blast_custom_choice 
+            precocity:
+                type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 options:
                     attr:
                         class: inline-block
@@ -706,34 +706,34 @@ librinfo_varieties:
                         - Mi-saison
                         - Tardive
                     choices_field: precocity
-            grade: 
-                type: blast_custom_choice 
+            grade:
+                type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 options:
                     attr:
                         class: inline-block
                     blast_choices: [ 1, 2, 3, 4, 5 ]
                     choices_field: grade
-            rusticicty: 
-                type: blast_custom_choice 
+            rusticicty:
+                type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 options:
                     attr:
                         class: inline-block
                     blast_choices: [ 1, 2, 3, 4, 5 ]
                     choices_field: rusticity
-            main_color: 
+            main_color:
                 type: text
-                options: 
+                options:
                     attr:
                         class: new-line
                         width: 30
             secondary_color:
                 type: text
-                options: 
+                options:
                     attr:
                         class: new-line
                         width: 30
-            taste_rating: 
-                type: blast_custom_choice
+            taste_rating:
+                type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 options:
                     attr:
                         class: inline-block
@@ -744,23 +744,23 @@ librinfo_varieties:
                         - 4
                         - 5
                     choices_field: taste_rating
-            nutrition_rating: 
-                type: blast_custom_choice
+            nutrition_rating:
+                type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 options:
                     attr:
                         class: inline-block
                     blast_choices: [ 1, 2, 3, 4, 5 ]
                     choices_field: nutrition_rating
-            taste: 
-                type: blast_custom_choice
+            taste:
+                type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 show:
-                        template: BlastCoreBundle:CRUD:show_field_multiple_choices.html.twig    
+                        template: BlastCoreBundle:CRUD:show_field_multiple_choices.html.twig
                 options:
                     attr:
                         class: columns-2 multiple-checkbox
                     expanded: true
                     multiple: true
-                    blast_choices: 
+                    blast_choices:
                         - Salé
                         - Sucré
                         - Acide
@@ -773,16 +773,16 @@ librinfo_varieties:
                         - Métallique
                         - Amidonné
                     choices_field: taste
-            texture: 
-                type: blast_custom_choice
+            texture:
+                type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 show:
                     template: BlastCoreBundle:CRUD:show_field_multiple_choices.html.twig
-                options: 
+                options:
                     attr:
                         class: columns-2 multiple-checkbox
                     expanded: true
                     multiple: true
-                    blast_choices: 
+                    blast_choices:
                         - Peau persistante
                         - Farineux
                         - Croquant
@@ -790,8 +790,8 @@ librinfo_varieties:
                         - Juteux
                         - Ferme
                     choices_field: texture
-            nutrients: 
-                type: blast_custom_choice
+            nutrients:
+                type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 show:
                     template: BlastCoreBundle:CRUD:show_field_multiple_choices.html.twig
                 options:
@@ -799,7 +799,7 @@ librinfo_varieties:
                         class: columns-3 multiple-checkbox
                     expanded: true
                     multiple: true
-                    blast_choices: 
+                    blast_choices:
                         - Vitamine A
                         - Vitamine B
                         - Vitamine C
@@ -824,7 +824,7 @@ librinfo_varieties:
                         - Chrome
                         - Molybdène
                     choices_field: nutrients
-            max_harvest_span: 
+            max_harvest_span:
                 type: integer
                 options:
                     attr:
@@ -836,43 +836,43 @@ librinfo_varieties:
                     attr:
                         class: new-line
                         width: 30
-            prefered_zone: 
-                type: blast_custom_choice
+            prefered_zone:
+                type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 options:
                     attr:
                         class: inline-block
                     blast_choices: [ 1, 2, 3, 4, 5, 6 ]
                     choices_field: prefered_zone
-            yield_rating: 
-                type: blast_custom_choice
+            yield_rating:
+                type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 options:
                     attr:
                         class: inline-block
                     blast_choices: [ 1, 2, 3, 4, 5 ]
                     choices_field: yield_rating
-            cultivation_ease: 
-                type: blast_custom_choice
+            cultivation_ease:
+                type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 options:
                     attr:
                         class: inline-block
                     blast_choices: [ 1, 2, 3, 4, 5 ]
                     choices_field: cultivation_ease
-            pot_cultivation_ease: 
-                type: blast_custom_choice
+            pot_cultivation_ease:
+                type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 options:
                     attr:
                         class: inline-block
                     blast_choices: [ Facile, Possible, Difficile ]
                     choices_field: pot_cultivation_ease
             targeted_audience:
-                type: blast_custom_choice
+                type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 options:
                     attr:
                         class: inline-block
                     blast_choices: [ Amateurs, Professionnels, Tout public ]
                     choices_field: targeted_audience
             main_usages:
-                type: blast_custom_choice
+                type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 show:
                     template: BlastCoreBundle:CRUD:show_field_multiple_choices.html.twig
                 options:
@@ -888,8 +888,8 @@ librinfo_varieties:
                         - médicinal
                         - textile
                     choices_field: main_usages
-            usages: 
-                type: blast_custom_choice
+            usages:
+                type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 show:
                     template: BlastCoreBundle:CRUD:show_field_multiple_choices.html.twig
                 options:
@@ -905,15 +905,15 @@ librinfo_varieties:
                         - médicinal
                         - textile
                     choices_field: usages
-            inner_commment: 
-                type: blast_tinymce
+            inner_commment:
+                type: Blast\UtilsBundle\Form\Type\TinyMceType
                 show:
                     template: BlastCoreBundle:CRUD:show_field_tinymce.html.twig
  ############# CARACTERISTIQUES PLANTE #############
-        plant: 
+        plant:
             foliage_type:
-                type: blast_custom_choice
-                options: 
+                type: Blast\UtilsBundle\Form\Type\CustomChoiceType
+                options:
                     attr:
                         class: new-line
                         width: 30
@@ -921,7 +921,7 @@ librinfo_varieties:
                     choices_field: foliage_type
             foliage_color:
                 type: text
-                options: 
+                options:
                     attr:
                         class: new-line
                         width: 30
@@ -932,7 +932,7 @@ librinfo_varieties:
                         class: new-line
                         width: 30
             development:
-                type: blast_custom_choice
+                type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 options:
                     attr:
                         class: new-line
@@ -945,7 +945,7 @@ librinfo_varieties:
                     choices_field: development
  ############## CULTURE ############################
         culture:
-            location: 
+            location:
                 type: text
                 options:
                     attr:
@@ -958,15 +958,14 @@ librinfo_varieties:
                         class: new-line
                         width: 30
 #            several_strains:
-#                type: blast_custom_checkboxseversever
+#                type: Blast\UtilsBundle\Form\Type\CustomCheckboxTypeseversever
             description:
-                type: blast_tinymce
+                type: Blast\UtilsBundle\Form\Type\TinyMceType
                 show:
                     template: BlastCoreBundle:CRUD:show_field_tinymce.html.twig
                 options:
                     attr:
                         class: new-line
                         height: 300
-        
-    
-    
+
+
