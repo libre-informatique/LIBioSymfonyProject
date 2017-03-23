@@ -17,10 +17,10 @@ sonata_admin:
                       label: libio.menu_label.organisms_list
                     - route: admin_librinfo_seedbatch_organism_create
                       label: libio.menu_label.create_organism
-                    - route: admin_librinfo_emailcrm_contact_list
-                      label: libio.menu_label.contacts_list
-                    - route: admin_librinfo_emailcrm_contact_create
-                      label: libio.menu_label.create_contact
+#                    - route: admin_librinfo_emailcrm_contact_list
+#                      label: libio.menu_label.contacts_list
+#                    - route: admin_librinfo_emailcrm_contact_create
+#                      label: libio.menu_label.create_contact
                     - route: admin_librinfo_email_email_list
                       label: libio.menu_label.emails_list
                     - route: admin_librinfo_email_email_create
