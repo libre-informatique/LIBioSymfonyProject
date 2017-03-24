@@ -13,6 +13,7 @@
 !app/logs/.gitkeep
 
 # Cache and logs (Symfony3)
+/var/*
 /var/cache/*
 /var/logs/*
 !var/cache/.gitkeep
@@ -28,9 +29,9 @@
 /app/bootstrap.php.cache
 /var/bootstrap.php.cache
 /bin/*
-!bin/console
-!bin/db-connect.sh
-!bin/symfony_requirements
+/bin/console
+/bin/db-connect.sh
+/bin/symfony_requirements
 /vendor/*
 
 # Assets and user uploads
