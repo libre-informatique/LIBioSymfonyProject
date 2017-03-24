@@ -28,7 +28,6 @@
         "sonata-project/intl-bundle": "^2.2",
         "sonata-project/datagrid-bundle": "^2.2",
         "nelmio/api-doc-bundle": "^2.13",
-        "friendsofsymfony/rest-bundle": "^1.7",
         "incenteev/composer-parameter-handler": "^2.1",
         "jms/security-extra-bundle": "^1.6",
         "libre-informatique/email-crm-bundle": "dev-master",
