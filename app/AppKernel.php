@@ -39,7 +39,7 @@ class AppKernel extends Kernel
 
             new JeroenDesloovere\Bundle\VCardBundle\JeroenDesloovereVCardBundle(),
 
-//            new Sonata\CoreBundle\SonataCoreBundle(),
+//            new Sonata\CoreBundle\SonataCoreBundle(),  provided by Sylius
             new Sonata\AdminBundle\SonataAdminBundle(),
 //            new Sonata\BlockBundle\SonataBlockBundle(),
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
