@@ -3,7 +3,7 @@ imports:
     - { resource: "@SonataSyliusUserBundle/Resources/config/app/config.yml" }
     - { resource: "@SyliusAdminBundle/Resources/config/app/config.yml" }
     - { resource: "@SyliusShopBundle/Resources/config/app/config.yml" }
-    - { resource: "@SyliusApiBundle/Resources/config/app/config.yml" }
+    - { resource: "@SyliusAdminApiBundle/Resources/config/app/config.yml" }
     - { resource: "@LibrinfoEcommerceBundle/Resources/config/app/config.yml" }
     - { resource: "@AppBundle/Resources/config/sylius-fixtures.yml" }
     - { resource: "@AppBundle/Resources/config/grids.yml" }
@@ -21,8 +21,8 @@ sylius_channel:
             classes:
                 model: AppBundle\Entity\Channel
 
-sylius_currency:
-    currency: EUR
+#sylius_currency:
+#    currency: EUR
 
 sylius_money:
     locale: fr
