@@ -12,7 +12,7 @@ class AppKernel extends Kernel
             new Sylius\Bundle\AdminBundle\SyliusAdminBundle(),
             new Sylius\Bundle\ShopBundle\SyliusShopBundle(),
             new FOS\OAuthServerBundle\FOSOAuthServerBundle(), // Required by SyliusApiBundle
-            new Sylius\Bundle\ApiBundle\SyliusApiBundle(),
+//            new Sylius\Bundle\ApiBundle\SyliusApiBundle(),
 
 //            new Symfony\Bundle\FrameworkBundle\FrameworkBundle(), provided by Sylius
 //            new Symfony\Bundle\SecurityBundle\SecurityBundle(), provided by Sylius
@@ -39,9 +39,9 @@ class AppKernel extends Kernel
 
             new JeroenDesloovere\Bundle\VCardBundle\JeroenDesloovereVCardBundle(),
 
-            new Sonata\CoreBundle\SonataCoreBundle(),
+//            new Sonata\CoreBundle\SonataCoreBundle(),
             new Sonata\AdminBundle\SonataAdminBundle(),
-            new Sonata\BlockBundle\SonataBlockBundle(),
+//            new Sonata\BlockBundle\SonataBlockBundle(),
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
 //            new Sonata\IntlBundle\SonataIntlBundle(), provided by Sylius
 
@@ -66,6 +66,7 @@ class AppKernel extends Kernel
             new Sparkling\VATBundle\SparklingVATBundle(),
             new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
             new Blast\DoctrineSessionBundle\BlastDoctrineSessionBundle(),
+            new Sylius\Bundle\AdminApiBundle\SyliusAdminApiBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test')))
