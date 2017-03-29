@@ -1,9 +1,9 @@
-LIBioSymfonyProject
+LISem
 ===================
 
-LIBio is an ERP specialized for seeds producers and craftmen. It uses many libraries developped in generic ways.
+LISem is an ERP specialized for seeds producers and craftmen. It uses many libraries developped in generic ways.
 
-THIS PROJECT IS STILL UNUSABLE, IT'S YET A WORK IN PROGRESS
+THIS PROJECT IS STILL UNUSABLE, IT'S A WORK IN PROGRESS
 
 Installation
 ------------
@@ -31,7 +31,7 @@ $ composer update
 
 ### Conclusion
 
-Then you would have get the following directory structure :
+Then you would have the following directory structure :
 
 ```
 .
