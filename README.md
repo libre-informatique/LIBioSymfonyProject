@@ -39,8 +39,27 @@ Then you would have the following directory structure :
 ├── src
 └── web
 ```
+###PostgreSQL
 
-At this point, if you don't have any Exceptions, you're done !
+If you are using PostgreSQL as your main database, you'll need to install postgresql-contrib and load the "uuid-ossp" extension :
+```
+  $ sudo apt-get install postgresql-contrib
+  $ echo 'CREATE EXTENSION "uuid-ossp";' | psql [DB]
+ ```
+
+
+In order to login to the dashboard you need to generate the database tables  :
+
+```
+$ app/console (bin/console on symfony 3+) doctrine:schema:update --force
+```
+
+Then you need to create a user with admin capabilities:
+
+```
+$ app/console fos:user:create
+$ app/console fos:user:promote --super [YOUR_USERNAME]
+```
 
 Troubleshooting
 ---------------
