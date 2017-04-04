@@ -25,8 +25,6 @@ final class ServicesPass implements CompilerPassInterface
      */
     public function process(ContainerBuilder $container)
     {
-        // Inject services to the Product factory
-        $productFactory = $container->findDefinition('sylius.factory.product');
-        $productFactory->addMethodCall('setProductOptionRepository', [new Reference('sylius.repository.product_option')]);
+
     }
 }

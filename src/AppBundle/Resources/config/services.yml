@@ -32,6 +32,14 @@ services:
             - "@sylius.factory.product_variant"
             - "@lisem.checker.product_variants_parity"
 
+### SYLIUS FACTORIES ###
+
+    lisem.factory.product:
+        class: AppBundle\Factory\ProductFactory
+        decorates: sylius.factory.product
+        arguments: ['@lisem.factory.product.inner', '@sylius.repository.product_option']
+        public: false
+
 ### SYLIUS FIXTURE FACTORIES ###
 
     lisem.fixture.example_factory.family:

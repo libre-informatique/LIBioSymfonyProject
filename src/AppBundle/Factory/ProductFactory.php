@@ -12,22 +12,31 @@ namespace AppBundle\Factory;
 
 use Librinfo\EcommerceBundle\Entity\Product;
 use Librinfo\VarietiesBundle\Entity\Variety;
-use Sylius\Component\Product\Factory\ProductFactory as BaseProductFactory;
+use Sylius\Component\Product\Factory\ProductFactoryInterface;
 use Sylius\Component\Product\Repository\ProductOptionRepositoryInterface;
 
 /**
  * @author Marcos Bezerra de Menezes <marcos.bezerra@libre-informatique.fr>
  */
-class ProductFactory extends BaseProductFactory
+class ProductFactory implements ProductFactoryInterface
 {
+    /**
+     * @var ProductFactoryInterface
+     */
+    private $decoratedFactory;
+
     /**
      * @var ProductOptionRepositoryInterface
      */
     private $productOptionRepository;
 
-    public function setProductOptionRepository(ProductOptionRepositoryInterface $repository)
+    /**
+     * @param ProductFactoryInterface $factory
+     */
+    public function __construct(ProductFactoryInterface $factory, ProductOptionRepositoryInterface $productOptionRepository)
     {
-        $this->productOptionRepository = $repository;
+        $this->decoratedFactory = $factory;
+        $this->productOptionRepository = $productOptionRepository;
     }
 
     /**
@@ -36,7 +45,7 @@ class ProductFactory extends BaseProductFactory
      */
     public function createNew($seedsProduct = false)
     {
-        $product = parent::createNew();
+        $product = $this->decoratedFactory->createNew();
 
         if ($seedsProduct) {
             $this->setDefaultOptions($product);
@@ -51,7 +60,7 @@ class ProductFactory extends BaseProductFactory
      */
     public function createWithVariant($seedsProduct = false)
     {
-        $product = parent::createWithVariant();
+        $product = $this->decoratedFactory->createWithVariant();
 
         if ($seedsProduct) {
             $this->setDefaultOptions($product);
@@ -72,7 +81,7 @@ class ProductFactory extends BaseProductFactory
         $product->setName((string)$variety);
         $product->setCode(sprintf('%s-%s', $variety->getSpecies()->getCode(), $variety->getCode()));
         // TODO: default taxonomy
-        
+
         return $product;
     }
 

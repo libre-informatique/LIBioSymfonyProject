@@ -8,12 +8,6 @@ imports:
     - { resource: "@AppBundle/Resources/config/sylius-fixtures.yml" }
     - { resource: "@AppBundle/Resources/config/grids.yml" }
 
-sylius_product:
-    resources:
-        product:
-            classes:
-                factory: AppBundle\Factory\ProductFactory
-
 sylius_channel:
     driver: doctrine/orm
     resources:
