@@ -110,8 +110,8 @@ final class SeedsProductFixture extends AbstractFixture
                 'main_taxon' => 'seeds_LFR',      // TODO (Variety taxon)
                 'taxons' => ['seeds_LFR'],        // TODO (Variety taxon)
                 'images' => [
-                    'main' => sprintf('%s/../../Resources/fixtures/%s', __DIR__, 'tomate-stpierre.jpg'),  // TODO (Variety media)
-                    'thumbnail' => sprintf('%s/../../Resources/fixtures/%s', __DIR__, 'tomate-stpierre.jpg'),  // TODO (Variety media)
+                    [sprintf('%s/../../Resources/fixtures/%s', __DIR__, 'tomate-stpierre.jpg'), 'main'],  // TODO (Variety media)
+                    [sprintf('%s/../../Resources/fixtures/%s', __DIR__, 'tomate-stpierre.jpg'), 'thumbnail']  // TODO (Variety media)
                 ],
                 'variety' => $variety
             ];

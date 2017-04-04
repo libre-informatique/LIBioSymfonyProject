@@ -103,6 +103,7 @@ final class TshirtProductFixture extends AbstractFixture
                 [
                     'code' => 't_shirts',
                     'name' => 'T-Shirts',
+                    'slug' => 't-shirts',
                     'children' => [
                         [
                             'code' => 'mens_t_shirts',
@@ -158,13 +159,13 @@ final class TshirtProductFixture extends AbstractFixture
                 'taxons' => [$categoryTaxonCode],
                 'product_attributes' => [
                     't_shirt_brand' => $this->faker->randomElement(['Nike', 'Adidas', 'JKM-476 Streetwear', 'Potato', 'Centipede Wear']),
-                    't_shirt_collection' => sprintf('Sylius %s %s', $this->faker->randomElement(['ÉTE', 'hIVER', 'Printemps', 'Automne']), mt_rand(1995, 2012)),
+                    't_shirt_collection' => sprintf('Sylius %s %s', $this->faker->randomElement(['Été', 'Hiver', 'Printemps', 'Automne']), mt_rand(1995, 2012)),
                     't_shirt_material' => $this->faker->randomElement(['Centipede', 'Laine', 'Centipede 10% / Laine 90%', 'Pomme de terre 100%']),
                 ],
                 'product_options' => ['t_shirt_color', 't_shirt_size'],
                 'images' => [
-                    'main' => sprintf('%s/../../Resources/fixtures/%s', __DIR__, 't-shirts.jpg'),
-                    'thumbnail' => sprintf('%s/../../Resources/fixtures/%s', __DIR__, 't-shirts.jpg'),
+                    [sprintf('%s/../../Resources/fixtures/%s', __DIR__, 't-shirts.jpg'), 'main'],
+                    [sprintf('%s/../../Resources/fixtures/%s', __DIR__, 't-shirts.jpg'), 'thumbnail']
                 ],
             ];
         }

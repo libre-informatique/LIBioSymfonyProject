@@ -16,6 +16,7 @@ use Sylius\Bundle\CoreBundle\Fixture\ProductAttributeFixture;
 use Sylius\Bundle\CoreBundle\Fixture\TaxonFixture;
 use Sylius\Bundle\FixturesBundle\Fixture\AbstractFixture;
 use Sylius\Component\Attribute\AttributeType\IntegerAttributeType;
+use Sylius\Component\Attribute\AttributeType\SelectAttributeType;
 use Sylius\Component\Attribute\AttributeType\TextAttributeType;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -99,10 +100,20 @@ final class BookProductFixture extends AbstractFixture
             ]
         ]]]);
 
+        $bookGenres = ['Roman', 'Essai', 'Poésie', 'Bande dessinée'];
         $this->productAttributeFixture->load(['custom' => [
             ['name' => 'Auteur', 'code' => 'book_author', 'type' => TextAttributeType::TYPE],
             ['name' => 'ISBN', 'code' => 'book_isbn', 'type' => TextAttributeType::TYPE],
             ['name' => 'Nombre de pages', 'code' => 'book_pages', 'type' => IntegerAttributeType::TYPE],
+            [
+                'name' => 'Genre littéraire',
+                'code' => 'book_genre',
+                'type' => SelectAttributeType::TYPE,
+                'configuration' => [
+                    'multiple' => true,
+                    'choices' => $bookGenres,
+                ]
+            ],
         ]]);
 
         $products = [];
@@ -121,8 +132,8 @@ final class BookProductFixture extends AbstractFixture
                     'book_pages' => $this->faker->numberBetween(42, 1024),
                 ],
                 'images' => [
-                    'main' => sprintf('%s/../../Resources/fixtures/%s', __DIR__, 'books.jpg'),
-                    'thumbnail' => sprintf('%s/../../Resources/fixtures/%s', __DIR__, 'books.jpg'),
+                    [sprintf('%s/../../Resources/fixtures/%s', __DIR__, 'books.jpg'), 'main'],
+                    [sprintf('%s/../../Resources/fixtures/%s', __DIR__, 'books.jpg'), 'thumbnail']
                 ],
             ];
         }

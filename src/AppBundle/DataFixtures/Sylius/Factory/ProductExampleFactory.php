@@ -258,17 +258,20 @@ final class ProductExampleFactory implements ExampleFactoryInterface
             ->setNormalizer('product_attributes', function (Options $options, array $productAttributes) {
                 $productAttributesValues = [];
                 foreach ($productAttributes as $code => $value) {
-                    /** @var ProductAttributeInterface $productAttribute */
-                    $productAttribute = $this->productAttributeRepository->findOneBy(['code' => $code]);
+                    foreach ($this->getLocales() as $localeCode) {
+                        /** @var ProductAttributeInterface $productAttribute */
+                        $productAttribute = $this->productAttributeRepository->findOneBy(['code' => $code]);
 
-                    Assert::notNull($productAttribute);
+                        Assert::notNull($productAttribute);
 
-                    /** @var ProductAttributeValueInterface $productAttributeValue */
-                    $productAttributeValue = $this->productAttributeValueFactory->createNew();
-                    $productAttributeValue->setAttribute($productAttribute);
-                    $productAttributeValue->setValue($value ?: $this->getRandomValueForProductAttribute($productAttribute));
+                        /** @var ProductAttributeValueInterface $productAttributeValue */
+                        $productAttributeValue = $this->productAttributeValueFactory->createNew();
+                        $productAttributeValue->setAttribute($productAttribute);
+                        $productAttributeValue->setValue($value ?: $this->getRandomValueForProductAttribute($productAttribute));
+                        $productAttributeValue->setLocaleCode($localeCode);
 
-                    $productAttributesValues[] = $productAttributeValue;
+                        $productAttributesValues[] = $productAttributeValue;
+                    }
                 }
 
                 return $productAttributesValues;
@@ -280,6 +283,8 @@ final class ProductExampleFactory implements ExampleFactoryInterface
 
             ->setDefault('images', [])
             ->setAllowedTypes('images', 'array')
+
+            ->setDefault('shipping_required', true)
 
             ->setDefault('variety', null)
             ->setAllowedTypes('variety', ['null', "Librinfo\VarietiesBundle\Entity\Variety"])
@@ -343,15 +348,16 @@ final class ProductExampleFactory implements ExampleFactoryInterface
         $i = 0;
         /** @var ProductVariantInterface $productVariant */
         foreach ($product->getVariants() as $productVariant) {
-            $productVariant->setAvailableOn($this->faker->dateTimeThisYear);
+            $productVariant->setName($this->faker->word);
             $code = $product->getVariety() ?
                 $this->productVariantCodeGenerator->generate($productVariant) :
                 sprintf('%s-variant-%d', $options['code'], $i);
             $productVariant->setCode($code);
             $productVariant->setOnHand($this->faker->randomNumber(1));
+            $productVariant->setShippingRequired($options['shipping_required']);
 
             foreach ($this->channelRepository->findAll() as $channel) {
-                $this->createChannelPricings($productVariant, $channel);
+                $this->createChannelPricings($productVariant, $channel->getCode());
             }
 
             ++$i;
@@ -360,13 +366,13 @@ final class ProductExampleFactory implements ExampleFactoryInterface
 
     /**
      * @param ProductVariantInterface $productVariant
-     * @param ChannelInterface $channel
+     * @param string $channelCode
      */
-    private function createChannelPricings(ProductVariantInterface $productVariant, ChannelInterface $channel)
+    private function createChannelPricings(ProductVariantInterface $productVariant, $channelCode)
     {
         /** @var ChannelPricingInterface $channelPricing */
         $channelPricing = $this->channelPricingFactory->createNew();
-        $channelPricing->setChannel($channel);
+        $channelPricing->setChannelCode($channelCode);
         $channelPricing->setPrice($this->faker->randomNumber(3));
 
         $productVariant->addChannelPricing($channelPricing);
@@ -378,11 +384,14 @@ final class ProductExampleFactory implements ExampleFactoryInterface
      */
     private function createImages(ProductInterface $product, array $options)
     {
-        foreach ($options['images'] as $imageCode => $imagePath) {
+        foreach ($options['images'] as $image) {
+            $imagePath = array_shift($image);
+            $uploadedImage = new UploadedFile($imagePath, basename($imagePath));
+
             /** @var ImageInterface $productImage */
             $productImage = $this->productImageFactory->createNew();
-            $productImage->setCode($imageCode);
-            $productImage->setFile(new UploadedFile($imagePath, basename($imagePath)));
+            $productImage->setFile($uploadedImage);
+            $productImage->setType(end($image) ?: null);
 
             $this->imageUploader->upload($productImage);
 
