@@ -22,7 +22,7 @@ use Symfony\Component\Intl\Intl;
 
 /**
  * Initial code taken from: Sylius\Bundle\CoreBundle\Installer\Setup\CurrencySetup
- * This one uses the "sylius_currency.currency" app parameter instead of asking currency code to the user
+ * This one uses the "currency" app parameter instead of asking currency code to the user
  *
  * @author Mateusz Zalewski <mateusz.zalewski@lakion.com>
  * @author Marcos Bezerra de Menezes <marcos.bezerra@libre-informatique.fr>
