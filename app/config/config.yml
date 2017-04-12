@@ -30,7 +30,6 @@ framework:
     trusted_hosts:   ~
     trusted_proxies: ~
     session: ~
-# Temporarily disabled until blast_doctrine_handler is fixed:
     session:
         handler_id: blast_doctrine_handler
     fragments:       ~
