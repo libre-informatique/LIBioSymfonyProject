@@ -133,4 +133,13 @@ EOT
         $species->setCode($codeGenerator::generate($species));
     }
 
+    /**
+     * @param Variety $variety
+     */
+    protected function postDeserializeVariety(Variety $variety)
+    {
+        $codeGenerator = $this->getContainer()->get('librinfo_varieties.code_generator.variety');
+        $variety->setCode($codeGenerator::generate($variety));
+    }
+
 }
