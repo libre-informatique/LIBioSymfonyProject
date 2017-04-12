@@ -64,3 +64,6 @@
 
 # Sylius images
 /web/media/*
+
+# Data (CSV files from seed farms)
+/data/
