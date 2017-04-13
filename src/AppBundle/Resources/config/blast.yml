@@ -177,7 +177,7 @@ parameters:
                     variety:
                         admin_code: librinfo_varieties.admin.variety
                     _options:
-                        fieldsOrder: [code, variety, available]
+                        fieldsOrder: [code, variety, enabled]
                     _actions:
                         variants:
                             template: 'AppBundle:SeedsProductAdmin:list__action_variants.html.twig'
@@ -295,7 +295,7 @@ parameters:
                             - product
                             - packaging
                             - seedBatch
-                            - available
+#                            - available
                             - price
                             - onHand
                             - onHold
