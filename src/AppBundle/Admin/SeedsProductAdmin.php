@@ -36,7 +36,14 @@ class SeedsProductAdmin extends ProductAdmin
     {
         $variety = $this->getVariety();
         $request = $this->getRequest();
-        if ($request->getMethod() == 'GET' && !$request->get($this->getIdParameter()) && !$variety) {
+
+        $basicForm = false;
+        if (null !== $request->get('btn_create_for_variety'))
+            $basicForm = true;
+        elseif ($request->getMethod() == 'GET' && !$request->get($this->getIdParameter()) && !$variety)
+            $basicForm = true;
+
+        if ($basicForm) {
             // First step creation form with just the Variety field
             $mapper
                 ->with('form_tab_new_variety_variant')
