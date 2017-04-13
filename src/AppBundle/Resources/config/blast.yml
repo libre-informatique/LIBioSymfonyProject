@@ -143,7 +143,7 @@ parameters:
                             variety:
                                 type: sonata_type_model_autocomplete
                                 property: [name, code]
-                                read_only: true
+                                disabled: true
                                 _options:
                                     admin_code: libio.admin.variety
                             _options:
@@ -263,7 +263,7 @@ parameters:
                             product:
                                 type: sonata_type_model_autocomplete
                                 property: [translations.name, code]
-                                read_only: true
+                                disabled: true
                                 _options:
                                     admin_code: libio.admin.seeds_product
                             packaging:  # overridden in SeedsProductVariantAdmin::configureFormFields()
@@ -324,7 +324,7 @@ parameters:
                             product:
                                 type: sonata_type_model_autocomplete
                                 property: [translations.name, code]
-                                read_only: true
+                                disabled: true
                                 _options:
                                     admin_code: libio.admin.other_product
                             _options:
