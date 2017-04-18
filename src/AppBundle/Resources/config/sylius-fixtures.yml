@@ -6,16 +6,13 @@
 
 sylius_fixtures:
     suites:
-        lisem:
+
+        lisem_varieties:
             listeners:
 #                orm_purger: ~
                 logger: ~
 
             fixtures:
-
-#                locale: ~
-#                currency: ~
-
                 family:
                     options:
                         custom:
@@ -108,6 +105,16 @@ sylius_fixtures:
 #                seed_batch:
 #                    options:
 #                        random: 30
+
+
+        lisem_default:
+            listeners:
+#                orm_purger: ~
+                logger: ~
+
+            fixtures:
+#                locale: ~
+#                currency: ~
 
                 geographical:
                     options:
@@ -212,6 +219,12 @@ sylius_fixtures:
                                 category: "other"
                                 amount: 0.20
 
+
+        lisem_products:
+            listeners:
+                logger: ~
+
+            fixtures:
                 lisem_book_product:
                     options:
                         amount: 4

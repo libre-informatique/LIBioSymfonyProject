@@ -28,6 +28,8 @@ use Symfony\Component\Console\Question\ConfirmationQuestion;
  */
 class SetupCommand extends ContainerAwareCommand
 {
+    private $csvDir;
+
     protected function configure()
     {
         $this
@@ -36,9 +38,21 @@ class SetupCommand extends ContainerAwareCommand
             ->setDefinition(
                 new InputDefinition([
                     new InputOption('with-samples', null, InputOption::VALUE_NONE, 'Load sample data fixture'),
+                    new InputOption('csv-dir', null, InputOption::VALUE_OPTIONAL, 'CSV data directory path'),
                 ]))
             ->setHelp(<<<EOT
 The <info>%command.name%</info> command allows user to configure basic LiSem application data.
+
+Examples:
+
+    * Basic configuration (will not purge database):
+    <info>%command.name%</info>
+
+    * With random data:
+    <info>%command.name% --with-samples</info>
+
+    * With CSV data:
+    <info>%command.name% --with-samples --csv-dir=/my/csv/dir/path</info>
 EOT
             )
         ;
@@ -52,6 +66,13 @@ EOT
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        $this->csvDir = $input->getOption('csv-dir');
+        if ($this->csvDir) {
+            if (!$input->getOption('with-samples'))
+                throw new \Exception('The "csv-dir" option requires the "sample-data" option');
+            if (!is_dir($this->csvDir))
+                throw new \Exception('Could not find directory: ' . $this->csvDir);
+        }
         if ($input->getOption('with-samples')) {
             $output->writeln(['', '<question>This will erease the existing data.</question>']);
             $helper = $this->getHelper('question');
@@ -342,14 +363,27 @@ EOT
         $fixturesInput->setInteractive(false);
         $fixturesCommand->run($fixturesInput, $output);
 
-        $output->writeln(['', 'Running <info>sylius:fixtures:load lisem</info> command...']);
-        $fixturesCommand = $this->getApplication()->find('sylius:fixtures:load');
-        $fixturesInput = new ArrayInput([
-            'suite' => 'lisem'
-        ]);
-        $fixturesInput->setInteractive(false);
-        $fixturesCommand->run($fixturesInput, $output);
-        $output->writeln('<info>done.</info>');
+        foreach (['lisem_default', 'lisem_varieties', 'lisem_products'] as $suite) {
+            if ($suite == 'lisem_varieties' && $this->csvDir) {
+                $fixturesCommand = $this->getApplication()->find('lisem:import:csv');
+                $output->writeln(['', "Running <info>lisem:import:csv ".$this->csvDir."</info> command..."]);
+                $fixturesInput = new ArrayInput([
+                    'dir' => $this->csvDir
+                ]);
+                $fixturesInput->setInteractive(false);
+                $fixturesCommand->run($fixturesInput, $output);
+            }
+            else {
+                $fixturesCommand = $this->getApplication()->find('sylius:fixtures:load');
+                $output->writeln(['', "Running <info>sylius:fixtures:load $suite</info> command..."]);
+                $fixturesInput = new ArrayInput([
+                    'suite' => $suite
+                ]);
+                $fixturesInput->setInteractive(false);
+                $fixturesCommand->run($fixturesInput, $output);
+            }
+            $output->writeln('<info>done.</info>');
+        }
     }
 
     /**
