@@ -14,19 +14,11 @@ First thing, [get composer.phar](https://getcomposer.org/download/)
 $ curl -sS https://getcomposer.org/installer | php
 ```
 
-### Composer
-
-Then just run:
-
-```
-$ composer require libre-informatique/libio-project dev-master
-```
-
-### Git install (old school, but always working)
+### Git install
 
 ```
 $ git clone https://github.com/libre-informatique/LIBioSymfonyProject .
-$ composer update
+$ composer install
 ```
 
 ### Conclusion
