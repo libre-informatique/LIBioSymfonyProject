@@ -78,6 +78,7 @@ class CsvNameConverter implements NameConverterInterface
             ],
             "Librinfo\VarietiesBundle\Entity\Variety" => [
                 'nom' => 'name',
+                'code' => 'code',
                 'alias' => 'alias',
                 'nom latin' => 'latin_name',
                 'description' => 'description',
