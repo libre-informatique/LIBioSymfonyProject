@@ -20,38 +20,39 @@ var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
 var uglifycss = require('gulp-uglifycss');
+var argv = require('yargs').argv;
 
-var rootPath = '../../../../web/assets/';
+var rootPath = argv.rootPath;
 var shopRootPath = rootPath + 'shop/';
+var vendorPath = '../../../../vendor/sylius/sylius/src/Sylius/Bundle/';
+var vendorShopPath = vendorPath + 'ShopBundle/';
+var vendorUiPath = vendorPath + 'UiBundle/';
+var nodeModulesPath = argv.nodeModulesPath;
 
 var paths = {
     shop: {
         js: [
-//            '../../../../node_modules/jquery/dist/jquery.min.js',
-            '../../../../vendor/sylius/sylius/node_modules/jquery/dist/jquery.min.js',
-//            '../../../../node_modules/semantic-ui-css/semantic.min.js',
-            '../../../../vendor/sylius/sylius/node_modules/semantic-ui-css/semantic.min.js',
-//            '../UiBundle/Resources/private/js/**',
-            '../../../../vendor/sylius/sylius/src/Sylius/Bundle/UiBundle/Resources/private/js/**',
-//            'Resources/private/js/**'
-            '../../../../vendor/sylius/sylius/src/Sylius/Bundle/ShopBundle/Resources/private/js/**',
-            
-            '!../../../../vendor/sylius/sylius/src/Sylius/Bundle/ShopBundle/Resources/private/js/semantic-ui-api-actions.js',
+            nodeModulesPath + 'jquery/dist/jquery.min.js',
+            nodeModulesPath + 'semantic-ui-css/semantic.min.js',
+            nodeModulesPath + 'lightbox2/dist/js/lightbox.js',
+            vendorUiPath + 'Resources/private/js/**',
+            vendorShopPath + 'Resources/private/js/**',
             'Resources/private/js/**'
         ],
         sass: [
-//            '../UiBundle/Resources/private/sass/**',
-            '../../../../vendor/sylius/sylius/src/Sylius/Bundle/UiBundle/Resources/private/sass/**',
-//            'Resources/private/scss/**'
-            '../../../../vendor/sylius/sylius/src/Sylius/Bundle/ShopBundle/Resources/private/scss/**'
+            vendorUiPath + 'Resources/private/sass/**',
+            vendorShopPath + 'Resources/private/sass/**'
         ],
         css: [
-//            '../../../../node_modules/semantic-ui-css/semantic.min.css'
-            '../../../../node_modules/semantic-ui-css/semantic.min.css'
+            nodeModulesPath + 'semantic-ui-css/semantic.min.css',
+            nodeModulesPath + 'lightbox2/dist/css/lightbox.css',
+            vendorUiPath + 'Resources/private/css/**',
+            vendorShopPath + 'Resources/private/css/**',
+            vendorShopPath + 'Resources/private/scss/**'
         ],
         img: [
-//            '../UiBundle/Resources/private/img/**'
-            '../../../../vendor/sylius/sylius/src/Sylius/Bundle/UiBundle/Resources/private/img/**'
+            vendorUiPath + 'Resources/private/img/**',
+            vendorShopPath + 'Resources/private/img/**'
         ]
     }
 };
@@ -66,7 +67,7 @@ gulp.task('shop-js', function () {
 });
 
 gulp.task('shop-css', function() {
-    gulp.src(['../../../../node_modules/semantic-ui-css/themes/**/*']).pipe(gulp.dest(shopRootPath + 'css/themes/'));
+    gulp.src([nodeModulesPath + 'semantic-ui-css/themes/**/*']).pipe(gulp.dest(shopRootPath + 'css/themes/'));
 
     var cssStream = gulp.src(paths.shop.css)
             .pipe(concat('css-files.css'))
@@ -88,6 +89,8 @@ gulp.task('shop-css', function() {
 });
 
 gulp.task('shop-img', function() {
+    gulp.src([nodeModulesPath + 'lightbox2/dist/images/*']).pipe(gulp.dest(shopRootPath + 'images/'));
+
     return gulp.src(paths.shop.img)
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest(shopRootPath + 'img/'))
@@ -97,11 +100,12 @@ gulp.task('shop-img', function() {
 gulp.task('shop-watch', function() {
     livereload.listen();
 
-    var watcher = gulp.watch(paths.shop.js, ['shop-js']);
-    
-    watcher.on('change', function(event) {
-      console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
-    });    
+//    var watcher = gulp.watch(paths.shop.js, ['shop-js']);
+//    
+//    watcher.on('change', function(event) {
+//      console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
+//    });    
+    gulp.watch(paths.shop.js, ['shop-js']);
     gulp.watch(paths.shop.sass, ['shop-css']);
     gulp.watch(paths.shop.css, ['shop-css']);
     gulp.watch(paths.shop.img, ['shop-img']);
