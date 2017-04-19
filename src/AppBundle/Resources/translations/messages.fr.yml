@@ -98,6 +98,9 @@ librinfo:
         quantity: Quantité
         seed_batch: Lot
         value: Contenu
+        created_by: Créé par
+        updated_by: Màj par
+        enabled: Activé
     link:
         dashboard: Tableau de Bord
         other_product_create: Ajouter un article (autres)
