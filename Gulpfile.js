@@ -27,7 +27,7 @@ config_shop = [
     '--rootPath',
     argv.rootPath || '../../../../web/assets/',
     '--nodeModulesPath',
-    '../../../../vendor/sylius/sylius/node_modules'
+    '../../../../node_modules/'
 ];
 
 gulp.task('sylius-shop', function() {
