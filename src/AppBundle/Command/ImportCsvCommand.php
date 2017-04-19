@@ -38,6 +38,9 @@ final class ImportCsvCommand extends ContainerAwareCommand
      */
     protected $dir;
 
+    protected $speciesCodes = [];
+    protected $varietyCodes = [];
+
     protected function configure()
     {
         $this
@@ -92,9 +95,14 @@ EOT
         foreach ($objects as $k=> $object) {
             if (method_exists($this, $method))
                 $this->{$method}($object);
+
             $this->em->persist($object);
-            $this->em->flush();
+
+            if ($k % 50 == 0) {
+                $this->em->flush();
+            }
         }
+        $this->em->flush();
     }
 
     /**
@@ -130,7 +138,9 @@ EOT
     protected function postDeserializeSpecies(Species $species)
     {
         $codeGenerator = $this->getContainer()->get('librinfo_varieties.code_generator.species');
-        $species->setCode($codeGenerator::generate($species));
+        $code = $codeGenerator::generate($species, $this->speciesCodes);
+        $this->speciesCodes[] = $code;
+        $species->setCode($code);
     }
 
     /**
@@ -138,8 +148,13 @@ EOT
      */
     protected function postDeserializeVariety(Variety $variety)
     {
-        $codeGenerator = $this->getContainer()->get('librinfo_varieties.code_generator.variety');
-        $variety->setCode($codeGenerator::generate($variety));
+        $code = $variety->getCode();
+        if (!$code) {
+            $codeGenerator = $this->getContainer()->get('librinfo_varieties.code_generator.variety');
+            $code = $codeGenerator::generate($variety, $this->varietyCodes);
+            $variety->setCode($code);
+        }
+        $this->varietyCodes[] = $code;
     }
 
 }
