@@ -19,7 +19,7 @@ parameters:
     secret:            ThisTokenIsNotSoSecretChangeIt
 
     # custom directories
-    #cache_dir: /foo    
+    #cache_dir: /foo # please fill the absolute path to the cache directory (same for logs_dir)
     #logs_dir: /bar # the logs will end up in /bar/{name-of-this-instance}/cache/{environment}
 
     # Default Users

@@ -7,6 +7,7 @@ imports:
     - { resource: "@AppBundle/Resources/config/services.yml" }
     - { resource: "@AppBundle/Resources/config/app/config.yml" }
     - { resource: "@BlastUtilsBundle/Resources/config/sonata.yml" }
+    - { resource: "@LibrinfoEcommerceBundle/Resources/config/app/config.yml" }
 
 parameters:
     locale: fr_FR
@@ -196,4 +197,5 @@ librinfo_crm:
 #            city: [uppercase]
 #            country: [uppercase]
 
-
+fos_rest:
+    exception: ~

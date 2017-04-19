@@ -76,9 +76,9 @@
         "symfony-web-dir": "web",
         "symfony-bin-dir": "bin",
         "symfony-var-dir": "var",
+        "symfony-tests-dir": "tests",
         "symfony-assets-install": "relative",
         "incenteev-parameters": {
             "file": "app/config/parameters.yml"
-        }
     }
 }
