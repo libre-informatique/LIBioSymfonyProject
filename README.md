@@ -21,6 +21,13 @@ $ git clone https://github.com/libre-informatique/LIBioSymfonyProject .
 $ composer install
 ```
 
+### Deploy assets
+
+```
+$ npm install
+$ npm run gulp
+```
+
 ### Conclusion
 
 Then you would have the following directory structure :
@@ -52,6 +59,10 @@ modify composer.json by adding ```"minimum-stability": "dev"```
 ### If your php version is < 5.6
 
 Set phpunit version to "^4.8" in composer.json 
+
+### If you encounter cache and/or log directory problems ###
+
+Add cache_dir parameter to your parameter.yml with the absolute path to the cache directory. Do the same action for the logs_dir parameter
 
 Installation From Scratch
 -------------------------
