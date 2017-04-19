@@ -118,6 +118,10 @@ librinfo:
         seeds_product_variant_list: Liste des déclinaisons d'article (semences)
         seedsproduct_list: Liste des articles (semences)
         seedsproductvariant_list: Liste des déclinaisons d'article (semences)
+    crm:
+        organism_admin:
+            # Translation to be confirmed
+            label: LISEM
 
 lisem:
     packaging_admin:
