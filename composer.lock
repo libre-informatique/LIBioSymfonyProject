@@ -4,33 +4,29 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ed58e5ed63a136d97037402f38443476",
+    "content-hash": "7acdd7e80554cb7157eb021180f1ed2b",
     "packages": [
         {
             "name": "behat/transliterator",
-            "version": "dev-master",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Behat/Transliterator.git",
-                "reference": "826ce7e9c2a6664c0d1f381cbb38b1fb80a7ee2c"
+                "reference": "868e05be3a9f25ba6424c2dd4849567f50715003"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Behat/Transliterator/zipball/826ce7e9c2a6664c0d1f381cbb38b1fb80a7ee2c",
-                "reference": "826ce7e9c2a6664c0d1f381cbb38b1fb80a7ee2c",
+                "url": "https://api.github.com/repos/Behat/Transliterator/zipball/868e05be3a9f25ba6424c2dd4849567f50715003",
+                "reference": "868e05be3a9f25ba6424c2dd4849567f50715003",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
-            "require-dev": {
-                "chuyskywalker/rolling-curl": "^3.1",
-                "php-yaoi/php-yaoi": "^1.0"
-            },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.2-dev"
+                    "dev-master": "1.1-dev"
                 }
             },
             "autoload": {
@@ -48,7 +44,7 @@
                 "slug",
                 "transliterator"
             ],
-            "time": "2017-04-04 11:38:05"
+            "time": "2015-09-28T16:26:35+00:00"
         },
         {
             "name": "blast-project/base-entities-bundle",
@@ -1921,20 +1917,20 @@
         },
         {
             "name": "gedmo/doctrine-extensions",
-            "version": "v2.4.27",
+            "version": "v2.4.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Atlantic18/DoctrineExtensions.git",
-                "reference": "fe152e1239f2f46287d369e43cc9fa817cc3cd36"
+                "reference": "88203f1a35107db0125ffa80f015aa8a164164f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/fe152e1239f2f46287d369e43cc9fa817cc3cd36",
-                "reference": "fe152e1239f2f46287d369e43cc9fa817cc3cd36",
+                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/88203f1a35107db0125ffa80f015aa8a164164f3",
+                "reference": "88203f1a35107db0125ffa80f015aa8a164164f3",
                 "shasum": ""
             },
             "require": {
-                "behat/transliterator": "~1.0",
+                "behat/transliterator": "1.1",
                 "doctrine/common": "~2.4",
                 "php": ">=5.3.2"
             },
@@ -1995,7 +1991,7 @@
                 "tree",
                 "uploadable"
             ],
-            "time": "2017-03-22T09:48:22+00:00"
+            "time": "2017-04-18 09:48:50"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -3596,12 +3592,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/EcommerceBundle.git",
-                "reference": "53cef5ff626cdad06bbb65cc7d35b8a0344a0071"
+                "reference": "7b1dae3a26a0c124ea28bfb0b3783a9fd22880cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/EcommerceBundle/zipball/53cef5ff626cdad06bbb65cc7d35b8a0344a0071",
-                "reference": "53cef5ff626cdad06bbb65cc7d35b8a0344a0071",
+                "url": "https://api.github.com/repos/libre-informatique/EcommerceBundle/zipball/7b1dae3a26a0c124ea28bfb0b3783a9fd22880cb",
+                "reference": "7b1dae3a26a0c124ea28bfb0b3783a9fd22880cb",
                 "shasum": ""
             },
             "require": {
@@ -3643,7 +3639,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-04-13 15:45:52"
+            "time": "2017-04-19 09:15:49"
         },
         {
             "name": "libre-informatique/email-bundle",
@@ -5784,12 +5780,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataAdminBundle.git",
-                "reference": "24cec8a401148773f9c7d95e86faa1dd8b64a05e"
+                "reference": "6287f836eb74ad6081bf9ac11e388d4d52f9c76a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/24cec8a401148773f9c7d95e86faa1dd8b64a05e",
-                "reference": "24cec8a401148773f9c7d95e86faa1dd8b64a05e",
+                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/6287f836eb74ad6081bf9ac11e388d4d52f9c76a",
+                "reference": "6287f836eb74ad6081bf9ac11e388d4d52f9c76a",
                 "shasum": ""
             },
             "require": {
@@ -5875,7 +5871,7 @@
                 "bootstrap",
                 "sonata"
             ],
-            "time": "2017-04-13 15:24:35"
+            "time": "2017-04-19 10:13:20"
         },
         {
             "name": "sonata-project/block-bundle",
@@ -6157,12 +6153,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataDoctrineORMAdminBundle.git",
-                "reference": "478a0a0d22a39014e1aa8321489df59fe11788ef"
+                "reference": "026dd52832b0a2a67a50748da6a466ad9bce5fc2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataDoctrineORMAdminBundle/zipball/478a0a0d22a39014e1aa8321489df59fe11788ef",
-                "reference": "478a0a0d22a39014e1aa8321489df59fe11788ef",
+                "url": "https://api.github.com/repos/sonata-project/SonataDoctrineORMAdminBundle/zipball/026dd52832b0a2a67a50748da6a466ad9bce5fc2",
+                "reference": "026dd52832b0a2a67a50748da6a466ad9bce5fc2",
                 "shasum": ""
             },
             "require": {
@@ -6228,7 +6224,7 @@
                 "generator",
                 "sonata"
             ],
-            "time": "2017-04-03 19:24:27"
+            "time": "2017-04-18 18:24:44"
         },
         {
             "name": "sonata-project/easy-extends-bundle",
@@ -7497,12 +7493,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "3d9ad54015460aaa17dd4dab2d857d29ecde6096"
+                "reference": "c9a614eb5ec6bf7be9ee44a85552a9ccd5161f5c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/3d9ad54015460aaa17dd4dab2d857d29ecde6096",
-                "reference": "3d9ad54015460aaa17dd4dab2d857d29ecde6096",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/c9a614eb5ec6bf7be9ee44a85552a9ccd5161f5c",
+                "reference": "c9a614eb5ec6bf7be9ee44a85552a9ccd5161f5c",
                 "shasum": ""
             },
             "require": {
@@ -7633,7 +7629,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2017-04-12 20:33:42"
+            "time": "2017-04-18 16:11:15"
         },
         {
             "name": "trappar/alice-generator",
@@ -7802,12 +7798,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "dab65824ecaf0c3fc176ab0dd7c77e79c32eec66"
+                "reference": "530be06a5a376f35039a33398fc81c13235a7839"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/dab65824ecaf0c3fc176ab0dd7c77e79c32eec66",
-                "reference": "dab65824ecaf0c3fc176ab0dd7c77e79c32eec66",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/530be06a5a376f35039a33398fc81c13235a7839",
+                "reference": "530be06a5a376f35039a33398fc81c13235a7839",
                 "shasum": ""
             },
             "require": {
@@ -7856,7 +7852,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2017-04-18 13:54:16"
+            "time": "2017-04-18 21:44:30"
         },
         {
             "name": "webmozart/assert",
@@ -8630,6 +8626,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "doctrine/orm": 20,
         "doctrine/dbal": 20,
         "doctrine/doctrine-bundle": 20,
         "libre-informatique/email-crm-bundle": 20,
@@ -8641,6 +8638,7 @@
         "libre-informatique/ecommerce-bundle": 20,
         "blast-project/utils-bundle": 20,
         "blast-project/doctrine-session-bundle": 20,
+        "blast-project/core-bundle": 20,
         "marem/payum-paybox": 20
     },
     "prefer-stable": false,
