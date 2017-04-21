@@ -8,25 +8,29 @@
     "packages": [
         {
             "name": "behat/transliterator",
-            "version": "v1.1.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Behat/Transliterator.git",
-                "reference": "868e05be3a9f25ba6424c2dd4849567f50715003"
+                "reference": "826ce7e9c2a6664c0d1f381cbb38b1fb80a7ee2c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Behat/Transliterator/zipball/868e05be3a9f25ba6424c2dd4849567f50715003",
-                "reference": "868e05be3a9f25ba6424c2dd4849567f50715003",
+                "url": "https://api.github.com/repos/Behat/Transliterator/zipball/826ce7e9c2a6664c0d1f381cbb38b1fb80a7ee2c",
+                "reference": "826ce7e9c2a6664c0d1f381cbb38b1fb80a7ee2c",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
+            "require-dev": {
+                "chuyskywalker/rolling-curl": "^3.1",
+                "php-yaoi/php-yaoi": "^1.0"
+            },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1-dev"
+                    "dev-master": "1.2-dev"
                 }
             },
             "autoload": {
@@ -44,7 +48,7 @@
                 "slug",
                 "transliterator"
             ],
-            "time": "2015-09-28T16:26:35+00:00"
+            "time": "2017-04-04 11:38:05"
         },
         {
             "name": "blast-project/base-entities-bundle",
@@ -1920,20 +1924,20 @@
         },
         {
             "name": "gedmo/doctrine-extensions",
-            "version": "v2.4.x-dev",
+            "version": "v2.4.27",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Atlantic18/DoctrineExtensions.git",
-                "reference": "58dfe5222ebb76c15b8d5b4174fcdd35e266ffb3"
+                "reference": "fe152e1239f2f46287d369e43cc9fa817cc3cd36"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/58dfe5222ebb76c15b8d5b4174fcdd35e266ffb3",
-                "reference": "58dfe5222ebb76c15b8d5b4174fcdd35e266ffb3",
+                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/fe152e1239f2f46287d369e43cc9fa817cc3cd36",
+                "reference": "fe152e1239f2f46287d369e43cc9fa817cc3cd36",
                 "shasum": ""
             },
             "require": {
-                "behat/transliterator": "1.1",
+                "behat/transliterator": "~1.0",
                 "doctrine/common": "~2.4",
                 "php": ">=5.3.2"
             },
@@ -1994,7 +1998,7 @@
                 "tree",
                 "uploadable"
             ],
-            "time": "2017-04-20 09:50:03"
+            "time": "2017-03-22T09:48:22+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -2920,12 +2924,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/serializer.git",
-                "reference": "b8683d206e7297f54034f67a877f966c14dc12ea"
+                "reference": "89419d1ede34c478a6a33b7a00e51f8c20e2420c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/serializer/zipball/b8683d206e7297f54034f67a877f966c14dc12ea",
-                "reference": "b8683d206e7297f54034f67a877f966c14dc12ea",
+                "url": "https://api.github.com/repos/schmittjoh/serializer/zipball/89419d1ede34c478a6a33b7a00e51f8c20e2420c",
+                "reference": "89419d1ede34c478a6a33b7a00e51f8c20e2420c",
                 "shasum": ""
             },
             "require": {
@@ -2991,7 +2995,7 @@
                 "serialization",
                 "xml"
             ],
-            "time": "2017-04-17 15:27:46"
+            "time": "2017-04-21 13:33:51"
         },
         {
             "name": "jms/serializer-bundle",
@@ -6615,12 +6619,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "7f075aa497bc08559ea26350fa222492f40657f7"
+                "reference": "160bb599e0a7525a252638cc5a8a0ebabe63ae00"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/7f075aa497bc08559ea26350fa222492f40657f7",
-                "reference": "7f075aa497bc08559ea26350fa222492f40657f7",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/160bb599e0a7525a252638cc5a8a0ebabe63ae00",
+                "reference": "160bb599e0a7525a252638cc5a8a0ebabe63ae00",
                 "shasum": ""
             },
             "require": {
@@ -6661,7 +6665,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2017-02-24 19:52:51"
+            "time": "2017-04-20 17:32:49"
         },
         {
             "name": "sylius/sylius",
@@ -6669,12 +6673,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sylius/Sylius.git",
-                "reference": "3ae08d35670c61768dfa04e1d309ba3773d4be02"
+                "reference": "fa19636db708b0f7540923c6903d34cac8ef39e0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sylius/Sylius/zipball/3ae08d35670c61768dfa04e1d309ba3773d4be02",
-                "reference": "3ae08d35670c61768dfa04e1d309ba3773d4be02",
+                "url": "https://api.github.com/repos/Sylius/Sylius/zipball/fa19636db708b0f7540923c6903d34cac8ef39e0",
+                "reference": "fa19636db708b0f7540923c6903d34cac8ef39e0",
                 "shasum": ""
             },
             "require": {
@@ -6843,7 +6847,7 @@
             ],
             "description": "E-Commerce platform for PHP, based on Symfony framework.",
             "homepage": "http://sylius.org",
-            "time": "2017-04-20 07:56:41"
+            "time": "2017-04-21 11:34:08"
         },
         {
             "name": "symfony/assetic-bundle",
@@ -7811,12 +7815,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "530be06a5a376f35039a33398fc81c13235a7839"
+                "reference": "ef680be80ef9e4f785f3f51c86bfaca8d991e801"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/530be06a5a376f35039a33398fc81c13235a7839",
-                "reference": "530be06a5a376f35039a33398fc81c13235a7839",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/ef680be80ef9e4f785f3f51c86bfaca8d991e801",
+                "reference": "ef680be80ef9e4f785f3f51c86bfaca8d991e801",
                 "shasum": ""
             },
             "require": {
@@ -7865,7 +7869,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2017-04-18 21:44:30"
+            "time": "2017-04-20 17:41:13"
         },
         {
             "name": "webmozart/assert",
