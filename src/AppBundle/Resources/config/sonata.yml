@@ -83,6 +83,8 @@ sonata_admin:
                 items:
                     - label: libio.menu_label.orders_list
                       route: admin_librinfo_ecommerce_order_list
+                    - label: libio.menu_label.payment_list
+                      route: admin_librinfo_ecommerce_payment_list
                     #- label: libio.menu_label.create_order
                     #  route: libio_not_implemented
                     - label: libio.menu_label.customers_list

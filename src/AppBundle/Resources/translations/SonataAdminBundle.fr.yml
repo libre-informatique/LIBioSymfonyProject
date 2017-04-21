@@ -34,6 +34,7 @@ libio:
         organisms_list: Liste des Tiers
         other_products_list: Liste des Articles (autres)
         packagings: Conditionnement
+        payment_list: Liste des Paiements
         plots_list: Liste des Parcelles
         producers_list: Liste des Producteurs
         products: Articles
