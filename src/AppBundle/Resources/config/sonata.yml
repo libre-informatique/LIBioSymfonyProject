@@ -83,8 +83,6 @@ sonata_admin:
                 items:
                     - label: libio.menu_label.orders_list
                       route: admin_librinfo_ecommerce_order_list
-                    - label: libio.menu_label.payment_list
-                      route: admin_librinfo_ecommerce_payment_list
                     #- label: libio.menu_label.create_order
                     #  route: libio_not_implemented
                     - label: libio.menu_label.customers_list
@@ -96,9 +94,9 @@ sonata_admin:
                 icon:  '<i class="fa fa-balance-scale"></i>'
                 items:
                     - label: libio.menu_label.sales_journal
-                      route: libio_not_implemented
+                      route: admin_librinfo_ecommerce_sales_journal_list
                     - label: libio.menu_label.cash_book
-                      route: libio_not_implemented
+                      route: admin_librinfo_ecommerce_payment_list
             App settings:
                 provider: parameters_sidebar_menu
                 icon:     '<i class="fa fa-sliders"></i>'
