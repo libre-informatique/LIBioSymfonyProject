@@ -1,7 +1,11 @@
 LISem
 ===================
 
-LISem is an ERP specialized for seeds producers and craftmen. It uses many libraries developped in generic ways.
+LISem is an ERP specialized for seeds producers and craftmen. It uses many libraries from :
+
+* [Blast Project](https://github.com/blast-project)
+* [Libre Informatique](https://github.com/libre-informatique)
+* [Sylius](http://docs.sylius.org/en/latest/)
 
 THIS PROJECT IS STILL UNUSABLE, IT'S A WORK IN PROGRESS
 
@@ -14,51 +18,51 @@ First thing, [get composer.phar](https://getcomposer.org/download/)
 $ curl -sS https://getcomposer.org/installer | php
 ```
 
-### Git install
+### Download project (git + composer)
 
 ```
 $ git clone https://github.com/libre-informatique/LIBioSymfonyProject .
 $ composer install
 ```
 
+### Create and configure the database
+
+Create a database. For example, if you are using PostgreSQL :
+
+```sql
+CREATE USER lisem_user WITH PASSWORD 'this-is-my-lisem-password';
+CREATE DATABASE lisem;
+GRANT ALL PRIVILEGES ON DATABASE lisem TO lisem_user;
+\connect lisem;
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+```
+
+Configure the LiSem application according to your database settings:
+
+```yaml
+# app/config/parameters.yml
+parameters:
+    database_host: 127.0.0.1
+    database_port: 5432
+    database_name: lisem
+    database_user: lisem_user
+    database_password: this-is-my-lisem-password
+```
+
+Create tables:
+
+```bash
+$ bin/console doctrine:schema:create
+```
+
 ### Deploy assets
+
+Sylius assets :
 
 ```
 $ npm install
 $ npm run gulp
 ```
-
-### Conclusion
-
-Then you would have the following directory structure :
-
-```
-.
-├── app
-├── src
-└── web
-```
-
-At this point, if you don't have any Exceptions, you're done !
-
-Troubleshooting
----------------
-
-### If you are running PHP 5.4.x
-
-You'll need some extra libraries:
-
-```
-$ composer require ircmaxell/password-compat
-```
-
-### If you have unresolved dependencies:
-
-modify composer.json by adding ```"minimum-stability": "dev"```
-
-### If your php version is < 5.6
-
-Set phpunit version to "^4.8" in composer.json 
 
 ### If you encounter cache and/or log directory problems ###
 
