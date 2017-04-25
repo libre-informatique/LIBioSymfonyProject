@@ -41,6 +41,7 @@ libio:
         crm_categories_list: Categories
         crm_circles_list: Groupes
         crm_settings: Relations publiques
+        customer_group: Groupes de client
         customers_list: Liste des Clients
         emails_list: Liste des Emails
         families_list: Familles

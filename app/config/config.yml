@@ -108,7 +108,6 @@ doctrine:
 # Swiftmailer Configuration
 swiftmailer:
     default_mailer: direct_mailer
-    default_mailer: direct_mailer
     mailers:
         direct_mailer:
             transport: "%mailer_transport%"
