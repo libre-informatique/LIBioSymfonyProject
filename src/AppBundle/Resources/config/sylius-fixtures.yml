@@ -236,3 +236,12 @@ sylius_fixtures:
                 seeds_product:
                     options:
                         amount: 6
+
+
+        lisem_customer:
+            listeners:
+                logger: ~
+                
+            fixtures:
+                lisem_customer_customer: ~                    
+                    
