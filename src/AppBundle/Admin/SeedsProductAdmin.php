@@ -132,4 +132,15 @@ class SeedsProductAdmin extends ProductAdmin
             ->setParameter('value', "%$value%")
         ;
     }
+    
+    /**
+     * @return array
+     */
+    public function getFormTheme()
+    {
+        return array_merge(
+            parent::getFormTheme(),
+            array('AppBundle:SeedsProductAdmin:form_theme.html.twig')
+        );
+    }
 }

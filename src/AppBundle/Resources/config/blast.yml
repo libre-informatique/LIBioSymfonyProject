@@ -263,7 +263,7 @@ parameters:
                             product:
                                 type: sonata_type_model_autocomplete
                                 property: [translations.name, code]
-                                disabled: true
+#                                disabled: true
                                 _options:
                                     admin_code: libio.admin.seeds_product
                             packaging:  # overridden in SeedsProductVariantAdmin::configureFormFields()

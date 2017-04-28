@@ -6,6 +6,16 @@
 
 services:
 
+    librinfo_ecommerce.code_generator.product_variant:
+        class: Librinfo\EcommerceBundle\CodeGenerator\ProductVariantCodeGenerator
+        factory:   ['@blast_core.code_generator_factory', create]
+        arguments: ['%librinfo_ecommerce.code_generator.product_variant%', '@doctrine.orm.entity_manager']
+        calls:
+            - ['setRequestStack',['@request_stack']]
+            - ['setPackagingRepo',['@sylius.repository.product_option_value']]
+        tags:
+            - { name: blast.entity_code_generator }
+
 ### CUSTOM SIDEBAR MENUS ###
 
     libio.menu_builder:

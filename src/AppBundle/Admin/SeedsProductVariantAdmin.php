@@ -83,5 +83,16 @@ class SeedsProductVariantAdmin extends ProductVariantAdmin
         ;
         return $queryBuilder;
     }
+    
+    /**
+     * @return array
+     */
+    public function getFormTheme()
+    {
+        return array_merge(
+            parent::getFormTheme(),
+            array('AppBundle:SeedsProductAdmin:form_theme.html.twig')
+        );
+    }
 
 }
