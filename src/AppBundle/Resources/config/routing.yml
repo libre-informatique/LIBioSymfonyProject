@@ -22,10 +22,6 @@ blast_base_entities:
 #    resource: "@LibrinfoSecurityBundle/Resources/config/routing.yml"
 #    prefix:   /
 
-librinfo_ui:
-    resource: "@LibrinfoUIBundle/Resources/config/routing.yml"
-    prefix:   /
-
 librinfo_decorator:
     resource: "@LibrinfoDecoratorBundle/Resources/config/routing.yml"
     prefix:   /
