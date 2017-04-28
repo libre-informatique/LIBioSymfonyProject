@@ -27,6 +27,6 @@
     "url": "git+https://github.com/Sylius/Sylius.git"
   },
   "author": "Libre Informatique",
-  "license": "GPL v3"
+  "license": "GPL-3.0"
 }
 
