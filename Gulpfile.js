@@ -14,7 +14,7 @@ config_admin = [
     '--rootPath',
     argv.rootPath || '../../../../../../../web/assets/',
     '--nodeModulesPath',
-    '../../../../node_modules/'
+    '../../../../../../../node_modules/'
 ];
 
 gulp.task('sylius-admin', function() {
