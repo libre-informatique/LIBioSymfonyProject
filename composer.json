@@ -31,7 +31,6 @@
         "incenteev/composer-parameter-handler": "^2.1",
         "jms/security-extra-bundle": "^1.6",
         "libre-informatique/email-crm-bundle": "dev-master",
-        "libre-informatique/ui-bundle": "dev-master",
         "libre-informatique/varieties-bundle": "dev-master",
         "libre-informatique/seed-batch-bundle": "dev-master",
         "libre-informatique/sonata-sylius-user-bundle": "dev-master",
