@@ -12,16 +12,34 @@ THIS PROJECT IS STILL UNUSABLE, IT'S A WORK IN PROGRESS
 Installation
 ------------
 
-First thing, [get composer.phar](https://getcomposer.org/download/)
+### Download project
+
+With SSH if you have a GitHub account
 
 ```
-$ curl -sS https://getcomposer.org/installer | php
+$ git clone git@github.com:libre-informatique/LISemSymfonyProject.git
+```
+
+... or with HTTPS:
+
+```
+$ git clone https://github.com/libre-informatique/LIBioSymfonyProject
+```
+
+### Install dependencies (vendors)
+
+Make sure you have [the latest version of composer](https://getcomposer.org/download/) installed, then :
+
+```
+$ cd LIBioSymfonyProject
+$ composer install
 ```
 
 ### Download project (git + composer)
 
 ```
-$ git clone https://github.com/libre-informatique/LIBioSymfonyProject .
+$ git clone https://github.com/libre-informatique/LIBioSymfonyProject
+$ git clone git@github.com:libre-informatique/LISemSymfonyProject.git
 $ composer install
 ```
 
