@@ -143,7 +143,8 @@ parameters:
                             variety:
                                 type: sonata_type_model_autocomplete
                                 property: [name, code]
-                                disabled: true
+                                attr:
+                                    readonly: ~
                                 _options:
                                     admin_code: libio.admin.variety
                             _options:
@@ -247,6 +248,9 @@ parameters:
                         '':
                             product:
                                 admin_code: libio.admin.seeds_product
+                                attr:
+                                    readonly: ~
+                                disabled: true
                             packaging: ~
                             seedBatch:
                                 admin_code: librinfo_seedbatch.admin.seedbatch
