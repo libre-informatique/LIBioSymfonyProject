@@ -78,7 +78,4 @@ $ npm run gulp
 
 Add cache_dir parameter to your parameter.yml with the absolute path to the cache directory. Do the same action for the logs_dir parameter
 
-Installation From Scratch
--------------------------
- 
-See [this documentation](README-FROM-SCRATCH.md) to install the project into an existing (and already installed) Symfony 2 installation.
+
