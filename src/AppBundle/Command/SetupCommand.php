@@ -310,7 +310,7 @@ EOT
             $output->writeln(sprintf('<info> done (%d cities).</info>', $num_rows_effected));
         }catch(\Exception $e){
             // This is clean but it is SLOW:
-            $output->writeln(sprintf('<info> Using fallback method to import cities</info>'));
+            $output->writeln(sprintf('<info> Using fallback method (SLOW) to import cities</info>'));
             $em->getConnection()->getConfiguration()->setSQLLogger(null);
             $em->createQuery('DELETE FROM LibrinfoCRMBundle:City')->execute();
             $handle = fopen($file, 'r');
