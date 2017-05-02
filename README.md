@@ -35,6 +35,8 @@ $ cd LIBioSymfonyProject
 $ composer install
 ```
 
+It will install part of the assets. See below to see how to install the remaining assets (Sylius assets)
+
 ### Create and configure the database
 
 Create a database. For example, if you are using PostgreSQL :
@@ -71,17 +73,32 @@ $ bin/console doctrine:schema:create
 $ bin/console lisem:install:setup --with-samples
 ```
 
-### Deploy assets
+### Deploy Sylius assets
 
-Sylius assets :
+You need [node.js](https://nodejs.org/) installed for this section.
 
 ```bash
 $ npm install
 $ npm run gulp
 ```
 
+### Tadaaa !
+
+Launch your PHP server :
+
+```bash
+$ bin/console server:start
+```
+
+In your browser you should now be able to check these pages :
+* Shop homepage: http://127.0.0.1:8000 
+* Lisem administration: http://127.0.0.1:8000/admin
+* Sylius administration: http://127.0.0.1:8000/sylius-admin
+
+For the admin pages, the login / password is : lisem@lisem.eu / lisem
+
 ### If you encounter cache and/or log directory problems ###
 
-Add cache_dir parameter to your parameter.yml with the absolute path to the cache directory. Do the same action for the logs_dir parameter
+Add `cache_dir` parameter to your parameter.yml with the absolute path to the cache directory. Do the same action for the `logs_dir` parameter
 
 
