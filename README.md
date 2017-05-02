@@ -1,7 +1,7 @@
 LISem
 ===================
 
-LISem is an ERP specialized for seeds producers and craftmen. It uses many libraries from :
+LISem is an ERP specialized for seeds producers and craftsmen. It uses many libraries from :
 
 * [Blast Project](https://github.com/blast-project)
 * [Libre Informatique](https://github.com/libre-informatique)
