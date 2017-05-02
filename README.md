@@ -65,11 +65,17 @@ Create tables:
 $ bin/console doctrine:schema:create
 ```
 
+### Setup application
+
+```bash
+$ bin/console lisem:install:setup --with-samples
+```
+
 ### Deploy assets
 
 Sylius assets :
 
-```
+```bash
 $ npm install
 $ npm run gulp
 ```
