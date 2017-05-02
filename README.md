@@ -14,7 +14,7 @@ Installation
 
 ### Download project
 
-With SSH if you have a GitHub account
+With SSH (if you have a GitHub account) :
 
 ```
 $ git clone git@github.com:libre-informatique/LISemSymfonyProject.git
@@ -23,7 +23,7 @@ $ git clone git@github.com:libre-informatique/LISemSymfonyProject.git
 ... or with HTTPS:
 
 ```
-$ git clone https://github.com/libre-informatique/LIBioSymfonyProject
+$ git clone https://github.com/libre-informatique/LISemSymfonyProject
 ```
 
 ### Install dependencies (vendors)
@@ -32,14 +32,6 @@ Make sure you have [the latest version of composer](https://getcomposer.org/down
 
 ```
 $ cd LIBioSymfonyProject
-$ composer install
-```
-
-### Download project (git + composer)
-
-```
-$ git clone https://github.com/libre-informatique/LIBioSymfonyProject
-$ git clone git@github.com:libre-informatique/LISemSymfonyProject.git
 $ composer install
 ```
 
