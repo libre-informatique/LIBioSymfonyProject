@@ -26,17 +26,6 @@ $ git clone git@github.com:libre-informatique/LISemSymfonyProject.git
 $ git clone https://github.com/libre-informatique/LISemSymfonyProject
 ```
 
-### Install dependencies (vendors)
-
-Make sure you have [the latest version of composer](https://getcomposer.org/download/) installed, then :
-
-```
-$ cd LIBioSymfonyProject
-$ composer install
-```
-
-It will install part of the assets. See below to see how to install the remaining assets (Sylius assets)
-
 ### Create and configure the database
 
 Create a database. For example, if you are using PostgreSQL :
@@ -66,6 +55,17 @@ Create tables:
 ```bash
 $ bin/console doctrine:schema:create
 ```
+
+### Install dependencies (vendors)
+
+Make sure you have [the latest version of composer](https://getcomposer.org/download/) installed, then :
+
+```
+$ cd LIBioSymfonyProject
+$ composer install
+```
+
+It will install part of the assets. See below to see how to install the remaining assets (Sylius assets)
 
 ### Setup application
 
