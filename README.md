@@ -92,13 +92,19 @@ $ bin/console server:start
 
 In your browser you should now be able to check these pages :
 * Shop homepage: http://127.0.0.1:8000 
-* Lisem administration: http://127.0.0.1:8000/admin
+* LISem administration: http://127.0.0.1:8000/admin
 * Sylius administration: http://127.0.0.1:8000/sylius-admin
 
 For the admin pages, the login / password is : lisem@lisem.eu / lisem
 
 ### If you encounter cache and/or log directory problems ###
 
-Add `cache_dir` parameter to your parameter.yml with the absolute path to the cache directory. Do the same action for the `logs_dir` parameter
+Add `cache_dir` and `logs_dir` parameters to your parameter.yml with the absolute path to the cache and log directories.
+For example :
 
-
+```yaml
+# app/config/parameters.yml
+parameters:
+    cache_dir: /tmp
+    logs_dir: /tmp
+```
