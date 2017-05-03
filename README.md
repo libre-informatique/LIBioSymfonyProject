@@ -61,7 +61,7 @@ $ bin/console doctrine:schema:create
 Make sure you have [the latest version of composer](https://getcomposer.org/download/) installed, then :
 
 ```
-$ cd LIBioSymfonyProject
+$ cd LISemSymfonyProject
 $ composer install
 ```
 
