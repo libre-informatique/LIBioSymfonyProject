@@ -4,9 +4,9 @@
 parameters:
     database_host:     127.0.0.1
     database_port:     ~
-    database_name:     symfony
-    database_user:     root
-    database_password: ~
+    database_name:     lisem
+    database_user:     lisem_user
+    database_password: lisem
     # You should uncomment this if you want use pdo_sqlite
     # database_path: "%kernel.root_dir%/data.db3"
 
@@ -21,16 +21,13 @@ parameters:
     secret:            ThisTokenIsNotSoSecretChangeIt
 
     # custom directories
-    #cache_dir: /foo # please fill the absolute path to the cache directory (same for logs_dir)
-    #logs_dir: /bar # the logs will end up in /bar/{name-of-this-instance}/cache/{environment}
+    # please fill the absolute path to the cache directory (same for logs_dir)
+    # the logs will end up in /tmp/{name-of-this-instance}/cache/{environment}
+#    cache_dir: /foo
+#    logs_dir: /bar
 
     # Default Users
     lisem.user.datafixtures:
-        libio:
-            username: libio
-            password: libio
-            email: libio@libio.eu
-            super: true
         lisem:
             username: lisem
             password: lisem

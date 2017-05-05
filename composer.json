@@ -30,6 +30,7 @@
         "nelmio/api-doc-bundle": "^2.13",
         "incenteev/composer-parameter-handler": "^2.1",
         "jms/security-extra-bundle": "^1.6",
+        "libre-informatique/decorator-bundle": "dev-master",
         "libre-informatique/email-crm-bundle": "dev-master",
         "libre-informatique/varieties-bundle": "dev-master",
         "libre-informatique/seed-batch-bundle": "dev-master",

@@ -4,6 +4,7 @@ use Symfony\Component\Debug\Debug;
 set_time_limit(100);
 umask(0000); // Remove this on systems that support ACL
 
+if(false)
 // If you don't want to setup permissions the proper way, just uncomment the following PHP line
 // read http://symfony.com/doc/current/book/installation.html#checking-symfony-application-configuration-and-setup
 // for more information

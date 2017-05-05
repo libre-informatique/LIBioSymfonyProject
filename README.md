@@ -1,7 +1,7 @@
 LISem
 ===================
 
-LISem is an ERP specialized for seeds producers and craftmen. It uses many libraries from :
+LISem is an ERP specialized for seeds producers and craftsmen. It uses many libraries from :
 
 * [Blast Project](https://github.com/blast-project)
 * [Libre Informatique](https://github.com/libre-informatique)
@@ -12,17 +12,18 @@ THIS PROJECT IS STILL UNUSABLE, IT'S A WORK IN PROGRESS
 Installation
 ------------
 
-First thing, [get composer.phar](https://getcomposer.org/download/)
+### Download project
+
+With SSH (if you have a GitHub account) :
 
 ```
-$ curl -sS https://getcomposer.org/installer | php
+$ git clone git@github.com:libre-informatique/LISemSymfonyProject.git
 ```
 
-### Download project (git + composer)
+... or with HTTPS:
 
 ```
-$ git clone https://github.com/libre-informatique/LIBioSymfonyProject .
-$ composer install
+$ git clone https://github.com/libre-informatique/LISemSymfonyProject
 ```
 
 ### Create and configure the database
@@ -55,20 +56,55 @@ Create tables:
 $ bin/console doctrine:schema:create
 ```
 
-### Deploy assets
+### Install dependencies (vendors)
 
-Sylius assets :
+Make sure you have [the latest version of composer](https://getcomposer.org/download/) installed, then :
 
 ```
+$ cd LISemSymfonyProject
+$ composer install
+```
+
+It will install part of the assets. See below to see how to install the remaining assets (Sylius assets)
+
+### Setup application
+
+```bash
+$ bin/console lisem:install:setup --with-samples
+```
+
+### Deploy Sylius assets
+
+You need [node.js](https://nodejs.org/) installed for this section.
+
+```bash
 $ npm install
 $ npm run gulp
 ```
 
+### Tadaaa !
+
+Launch your PHP server :
+
+```bash
+$ bin/console server:start
+```
+
+In your browser you should now be able to check these pages :
+* Shop homepage: http://127.0.0.1:8000 
+* LISem administration: http://127.0.0.1:8000/admin
+* Sylius administration: http://127.0.0.1:8000/sylius-admin
+
+For the admin pages, the login / password is : lisem@lisem.eu / lisem
+
 ### If you encounter cache and/or log directory problems ###
 
-Add cache_dir parameter to your parameter.yml with the absolute path to the cache directory. Do the same action for the logs_dir parameter
+Add `cache_dir` and `logs_dir` parameters to your parameter.yml with the absolute path to the cache and log directories.
+For example :
 
-Installation From Scratch
--------------------------
- 
-See [this documentation](README-FROM-SCRATCH.md) to install the project into an existing (and already installed) Symfony 2 installation.
+```yaml
+# app/config/parameters.yml
+parameters:
+    cache_dir: /tmp
+    logs_dir: /tmp
+```
