@@ -30,19 +30,19 @@
         "nelmio/api-doc-bundle": "^2.13",
         "incenteev/composer-parameter-handler": "^2.1",
         "jms/security-extra-bundle": "^1.6",
-        "libre-informatique/decorator-bundle": "dev-master",
-        "libre-informatique/email-crm-bundle": "dev-master",
-        "libre-informatique/varieties-bundle": "dev-master",
-        "libre-informatique/seed-batch-bundle": "dev-master",
-        "libre-informatique/sonata-sylius-user-bundle": "dev-master",
-        "blast-project/doctrine-pgsql-bundle": "dev-master",
+        "libre-informatique/decorator-bundle": "0.4.x-dev",
+        "libre-informatique/email-crm-bundle": "0.4.x-dev",
+        "libre-informatique/varieties-bundle": "0.4.x-dev",
+        "libre-informatique/seed-batch-bundle": "0.4.x-dev",
+        "libre-informatique/sonata-sylius-user-bundle": "0.4.x-dev",
+        "blast-project/doctrine-pgsql-bundle": "0.4.x-dev",
         "doctrine/doctrine-fixtures-bundle": "^2.3",
         "jms/serializer-bundle": "^1.1",
-        "libre-informatique/ecommerce-bundle": "dev-master",
-        "blast-project/utils-bundle": "dev-master",
+        "libre-informatique/ecommerce-bundle": "0.4.x-dev",
+        "blast-project/utils-bundle": "0.4.x-dev",
         "trappar/alice-generator-bundle": "^1.1",
-        "blast-project/doctrine-session-bundle": "dev-master",
-        "blast-project/core-bundle": "dev-master",
+        "blast-project/doctrine-session-bundle": "0.4.x-dev",
+        "blast-project/core-bundle": "0.4.x-dev",
         "marem/payum-paybox": "dev-master"
     },
     "require-dev": {
@@ -56,8 +56,7 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget",
-            "Librinfo\\CoreBundle\\Tools\\Patches\\Patcher::applyPatches"
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
         ],
         "post-update-cmd": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
@@ -65,8 +64,7 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget",
-            "Librinfo\\CoreBundle\\Tools\\Patches\\Patcher::applyPatches"
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
         ]
     },
     "config": {
