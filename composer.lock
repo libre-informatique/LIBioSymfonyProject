@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "bc09135fe84c959ced431fc233b98448",
+    "content-hash": "770acddea0941a6d4f7630a39ed7144c",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -3747,12 +3747,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/EmailCRMBundle.git",
-                "reference": "b5d63df698c23573808d4652e28477bab68b8f39"
+                "reference": "9455722bfcc0548027095a89669a6d3fa9da3236"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/EmailCRMBundle/zipball/b5d63df698c23573808d4652e28477bab68b8f39",
-                "reference": "b5d63df698c23573808d4652e28477bab68b8f39",
+                "url": "https://api.github.com/repos/libre-informatique/EmailCRMBundle/zipball/9455722bfcc0548027095a89669a6d3fa9da3236",
+                "reference": "9455722bfcc0548027095a89669a6d3fa9da3236",
                 "shasum": ""
             },
             "require": {
@@ -3802,7 +3802,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-05-10 13:42:42"
+            "time": "2017-06-06 10:14:48"
         },
         {
             "name": "libre-informatique/media-bundle",
