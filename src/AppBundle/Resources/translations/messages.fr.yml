@@ -132,3 +132,12 @@ lisem:
         seeds: graines
 
 
+http_error:
+    404: >
+        Page non trouvée. Vérifiez que l'URL est valide et que la page existe encore.
+    500: >
+        Une erreur interne vient de se produire.
+    403: >
+        Cet accès est restreint, vous ne possedez pas les privilièges suffisant pour accéder à cette page.
+    previous_page:
+        Retour à la page précédente
