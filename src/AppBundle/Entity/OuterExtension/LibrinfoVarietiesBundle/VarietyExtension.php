@@ -19,7 +19,6 @@ use Librinfo\EcommerceBundle\Entity\ProductOptionValue;
 trait VarietyExtension
 {
     use \Librinfo\SeedBatchBundle\Entity\OuterExtension\HasSeedBatches;
-    use \Librinfo\MediaBundle\Entity\OuterExtension\HasImages;
     use \Librinfo\EcommerceBundle\Entity\OuterExtension\HasProducts;
     use \Librinfo\SonataSyliusUserBundle\Entity\Traits\Traceable;
     use \AppBundle\Entity\OuterExtension\HasChannelDescriptions;

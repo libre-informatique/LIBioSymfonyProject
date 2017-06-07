@@ -18,7 +18,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 trait CircleExtension
 {
     use Traceable,
-        Ownable,
+//        Ownable,
         HasUsers;
 
     /**
