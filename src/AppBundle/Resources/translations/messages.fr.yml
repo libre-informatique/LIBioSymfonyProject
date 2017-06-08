@@ -139,5 +139,7 @@ http_error:
         Une erreur interne vient de se produire.
     403: >
         Cet accès est restreint, vous ne possedez pas les privilièges suffisant pour accéder à cette page.
-    previous_page:
-        Retour à la page précédente
+    218: >
+        Cette fonctionnalité n'a pas encore été implémentée.
+    previous_page: Retour à la page précédente
+    not_implemented: Non implémentée

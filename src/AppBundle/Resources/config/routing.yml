@@ -3,7 +3,7 @@ libio_test:
     defaults: { _controller: AppBundle:Default:test }
 
 libio_not_implemented:
-    path:   /libio/not_implemented
+    path:   /not_implemented
     defaults: { _controller: AppBundle:Default:notImplemented }
 
 blast_core:
