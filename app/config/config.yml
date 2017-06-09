@@ -115,7 +115,7 @@ swiftmailer:
             port:      "%mailer_port%"
             username:  "%mailer_user%"
             password:  "%mailer_password%"
-            disable_delivery:  %mailer_disable_delivery%
+            disable_delivery:  "%mailer_disable_delivery%"
         spool_mailer:
             transport: "%mailer_transport%"
             host:      "%mailer_host%" # removed for gmail
@@ -123,7 +123,7 @@ swiftmailer:
             username:  "%mailer_user%"
             password:  "%mailer_password%"
             spool: { type: db }
-            disable_delivery:  %mailer_disable_delivery%
+            disable_delivery:  "%mailer_disable_delivery%"
 
 # FosUser Configuration
 # Not used any more (now using SonataSyliusUser)
@@ -159,7 +159,7 @@ jms_serializer:
 stfalcon_tinymce:
     tinymce_jquery: true
     include_jquery: false
-    language: %locale%
+    language: "%locale%"
 
 # Enable BlastBaseEntitiesBundle event listeners
 blast_base_entities:
