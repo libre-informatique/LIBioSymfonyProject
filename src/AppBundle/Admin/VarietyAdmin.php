@@ -27,13 +27,18 @@ class VarietyAdmin extends BaseAdmin
     public function configureFormFields(\Sonata\AdminBundle\Form\FormMapper $mapper)
     {
         parent::configureFormFields($mapper);
-        $mapper->add('packagings', 'sonata_type_model',
-            [
-            'multiple' => true,
-            'required' => false,
-            'query' => $this->packagingQueryBuilder(),
-            ], ['admin_code' => 'lisem.admin.packaging']
-        );
+        $mapper
+            ->tab('form_tab_general')
+                ->with('form_group_general')
+                    ->add('packagings', 'sonata_type_model',
+                        [
+                        'multiple' => true,
+                        'required' => false,
+                        'query' => $this->packagingQueryBuilder(),
+                        ], ['admin_code' => 'lisem.admin.packaging']
+                    )
+                ->end()
+            ->end();
     }
 
     /**
