@@ -49,6 +49,14 @@
         "alexandresalome/doctrine-extra-bundle": "^0.3.0",
         "nelmio/alice": "^2.2"
     },
+    "config": {
+        "sllh-composer-lint": {
+            "php": true,
+            "type": true,
+            "minimum-stability": false,
+            "version-constraints": true
+        }
+    },
     "scripts": {
         "post-install-cmd": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
