@@ -13,14 +13,14 @@ set -ev
 # or here :  sudo /etc/init.d/postgresql start
 
 # (we try to create a travis user)
-psql -c  "CREATE USER lisem_user WITH PASSWORD 'lisem';" -U postgres
+psql -c  'CREATE USER lisem_user WITH PASSWORD "lisem";' -U postgres
 psql -c 'ALTER ROLE lisem_user WITH CREATEDB;' -U postgres
 
 psql -c 'CREATE DATABASE lisem;' -U postgres
 psql -c 'ALTER DATABASE lisem OWNER TO lisem_user' -U postgres
 
 
-psql -U postgres -c "CREATE EXTENSION 'uuid-ossp';"
+psql -c 'CREATE EXTENSION "uuid-ossp";' -U postgres -d lisem
 
 ###
 ###
