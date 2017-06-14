@@ -50,14 +50,6 @@
         "alexandresalome/doctrine-extra-bundle": "^0.3.0",
         "nelmio/alice": "^2.2"
     },
-    "config": {
-        "sllh-composer-lint": {
-            "php": true,
-            "type": true,
-            "minimum-stability": false,
-            "version-constraints": true
-        }
-    },
     "scripts": {
         "post-install-cmd": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
@@ -77,7 +69,13 @@
         ]
     },
     "config": {
-        "bin-dir": "bin"
+        "bin-dir": "bin",
+        "sllh-composer-lint": {
+            "php": true,
+            "type": true,
+            "minimum-stability": false,
+            "version-constraints": true
+        }
     },
     "extra": {
         "symfony-app-dir": "app",
