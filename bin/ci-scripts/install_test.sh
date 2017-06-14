@@ -16,3 +16,12 @@ wget https://github.com/satooshi/php-coveralls/releases/download/v1.0.1/coverall
 chmod u+x "${HOME}/bin/coveralls"
 
 
+# for selenium
+sudo apt-get install xvfb
+sudo apt-get install chromium-browser
+
+# 2.12 for travis only, 2.29 for ubuntu desktop
+wget http://chromedriver.storage.googleapis.com/2.12/chromedriver_linux64.zip
+unzip chromedriver_linux64.zip
+mv chromedriver ${HOME}/bin/
+
