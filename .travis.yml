@@ -8,7 +8,7 @@ php:
 services:
   - postgresql
   
-sudo: false
+sudo: required
 
 cache:
   pip: true
