@@ -4,14 +4,6 @@ set -ev
 # Database creation
 
 ###
-### mysql
-###
-
-# (mysql service is started by default by travis for each build instance
-# (mysql travis user is created by travis for each build instance
-mysql -u travis -e 'CREATE DATABASE travis;' -v
-
-###
 ### postgresql
 ###
 
@@ -21,14 +13,14 @@ mysql -u travis -e 'CREATE DATABASE travis;' -v
 # or here :  sudo /etc/init.d/postgresql start
 
 # (we try to create a travis user)
-# psql -c 'CREATE USER travis;' -U postgres
-# psql -c 'ALTER ROLE travis WITH CREATEDB;' -U postgres
+psql -c 'CREATE USER lisem_user WITH PASSWORD ''lisem'';' -U postgres
+psql -c 'ALTER ROLE lisem_user WITH CREATEDB;' -U postgres
 
-psql -c 'CREATE DATABASE travis;' -U postgres
-psql -c 'ALTER DATABASE travis OWNER TO travis' -U postgres
+psql -c 'CREATE DATABASE lisem;' -U postgres
+psql -c 'ALTER DATABASE lisem OWNER TO lisem_user' -U postgres
 
 
-#psql -U postgres -c "CREATE EXTENSION 'uuid-ossp';"
+psql -U postgres -c "CREATE EXTENSION 'uuid-ossp';"
 
 ###
 ###
