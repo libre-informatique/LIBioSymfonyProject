@@ -9,7 +9,7 @@ bin/console doctrine:schema:create --no-interaction
 #bin/console doctrine:schema:validate --no-interaction
 
 # lisem
-bin/console lisem:install:setup --with-samples
+bin/console lisem:install:setup --with-samples --yes
 
 # npm
 npm install
