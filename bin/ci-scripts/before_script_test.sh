@@ -33,3 +33,6 @@ npm run gulp
 
 # start server
 bin/console server:start --no-interaction
+
+# selenium start
+bin/selenium-server-standalone &
