@@ -31,12 +31,21 @@ npm install
 #npm install -g gulp-cli
 npm run gulp
 
+
+# build codecept
+codecept build
+
 # start server
 bin/console server:start --no-interaction
 
-# selenium start
-bin/selenium-server-standalone &
+
+
 
 # start fake x
 /sbin/start-stop-daemon --start --quiet --pidfile /tmp/xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1680x1050x16
 export DISPLAY=:99
+
+# selenium start (after display export)
+bin/selenium-server-standalone &
+
+
