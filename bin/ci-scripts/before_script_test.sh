@@ -12,7 +12,9 @@ bin/console doctrine:schema:create --no-interaction
 bin/console lisem:install:setup --with-samples --yes
 
 # npm
+npm -v
 npm install
+#npm install -g gulp-cli
 npm run gulp
 
 # start server
