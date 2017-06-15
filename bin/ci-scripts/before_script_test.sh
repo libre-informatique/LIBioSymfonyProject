@@ -13,6 +13,10 @@ bin/console lisem:install:setup --with-samples --yes
 
 # npm
 npm -v
+. $HOME/.nvm/nvm.sh
+nvm install stable
+nvm use stable
+npm -v
 npm install
 #npm install -g gulp-cli
 npm run gulp
