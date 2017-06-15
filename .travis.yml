@@ -5,6 +5,11 @@ php:
   - '7.1'
   - nightly
 
+language: node_js
+
+node_js:
+  - "3.5"
+  
 services:
   - postgresql
   
