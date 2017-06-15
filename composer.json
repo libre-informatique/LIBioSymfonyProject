@@ -2,6 +2,7 @@
     "name": "libre-informatique/lisem-project",
     "license": "GPL-3.0",
     "type": "project",
+    "description": "LISem is an ERP specialized for seeds producers and craftsmen.",
     "autoload": {
         "psr-4": {
             "": "src/"          
@@ -10,7 +11,7 @@
     },
     "minimum-stability": "dev",
     "require": {
-        "php": "^5.6|^7.0",
+        "php": ">=5.6",
         "symfony/symfony": "3.2.*",
         "symfony/monolog-bundle": "^3.0.2",
         "symfony/swiftmailer-bundle": "^2.5",
@@ -30,19 +31,19 @@
         "nelmio/api-doc-bundle": "^2.13",
         "incenteev/composer-parameter-handler": "^2.1",
         "jms/security-extra-bundle": "^1.6",
-        "libre-informatique/decorator-bundle": "0.4.x-dev",
-        "libre-informatique/email-crm-bundle": "0.4.x-dev",
-        "libre-informatique/varieties-bundle": "0.4.x-dev",
-        "libre-informatique/seed-batch-bundle": "0.4.x-dev",
-        "libre-informatique/sonata-sylius-user-bundle": "0.4.x-dev",
-        "blast-project/doctrine-pgsql-bundle": "0.4.x-dev",
+        "libre-informatique/decorator-bundle": "dev-wip-lisem",
+        "libre-informatique/email-crm-bundle": "dev-wip-lisem",
+        "libre-informatique/varieties-bundle": "dev-wip-lisem",
+        "libre-informatique/seed-batch-bundle": "dev-wip-lisem",
+        "libre-informatique/sonata-sylius-user-bundle": "dev-wip-lisem",
+        "blast-project/doctrine-pgsql-bundle": "dev-wip-lisem",
         "doctrine/doctrine-fixtures-bundle": "^2.3",
         "jms/serializer-bundle": "^1.1",
-        "libre-informatique/ecommerce-bundle": "0.4.x-dev",
-        "blast-project/utils-bundle": "0.4.x-dev",
+        "libre-informatique/ecommerce-bundle": "dev-wip-lisem",
+        "blast-project/utils-bundle": "dev-wip-lisem",
         "trappar/alice-generator-bundle": "^1.1",
-        "blast-project/doctrine-session-bundle": "0.4.x-dev",
-        "blast-project/core-bundle": "0.4.x-dev",
+        "blast-project/doctrine-session-bundle": "dev-wip-lisem",
+        "blast-project/core-bundle": "dev-wip-lisem",
         "marem/payum-paybox": "dev-master"
     },
     "require-dev": {
@@ -68,7 +69,13 @@
         ]
     },
     "config": {
-        "bin-dir": "bin"
+        "bin-dir": "bin",
+        "sllh-composer-lint": {
+            "php": true,
+            "type": true,
+            "minimum-stability": false,
+            "version-constraints": true
+        }
     },
     "extra": {
         "symfony-app-dir": "app",
