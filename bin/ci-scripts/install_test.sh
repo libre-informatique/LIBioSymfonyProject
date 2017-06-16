@@ -8,7 +8,15 @@ echo "memory_limit=-1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/t
 
 composer install --no-interaction --prefer-dist
 composer require --no-interaction --dev phpunit/phpunit 
-wget http://codeception.com/codecept.phar  --output-document="${HOME}/bin/codecept"
+
+
+if [[ ${TRAVIS_PHP_VERSION:0:3} == "5.6" ]]
+then
+    wget http://codeception.com/php5/codecept.phar  --output-document="${HOME}/bin/codecept"
+else
+    wget http://codeception.com/codecept.phar  --output-document="${HOME}/bin/codecept"
+fi
+
 chmod u+x "${HOME}/bin/codecept"
 
 # Coveralls client install
