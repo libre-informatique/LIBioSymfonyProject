@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 set -ev
 
-composer clear-clear
+composer clear-cache
 
 
 # To be removed when following PR will be merged: https://github.com/travis-ci/travis-build/pull/718
