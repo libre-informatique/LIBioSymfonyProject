@@ -46,6 +46,6 @@ bin/console server:start --no-interaction
 export DISPLAY=:99
 
 # selenium start (after display export)
-bin/selenium-server-standalone &
-
-
+#bin/selenium-server-standalone &
+wget https://selenium-release.storage.googleapis.com/3.4/selenium-server-standalone-3.4.0.jar
+java -jar selenium-server-standalone-3.4.0.jar &
