@@ -7,6 +7,10 @@ form_tab_channel_descriptions: Déscriptions spécifiques
 form_tab_new_variety_variant : Ajouter un article (semences)
 show_group_channel_descriptions: Descriptions spécifiques
 show_tab_channel_descriptions: Descriptions spécifiques
+show_tab_contactInformations: Coordonnées
+show_group_defaultPhone: Téléphone principal
+show_group_defaultAddress: Adresse principale
+show_group_info: Informations supplémentaires
 
 libio:
     help:

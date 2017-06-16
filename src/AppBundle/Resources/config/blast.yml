@@ -408,3 +408,100 @@ parameters:
             # FILTERS
             Sonata\AdminBundle\Datagrid\DatagridMapper:
                 add: ~
+
+#####################
+# CRM ORGANISM
+#####################
+
+        Librinfo\SeedBatchBundle\Admin\OrganismAdmin:
+            Sonata\AdminBundle\Show\ShowMapper:
+                forceTabs: true
+                remove:
+                    name: ~
+                    circles: ~
+                    flashOnControl: ~
+                    vcard_uid: ~
+                    description: ~
+                    defaultPhone: ~
+                    defaultAddress: ~
+                    email: ~
+                    emailNpai: ~
+                    emailNoNewsletter: ~
+                    url: ~
+                    source: ~
+                    catalogue_sent: ~
+                    catalogue_send_mean: ~
+                    first_catalogue_sent_date: ~
+                    last_catalogue_sent_date: ~
+                    addresses: ~
+                    phones: ~
+                add:
+                    show_tab_general:
+                        '':
+                            fulltextName: ~
+                            active: ~
+                            isCustomer:
+                                template: 'LibrinfoCRMBundle:CRUD:show_field_customer.html.twig'
+                            isSupplier:
+                                template: 'LibrinfoCRMBundle:CRUD:show_field_supplier.html.twig'
+                            description:
+                                label: librinfo.label.organism_description
+                            category.name: ~
+                            email:
+                                template: 'LibrinfoCRMBundle:CRUD:show_field_email.html.twig'
+                            _options:
+                                fieldsOrder:
+                                    - fulltextName
+                                    - isCustomer
+                                    - isSupplier
+                                    - circles
+                                    - description
+                                    - email
+                                    - category.name
+                        show_group_defaultPhone:
+                            defaultPhone: ~
+                        show_group_defaultAddress:
+                            defaultAddress: ~
+                        show_group_administrative:
+                            vat:
+                                template: 'LibrinfoCRMBundle:CRUD:show_field_vat.html.twig'
+                            iban: ~
+
+                        show_group_info:
+                            source: ~
+                            catalogue_sent: ~
+                            catalogue_send_mean: ~
+                            first_catalogue_sent_date: ~
+                            last_catalogue_sent_date: ~
+                        _options:
+                            groupsOrder:
+                                - ''
+                                - show_group_defaultPhone
+                                - show_group_defaultAddress
+                                - form_group_administrative
+                    show_tab_contactInformations:
+                        show_group_addresses:
+                            addresses:
+                                label: false
+                                template: 'LibrinfoCRMBundle:CRUD:show_field_addresses.html.twig'
+                        show_group_phones:
+                            phones:
+                                label: false
+                                template: 'LibrinfoCRMBundle:CRUD:show_field_phones.html.twig'
+                    show_tab_individuals:
+                        '':
+                            individuals:
+                                template: LibrinfoCRMBundle:CRUD:show_field_individuals.html.twig
+                            organizations:
+                                template: LibrinfoCRMBundle:CRUD:show_field_organizations.html.twig
+                    _options:
+                        tabsOrder:
+                            - show_tab_general
+                            - show_tab_individuals
+                            - show_tab_contactInformations
+                            - show_tab_emails
+                            - show_tab_history
+                    _helper_links:
+                        - url: https://framacalc.org/libio_validation_crm
+                          title: Framacalc de validation
+                          class: framacalc
