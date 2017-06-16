@@ -10,7 +10,9 @@ composer install --no-interaction --prefer-dist
 composer require --no-interaction --dev phpunit/phpunit 
 
 
-if [[ ${TRAVIS_PHP_VERSION:0:3} == "5.6" ]]
+php_ver=$(php -v |cut -f 2 -d ' ' |cut -f1-2 -d '.' | head -n 1)
+
+if [ ${php_ver} == "5.6" ]
 then
     wget http://codeception.com/php5/codecept.phar  --output-document="${HOME}/bin/codecept"
 else
