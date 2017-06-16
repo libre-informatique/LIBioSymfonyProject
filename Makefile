@@ -7,6 +7,7 @@ lint:
 	composer validate
 
 test:
+	ps -eaf | grep selenium
 	codecept run acceptance
 
 docs:
