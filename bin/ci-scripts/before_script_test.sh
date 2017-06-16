@@ -49,3 +49,6 @@ export DISPLAY=:99
 #bin/selenium-server-standalone &
 wget https://selenium-release.storage.googleapis.com/3.4/selenium-server-standalone-3.4.0.jar
 java -jar selenium-server-standalone-3.4.0.jar &
+sel_pid=$!
+ps -eaf | grep $sel_pid
+
