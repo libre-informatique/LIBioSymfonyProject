@@ -117,3 +117,4 @@ sonata_admin:
 
     options:
         use_icheck: true
+        confirm_exit: false
