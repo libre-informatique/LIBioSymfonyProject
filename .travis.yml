@@ -54,7 +54,7 @@ before_script:
 
 script:
   - ps -eaf | grep selenium
-  - netstat -an | grep LISEN
+  - netstat -an | grep LISTEN
   - make $TARGET
 
 after_success:
