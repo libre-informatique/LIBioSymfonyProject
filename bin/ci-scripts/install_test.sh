@@ -7,19 +7,20 @@ mkdir --parents "${HOME}/bin"
 echo "memory_limit=-1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
 
 composer install --no-interaction --prefer-dist
-composer require --no-interaction --dev phpunit/phpunit 
+composer require --no-interaction --dev phpunit/phpunit
+composer require --no-interaction --dev codeception/codeception
 
 
-php_ver=$(php -v |cut -f 2 -d ' ' |cut -f1-2 -d '.' | head -n 1)
+#php_ver=$(php -v |cut -f 2 -d ' ' |cut -f1-2 -d '.' | head -n 1)
 
-if [ ${php_ver} == "5.6" ]
-then
-    wget http://codeception.com/php5/codecept.phar  --output-document="${HOME}/bin/codecept"
-else
-    wget http://codeception.com/codecept.phar  --output-document="${HOME}/bin/codecept"
-fi
+#if [ ${php_ver} == "5.6" ]
+#then
+#    wget http://codeception.com/php5/codecept.phar  --output-document="${HOME}/bin/codecept"
+#else
+#    wget http://codeception.com/codecept.phar  --output-document="${HOME}/bin/codecept"
+#fi
 
-chmod u+x "${HOME}/bin/codecept"
+#chmod u+x "${HOME}/bin/codecept"
 
 # Coveralls client install
 wget https://github.com/satooshi/php-coveralls/releases/download/v1.0.1/coveralls.phar --output-document="${HOME}/bin/coveralls"
