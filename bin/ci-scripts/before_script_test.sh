@@ -51,7 +51,7 @@ export DISPLAY=:99
 # check java version
 java -version
 
-bin/selenium-server-standalone -debug
+bin/selenium-server-standalone -debug &
 
 ps -eaf | grep selenium
 cat  /tmp/selenium.pid
