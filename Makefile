@@ -8,6 +8,7 @@ lint:
 
 test:
 	ps -eaf | grep selenium
+	netstat -an | grep LISEN
 	codecept run acceptance
 
 docs:
