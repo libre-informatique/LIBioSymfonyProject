@@ -46,7 +46,12 @@ bin/console server:start --no-interaction
 export DISPLAY=:99
 
 # selenium start (after display export)
-/sbin/start-stop-daemon --start --quiet --pidfile /tmp/selenium.pid --make-pidfile --background --exec $(pwd)/bin/selenium-server-standalone 
+#/sbin/start-stop-daemon --start --quiet --pidfile /tmp/selenium.pid --make-pidfile --background --exec $(pwd)/bin/selenium-server-standalone 
+
+# check java version
+java -version
+
+bin/selenium-server-standalone -debug
 
 ps -eaf | grep selenium
 cat  /tmp/selenium.pid
