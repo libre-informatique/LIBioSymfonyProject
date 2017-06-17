@@ -38,4 +38,4 @@ mv chromedriver ${HOME}/bin/
 composer require --no-interaction --dev se/selenium-server-standalone '^2.52'
 
 # for check
-sudo apt-get install netstat
+sudo apt-get install net-tools
