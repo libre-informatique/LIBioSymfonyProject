@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 set -ev
 
+######## LISEM
 # database creation
-
 bin/console doctrine:database:create --if-not-exists --no-interaction
 bin/console doctrine:schema:create --no-interaction
 #bin/console doctrine:schema:update --force --no-interaction
@@ -11,20 +11,7 @@ bin/console doctrine:schema:create --no-interaction
 # lisem
 bin/console lisem:install:setup --with-samples --yes
 
-# npm
-npm -v
 
-# install nvm
-rm -rf $HOME/.nvm
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
-export NVM_DIR="$HOME/.nvm"
-
-set +ev
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
-set -ev
-
-# install node 4.2.6
-nvm install 4.2.6
 #nvm use stable
 npm -v
 npm install
@@ -32,14 +19,11 @@ npm install
 npm run gulp
 
 
-# build codecept
-codecept build
-
 # start server
 bin/console server:start --no-interaction
 
 
-
+######### TOOLS
 
 # start fake x
 /sbin/start-stop-daemon --start --quiet --pidfile /tmp/xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1680x1050x16
@@ -51,12 +35,25 @@ export DISPLAY=:99
 # check java version
 java -version
 
-bin/selenium-server-standalone -debug &
+sel_start_date=$(date)
+bin/selenium-server-standalone -debug true &
 
-ps -eaf | grep selenium
-cat  /tmp/selenium.pid
+
+set +e
+while [ $(netstat -an | grep LISTEN | grep 4444| wc -l) -eq 0 ]
+do
+    echo $(date) " wait for selenium start... (since " $sel_start_date ")";
+    ps -eaf | grep selenium;
+    netstat -an | grep LISTEN | grep 4444;
+    sleep 10;
+done
+
+echo $(date) " it look like selenium is started (waiting since " $sel_start_date ")";
+
+
 
 #wget https://selenium-release.storage.googleapis.com/3.4/selenium-server-standalone-3.4.0.jar
 #java -jar selenium-server-standalone-3.4.0.jar &
+
 
 
