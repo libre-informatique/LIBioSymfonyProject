@@ -525,6 +525,9 @@ parameters:
                           class: framacalc
             Sonata\AdminBundle\Form\FormMapper:
                 titleTemplate: LibrinfoSeedBatchBundle:OrganismAdmin:show_title.html.twig
+                remove:
+                    addresses: ~
+                    phones: ~
                 add:
                     form_tab_general:
                         form_group_organism:
@@ -586,10 +589,44 @@ parameters:
                                     edit: inline
                                     allow_delete: true
                                     admin_code: librinfo_seedbatch.admin.seedbatch_embedded
+                    form_tab_contactInformations:
+                        form_group_addresses:
+                            addresses:
+                                type: sonata_type_collection
+                                label: false
+                                by_reference: false
+                                type_options:
+                                    btn_add: false
+                                    delete_options:
+                                        type: checkbox
+                                        type_options:
+                                            mapped: false
+                                            required: false
+                                required: true
+                                _options:
+                                    sortable: updatedAt
+                                    edit: inline
+                        form_group_phones:
+                            phones:
+                                type: sonata_type_collection
+                                label: false
+                                by_reference: false
+                                type_options:
+                                    btn_add: false
+                                    delete_options:
+                                        type: checkbox
+                                        type_options:
+                                            mapped: false
+                                            required: false
+                                required: true    # if not true, child form fields cannot be required (why ??)
+                                _options:
+                                    edit: inline
+                                    inline: table
                     _options:
                         tabsOrder:
                             - form_tab_general
                             - form_tab_individuals
+                            - form_tab_contactInformations
                             - form_tab_plots
                             - form_tab_seedbatches
                             - form_tab_info
