@@ -42,7 +42,7 @@ export DISPLAY=:99
 java -version
 
 sel_start_date=$(date)
-bin/selenium-server-standalone  &
+bin/selenium-server-standalone > selenium.log 2>&1  &
 # -debug true
 
 set +e
