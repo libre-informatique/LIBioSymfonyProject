@@ -11,7 +11,7 @@ bin/console doctrine:schema:create --no-interaction
 # lisem
 bin/console lisem:install:setup --with-samples --yes
 
-
+export NVM_DIR="$HOME/.nvm"
 #nvm use stable
 npm -v
 npm install
