@@ -44,6 +44,7 @@ npm -v
 
 # install nvm
 rm -rf $HOME/.nvm
+rm -rf $HOME/.npm
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
 export NVM_DIR="$HOME/.nvm"
 
@@ -53,3 +54,9 @@ set -v
 
 # install node 4.2.6
 nvm install 4.2.6
+
+
+nvm --version
+npm -v
+nodejs -v
+
