@@ -45,6 +45,7 @@
         "blast-project/doctrine-pgsql-bundle": "dev-wip-lisem",
         "blast-project/outer-extension-bundle": "dev-wip-lisem",
         "blast-project/utils-bundle": "dev-wip-lisem",
+        "blast-project/doctrine-session-bundle": "dev-wip-lisem",
         "libre-informatique/decorator-bundle": "dev-wip-lisem",
         "libre-informatique/media-bundle": "dev-wip-lisem",
         "libre-informatique/crm-bundle": "dev-wip-lisem",
@@ -54,8 +55,6 @@
         "libre-informatique/seed-batch-bundle": "dev-wip-lisem",
         "libre-informatique/sonata-sylius-user-bundle": "dev-wip-lisem",
         "libre-informatique/ecommerce-bundle": "dev-wip-lisem",
-        "blast-project/doctrine-session-bundle": "dev-wip-lisem",
-        "blast-project/core-bundle": "dev-wip-lisem",
         "marem/payum-paybox": "dev-master"
     },
     "require-dev": {
