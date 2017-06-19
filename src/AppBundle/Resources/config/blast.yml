@@ -408,3 +408,226 @@ parameters:
             # FILTERS
             Sonata\AdminBundle\Datagrid\DatagridMapper:
                 add: ~
+
+#####################
+# CRM ORGANISM
+#####################
+
+        Librinfo\SeedBatchBundle\Admin\OrganismAdmin:
+            Sonata\AdminBundle\Show\ShowMapper:
+                titleTemplate: LibrinfoSeedBatchBundle:OrganismAdmin:show_title.html.twig
+                forceTabs: true
+                remove:
+                    name: ~
+                    circles: ~
+                    flashOnControl: ~
+                    vcard_uid: ~
+                    description: ~
+                    defaultPhone: ~
+                    defaultAddress: ~
+                    email: ~
+                    emailNpai: ~
+                    emailNoNewsletter: ~
+                    url: ~
+                    source: ~
+                    catalogue_sent: ~
+                    catalogue_send_mean: ~
+                    first_catalogue_sent_date: ~
+                    last_catalogue_sent_date: ~
+                    addresses: ~
+                    phones: ~
+                    category: ~
+                    category.name: ~
+                add:
+                    show_tab_general:
+                        '':
+                            fulltextName: ~
+                            active: ~
+                            isCustomer:
+                                template: 'LibrinfoCRMBundle:CRUD:show_field_customer.html.twig'
+                            isSupplier:
+                                template: 'LibrinfoCRMBundle:CRUD:show_field_supplier.html.twig'
+                            isSeedProducer:
+                                template: 'LibrinfoSeedBatchBundle:CRUD:show_field_seedProducer.html.twig'
+                            description:
+                                label: librinfo.label.organism_description
+                            circles: ~
+                            category.name: ~
+                            email:
+                                template: 'LibrinfoCRMBundle:CRUD:show_field_email.html.twig'
+                            _options:
+                                fieldsOrder:
+                                    - fulltextName
+                                    - isCustomer
+                                    - isSupplier
+                                    - isSeedProducer
+                                    - circles
+                                    - description
+                                    - email
+                                    - category.name
+                                    - active
+                        show_group_defaultPhone:
+                            defaultPhone: ~
+                        show_group_defaultAddress:
+                            defaultAddress: ~
+                        show_group_administrative:
+                            vat:
+                                template: 'LibrinfoCRMBundle:CRUD:show_field_vat.html.twig'
+                            iban: ~
+
+                        show_group_info:
+                            source: ~
+                            catalogue_sent: ~
+                            catalogue_send_mean: ~
+                            first_catalogue_sent_date: ~
+                            last_catalogue_sent_date: ~
+                        _options:
+                            groupsOrder:
+                                - ''
+                                - show_group_defaultPhone
+                                - show_group_defaultAddress
+                                - form_group_administrative
+                    show_tab_contactInformations:
+                        show_group_addresses:
+                            addresses:
+                                label: false
+                                template: 'LibrinfoCRMBundle:CRUD:show_field_addresses.html.twig'
+                        show_group_phones:
+                            phones:
+                                label: false
+                                template: 'LibrinfoCRMBundle:CRUD:show_field_phones.html.twig'
+                    show_tab_individuals:
+                        '':
+                            individuals:
+                                template: LibrinfoCRMBundle:CRUD:show_field_individuals.html.twig
+                            organizations:
+                                template: LibrinfoCRMBundle:CRUD:show_field_organizations.html.twig
+                    show_tab_plots:
+                        '':
+                            plots:
+                                admin_code: librinfo_seedbatch.admin.plot_embedded
+                    show_tab_seedbatches:
+                        '':
+                            seedBatches:
+                                admin_code: librinfo_seedbatch.admin.seedbatch_embedded
+                    _options:
+                        tabsOrder:
+                            - show_tab_general
+                            - show_tab_individuals
+                            - show_tab_contactInformations
+                            - show_tab_emails
+                            - show_tab_plots
+                            - show_tab_seedbatches
+                            - show_tab_history
+                    _helper_links:
+                        - url: https://framacalc.org/libio_validation_crm
+                          title: Framacalc de validation
+                          class: framacalc
+            Sonata\AdminBundle\Form\FormMapper:
+                titleTemplate: LibrinfoSeedBatchBundle:OrganismAdmin:show_title.html.twig
+                remove:
+                    addresses: ~
+                    phones: ~
+                add:
+                    form_tab_general:
+                        form_group_organism:
+                            seedProducer:
+                                type: checkbox
+                                required: false
+                            seedProducerCode:
+                                type: Blast\CoreBundle\Form\Type\EntityCodeType
+                                attr:
+                                    placeholder: librinfo.placeholder.seed_producer_code
+                            _options:
+                                fieldsOrder:
+                                    - active
+                                    - title
+                                    - firstname
+                                    - lastname
+                                    - name
+                                    - email
+                                    - emailNpai
+                                    - emailNoNewsletter
+                                    - alert
+                                    - customer
+                                    - customerCode
+                                    - supplier
+                                    - supplierCode
+                                    - seedProducer
+                                    - seedProducerCode
+#                                    - circles
+#                                    - category
+#                                    - description
+#                                    - url
+                    form_tab_plots:
+                        '':
+                            plots:
+                                type: sonata_type_collection
+                                by_reference: false
+                                type_options:
+                                    required: true
+                                    btn_add: false
+                                required: true
+                                label: false
+                                only_not_new: true
+                                _options:
+                                    edit: inline
+                                    allow_delete: true
+                                    admin_code: librinfo_seedbatch.admin.plot_embedded
+                    form_tab_seedbatches:
+                        '':
+                            seedBatches:
+                                type: sonata_type_collection
+                                by_reference: false
+                                type_options:
+                                    required: true
+                                    btn_add: false
+                                required: true
+                                label: false
+                                only_not_new: true
+                                _options:
+                                    edit: inline
+                                    allow_delete: true
+                                    admin_code: librinfo_seedbatch.admin.seedbatch_embedded
+                    form_tab_contactInformations:
+                        form_group_addresses:
+                            addresses:
+                                type: sonata_type_collection
+                                label: false
+                                by_reference: false
+                                type_options:
+                                    btn_add: false
+                                    delete_options:
+                                        type: checkbox
+                                        type_options:
+                                            mapped: false
+                                            required: false
+                                required: true
+                                _options:
+                                    sortable: updatedAt
+                                    edit: inline
+                        form_group_phones:
+                            phones:
+                                type: sonata_type_collection
+                                label: false
+                                by_reference: false
+                                type_options:
+                                    btn_add: false
+                                    delete_options:
+                                        type: checkbox
+                                        type_options:
+                                            mapped: false
+                                            required: false
+                                required: true    # if not true, child form fields cannot be required (why ??)
+                                _options:
+                                    edit: inline
+                                    inline: table
+                    _options:
+                        tabsOrder:
+                            - form_tab_general
+                            - form_tab_individuals
+                            - form_tab_contactInformations
+                            - form_tab_plots
+                            - form_tab_seedbatches
+                            - form_tab_info
+                            - form_group_specifics
