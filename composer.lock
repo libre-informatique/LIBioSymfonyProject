@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "18ec226af4cc4bea6e24d66beade6287",
+    "content-hash": "901dd8ba19a11dac7ef8d08d0eab2796",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -8781,6 +8781,7 @@
         "blast-project/doctrine-pgsql-bundle": 20,
         "blast-project/outer-extension-bundle": 20,
         "blast-project/utils-bundle": 20,
+        "blast-project/doctrine-session-bundle": 20,
         "libre-informatique/decorator-bundle": 20,
         "libre-informatique/media-bundle": 20,
         "libre-informatique/crm-bundle": 20,
@@ -8790,7 +8791,6 @@
         "libre-informatique/seed-batch-bundle": 20,
         "libre-informatique/sonata-sylius-user-bundle": 20,
         "libre-informatique/ecommerce-bundle": 20,
-        "blast-project/doctrine-session-bundle": 20,
         "marem/payum-paybox": 20
     },
     "prefer-stable": false,
