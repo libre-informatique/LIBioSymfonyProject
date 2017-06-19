@@ -39,7 +39,9 @@ class SetupCommand extends ContainerAwareCommand
                 new InputDefinition([
                     new InputOption('with-samples', null, InputOption::VALUE_NONE, 'Load sample data fixture'),
                     new InputOption('csv-dir', null, InputOption::VALUE_OPTIONAL, 'CSV data directory path'),
-                ]))
+                    new InputOption('yes', null, InputOption::VALUE_NONE, 'Answer yes to confirmation (for with-samples option)'),
+                ])
+            )
             ->setHelp(<<<EOT
 The <info>%command.name%</info> command allows user to configure basic LiSem application data.
 
@@ -68,17 +70,22 @@ EOT
     {
         $this->csvDir = $input->getOption('csv-dir');
         if ($this->csvDir) {
-            if (!$input->getOption('with-samples'))
+            if (!$input->getOption('with-samples')) {
                 throw new \Exception('The "csv-dir" option requires the "sample-data" option');
-            if (!is_dir($this->csvDir))
+            }
+            if (!is_dir($this->csvDir)) {
                 throw new \Exception('Could not find directory: ' . $this->csvDir);
+            }
         }
         if ($input->getOption('with-samples')) {
             $output->writeln(['', '<question>This will erease the existing data.</question>']);
-            $helper = $this->getHelper('question');
-            $question = new ConfirmationQuestion('Continue with this action [y|N] ? ', false);
-            if (!$helper->ask($input, $output, $question))
-                return;
+            if (!$input->getOption('yes')) {
+                $helper = $this->getHelper('question');
+                $question = new ConfirmationQuestion('Continue with this action [y|N] ? ', false);
+                if (!$helper->ask($input, $output, $question)) {
+                    return;
+                }
+            }
 
             $this->purgeDatabase($output);
 
@@ -89,8 +96,7 @@ EOT
             $this->setupSampleData($output);
             $this->setupCities($output);
             $this->setupAssets($output);
-        }
-        else {
+        } else {
             $this->setupSylius($output);
             $this->setupUsers($output);
             $this->setupCircles($output);
@@ -98,7 +104,6 @@ EOT
             $this->setupCities($output);
             $this->setupAssets($output);
         }
-
     }
 
     /**
@@ -128,12 +133,13 @@ EOT
         $repo = $em->getRepository('SonataSyliusUserBundle:SonataUser');
 
         $warn = false;
-        if (!$this->getContainer()->getParameter('lisem.user.datafixtures'))
+        if (!$this->getContainer()->getParameter('lisem.user.datafixtures')) {
             $warn = 'Parameter lisem.user.datafixtures is not defined.';
-        else {
+        } else {
             $users = $this->getContainer()->getParameter('lisem.user.datafixtures');
-            if (empty($users))
+            if (empty($users)) {
                 $warn = 'Parameter lisem.user.datafixtures is empty.';
+            }
         }
         if ($warn) {
             $output->writeln(['<comment>', $warn, 'See app/config/parameters.yml.dist for an example.', '</comment>']);
@@ -161,8 +167,9 @@ EOT
             $output->writeln(' <info>added</info>');
         }
 
-        if ($created)
+        if ($created) {
             $em->flush();
+        }
 
         return 0;
     }
@@ -214,31 +221,31 @@ EOT
                 $option->setCode($o['code']);
                 $option->setName($o['name']);
                 $optionRepository->add($option);
-            }
-            else {
+            } else {
                 $output->write(sprintf('Updating product option "%s"', $o['code']));
                 $option->setName($o['name']);
                 $em->persist($option);
             }
 
-            if (!empty($o['values'])) foreach ($o['values'] as $code => $v) {
-                $optionValue = $optionValueRepository->findOneByCode($code);
-                if (!$optionValue || !$option->hasValue($optionValue)) {
-                    $output->write(sprintf(' - Creating product option value "%s"', $code));
-                    $optionValue = $optionValueFactory->createNew();
-                    $optionValue->setCode($code);
-                    $optionValue->setValue($v['value']);
-                    $optionValue->setFallbackLocale($v['locale']);
-                    $optionValue->setCurrentLocale($v['locale']);
-                    $option->addValue($optionValue);
-                    $optionValueRepository->add($optionValue);
-                }
-                else {
-                    $output->write(sprintf(' - Updating product option value "%s"', $code));
-                    $optionValue->setValue($v['value']);
-                    $optionValue->setFallbackLocale($v['locale']);
-                    $optionValue->setCurrentLocale($v['locale']);
-                    $em->persist($optionValue);
+            if (!empty($o['values'])) {
+                foreach ($o['values'] as $code => $v) {
+                    $optionValue = $optionValueRepository->findOneByCode($code);
+                    if (!$optionValue || !$option->hasValue($optionValue)) {
+                        $output->write(sprintf(' - Creating product option value "%s"', $code));
+                        $optionValue = $optionValueFactory->createNew();
+                        $optionValue->setCode($code);
+                        $optionValue->setValue($v['value']);
+                        $optionValue->setFallbackLocale($v['locale']);
+                        $optionValue->setCurrentLocale($v['locale']);
+                        $option->addValue($optionValue);
+                        $optionValueRepository->add($optionValue);
+                    } else {
+                        $output->write(sprintf(' - Updating product option value "%s"', $code));
+                        $optionValue->setValue($v['value']);
+                        $optionValue->setFallbackLocale($v['locale']);
+                        $optionValue->setCurrentLocale($v['locale']);
+                        $em->persist($optionValue);
+                    }
                 }
             }
 
@@ -276,8 +283,7 @@ EOT
                 $attribute->setCode($a['code']);
                 $attribute->setName($a['name']);
                 $repository->add($attribute);
-            }
-            else {
+            } else {
                 $output->write(sprintf('Updating product attribute with code "%s"', $a['code']));
                 $storageType = $registry->get($a['type'])->getStorageType();
                 $attribute->setCode($a['code']);
@@ -303,12 +309,12 @@ EOT
         $file = __DIR__ . '/../DataFixtures/ORM/Cities/france.csv';
         $output->writeln(['', sprintf('Importing <info>cities</info> from %s...', realpath($file))]);
 
-        try{
+        try {
             // This is not clean, but it is FAST:
             $conn->exec("TRUNCATE TABLE librinfo_crm_city");
             $num_rows_effected = $conn->exec("COPY librinfo_crm_city (id, country_code, city, zip) FROM '$file' delimiter ',';");
             $output->writeln(sprintf('<info> done (%d cities).</info>', $num_rows_effected));
-        }catch(\Exception $e){
+        } catch (\Exception $e) {
             // This is clean but it is SLOW:
             $output->writeln(sprintf('<info> Using fallback method (SLOW) to import cities</info>'));
             $em->getConnection()->getConfiguration()->setSQLLogger(null);
@@ -316,7 +322,7 @@ EOT
             $handle = fopen($file, 'r');
             $i = 0;
             $batchSize = 20;
-            while (($line = fgetcsv($handle)) !== FALSE) {
+            while (($line = fgetcsv($handle)) !== false) {
                 $i++;
                 $city = new \Librinfo\CRMBundle\Entity\City();
                 $city->setCountryCode($line[1]);
@@ -372,8 +378,7 @@ EOT
                 ]);
                 $fixturesInput->setInteractive(false);
                 $fixturesCommand->run($fixturesInput, $output);
-            }
-            else {
+            } else {
                 $fixturesCommand = $this->getApplication()->find('sylius:fixtures:load');
                 $output->writeln(['', "Running <info>sylius:fixtures:load $suite</info> command..."]);
                 $fixturesInput = new ArrayInput([

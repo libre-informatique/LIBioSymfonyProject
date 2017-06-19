@@ -1,11 +1,3 @@
-# IDE and other developpers specific tools
-
-# PHPStorm
-.idea/*
-.directory
-
-# SYMFONY 2.7 / 3 Base ignores
-
 # Cache and logs (Symfony2)
 /app/cache/*
 /app/logs/*
@@ -30,24 +22,17 @@
 # Managed by Composer
 /app/bootstrap.php.cache
 /var/bootstrap.php.cache
+
 /bin/*
 !/bin/console
-/bin/db-connect.sh
-/bin/symfony_requirements
+!/bin/ci-scripts
+
 /vendor/*
 
 # Assets and user uploads
-/web/bundles/
-/web/uploads/
-/web/js/
-/web/css/
-/web/assets/
-
-# PHPUnit
-/app/phpunit.xml
-/phpunit.xml
-/app/phpunit.xml.dist
-/phpunit.xml.dist
+/web/*
+!/web/app_dev.php
+!/web/app.php
 
 # Build data
 /build/
@@ -59,14 +44,10 @@
 /nbproject/
 
 # Backups
-/vendor_BAK/
 *~
 
 # npm
 /node_modules/
-
-# Sylius images
-/web/media/*
 
 # Data (CSV files from seed farms)
 /data/
