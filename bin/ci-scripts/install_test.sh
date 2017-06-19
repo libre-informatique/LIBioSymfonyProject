@@ -58,5 +58,5 @@ nvm install 4.2.6
 
 nvm --version
 npm -v
-nodejs -v
+
 
