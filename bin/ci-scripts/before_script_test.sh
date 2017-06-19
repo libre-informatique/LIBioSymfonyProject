@@ -11,8 +11,14 @@ bin/console doctrine:schema:create --no-interaction
 # lisem
 bin/console lisem:install:setup --with-samples --yes
 
-export NVM_DIR="$HOME/.nvm"
+
 #nvm use stable
+
+export NVM_DIR="$HOME/.nvm"
+set +v
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+set -v
+
 npm -v
 npm install
 #npm install -g gulp-cli
