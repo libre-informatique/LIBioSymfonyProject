@@ -42,8 +42,8 @@ export DISPLAY=:99
 java -version
 
 sel_start_date=$(date)
-bin/selenium-server-standalone -debug true &
-
+bin/selenium-server-standalone  &
+# -debug true
 
 set +e
 while [ $(netstat -an | grep LISTEN | grep 4444| wc -l) -eq 0 ]
