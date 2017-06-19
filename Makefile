@@ -7,8 +7,8 @@ lint:
 	composer validate
 
 test:
-	./vendor/bin/codecept build
-	./vendor/bin/codecept run acceptance
+	codecept build
+	codecept run acceptance
 
 docs:
 	cd src/Resources/doc && sphinx-build -b html -d _build/doctrees . _build/html
