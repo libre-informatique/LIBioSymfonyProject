@@ -335,3 +335,10 @@ librinfo_crm:
 
 fos_rest:
     exception: ~
+
+bazinga_js_translation:
+    locale_fallback: fr
+    active_locales:
+        - fr
+        - en
+    default_domain:       messages
