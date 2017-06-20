@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "901dd8ba19a11dac7ef8d08d0eab2796",
+    "content-hash": "62860e4856cc23e2c937674f1833470c",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -1029,7 +1029,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2017-06-15T21:40:54+00:00"
+            "time": "2017-06-15 21:40:54"
         },
         {
             "name": "doctrine/doctrine-bundle",
@@ -1641,7 +1641,7 @@
                 "database",
                 "orm"
             ],
-            "time": "2017-05-20T14:45:59+00:00"
+            "time": "2017-05-20 14:45:59"
         },
         {
             "name": "friendsofsymfony/oauth-server-bundle",
@@ -4216,7 +4216,7 @@
                 "payment",
                 "payum"
             ],
-            "time": "2017-01-12T21:08:19+00:00"
+            "time": "2017-01-12 21:08:19"
         },
         {
             "name": "michelf/php-markdown",
@@ -6706,7 +6706,7 @@
                 "mails",
                 "notifications"
             ],
-            "time": "2017-02-14T08:48:11+00:00"
+            "time": "2017-02-14 08:48:11"
         },
         {
             "name": "sylius/mailer-bundle",
@@ -6783,7 +6783,7 @@
                 "mailer",
                 "swiftmailer"
             ],
-            "time": "2017-04-11T12:46:23+00:00"
+            "time": "2017-04-11 12:46:23"
         },
         {
             "name": "sylius/sylius",
@@ -6965,7 +6965,7 @@
             ],
             "description": "E-Commerce platform for PHP, based on Symfony framework.",
             "homepage": "http://sylius.org",
-            "time": "2017-06-15T15:50:19+00:00"
+            "time": "2017-06-15 15:50:19"
         },
         {
             "name": "symfony/assetic-bundle",
@@ -8214,6 +8214,68 @@
                 "rest"
             ],
             "time": "2017-06-07T17:54:37+00:00"
+        },
+        {
+            "name": "willdurand/js-translation-bundle",
+            "version": "2.6.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/willdurand/BazingaJsTranslationBundle.git",
+                "reference": "d9cb848fc66b502658994cf86e63ed3d940e1095"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/willdurand/BazingaJsTranslationBundle/zipball/d9cb848fc66b502658994cf86e63ed3d940e1095",
+                "reference": "d9cb848fc66b502658994cf86e63ed3d940e1095",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/console": "~2.7|~3.1",
+                "symfony/finder": "~2.7|~3.1",
+                "symfony/framework-bundle": "~2.7|~3.1",
+                "symfony/intl": "~2.7|~3.1",
+                "symfony/templating": "~2.7|~3.1",
+                "symfony/translation": "~2.7|~3.1"
+            },
+            "replace": {
+                "willdurand/expose-translation-bundle": "2.5.*"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8|~5.7",
+                "symfony/asset": "~2.7|~3.1",
+                "symfony/browser-kit": "~2.7|~3.1",
+                "symfony/phpunit-bridge": "~2.7|~3.1",
+                "symfony/twig-bundle": "~2.7|~3.1",
+                "symfony/yaml": "~2.7|~3.1"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.7-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Bazinga\\Bundle\\JsTranslationBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "William Durand",
+                    "email": "will+git@drnd.me"
+                }
+            ],
+            "description": "A pretty nice way to expose your translation messages to your JavaScript.",
+            "keywords": [
+                "javascript",
+                "symfony",
+                "translation"
+            ],
+            "time": "2017-05-17T21:16:31+00:00"
         },
         {
             "name": "willdurand/jsonp-callback-validator",
