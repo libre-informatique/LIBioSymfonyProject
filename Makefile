@@ -4,7 +4,7 @@ all:
 	@echo "Please choose a task."
 
 lint:
-	composer validate
+	composer validate --no-check-lock
 
 test:
 	codecept build
