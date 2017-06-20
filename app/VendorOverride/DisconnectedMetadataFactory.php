@@ -1,18 +1,12 @@
 <?php
 
 /*
- * This file is part of the Doctrine Bundle
+ * This file is part of the Lisem Project.
  *
- * The code was originally distributed inside the Symfony framework.
+ * Copyright (C) 2015-2017 Libre Informatique
  *
- * !!!! Changes for DoctrineBundle PSR-4 support !!!!!
- * !!!! http://stackoverflow.com/questions/31333129/workaround-for-doctrine-generator-in-psr-4-codebase !!!!
- * !!!! https://gist.github.com/janvennemann/46b2626eee2a4808ed75 !!!!
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- * (c) Doctrine Project, Benjamin Eberlei <kontakt@beberlei.de>
- *
- * For the full copyright and license information, please view the LICENSE
+ * This file is licenced under the GNU GPL v3.
+ * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
@@ -25,7 +19,7 @@ use Symfony\Component\HttpKernel\Bundle\BundleInterface;
 
 /**
  * This class provides methods to access Doctrine entity class metadata for a
- * given bundle, namespace or entity class, for generation purposes
+ * given bundle, namespace or entity class, for generation purposes.
  *
  * @author Fabien Potencier <fabien@symfony.com>
  */
@@ -127,13 +121,11 @@ class DisconnectedMetadataFactory
             $r = new \ReflectionClass($all[0]->name);
             $path = $this->getBasePathForClass($r->getName(), $r->getNamespaceName(), dirname($r->getFilename()));
             $ns = $r->getNamespaceName();
-
         } elseif ($path) {
             // Get namespace by removing the last component of the FQCN
             $nsParts = explode('\\', $all[0]->name);
             array_pop($nsParts);
             $ns = implode('\\', $nsParts);
-
         } else {
             throw new \RuntimeException(sprintf('Unable to determine where to save the "%s" class (use the --path option).', $all[0]->name));
         }
@@ -143,7 +135,7 @@ class DisconnectedMetadataFactory
     }
 
     /**
-     * Get a base path for a class
+     * Get a base path for a class.
      *
      * !!!! Changes for DoctrineBundle PSR-4 support !!!!!
      *
@@ -152,12 +144,13 @@ class DisconnectedMetadataFactory
      * @param string $path      class path
      *
      * @return string
+     *
      * @throws \RuntimeException When base path not found
      */
     private function getBasePathForClass($name, $namespace, $path)
     {
         $composerClassLoader = $this->getComposerClassLoader();
-        if ($composerClassLoader !== NULL) {
+        if ($composerClassLoader !== null) {
             $psr4Paths = $this->findPathsByPsr4Prefix($namespace, $composerClassLoader);
             if ($psr4Paths !== array()) {
                 // We just use the first path for now
@@ -177,15 +170,16 @@ class DisconnectedMetadataFactory
     }
 
     /**
-     * Gets the composer class loader from the list of registered autoloaders
+     * Gets the composer class loader from the list of registered autoloaders.
      *
      * !!!! Added for DoctrineBundle PSR-4 support !!!!!
      *
      * @return \Composer\Autoload\ClassLoader
      */
-    private function getComposerClassLoader() {
+    private function getComposerClassLoader()
+    {
         $activeAutloaders = spl_autoload_functions();
-        foreach($activeAutloaders as $autoloaderFunction) {
+        foreach ($activeAutloaders as $autoloaderFunction) {
             if (!is_array($autoloaderFunction)) {
                 continue;
             }
@@ -204,20 +198,22 @@ class DisconnectedMetadataFactory
             }
         }
 
-        return NULL;
+        return null;
     }
 
     /**
      * Matches the namespace against all registered psr4 prefixes and
-     * returns their mapped paths if found
+     * returns their mapped paths if found.
      *
      * !!!! Added for DoctrineBundle PSR-4 support !!!!!
      *
-     * @param string $namespace The full namespace to search for
+     * @param string                         $namespace           The full namespace to search for
      * @param \Composer\Autoload\ClassLoader $composerClassLoader A composer class loader instance to get the list of psr4 preixes from
+     *
      * @return array The found paths for the namespace or an empty array if none matched
      */
-    private function findPathsByPsr4Prefix($namespace, $composerClassLoader) {
+    private function findPathsByPsr4Prefix($namespace, $composerClassLoader)
+    {
         foreach ($composerClassLoader->getPrefixesPsr4() as $prefix => $paths) {
             if (strpos($namespace, $prefix) === 0) {
                 return $paths;

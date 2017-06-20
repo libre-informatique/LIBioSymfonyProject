@@ -1,10 +1,12 @@
 <?php
 
 /*
- * Copyright (C) 2015-2016 Libre Informatique
+ * This file is part of the Lisem Project.
+ *
+ * Copyright (C) 2015-2017 Libre Informatique
  *
  * This file is licenced under the GNU GPL v3.
- * For the full copyright and license information, please view the LICENSE
+ * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
@@ -90,7 +92,7 @@ final class SeedBatchExampleFactory extends ExampleFactory implements ExampleFac
                 // TODO: Wrong query. Should be: "find seed producer with name..."
                 ->setNormalizer('producer', $this->findOneBy($organismRepository, 'name'))
 
-                ->setDefault('plot' , null)
+                ->setDefault('plot', null)
                 ->setAllowedTypes('plot', ['null', 'string', Plot::class])
                 ->setNormalizer('plot', $this->findOneBy($plotRepository, 'name'))
 
@@ -129,19 +131,22 @@ final class SeedBatchExampleFactory extends ExampleFactory implements ExampleFac
 
     /**
      * @todo   This should go in a specific fixture
+     *
      * @return SeedFarm
      */
     protected function createSeedFarm()
     {
         $seedFarm = new SeedFarm();
-         $seedFarm ->setName('LiSem AS')
+        $seedFarm->setName('LiSem AS')
             ->setCode('LIS');
         $this->entityManager->persist($seedFarm);
+
         return $seedFarm;
     }
 
     /**
      * @todo   This should go in a specific fixture
+     *
      * @return Organism
      */
     protected function createProducer()
@@ -153,22 +158,24 @@ final class SeedBatchExampleFactory extends ExampleFactory implements ExampleFac
             ->setEmailCanonical($email);
         $producer->setSeedProducerCode($this->seedProducerCodeGenerator->generate($producer));
         $this->entityManager->persist($producer);
+
         return $producer;
     }
 
     /**
-     * @param  Organism $producer
+     * @param Organism $producer
+     *
      * @todo   This should go in a specific fixture
+     *
      * @return Plot
      */
     protected function createPlot(Organism $producer)
     {
         $plot = new Plot();
-        $plot->setName("Parcelle " . $this->faker->city)
+        $plot->setName('Parcelle '.$this->faker->city)
             ->setProducer($producer);
         $this->entityManager->persist($plot);
+
         return $plot;
     }
-
-
 }

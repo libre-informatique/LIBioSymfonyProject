@@ -1,10 +1,12 @@
 <?php
 
 /*
- * Copyright (C) 2015-2016 Libre Informatique
+ * This file is part of the Lisem Project.
+ *
+ * Copyright (C) 2015-2017 Libre Informatique
  *
  * This file is licenced under the GNU GPL v3.
- * For the full copyright and license information, please view the LICENSE
+ * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
@@ -15,7 +17,7 @@ use Librinfo\VarietiesBundle\Admin\VarietyAdmin as BaseAdmin;
 use Sonata\AdminBundle\Route\RouteCollection;
 
 /**
- * Libio Sonata admin for varieties
+ * Libio Sonata admin for varieties.
  *
  * @author Marcos Bezerra de Menezes <marcos.bezerra@libre-informatique.fr>
  */
@@ -42,7 +44,7 @@ class VarietyAdmin extends BaseAdmin
     }
 
     /**
-     * Configure routes for list actions
+     * Configure routes for list actions.
      *
      * @param RouteCollection $collection
      */
@@ -59,7 +61,7 @@ class VarietyAdmin extends BaseAdmin
             ->andWhere('po.code = :code')
             ->setParameter('code', Product::$PACKAGING_OPTION_CODE)
         ;
+
         return $queryBuilder->getQuery();
     }
-
 }

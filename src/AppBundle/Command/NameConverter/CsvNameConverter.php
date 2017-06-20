@@ -1,10 +1,12 @@
 <?php
 
 /*
- * Copyright (C) 2015-2016 Libre Informatique
+ * This file is part of the Lisem Project.
+ *
+ * Copyright (C) 2015-2017 Libre Informatique
  *
  * This file is licenced under the GNU GPL v3.
- * For the full copyright and license information, please view the LICENSE
+ * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
@@ -23,7 +25,7 @@ class CsvNameConverter implements NameConverterInterface
     private $names;
 
     /**
-     * @param string $entityClass  entity class FQDN
+     * @param string $entityClass entity class FQDN
      */
     public function __construct($entityClass)
     {
@@ -31,7 +33,7 @@ class CsvNameConverter implements NameConverterInterface
     }
 
     /**
-     * This is not used
+     * This is not used.
      */
     public function normalize($propertyName)
     {
@@ -44,7 +46,8 @@ class CsvNameConverter implements NameConverterInterface
     }
 
     /**
-     * @param string $entityClass   entity class FQDN
+     * @param string $entityClass entity class FQDN
+     *
      * @todo This should be done in a Yaml configuration file
      */
     private function configureNames($entityClass)
@@ -98,9 +101,9 @@ class CsvNameConverter implements NameConverterInterface
                 'mainteneur' => 'official_maintainer',
             ],
         ];
-        if (!key_exists($entityClass, $names))
+        if (!key_exists($entityClass, $names)) {
             throw new \Exception('CsvNameConverter cannot handle this entity class: '.$entityClass);
+        }
         $this->names = $names[$entityClass];
     }
-
 }
