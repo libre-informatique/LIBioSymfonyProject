@@ -6,6 +6,7 @@
 
 parameters:
     blast:
+
         configuration:
             search:
                 add:
@@ -31,6 +32,9 @@ parameters:
                             edit: ~
                             duplicate:
                                 template: BlastCoreBundle:CRUD:list__action_duplicate.html.twig
+            Sonata\AdminBundle\Form\FormMapper:
+                _options:
+                    cascade_validation: true
 
 ############
 # VARIETY
@@ -604,7 +608,6 @@ parameters:
                                             required: false
                                 required: true
                                 _options:
-                                    sortable: updatedAt
                                     edit: inline
                         form_group_phones:
                             phones:
