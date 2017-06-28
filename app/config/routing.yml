@@ -21,9 +21,3 @@ sylius_admin:
 sylius_api:
     resource: "@SyliusAdminApiBundle/Resources/config/routing/main.yml"
     prefix: /sylius-api
-
-
-
-
-
-

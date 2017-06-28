@@ -54,7 +54,7 @@ swiftmailer:
             username:  "%mailer_user%"
             password:  "%mailer_password%"
             delivery_addresses: ['jardinenvie@lisem.eu']
-            disable_delivery:  %mailer_disable_delivery%
+            disable_delivery:  "%mailer_disable_delivery%"
         spool_mailer:
             transport: "%mailer_transport%"
             host:      "%mailer_host%" # removed for gmail
@@ -63,5 +63,4 @@ swiftmailer:
             password:  "%mailer_password%"
             spool: { type: db }
             delivery_addresses: ['jardinenvie@lisem.eu']
-            disable_delivery:  %mailer_disable_delivery%
-
+            disable_delivery:  "%mailer_disable_delivery%"

@@ -2,14 +2,15 @@
     "name": "libre-informatique/lisem-project",
     "license": "GPL-3.0",
     "type": "project",
+    "description": "LISem is an ERP specialized for seeds producers and craftsmen.",
     "autoload": {
         "psr-4": {
-            "": "src/"          
+            "": "src/"
         },
-        "classmap": ["app/VendorOverride/", "app/AppKernel.php", "app/AppCache.php"]        
+        "classmap": ["app/VendorOverride/", "app/AppKernel.php", "app/AppCache.php"]
     },
     "require": {
-        "php": "^5.6|^7.0",
+        "php": ">=5.6",
         "symfony/symfony": "3.2.*",
         "symfony/monolog-bundle": "^3.0.2",
         "symfony/swiftmailer-bundle": "^2.5",
@@ -20,6 +21,7 @@
         "doctrine/orm": "2.5.x-dev",
         "doctrine/dbal": "2.5.x-dev",
         "doctrine/doctrine-bundle": "^1.6",
+        "doctrine/doctrine-fixtures-bundle": "^2.3",
         "sonata-project/core-bundle": "^3.0",
         "sonata-project/admin-bundle": "^3.4",
         "sonata-project/doctrine-orm-admin-bundle": "^3.0",
@@ -29,19 +31,30 @@
         "nelmio/api-doc-bundle": "^2.13",
         "incenteev/composer-parameter-handler": "^2.1",
         "jms/security-extra-bundle": "^1.6",
-        "libre-informatique/decorator-bundle": "dev-master",
-        "libre-informatique/email-crm-bundle": "dev-master",
-        "libre-informatique/varieties-bundle": "dev-master",
-        "libre-informatique/seed-batch-bundle": "dev-master",
-        "libre-informatique/sonata-sylius-user-bundle": "dev-master",
-        "blast-project/doctrine-pgsql-bundle": "dev-master",
-        "doctrine/doctrine-fixtures-bundle": "^2.3",
         "jms/serializer-bundle": "^1.1",
-        "libre-informatique/ecommerce-bundle": "dev-master",
-        "blast-project/utils-bundle": "dev-master",
         "trappar/alice-generator-bundle": "^1.1",
-        "blast-project/doctrine-session-bundle": "dev-master",
-        "blast-project/core-bundle": "dev-master",
+        "sylius/registry": "1.0.x-dev",
+        "sylius/mailer": "1.0.x-dev",
+        "sylius/mailer-bundle": "1.0.x-dev",
+        "sylius/resource": "1.0.x-dev",
+        "sylius/resource-bundle": "1.0.x-dev",
+        "sylius/user": "1.0.x-dev",
+        "sylius/user-bundle": "1.0.x-dev",
+        "blast-project/core-bundle": "dev-wip-lisem",
+        "blast-project/base-entities-bundle": "dev-wip-lisem",
+        "blast-project/doctrine-pgsql-bundle": "dev-wip-lisem",
+        "blast-project/outer-extension-bundle": "dev-wip-lisem",
+        "blast-project/utils-bundle": "dev-wip-lisem",
+        "blast-project/doctrine-session-bundle": "dev-wip-lisem",
+        "libre-informatique/decorator-bundle": "dev-wip-lisem",
+        "libre-informatique/media-bundle": "dev-wip-lisem",
+        "libre-informatique/crm-bundle": "dev-wip-lisem",
+        "libre-informatique/email-bundle": "dev-wip-lisem",
+        "libre-informatique/email-crm-bundle": "dev-wip-lisem",
+        "libre-informatique/varieties-bundle": "dev-wip-lisem",
+        "libre-informatique/seed-batch-bundle": "dev-wip-lisem",
+        "libre-informatique/sonata-sylius-user-bundle": "dev-wip-lisem",
+        "libre-informatique/ecommerce-bundle": "dev-wip-lisem",
         "marem/payum-paybox": "dev-master"
     },
     "require-dev": {
@@ -55,8 +68,7 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget",
-            "Librinfo\\CoreBundle\\Tools\\Patches\\Patcher::applyPatches"
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
         ],
         "post-update-cmd": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
@@ -64,12 +76,17 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget",
-            "Librinfo\\CoreBundle\\Tools\\Patches\\Patcher::applyPatches"
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
         ]
     },
     "config": {
-        "bin-dir": "bin"
+        "bin-dir": "bin",
+        "sllh-composer-lint": {
+            "php": true,
+            "type": true,
+            "minimum-stability": false,
+            "version-constraints": true
+        }
     },
     "extra": {
         "symfony-app-dir": "app",

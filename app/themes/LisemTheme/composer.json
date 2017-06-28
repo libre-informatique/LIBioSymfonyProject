@@ -1,5 +1,5 @@
 {
-    "name": "vendor/lisem-theme",
+    "name": "librinfo/lisem-theme",
     "title": "Default Sylius theme for the LiSem application",
     "description": "Optional description here...",
     "authors": [
@@ -13,5 +13,5 @@
             "homepage": "http://www.libre-informatique.fr/"
         }
     ]
-    
+
 }

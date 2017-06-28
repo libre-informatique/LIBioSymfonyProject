@@ -11,6 +11,7 @@
 namespace AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class DefaultController extends Controller
 {
@@ -21,7 +22,7 @@ class DefaultController extends Controller
 
     public function notImplementedAction()
     {
-        throw $this->createNotFoundException('This functionality has not been implemented yet');
+        throw new HttpException(218,'not_implemented');
     }
 
     public function testAction($name)

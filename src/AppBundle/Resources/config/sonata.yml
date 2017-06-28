@@ -53,10 +53,10 @@ sonata_admin:
                       label: libio.menu_label.plots_list
                     - route: admin_librinfo_seedbatch_plot_create
                       label: libio.menu_label.create_plot
-                    - route: admin_librinfo_seedbatch_certification_list
-                      label: libio.menu_label.certifications_list
-                    - route: admin_librinfo_seedbatch_certification_create
-                      label: libio.menu_label.create_certification
+                    # - route: admin_librinfo_seedbatch_certification_list
+                    #   label: libio.menu_label.certifications_list
+                    # - route: admin_librinfo_seedbatch_certification_create
+                    #   label: libio.menu_label.create_certification
                     - label: libio.menu_label.germination_tests
                       route: libio_not_implemented
             Products:
@@ -117,3 +117,5 @@ sonata_admin:
 
     options:
         use_icheck: true
+        confirm_exit: false
+        html5_validate: false

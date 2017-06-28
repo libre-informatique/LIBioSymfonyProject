@@ -7,6 +7,12 @@ form_tab_channel_descriptions: Déscriptions spécifiques
 form_tab_new_variety_variant : Ajouter un article (semences)
 show_group_channel_descriptions: Descriptions spécifiques
 show_tab_channel_descriptions: Descriptions spécifiques
+show_tab_contactInformations: Coordonnées
+form_tab_contactInformations: Coordonnées
+show_group_defaultPhone: Téléphone principal
+show_group_defaultAddress: Adresse principale
+show_group_info: Informations supplémentaires
+
 
 libio:
     help:
@@ -132,3 +138,14 @@ lisem:
         seeds: graines
 
 
+http_error:
+    404: >
+        Page non trouvée. Vérifiez que l'URL est valide et que la page existe encore.
+    500: >
+        Une erreur interne vient de se produire.
+    403: >
+        Cet accès est restreint, vous ne possedez pas les privilièges suffisant pour accéder à cette page.
+    218: >
+        Cette fonctionnalité n'a pas encore été implémentée.
+    previous_page: Retour à la page précédente
+    not_implemented: Non implémentée

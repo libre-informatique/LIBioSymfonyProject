@@ -49,4 +49,7 @@ libio:
 librinfo:
     link:
         dashboard: Tableau de Bord
-        
+
+'L''élément "" a été créé avec succès.': 'L''élément a été créé avec succès.'
+'L''élément "" a été supprimé avec succès.': 'L''élément a été supprimé avec succès.'
+'Une erreur est intervenue lors de la création de l''élément "".': 'Une erreur est intervenue lors de la création de l''élément.'

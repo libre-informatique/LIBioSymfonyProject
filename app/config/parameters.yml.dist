@@ -3,7 +3,7 @@
 # http://symfony.com/doc/current/best_practices/configuration.html#infrastructure-related-configuration
 parameters:
     database_host:     127.0.0.1
-    database_port:     ~
+    database_port:     5432
     database_name:     lisem
     database_user:     lisem_user
     database_password: lisem
@@ -23,8 +23,8 @@ parameters:
     # custom directories
     # please fill the absolute path to the cache directory (same for logs_dir)
     # the logs will end up in /tmp/{name-of-this-instance}/cache/{environment}
-#    cache_dir: /foo
-#    logs_dir: /bar
+    cache_dir: /tmp
+    logs_dir: /tmp
 
     # Default Users
     lisem.user.datafixtures:
