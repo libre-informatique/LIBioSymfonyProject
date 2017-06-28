@@ -3675,12 +3675,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/EmailBundle.git",
-                "reference": "b276243a469a15dbe0ca0ce2e9847d5c837d783c"
+                "reference": "4981d6290746fa4bf47572e73afaef2c4cfd11ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/EmailBundle/zipball/b276243a469a15dbe0ca0ce2e9847d5c837d783c",
-                "reference": "b276243a469a15dbe0ca0ce2e9847d5c837d783c",
+                "url": "https://api.github.com/repos/libre-informatique/EmailBundle/zipball/4981d6290746fa4bf47572e73afaef2c4cfd11ba",
+                "reference": "4981d6290746fa4bf47572e73afaef2c4cfd11ba",
                 "shasum": ""
             },
             "require": {
@@ -3703,18 +3703,11 @@
                 "branch-alias": {
                     "dev-master": "0.4.x-dev",
                     "dev-wip-lisem": "0.4.x-dev"
-                },
-                "symfony-app-dir": "app",
-                "symfony-web-dir": "web",
-                "symfony-assets-install": "relative",
-                "incenteev-parameters": {
-                    "file": "app/config/parameters.yml"
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "Librinfo\\EmailBundle\\": "src/",
-                    "Librinfo\\EmailBundle\\Tests\\": "tests/"
+                    "Librinfo\\EmailBundle\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3740,7 +3733,7 @@
                 "spool",
                 "symfony"
             ],
-            "time": "2017-06-26 16:11:13"
+            "time": "2017-06-28 11:45:42"
         },
         {
             "name": "libre-informatique/email-crm-bundle",
