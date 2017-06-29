@@ -87,12 +87,12 @@ class MenuBuilder
         $submenu->addChild('libio.menu_label.product_attributes', ['route' => 'admin_librinfo_ecommerce_productattribute_list']);
         $submenu->addChild('libio.menu_label.product_options', ['route' => 'admin_librinfo_ecommerce_productoption_list']);
         $submenu->addChild('libio.menu_label.rates_list', ['route' => 'libio_not_implemented']);
-        $submenu->addChild('libio.menu_label.zones_list', ['route' => 'libio_not_implemented']);
+        $submenu->addChild('libio.menu_label.zones_list', ['route' => 'admin_librinfo_ecommerce_zone_list']);
         $submenu->addChild('libio.menu_label.customer_group', ['route' => 'admin_librinfo_ecommerce_customergroup_list']);
         $submenu->addChild('libio.menu_label.payment_methods_list', ['route' => 'admin_librinfo_ecommerce_payment_method_list']);
         $submenu->addChild('libio.menu_label.shipping_methods_list', ['route' => 'libio_not_implemented']);
-        $submenu->addChild('libio.menu_label.tax_categories_list', ['route' => 'libio_not_implemented']);
-        $submenu->addChild('libio.menu_label.tax_rates_list', ['route' => 'libio_not_implemented']);
+        $submenu->addChild('libio.menu_label.tax_categories_list', ['route' => 'admin_librinfo_ecommerce_taxcategory_list']);
+        $submenu->addChild('libio.menu_label.tax_rates_list', ['route' => 'admin_librinfo_ecommerce_taxrate_list']);
 
         return $menu;
     }

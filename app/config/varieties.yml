@@ -915,28 +915,28 @@ librinfo_varieties:
                 type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 options:
                     attr:
-                        class: new-line
-                        width: 30
+                        class: inline-block
+                        width: 50
                     blast_choices: [ Caduc, Persistant, Marcescent ]
                     choices_field: foliage_type
             foliage_color:
                 type: text
                 options:
                     attr:
-                        class: new-line
-                        width: 30
+                        class: inline-block
+                        width: 50
             required_size:
                 type: integer
                 options:
                     attr:
-                        class: new-line
-                        width: 30
+                        class: inline-block
+                        width: 50
             development:
                 type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 options:
                     attr:
-                        class: new-line
-                        width: 30
+                        class: inline-block
+                        width: 50
                     blast_choices:
                         - Vigoureuse
                         - Coureuse
@@ -967,5 +967,3 @@ librinfo_varieties:
                     attr:
                         class: new-line
                         height: 300
-
-

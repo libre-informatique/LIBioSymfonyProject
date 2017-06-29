@@ -6,6 +6,7 @@
 
 parameters:
     blast:
+
         configuration:
             search:
                 add:
@@ -31,6 +32,9 @@ parameters:
                             edit: ~
                             duplicate:
                                 template: BlastCoreBundle:CRUD:list__action_duplicate.html.twig
+            Sonata\AdminBundle\Form\FormMapper:
+                _options:
+                    cascade_validation: true
 
 ############
 # VARIETY
@@ -138,7 +142,8 @@ parameters:
                             variety:
                                 type: sonata_type_model_autocomplete
                                 property: [name, code]
-                                disabled: true
+                                attr:
+                                    readonly: ~
                                 _options:
                                     admin_code: libio.admin.variety
                             _options:
@@ -242,6 +247,9 @@ parameters:
                         '':
                             product:
                                 admin_code: libio.admin.seeds_product
+                                attr:
+                                    readonly: ~
+                                disabled: true
                             packaging: ~
                             seedBatch:
                                 admin_code: librinfo_seedbatch.admin.seedbatch
@@ -604,7 +612,6 @@ parameters:
                                             required: false
                                 required: true
                                 _options:
-                                    sortable: updatedAt
                                     edit: inline
                         form_group_phones:
                             phones:
