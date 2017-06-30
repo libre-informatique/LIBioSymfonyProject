@@ -1,10 +1,12 @@
 <?php
 
 /*
- * Copyright (C) 2015-2016 Libre Informatique
+ * This file is part of the Lisem Project.
+ *
+ * Copyright (C) 2015-2017 Libre Informatique
  *
  * This file is licenced under the GNU GPL v3.
- * For the full copyright and license information, please view the LICENSE
+ * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
@@ -40,7 +42,8 @@ class ProductFactory implements ProductFactoryInterface
     }
 
     /**
-     * @param  boolean $seedsProduct
+     * @param bool $seedsProduct
+     *
      * @return Product
      */
     public function createNew($seedsProduct = false)
@@ -55,7 +58,8 @@ class ProductFactory implements ProductFactoryInterface
     }
 
     /**
-     * @param  boolean $seedsProduct
+     * @param bool $seedsProduct
+     *
      * @return Product
      */
     public function createWithVariant($seedsProduct = false)
@@ -70,15 +74,17 @@ class ProductFactory implements ProductFactoryInterface
     }
 
     /**
-     * @param  Variety $variety
+     * @param Variety $variety
+     *
      * @return Product
+     *
      * @todo   Add default taxonomy based on variety taxonomy
      */
     public function createNewForVariety(Variety $variety)
     {
         $product = $this->createNew(true);
         $product->setVariety($variety);
-        $product->setName((string)$variety);
+        $product->setName((string) $variety);
         $product->setCode(sprintf('%s-%s', $variety->getSpecies()->getCode(), $variety->getCode()));
         // TODO: default taxonomy
 

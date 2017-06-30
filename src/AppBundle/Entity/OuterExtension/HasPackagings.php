@@ -1,10 +1,21 @@
 <?php
 
+/*
+ * This file is part of the Lisem Project.
+ *
+ * Copyright (C) 2015-2017 Libre Informatique
+ *
+ * This file is licenced under the GNU GPL v3.
+ * For the full copyright and license information, please view the LICENSE.md
+ * file that was distributed with this source code.
+ */
+
 namespace AppBundle\Entity\OuterExtension;
 
 use Doctrine\Common\Collections\ArrayCollection;
 
-trait HasPackagings {
+trait HasPackagings
+{
     /**
      * @var ArrayCollection
      */
@@ -17,6 +28,7 @@ trait HasPackagings {
 
     /**
      * @param $packaging
+     *
      * @return self
      */
     public function addPackaging($packaging)
@@ -30,11 +42,13 @@ trait HasPackagings {
 
     /**
      * @param $packaging
+     *
      * @return self
      */
     public function removePackaging($packaging)
     {
         $this->packagings->removeElement($packaging);
+
         return $this;
     }
 
@@ -48,11 +62,13 @@ trait HasPackagings {
 
     /**
      * @param ArrayCollection packagings
+     *
      * @return self
      */
     public function setPackagings(ArrayCollection $packagings)
     {
         $this->packagings = $packagings;
+
         return $this;
     }
 }

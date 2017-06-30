@@ -1,10 +1,12 @@
 <?php
 
 /*
- * Copyright (C) 2015-2016 Libre Informatique
+ * This file is part of the Lisem Project.
+ *
+ * Copyright (C) 2015-2017 Libre Informatique
  *
  * This file is licenced under the GNU GPL v3.
- * For the full copyright and license information, please view the LICENSE
+ * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
@@ -18,7 +20,7 @@ use Librinfo\EcommerceBundle\Entity\Product;
 trait ProductOptionValueExtension
 {
     /**
-     * @return boolean
+     * @return bool
      */
     public function isPackaging()
     {
@@ -31,28 +33,31 @@ trait ProductOptionValueExtension
     public function getQuantity()
     {
         $match = [];
-        if ($this->isPackaging() && preg_match('/^([0-9]+)(G|S)$/', $this->code, $match))
+        if ($this->isPackaging() && preg_match('/^([0-9]+)(G|S)$/', $this->code, $match)) {
             return (int) $match[1];
+        }
+
         return 0;
     }
 
     /**
-     * @return string  "grams"|"seeds"|""
+     * @return string "grams"|"seeds"|""
      */
     public function getUnit()
     {
         $match = [];
-        if ($this->isPackaging() && preg_match('/^([0-9]+)(G|S)$/', $this->code, $match))
+        if ($this->isPackaging() && preg_match('/^([0-9]+)(G|S)$/', $this->code, $match)) {
             return $match[2] == 'S' ? 'seeds' : 'grams';
+        }
 
         return '';
     }
 
     /**
-     * @return boolean
+     * @return bool
      */
     public function isBulk()
     {
-        return $this->isPackaging() && $this->code == "BULK";
+        return $this->isPackaging() && $this->code == 'BULK';
     }
 }

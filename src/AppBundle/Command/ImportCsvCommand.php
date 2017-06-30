@@ -1,10 +1,12 @@
 <?php
 
 /*
+ * This file is part of the Lisem Project.
+ *
  * Copyright (C) 2015-2017 Libre Informatique
  *
  * This file is licenced under the GNU GPL v3.
- * For the full copyright and license information, please view the LICENSE
+ * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
@@ -34,7 +36,7 @@ final class ImportCsvCommand extends ContainerAwareCommand
     protected $em;
 
     /**
-     * @var string  Directory where the CSV files are located
+     * @var string Directory where the CSV files are located
      */
     protected $dir;
 
@@ -73,28 +75,30 @@ EOT
             Species::class,
             Variety::class,
         ];
-        foreach ($classes as $class)
+        foreach ($classes as $class) {
             $this->importData($class, $output);
+        }
     }
 
     protected function importData($entityClass, OutputInterface $output)
     {
         $output->write("Importing <info>$entityClass</info>");
         $csv = $this->getCsvFilePath($entityClass);
-        $output->write(" (".basename($csv).")...");
+        $output->write(' ('.basename($csv).')...');
         $data = file_get_contents($csv);
 
         $normalizer = new Normalizer\CsvObjectNormalizer($entityClass, $this->em);
         $serializer = new Serializer([$normalizer, new ArrayDenormalizer()], [new CsvEncoder()]);
-        $objects = $serializer->deserialize($data, $entityClass . '[]', 'csv');
-        $output->writeln(sprintf(" <info>%d objects</info>", count($objects)));
+        $objects = $serializer->deserialize($data, $entityClass.'[]', 'csv');
+        $output->writeln(sprintf(' <info>%d objects</info>', count($objects)));
 
         $rc = new \ReflectionClass($entityClass);
-        $method = 'postDeserialize' . $rc->getShortName();
+        $method = 'postDeserialize'.$rc->getShortName();
 
-        foreach ($objects as $k=> $object) {
-            if (method_exists($this, $method))
+        foreach ($objects as $k => $object) {
+            if (method_exists($this, $method)) {
                 $this->{$method}($object);
+            }
 
             $this->em->persist($object);
 
@@ -107,7 +111,9 @@ EOT
 
     /**
      * @param string $entityClass
+     *
      * @return string
+     *
      * @throws \Exception
      */
     protected function getCsvFilePath($entityClass)
@@ -120,15 +126,16 @@ EOT
             'Librinfo\VarietiesBundle\Entity\Variety' => 'variete.csv',
         ];
 
-        if (!key_exists($entityClass, $files))
+        if (!key_exists($entityClass, $files)) {
             throw new \Exception('Entity class not supported: '.$entityClass);
-
-        $csv = $this->dir . '/' . $files[$entityClass];
-        if (!file_exists($csv))
-            throw new \Exception('File not found: ' . $csv);
-        if (!is_readable($csv))
-            throw new \Exception('File not readable: ' . $csv);
-
+        }
+        $csv = $this->dir.'/'.$files[$entityClass];
+        if (!file_exists($csv)) {
+            throw new \Exception('File not found: '.$csv);
+        }
+        if (!is_readable($csv)) {
+            throw new \Exception('File not readable: '.$csv);
+        }
         return $csv;
     }
 
@@ -156,5 +163,4 @@ EOT
         }
         $this->varietyCodes[] = $code;
     }
-
 }

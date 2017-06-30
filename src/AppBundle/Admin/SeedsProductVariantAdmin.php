@@ -1,10 +1,12 @@
 <?php
 
 /*
- * Copyright (C) 2015-2016 Libre Informatique
+ * This file is part of the Lisem Project.
+ *
+ * Copyright (C) 2015-2017 Libre Informatique
  *
  * This file is licenced under the GNU GPL v3.
- * For the full copyright and license information, please view the LICENSE
+ * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
@@ -14,7 +16,7 @@ use Librinfo\EcommerceBundle\Admin\ProductVariantAdmin;
 use Librinfo\EcommerceBundle\Entity\Product;
 
 /**
- * Sonata admin for product variants from seeds products
+ * Sonata admin for product variants from seeds products.
  *
  * @author Marcos Bezerra de Menezes <marcos.bezerra@libre-informatique.fr>
  */
@@ -48,8 +50,9 @@ class SeedsProductVariantAdmin extends ProductVariantAdmin
             'callback' => function ($admin, $property, $value) use ($product) {
                 $datagrid = $admin->getDatagrid();
                 $datagrid->setValue($property, null, $value);
-                if ($product && $variety = $product->getVariety)
+                if ($product && $variety = $product->getVariety) {
                     $datagrid->setValue('variety', null, $variety);
+                }
             },
         ];
         $fieldDescriptionOptions = ['admin_code' => 'librinfo_seedbatch.admin.seedbatch'];
@@ -63,10 +66,11 @@ class SeedsProductVariantAdmin extends ProductVariantAdmin
     {
         $query = parent::createQuery($context);
         $alias = $query->getRootAliases()[0];
-        $query->leftJoin("$alias.product", "prod");
+        $query->leftJoin("$alias.product", 'prod');
         $query->andWhere(
-            $query->expr()->isNotNull("prod.variety")
+            $query->expr()->isNotNull('prod.variety')
         );
+
         return $query;
     }
 
@@ -81,9 +85,10 @@ class SeedsProductVariantAdmin extends ProductVariantAdmin
             ->andWhere('option.code = :packagingCode')
             ->setParameter('packagingCode', Product::$PACKAGING_OPTION_CODE)
         ;
+
         return $queryBuilder;
     }
-    
+
     /**
      * @return array
      */
@@ -94,5 +99,4 @@ class SeedsProductVariantAdmin extends ProductVariantAdmin
             array('AppBundle:SeedsProductAdmin:form_theme.html.twig')
         );
     }
-
 }
