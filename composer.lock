@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "901dd8ba19a11dac7ef8d08d0eab2796",
+    "content-hash": "62860e4856cc23e2c937674f1833470c",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -56,12 +56,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/blast-project/BaseEntitiesBundle.git",
-                "reference": "75ff509c6f6ce397d08e6b06b44dc0b5d76d206d"
+                "reference": "baa01952c41c052f9704c38d3e513400b08dda3d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blast-project/BaseEntitiesBundle/zipball/75ff509c6f6ce397d08e6b06b44dc0b5d76d206d",
-                "reference": "75ff509c6f6ce397d08e6b06b44dc0b5d76d206d",
+                "url": "https://api.github.com/repos/blast-project/BaseEntitiesBundle/zipball/baa01952c41c052f9704c38d3e513400b08dda3d",
+                "reference": "baa01952c41c052f9704c38d3e513400b08dda3d",
                 "shasum": ""
             },
             "require": {
@@ -84,7 +84,8 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Blast\\BaseEntitiesBundle\\": "src/"
+                    "Blast\\BaseEntitiesBundle\\": "src/",
+                    "Blast\\BaseEntitiesBundle\\Tests\\": "tests/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -114,7 +115,7 @@
                 "libio",
                 "symfony"
             ],
-            "time": "2017-06-28 12:50:05"
+            "time": "2017-06-19 09:35:39"
         },
         {
             "name": "blast-project/core-bundle",
@@ -122,12 +123,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/blast-project/CoreBundle.git",
-                "reference": "0d197af79d7971313daf9b846e7832659b1c8dd0"
+                "reference": "3a73cadc2820208c02b0886a075bf773ac34a600"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blast-project/CoreBundle/zipball/0d197af79d7971313daf9b846e7832659b1c8dd0",
-                "reference": "0d197af79d7971313daf9b846e7832659b1c8dd0",
+                "url": "https://api.github.com/repos/blast-project/CoreBundle/zipball/3a73cadc2820208c02b0886a075bf773ac34a600",
+                "reference": "3a73cadc2820208c02b0886a075bf773ac34a600",
                 "shasum": ""
             },
             "require": {
@@ -136,8 +137,7 @@
                 "sensio/generator-bundle": ">=3.1",
                 "sonata-project/doctrine-orm-admin-bundle": ">=3.1",
                 "stfalcon/tinymce-bundle": ">=2.1",
-                "symfony/symfony": ">=3.2",
-                "willdurand/js-translation-bundle": "^2.6"
+                "symfony/symfony": ">=3.2"
             },
             "require-dev": {
                 "mikey179/vfsstream": ">=1.6",
@@ -152,7 +152,8 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Blast\\CoreBundle\\": "src/"
+                    "Blast\\CoreBundle\\": "src/",
+                    "Blast\\CoreBundle\\Tests\\": "tests/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -185,7 +186,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-06-28 14:31:31"
+            "time": "2017-06-19 09:35:39"
         },
         {
             "name": "blast-project/doctrine-pgsql-bundle",
@@ -193,12 +194,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/blast-project/DoctrinePgsqlBundle.git",
-                "reference": "e99d0b07ff1044521fa7e339c70506d1c3a68cb7"
+                "reference": "6e609f5b30547d911cc987e5cc90beef41ade599"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blast-project/DoctrinePgsqlBundle/zipball/e99d0b07ff1044521fa7e339c70506d1c3a68cb7",
-                "reference": "e99d0b07ff1044521fa7e339c70506d1c3a68cb7",
+                "url": "https://api.github.com/repos/blast-project/DoctrinePgsqlBundle/zipball/6e609f5b30547d911cc987e5cc90beef41ade599",
+                "reference": "6e609f5b30547d911cc987e5cc90beef41ade599",
                 "shasum": ""
             },
             "require": {
@@ -219,7 +220,8 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Blast\\DoctrinePgsqlBundle\\": "src/"
+                    "Blast\\DoctrinePgsqlBundle\\": "src/",
+                    "Blast\\DoctrinePgsqlBundle\\Tests\\": "tests/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -232,7 +234,7 @@
                     "homepage": "http://www.libre-informatique.fr/"
                 },
                 {
-                    "name": "Marcos BEZERRA de MENEZES",
+                    "name": "Marcos Bezerra de Menezes",
                     "email": "marcos.bezerra@libre-informatique.fr"
                 }
             ],
@@ -245,7 +247,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-06-28 12:50:05"
+            "time": "2017-06-19 09:35:39"
         },
         {
             "name": "blast-project/doctrine-session-bundle",
@@ -253,12 +255,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/blast-project/DoctrineSessionBundle.git",
-                "reference": "08e5d8ac4f8f1564aad77d379bcde17498d07d0f"
+                "reference": "1746fd15c164aaf93d27caa86c7d017993f38045"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blast-project/DoctrineSessionBundle/zipball/08e5d8ac4f8f1564aad77d379bcde17498d07d0f",
-                "reference": "08e5d8ac4f8f1564aad77d379bcde17498d07d0f",
+                "url": "https://api.github.com/repos/blast-project/DoctrineSessionBundle/zipball/1746fd15c164aaf93d27caa86c7d017993f38045",
+                "reference": "1746fd15c164aaf93d27caa86c7d017993f38045",
                 "shasum": ""
             },
             "require": {
@@ -285,7 +287,8 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Blast\\DoctrineSessionBundle\\": "src/"
+                    "Blast\\DoctrineSessionBundle\\": "src/",
+                    "Blast\\DoctrineSessionBundle\\Tests\\": "tests/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -309,7 +312,7 @@
                 "doctrine",
                 "symfony"
             ],
-            "time": "2017-06-28 12:50:05"
+            "time": "2017-06-19 09:35:39"
         },
         {
             "name": "blast-project/outer-extension-bundle",
@@ -317,12 +320,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/blast-project/OuterExtensionBundle.git",
-                "reference": "56f26ff18362694e111a7273f97f33b92779b8b2"
+                "reference": "a856d99012189cabe8599aa456112aa6ddd39c1a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blast-project/OuterExtensionBundle/zipball/56f26ff18362694e111a7273f97f33b92779b8b2",
-                "reference": "56f26ff18362694e111a7273f97f33b92779b8b2",
+                "url": "https://api.github.com/repos/blast-project/OuterExtensionBundle/zipball/a856d99012189cabe8599aa456112aa6ddd39c1a",
+                "reference": "a856d99012189cabe8599aa456112aa6ddd39c1a",
                 "shasum": ""
             },
             "require": {
@@ -341,7 +344,8 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Blast\\OuterExtensionBundle\\": "src/"
+                    "Blast\\OuterExtensionBundle\\": "src/",
+                    "Blast\\OuterExtensionBundle\\Tests\\": "tests/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -373,7 +377,7 @@
                 "outer extension",
                 "symfony"
             ],
-            "time": "2017-06-28 12:50:05"
+            "time": "2017-06-19 09:35:39"
         },
         {
             "name": "blast-project/utils-bundle",
@@ -381,12 +385,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/blast-project/UtilsBundle.git",
-                "reference": "a58122d9b98576dae9af9a3a0091fa73d6cb2fca"
+                "reference": "c801b0b1d8792bde8dd06620286d016da8f86d39"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blast-project/UtilsBundle/zipball/a58122d9b98576dae9af9a3a0091fa73d6cb2fca",
-                "reference": "a58122d9b98576dae9af9a3a0091fa73d6cb2fca",
+                "url": "https://api.github.com/repos/blast-project/UtilsBundle/zipball/c801b0b1d8792bde8dd06620286d016da8f86d39",
+                "reference": "c801b0b1d8792bde8dd06620286d016da8f86d39",
                 "shasum": ""
             },
             "require": {
@@ -411,7 +415,8 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Blast\\UtilsBundle\\": "src/"
+                    "Blast\\UtilsBundle\\": "src/",
+                    "Blast\\UtilsBundle\\Tests\\": "tests/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -444,7 +449,7 @@
                 "symfony",
                 "utils"
             ],
-            "time": "2017-06-28 12:50:05"
+            "time": "2017-06-19 09:35:39"
         },
         {
             "name": "clue/stream-filter",
@@ -1024,7 +1029,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2017-06-15T21:40:54+00:00"
+            "time": "2017-06-15 21:40:54"
         },
         {
             "name": "doctrine/doctrine-bundle",
@@ -1568,12 +1573,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/doctrine2.git",
-                "reference": "c06f19db8d9c0aaeb73b2c1876c49c82f051eb5c"
+                "reference": "c0f0fe060f830afd2e8b5d17d36b7649d4c3eeb9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/c06f19db8d9c0aaeb73b2c1876c49c82f051eb5c",
-                "reference": "c06f19db8d9c0aaeb73b2c1876c49c82f051eb5c",
+                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/c0f0fe060f830afd2e8b5d17d36b7649d4c3eeb9",
+                "reference": "c0f0fe060f830afd2e8b5d17d36b7649d4c3eeb9",
                 "shasum": ""
             },
             "require": {
@@ -1636,7 +1641,7 @@
                 "database",
                 "orm"
             ],
-            "time": "2017-06-24T01:23:19+00:00"
+            "time": "2017-05-20 14:45:59"
         },
         {
             "name": "friendsofsymfony/oauth-server-bundle",
@@ -1993,16 +1998,16 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "6.3.0",
+            "version": "6.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "f4db5a78a5ea468d4831de7f0bf9d9415e348699"
+                "reference": "8d6c6cc55186db87b7dc5009827429ba4e9dc006"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/f4db5a78a5ea468d4831de7f0bf9d9415e348699",
-                "reference": "f4db5a78a5ea468d4831de7f0bf9d9415e348699",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/8d6c6cc55186db87b7dc5009827429ba4e9dc006",
+                "reference": "8d6c6cc55186db87b7dc5009827429ba4e9dc006",
                 "shasum": ""
             },
             "require": {
@@ -2012,11 +2017,8 @@
             },
             "require-dev": {
                 "ext-curl": "*",
-                "phpunit/phpunit": "^4.0 || ^5.0",
+                "phpunit/phpunit": "^4.0",
                 "psr/log": "^1.0"
-            },
-            "suggest": {
-                "psr/log": "Required for using the Log middleware"
             },
             "type": "library",
             "extra": {
@@ -2054,7 +2056,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2017-06-22T18:50:49+00:00"
+            "time": "2017-02-28T22:50:30+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -2476,16 +2478,16 @@
         },
         {
             "name": "jeroendesloovere/vcard",
-            "version": "1.5.1",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jeroendesloovere/vcard.git",
-                "reference": "1cb08400b0743cc91fd8a2e63212b5277acca48e"
+                "reference": "1973888c9fa2327c64ba153a7072caec0674c24a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jeroendesloovere/vcard/zipball/1cb08400b0743cc91fd8a2e63212b5277acca48e",
-                "reference": "1cb08400b0743cc91fd8a2e63212b5277acca48e",
+                "url": "https://api.github.com/repos/jeroendesloovere/vcard/zipball/1973888c9fa2327c64ba153a7072caec0674c24a",
+                "reference": "1973888c9fa2327c64ba153a7072caec0674c24a",
                 "shasum": ""
             },
             "require": {
@@ -2521,7 +2523,7 @@
                 "php",
                 "vCard"
             ],
-            "time": "2017-06-27T12:23:41+00:00"
+            "time": "2017-02-14T08:47:41+00:00"
         },
         {
             "name": "jeroendesloovere/vcard-bundle",
@@ -3476,12 +3478,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/CRMBundle.git",
-                "reference": "af98c31860914f5fd40ba386449aa1288a6d67ed"
+                "reference": "1ab28b3486de59783131bd14e25666ea4bfdf638"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/CRMBundle/zipball/af98c31860914f5fd40ba386449aa1288a6d67ed",
-                "reference": "af98c31860914f5fd40ba386449aa1288a6d67ed",
+                "url": "https://api.github.com/repos/libre-informatique/CRMBundle/zipball/1ab28b3486de59783131bd14e25666ea4bfdf638",
+                "reference": "1ab28b3486de59783131bd14e25666ea4bfdf638",
                 "shasum": ""
             },
             "require": {
@@ -3507,7 +3509,8 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Librinfo\\CRMBundle\\": "src/"
+                    "Librinfo\\CRMBundle\\": "src/",
+                    "Librinfo\\CRMBundle\\Tests\\": "tests/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3532,7 +3535,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-06-28 12:47:50"
+            "time": "2017-06-19 09:36:35"
         },
         {
             "name": "libre-informatique/decorator-bundle",
@@ -3540,12 +3543,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/DecoratorBundle.git",
-                "reference": "694597dd806a02319751a6be2afe08b7e6dbe4f1"
+                "reference": "fec3c0c49059324516ded1853d8ee3777b306073"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/DecoratorBundle/zipball/694597dd806a02319751a6be2afe08b7e6dbe4f1",
-                "reference": "694597dd806a02319751a6be2afe08b7e6dbe4f1",
+                "url": "https://api.github.com/repos/libre-informatique/DecoratorBundle/zipball/fec3c0c49059324516ded1853d8ee3777b306073",
+                "reference": "fec3c0c49059324516ded1853d8ee3777b306073",
                 "shasum": ""
             },
             "require": {
@@ -3569,7 +3572,8 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Librinfo\\DecoratorBundle\\": "src/"
+                    "Librinfo\\DecoratorBundle\\": "src/",
+                    "Librinfo\\DecoratorBundle\\Tests\\": "tests/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3594,7 +3598,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-06-28 12:47:50"
+            "time": "2017-06-19 09:36:35"
         },
         {
             "name": "libre-informatique/ecommerce-bundle",
@@ -3602,12 +3606,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/EcommerceBundle.git",
-                "reference": "9163dd7da143bcc4fe915a65b27036e70e564113"
+                "reference": "5a7d0c5e785a31d04ff69b67847155350564f646"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/EcommerceBundle/zipball/9163dd7da143bcc4fe915a65b27036e70e564113",
-                "reference": "9163dd7da143bcc4fe915a65b27036e70e564113",
+                "url": "https://api.github.com/repos/libre-informatique/EcommerceBundle/zipball/5a7d0c5e785a31d04ff69b67847155350564f646",
+                "reference": "5a7d0c5e785a31d04ff69b67847155350564f646",
                 "shasum": ""
             },
             "require": {
@@ -3633,7 +3637,8 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Librinfo\\EcommerceBundle\\": "src/"
+                    "Librinfo\\EcommerceBundle\\": "src/",
+                    "Librinfo\\EcommerceBundle\\Tests\\": "tests/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3658,7 +3663,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-06-29 15:49:32"
+            "time": "2017-06-19 09:36:35"
         },
         {
             "name": "libre-informatique/email-bundle",
@@ -3666,12 +3671,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/EmailBundle.git",
-                "reference": "4981d6290746fa4bf47572e73afaef2c4cfd11ba"
+                "reference": "a22e562e9386a5d627d6ed3657a235584398a678"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/EmailBundle/zipball/4981d6290746fa4bf47572e73afaef2c4cfd11ba",
-                "reference": "4981d6290746fa4bf47572e73afaef2c4cfd11ba",
+                "url": "https://api.github.com/repos/libre-informatique/EmailBundle/zipball/a22e562e9386a5d627d6ed3657a235584398a678",
+                "reference": "a22e562e9386a5d627d6ed3657a235584398a678",
                 "shasum": ""
             },
             "require": {
@@ -3694,11 +3699,18 @@
                 "branch-alias": {
                     "dev-master": "0.4.x-dev",
                     "dev-wip-lisem": "0.4.x-dev"
+                },
+                "symfony-app-dir": "app",
+                "symfony-web-dir": "web",
+                "symfony-assets-install": "relative",
+                "incenteev-parameters": {
+                    "file": "app/config/parameters.yml"
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "Librinfo\\EmailBundle\\": "src/"
+                    "Librinfo\\EmailBundle\\": "src/",
+                    "Librinfo\\EmailBundle\\Tests\\": "tests/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3724,7 +3736,7 @@
                 "spool",
                 "symfony"
             ],
-            "time": "2017-06-28 11:45:42"
+            "time": "2017-06-19 11:56:31"
         },
         {
             "name": "libre-informatique/email-crm-bundle",
@@ -3732,12 +3744,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/EmailCRMBundle.git",
-                "reference": "e8e5cbd0cd7f596bfd73801ff0a40d6d8cfe19fd"
+                "reference": "bade8681cdfa739c9c197593561f16392566352b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/EmailCRMBundle/zipball/e8e5cbd0cd7f596bfd73801ff0a40d6d8cfe19fd",
-                "reference": "e8e5cbd0cd7f596bfd73801ff0a40d6d8cfe19fd",
+                "url": "https://api.github.com/repos/libre-informatique/EmailCRMBundle/zipball/bade8681cdfa739c9c197593561f16392566352b",
+                "reference": "bade8681cdfa739c9c197593561f16392566352b",
                 "shasum": ""
             },
             "require": {
@@ -3763,7 +3775,8 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Librinfo\\EmailCRMBundle\\": "src/"
+                    "Librinfo\\EmailCRMBundle\\": "src/",
+                    "Librinfo\\EmailCRMBundle\\Tests\\": "tests/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3776,7 +3789,7 @@
                     "homepage": "http://www.libre-informatique.fr/"
                 },
                 {
-                    "name": "Marcos BEZERRA DE MENEZES",
+                    "name": "Marcos Bezerra de Menezes",
                     "email": "marcos.bezerra@libre-informatique.fr"
                 }
             ],
@@ -3790,7 +3803,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-06-28 12:47:50"
+            "time": "2017-06-19 12:09:29"
         },
         {
             "name": "libre-informatique/media-bundle",
@@ -3798,12 +3811,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/MediaBundle.git",
-                "reference": "991abf8b4d0f085cf5d118e55dab84c4288812ce"
+                "reference": "ac18a0fdcf72e0c4945d040aa1dcb55b715e0d71"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/MediaBundle/zipball/991abf8b4d0f085cf5d118e55dab84c4288812ce",
-                "reference": "991abf8b4d0f085cf5d118e55dab84c4288812ce",
+                "url": "https://api.github.com/repos/libre-informatique/MediaBundle/zipball/ac18a0fdcf72e0c4945d040aa1dcb55b715e0d71",
+                "reference": "ac18a0fdcf72e0c4945d040aa1dcb55b715e0d71",
                 "shasum": ""
             },
             "require": {
@@ -3824,7 +3837,8 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Librinfo\\MediaBundle\\": "src/"
+                    "Librinfo\\MediaBundle\\": "src/",
+                    "Librinfo\\MediaBundle\\Tests\\": "tests/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3850,7 +3864,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-06-28 15:58:49"
+            "time": "2017-06-19 09:36:35"
         },
         {
             "name": "libre-informatique/seed-batch-bundle",
@@ -3858,19 +3872,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/SeedBatchBundle.git",
-                "reference": "b1de746fe3fb21302fb15ffbb94f25b8c5edc64f"
+                "reference": "154b8821908966daeae47ae668893a959ee4c05a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/SeedBatchBundle/zipball/b1de746fe3fb21302fb15ffbb94f25b8c5edc64f",
-                "reference": "b1de746fe3fb21302fb15ffbb94f25b8c5edc64f",
+                "url": "https://api.github.com/repos/libre-informatique/SeedBatchBundle/zipball/154b8821908966daeae47ae668893a959ee4c05a",
+                "reference": "154b8821908966daeae47ae668893a959ee4c05a",
                 "shasum": ""
             },
             "require": {
-                "blast-project/base-entities-bundle": "dev-wip-lisem",
-                "blast-project/core-bundle": "dev-wip-lisem",
                 "blast-project/utils-bundle": "dev-wip-lisem",
-                "libre-informatique/media-bundle": "dev-wip-lisem",
                 "libre-informatique/varieties-bundle": "dev-wip-lisem",
                 "php": ">=5.6",
                 "symfony/symfony": ">=3.2"
@@ -3887,7 +3898,8 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Librinfo\\SeedBatchBundle\\": "src/"
+                    "Librinfo\\SeedBatchBundle\\": "src/",
+                    "Librinfo\\SeedBatchBundle\\Tests\\": "tests/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3900,7 +3912,7 @@
                     "homepage": "http://www.libre-informatique.fr/"
                 },
                 {
-                    "name": "Marcos BEZERRA DE MENEZES",
+                    "name": "Marcos Bezerra de Menezes",
                     "email": "marcos.bezerra@libre-informatique.fr"
                 }
             ],
@@ -3912,7 +3924,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-06-28 12:47:50"
+            "time": "2017-06-19 09:36:35"
         },
         {
             "name": "libre-informatique/sonata-sylius-user-bundle",
@@ -3920,12 +3932,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/SonataSyliusUserBundle.git",
-                "reference": "689b645c9a922de0f8349f1a362f45a496a8a34c"
+                "reference": "0d9724e7fa489e0e88a9079de0e212c845cd17b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/SonataSyliusUserBundle/zipball/689b645c9a922de0f8349f1a362f45a496a8a34c",
-                "reference": "689b645c9a922de0f8349f1a362f45a496a8a34c",
+                "url": "https://api.github.com/repos/libre-informatique/SonataSyliusUserBundle/zipball/0d9724e7fa489e0e88a9079de0e212c845cd17b2",
+                "reference": "0d9724e7fa489e0e88a9079de0e212c845cd17b2",
                 "shasum": ""
             },
             "require": {
@@ -3953,7 +3965,8 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Librinfo\\SonataSyliusUserBundle\\": "src/"
+                    "Librinfo\\SonataSyliusUserBundle\\": "src/",
+                    "Librinfo\\SonataSyliusUserBundle\\Tests\\": "tests/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3966,7 +3979,7 @@
                     "homepage": "http://www.libre-informatique.fr/"
                 },
                 {
-                    "name": "Marcos BEZERRA DE MENEZES",
+                    "name": "Marcos Bezerra de Menezes",
                     "email": "marcos.bezerra@libre-informatique.fr"
                 }
             ],
@@ -3977,7 +3990,7 @@
                 "sylius",
                 "symfony"
             ],
-            "time": "2017-06-28 12:47:50"
+            "time": "2017-06-19 12:17:20"
         },
         {
             "name": "libre-informatique/varieties-bundle",
@@ -3985,12 +3998,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/VarietiesBundle.git",
-                "reference": "c584666f21429d0e782b751e78a662ae8f86c79b"
+                "reference": "771d7608eada778d796ed1d95820be91badd22c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/VarietiesBundle/zipball/c584666f21429d0e782b751e78a662ae8f86c79b",
-                "reference": "c584666f21429d0e782b751e78a662ae8f86c79b",
+                "url": "https://api.github.com/repos/libre-informatique/VarietiesBundle/zipball/771d7608eada778d796ed1d95820be91badd22c0",
+                "reference": "771d7608eada778d796ed1d95820be91badd22c0",
                 "shasum": ""
             },
             "require": {
@@ -4017,7 +4030,8 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Librinfo\\VarietiesBundle\\": "src/"
+                    "Librinfo\\VarietiesBundle\\": "src/",
+                    "Librinfo\\VarietiesBundle\\Tests\\": "tests/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -4049,7 +4063,7 @@
                 "taxonomy",
                 "variety"
             ],
-            "time": "2017-06-28 11:29:52"
+            "time": "2017-06-19 09:36:35"
         },
         {
             "name": "liip/imagine-bundle",
@@ -4202,7 +4216,7 @@
                 "payment",
                 "payum"
             ],
-            "time": "2017-01-12T21:08:19+00:00"
+            "time": "2017-01-12 21:08:19"
         },
         {
             "name": "michelf/php-markdown",
@@ -4729,16 +4743,16 @@
         },
         {
             "name": "payum/payum",
-            "version": "1.4.2",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Payum/Payum.git",
-                "reference": "ede0f64f635476d5b6d0bef90e7f408504b94856"
+                "reference": "3e120150602237516b09e79a1f22272e1256007e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Payum/Payum/zipball/ede0f64f635476d5b6d0bef90e7f408504b94856",
-                "reference": "ede0f64f635476d5b6d0bef90e7f408504b94856",
+                "url": "https://api.github.com/repos/Payum/Payum/zipball/3e120150602237516b09e79a1f22272e1256007e",
+                "reference": "3e120150602237516b09e79a1f22272e1256007e",
                 "shasum": ""
             },
             "require": {
@@ -4793,13 +4807,13 @@
                 "zendframework/zend-db": "~2"
             },
             "suggest": {
-                "authorizenet/authorizenet": "^1 If you want to use Authorizenet.NET install authorizenet/authorizenet:~1.8 library",
+                "authorizenet/authorizenet": "~1.8 If you want to use Authorizenet.NET install authorizenet/authorizenet:~1.8 library",
                 "defuse/php-encryption": "^2 If you want to encrypt gateways credentials in database",
-                "fp/klarna-invoice": "^0.1 If you want to use Klarna Invoice install fp/klarna-invoice:0.1.* library",
-                "klarna/checkout": "^1|^2 If you want to use Klarna Checkout install klarna/checkout:~1|~2.0 library",
-                "paypal/rest-api-sdk-php": "^0.5 If you want to use PayPal REST API install paypal/rest-api-sdk-php:0.5.* library",
-                "sofort/sofortlib-php": "^3 If you want to use Sofort install sofort/sofortlib-php:^3.0 library",
-                "stripe/stripe-php": "^3|^4 If you want to use Stripe install stripe/stripe-php:~2.0|~3.0 library"
+                "fp/klarna-invoice": "0.1.* If you want to use Klarna Invoice install fp/klarna-invoice:0.1.* library",
+                "klarna/checkout": "~1.0|~2.0 If you want to use Klarna Checkout install klarna/checkout:~1|~2.0 library",
+                "paypal/rest-api-sdk-php": "0.5.* If you want to use PayPal REST API install paypal/rest-api-sdk-php:0.5.* library",
+                "sofort/sofortlib-php": "~3.0 If you want to use Sofort install sofort/sofortlib-php:^3.0 library",
+                "stripe/stripe-php": "~2.0|~3.0 If you want to use Stripe install stripe/stripe-php:~2.0|~3.0 library"
             },
             "type": "library",
             "extra": {
@@ -4852,7 +4866,7 @@
                 "stripe.js",
                 "withdrawal"
             ],
-            "time": "2017-06-21T07:00:23+00:00"
+            "time": "2017-03-24T08:36:36+00:00"
         },
         {
             "name": "payum/payum-bundle",
@@ -5757,16 +5771,16 @@
         },
         {
             "name": "sonata-project/admin-bundle",
-            "version": "3.20.1",
+            "version": "3.19.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataAdminBundle.git",
-                "reference": "10c27f6ee911c452ee67059bfdc1a1fca8953904"
+                "reference": "300b9151c01395e838fac6f9119bd431ccb02204"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/10c27f6ee911c452ee67059bfdc1a1fca8953904",
-                "reference": "10c27f6ee911c452ee67059bfdc1a1fca8953904",
+                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/300b9151c01395e838fac6f9119bd431ccb02204",
+                "reference": "300b9151c01395e838fac6f9119bd431ccb02204",
                 "shasum": ""
             },
             "require": {
@@ -5852,7 +5866,7 @@
                 "bootstrap",
                 "sonata"
             ],
-            "time": "2017-06-27T15:41:31+00:00"
+            "time": "2017-06-12T13:26:10+00:00"
         },
         {
             "name": "sonata-project/block-bundle",
@@ -6344,16 +6358,16 @@
         },
         {
             "name": "sonata-project/intl-bundle",
-            "version": "2.3.1",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataIntlBundle.git",
-                "reference": "d01e85fbc740452b7590d6e465bbcf852def00cc"
+                "reference": "2ffb2444599cf5d9fff6d32ac0ba9e11e9b11225"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataIntlBundle/zipball/d01e85fbc740452b7590d6e465bbcf852def00cc",
-                "reference": "d01e85fbc740452b7590d6e465bbcf852def00cc",
+                "url": "https://api.github.com/repos/sonata-project/SonataIntlBundle/zipball/2ffb2444599cf5d9fff6d32ac0ba9e11e9b11225",
+                "reference": "2ffb2444599cf5d9fff6d32ac0ba9e11e9b11225",
                 "shasum": ""
             },
             "require": {
@@ -6368,7 +6382,7 @@
                 "sonata-project/user-bundle": "<2.0 || >=4.0"
             },
             "require-dev": {
-                "matthiasnoback/symfony-dependency-injection-test": "^0.7.6 || ^1.0",
+                "matthiasnoback/symfony-dependency-injection-test": "^0.7.6",
                 "sllh/php-cs-fixer-styleci-bridge": "^2.0",
                 "symfony/phpunit-bridge": "^2.7 || ^3.0",
                 "symfony/security": "^2.2 || ^3.0",
@@ -6414,7 +6428,7 @@
                 "sonata",
                 "time"
             ],
-            "time": "2017-06-27T15:35:25+00:00"
+            "time": "2017-01-17T11:04:35+00:00"
         },
         {
             "name": "sparkling/vat-bundle",
@@ -6692,7 +6706,7 @@
                 "mails",
                 "notifications"
             ],
-            "time": "2017-02-14T08:48:11+00:00"
+            "time": "2017-02-14 08:48:11"
         },
         {
             "name": "sylius/mailer-bundle",
@@ -6769,7 +6783,7 @@
                 "mailer",
                 "swiftmailer"
             ],
-            "time": "2017-04-11T12:46:23+00:00"
+            "time": "2017-04-11 12:46:23"
         },
         {
             "name": "sylius/sylius",
@@ -6951,7 +6965,7 @@
             ],
             "description": "E-Commerce platform for PHP, based on Symfony framework.",
             "homepage": "http://sylius.org",
-            "time": "2017-06-15T15:50:19+00:00"
+            "time": "2017-06-15 15:50:19"
         },
         {
             "name": "symfony/assetic-bundle",

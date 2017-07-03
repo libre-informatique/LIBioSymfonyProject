@@ -114,6 +114,8 @@ parameters:
 ################
 
         AppBundle\Admin\SeedsProductAdmin:
+            form_theme:
+                - LibrinfoEcommerceBundle:Form:fields.html.twig
             # SHOW
             Sonata\AdminBundle\Show\ShowMapper:
                 remove:
@@ -154,6 +156,8 @@ parameters:
                                 type: sonata_type_collection
                                 label: false
                                 by_reference: false
+                                attr:
+                                    data-showFields: 'name,seedBatch,packaging,code'
                                 type_options:
                                     btn_add: false
                                     delete_options:
@@ -163,9 +167,9 @@ parameters:
                                             required: false
                                 required: true    # if not true, child form fields cannot be required (why ??)
                                 _options:
-                                    edit: inline
-                                    inline: table
-                                    admin_code: libio.admin.seeds_product_variant
+                                    edit: modal
+                                    inline: table-list
+                                    admin_code: libio.admin.seeds_product_variant_embedded
             #LIST
             Sonata\AdminBundle\Datagrid\ListMapper:
                 remove:
@@ -190,6 +194,8 @@ parameters:
 ################
 
         AppBundle\Admin\OtherProductAdmin:
+            form_theme:
+                - LibrinfoEcommerceBundle:Form:fields.html.twig
             # SHOW
             Sonata\AdminBundle\Show\ShowMapper:
                 add:
@@ -220,7 +226,7 @@ parameters:
                                 _options:
                                     edit: inline
                                     inline: table
-                                    admin_code: libio.admin.other_product_variant
+                                    admin_code: libio.admin.other_product_variant_embedded
 
             # LIST
             Sonata\AdminBundle\Datagrid\ListMapper:
@@ -233,9 +239,9 @@ parameters:
             Sonata\AdminBundle\Datagrid\DatagridMapper:
                 add: ~
 
-########################
-# SEEDS PRODUCT VARIANT
-########################
+# ########################
+# # SEEDS PRODUCT VARIANT
+# ########################
 
         AppBundle\Admin\SeedsProductVariantAdmin:
             # SHOW
@@ -259,28 +265,45 @@ parameters:
             # FORM
             Sonata\AdminBundle\Form\FormMapper:
                 remove:
+                    name: ~
                     optionValues: ~
+                    _delete: ~
+                    channelPricings: ~
+                    taxCategory: ~
+                    onHand: ~
+                    onHold: ~
+                    tracked: ~
+                    width: ~
+                    height: ~
+                    depth: ~
+                    weight: ~
+                    packaging: ~
+                    seedBatch: ~
+                    code: ~
+                    product: ~
                 add:
                     form_group_general:
                         '':
-                            product:
-                                type: sonata_type_model_autocomplete
-                                property: [translations.name, code]
-#                                disabled: true
-                                _options:
-                                    admin_code: libio.admin.seeds_product
+                            name:
+                                type: text
+                                required: true
                             packaging:  # overridden in SeedsProductVariantAdmin::configureFormFields()
                                 type: entity
                                 class: Librinfo\EcommerceBundle\Entity\ProductOptionValue
+                                required: true
                             seedBatch:  # overridden in SeedsProductVariantAdmin::configureFormFields()
                                 type: entity
                                 class: Librinfo\SeedBatchBundle\Entity\SeedBatch
+                                required: true
+                                type_options:
+                                    required: true
                                 _options:
                                     admin_code: librinfo_seedbatch.admin.seedbatch
                             code:
                                 type: Blast\CoreBundle\Form\Type\EntityCodeType
+                                required: true
                             _options:
-                                fieldsOrder: [product, packaging, seedBatch, name, code, price]
+                                fieldsOrder: [name, packaging, seedBatch, code]
             # LIST
             Sonata\AdminBundle\Datagrid\ListMapper:
                 remove:
@@ -298,7 +321,6 @@ parameters:
                             - product
                             - packaging
                             - seedBatch
-#                            - available
                             - price
                             - onHand
                             - onHold
@@ -321,17 +343,32 @@ parameters:
                                 admin_code: libio.admin.other_product
             # FORM
             Sonata\AdminBundle\Form\FormMapper:
+                remove:
+                    name: ~
+                    optionValues: ~
+                    _delete: ~
+                    channelPricings: ~
+                    taxCategory: ~
+                    onHand: ~
+                    onHold: ~
+                    tracked: ~
+                    width: ~
+                    height: ~
+                    depth: ~
+                    weight: ~
+                    code: ~
+                    product: ~
                 add:
                     form_group_general:
                         '':
-                            product:
-                                type: sonata_type_model_autocomplete
-                                property: [translations.name, code]
-                                disabled: true
-                                _options:
-                                    admin_code: libio.admin.other_product
+                            name:
+                                type: text
+                                required: true
+                            code:
+                                type: text
+                                required: true
                             _options:
-                                fieldsOrder: [product, name, code, price, optionValues]
+                                fieldsOrder: [name, code]
             # LIST
             Sonata\AdminBundle\Datagrid\ListMapper:
                 add:
