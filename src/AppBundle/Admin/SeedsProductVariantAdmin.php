@@ -12,6 +12,7 @@ namespace AppBundle\Admin;
 
 use Librinfo\EcommerceBundle\Admin\ProductVariantAdmin;
 use Librinfo\EcommerceBundle\Entity\Product;
+use Sonata\CoreBundle\Validator\ErrorElement;
 
 /**
  * Sonata admin for product variants from seeds products
@@ -56,6 +57,20 @@ class SeedsProductVariantAdmin extends ProductVariantAdmin
         $mapper->add('seedBatch', 'sonata_type_model_autocomplete', $options, $fieldDescriptionOptions);
     }
 
+    // add this method
+    public function validate(ErrorElement $errorElement, $object)
+    {
+        $errorElement
+            ->with('packaging')
+                ->assertNotBlank()
+            ->end()
+            ->with('seedBatch')
+                ->assertNotBlank()
+                ->assertNotNull()
+            ->end()
+        ;
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -83,7 +98,7 @@ class SeedsProductVariantAdmin extends ProductVariantAdmin
         ;
         return $queryBuilder;
     }
-    
+
     /**
      * @return array
      */

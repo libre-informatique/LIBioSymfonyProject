@@ -78,6 +78,7 @@ $ bin/console lisem:install:setup --with-samples
 You need [node.js](https://nodejs.org/) installed for this section.
 
 ```bash
+$ bin/console sylius:theme:assets:install
 $ npm install
 $ npm run gulp
 ```

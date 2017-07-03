@@ -15,6 +15,7 @@ use Librinfo\VarietiesBundle\Entity\Variety;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\DatagridBundle\ProxyQuery\ProxyQueryInterface;
 use Sylius\Component\Product\Model\ProductInterface;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 /**
  * Sonata admin for seeds products
@@ -48,7 +49,7 @@ class SeedsProductAdmin extends ProductAdmin
             $mapper
                 ->with('form_tab_new_variety_variant')
                     ->add('variety', 'sonata_type_model_autocomplete',
-                        ['property' => ['name', 'code'],  'required' => true],
+                        ['property' => ['name', 'code'],  'required' => true,'constraints'=>[new NotBlank()]],
                         ['admin_code' => 'libio.admin.variety'])
             ;
             return;
@@ -132,7 +133,7 @@ class SeedsProductAdmin extends ProductAdmin
             ->setParameter('value', "%$value%")
         ;
     }
-    
+
     /**
      * @return array
      */

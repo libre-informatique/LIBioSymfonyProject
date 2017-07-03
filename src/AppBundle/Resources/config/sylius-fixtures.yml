@@ -137,7 +137,7 @@ sylius_fixtures:
                                 currencies:
                                     - "%currency%"
                                 enabled: true
-                                theme_name: vendor/lisem-theme
+                                theme_name: librinfo/lisem-theme
 
                 payment_method:
                     options:
@@ -240,7 +240,6 @@ sylius_fixtures:
         lisem_customer:
             listeners:
                 logger: ~
-                
+
             fixtures:
-                lisem_customer_customer: ~                    
-                    
+                lisem_customer_customer: ~

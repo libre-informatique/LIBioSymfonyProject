@@ -16,38 +16,8 @@ use Librinfo\EcommerceBundle\CodeGenerator\ProductVariantCodeGenerator as BaseCo
 use Symfony\Component\HttpFoundation\RequestStack;
 use Sylius\Bundle\ResourceBundle\Doctrine\ORM\EntityRepository;
 
-class ProductVariantCodeGenerator extends BaseCodeGenerator
+class ProductVariantEmbeddedCodeGenerator extends ProductVariantCodeGenerator
 {
-
-    /**
-     * @var RequestStack
-     */
-    private static $requestStack;
-
-    /**
-     * @var EntityRepository
-     */
-    private static $packagingRepo;
-
-    static function setRequestStack(RequestStack $requestStack)
-    {
-        self::$requestStack = $requestStack;
-    }
-
-    static function getRequestStack()
-    {
-        return self::$requestStack;
-    }
-
-    static function setPackagingRepo(EntityRepository $packagingRepo)
-    {
-        self::$packagingRepo = $packagingRepo;
-    }
-
-    static function getPackagingRepo()
-    {
-        return self::$packagingRepo;
-    }
 
     /**
      * @param  ProductVariant $productVariant
@@ -56,18 +26,27 @@ class ProductVariantCodeGenerator extends BaseCodeGenerator
      */
     public static function generate($productVariant)
     {
-        $request = self::$requestStack;
+        $request = self::getRequestStack();
 
         if ($productVariant->getSeedBatch() === null || $productVariant->getPackaging() === null) {
+            $formName = $request->getCurrentRequest()->query->get('puniqid', null);
+            $formData = $request->getCurrentRequest()->request->get($formName, null);
 
-            $formName = $request->getCurrentRequest()->get('uniqid', null);
+            $caller = $request->getCurrentRequest()->request->get('caller', null);
+            $re = '/^'.$formName.'\[variants\]\[([0-9]*)\]\[code\]/';
 
-            $seedBatch = $request->getCurrentRequest()->get(sprintf('%s_%s', $formName, 'seedBatch'), null);
-            $packaging = $request->getCurrentRequest()->get(sprintf('%s_%s', $formName, 'packaging'), null);
+            preg_match($re,$caller,$callerIndex);
+
+            $callerIndex = (int)$callerIndex[1];
+
+            $variantData = $formData['variants'][$callerIndex];
+
+            $seedBatch = @$variantData['seedBatch'];
+            $packaging = @$variantData['packaging'];
 
             if ($seedBatch && $packaging) {
                 $batch = self::$em->getRepository('LibrinfoSeedBatchBundle:SeedBatch')->find($seedBatch);
-                $packaging = self::$packagingRepo->find($packaging);
+                $packaging = self::getPackagingRepo()->find($packaging);
 
                 return sprintf('%s-%s', $batch->getCode(), $packaging->getCode());
             }
@@ -85,25 +64,4 @@ class ProductVariantCodeGenerator extends BaseCodeGenerator
 
         return sprintf('%s-%s', $seedBatchCode, $packagingCode);
     }
-
-    /**
-     * @param  string         $code
-     * @param  ProductVariant $productVariant
-     * @return boolean
-     * @todo   ...
-     */
-    public static function validate($code, $productVariant = null)
-    {
-        return true;
-    }
-
-    /**
-     * @return string
-     * @todo   ...
-     */
-    public static function getHelp()
-    {
-        return "";
-    }
-
 }

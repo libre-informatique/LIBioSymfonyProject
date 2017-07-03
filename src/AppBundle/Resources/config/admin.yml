@@ -19,6 +19,8 @@ services:
             - [ setTemplate, [ list, LibrinfoVarietiesBundle:VarietyAdmin:list.html.twig ] ]
             - [ setTemplate, [ edit, LibrinfoVarietiesBundle:VarietyAdmin:edit.html.twig ] ]
 
+# ################## SEEDS PRODUCTS #########################
+
     libio.admin.seeds_product:
         class: AppBundle\Admin\SeedsProductAdmin
         arguments: [~, Librinfo\EcommerceBundle\Entity\Product, AppBundle:SeedsProductCRUD]
@@ -28,20 +30,6 @@ services:
               group: admin
               label: libio.seeds_product_admin.label
               label_translator_strategy: blast_core.label.strategy.librinfo
-        calls:
-            - [ setTemplate, [ edit, AppBundle:SeedsProductAdmin:edit.html.twig ] ]
-
-    libio.admin.other_product:
-        class: AppBundle\Admin\OtherProductAdmin
-        arguments: [~, Librinfo\EcommerceBundle\Entity\Product, LibrinfoEcommerceBundle:ProductCRUD]
-        tags:
-            - name: sonata.admin
-              manager_type: orm
-              group: admin
-              label: libio.other_product_admin.label
-              label_translator_strategy: blast_core.label.strategy.librinfo
-        calls:
-            - [ setTemplate, [ edit, LibrinfoEcommerceBundle:ProductAdmin:edit.html.twig ] ]
 
     libio.admin.seeds_product_variant:
         class: AppBundle\Admin\SeedsProductVariantAdmin
@@ -55,6 +43,30 @@ services:
         calls:
             - [ setTemplate, [ edit, LibrinfoEcommerceBundle:ProductVariantAdmin:edit.html.twig ] ]
 
+    libio.admin.seeds_product_variant_embedded:
+        class: AppBundle\Admin\SeedsProductVariantEmbeddedAdmin
+        arguments: [~, Librinfo\EcommerceBundle\Entity\ProductVariant, LibrinfoEcommerceBundle:ProductVariantCRUD]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: admin
+              label: libio.seeds_product_variant_admin.label
+              label_translator_strategy: blast_core.label.strategy.librinfo
+
+# ################## OTHER PRODUCTS #########################
+
+    libio.admin.other_product:
+        class: AppBundle\Admin\OtherProductAdmin
+        arguments: [~, Librinfo\EcommerceBundle\Entity\Product, LibrinfoEcommerceBundle:ProductCRUD]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: admin
+              label: libio.other_product_admin.label
+              label_translator_strategy: blast_core.label.strategy.librinfo
+        calls:
+            - [ setTemplate, [ edit, LibrinfoEcommerceBundle:ProductAdmin:edit.html.twig ] ]
+
     libio.admin.other_product_variant:
         class: AppBundle\Admin\OtherProductVariantAdmin
         arguments: [~, Librinfo\EcommerceBundle\Entity\ProductVariant, LibrinfoEcommerceBundle:ProductVariantCRUD]
@@ -66,6 +78,16 @@ services:
               label_translator_strategy: blast_core.label.strategy.librinfo
         calls:
             - [ setTemplate, [ edit, LibrinfoEcommerceBundle:ProductVariantAdmin:edit.html.twig ] ]
+
+    libio.admin.other_product_variant_embedded:
+        class: AppBundle\Admin\OtherProductVariantEmbeddedAdmin
+        arguments: [~, Librinfo\EcommerceBundle\Entity\ProductVariant, LibrinfoEcommerceBundle:ProductVariantCRUD]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: admin
+              label: libio.other_product_variant_admin.label
+              label_translator_strategy: blast_core.label.strategy.librinfo
 
     lisem.admin.channel_description:
         class: AppBundle\Admin\ChannelDescriptionAdmin
