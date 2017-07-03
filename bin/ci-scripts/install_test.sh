@@ -38,6 +38,8 @@ mv chromedriver ${HOME}/bin/
 
 composer require --no-interaction --dev se/selenium-server-standalone '^2.52'
 
+chromium-browser --version
+chromedriver --version
 
 # npm
 npm -v
