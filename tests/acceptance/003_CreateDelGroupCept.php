@@ -14,7 +14,6 @@ $I->click("Historique");
 $I->click("//button[@name='btn_create_and_list']");
 $I->waitForElement('i.fa-filter', 30); // secs
 $I->click("Filtres");
-
 $I->click("i.fa.fa-square-o");
 //$I->click("//ul[2]/li/ul/li/a/i");
 $I->click("//input[@id='filter_name_value']");
