@@ -156,6 +156,8 @@ parameters:
                                 type: sonata_type_collection
                                 label: false
                                 by_reference: false
+                                attr:
+                                    data-showFields: 'name,seedBatch,packaging,code'
                                 type_options:
                                     btn_add: false
                                     delete_options:
@@ -165,8 +167,8 @@ parameters:
                                             required: false
                                 required: true    # if not true, child form fields cannot be required (why ??)
                                 _options:
-                                    edit: inline
-                                    inline: table
+                                    edit: modal
+                                    inline: table-list
                                     admin_code: libio.admin.seeds_product_variant_embedded
             #LIST
             Sonata\AdminBundle\Datagrid\ListMapper:
