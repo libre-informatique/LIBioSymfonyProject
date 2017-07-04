@@ -139,8 +139,8 @@ parameters:
                     variants: ~
                     options: ~
                 add:
-                    form_group_general:
-                        '':
+                    form_tab_general:
+                        form_group_general:
                             variety:
                                 type: sonata_type_model_autocomplete
                                 property: [name, code]
@@ -151,7 +151,7 @@ parameters:
                             _options:
                                 fieldsOrder: [variety, name, code]
                     form_tab_variants:
-                        '':
+                        form_group_variants:
                             variants:
                                 type: sonata_type_collection
                                 label: false
@@ -169,7 +169,7 @@ parameters:
                                 _options:
                                     edit: modal
                                     inline: table-list
-                                    admin_code: libio.admin.seeds_product_variant_embedded
+                                    admin_code: libio.admin.seeds_product_variant
             #LIST
             Sonata\AdminBundle\Datagrid\ListMapper:
                 remove:
@@ -226,7 +226,7 @@ parameters:
                                 _options:
                                     edit: inline
                                     inline: table
-                                    admin_code: libio.admin.other_product_variant_embedded
+                                    admin_code: libio.admin.other_product_variant
 
             # LIST
             Sonata\AdminBundle\Datagrid\ListMapper:
@@ -249,8 +249,8 @@ parameters:
                 remove:
                     optionValues: ~
                 add:
-                    form_group_general:
-                        '':
+                    form_tab_general:
+                        form_group_general:
                             product:
                                 admin_code: libio.admin.seeds_product
                                 attr:
@@ -282,8 +282,8 @@ parameters:
                     code: ~
                     product: ~
                 add:
-                    form_group_general:
-                        '':
+                    form_tab_general:
+                        form_group_general:
                             name:
                                 type: text
                                 required: true
@@ -359,8 +359,8 @@ parameters:
                     code: ~
                     product: ~
                 add:
-                    form_group_general:
-                        '':
+                    form_tab_general:
+                        form_group_general:
                             name:
                                 type: text
                                 required: true
