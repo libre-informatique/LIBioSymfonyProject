@@ -29,7 +29,8 @@ class SeedsProductVariantAdmin extends ProductVariantAdmin
 
     public function configureFormFields(\Sonata\AdminBundle\Form\FormMapper $mapper)
     {
-        parent::configureFormFields($mapper);
+
+        $mapper->tab('form_tab_general')->with('form_group_general');
 
         // packaging field
         $mapper->add('packaging', 'entity', [
@@ -38,10 +39,10 @@ class SeedsProductVariantAdmin extends ProductVariantAdmin
             'multiple' => false,
             'required' => true,
             'choice_label' => 'value',
+            'translation_domain' => 'messages',
         ]);
 
         // seedBatch field
-        $mapper->remove('optionValues');
         $product = $this->getProduct();
         $options = [
             'property' => 'code',
@@ -52,9 +53,29 @@ class SeedsProductVariantAdmin extends ProductVariantAdmin
                 if ($product && $variety = $product->getVariety)
                     $datagrid->setValue('variety', null, $variety);
             },
+            'translation_domain' => 'messages',
         ];
-        $fieldDescriptionOptions = ['admin_code' => 'librinfo_seedbatch.admin.seedbatch'];
+        $fieldDescriptionOptions = ['admin_code' => 'librinfo_seedbatch.admin.seedbatch','translation_domain' => 'messages'];
         $mapper->add('seedBatch', 'sonata_type_model_autocomplete', $options, $fieldDescriptionOptions);
+
+        $mapper->end()->end();
+
+        parent::configureFormFields($mapper);
+
+        $mapper->remove('optionValues');
+
+        // Remove remaining default tab
+        $currentTabs = $this->getFormTabs();
+        foreach($currentTabs as $k => $item) {
+            if($item["name"] == "default") {
+                unset($currentTabs[$k]);
+            }
+        }
+        $this->setFormTabs($currentTabs);
+
+        if($this->getSubject() && $this->getSubject()->getChannelPricings()->count() == 0) {
+            $this->buildDefaultPricings($this->getSubject());
+        }
     }
 
     // add this method
