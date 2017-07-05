@@ -1,13 +1,12 @@
 <?php
 
 /*
- * This file is part of the BLAST package <http://blast.libre-informatique.fr>.
+ * This file is part of the Lisem Project.
  *
- * Copyright (C) Paweł Jędrzejewski
- * Copyright (C) 2015-2016 Libre Informatique
+ * Copyright (C) 2015-2017 Libre Informatique
  *
  * This file is licenced under the GNU GPL v3.
- * For the full copyright and license information, please view the LICENSE
+ * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
@@ -46,7 +45,7 @@ final class ProductVariantGenerator implements ProductVariantGeneratorInterface
     private $variantsParityChecker;
 
     /**
-     * @param ProductVariantFactoryInterface $productVariantFactory
+     * @param ProductVariantFactoryInterface        $productVariantFactory
      * @param ProductVariantsParityCheckerInterface $variantsParityChecker
      */
     public function __construct(
@@ -68,12 +67,13 @@ final class ProductVariantGenerator implements ProductVariantGeneratorInterface
 
         if ($variety = $product->getVariety()) {
             $varietySeedBatches = $variety->getSeedBatches();
-            if ($seedBatches === null)
+            if ($seedBatches === null) {
                 $seedBatches = $varietySeedBatches;
-            else
+            } else {
                 $seedBatches = $seedBatches.filter(
-                    function($sb) use($varietySeedBatches) { return $varietySeedBatches.contains($sb); }
+                    function ($sb) use ($varietySeedBatches) { return $varietySeedBatches.contains($sb); }
                 );
+            }
             Assert::notEq(0, count($seedBatches), 'Cannot generate variants for a seeds product withouy seed batches');
         }
 
@@ -108,12 +108,12 @@ final class ProductVariantGenerator implements ProductVariantGeneratorInterface
 
     /**
      * @param ProductInterface $product
-     * @param array $optionMap
-     * @param mixed $permutation
+     * @param array            $optionMap
+     * @param mixed            $permutation
      *
      * @return ProductVariantInterface
      */
-    protected function createVariant(ProductInterface $product, array $optionMap, $permutation)
+    private function createVariant(ProductInterface $product, array $optionMap, $permutation)
     {
         /** @var ProductVariantInterface $variant */
         $variant = $this->productVariantFactory->createForProduct($product);
@@ -124,21 +124,23 @@ final class ProductVariantGenerator implements ProductVariantGeneratorInterface
 
     /**
      * @param ProductVariantInterface $variant
-     * @param array $optionMap
-     * @param mixed $permutation
+     * @param array                   $optionMap
+     * @param mixed                   $permutation
      */
     private function addOptionValue(ProductVariantInterface $variant, array $optionMap, $permutation)
     {
         if (!is_array($permutation)) {
             $variant->addOptionValue($optionMap[$permutation]);
+
             return;
         }
 
         foreach ($permutation as $id) {
-            if ($optionMap[$id] instanceof SeedBatch)
+            if ($optionMap[$id] instanceof SeedBatch) {
                 $variant->setSeedBatch($optionMap[$id]);
-            else
+            } else {
                 $variant->addOptionValue($optionMap[$id]);
+            }
         }
     }
 }

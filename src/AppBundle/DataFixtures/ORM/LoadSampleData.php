@@ -1,10 +1,12 @@
 <?php
 
 /*
- * Copyright (C) 2015-2016 Libre Informatique
+ * This file is part of the Lisem Project.
+ *
+ * Copyright (C) 2015-2017 Libre Informatique
  *
  * This file is licenced under the GNU GPL v3.
- * For the full copyright and license information, please view the LICENSE
+ * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
@@ -71,7 +73,7 @@ class LoadSampleData extends AbstractFixture implements OrderedFixtureInterface,
     }
 
     /**
-     * load
+     * load.
      *
      * @param ObjectManager $manager
      */
@@ -88,32 +90,40 @@ class LoadSampleData extends AbstractFixture implements OrderedFixtureInterface,
         $user = $objects['user'];
 
         // Created by, Updated by
-        foreach($objects as $object) {
-            if (method_exists($object, 'setCreatedBy'))
+        foreach ($objects as $object) {
+            if (method_exists($object, 'setCreatedBy')) {
                 $object->setCreatedBy($user);
-            if (method_exists($object, 'setUpdatedBy'))
+            }
+            if (method_exists($object, 'setUpdatedBy')) {
                 $object->setUpdatedBy($user);
+            }
         }
 
         // Zip, city, country (from database, not using Faker data)
-        foreach($objects as $object) if (method_exists($object, 'setCity') )
-            $this->setZipCityCountry($object);
+        foreach ($objects as $object) {
+            if (method_exists($object, 'setCity')) {
+                $this->setZipCityCountry($object);
+            }
+        }
 
         // Individual organisms have the same address as their unique contact
-        foreach($objects as $name => $object) if (strpos($name, 'pos_ind_') === 0) {
-            $contact = $object->getContact();
-            $organism = $object->getOrganism();
-            $organism->setName($contact->getFirstname() . ' ' . strtoupper($contact->getName()));
-            $organism->setAddress($contact->getAddress());
-            $organism->setZip($contact->getZip());
-            $organism->setCity($contact->getCity());
-            $organism->setCountry($contact->getCountry());
+        foreach ($objects as $name => $object) {
+            if (strpos($name, 'pos_ind_') === 0) {
+                $contact = $object->getContact();
+                $organism = $object->getOrganism();
+                $organism->setName($contact->getFirstname().' '.strtoupper($contact->getName()));
+                $organism->setAddress($contact->getAddress());
+                $organism->setZip($contact->getZip());
+                $organism->setCity($contact->getCity());
+                $organism->setCountry($contact->getCountry());
+            }
         }
 
         // Persist objects without code generator
         $registry = $this->container->get('blast_core.code_generators');
-        $this->alicePersister->persist(array_filter($objects, function($o) use ($registry) {
+        $this->alicePersister->persist(array_filter($objects, function ($o) use ($registry) {
             $class = get_class($o);
+
             return !$registry->hasGeneratorForClass($class) || in_array($class, [SeedFarm::class, Variety::class]);
         }));
 
@@ -123,47 +133,50 @@ class LoadSampleData extends AbstractFixture implements OrderedFixtureInterface,
         $producerCodeGenerator = $registry->getCodeGenerator(Organism::class, 'seedProducerCode');
         $plotCodeGenerator = $registry->getCodeGenerator(Plot::class, 'code');
         $seedBatchCodeGenerator = $registry->getCodeGenerator(SeedBatch::class, 'code');
-        foreach($objects as $object) if ($object instanceof Organism) {
-            if ($object->isCustomer()) {
-                $object->setCustomerCode($customerCodeGenerator::generate($object));
-                $this->alicePersister->persist([$object]);
+        foreach ($objects as $object) {
+            if ($object instanceof Organism) {
+                if ($object->isCustomer()) {
+                    $object->setCustomerCode($customerCodeGenerator::generate($object));
+                    $this->alicePersister->persist([$object]);
+                }
+                if ($object->isSupplier()) {
+                    $object->setSupplierCode($supplierCodeGenerator::generate($object));
+                    $this->alicePersister->persist([$object]);
+                }
+                if ($object->isSeedProducer()) {
+                    $object->setSeedProducerCode($producerCodeGenerator::generate($object));
+                    $this->alicePersister->persist([$object]);
+                }
             }
-            if ($object->isSupplier()) {
-                $object->setSupplierCode($supplierCodeGenerator::generate($object));
-                $this->alicePersister->persist([$object]);
-            }
-            if ($object->isSeedProducer()) {
-                $object->setSeedProducerCode($producerCodeGenerator::generate($object));
+        }
+        foreach ($objects as $object) {
+            if ($object instanceof Plot) {
+                $object->setCode($plotCodeGenerator::generate($object));
                 $this->alicePersister->persist([$object]);
             }
         }
-        foreach($objects as $object) if ($object instanceof Plot) {
-            $object->setCode($plotCodeGenerator::generate($object));
-            $this->alicePersister->persist([$object]);
+        foreach ($objects as $object) {
+            if ($object instanceof SeedBatch) {
+                $object->setCode($seedBatchCodeGenerator::generate($object));
+                $this->alicePersister->persist([$object]);
+            }
         }
-        foreach($objects as $object) if ($object instanceof SeedBatch) {
-            $object->setCode($seedBatchCodeGenerator::generate($object));
-            $this->alicePersister->persist([$object]);
-        }
-
-
-
     }
 
     protected function loadYml($filename)
     {
         $objects = $this->aliceLoader->load(__DIR__.'/'.$filename);
+
         return $objects;
     }
 
     /**
-     * @return boolean
+     * @return bool
      */
     protected function percent($max)
     {
         return rand(1, 100) <= $max;
     }
-
 
     /**
      * @return int
@@ -197,11 +210,14 @@ class LoadSampleData extends AbstractFixture implements OrderedFixtureInterface,
     protected function setZipCityCountry($object)
     {
         $city = $this->randomCity();
-        if (method_exists($object, 'setZip'))
+        if (method_exists($object, 'setZip')) {
             $object->setZip($city->getZip());
-        if (method_exists($object, 'setCity'))
+        }
+        if (method_exists($object, 'setCity')) {
             $object->setCity($city->getCity());
-        if (method_exists($object, 'setCountry'))
+        }
+        if (method_exists($object, 'setCountry')) {
             $object->setCountry(Intl::getRegionBundle()->getCountryName($city->getCountryCode()));
+        }
     }
 }

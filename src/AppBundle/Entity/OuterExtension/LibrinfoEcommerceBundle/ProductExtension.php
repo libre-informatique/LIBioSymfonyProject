@@ -1,10 +1,12 @@
 <?php
 
 /*
- * Copyright (C) 2015-2016 Libre Informatique
+ * This file is part of the Lisem Project.
+ *
+ * Copyright (C) 2015-2017 Libre Informatique
  *
  * This file is licenced under the GNU GPL v3.
- * For the full copyright and license information, please view the LICENSE
+ * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
@@ -17,11 +19,12 @@ trait ProductExtension
 {
     use \Librinfo\VarietiesBundle\Entity\OuterExtension\HasVariety;
 
-    public static $PACKAGING_OPTION_CODE = "_libio_packaging";
+    public static $PACKAGING_OPTION_CODE = '_libio_packaging';
 
     /**
      * @param string $optionCode
-     * @return boolean
+     *
+     * @return bool
      */
     public function hasOptionByCode($optionCode)
     {
@@ -35,7 +38,7 @@ trait ProductExtension
     }
 
     /**
-     * @return boolean
+     * @return bool
      */
     public function hasPackagingOption()
     {

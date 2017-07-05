@@ -1,10 +1,12 @@
 <?php
 
 /*
- * Copyright (C) 2015-2016 Libre Informatique
+ * This file is part of the Lisem Project.
+ *
+ * Copyright (C) 2015-2017 Libre Informatique
  *
  * This file is licenced under the GNU GPL v3.
- * For the full copyright and license information, please view the LICENSE
+ * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
@@ -18,7 +20,6 @@ use Sylius\Bundle\ResourceBundle\Doctrine\ORM\EntityRepository;
 
 class ProductVariantCodeGenerator extends BaseCodeGenerator
 {
-
     /**
      * @var RequestStack
      */
@@ -29,29 +30,31 @@ class ProductVariantCodeGenerator extends BaseCodeGenerator
      */
     private static $packagingRepo;
 
-    static function setRequestStack(RequestStack $requestStack)
+    public static function setRequestStack(RequestStack $requestStack)
     {
         self::$requestStack = $requestStack;
     }
 
-    static function getRequestStack()
+    public static function getRequestStack()
     {
         return self::$requestStack;
     }
 
-    static function setPackagingRepo(EntityRepository $packagingRepo)
+    public static function setPackagingRepo(EntityRepository $packagingRepo)
     {
         self::$packagingRepo = $packagingRepo;
     }
 
-    static function getPackagingRepo()
+    public static function getPackagingRepo()
     {
         return self::$packagingRepo;
     }
 
     /**
-     * @param  ProductVariant $productVariant
+     * @param ProductVariant $productVariant
+     *
      * @return string
+     *
      * @throws InvalidEntityCodeException
      */
     public static function generate($productVariant)
@@ -59,7 +62,6 @@ class ProductVariantCodeGenerator extends BaseCodeGenerator
         $request = self::$requestStack;
 
         if ($productVariant->getSeedBatch() === null || $productVariant->getPackaging() === null) {
-
             $formName = $request->getCurrentRequest()->get('uniqid', null);
 
             $seedBatch = $request->getCurrentRequest()->get(sprintf('%s_%s', $formName, 'seedBatch'), null);
@@ -73,23 +75,27 @@ class ProductVariantCodeGenerator extends BaseCodeGenerator
             }
         }
 
-        if (!$seedBatch = $productVariant->getSeedBatch())
+        if (!$seedBatch = $productVariant->getSeedBatch()) {
             throw new InvalidEntityCodeException('librinfo.error.missing_seed_batch');
-        if (!$seedBatchCode = $seedBatch->getCode())
+        }
+        if (!$seedBatchCode = $seedBatch->getCode()) {
             throw new InvalidEntityCodeException('librinfo.error.missing_seed_batch_code');
-
-        if (!$packaging = $productVariant->getPackaging())
+        }
+        if (!$packaging = $productVariant->getPackaging()) {
             throw new InvalidEntityCodeException('librinfo.error.missing_packaging');
-        if (!$packagingCode = $packaging->getCode())
+        }
+        if (!$packagingCode = $packaging->getCode()) {
             throw new InvalidEntityCodeException('librinfo.error.missing_packaging_code');
-
+        }
         return sprintf('%s-%s', $seedBatchCode, $packagingCode);
     }
 
     /**
-     * @param  string         $code
-     * @param  ProductVariant $productVariant
-     * @return boolean
+     * @param string         $code
+     * @param ProductVariant $productVariant
+     *
+     * @return bool
+     *
      * @todo   ...
      */
     public static function validate($code, $productVariant = null)
@@ -99,11 +105,11 @@ class ProductVariantCodeGenerator extends BaseCodeGenerator
 
     /**
      * @return string
+     *
      * @todo   ...
      */
     public static function getHelp()
     {
-        return "";
+        return '';
     }
-
 }

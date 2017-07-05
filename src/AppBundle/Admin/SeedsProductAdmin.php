@@ -1,10 +1,12 @@
 <?php
 
 /*
- * Copyright (C) 2015-2016 Libre Informatique
+ * This file is part of the Lisem Project.
+ *
+ * Copyright (C) 2015-2017 Libre Informatique
  *
  * This file is licenced under the GNU GPL v3.
- * For the full copyright and license information, please view the LICENSE
+ * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
@@ -18,7 +20,7 @@ use Sylius\Component\Product\Model\ProductInterface;
 use Symfony\Component\Validator\Constraints\NotBlank;
 
 /**
- * Sonata admin for seeds products
+ * Sonata admin for seeds products.
  *
  * @author Marcos Bezerra de Menezes <marcos.bezerra@libre-informatique.fr>
  */
@@ -39,10 +41,11 @@ class SeedsProductAdmin extends ProductAdmin
         $request = $this->getRequest();
 
         $basicForm = false;
-        if (null !== $request->get('btn_create_for_variety'))
+        if (null !== $request->get('btn_create_for_variety')) {
             $basicForm = true;
-        elseif ($request->getMethod() == 'GET' && !$request->get($this->getIdParameter()) && !$variety)
+        } elseif ($request->getMethod() == 'GET' && !$request->get($this->getIdParameter()) && !$variety) {
             $basicForm = true;
+	}
 
         parent::configureFormFields($mapper);
 
@@ -63,7 +66,7 @@ class SeedsProductAdmin extends ProductAdmin
         }
 
         // Regular edit/create form
-
+        parent::configureFormFields($mapper);
     }
 
     /**
@@ -78,6 +81,7 @@ class SeedsProductAdmin extends ProductAdmin
         $query->andWhere(
             $query->expr()->isNotNull("$alias.variety")
         );
+
         return $query;
     }
 
@@ -95,20 +99,24 @@ class SeedsProductAdmin extends ProductAdmin
         foreach ($this->getExtensions() as $extension) {
             $extension->alterNewInstance($this, $object);
         }
+
         return $object;
     }
 
     /**
      * @return Variety|null
+     *
      * @throws \Exception
      */
     public function getVariety()
     {
-        if ($this->variety)
+        if ($this->variety) {
             return $this->variety;
+        }
 
         if ($this->subject && $variety = $this->subject->getVariety()) {
             $this->variety = $variety;
+
             return $variety;
         }
 
@@ -117,9 +125,11 @@ class SeedsProductAdmin extends ProductAdmin
                 ->getEntityManager('LibrinfoVarietiesBundle:Variety')
                 ->getRepository('LibrinfoVarietiesBundle:Variety')
                 ->find($variety_id);
-            if (!$variety)
+            if (!$variety) {
                 throw new \Exception(sprintf('Unable to find Variety with id : %s', $variety_id));
+            }
             $this->variety = $variety;
+
             return $variety;
         }
 
@@ -135,7 +145,7 @@ class SeedsProductAdmin extends ProductAdmin
             ->leftJoin("$alias.translations", 'translations')
             ->andWhere($qb->expr()->orX(
                 'translations.name LIKE :value',
-                $alias . '.code LIKE :value'
+                $alias.'.code LIKE :value'
             ))
             ->setParameter('value', "%$value%")
         ;

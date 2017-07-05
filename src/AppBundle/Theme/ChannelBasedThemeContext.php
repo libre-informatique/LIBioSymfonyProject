@@ -1,11 +1,12 @@
 <?php
 
 /*
- * Copyright (C) Paweł Jędrzejewski
- * Copyright (C) 2015-2016 Libre Informatique
+ * This file is part of the Lisem Project.
+ *
+ * Copyright (C) 2015-2017 Libre Informatique
  *
  * This file is licenced under the GNU GPL v3.
- * For the full copyright and license information, please view the LICENSE
+ * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
@@ -36,7 +37,7 @@ final class ChannelBasedThemeContext implements ThemeContextInterface
     private static $_channel;
 
     /**
-     * @param ChannelContextInterface $channelContext
+     * @param ChannelContextInterface  $channelContext
      * @param ThemeRepositoryInterface $themeRepository
      */
     public function __construct(ChannelContextInterface $channelContext, ThemeRepositoryInterface $themeRepository)
@@ -51,9 +52,11 @@ final class ChannelBasedThemeContext implements ThemeContextInterface
     public function getTheme()
     {
         try {
-            /** @var ChannelInterface $channel */
-            if(self::$_channel === null)
+            /* @var ChannelInterface $channel */
+            if (self::$_channel === null) {
                 self::$_channel = $this->channelContext->getChannel();
+            }
+
             return $this->themeRepository->findOneByName(self::$_channel->getThemeName());
         } catch (ChannelNotFoundException $exception) {
             return null;
