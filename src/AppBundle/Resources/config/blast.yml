@@ -155,17 +155,11 @@ parameters:
                             variants:
                                 type: sonata_type_collection
                                 label: false
-                                by_reference: false
+                                by_reference: true
                                 attr:
-                                    data-showFields: 'name,seedBatch,packaging,code'
+                                    data-showFields: 'id,name,seedBatch,packaging,code'
                                 type_options:
                                     btn_add: false
-                                    delete_options:
-                                        type: checkbox
-                                        type_options:
-                                            mapped: false
-                                            required: false
-                                required: true    # if not true, child form fields cannot be required (why ??)
                                 _options:
                                     edit: modal
                                     inline: table-list
@@ -265,13 +259,21 @@ parameters:
             # FORM
             Sonata\AdminBundle\Form\FormMapper:
                 remove:
+                    id: ~
                     name: ~
                     code: ~
                     channelPricings: ~
                     _delete: ~
+                    product: ~
                 add:
                     form_tab_general:
                         form_group_general:
+                            id:
+                                type: hidden
+                            product:
+                                type: sonata_type_model_hidden
+                                _options:
+                                    admin_code: libio.admin.seeds_product
                             name:
                                 type: text
                                 required: true

@@ -29,7 +29,6 @@ class SeedsProductVariantAdmin extends ProductVariantAdmin
 
     public function configureFormFields(\Sonata\AdminBundle\Form\FormMapper $mapper)
     {
-
         $mapper->tab('form_tab_general')->with('form_group_general');
 
         // packaging field
@@ -60,9 +59,9 @@ class SeedsProductVariantAdmin extends ProductVariantAdmin
 
         $mapper->end()->end();
 
-        parent::configureFormFields($mapper);
-
         $mapper->remove('optionValues');
+
+        parent::configureFormFields($mapper);
 
         // Remove remaining default tab
         $currentTabs = $this->getFormTabs();
