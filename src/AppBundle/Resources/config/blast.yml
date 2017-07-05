@@ -204,7 +204,7 @@ parameters:
                     variants: ~
                 add:
                     form_tab_variants:
-                        '':
+                        form_group_variants:
                             variants:
                                 type: sonata_type_collection
                                 label: false

@@ -1,4 +1,4 @@
-<?phpphp
+<?php
 
 /*
  * This file is part of the Lisem Project.
@@ -45,7 +45,7 @@ class SeedsProductAdmin extends ProductAdmin
             $basicForm = true;
         } elseif ($request->getMethod() == 'GET' && !$request->get($this->getIdParameter()) && !$variety) {
             $basicForm = true;
-	}
+        }
 
         parent::configureFormFields($mapper);
 
@@ -55,13 +55,13 @@ class SeedsProductAdmin extends ProductAdmin
                 ->tab('form_tab_general')
                     ->with('form_group_general')
                         ->add('variety', 'sonata_type_model_autocomplete',
-                            ['property' => ['name', 'code'],  'required' => true,'constraints'=>[new NotBlank()]],
+                            ['property' => ['name', 'code'],  'required' => true, 'constraints' => [new NotBlank()]],
                             ['admin_code' => 'libio.admin.variety'])
                     ->end()
                 ->end()
             ;
 
-            $this->removeTab(['form_tab_variants','form_tab_images'],$mapper);
+            $this->removeTab(['form_tab_variants', 'form_tab_images'], $mapper);
             // return;
         }
 
