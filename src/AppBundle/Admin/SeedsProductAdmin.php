@@ -44,19 +44,26 @@ class SeedsProductAdmin extends ProductAdmin
         elseif ($request->getMethod() == 'GET' && !$request->get($this->getIdParameter()) && !$variety)
             $basicForm = true;
 
+        parent::configureFormFields($mapper);
+
         if ($basicForm) {
             // First step creation form with just the Variety field
             $mapper
-                ->with('form_tab_new_variety_variant')
-                    ->add('variety', 'sonata_type_model_autocomplete',
-                        ['property' => ['name', 'code'],  'required' => true,'constraints'=>[new NotBlank()]],
-                        ['admin_code' => 'libio.admin.variety'])
+                ->tab('form_tab_general')
+                    ->with('form_group_general')
+                        ->add('variety', 'sonata_type_model_autocomplete',
+                            ['property' => ['name', 'code'],  'required' => true,'constraints'=>[new NotBlank()]],
+                            ['admin_code' => 'libio.admin.variety'])
+                    ->end()
+                ->end()
             ;
-            return;
+
+            $this->removeTab(['form_tab_variants','form_tab_images'],$mapper);
+            // return;
         }
 
         // Regular edit/create form
-        parent::configureFormFields($mapper);
+
     }
 
     /**
@@ -132,16 +139,5 @@ class SeedsProductAdmin extends ProductAdmin
             ))
             ->setParameter('value', "%$value%")
         ;
-    }
-
-    /**
-     * @return array
-     */
-    public function getFormTheme()
-    {
-        return array_merge(
-            parent::getFormTheme(),
-            array('AppBundle:SeedsProductAdmin:form_theme.html.twig')
-        );
     }
 }

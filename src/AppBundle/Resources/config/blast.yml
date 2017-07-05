@@ -265,6 +265,8 @@ parameters:
                     channelPricings: ~
                     _delete: ~
                     product: ~
+                    taxCategory: ~
+                    form_group_options: ~
                 add:
                     form_tab_general:
                         form_group_general:
@@ -280,7 +282,10 @@ parameters:
                             code:
                                 type: Blast\CoreBundle\Form\Type\EntityCodeType
                                 required: true
+                            _options:
+                                fieldsOrder: [name, packaging, seedBatch, code]
                         form_group_pricing:
+                            taxCategory: ~
                             channelPricings:
                                 label: librinfo.label.product_variant_prices
                                 type: sonata_type_collection
@@ -291,8 +296,8 @@ parameters:
                                     admin_code: librinfo_ecommerce.admin.channel_pricing
                                     edit: inline
                                     inline: table
-                            _options:
-                                fieldsOrder: [name, packaging, seedBatch, code]
+                        _options:
+                            groupsOrder: [form_group_general,form_group_pricing,form_group_properties,form_group_stock]
             # LIST
             Sonata\AdminBundle\Datagrid\ListMapper:
                 remove:

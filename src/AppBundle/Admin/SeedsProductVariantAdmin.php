@@ -59,18 +59,12 @@ class SeedsProductVariantAdmin extends ProductVariantAdmin
 
         $mapper->end()->end();
 
-        $mapper->remove('optionValues');
-
         parent::configureFormFields($mapper);
 
+        $mapper->remove('optionValues');
+
         // Remove remaining default tab
-        $currentTabs = $this->getFormTabs();
-        foreach($currentTabs as $k => $item) {
-            if($item["name"] == "default") {
-                unset($currentTabs[$k]);
-            }
-        }
-        $this->setFormTabs($currentTabs);
+        $this->removeTab('default',$mapper);
 
         if($this->getSubject() && $this->getSubject()->getChannelPricings()->count() == 0) {
             $this->buildDefaultPricings($this->getSubject());
