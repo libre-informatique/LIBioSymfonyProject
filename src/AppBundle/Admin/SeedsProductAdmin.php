@@ -1,4 +1,4 @@
-<?php
+<?phpphp
 
 /*
  * This file is part of the Lisem Project.

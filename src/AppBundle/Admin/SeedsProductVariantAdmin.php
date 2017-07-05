@@ -67,7 +67,7 @@ class SeedsProductVariantAdmin extends ProductVariantAdmin
         $mapper->remove('optionValues');
 
         // Remove remaining default tab
-        $this->removeTab('default',$mapper);
+        $this->removeTab('default', $mapper);
 
         if ($this->getSubject() && $this->getSubject()->getChannelPricings()->count() == 0) {
             $this->buildDefaultPricings($this->getSubject());

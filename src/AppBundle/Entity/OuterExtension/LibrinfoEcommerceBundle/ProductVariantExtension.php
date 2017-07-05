@@ -34,7 +34,9 @@ trait ProductVariantExtension
     public function getOptionValuesByCode($optionCode)
     {
         return $this->optionValues->filter(
-            function ($optionValue) use ($optionCode) { return $optionValue->getOptionCode() == $optionCode; }
+            function ($optionValue) use ($optionCode) {
+                return $optionValue->getOptionCode() == $optionCode;
+            }
         );
     }
 

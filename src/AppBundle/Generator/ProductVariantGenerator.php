@@ -71,7 +71,9 @@ final class ProductVariantGenerator implements ProductVariantGeneratorInterface
                 $seedBatches = $varietySeedBatches;
             } else {
                 $seedBatches = $seedBatches.filter(
-                    function ($sb) use ($varietySeedBatches) { return $varietySeedBatches.contains($sb); }
+                    function ($sb) use ($varietySeedBatches) {
+                        return $varietySeedBatches.contains($sb); 
+                    }
                 );
             }
             Assert::notEq(0, count($seedBatches), 'Cannot generate variants for a seeds product withouy seed batches');
