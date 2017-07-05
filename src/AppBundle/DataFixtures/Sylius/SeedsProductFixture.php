@@ -1,17 +1,17 @@
 <?php
 
 /*
- * Copyright (C) Paweł Jędrzejewski
- * Copyright (C) 2015-2016 Libre Informatique
+ * This file is part of the Lisem Project.
+ *
+ * Copyright (C) 2015-2017 Libre Informatique
  *
  * This file is licenced under the GNU GPL v3.
- * For the full copyright and license information, please view the LICENSE
+ * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
 namespace AppBundle\DataFixtures\Sylius;
 
-use AppBundle\DataFixtures\Sylius\ProductFixture;
 use Doctrine\ORM\EntityManager;
 use Sylius\Bundle\CoreBundle\Fixture\TaxonFixture;
 use Sylius\Bundle\FixturesBundle\Fixture\AbstractFixture;
@@ -50,9 +50,9 @@ final class SeedsProductFixture extends AbstractFixture
     private $optionsResolver;
 
     /**
-     * @param TaxonFixture $taxonFixture
+     * @param TaxonFixture   $taxonFixture
      * @param ProductFixture $productFixture
-     * @param EntityManager $entityManager
+     * @param EntityManager  $entityManager
      */
     public function __construct(
         TaxonFixture $taxonFixture,
@@ -98,9 +98,9 @@ final class SeedsProductFixture extends AbstractFixture
                         ['code' => 'seeds_LFR',  'name' => 'Légumes-fruit'],
                         ['code' => 'seeds_LRA',  'name' => 'Légumes-racine et bulbes'],
                         ['code' => 'seeds_CAM',  'name' => 'Condimentaires, alimentaires et médicinales'],
-                    ]
-                ]
-            ]
+                    ],
+                ],
+            ],
         ]]]);
 
         $products = [];
@@ -111,9 +111,9 @@ final class SeedsProductFixture extends AbstractFixture
                 'taxons' => ['seeds_LFR'],        // TODO (Variety taxon)
                 'images' => [
                     [sprintf('%s/../../Resources/fixtures/%s', __DIR__, 'tomate-stpierre.jpg'), 'main'],  // TODO (Variety media)
-                    [sprintf('%s/../../Resources/fixtures/%s', __DIR__, 'tomate-stpierre.jpg'), 'thumbnail']  // TODO (Variety media)
+                    [sprintf('%s/../../Resources/fixtures/%s', __DIR__, 'tomate-stpierre.jpg'), 'thumbnail'],  // TODO (Variety media)
                 ],
-                'variety' => $variety
+                'variety' => $variety,
             ];
         }
 

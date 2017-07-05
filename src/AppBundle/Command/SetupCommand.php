@@ -1,10 +1,12 @@
 <?php
 
 /*
- * Copyright (C) 2015-2016 Libre Informatique
+ * This file is part of the Lisem Project.
+ *
+ * Copyright (C) 2015-2017 Libre Informatique
  *
  * This file is licenced under the GNU GPL v3.
- * For the full copyright and license information, please view the LICENSE
+ * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
@@ -22,7 +24,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\ConfirmationQuestion;
 
 /**
- * Initializes the database for LiSem project
+ * Initializes the database for LiSem project.
  *
  * @author Marcos Bezerra de Menezes <marcos.bezerra@libre-informatique.fr>
  */
@@ -61,7 +63,7 @@ EOT
     }
 
     /**
-     * @param InputInterface $input
+     * @param InputInterface  $input
      * @param OutputInterface $output
      *
      * @todo  Exception handling
@@ -74,7 +76,7 @@ EOT
                 throw new \Exception('The "csv-dir" option requires the "sample-data" option');
             }
             if (!is_dir($this->csvDir)) {
-                throw new \Exception('Could not find directory: ' . $this->csvDir);
+                throw new \Exception('Could not find directory: '.$this->csvDir);
             }
         }
         if ($input->getOption('with-samples')) {
@@ -107,8 +109,10 @@ EOT
     }
 
     /**
-     * Run command: app/console sylius:install:setup --no-interaction
+     * Run command: app/console sylius:install:setup --no-interaction.
+     *
      * @param OutputInterface $output
+     *
      * @return int
      */
     protected function setupSylius(OutputInterface $output)
@@ -121,8 +125,8 @@ EOT
     }
 
     /**
-     *
      * @param OutputInterface $output
+     *
      * @return int
      */
     protected function setupUsers(OutputInterface $output)
@@ -143,6 +147,7 @@ EOT
         }
         if ($warn) {
             $output->writeln(['<comment>', $warn, 'See app/config/parameters.yml.dist for an example.', '</comment>']);
+
             return 1;
         }
 
@@ -175,8 +180,10 @@ EOT
     }
 
     /**
-     * Run command: app/console librinfo:crm:init-circles
+     * Run command: app/console librinfo:crm:init-circles.
+     *
      * @param OutputInterface $output
+     *
      * @return int
      */
     protected function setupCircles(OutputInterface $output)
@@ -184,12 +191,15 @@ EOT
         $output->writeln(['', 'Running <info>librinfo:crm:init-circles</info> command...']);
         $command = $this->getApplication()->find('librinfo:crm:init-circles');
         $circlesInput = new ArrayInput([]);
+
         return $command->run($circlesInput, $output);
     }
 
     /**
-     * Create application product application
+     * Create application product application.
+     *
      * @param OutputInterface $output
+     *
      * @return int
      *
      * @todo Hardcoded product options should be moved to application params (same way as initCircles...)
@@ -252,6 +262,7 @@ EOT
             $em->flush();
             $output->writeln('<info> done.</info>');
         }
+
         return 0;
     }
 
@@ -260,6 +271,7 @@ EOT
      * Not used anymore. Left here as an example...
      *
      * @param OutputInterface $output
+     *
      * @return int
      *
      * @todo Hardcoded attributes should be moved to application params (same way as initCircles...)
@@ -295,23 +307,25 @@ EOT
             }
             $output->writeln('<info> done.</info>');
         }
+
         return 0;
     }
 
     /**
      * @param OutputInterface $output
+     *
      * @todo  Optimize the "clean" way of importing cities
      */
     protected function setupCities(OutputInterface $output)
     {
         $em = $this->getContainer()->get('doctrine')->getEntityManager();
         $conn = $em->getConnection();
-        $file = __DIR__ . '/../DataFixtures/ORM/Cities/france.csv';
+        $file = __DIR__.'/../DataFixtures/ORM/Cities/france.csv';
         $output->writeln(['', sprintf('Importing <info>cities</info> from %s...', realpath($file))]);
 
         try {
             // This is not clean, but it is FAST:
-            $conn->exec("TRUNCATE TABLE librinfo_crm_city");
+            $conn->exec('TRUNCATE TABLE librinfo_crm_city');
             $num_rows_effected = $conn->exec("COPY librinfo_crm_city (id, country_code, city, zip) FROM '$file' delimiter ',';");
             $output->writeln(sprintf('<info> done (%d cities).</info>', $num_rows_effected));
         } catch (\Exception $e) {
@@ -323,7 +337,7 @@ EOT
             $i = 0;
             $batchSize = 20;
             while (($line = fgetcsv($handle)) !== false) {
-                $i++;
+                ++$i;
                 $city = new \Librinfo\CRMBundle\Entity\City();
                 $city->setCountryCode($line[1]);
                 $city->setCity($line[2]);
@@ -364,7 +378,7 @@ EOT
         $fixturesCommand = $this->getApplication()->find('doctrine:fixtures:load');
         $fixturesInput = new ArrayInput([
             '--append' => true,
-            '--fixtures' => 'src/AppBundle/DataFixtures'
+            '--fixtures' => 'src/AppBundle/DataFixtures',
         ]);
         $fixturesInput->setInteractive(false);
         $fixturesCommand->run($fixturesInput, $output);
@@ -372,9 +386,9 @@ EOT
         foreach (['lisem_default', 'lisem_varieties', 'lisem_products'] as $suite) {
             if ($suite == 'lisem_varieties' && $this->csvDir) {
                 $fixturesCommand = $this->getApplication()->find('lisem:import:csv');
-                $output->writeln(['', "Running <info>lisem:import:csv ".$this->csvDir."</info> command..."]);
+                $output->writeln(['', 'Running <info>lisem:import:csv '.$this->csvDir.'</info> command...']);
                 $fixturesInput = new ArrayInput([
-                    'dir' => $this->csvDir
+                    'dir' => $this->csvDir,
                 ]);
                 $fixturesInput->setInteractive(false);
                 $fixturesCommand->run($fixturesInput, $output);
@@ -382,7 +396,7 @@ EOT
                 $fixturesCommand = $this->getApplication()->find('sylius:fixtures:load');
                 $output->writeln(['', "Running <info>sylius:fixtures:load $suite</info> command..."]);
                 $fixturesInput = new ArrayInput([
-                    'suite' => $suite
+                    'suite' => $suite,
                 ]);
                 $fixturesInput->setInteractive(false);
                 $fixturesCommand->run($fixturesInput, $output);

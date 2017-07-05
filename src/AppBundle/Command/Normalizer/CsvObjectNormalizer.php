@@ -1,10 +1,12 @@
 <?php
 
 /*
- * Copyright (C) 2015-2016 Libre Informatique
+ * This file is part of the Lisem Project.
+ *
+ * Copyright (C) 2015-2017 Libre Informatique
  *
  * This file is licenced under the GNU GPL v3.
- * For the full copyright and license information, please view the LICENSE
+ * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
@@ -34,7 +36,7 @@ class CsvObjectNormalizer extends ObjectNormalizer
     private $mappings;
 
     /**
-     * @param string $entityClass  entity class FQDN
+     * @param string        $entityClass   entity class FQDN
      * @param EntityManager $entityManager
      */
     public function __construct($entityClass, EntityManager $entityManager)
@@ -53,8 +55,9 @@ class CsvObjectNormalizer extends ObjectNormalizer
         $object = parent::denormalize($data, $class, $format, $context);
 
         $rc = new \ReflectionClass($class);
-        if (method_exists($this, 'postDenormalize' . $rc->getShortName()))
-            $this->{'postDenormalize' . $rc->getShortName()}($object);
+        if (method_exists($this, 'postDenormalize'.$rc->getShortName())) {
+            $this->{'postDenormalize'.$rc->getShortName()}($object);
+        }
 
         return $object;
     }
@@ -64,24 +67,25 @@ class CsvObjectNormalizer extends ObjectNormalizer
      */
     protected function setAttributeValue($object, $attribute, $value, $format = null, array $context = array())
     {
-        $key = get_class($object) . '.' . $attribute;
-        if (isset($this->mappings[$key]))
-        {
+        $key = get_class($object).'.'.$attribute;
+        if (isset($this->mappings[$key])) {
             list($associationClass, $field) = $this->mappings[$key];
             $value = $this->fetchAssociation($associationClass, $field, $value);
         }
 
-        if ($value == "")
+        if ($value == '') {
             $value = null;
+        }
 
         parent::setAttributeValue($object, $attribute, $value, $format, $context);
     }
 
     /**
-     * @param string $entityClass    FQDN
+     * @param string $entityClass FQDN
      * @param string $field
-     * @param mixed $value
-     * @return object   Associated entity
+     * @param mixed  $value
+     *
+     * @return object Associated entity
      */
     protected function fetchAssociation($entityClass, $field, $value)
     {
@@ -93,7 +97,7 @@ class CsvObjectNormalizer extends ObjectNormalizer
      */
     protected function postDenormalizeSpecies(Species $species)
     {
-//        if ($species->getLegalGerminationRate() === "")
+        //        if ($species->getLegalGerminationRate() === "")
 //            $species->setLegalGerminationRate(null);
 //        if ($species->getSeedLifespan() === "")
 //            $species->setSeedLifespan(null);
@@ -106,11 +110,10 @@ class CsvObjectNormalizer extends ObjectNormalizer
     protected function getMappings()
     {
         return [
-            Genus::class . '.family' => [Family::class, 'name'],
-            Species::class . '.genus' => [Genus::class, 'name'],
-            Species::class . '.parent_species' => [Species::class, 'name'],
-            Variety::class . '.species' => [Species::class, 'name'],
+            Genus::class.'.family' => [Family::class, 'name'],
+            Species::class.'.genus' => [Genus::class, 'name'],
+            Species::class.'.parent_species' => [Species::class, 'name'],
+            Variety::class.'.species' => [Species::class, 'name'],
         ];
     }
-
 }

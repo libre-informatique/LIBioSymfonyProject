@@ -1,10 +1,12 @@
 <?php
 
 /*
- * Copyright (C) 2015-2016 Libre Informatique
+ * This file is part of the Lisem Project.
+ *
+ * Copyright (C) 2015-2017 Libre Informatique
  *
  * This file is licenced under the GNU GPL v3.
- * For the full copyright and license information, please view the LICENSE
+ * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
@@ -15,7 +17,7 @@ use Librinfo\EcommerceBundle\Entity\Product;
 use Sonata\CoreBundle\Validator\ErrorElement;
 
 /**
- * Sonata admin for product variants from seeds products
+ * Sonata admin for product variants from seeds products.
  *
  * @author Marcos Bezerra de Menezes <marcos.bezerra@libre-informatique.fr>
  */
@@ -49,12 +51,13 @@ class SeedsProductVariantAdmin extends ProductVariantAdmin
             'callback' => function ($admin, $property, $value) use ($product) {
                 $datagrid = $admin->getDatagrid();
                 $datagrid->setValue($property, null, $value);
-                if ($product && $variety = $product->getVariety)
+                if ($product && $variety = $product->getVariety) {
                     $datagrid->setValue('variety', null, $variety);
+                }
             },
             'translation_domain' => 'messages',
         ];
-        $fieldDescriptionOptions = ['admin_code' => 'librinfo_seedbatch.admin.seedbatch','translation_domain' => 'messages'];
+        $fieldDescriptionOptions = ['admin_code' => 'librinfo_seedbatch.admin.seedbatch', 'translation_domain' => 'messages'];
         $mapper->add('seedBatch', 'sonata_type_model_autocomplete', $options, $fieldDescriptionOptions);
 
         $mapper->end()->end();
@@ -65,14 +68,14 @@ class SeedsProductVariantAdmin extends ProductVariantAdmin
 
         // Remove remaining default tab
         $currentTabs = $this->getFormTabs();
-        foreach($currentTabs as $k => $item) {
-            if($item["name"] == "default") {
+        foreach ($currentTabs as $k => $item) {
+            if ($item['name'] == 'default') {
                 unset($currentTabs[$k]);
             }
         }
         $this->setFormTabs($currentTabs);
 
-        if($this->getSubject() && $this->getSubject()->getChannelPricings()->count() == 0) {
+        if ($this->getSubject() && $this->getSubject()->getChannelPricings()->count() == 0) {
             $this->buildDefaultPricings($this->getSubject());
         }
     }
@@ -98,10 +101,11 @@ class SeedsProductVariantAdmin extends ProductVariantAdmin
     {
         $query = parent::createQuery($context);
         $alias = $query->getRootAliases()[0];
-        $query->leftJoin("$alias.product", "prod");
+        $query->leftJoin("$alias.product", 'prod');
         $query->andWhere(
-            $query->expr()->isNotNull("prod.variety")
+            $query->expr()->isNotNull('prod.variety')
         );
+
         return $query;
     }
 
@@ -116,6 +120,7 @@ class SeedsProductVariantAdmin extends ProductVariantAdmin
             ->andWhere('option.code = :packagingCode')
             ->setParameter('packagingCode', Product::$PACKAGING_OPTION_CODE)
         ;
+
         return $queryBuilder;
     }
 
@@ -129,5 +134,4 @@ class SeedsProductVariantAdmin extends ProductVariantAdmin
             array('AppBundle:SeedsProductAdmin:form_theme.html.twig')
         );
     }
-
 }

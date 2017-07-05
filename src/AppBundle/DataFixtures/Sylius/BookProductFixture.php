@@ -1,17 +1,17 @@
 <?php
 
 /*
- * Copyright (C) Paweł Jędrzejewski
- * Copyright (C) 2015-2016 Libre Informatique
+ * This file is part of the Lisem Project.
+ *
+ * Copyright (C) 2015-2017 Libre Informatique
  *
  * This file is licenced under the GNU GPL v3.
- * For the full copyright and license information, please view the LICENSE
+ * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
 namespace AppBundle\DataFixtures\Sylius;
 
-use AppBundle\DataFixtures\Sylius\ProductFixture;
 use Sylius\Bundle\CoreBundle\Fixture\ProductAttributeFixture;
 use Sylius\Bundle\CoreBundle\Fixture\TaxonFixture;
 use Sylius\Bundle\FixturesBundle\Fixture\AbstractFixture;
@@ -53,9 +53,9 @@ final class BookProductFixture extends AbstractFixture
     private $optionsResolver;
 
     /**
-     * @param TaxonFixture $taxonFixture
+     * @param TaxonFixture            $taxonFixture
      * @param ProductAttributeFixture $productAttributeFixture
-     * @param ProductFixture $productFixture
+     * @param ProductFixture          $productFixture
      */
     public function __construct(
         TaxonFixture $taxonFixture,
@@ -96,8 +96,8 @@ final class BookProductFixture extends AbstractFixture
                 [
                     'code' => 'books',
                     'name' => 'Livres',
-                ]
-            ]
+                ],
+            ],
         ]]]);
 
         $bookGenres = ['Roman', 'Essai', 'Poésie', 'Bande dessinée'];
@@ -112,7 +112,7 @@ final class BookProductFixture extends AbstractFixture
                 'configuration' => [
                     'multiple' => true,
                     'choices' => $bookGenres,
-                ]
+                ],
             ],
         ]]);
 
@@ -133,7 +133,7 @@ final class BookProductFixture extends AbstractFixture
                 ],
                 'images' => [
                     [sprintf('%s/../../Resources/fixtures/%s', __DIR__, 'books.jpg'), 'main'],
-                    [sprintf('%s/../../Resources/fixtures/%s', __DIR__, 'books.jpg'), 'thumbnail']
+                    [sprintf('%s/../../Resources/fixtures/%s', __DIR__, 'books.jpg'), 'thumbnail'],
                 ],
             ];
         }
