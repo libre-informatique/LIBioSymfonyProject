@@ -1,6 +1,6 @@
 <?php
 $I = new WebGuy($scenario);
-$I->wantTo("003_Tiers");
+$I->wantTo("Add and Remove Tiers");
 $I->amOnPage("/app_dev.php/admin/login");
 $I->fillField("//input[@id='_username']", "lisem@lisem.eu");
 $I->fillField("//input[@id='_password']", "lisem");
@@ -30,6 +30,7 @@ $I->click("//button[@type='submit']");
 $I->click("//label/div/ins");
 $I->click("//input[@value='OK']");
 $I->click("//button[@type='submit']");
+// @todo should check if tiers is deleted as a bug fix test
 $I->waitForText('Ajouter', 30); // secs
 $I->click("Ajouter");
 $I->fillField("//input[contains(@id,'_name')]", "SelCol");
