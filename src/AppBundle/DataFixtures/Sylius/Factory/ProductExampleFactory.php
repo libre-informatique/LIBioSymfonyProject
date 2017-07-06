@@ -1,11 +1,12 @@
 <?php
 
 /*
- * Copyright (C) Paweł Jędrzejewski
- * Copyright (C) 2015-2016 Libre Informatique
+ * This file is part of the Lisem Project.
+ *
+ * Copyright (C) 2015-2017 Libre Informatique
  *
  * This file is licenced under the GNU GPL v3.
- * For the full copyright and license information, please view the LICENSE
+ * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
@@ -16,7 +17,6 @@ use Librinfo\EcommerceBundle\Entity\Product;
 use Sylius\Bundle\CoreBundle\Fixture\Factory\ExampleFactoryInterface;
 use Sylius\Bundle\CoreBundle\Fixture\OptionsResolver\LazyOption;
 use Sylius\Component\Core\Formatter\StringInflector;
-use Sylius\Component\Core\Model\ChannelInterface;
 use Sylius\Component\Core\Model\ChannelPricingInterface;
 use Sylius\Component\Core\Model\ImageInterface;
 use Sylius\Component\Core\Model\ProductInterface;
@@ -127,21 +127,21 @@ final class ProductExampleFactory implements ExampleFactoryInterface
     private $productVariantCodeGenerator;
 
     /**
-     * @param FactoryInterface $productFactory
-     * @param FactoryInterface $productVariantFactory
-     * @param FactoryInterface $channelPricing
+     * @param FactoryInterface                 $productFactory
+     * @param FactoryInterface                 $productVariantFactory
+     * @param FactoryInterface                 $channelPricing
      * @param ProductVariantGeneratorInterface $variantGenerator
-     * @param FactoryInterface $productAttributeValueFactory
-     * @param FactoryInterface $productImageFactory
-     * @param FactoryInterface $productTaxonFactory
-     * @param ImageUploaderInterface $imageUploader
-     * @param SlugGeneratorInterface $slugGenerator
-     * @param RepositoryInterface $taxonRepository
-     * @param RepositoryInterface $productAttributeRepository
-     * @param RepositoryInterface $productOptionRepository
-     * @param RepositoryInterface $channelRepository
-     * @param RepositoryInterface $localeRepository
-     * @param CodeGeneratorInterface $productVariantCodeGenerator
+     * @param FactoryInterface                 $productAttributeValueFactory
+     * @param FactoryInterface                 $productImageFactory
+     * @param FactoryInterface                 $productTaxonFactory
+     * @param ImageUploaderInterface           $imageUploader
+     * @param SlugGeneratorInterface           $slugGenerator
+     * @param RepositoryInterface              $taxonRepository
+     * @param RepositoryInterface              $productAttributeRepository
+     * @param RepositoryInterface              $productOptionRepository
+     * @param RepositoryInterface              $channelRepository
+     * @param RepositoryInterface              $localeRepository
+     * @param CodeGeneratorInterface           $productVariantCodeGenerator
      */
     public function __construct(
         FactoryInterface $productFactory,
@@ -194,8 +194,9 @@ final class ProductExampleFactory implements ExampleFactoryInterface
         $product = $variety ? $this->productFactory->createNewForVariety($variety) :
             $this->productFactory->createNew();
         $product->setVariantSelectionMethod(ProductInterface::VARIANT_SELECTION_MATCH);
-        if (!$variety)
+        if (!$variety) {
             $product->setCode($options['code']);
+        }
         $product->setEnabled($options['enabled']);
         $product->setMainTaxon($options['main_taxon']);
         $product->setCreatedAt($this->faker->dateTimeBetween('-1 week', 'now'));
@@ -204,8 +205,9 @@ final class ProductExampleFactory implements ExampleFactoryInterface
         $this->createRelations($product, $options);
         $this->createVariants($product, $options);
         $this->createImages($product, $options);
-        if ($variety)
+        if ($variety) {
             $product->setVariety($variety);
+        }
         $this->createProductTaxons($product, $options);
 
         return $product;
@@ -214,7 +216,7 @@ final class ProductExampleFactory implements ExampleFactoryInterface
     /**
      * {@inheritdoc}
      */
-    protected function configureOptions(OptionsResolver $resolver)
+    private function configureOptions(OptionsResolver $resolver)
     {
         $resolver
             ->setDefault('name', function (Options $options) {
@@ -293,7 +295,7 @@ final class ProductExampleFactory implements ExampleFactoryInterface
 
     /**
      * @param ProductInterface $product
-     * @param array $options
+     * @param array            $options
      */
     private function createTranslations(ProductInterface $product, array $options)
     {
@@ -301,8 +303,9 @@ final class ProductExampleFactory implements ExampleFactoryInterface
             $product->setCurrentLocale($localeCode);
             $product->setFallbackLocale($localeCode);
 
-            if (!$product->getVariety())
+            if (!$product->getVariety()) {
                 $product->setName($options['name']);
+            }
             $product->setSlug($this->slugGenerator->generate($product->getName()));
             $product->setShortDescription($options['short_description']);
             $product->setDescription($options['description']);
@@ -311,7 +314,7 @@ final class ProductExampleFactory implements ExampleFactoryInterface
 
     /**
      * @param ProductInterface $product
-     * @param array $options
+     * @param array            $options
      */
     private function createRelations(ProductInterface $product, array $options)
     {
@@ -330,7 +333,7 @@ final class ProductExampleFactory implements ExampleFactoryInterface
 
     /**
      * @param ProductInterface $product
-     * @param array $options
+     * @param array            $options
      */
     private function createVariants(ProductInterface $product, array $options)
     {
@@ -366,7 +369,7 @@ final class ProductExampleFactory implements ExampleFactoryInterface
 
     /**
      * @param ProductVariantInterface $productVariant
-     * @param string $channelCode
+     * @param string                  $channelCode
      */
     private function createChannelPricings(ProductVariantInterface $productVariant, $channelCode)
     {
@@ -380,7 +383,7 @@ final class ProductExampleFactory implements ExampleFactoryInterface
 
     /**
      * @param ProductInterface $product
-     * @param array $options
+     * @param array            $options
      */
     private function createImages(ProductInterface $product, array $options)
     {
@@ -401,7 +404,7 @@ final class ProductExampleFactory implements ExampleFactoryInterface
 
     /**
      * @param ProductInterface $product
-     * @param array $options
+     * @param array            $options
      */
     private function createProductTaxons(ProductInterface $product, array $options)
     {

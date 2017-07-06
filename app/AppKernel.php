@@ -1,5 +1,15 @@
 <?php
 
+/*
+ * This file is part of the Lisem Project.
+ *
+ * Copyright (C) 2015-2017 Libre Informatique
+ *
+ * This file is licenced under the GNU GPL v3.
+ * For the full copyright and license information, please view the LICENSE.md
+ * file that was distributed with this source code.
+ */
+
 use Sylius\Bundle\CoreBundle\Application\Kernel;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\Yaml\Yaml;
@@ -70,9 +80,8 @@ class AppKernel extends Kernel
             new Bazinga\Bundle\JsTranslationBundle\BazingaJsTranslationBundle(),
         );
 
-        if (in_array($this->getEnvironment(), array('dev', 'test')))
-        {
-//            $bundles[] = new Symfony\Bundle\DebugBundle\DebugBundle(); provided by Sylius
+        if (in_array($this->getEnvironment(), array('dev', 'test'))) {
+            //            $bundles[] = new Symfony\Bundle\DebugBundle\DebugBundle(); provided by Sylius
 //            $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle(); provided by Sylius
 //            $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
@@ -97,13 +106,14 @@ class AppKernel extends Kernel
     {
         $yaml = Yaml::parse(file_get_contents(sprintf('%s/config/parameters.yml', $this->getRootDir())));
 
-        if( isset($yaml['parameters']['cache_dir']) )
+        if (isset($yaml['parameters']['cache_dir'])) {
             return sprintf(
                 '%s/%s/cache/%s',
                 $yaml['parameters']['cache_dir'],
                 $this->getInstance(),
                 $this->environment
             );
+        }
 
         return sprintf(
             '%s/cache/%s',
@@ -116,12 +126,13 @@ class AppKernel extends Kernel
     {
         $yaml = Yaml::parse(file_get_contents(sprintf('%s/config/parameters.yml', $this->getRootDir())));
 
-        if( isset($yaml['parameters']['logs_dir']) )
+        if (isset($yaml['parameters']['logs_dir'])) {
             return sprintf(
                 '%s/%s/logs',
                 $yaml['parameters']['logs_dir'],
                 $this->getInstance()
             );
+        }
 
         return sprintf('%s/logs', $this->rootDir);
     }
@@ -136,5 +147,4 @@ class AppKernel extends Kernel
             md5(dirname(__DIR__))
         );
     }
-
 }

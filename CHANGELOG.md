@@ -1,5 +1,13 @@
 # Change Log
 
+## [0.4.4](https://github.com/libre-informatique/LISemSymfonyProject/tree/0.4.4) (2017-07-03)
+[Full Changelog](https://github.com/libre-informatique/LISemSymfonyProject/compare/0.4.3...0.4.4)
+
+**Merged pull requests:**
+
+- Vel check [\#10](https://github.com/libre-informatique/LISemSymfonyProject/pull/10) ([FanchTheSystem](https://github.com/FanchTheSystem))
+- More Test [\#8](https://github.com/libre-informatique/LISemSymfonyProject/pull/8) ([FanchTheSystem](https://github.com/FanchTheSystem))
+
 ## [0.4.3](https://github.com/libre-informatique/LISemSymfonyProject/tree/0.4.3) (2017-06-19)
 [Full Changelog](https://github.com/libre-informatique/LISemSymfonyProject/compare/0.2...0.4.3)
 

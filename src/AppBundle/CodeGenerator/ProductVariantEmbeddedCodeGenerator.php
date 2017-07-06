@@ -1,10 +1,12 @@
 <?php
 
 /*
- * Copyright (C) 2015-2016 Libre Informatique
+ * This file is part of the Lisem Project.
+ *
+ * Copyright (C) 2015-2017 Libre Informatique
  *
  * This file is licenced under the GNU GPL v3.
- * For the full copyright and license information, please view the LICENSE
+ * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
@@ -12,16 +14,14 @@ namespace AppBundle\CodeGenerator;
 
 use Blast\CoreBundle\Exception\InvalidEntityCodeException;
 use Librinfo\EcommerceBundle\Entity\ProductVariant;
-use Librinfo\EcommerceBundle\CodeGenerator\ProductVariantCodeGenerator as BaseCodeGenerator;
-use Symfony\Component\HttpFoundation\RequestStack;
-use Sylius\Bundle\ResourceBundle\Doctrine\ORM\EntityRepository;
 
 class ProductVariantEmbeddedCodeGenerator extends ProductVariantCodeGenerator
 {
-
     /**
-     * @param  ProductVariant $productVariant
+     * @param ProductVariant $productVariant
+     *
      * @return string
+     *
      * @throws InvalidEntityCodeException
      */
     public static function generate($productVariant)
@@ -35,9 +35,9 @@ class ProductVariantEmbeddedCodeGenerator extends ProductVariantCodeGenerator
             $caller = $request->getCurrentRequest()->request->get('caller', null);
             $re = '/^'.$formName.'\[variants\]\[([0-9]*)\]\[code\]/';
 
-            preg_match($re,$caller,$callerIndex);
+            preg_match($re, $caller, $callerIndex);
 
-            $callerIndex = (int)$callerIndex[1];
+            $callerIndex = (int) $callerIndex[1];
 
             $variantData = $formData['variants'][$callerIndex];
 
@@ -52,16 +52,18 @@ class ProductVariantEmbeddedCodeGenerator extends ProductVariantCodeGenerator
             }
         }
 
-        if (!$seedBatch = $productVariant->getSeedBatch())
+        if (!$seedBatch = $productVariant->getSeedBatch()) {
             throw new InvalidEntityCodeException('librinfo.error.missing_seed_batch');
-        if (!$seedBatchCode = $seedBatch->getCode())
+        }
+        if (!$seedBatchCode = $seedBatch->getCode()) {
             throw new InvalidEntityCodeException('librinfo.error.missing_seed_batch_code');
-
-        if (!$packaging = $productVariant->getPackaging())
+        }
+        if (!$packaging = $productVariant->getPackaging()) {
             throw new InvalidEntityCodeException('librinfo.error.missing_packaging');
-        if (!$packagingCode = $packaging->getCode())
+        }
+        if (!$packagingCode = $packaging->getCode()) {
             throw new InvalidEntityCodeException('librinfo.error.missing_packaging_code');
-
+        }
         return sprintf('%s-%s', $seedBatchCode, $packagingCode);
     }
 }

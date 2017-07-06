@@ -1,10 +1,12 @@
 <?php
 
 /*
- * Copyright (C) 2015-2016 Libre Informatique
+ * This file is part of the Lisem Project.
+ *
+ * Copyright (C) 2015-2017 Libre Informatique
  *
  * This file is licenced under the GNU GPL v3.
- * For the full copyright and license information, please view the LICENSE
+ * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
@@ -23,22 +25,27 @@ trait CircleExtension
 
     /**
      * @param UserInterface $user
-     * @return boolean
+     *
+     * @return bool
      */
     public function isAccessibleBy(UserInterface $user)
     {
         // no owner and no users : everybody has access to the circle
-        if ( !$this->getOwner() && $this->getUsers()->isEmpty() )
+        if (!$this->getOwner() && $this->getUsers()->isEmpty()) {
             return true;
+        }
 
         // current user is the circle owner
-        if ( $this->getOwner() && $user->getId() === $this->getOwner()->getId() )
+        if ($this->getOwner() && $user->getId() === $this->getOwner()->getId()) {
             return true;
+        }
 
         // current user belongs to the circle users
-        foreach ( $this->getUsers() as $u)
-        if ( $user->getId() === $u->getId() )
-            return true;
+        foreach ($this->getUsers() as $u) {
+            if ($user->getId() === $u->getId()) {
+                return true;
+            }
+        }
 
         return false;
     }

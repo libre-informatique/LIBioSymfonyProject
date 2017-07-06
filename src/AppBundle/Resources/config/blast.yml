@@ -139,8 +139,8 @@ parameters:
                     variants: ~
                     options: ~
                 add:
-                    form_group_general:
-                        '':
+                    form_tab_general:
+                        form_group_general:
                             variety:
                                 type: sonata_type_model_autocomplete
                                 property: [name, code]
@@ -151,25 +151,19 @@ parameters:
                             _options:
                                 fieldsOrder: [variety, name, code]
                     form_tab_variants:
-                        '':
+                        form_group_variants:
                             variants:
                                 type: sonata_type_collection
                                 label: false
-                                by_reference: false
+                                by_reference: true
                                 attr:
-                                    data-showFields: 'name,seedBatch,packaging,code'
+                                    data-showFields: 'id,name,seedBatch,packaging,code'
                                 type_options:
                                     btn_add: false
-                                    delete_options:
-                                        type: checkbox
-                                        type_options:
-                                            mapped: false
-                                            required: false
-                                required: true    # if not true, child form fields cannot be required (why ??)
                                 _options:
                                     edit: modal
                                     inline: table-list
-                                    admin_code: libio.admin.seeds_product_variant_embedded
+                                    admin_code: libio.admin.seeds_product_variant
             #LIST
             Sonata\AdminBundle\Datagrid\ListMapper:
                 remove:
@@ -210,7 +204,7 @@ parameters:
                     variants: ~
                 add:
                     form_tab_variants:
-                        '':
+                        form_group_variants:
                             variants:
                                 type: sonata_type_collection
                                 label: false
@@ -226,7 +220,7 @@ parameters:
                                 _options:
                                     edit: inline
                                     inline: table
-                                    admin_code: libio.admin.other_product_variant_embedded
+                                    admin_code: libio.admin.other_product_variant
 
             # LIST
             Sonata\AdminBundle\Datagrid\ListMapper:
@@ -249,8 +243,8 @@ parameters:
                 remove:
                     optionValues: ~
                 add:
-                    form_group_general:
-                        '':
+                    form_tab_general:
+                        form_group_general:
                             product:
                                 admin_code: libio.admin.seeds_product
                                 attr:
@@ -265,45 +259,45 @@ parameters:
             # FORM
             Sonata\AdminBundle\Form\FormMapper:
                 remove:
+                    id: ~
                     name: ~
-                    optionValues: ~
-                    _delete: ~
-                    channelPricings: ~
-                    taxCategory: ~
-                    onHand: ~
-                    onHold: ~
-                    tracked: ~
-                    width: ~
-                    height: ~
-                    depth: ~
-                    weight: ~
-                    packaging: ~
-                    seedBatch: ~
                     code: ~
+                    channelPricings: ~
+                    _delete: ~
                     product: ~
+                    taxCategory: ~
+                    form_group_options: ~
                 add:
-                    form_group_general:
-                        '':
+                    form_tab_general:
+                        form_group_general:
+                            id:
+                                type: hidden
+                            product:
+                                type: sonata_type_model_hidden
+                                _options:
+                                    admin_code: libio.admin.seeds_product
                             name:
                                 type: text
                                 required: true
-                            packaging:  # overridden in SeedsProductVariantAdmin::configureFormFields()
-                                type: entity
-                                class: Librinfo\EcommerceBundle\Entity\ProductOptionValue
-                                required: true
-                            seedBatch:  # overridden in SeedsProductVariantAdmin::configureFormFields()
-                                type: entity
-                                class: Librinfo\SeedBatchBundle\Entity\SeedBatch
-                                required: true
-                                type_options:
-                                    required: true
-                                _options:
-                                    admin_code: librinfo_seedbatch.admin.seedbatch
                             code:
                                 type: Blast\CoreBundle\Form\Type\EntityCodeType
                                 required: true
                             _options:
                                 fieldsOrder: [name, packaging, seedBatch, code]
+                        form_group_pricing:
+                            taxCategory: ~
+                            channelPricings:
+                                label: librinfo.label.product_variant_prices
+                                type: sonata_type_collection
+                                type_options:
+                                    btn_add: false
+                                    delete: false
+                                _options:
+                                    admin_code: librinfo_ecommerce.admin.channel_pricing
+                                    edit: inline
+                                    inline: table
+                        _options:
+                            groupsOrder: [form_group_general,form_group_pricing,form_group_properties,form_group_stock]
             # LIST
             Sonata\AdminBundle\Datagrid\ListMapper:
                 remove:
@@ -359,8 +353,8 @@ parameters:
                     code: ~
                     product: ~
                 add:
-                    form_group_general:
-                        '':
+                    form_tab_general:
+                        form_group_general:
                             name:
                                 type: text
                                 required: true
@@ -573,8 +567,16 @@ parameters:
                 remove:
                     addresses: ~
                     phones: ~
+                    description: ~
+                    alert: ~
+                    category: ~
+                    url: ~
+                    active: ~
                 add:
                     form_tab_general:
+                        form_group_administrative:
+                            siret:
+                                type: text
                         form_group_organism:
                             seedProducer:
                                 type: checkbox
@@ -583,27 +585,32 @@ parameters:
                                 type: Blast\CoreBundle\Form\Type\EntityCodeType
                                 attr:
                                     placeholder: librinfo.placeholder.seed_producer_code
+                            active: ~
                             _options:
                                 fieldsOrder:
-                                    - active
+                                    - isIndividual
                                     - title
                                     - firstname
                                     - lastname
                                     - name
+                                    - circles
                                     - email
                                     - emailNpai
                                     - emailNoNewsletter
-                                    - alert
-                                    - customer
+                                    - isCustomer
                                     - customerCode
-                                    - supplier
+                                    - isSupplier
                                     - supplierCode
                                     - seedProducer
                                     - seedProducerCode
-#                                    - circles
-#                                    - category
-#                                    - description
-#                                    - url
+                                    - active
+                        form_group_notes:
+                            alert:
+                                type: textarea
+                            description:
+                                type: textarea
+                            url:
+                                type: text
                     form_tab_plots:
                         '':
                             plots:

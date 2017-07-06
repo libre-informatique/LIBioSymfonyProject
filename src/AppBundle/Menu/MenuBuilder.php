@@ -1,10 +1,12 @@
 <?php
 
 /*
- * Copyright (C) 2015-2016 Libre Informatique
+ * This file is part of the Lisem Project.
+ *
+ * Copyright (C) 2015-2017 Libre Informatique
  *
  * This file is licenced under the GNU GPL v3.
- * For the full copyright and license information, please view the LICENSE
+ * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
@@ -14,7 +16,7 @@ use Knp\Menu\FactoryInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
 
 /**
- * Extension for Sonata Admin sidebar menu
+ * Extension for Sonata Admin sidebar menu.
  *
  * @author Marcos Bezerra de Menezes <marcos.bezerra@libre-informatique.fr>
  *
@@ -45,9 +47,10 @@ class MenuBuilder
     }
 
     /**
-     * App settings sidebar menu
+     * App settings sidebar menu.
      *
      * @param RequestStack $requestStack
+     *
      * @return type
      *
      * @todo Import YML description instead of hardcoded menus
@@ -68,7 +71,7 @@ class MenuBuilder
         $submenu->addChild('libio.menu_label.crm_circles_list', ['route' => 'admin_librinfo_crm_circle_list']);
         $submenu->addChild('libio.menu_label.crm_categories_list', ['route' => 'admin_librinfo_crm_category_list']);
         $submenu->addChild('libio.menu_label.position_types_list', ['route' => 'admin_librinfo_crm_positiontype_list']);
-        $submenu->addChild('libio.menu_label.phone_types_list', ['route' => 'admin_librinfo_crm_phonetype_list']);
+        // $submenu->addChild('libio.menu_label.phone_types_list', ['route' => 'admin_librinfo_crm_phonetype_list']);
 
         // Varieties settings
         $submenu = $menu->addChild('libio.menu_label.varieties_settings');

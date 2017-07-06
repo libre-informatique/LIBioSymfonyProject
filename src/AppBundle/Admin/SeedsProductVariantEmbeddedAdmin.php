@@ -13,8 +13,6 @@
 namespace AppBundle\Admin;
 
 use Librinfo\EcommerceBundle\Entity\Product;
-use Symfony\Component\Validator\Constraints\NotBlank;
-use Blast\CoreBundle\Form\Type\EntityCodeType;
 use Blast\CoreBundle\Admin\Traits\EmbeddedAdmin;
 use Sonata\CoreBundle\Validator\ErrorElement;
 

@@ -30,6 +30,8 @@ services:
               group: admin
               label: libio.seeds_product_admin.label
               label_translator_strategy: blast_core.label.strategy.librinfo
+        calls:
+            - [ setTemplate, [ edit, LibrinfoEcommerceBundle:ProductAdmin:edit.html.twig ] ]
 
     libio.admin.seeds_product_variant:
         class: AppBundle\Admin\SeedsProductVariantAdmin

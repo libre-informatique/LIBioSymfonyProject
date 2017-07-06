@@ -129,6 +129,8 @@ librinfo:
         organism_admin:
             # Translation to be confirmed
             label: LISEM
+    title:
+        sonata_admin_login: Login
 
 lisem:
     packaging_admin:

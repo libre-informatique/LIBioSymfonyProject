@@ -1,11 +1,12 @@
 <?php
 
 /*
- * Copyright (C) Paweł Jędrzejewski
- * Copyright (C) 2015-2016 Libre Informatique
+ * This file is part of the Lisem Project.
+ *
+ * Copyright (C) 2015-2017 Libre Informatique
  *
  * This file is licenced under the GNU GPL v3.
- * For the full copyright and license information, please view the LICENSE
+ * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
@@ -21,7 +22,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
  * Rewritten Sylius\Bundle\CoreBundle\Fixture\AbstractResourceFixture because we needed to override the load() method
- * in order to be able to call EM->flush() after each persist
+ * in order to be able to call EM->flush() after each persist.
  *
  * @author Kamil Kokot <kamil.kokot@lakion.com>
  * @author Marcos Bezerra de Menezes <marcos.bezerra@libre-informatique.fr>
@@ -49,7 +50,7 @@ abstract class AbstractResourceFixture implements FixtureInterface
     protected $batchSize = 10;
 
     /**
-     * @param ObjectManager $objectManager
+     * @param ObjectManager           $objectManager
      * @param ExampleFactoryInterface $exampleFactory
      */
     public function __construct(ObjectManager $objectManager, ExampleFactoryInterface $exampleFactory)
