@@ -567,8 +567,16 @@ parameters:
                 remove:
                     addresses: ~
                     phones: ~
+                    description: ~
+                    alert: ~
+                    category: ~
+                    url: ~
+                    active: ~
                 add:
                     form_tab_general:
+                        form_group_administrative:
+                            siret:
+                                type: text
                         form_group_organism:
                             seedProducer:
                                 type: checkbox
@@ -577,27 +585,32 @@ parameters:
                                 type: Blast\CoreBundle\Form\Type\EntityCodeType
                                 attr:
                                     placeholder: librinfo.placeholder.seed_producer_code
+                            active: ~
                             _options:
                                 fieldsOrder:
-                                    - active
+                                    - isIndividual
                                     - title
                                     - firstname
                                     - lastname
                                     - name
+                                    - circles
                                     - email
                                     - emailNpai
                                     - emailNoNewsletter
-                                    - alert
-                                    - customer
+                                    - isCustomer
                                     - customerCode
-                                    - supplier
+                                    - isSupplier
                                     - supplierCode
                                     - seedProducer
                                     - seedProducerCode
-#                                    - circles
-#                                    - category
-#                                    - description
-#                                    - url
+                                    - active
+                        form_group_notes:
+                            alert:
+                                type: textarea
+                            description:
+                                type: textarea
+                            url:
+                                type: text
                     form_tab_plots:
                         '':
                             plots:

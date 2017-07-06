@@ -18,4 +18,29 @@ trait OrganismExtension
     use \Librinfo\SeedBatchBundle\Entity\OuterExtension\OrganismExtension;
     use \Librinfo\SonataSyliusUserBundle\Entity\Traits\Traceable;
     use \Librinfo\EcommerceBundle\Entity\OuterExtension\LibrinfoCRMBundle\OrganismExtension;
+
+    /**
+     * @var string
+     */
+    protected $siret;
+
+    /**
+     * @return string
+     */
+    public function getSiret()
+    {
+        return $this->siret;
+    }
+
+    /**
+     * @param string siret
+     *
+     * @return self
+     */
+    public function setSiret($siret)
+    {
+        $this->siret = $siret;
+
+        return $this;
+    }
 }
