@@ -33,7 +33,7 @@ class PackagingAdmin extends ProductOptionValueAdmin
     public function createQuery($context = 'list')
     {
         $query = parent::createQuery($context);
-        $query->leftJoin($query->getRootAlias().'.option', 'option')
+        $query->leftJoin($query->getRootAlias() . '.option', 'option')
             ->andWhere('option.code = :code')
             ->setParameter('code', Product::$PACKAGING_OPTION_CODE)
         ;
@@ -79,7 +79,7 @@ class PackagingAdmin extends ProductOptionValueAdmin
         $repository = $this->getConfigurationPool()->getContainer()->get('sylius.repository.product_option');
         $packagingOption = $repository->findOneByCode(Product::$PACKAGING_OPTION_CODE);
         if (!$packagingOption) {
-            throw new \Exception('Could not find ProductOption with code '.Product::$PACKAGING_OPTION_CODE);
+            throw new \Exception('Could not find ProductOption with code ' . Product::$PACKAGING_OPTION_CODE);
         }
         $entity->setOption($packagingOption);
 

@@ -55,8 +55,8 @@ class CsvObjectNormalizer extends ObjectNormalizer
         $object = parent::denormalize($data, $class, $format, $context);
 
         $rc = new \ReflectionClass($class);
-        if (method_exists($this, 'postDenormalize'.$rc->getShortName())) {
-            $this->{'postDenormalize'.$rc->getShortName()}($object);
+        if (method_exists($this, 'postDenormalize' . $rc->getShortName())) {
+            $this->{'postDenormalize' . $rc->getShortName()}($object);
         }
 
         return $object;
@@ -67,7 +67,7 @@ class CsvObjectNormalizer extends ObjectNormalizer
      */
     protected function setAttributeValue($object, $attribute, $value, $format = null, array $context = array())
     {
-        $key = get_class($object).'.'.$attribute;
+        $key = get_class($object) . '.' . $attribute;
         if (isset($this->mappings[$key])) {
             list($associationClass, $field) = $this->mappings[$key];
             $value = $this->fetchAssociation($associationClass, $field, $value);
@@ -110,10 +110,10 @@ class CsvObjectNormalizer extends ObjectNormalizer
     protected function getMappings()
     {
         return [
-            Genus::class.'.family' => [Family::class, 'name'],
-            Species::class.'.genus' => [Genus::class, 'name'],
-            Species::class.'.parent_species' => [Species::class, 'name'],
-            Variety::class.'.species' => [Species::class, 'name'],
+            Genus::class . '.family' => [Family::class, 'name'],
+            Species::class . '.genus' => [Genus::class, 'name'],
+            Species::class . '.parent_species' => [Species::class, 'name'],
+            Variety::class . '.species' => [Species::class, 'name'],
         ];
     }
 }

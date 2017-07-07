@@ -102,7 +102,7 @@ class CsvNameConverter implements NameConverterInterface
             ],
         ];
         if (!key_exists($entityClass, $names)) {
-            throw new \Exception('CsvNameConverter cannot handle this entity class: '.$entityClass);
+            throw new \Exception('CsvNameConverter cannot handle this entity class: ' . $entityClass);
         }
         $this->names = $names[$entityClass];
     }

@@ -84,16 +84,16 @@ EOT
     {
         $output->write("Importing <info>$entityClass</info>");
         $csv = $this->getCsvFilePath($entityClass);
-        $output->write(' ('.basename($csv).')...');
+        $output->write(' (' . basename($csv) . ')...');
         $data = file_get_contents($csv);
 
         $normalizer = new Normalizer\CsvObjectNormalizer($entityClass, $this->em);
         $serializer = new Serializer([$normalizer, new ArrayDenormalizer()], [new CsvEncoder()]);
-        $objects = $serializer->deserialize($data, $entityClass.'[]', 'csv');
+        $objects = $serializer->deserialize($data, $entityClass . '[]', 'csv');
         $output->writeln(sprintf(' <info>%d objects</info>', count($objects)));
 
         $rc = new \ReflectionClass($entityClass);
-        $method = 'postDeserialize'.$rc->getShortName();
+        $method = 'postDeserialize' . $rc->getShortName();
 
         foreach ($objects as $k => $object) {
             if (method_exists($this, $method)) {
@@ -127,15 +127,16 @@ EOT
         ];
 
         if (!key_exists($entityClass, $files)) {
-            throw new \Exception('Entity class not supported: '.$entityClass);
+            throw new \Exception('Entity class not supported: ' . $entityClass);
         }
-        $csv = $this->dir.'/'.$files[$entityClass];
+        $csv = $this->dir . '/' . $files[$entityClass];
         if (!file_exists($csv)) {
-            throw new \Exception('File not found: '.$csv);
+            throw new \Exception('File not found: ' . $csv);
         }
         if (!is_readable($csv)) {
-            throw new \Exception('File not readable: '.$csv);
+            throw new \Exception('File not readable: ' . $csv);
         }
+
         return $csv;
     }
 

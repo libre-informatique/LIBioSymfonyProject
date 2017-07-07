@@ -17,8 +17,8 @@ umask(0000); // Remove this on systems that support ACL
 /**
  * @var Composer\Autoload\ClassLoader
  */
-$loader = require __DIR__.'/../app/autoload.php';
-include_once __DIR__.'/../app/bootstrap.php.cache';
+$loader = require __DIR__ . '/../app/autoload.php';
+include_once __DIR__ . '/../app/bootstrap.php.cache';
 
 $kernel = new AppKernel('prod', false);
 $kernel->loadClassCache();

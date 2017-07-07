@@ -70,9 +70,9 @@ final class ProductVariantGenerator implements ProductVariantGeneratorInterface
             if ($seedBatches === null) {
                 $seedBatches = $varietySeedBatches;
             } else {
-                $seedBatches = $seedBatches.filter(
+                $seedBatches = $seedBatches . filter(
                     function ($sb) use ($varietySeedBatches) {
-                        return $varietySeedBatches.contains($sb);
+                        return $varietySeedBatches . contains($sb);
                     }
                 );
             }

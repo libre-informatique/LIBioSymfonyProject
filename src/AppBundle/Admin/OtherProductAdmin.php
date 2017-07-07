@@ -61,7 +61,7 @@ class OtherProductAdmin extends ProductAdmin
             ->leftJoin("$alias.translations", 'translations')
             ->andWhere($qb->expr()->orX(
                 'translations.name LIKE :value',
-                $alias.'.code LIKE :value'
+                $alias . '.code LIKE :value'
             ))
             ->setParameter('value', "%$value%")
         ;

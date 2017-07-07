@@ -172,7 +172,7 @@ final class SeedBatchExampleFactory extends ExampleFactory implements ExampleFac
     protected function createPlot(Organism $producer)
     {
         $plot = new Plot();
-        $plot->setName('Parcelle '.$this->faker->city)
+        $plot->setName('Parcelle ' . $this->faker->city)
             ->setProducer($producer);
         $this->entityManager->persist($plot);
 

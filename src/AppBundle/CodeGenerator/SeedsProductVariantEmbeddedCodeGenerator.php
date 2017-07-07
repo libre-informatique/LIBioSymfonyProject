@@ -33,7 +33,7 @@ class SeedsProductVariantEmbeddedCodeGenerator extends ProductVariantCodeGenerat
             $formData = $request->getCurrentRequest()->request->get($formName, null);
 
             $caller = $request->getCurrentRequest()->request->get('caller', null);
-            $re = '/^'.$formName.'\[variants\]\[([0-9]*)\]\[code\]/';
+            $re = '/^' . $formName . '\[variants\]\[([0-9]*)\]\[code\]/';
 
             preg_match($re, $caller, $callerIndex);
 
@@ -64,6 +64,7 @@ class SeedsProductVariantEmbeddedCodeGenerator extends ProductVariantCodeGenerat
         if (!$packagingCode = $packaging->getCode()) {
             throw new InvalidEntityCodeException('librinfo.error.missing_packaging_code');
         }
+
         return sprintf('%s-%s', $seedBatchCode, $packagingCode);
     }
 }

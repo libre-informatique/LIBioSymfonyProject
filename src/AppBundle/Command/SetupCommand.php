@@ -76,7 +76,7 @@ EOT
                 throw new \Exception('The "csv-dir" option requires the "sample-data" option');
             }
             if (!is_dir($this->csvDir)) {
-                throw new \Exception('Could not find directory: '.$this->csvDir);
+                throw new \Exception('Could not find directory: ' . $this->csvDir);
             }
         }
         if ($input->getOption('with-samples')) {
@@ -320,7 +320,7 @@ EOT
     {
         $em = $this->getContainer()->get('doctrine')->getEntityManager();
         $conn = $em->getConnection();
-        $file = __DIR__.'/../DataFixtures/ORM/Cities/france.csv';
+        $file = __DIR__ . '/../DataFixtures/ORM/Cities/france.csv';
         $output->writeln(['', sprintf('Importing <info>cities</info> from %s...', realpath($file))]);
 
         try {
@@ -386,7 +386,7 @@ EOT
         foreach (['lisem_default', 'lisem_varieties', 'lisem_products'] as $suite) {
             if ($suite == 'lisem_varieties' && $this->csvDir) {
                 $fixturesCommand = $this->getApplication()->find('lisem:import:csv');
-                $output->writeln(['', 'Running <info>lisem:import:csv '.$this->csvDir.'</info> command...']);
+                $output->writeln(['', 'Running <info>lisem:import:csv ' . $this->csvDir . '</info> command...']);
                 $fixturesInput = new ArrayInput([
                     'dir' => $this->csvDir,
                 ]);

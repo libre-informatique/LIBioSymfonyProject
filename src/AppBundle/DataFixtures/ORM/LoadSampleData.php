@@ -111,7 +111,7 @@ class LoadSampleData extends AbstractFixture implements OrderedFixtureInterface,
             if (strpos($name, 'pos_ind_') === 0) {
                 $contact = $object->getContact();
                 $organism = $object->getOrganism();
-                $organism->setName($contact->getFirstname().' '.strtoupper($contact->getName()));
+                $organism->setName($contact->getFirstname() . ' ' . strtoupper($contact->getName()));
                 $organism->setAddress($contact->getAddress());
                 $organism->setZip($contact->getZip());
                 $organism->setCity($contact->getCity());
@@ -165,7 +165,7 @@ class LoadSampleData extends AbstractFixture implements OrderedFixtureInterface,
 
     protected function loadYml($filename)
     {
-        $objects = $this->aliceLoader->load(__DIR__.'/'.$filename);
+        $objects = $this->aliceLoader->load(__DIR__ . '/' . $filename);
 
         return $objects;
     }
