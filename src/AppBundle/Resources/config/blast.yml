@@ -686,3 +686,47 @@ parameters:
                             - form_tab_seedbatches
                             - form_tab_info
                             - form_group_specifics
+
+        Librinfo\CRMBundle\Entity\Address:
+            Sonata\AdminBundle\Form\FormMapper:
+                remove:
+                    firstName: ~
+                    lastName: ~
+                    street: ~
+                    postCode: ~
+                    city: ~
+                    countryCode: ~
+                    npai: ~
+                    createdAt: ~
+                    updatedAt: ~
+                    createdBy: ~
+                    updatedBy: ~
+                add:
+                    main_tab:
+                        main_group:
+                            firstName: ~
+                            lastName:
+                                type: text
+                                required: true
+                            street: ~
+                            postCode:
+                                type: Librinfo\CRMBundle\Form\Type\ZipCityType
+                                zip_field: postCode
+                                required: true
+                            city:
+                                type: Librinfo\CRMBundle\Form\Type\ZipCityType
+                                zip_field: postCode
+                                required: true
+                            countryCode:
+                                type: country
+                                required: true
+                            npai: ~
+                            _options:
+                                fieldsOrder:
+                                    - firstName
+                                    - lastName
+                                    - street
+                                    - postCode
+                                    - city
+                                    - countryCode
+                                    - npai
