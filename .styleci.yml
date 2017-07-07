@@ -4,4 +4,4 @@ preset: psr2
 
 enabled:
   - no_php4_constructor
-
+  - concat_with_spaces
