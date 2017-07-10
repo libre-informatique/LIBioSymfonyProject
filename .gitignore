@@ -51,3 +51,5 @@
 
 # Data (CSV files from seed farms)
 /data/
+
+/tests/acceptance.suite.yml
