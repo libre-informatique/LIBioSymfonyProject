@@ -112,3 +112,14 @@ services:
               label_translator_strategy: blast_core.label.strategy.librinfo
         calls:
             - [ setTemplate, [ edit, AppBundle:PackagingAdmin:edit.html.twig ] ]
+
+    # # UNCOMMENT IF NEEDED AND UPDATE ALL blast.yml when circles property is used
+    # lisem.admin.circle:
+    #     class: AppBundle\Admin\CircleAdmin
+    #     arguments: [~, Librinfo\CRMBundle\Entity\Circle, LibrinfoCRMBundle:CircleAdmin ]
+    #     tags:
+    #         - name: sonata.admin
+    #           manager_type: orm
+    #           group: Customers Relationship Management
+    #           label: librinfo_crm.label.admin.circle
+    #           label_translator_strategy: blast_core.label.strategy.librinfo
