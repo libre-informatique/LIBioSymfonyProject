@@ -233,11 +233,14 @@ librinfo_crm:
                 code: COL
                 name: Collectivités territoriales
                 createdAt: 2017-06-16 18:00:00
-            -
-                id: a30b75b9-7e29-4184-b152-161258ba7458
-                code: PRO
-                name: Producteur de semences
-                createdAt: 2017-06-16 18:00:00
+
+            # # SET IN vendor/libre-informatique/seed-batch-bundle/src/Resources/config/circles.yml
+            # -
+            #     id: a30b75b9-7e29-4184-b152-161258ba7458
+            #     code: PRO
+            #     name: Producteur de semences
+            #     createdAt: 2017-06-16 18:00:00
+
             -
                 id: d7418a43-0ec2-4a5f-a007-ca609266e3ca
                 code: SEF
