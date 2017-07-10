@@ -45,6 +45,7 @@ class Version20170710085038 extends AbstractMigration implements ContainerAwareI
                 'librinfo_crm_position__circle' => 'circle_id',
             ];
 
+            // Move Items to new PRO circle
             foreach ($tables as $tableName => $fieldName) {
                 $this->addSql(
                     sprintf('
@@ -61,8 +62,20 @@ class Version20170710085038 extends AbstractMigration implements ContainerAwareI
                     )
                 );
             }
+
+            // Remove old circle PRO
+            $this->addSql(
+                sprintf('
+                    DELETE FROM
+                        librinfo_crm_circle
+                    WHERE
+                        id = \'%s\'',
+                    $existingCirclePRO->getId()
+                )
+            );
         }
 
+        // change PROD to PRO circle
         $this->addSql(
             sprintf('
                 UPDATE
