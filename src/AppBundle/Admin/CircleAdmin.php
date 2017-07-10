@@ -20,19 +20,20 @@ class CircleAdmin extends BaseCircleAdmin
     {
         $q = parent::orderedCirclesQuery($em, $entityClass);
 
-        $q->orderBy('c.type, c.code','ASC');
+        $q->orderBy('c.type, c.code', 'ASC');
 
         $circles = $q->getQuery()->execute();
         $groupedCircles = [];
 
         foreach ($circles as $circle) {
-            $groupName= $circle->getType();
-            if($groupName === null)
+            $groupName = $circle->getType();
+            if ($groupName === null) {
                 $groupName = '';
+            }
             $groupedCircles[$groupName][$circle->__toString()] = $circle->getId();
         }
 
-        $groupedCircles = array_merge(array_flip(['Producteur','Fournisseur','Client','Autres']),$groupedCircles);
+        $groupedCircles = array_merge(array_flip(['Producteur', 'Fournisseur', 'Client', 'Autres']), $groupedCircles);
 
         return $groupedCircles;
     }
