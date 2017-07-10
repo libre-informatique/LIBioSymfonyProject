@@ -92,7 +92,7 @@ class Version20170710085038 extends AbstractMigration implements ContainerAwareI
                     description = 'Seed Producer',
                     code = 'PROD'
                 WHERE
-                    id = '%s'",$this->seedProducerID
+                    id = '%s'", $this->seedProducerID
             )
         );
     }
