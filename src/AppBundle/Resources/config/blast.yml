@@ -577,6 +577,7 @@ parameters:
                         form_group_administrative:
                             siret:
                                 type: text
+                                required: false
                         form_group_organism:
                             seedProducer:
                                 type: checkbox
@@ -607,10 +608,13 @@ parameters:
                         form_group_notes:
                             alert:
                                 type: textarea
+                                required: false
                             description:
                                 type: textarea
+                                required: false
                             url:
                                 type: text
+                                required: false
                     form_tab_plots:
                         '':
                             plots:
