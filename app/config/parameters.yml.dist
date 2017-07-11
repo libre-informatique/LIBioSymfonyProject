@@ -34,6 +34,12 @@ parameters:
             email: lisem@lisem.eu
             super: true
 
+    # CRM Fake email feature
+    lisem.fakeEmail:
+        domain: lisem.eu
+        prefix: 'FAKE'
+        suffix: ''
+
     # Hostnames for Sylius channels
     sylius_default_channel_hostname: localhost
     sylius_fr_web_channel_hostname: 127.0.0.1

@@ -573,6 +573,7 @@ parameters:
                     url: ~
                     active: ~
                     circles: ~
+                    email: ~
                 add:
                     form_tab_general:
                         form_group_organism:
@@ -584,6 +585,8 @@ parameters:
                                 required: false
                                 class: Librinfo\CRMBundle\Entity\Circle
                                 choicesCallback: [AppBundle\Admin\CircleAdmin, groupedCirclesChoices]
+                            email:
+                                type: Librinfo\CRMBundle\Form\Type\FakeEmailType
                             seedProducer:
                                 type: checkbox
                                 required: false
