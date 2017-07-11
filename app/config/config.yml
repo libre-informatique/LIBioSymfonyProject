@@ -346,3 +346,6 @@ bazinga_js_translation:
         - fr
         - en
     default_domain:       messages
+
+fos_js_routing:
+    routes_to_expose: [ admin_librinfo_.* ]

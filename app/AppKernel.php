@@ -22,6 +22,7 @@ class AppKernel extends Kernel
             new Sylius\Bundle\AdminBundle\SyliusAdminBundle(),
             new Sylius\Bundle\ShopBundle\SyliusShopBundle(),
             new FOS\OAuthServerBundle\FOSOAuthServerBundle(), // Required by SyliusApiBundle
+            new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
 //            new Sylius\Bundle\ApiBundle\SyliusApiBundle(),
 
 //            new Symfony\Bundle\FrameworkBundle\FrameworkBundle(), provided by Sylius
