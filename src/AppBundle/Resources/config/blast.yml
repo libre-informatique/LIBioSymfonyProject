@@ -513,7 +513,7 @@ parameters:
                             vat:
                                 template: 'LibrinfoCRMBundle:CRUD:show_field_vat.html.twig'
                             iban: ~
-
+                            siret: ~
                         show_group_info:
                             source: ~
                             catalogue_sent: ~
@@ -594,6 +594,7 @@ parameters:
                                 type: Blast\CoreBundle\Form\Type\EntityCodeType
                                 attr:
                                     placeholder: librinfo.placeholder.seed_producer_code
+                                only_not_new: true
                             active: ~
                             _options:
                                 fieldsOrder:
