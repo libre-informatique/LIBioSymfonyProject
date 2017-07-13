@@ -9,87 +9,140 @@ sonata_admin:
     show_mosaic_button: false
     dashboard:
         groups:
-            Customers Relationship Management:
-                label: libio.menu_label.crm
+
+            # ##################################################################
+            # CRM
+            # ##################################################################
+
+            lisem.menu.crm_contacts:
+                label: libio.menu_label.crm_contacts
                 icon:  '<i class="fa fa-address-card"></i>'
+                on_top: true
                 items:
                     - route: admin_librinfo_seedbatch_organism_list
                       label: libio.menu_label.organisms_list
-                    - route: admin_librinfo_seedbatch_organism_create
-                      label: libio.menu_label.create_organism
-#                    - route: admin_librinfo_emailcrm_contact_list
-#                      label: libio.menu_label.contacts_list
-#                    - route: admin_librinfo_emailcrm_contact_create
-#                      label: libio.menu_label.create_contact
+
+            lisem.menu.crm_emailing:
+                label: libio.menu_label.crm_emailing
+                icon:  '<i class="fa fa-envelope-o"></i>'
+                on_top: true
+                items:
                     - route: admin_librinfo_email_email_list
-                      label: libio.menu_label.emails_list
-                    - route: admin_librinfo_email_email_create
-                      label: libio.menu_label.create_email
-            Varieties:
-                label: libio.menu_label.varieties
+                      label: libio.menu_label.emailing_list
+
+            # ##################################################################
+            # VARIETIES
+            # ##################################################################
+
+            lisem.menu.species:
+                label: libio.menu_label.species
                 icon:  '<i class="fa fa-pagelines"></i>'
+                on_top: true
+                items:
+                    - route: admin_librinfo_varieties_species_list
+                      label: libio.menu_label.species_list
+
+            lisem.menu.varieties:
+                label: libio.menu_label.varieties
+                icon:  '<i class="fa fa-tree"></i>'
+                on_top: true
                 items:
                     - route: admin_libio_variety_list
                       label: libio.menu_label.varieties_list
-                    - route: admin_libio_variety_create
-                      label: libio.menu_label.create_variety
-                    - route: admin_librinfo_varieties_species_list
-                      label: libio.menu_label.species_list
-                    - route: admin_librinfo_varieties_species_create
-                      label: libio.menu_label.create_species
-            Seed Batches:
+
+            # ##################################################################
+            # SEED BATCHES
+            # ##################################################################
+
+            lisem.menu.seedbatch:
                 label: libio.menu_label.seed_batches
                 icon:  '<i class="fa fa-shopping-bag"></i>'
+                on_top: true
                 items:
                     - route: admin_librinfo_seedbatch_seedbatch_list
                       label: libio.menu_label.seed_batches_list
-                    - route: admin_librinfo_seedbatch_seedbatch_create
-                      label: libio.menu_label.create_seed_batch
-                    - label: libio.menu_label.producers_list
-                      route: admin_librinfo_seedbatch_seedProducer_list
-                    - label: libio.menu_label.create_producer
-                      route: admin_librinfo_seedbatch_seedProducer_create
+
+            lisem.menu.plot:
+                label: libio.menu_label.plot
+                icon:  '<i class="fa fa-th"></i>'
+                on_top: true
+                items:
                     - route: admin_librinfo_seedbatch_plot_list
                       label: libio.menu_label.plots_list
-                    - route: admin_librinfo_seedbatch_plot_create
-                      label: libio.menu_label.create_plot
-                    # - route: admin_librinfo_seedbatch_certification_list
-                    #   label: libio.menu_label.certifications_list
-                    # - route: admin_librinfo_seedbatch_certification_create
-                    #   label: libio.menu_label.create_certification
+
+            lisem.menu.germination_tests:
+                label: libio.menu_label.germination_tests
+                icon:  '<i class="fa fa-eyedropper"></i>'
+                on_top: true
+                items:
                     - label: libio.menu_label.germination_tests
                       route: libio_not_implemented
-            Products:
+
+            lisem.menu.producers:
+                label: libio.menu_label.producers
+                icon:  '<i class="fa fa-user-circle"></i>'
+                on_top: true
+                items:
+                    - label: libio.menu_label.producers_list
+                      route: admin_librinfo_seedbatch_seedProducer_list
+
+            # ##################################################################
+            # PRODUCTS
+            # ##################################################################
+
+            lisem.menu.products:
                 label: libio.menu_label.products
-                icon:  '<i class="fa fa-cube"></i>'
+                icon:  '<i class="fa fa-shopping-cart"></i>'
                 items:
                     - route: admin_libio_seeds_product_list
                       label: libio.menu_label.seed_products_list
-                    - route: admin_libio_seeds_product_create
-                      label: libio.menu_label.create_seed_product
                     - label: libio.menu_label.other_products_list
                       route: admin_libio_other_product_list
-                    - label: libio.menu_label.create_other_product
-                      route: admin_libio_other_product_create
+
+            lisem.menu.packagings:
+                label: libio.menu_label.packagings
+                icon:  '<i class="fa fa-archive"></i>'
+                on_top: true
+                items:
                     - label: libio.menu_label.packagings
                       route: libio_not_implemented
+
+            # ##################################################################
+            # PRODUCTS
+            # ##################################################################
+
+            lisem.menu.inventory:
+                label: libio.menu_label.inventory
+                icon:  '<i class="fa fa-list"></i>'
+                on_top: true
+                items:
                     - label: libio.menu_label.inventory
                       route: libio_not_implemented
+
+            lisem.menu.catalogs:
+                label: libio.menu_label.catalogs
+                icon:  '<i class="fa fa-book"></i>'
+                on_top: true
+                items:
                     - label: libio.menu_label.catalogs
                       route: libio_not_implemented
-            Orders:
+
+            # ##################################################################
+            # ORDERS
+            # ##################################################################
+
+            lisem.menu.orders:
                 label: libio.menu_label.orders
-                icon:  '<i class="fa fa-shopping-cart"></i>'
+                icon:  '<i class="fa fa-money"></i>'
+                on_top: true
                 items:
                     - label: libio.menu_label.orders_list
                       route: admin_librinfo_ecommerce_order_list
-                    #- label: libio.menu_label.create_order
-                    #  route: libio_not_implemented
-                    - label: libio.menu_label.customers_list
-                      route: admin_librinfo_crm_customer_list
-                    - label: libio.menu_label.create_customer
-                      route: admin_librinfo_crm_customer_create
-            Accounting:
+                    # - label: libio.menu_label.customers_list
+                    #   route: admin_librinfo_crm_customer_list
+
+
+            lisem.menu.accounting:
                 label: libio.menu_label.accounting
                 icon:  '<i class="fa fa-balance-scale"></i>'
                 items:
@@ -100,20 +153,6 @@ sonata_admin:
             App settings:
                 provider: parameters_sidebar_menu
                 icon:     '<i class="fa fa-sliders"></i>'
-#            Development tools:
-#                label: DEV
-#                roles: [ROLE_SUPER_ADMIN]
-#                items:
-#                    - crm.position
-#                    - crm.contactphone
-#                    - crm.organismphone
-#                    - crm.role
-#                    - crm.contactgroup
-#                    - librinfo_varieties.admin.variety_description
-
-    # Not used any more
-#    security:
-#        handler: librinfo.security_bundle.sonata.voter
 
     options:
         use_icheck: true
