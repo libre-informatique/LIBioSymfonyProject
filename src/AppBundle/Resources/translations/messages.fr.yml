@@ -132,6 +132,10 @@ librinfo:
         seeds_product_variant_list: Liste des déclinaisons d'article (semences)
         seedsproduct_list: Liste des articles (semences)
         seedsproductvariant_list: Liste des déclinaisons d'article (semences)
+        organism_list: Liste des contacts
+        email_list: Liste des courriels groupés
+        sales_journal: Journal des ventes
+        payment_list: Livre de caisse
     crm:
         organism_admin:
             # Translation to be confirmed
