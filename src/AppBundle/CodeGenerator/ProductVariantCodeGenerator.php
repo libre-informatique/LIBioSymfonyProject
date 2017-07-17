@@ -87,6 +87,7 @@ class ProductVariantCodeGenerator extends BaseCodeGenerator
         if (!$packagingCode = $packaging->getCode()) {
             throw new InvalidEntityCodeException('librinfo.error.missing_packaging_code');
         }
+
         return sprintf('%s-%s', $seedBatchCode, $packagingCode);
     }
 

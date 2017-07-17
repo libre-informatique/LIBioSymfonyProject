@@ -4,7 +4,9 @@ preset: symfony
 
 disabled:
   - concat_without_spaces
-
+  - single_quote
+  - short_array_syntax
+  
 enabled:
   - no_php4_constructor
   - concat_with_spaces
