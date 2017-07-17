@@ -12,7 +12,8 @@ form_tab_contactInformations: Coordonnées
 show_group_defaultPhone: Téléphone principal
 show_group_defaultAddress: Adresse principale
 show_group_info: Informations supplémentaires
-
+form_group_expeditors: Éxpédition
+form_group_grouped_expeditors: Envoi par groupes
 
 libio:
     help:
@@ -113,6 +114,7 @@ librinfo:
         created_by: Créé par
         updated_by: Màj par
         enabled: Activé
+        field_to_additionnals: Destinataires additonnels
     link:
         dashboard: Tableau de Bord
         other_product_create: Ajouter un article (autres)
