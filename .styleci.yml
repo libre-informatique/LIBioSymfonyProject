@@ -2,6 +2,9 @@
 
 preset: symfony
 
+disabled:
+  - concat_without_spaces
+
 enabled:
   - no_php4_constructor
   - concat_with_spaces
