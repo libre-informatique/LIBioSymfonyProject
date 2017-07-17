@@ -3,7 +3,7 @@
 preset: psr2
 
 disabled:
-  - concat_without_spaces
+#  - concat_without_spaces
   - single_quote
   
 enabled:
