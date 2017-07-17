@@ -2,9 +2,9 @@
 
 preset: psr2
 
-disabled:
+#disabled:
 #  - concat_without_spaces
-  - single_quote
+#  - single_quote
   
 enabled:
   - no_php4_constructor
