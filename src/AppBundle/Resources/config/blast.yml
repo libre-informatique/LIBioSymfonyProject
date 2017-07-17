@@ -914,3 +914,24 @@ parameters:
                           class: framacalc
             Sonata\AdminBundle\Datagrid\DatagridMapper:
                 add: ~
+            Sonata\AdminBundle\Datagrid\ListMapper:
+                remove:
+                    field_to: ~
+                add:
+                    circles:
+                        type: null
+                        label: librinfo.label.circles
+                    field_to:
+                        type: null
+                        label: librinfo.label.field_to_additionnals
+                    _options:
+                        fieldsOrder:
+                            - circles
+                            - field_to
+                            - field_subject
+                            - sent
+                    _export_formats:
+                        csv: [ field_from, field_to, circles.name, field_subject, field_cc, field_bcc, textContent, createdAt, updatedAt]
+                        xls: csv
+                        json: csv
+                        xml: csv
