@@ -8,6 +8,9 @@ echo "memory_limit=-1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/t
 
 composer install --no-interaction --prefer-dist
 composer require --no-interaction --dev phpunit/phpunit
+composer update "blast-project/*"
+composer update "libre-informatique/*"
+
 #composer require --no-interaction --dev codeception/codeception
 
 
