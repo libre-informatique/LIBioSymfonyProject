@@ -12,9 +12,9 @@
 
 namespace AppBundle\Admin;
 
-use Librinfo\EmailBundle\Admin\EmailAdmin as BaseEmailAdmin
+use Librinfo\EmailBundle\Admin\EmailAdmin as BaseEmailAdmin;
 
 class EmaiAdmin extends BaseEmailAdmin
 {
-    
+
 }
