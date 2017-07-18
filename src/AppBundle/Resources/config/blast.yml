@@ -176,9 +176,9 @@ parameters:
                         admin_code: librinfo_varieties.admin.variety
                     _options:
                         fieldsOrder: [code, variety, enabled]
-                    _actions:
-                        variants:
-                            template: 'AppBundle:SeedsProductAdmin:list__action_variants.html.twig'
+                    # _actions:
+                    #     variants:
+                    #         template: 'AppBundle:SeedsProductAdmin:list__action_variants.html.twig'
 
             Sonata\AdminBundle\Datagrid\DatagridMapper:
                 add: ~
@@ -224,10 +224,10 @@ parameters:
 
             # LIST
             Sonata\AdminBundle\Datagrid\ListMapper:
-                add:
-                    _actions:
-                        variants:
-                            template: 'AppBundle:OtherProductAdmin:list__action_variants.html.twig'
+                add: ~
+                    # _actions:
+                    #     variants:
+                    #         template: 'AppBundle:OtherProductAdmin:list__action_variants.html.twig'
 
             # FILTER
             Sonata\AdminBundle\Datagrid\DatagridMapper:
@@ -242,6 +242,7 @@ parameters:
             Sonata\AdminBundle\Show\ShowMapper:
                 remove:
                     optionValues: ~
+                    available: ~
                 add:
                     form_tab_general:
                         form_group_general:
@@ -302,23 +303,42 @@ parameters:
             Sonata\AdminBundle\Datagrid\ListMapper:
                 remove:
                     optionValues: ~
+                    code: ~
+                    name: ~
+                    translations.name: ~
+                    product: ~
+                    packaging: ~
+                    seedBatch: ~
+                    price: ~
+                    onHand: ~
+                    onHold: ~
+                    tracked: ~
+                    available: ~
                 add:
+                    code: ~
+                    name: ~
                     product:
                         admin_code: libio.admin.seeds_product
                     packaging: ~
                     seedBatch:
                         admin_code: librinfo_seedbatch.admin.seedbatch
+                    onHand:
+                        type: boolean
+                    onHold:
+                        type: boolean
+                    tracked:
+                        type: boolean
+                        label: librinfo.label.tracked_stock
                     _options:
                         fieldsOrder:
-                            - code
                             - name
+                            - code
                             - product
                             - packaging
                             - seedBatch
-                            - price
+                            - tracked
                             - onHand
                             - onHold
-                            - tracked
             # FILTER
             Sonata\AdminBundle\Datagrid\DatagridMapper:
                 add: ~
@@ -330,6 +350,8 @@ parameters:
         AppBundle\Admin\OtherProductVariantAdmin:
             # SHOW
             Sonata\AdminBundle\Show\ShowMapper:
+                remove:
+                    available: ~
                 add:
                     form_group_general:
                         '':
@@ -914,3 +936,24 @@ parameters:
                           class: framacalc
             Sonata\AdminBundle\Datagrid\DatagridMapper:
                 add: ~
+            Sonata\AdminBundle\Datagrid\ListMapper:
+                remove:
+                    field_to: ~
+                add:
+                    circles:
+                        type: null
+                        label: librinfo.label.circles
+                    field_to:
+                        type: null
+                        label: librinfo.label.field_to_additionnals
+                    _options:
+                        fieldsOrder:
+                            - circles
+                            - field_to
+                            - field_subject
+                            - sent
+                    _export_formats:
+                        csv: [ field_from, field_to, circles.name, field_subject, field_cc, field_bcc, textContent, createdAt, updatedAt]
+                        xls: csv
+                        json: csv
+                        xml: csv
