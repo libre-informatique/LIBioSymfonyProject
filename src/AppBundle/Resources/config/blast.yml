@@ -131,6 +131,7 @@ parameters:
                         '':
                             variants:
                                 admin_code: libio.admin.seeds_product_variant
+
                     _options:
                         tabsOrder: [form_group_general, show_tab_variants, form_group_specifics]
             # FORM
@@ -151,6 +152,9 @@ parameters:
                             _options:
                                 fieldsOrder: [variety, name, code]
                     form_tab_variants:
+                        _options:
+                            countChildItems:
+                                - variants
                         form_group_variants:
                             variants:
                                 type: sonata_type_collection
@@ -204,6 +208,9 @@ parameters:
                     variants: ~
                 add:
                     form_tab_variants:
+                        _options:
+                            countChildItems:
+                                - variants
                         form_group_variants:
                             variants:
                                 type: sonata_type_collection
@@ -221,7 +228,6 @@ parameters:
                                     edit: inline
                                     inline: table
                                     admin_code: libio.admin.other_product_variant
-
             # LIST
             Sonata\AdminBundle\Datagrid\ListMapper:
                 add: ~
