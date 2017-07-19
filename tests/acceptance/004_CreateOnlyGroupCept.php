@@ -28,5 +28,7 @@ $I->fillField("//textarea[contains(@id, '_description')]", 'Sel desc');
 $I->clickWithLeftButton('div[id^="s2id_"][id$="_type"] a');
 $I->clickWithLeftButton('//div[@id="select2-drop"]/ul/li/div[text()="Autres"]');
 
-$I->click('Historique');
+// $I->click('Historique');
+
+$I->scrollTo("//button[@name='btn_create_and_list']", 100, 100);
 $I->click("//button[@name='btn_create_and_list']");

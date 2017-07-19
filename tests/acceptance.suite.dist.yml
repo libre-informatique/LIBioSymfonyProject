@@ -8,5 +8,5 @@ class_name: WebGuy
 modules:
     enabled:
       - WebDriver:
-            url: 'http://127.0.0.1:8000/app_dev.php'
+            url: 'http://127.0.0.1:8000/app.php'
             browser: chrome

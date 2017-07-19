@@ -8,6 +8,9 @@ echo "memory_limit=-1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/t
 
 composer install --no-interaction --prefer-dist
 composer require --no-interaction --dev phpunit/phpunit
+composer update "blast-project/*"
+composer update "libre-informatique/*"
+
 #composer require --no-interaction --dev codeception/codeception
 
 
@@ -15,9 +18,10 @@ php_ver=$(php -v |cut -f 2 -d ' ' |cut -f1-2 -d '.' | head -n 1)
 
 if [ ${php_ver} = "5.6" ]
 then
-    wget http://codeception.com/php5/codecept.phar  --output-document="${HOME}/bin/codecept"
+    #http://codeception.com/php5/codecept.phar
+    wget "http://codeception.com/releases/2.3.1/php54/codecept.phar"  --output-document="${HOME}/bin/codecept"
 else
-    wget http://codeception.com/codecept.phar  --output-document="${HOME}/bin/codecept"
+    wget "http://codeception.com/codecept.phar"  --output-document="${HOME}/bin/codecept"
 fi
 
 chmod u+x "${HOME}/bin/codecept"
