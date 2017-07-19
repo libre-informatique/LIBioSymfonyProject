@@ -21,7 +21,10 @@ $I->amOnPage('/admin/librinfo/crm/category/list');
 $I->waitForText('Ajouter', 30); // secs
 $I->click('Ajouter');
 $I->fillField("//input[contains(@id,'name')]", 'SelCat');
+
+$I->scrollTo("//button[@name='btn_create_and_list']", 100, 100);
 $I->click("//button[@name='btn_create_and_list']");
+
 $I->click('//label/div/ins');
 $I->click("//input[@value='OK']");
 $I->click("//button[@type='submit']");

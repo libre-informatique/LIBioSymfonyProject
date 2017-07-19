@@ -25,7 +25,10 @@ $I->fillField("//input[contains(@id, 'code')]", 'SELGRP');
 $I->fillField("//textarea[contains(@id, 'description')]", 'Sel desc');
 $I->click('Historique');
 $I->waitForText('Historique', 10);
+
+$I->scrollTo("//button[@name='btn_create_and_list']", 100, 100);
 $I->click("//button[@name='btn_create_and_list']");
+
 $I->waitForText('Filtres', 30); // secs
 $I->click('Filtres');
 $I->click('i.fa.fa-square-o');

@@ -20,8 +20,9 @@ $I->waitForText('Libre', 30); // secs
 $I->amOnPage('/admin/librinfo/seedbatch/organism/list');
 $I->waitForText('Ajouter', 30); // secs
 $I->click('Ajouter');
+$I->waitForText('Créer et retourner à la liste', 30); // secs
 $I->fillField("//input[contains(@id,'_name')]", 'SelCol');
-$I->fillField("//input[contains(@id,'email')]", 'sel@col.fr');
+$I->fillField("//input[contains(@id,'email')]", 'sel-' . rand() . '@col.fr');
 $I->click('input[id$="_emailNpai"]+ins');
 
 $I->clickWithLeftButton('div[id^="s2id_"][id$="_circles"] ul');
@@ -33,7 +34,9 @@ $I->fillField("//textarea[contains(@id,'description')]", 'Selenium Test');
 // $I->click("Historique");
 // $I->click("Général");
 
+$I->scrollTo("//button[@name='btn_create_and_list']", 100, 100);
 $I->click("//button[@name='btn_create_and_list']");
+
 $I->waitForText('Filtres', 30); // secs
 $I->click('Filtres');
 $I->click('i.fa.fa-square-o');
