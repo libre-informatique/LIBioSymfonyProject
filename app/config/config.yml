@@ -105,6 +105,7 @@ doctrine:
         dql:
             string_functions:
                 ilike: Blast\DoctrinePgsqlBundle\DoctrineExtensions\Functions\Ilike
+                concat_ws: Oro\ORM\Query\AST\Functions\String\ConcatWs
 
 # Swiftmailer Configuration
 swiftmailer:
