@@ -582,6 +582,10 @@ parameters:
                             phones:
                                 label: false
                                 template: 'LibrinfoCRMBundle:CRUD:show_field_phones.html.twig'
+                        _options:
+                            countChildItems:
+                                - addresses
+                                - phones
                     show_tab_individuals:
                         '':
                             individuals:
@@ -592,10 +596,16 @@ parameters:
                         '':
                             plots:
                                 admin_code: librinfo_seedbatch.admin.plot_embedded
+                        _options:
+                            countChildItems:
+                                - plots
                     show_tab_seedbatches:
                         '':
                             seedBatches:
                                 admin_code: librinfo_seedbatch.admin.seedbatch_embedded
+                        _options:
+                            countChildItems:
+                                - seedBatches
                     _options:
                         tabsOrder:
                             - show_tab_general
