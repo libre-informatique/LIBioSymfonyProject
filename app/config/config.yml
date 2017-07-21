@@ -117,6 +117,7 @@ swiftmailer:
             port:      "%mailer_port%"
             username:  "%mailer_user%"
             password:  "%mailer_password%"
+            delivery_addresses: ['jardinenvie@lisem.eu']
             disable_delivery:  "%mailer_disable_delivery%"
         spool_mailer:
             transport: "%mailer_transport%"
@@ -125,6 +126,7 @@ swiftmailer:
             username:  "%mailer_user%"
             password:  "%mailer_password%"
             spool: { type: db }
+            delivery_addresses: ['jardinenvie@lisem.eu']
             disable_delivery:  "%mailer_disable_delivery%"
 
 # FosUser Configuration
