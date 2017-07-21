@@ -17,6 +17,7 @@ use Librinfo\EcommerceBundle\Entity\ProductVariant;
 use Librinfo\EcommerceBundle\CodeGenerator\ProductVariantCodeGenerator as BaseCodeGenerator;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Sylius\Bundle\ResourceBundle\Doctrine\ORM\EntityRepository;
+use Doctrine\ORM\Query\ResultSetMapping;
 
 class ProductVariantCodeGenerator extends BaseCodeGenerator
 {
@@ -88,7 +89,24 @@ class ProductVariantCodeGenerator extends BaseCodeGenerator
             throw new InvalidEntityCodeException('librinfo.error.missing_packaging_code');
         }
 
-        return sprintf('%s-%s', $seedBatchCode, $packagingCode);
+        // Check unicity of generated code
+
+        $newCode = sprintf('%s-%s', $seedBatchCode, $packagingCode);
+
+        $sql = 'SELECT MAX(p.code) as lastcode FROM ' . self::$em->getClassMetadata(get_class($productVariant))->getTableName() . ' p WHERE p.code ILIKE ?;';
+
+        $rsm = new ResultSetMapping();
+        $rsm->addScalarResult('lastcode', 'lastcode');
+        $query = self::$em->createNativeQuery($sql, $rsm);
+        $query->setParameter(1, $newCode . '%');
+
+        $existingCode = $query->getSingleScalarResult();
+
+        if ($existingCode !== null) {
+            $newCode = ++$existingCode;
+        }
+
+        return $newCode;
     }
 
     /**

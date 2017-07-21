@@ -14,6 +14,7 @@ namespace AppBundle\CodeGenerator;
 
 use Blast\CoreBundle\Exception\InvalidEntityCodeException;
 use Librinfo\EcommerceBundle\Entity\ProductVariant;
+use Doctrine\ORM\Query\ResultSetMapping;
 
 class ProductVariantEmbeddedCodeGenerator extends ProductVariantCodeGenerator
 {
@@ -65,6 +66,23 @@ class ProductVariantEmbeddedCodeGenerator extends ProductVariantCodeGenerator
             throw new InvalidEntityCodeException('librinfo.error.missing_packaging_code');
         }
 
-        return sprintf('%s-%s', $seedBatchCode, $packagingCode);
+        // Check unicity of generated code
+
+        $newCode = sprintf('%s-%s', $seedBatchCode, $packagingCode);
+
+        $sql = 'SELECT MAX(p.code) as lastcode FROM ' . self::$em->getClassMetadata(get_class($productVariant))->getTableName() . ' p WHERE p.code ILIKE ?;';
+
+        $rsm = new ResultSetMapping();
+        $rsm->addScalarResult('lastcode', 'lastcode');
+        $query = self::$em->createNativeQuery($sql, $rsm);
+        $query->setParameter(1, $newCode . '%');
+
+        $existingCode = $query->getSingleScalarResult();
+
+        if ($existingCode !== null) {
+            $newCode = ++$existingCode;
+        }
+
+        return $newCode;
     }
 }
