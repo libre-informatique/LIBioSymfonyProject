@@ -43,7 +43,7 @@ parameters:
         AppBundle\Admin\VarietyAdmin:
             Sonata\AdminBundle\Show\ShowMapper:
                 add:
-                    show_tab_channel_descriptions:
+                    form_tab_channel_descriptions:
                         show_group_channel_descriptions:
                             channelDescriptions:
                                 template: AppBundle:CRUD:show_field_channel_descriptions.html.twig
@@ -51,7 +51,7 @@ parameters:
                         tabsOrder:
                             - form_tab_general
                             - form_tab_seeds_production
-                            # - show_tab_channel_descriptions
+                            - form_tab_channel_descriptions
                             - form_tab_inner
                             - form_tab_plant
                             - form_tab_culture
@@ -61,7 +61,6 @@ parameters:
                             - form_tab_amateur
                             - form_tab_strains
                             - form_tab_images
-                            - form_group_specific
                     _helper_links:
                         - url: https://framacalc.org/libio_validation_varietes
                           title: Framacalc de validation (Variétés)
