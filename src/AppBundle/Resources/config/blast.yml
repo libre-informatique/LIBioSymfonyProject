@@ -765,6 +765,13 @@ parameters:
                     firstname: ~
                     lastname: ~
                     shortname: ~
+            Sonata\AdminBundle\Datagrid\ListMapper:
+                remove:
+                    category.name: ~
+
+#####################
+# CRM ADDRESS
+#####################
 
         Librinfo\CRMBundle\Entity\Address:
             Sonata\AdminBundle\Form\FormMapper:
