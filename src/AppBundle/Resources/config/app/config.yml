@@ -42,3 +42,10 @@ payum:
             identifiant: 3
             hmac: 0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF
             sandbox: true
+
+sylius_customer:
+    driver: doctrine/orm
+    resources:
+        customer:
+            classes:
+                model: Librinfo\CRMBundle\Entity\Organism

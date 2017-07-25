@@ -80,6 +80,7 @@ libio:
         species_list: Liste des Espèces
         tax_categories_list: Catégories de TVA
         tax_rates_list: Taux de TVA
+        taxon_list: Catégories 
         user_groups: Groupes
         user_roles: Profils
         user_users: Utilisateurs
