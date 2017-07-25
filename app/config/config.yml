@@ -105,6 +105,7 @@ doctrine:
         dql:
             string_functions:
                 ilike: Blast\DoctrinePgsqlBundle\DoctrineExtensions\Functions\Ilike
+                concat_ws: Oro\ORM\Query\AST\Functions\String\ConcatWs
 
 # Swiftmailer Configuration
 swiftmailer:
@@ -116,6 +117,7 @@ swiftmailer:
             port:      "%mailer_port%"
             username:  "%mailer_user%"
             password:  "%mailer_password%"
+            delivery_addresses: ['jardinenvie@lisem.eu']
             disable_delivery:  "%mailer_disable_delivery%"
         spool_mailer:
             transport: "%mailer_transport%"
@@ -124,6 +126,7 @@ swiftmailer:
             username:  "%mailer_user%"
             password:  "%mailer_password%"
             spool: { type: db }
+            delivery_addresses: ['jardinenvie@lisem.eu']
             disable_delivery:  "%mailer_disable_delivery%"
 
 # FosUser Configuration
@@ -348,4 +351,4 @@ bazinga_js_translation:
     default_domain:       messages
 
 fos_js_routing:
-    routes_to_expose: [ admin_librinfo_.* ]
+    routes_to_expose: [ .*librinfo_.* ]

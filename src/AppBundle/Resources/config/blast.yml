@@ -43,7 +43,7 @@ parameters:
         AppBundle\Admin\VarietyAdmin:
             Sonata\AdminBundle\Show\ShowMapper:
                 add:
-                    show_tab_channel_descriptions:
+                    form_tab_channel_descriptions:
                         show_group_channel_descriptions:
                             channelDescriptions:
                                 template: AppBundle:CRUD:show_field_channel_descriptions.html.twig
@@ -51,7 +51,7 @@ parameters:
                         tabsOrder:
                             - form_tab_general
                             - form_tab_seeds_production
-                            # - show_tab_channel_descriptions
+                            - form_tab_channel_descriptions
                             - form_tab_inner
                             - form_tab_plant
                             - form_tab_culture
@@ -61,7 +61,6 @@ parameters:
                             - form_tab_amateur
                             - form_tab_strains
                             - form_tab_images
-                            - form_group_specific
                     _helper_links:
                         - url: https://framacalc.org/libio_validation_varietes
                           title: Framacalc de validation (Variétés)
@@ -215,32 +214,25 @@ parameters:
                             variants:
                                 type: sonata_type_collection
                                 label: false
-                                by_reference: false
+                                by_reference: true
+                                attr:
+                                    data-showFields: 'id,name,code,optionValues'
                                 type_options:
                                     btn_add: false
-                                    delete_options:
-                                        type: checkbox
-                                        type_options:
-                                            mapped: false
-                                            required: false
-                                required: true    # if not true, child form fields cannot be required (why ??)
                                 _options:
-                                    edit: inline
-                                    inline: table
+                                    edit: modal
+                                    inline: table-list
                                     admin_code: libio.admin.other_product_variant
             # LIST
             Sonata\AdminBundle\Datagrid\ListMapper:
                 add: ~
-                    # _actions:
-                    #     variants:
-                    #         template: 'AppBundle:OtherProductAdmin:list__action_variants.html.twig'
 
             # FILTER
             Sonata\AdminBundle\Datagrid\DatagridMapper:
                 add: ~
 
 # ########################
-# # SEEDS PRODUCT VARIANT
+# SEEDS PRODUCT VARIANT
 # ########################
 
         AppBundle\Admin\SeedsProductVariantAdmin:
@@ -391,22 +383,44 @@ parameters:
                                 required: true
                             _options:
                                 fieldsOrder: [name, code]
+                        form_group_options:
+                            optionValues:
+                                type: null
+                                _options:
+                                    admin_code: librinfo_ecommerce_option_value.admin.product
             # LIST
             Sonata\AdminBundle\Datagrid\ListMapper:
+                remove:
+                    optionValues: ~
+                    code: ~
+                    name: ~
+                    translations.name: ~
+                    product: ~
+                    price: ~
+                    onHand: ~
+                    onHold: ~
+                    tracked: ~
+                    available: ~
                 add:
-                    product:
-                        admin_code: libio.admin.other_product
+                    name: ~
+                    code:: ~
+                    onHand:
+                        type: boolean
+                    onHold:
+                        type: boolean
+                    tracked:
+                        type: boolean
+                        label: librinfo.label.tracked_stock
+                    optionValues:
+                        type: null
+                        admin_code: librinfo_ecommerce_option_value.admin.product
                     _options:
                         fieldsOrder:
-                            - code
                             - name
-                            - product
-                            - available
-                            - price
-                            - optionValues
+                            - tracked
                             - onHand
                             - onHold
-                            - tracked
+                            - optionValues
             # FILTER
             Sonata\AdminBundle\Datagrid\DatagridMapper:
                 add: ~
@@ -534,9 +548,13 @@ parameters:
                                     - category.name
                                     - active
                         show_group_defaultPhone:
-                            defaultPhone: ~
+                            defaultPhone:
+                                template: 'LibrinfoCRMBundle:CRUD:show_field_main_phone.html.twig'
+                                label: false
                         show_group_defaultAddress:
-                            defaultAddress: ~
+                            defaultAddress:
+                                template: 'LibrinfoCRMBundle:CRUD:show_field_main_address.html.twig'
+                                label: false
                         show_group_administrative:
                             vat:
                                 template: 'LibrinfoCRMBundle:CRUD:show_field_vat.html.twig'
@@ -563,6 +581,10 @@ parameters:
                             phones:
                                 label: false
                                 template: 'LibrinfoCRMBundle:CRUD:show_field_phones.html.twig'
+                        _options:
+                            countChildItems:
+                                - addresses
+                                - phones
                     show_tab_individuals:
                         '':
                             individuals:
@@ -573,10 +595,16 @@ parameters:
                         '':
                             plots:
                                 admin_code: librinfo_seedbatch.admin.plot_embedded
+                        _options:
+                            countChildItems:
+                                - plots
                     show_tab_seedbatches:
                         '':
                             seedBatches:
                                 admin_code: librinfo_seedbatch.admin.seedbatch_embedded
+                        _options:
+                            countChildItems:
+                                - seedBatches
                     _options:
                         tabsOrder:
                             - show_tab_general
@@ -731,6 +759,12 @@ parameters:
                             - form_tab_seedbatches
                             - form_tab_info
                             - form_group_specifics
+            Sonata\AdminBundle\Datagrid\DatagridMapper:
+                remove:
+                    familyContact: ~
+                    firstname: ~
+                    lastname: ~
+                    shortname: ~
 
         Librinfo\CRMBundle\Entity\Address:
             Sonata\AdminBundle\Form\FormMapper:
