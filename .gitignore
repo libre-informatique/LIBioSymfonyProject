@@ -26,6 +26,7 @@
 /bin/*
 !/bin/console
 !/bin/ci-scripts
+!/bin/git-script
 
 /vendor/*
 
