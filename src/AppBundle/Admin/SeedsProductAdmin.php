@@ -55,8 +55,18 @@ class SeedsProductAdmin extends ProductAdmin
                 ->tab('form_tab_general')
                     ->with('form_group_general')
                         ->add('variety', 'sonata_type_model_autocomplete',
-                            ['property' => ['name', 'code'],  'required' => true, 'constraints' => [new NotBlank()]],
-                            ['admin_code' => 'libio.admin.variety'])
+                            [
+                                'property' => ['name', 'code'],
+                                'required' => true,
+                                'constraints' => [new NotBlank()],
+                                'attr' => [
+                                    'class' => 'inline-block',
+                                    'width' => 50,
+                                ],
+                            ],
+                            [
+                                'admin_code' => 'libio.admin.variety',
+                            ])
                     ->end()
                 ->end()
             ;
@@ -66,7 +76,7 @@ class SeedsProductAdmin extends ProductAdmin
         }
 
         // Regular edit/create form
-        parent::configureFormFields($mapper);
+        // parent::configureFormFields($mapper);
     }
 
     /**
