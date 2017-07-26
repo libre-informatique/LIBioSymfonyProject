@@ -30,7 +30,7 @@ testLink($I, 'Èspèces');
 testLink($I, 'Variétés');
 testLink($I, 'Lots');
 testLink($I, 'Parcelles');
-testLink($I, 'Producteurs');
+//testLink($I, 'Producteurs');
 $I->click('Articles');
 testLink($I, 'Semences');
 testLink($I, 'Autres');
