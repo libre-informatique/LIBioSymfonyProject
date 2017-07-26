@@ -33,6 +33,7 @@
         "jms/security-extra-bundle": "^1.6",
         "jms/serializer-bundle": "^1.1",
         "trappar/alice-generator-bundle": "^1.1",
+        "sylius/sylius": "1.0.x-dev",
         "sylius/registry": "1.0.x-dev",
         "sylius/mailer": "1.0.x-dev",
         "sylius/mailer-bundle": "1.0.x-dev",
