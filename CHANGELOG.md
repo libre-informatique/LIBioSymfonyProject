@@ -1,5 +1,13 @@
 # Change Log
 
+## [0.4.5](https://github.com/libre-informatique/LISemSymfonyProject/tree/0.4.5) (2017-07-28)
+[Full Changelog](https://github.com/libre-informatique/LISemSymfonyProject/compare/0.4.4...0.4.5)
+
+**Merged pull requests:**
+
+- Test fix for trusty travis [\#13](https://github.com/libre-informatique/LISemSymfonyProject/pull/13) ([FanchTheSystem](https://github.com/FanchTheSystem))
+- Update Test [\#11](https://github.com/libre-informatique/LISemSymfonyProject/pull/11) ([FanchTheSystem](https://github.com/FanchTheSystem))
+
 ## [0.4.4](https://github.com/libre-informatique/LISemSymfonyProject/tree/0.4.4) (2017-07-03)
 [Full Changelog](https://github.com/libre-informatique/LISemSymfonyProject/compare/0.4.3...0.4.4)
 
