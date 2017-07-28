@@ -1,0 +1,8 @@
+.ui.card > .image > img,
+.ui.cards > .card > .image > img {
+    max-width : 260px;
+    max-height: 260px;
+    min-height: 260px;
+    margin    : 0 auto;
+    width     : auto;
+}
