@@ -51,7 +51,7 @@ sylius_customer:
                 model: Librinfo\CRMBundle\Entity\Organism
 
 sylius_mailer:
-#    sender_adapter: lisem.sylius.email_sender.adapter
+    sender_adapter: lisem.sylius.email_sender.adapter
     sender:
         name: Movie Database Example
         address: no-reply@movie-database-example.com

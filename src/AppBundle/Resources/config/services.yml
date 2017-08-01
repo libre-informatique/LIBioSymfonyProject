@@ -219,3 +219,10 @@ services:
         arguments: [Marem\PayumPaybox\PayboxGatewayFactory]
         tags:
             - { name: payum.gateway_factory_builder, factory: paybox }
+
+### SYLIUS MAILER ADAPTER ###
+
+    lisem.sylius.email_sender.adapter:
+        parent: sylius.email_sender.adapter.abstract
+        class: AppBundle\Mailer\Adapter\CustomAdapter
+        arguments: ["@mailer"]
