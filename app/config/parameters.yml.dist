@@ -15,6 +15,7 @@ parameters:
     mailer_port:             ~
     mailer_user:             ~
     mailer_password:         ~
+    mailer_encryption:       ~
     mailer_disable_delivery: true # set to false in prod or if you have a mailcatcher
 
     # A secret key that's used to generate certain security-related tokens

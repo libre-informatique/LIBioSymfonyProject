@@ -53,6 +53,7 @@ swiftmailer:
             port:      "%mailer_port%"
             username:  "%mailer_user%"
             password:  "%mailer_password%"
+            encryption: "%mailer_encryption%"
             delivery_addresses: ['jardinenvie@lisem.eu']
             disable_delivery:  "%mailer_disable_delivery%"
         spool_mailer:
@@ -61,6 +62,7 @@ swiftmailer:
             port:      "%mailer_port%"
             username:  "%mailer_user%"
             password:  "%mailer_password%"
+            encryption: "%mailer_encryption%"
             spool: { type: db }
             delivery_addresses: ['jardinenvie@lisem.eu']
             disable_delivery:  "%mailer_disable_delivery%"
