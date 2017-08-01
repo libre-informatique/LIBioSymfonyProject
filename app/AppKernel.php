@@ -79,6 +79,7 @@ class AppKernel extends Kernel
             new Sylius\Bundle\AdminApiBundle\SyliusAdminApiBundle(),
 
             new Bazinga\Bundle\JsTranslationBundle\BazingaJsTranslationBundle(),
+            new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
