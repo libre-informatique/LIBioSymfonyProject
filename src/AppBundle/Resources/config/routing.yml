@@ -6,6 +6,10 @@ libio_not_implemented:
     path:   /not_implemented
     defaults: { _controller: AppBundle:Default:notImplemented }
 
+lisem_test_email:
+    path:   /lisem_test_email
+    defaults: { _controller: AppBundle:Default:testEmail }
+
 blast_core:
     resource: "@BlastCoreBundle/Resources/config/routing.yml"
     prefix:   /

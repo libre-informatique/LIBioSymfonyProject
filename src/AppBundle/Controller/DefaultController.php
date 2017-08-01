@@ -39,5 +39,32 @@ class DefaultController extends Controller
         */
 
         return $this->render('AppBundle:Default:test.html.twig', ['name' => $name]);
+
+//        $em = $this->getDoctrine()->getManager();
+//
+//        $order = $em->getRepository('\Librinfo\EcommerceBundle\Entity\Order')->find('ad224830-a581-4e8c-b783-2c0d0e5321e4');
+//
+//        $invoice = new \Librinfo\EcommerceBundle\Entity\Invoice();
+//
+//        $registry = $this->get('blast_core.code_generators');
+//        $generator = $registry::getCodeGenerator(get_class($invoice), 'number');
+//        $number = $generator::generate($invoice);
+//
+//        $invoice->setNumber($number);
+//        $invoice->setMimeType("application/pdf");
+//        $invoice->setOrder($order);
+//        $invoice->setFile("thisisthefilecontent");
+//        $em->persist($invoice);
+//        $em->flush();
+//        return $this->render('AppBundle:Default:test.html.twig', ['invoice' => $invoice]);
+    }
+
+    public function testEmailAction()
+    {
+        $movie = ['title' => 'MovieTitle'];
+        $user = ['name' => 'UserName'];
+        $this->get('sylius.email_sender')->send('test_email', ['recipient@website.com'], ['movie' => $movie, 'user' => $user]);
+
+        die('done');
     }
 }

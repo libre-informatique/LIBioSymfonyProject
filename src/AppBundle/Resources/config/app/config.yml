@@ -49,3 +49,13 @@ sylius_customer:
         customer:
             classes:
                 model: Librinfo\CRMBundle\Entity\Organism
+
+sylius_mailer:
+#    sender_adapter: lisem.sylius.email_sender.adapter
+    sender:
+        name: Movie Database Example
+        address: no-reply@movie-database-example.com
+    emails:
+        test_email:
+            subject: A new movie {{ movie.title }} has been submitted
+            template: AppBundle:Email:testEmail.html.twig
