@@ -53,8 +53,8 @@ sylius_customer:
 sylius_mailer:
     sender_adapter: lisem.sylius.email_sender.adapter
     sender:
-        name: Movie Database Example
-        address: no-reply@movie-database-example.com
+        name: My LISem Company
+        address: no-reply@my-lisem-company.com
     emails:
         test_email:
             subject: A new movie {{ movie.title }} has been submitted
