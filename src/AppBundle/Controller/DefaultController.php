@@ -13,6 +13,7 @@
 namespace AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class DefaultController extends Controller
@@ -38,25 +39,48 @@ class DefaultController extends Controller
         $em->flush();
         */
 
-        return $this->render('AppBundle:Default:test.html.twig', ['name' => $name]);
+        /* return $this->render('AppBundle:Default:test.html.twig', ['name' => $name]); */
 
-//        $em = $this->getDoctrine()->getManager();
-//
-//        $order = $em->getRepository('\Librinfo\EcommerceBundle\Entity\Order')->find('ad224830-a581-4e8c-b783-2c0d0e5321e4');
-//
-//        $invoice = new \Librinfo\EcommerceBundle\Entity\Invoice();
-//
-//        $registry = $this->get('blast_core.code_generators');
-//        $generator = $registry::getCodeGenerator(get_class($invoice), 'number');
-//        $number = $generator::generate($invoice);
-//
-//        $invoice->setNumber($number);
-//        $invoice->setMimeType("application/pdf");
-//        $invoice->setOrder($order);
-//        $invoice->setFile("thisisthefilecontent");
-//        $em->persist($invoice);
-//        $em->flush();
-//        return $this->render('AppBundle:Default:test.html.twig', ['invoice' => $invoice]);
+        $em = $this->getDoctrine()->getManager();
+        $order = $em->getRepository('\Librinfo\EcommerceBundle\Entity\Order')->find('ad224830-a581-4e8c-b783-2c0d0e5321e4');
+
+        if ($name == 'pdf') {
+            $factory = $this->get('librinfo_ecommerce.factory.invoice');
+            $invoice = $factory->createForOrder($order);
+            $em->persist($invoice);
+            $em->flush();
+
+            return new Response(
+                $invoice->getFile(),
+                200,
+                ['Content-Type' => 'application/pdf']
+            );
+        }
+
+        if ($name == 'email') {
+            $emailManager = $this->get('librinfo_ecommerce.email_manager.order');
+            $emailManager->sendConfirmationEmail($order);
+            die('email sent');
+        }
+
+        $invoice = new \Librinfo\EcommerceBundle\Entity\Invoice();
+
+        $registry = $this->get('blast_core.code_generators');
+        $generator = $registry::getCodeGenerator(get_class($invoice), 'number');
+        $number = $generator::generate($invoice);
+
+        if ($this->container->has('profiler')) {
+            $this->container->get('profiler')->disable();
+        }
+
+        $data = [
+            'order' => $order,
+            'number' => $number,
+            'date' => date('d/m/Y'),
+            'base_dir' => '',
+        ];
+
+        return $this->render('LibrinfoEcommerceBundle:Invoice:default.html.twig', $data);
     }
 
     public function testEmailAction()
