@@ -54,3 +54,5 @@
 /data/
 
 /tests/acceptance.suite.yml
+
+/.php_cs.cache
