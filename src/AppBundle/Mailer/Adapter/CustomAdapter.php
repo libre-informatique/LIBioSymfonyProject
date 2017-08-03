@@ -27,11 +27,12 @@ class CustomAdapter extends SwiftMailerAdapter
     public function __construct(\Swift_Mailer $mailer)
     {
         parent::__construct($mailer);
-
-        $this->mailer->getTransport()->setStreamOptions(['ssl' => [
+        if (method_exists($this->mailer->getTransport(), 'setStreamOptions')) {
+            $this->mailer->getTransport()->setStreamOptions(['ssl' => [
             'allow_self_signed' => true,
             'verify_peer' => false,
             'verify_peer_name' => false,
-        ]]);
+            ]]);
+        }
     }
 }
