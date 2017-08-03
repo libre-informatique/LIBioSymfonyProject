@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a93bcef749919211f4def5ecba446361",
+    "content-hash": "ed7a29e80fc5636419f4fde58c1b9f24",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -56,12 +56,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/blast-project/BaseEntitiesBundle.git",
-                "reference": "54498531227f22995039a25f6d564990d23efbe9"
+                "reference": "ca2494f98657bb32be80daad223fa6cc7f5d03cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blast-project/BaseEntitiesBundle/zipball/54498531227f22995039a25f6d564990d23efbe9",
-                "reference": "54498531227f22995039a25f6d564990d23efbe9",
+                "url": "https://api.github.com/repos/blast-project/BaseEntitiesBundle/zipball/ca2494f98657bb32be80daad223fa6cc7f5d03cb",
+                "reference": "ca2494f98657bb32be80daad223fa6cc7f5d03cb",
                 "shasum": ""
             },
             "require": {
@@ -114,7 +114,7 @@
                 "libio",
                 "symfony"
             ],
-            "time": "2017-07-26 12:39:02"
+            "time": "2017-07-31 13:16:08"
         },
         {
             "name": "blast-project/core-bundle",
@@ -1029,7 +1029,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2017-07-22T20:45:23+00:00"
+            "time": "2017-07-22 20:45:23"
         },
         {
             "name": "doctrine/doctrine-bundle",
@@ -1641,7 +1641,7 @@
                 "database",
                 "orm"
             ],
-            "time": "2017-07-25T03:02:26+00:00"
+            "time": "2017-07-25 03:02:26"
         },
         {
             "name": "friendsofsymfony/jsrouting-bundle",
@@ -3389,6 +3389,128 @@
             "time": "2016-09-22T12:24:40+00:00"
         },
         {
+            "name": "knplabs/knp-snappy",
+            "version": "v0.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/KnpLabs/snappy.git",
+                "reference": "370da31fa92a8e583e34558c589e630647617a38"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/KnpLabs/snappy/zipball/370da31fa92a8e583e34558c589e630647617a38",
+                "reference": "370da31fa92a8e583e34558c589e630647617a38",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6",
+                "symfony/process": "~2.3|~3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.7"
+            },
+            "suggest": {
+                "h4cc/wkhtmltoimage-amd64": "Provides wkhtmltoimage-amd64 binary for Linux-compatible machines, use version `~0.12` as dependency",
+                "h4cc/wkhtmltoimage-i386": "Provides wkhtmltoimage-i386 binary for Linux-compatible machines, use version `~0.12` as dependency",
+                "h4cc/wkhtmltopdf-amd64": "Provides wkhtmltopdf-amd64 binary for Linux-compatible machines, use version `~0.12` as dependency",
+                "h4cc/wkhtmltopdf-i386": "Provides wkhtmltopdf-i386 binary for Linux-compatible machines, use version `~0.12` as dependency",
+                "wemersonjanuario/wkhtmltopdf-windows": "Provides wkhtmltopdf executable for Windows, use version `~0.12` as dependency"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.5.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Knp\\Snappy\\": "src/Knp/Snappy"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "KnpLabs Team",
+                    "homepage": "http://knplabs.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://github.com/KnpLabs/snappy/contributors"
+                }
+            ],
+            "description": "PHP5 library allowing thumbnail, snapshot or PDF generation from a url or a html page. Wrapper for wkhtmltopdf/wkhtmltoimage.",
+            "homepage": "http://github.com/KnpLabs/snappy",
+            "keywords": [
+                "knp",
+                "knplabs",
+                "pdf",
+                "snapshot",
+                "thumbnail",
+                "wkhtmltopdf"
+            ],
+            "time": "2017-06-16T07:50:40+00:00"
+        },
+        {
+            "name": "knplabs/knp-snappy-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/KnpLabs/KnpSnappyBundle.git",
+                "reference": "40b780fd8c0176c1a055ebd14b900fef345caeba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/KnpLabs/KnpSnappyBundle/zipball/40b780fd8c0176c1a055ebd14b900fef345caeba",
+                "reference": "40b780fd8c0176c1a055ebd14b900fef345caeba",
+                "shasum": ""
+            },
+            "require": {
+                "knplabs/knp-snappy": "~0.1",
+                "php": ">=5.3.2",
+                "symfony/finder": "~2.3|~3.0",
+                "symfony/framework-bundle": "~2.3|~3.0",
+                "symfony/validator": "~2.3|~3.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.5.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Knp\\Bundle\\SnappyBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "KnpLabs Team",
+                    "homepage": "http://knplabs.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://github.com/KnpLabs/KnpSnappyBundle/contributors"
+                }
+            ],
+            "description": "Easily create PDF and images in Symfony2 by converting Twig/HTML templates.",
+            "homepage": "http://github.com/KnpLabs/KnpSnappyBundle",
+            "keywords": [
+                "bundle",
+                "knp",
+                "knplabs",
+                "pdf",
+                "snappy"
+            ],
+            "time": "2017-07-17 14:39:20"
+        },
+        {
             "name": "kriswallsmith/assetic",
             "version": "v1.4.0",
             "source": {
@@ -3539,12 +3661,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/CRMBundle.git",
-                "reference": "fb7e37cc8f0a369e8c4bde2e2737cbb615504ece"
+                "reference": "a3373be520671a6a5fd01ae72f003bd84a3ce86a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/CRMBundle/zipball/fb7e37cc8f0a369e8c4bde2e2737cbb615504ece",
-                "reference": "fb7e37cc8f0a369e8c4bde2e2737cbb615504ece",
+                "url": "https://api.github.com/repos/libre-informatique/CRMBundle/zipball/a3373be520671a6a5fd01ae72f003bd84a3ce86a",
+                "reference": "a3373be520671a6a5fd01ae72f003bd84a3ce86a",
                 "shasum": ""
             },
             "require": {
@@ -3596,7 +3718,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-07-27 14:56:05"
+            "time": "2017-08-02 15:36:15"
         },
         {
             "name": "libre-informatique/decorator-bundle",
@@ -3667,18 +3789,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/EcommerceBundle.git",
-                "reference": "0a95facf2e9604d6a253c0ef02bb1ffce8f5737a"
+                "reference": "70a78a8912d0d312f042efa1211a25279fe459bd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/EcommerceBundle/zipball/0a95facf2e9604d6a253c0ef02bb1ffce8f5737a",
-                "reference": "0a95facf2e9604d6a253c0ef02bb1ffce8f5737a",
+                "url": "https://api.github.com/repos/libre-informatique/EcommerceBundle/zipball/70a78a8912d0d312f042efa1211a25279fe459bd",
+                "reference": "70a78a8912d0d312f042efa1211a25279fe459bd",
                 "shasum": ""
             },
             "require": {
                 "blast-project/base-entities-bundle": "dev-wip-lisem",
                 "blast-project/core-bundle": "dev-wip-lisem",
                 "blast-project/utils-bundle": "dev-wip-lisem",
+                "knplabs/knp-snappy-bundle": "^1.5@dev",
                 "libre-informatique/crm-bundle": "dev-wip-lisem",
                 "libre-informatique/sonata-sylius-user-bundle": "dev-wip-lisem",
                 "php": ">=5.6",
@@ -3712,7 +3835,7 @@
                     "homepage": "http://www.libre-informatique.fr/"
                 },
                 {
-                    "name": "Marcos BEZERRA DE MENEZES",
+                    "name": "Marcos Bezerra de Menezes",
                     "email": "marcos.bezerra@libre-informatique.fr"
                 }
             ],
@@ -3724,7 +3847,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-07-28 10:27:41"
+            "time": "2017-08-02 15:42:09"
         },
         {
             "name": "libre-informatique/email-bundle",
@@ -3925,12 +4048,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/SeedBatchBundle.git",
-                "reference": "671bb24e4753de2c08ae9dede166fb800e19b938"
+                "reference": "67cc0c52485f4206d1b6904601de9124bbcb20ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/SeedBatchBundle/zipball/671bb24e4753de2c08ae9dede166fb800e19b938",
-                "reference": "671bb24e4753de2c08ae9dede166fb800e19b938",
+                "url": "https://api.github.com/repos/libre-informatique/SeedBatchBundle/zipball/67cc0c52485f4206d1b6904601de9124bbcb20ab",
+                "reference": "67cc0c52485f4206d1b6904601de9124bbcb20ab",
                 "shasum": ""
             },
             "require": {
@@ -3979,7 +4102,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-07-27 13:59:23"
+            "time": "2017-08-02 15:37:29"
         },
         {
             "name": "libre-informatique/sonata-sylius-user-bundle",
@@ -4269,7 +4392,7 @@
                 "payment",
                 "payum"
             ],
-            "time": "2017-01-12T21:08:19+00:00"
+            "time": "2017-01-12 21:08:19"
         },
         {
             "name": "michelf/php-markdown",
@@ -5032,16 +5155,16 @@
         },
         {
             "name": "payum/payum-bundle",
-            "version": "2.2.0",
+            "version": "2.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Payum/PayumBundle.git",
-                "reference": "f016ab43c850414e5eaa23d74e7527c92d706ac9"
+                "reference": "fd930cb9516c8a5f19b4eeae35c8e37eea77ce11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Payum/PayumBundle/zipball/f016ab43c850414e5eaa23d74e7527c92d706ac9",
-                "reference": "f016ab43c850414e5eaa23d74e7527c92d706ac9",
+                "url": "https://api.github.com/repos/Payum/PayumBundle/zipball/fd930cb9516c8a5f19b4eeae35c8e37eea77ce11",
+                "reference": "fd930cb9516c8a5f19b4eeae35c8e37eea77ce11",
                 "shasum": ""
             },
             "require": {
@@ -5130,7 +5253,7 @@
                 "stripe.js",
                 "symfony"
             ],
-            "time": "2017-03-28T11:02:38+00:00"
+            "time": "2017-08-02T07:32:51+00:00"
         },
         {
             "name": "php-http/guzzle6-adapter",
@@ -5891,16 +6014,16 @@
         },
         {
             "name": "sensiolabs/security-checker",
-            "version": "v4.1.1",
+            "version": "v4.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/security-checker.git",
-                "reference": "cf61ce9d9706ba35e60a894fe6f3584c6d0e5c9f"
+                "reference": "9c7bfbc7be32781d39f8e262744f7fb0c410df67"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/security-checker/zipball/cf61ce9d9706ba35e60a894fe6f3584c6d0e5c9f",
-                "reference": "cf61ce9d9706ba35e60a894fe6f3584c6d0e5c9f",
+                "url": "https://api.github.com/repos/sensiolabs/security-checker/zipball/9c7bfbc7be32781d39f8e262744f7fb0c410df67",
+                "reference": "9c7bfbc7be32781d39f8e262744f7fb0c410df67",
                 "shasum": ""
             },
             "require": {
@@ -5932,7 +6055,7 @@
                 }
             ],
             "description": "A security checker for your composer.lock",
-            "time": "2017-07-28T18:31:05+00:00"
+            "time": "2017-08-02T07:52:06+00:00"
         },
         {
             "name": "sonata-project/admin-bundle",
@@ -6820,12 +6943,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sylius/Mailer.git",
-                "reference": "8703337c3a463bf13ea250a8296503fe7d70e7b0"
+                "reference": "c945f014a13e2345d90758a9be8d91e06efb936e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sylius/Mailer/zipball/8703337c3a463bf13ea250a8296503fe7d70e7b0",
-                "reference": "8703337c3a463bf13ea250a8296503fe7d70e7b0",
+                "url": "https://api.github.com/repos/Sylius/Mailer/zipball/c945f014a13e2345d90758a9be8d91e06efb936e",
+                "reference": "c945f014a13e2345d90758a9be8d91e06efb936e",
                 "shasum": ""
             },
             "require": {
@@ -6833,7 +6956,7 @@
                 "webmozart/assert": "^1.0"
             },
             "require-dev": {
-                "phpspec/phpspec": "^4.0@rc"
+                "phpspec/phpspec": "^4.0"
             },
             "type": "library",
             "extra": {
@@ -6871,7 +6994,7 @@
                 "mails",
                 "notifications"
             ],
-            "time": "2017-07-25T13:15:41+00:00"
+            "time": "2017-07-31 07:35:12"
         },
         {
             "name": "sylius/mailer-bundle",
@@ -6879,12 +7002,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sylius/SyliusMailerBundle.git",
-                "reference": "d4d2eb1b4663d57ec075501ce1b44284643127d9"
+                "reference": "1b884818057b3d5f8521014f4202792498d88436"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sylius/SyliusMailerBundle/zipball/d4d2eb1b4663d57ec075501ce1b44284643127d9",
-                "reference": "d4d2eb1b4663d57ec075501ce1b44284643127d9",
+                "url": "https://api.github.com/repos/Sylius/SyliusMailerBundle/zipball/1b884818057b3d5f8521014f4202792498d88436",
+                "reference": "1b884818057b3d5f8521014f4202792498d88436",
                 "shasum": ""
             },
             "require": {
@@ -6897,7 +7020,7 @@
                 "doctrine/orm": "~2.5.0",
                 "incenteev/composer-parameter-handler": "~2.0",
                 "ocramius/proxy-manager": "^1.0",
-                "phpspec/phpspec": "^4.0@rc",
+                "phpspec/phpspec": "^4.0",
                 "phpunit/phpunit": "^5.6",
                 "polishsymfonycommunity/symfony-mocker-container": "^1.0",
                 "swiftmailer/swiftmailer": "^5.4",
@@ -6951,7 +7074,7 @@
                 "mailer",
                 "swiftmailer"
             ],
-            "time": "2017-07-25T13:15:41+00:00"
+            "time": "2017-07-31 07:01:34"
         },
         {
             "name": "sylius/sylius",
@@ -6959,12 +7082,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sylius/Sylius.git",
-                "reference": "02c56de91d34c12c24ec97737160d09ce90952ba"
+                "reference": "7612355b7a2d82dfd3ee2de9cabd4447e8cdb728"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sylius/Sylius/zipball/02c56de91d34c12c24ec97737160d09ce90952ba",
-                "reference": "02c56de91d34c12c24ec97737160d09ce90952ba",
+                "url": "https://api.github.com/repos/Sylius/Sylius/zipball/7612355b7a2d82dfd3ee2de9cabd4447e8cdb728",
+                "reference": "7612355b7a2d82dfd3ee2de9cabd4447e8cdb728",
                 "shasum": ""
             },
             "require": {
@@ -7004,7 +7127,7 @@
                 "symfony/polyfill-intl-icu": "^1.3",
                 "symfony/polyfill-mbstring": "^1.3",
                 "symfony/swiftmailer-bundle": "^2.4",
-                "symfony/symfony": "^3.2",
+                "symfony/symfony": "~3.2.0|^3.3.6",
                 "twig/extensions": "^1.4",
                 "twig/twig": "^1.28",
                 "webmozart/assert": "^1.1",
@@ -7132,7 +7255,7 @@
             ],
             "description": "E-Commerce platform for PHP, based on Symfony framework.",
             "homepage": "http://sylius.org",
-            "time": "2017-07-31T09:42:32+00:00"
+            "time": "2017-08-03 06:26:21"
         },
         {
             "name": "symfony/assetic-bundle",
@@ -7266,7 +7389,7 @@
         },
         {
             "name": "symfony/phpunit-bridge",
-            "version": "v3.3.5",
+            "version": "v3.3.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/phpunit-bridge.git",
@@ -9022,7 +9145,8 @@
         "libre-informatique/seed-batch-bundle": 20,
         "libre-informatique/sonata-sylius-user-bundle": 20,
         "libre-informatique/ecommerce-bundle": 20,
-        "marem/payum-paybox": 20
+        "marem/payum-paybox": 20,
+        "knplabs/knp-snappy-bundle": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

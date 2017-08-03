@@ -56,7 +56,8 @@
         "libre-informatique/seed-batch-bundle": "dev-wip-lisem",
         "libre-informatique/sonata-sylius-user-bundle": "dev-wip-lisem",
         "libre-informatique/ecommerce-bundle": "dev-wip-lisem",
-        "marem/payum-paybox": "dev-master"
+        "marem/payum-paybox": "dev-master",
+        "knplabs/knp-snappy-bundle": "^1.5@dev"
     },
     "require-dev": {
         "alexandresalome/doctrine-extra-bundle": "^0.3.0",
