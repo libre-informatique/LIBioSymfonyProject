@@ -182,13 +182,14 @@ parameters:
                 remove:
                     name: ~
                 add:
+                    name: ~
                     code:
                         label: libio.label.product_code
                         identifier: true
                     variety:
                         admin_code: librinfo_varieties.admin.variety
                     _options:
-                        fieldsOrder: [code, variety, enabled]
+                        fieldsOrder: [name, code, variety, enabled]
                     # _actions:
                     #     variants:
                     #         template: 'AppBundle:SeedsProductAdmin:list__action_variants.html.twig'
