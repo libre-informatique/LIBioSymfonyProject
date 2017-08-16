@@ -84,10 +84,10 @@ class AppKernel extends Kernel
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
             //            $bundles[] = new Symfony\Bundle\DebugBundle\DebugBundle(); provided by Sylius
-//            $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle(); provided by Sylius
-//            $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
+            //            $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle(); provided by Sylius
+            //            $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
-//            $bundles[] = new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(); provided by Sylius
+            //            $bundles[] = new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(); provided by Sylius
             $bundles[] = new Alex\DoctrineExtraBundle\AlexDoctrineExtraBundle();
             $bundles[] = new Trappar\AliceGeneratorBundle\TrapparAliceGeneratorBundle();
         }

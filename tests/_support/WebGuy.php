@@ -14,7 +14,7 @@ class WebGuy extends \Codeception\Actor
 {
     use _generated\WebGuyActions;
 
-   /*
-    * Define custom actions here
-    */
+    /*
+     * Define custom actions here
+     */
 }
