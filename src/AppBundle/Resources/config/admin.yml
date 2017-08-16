@@ -91,6 +91,8 @@ services:
               label: libio.other_product_variant_admin.label
               label_translator_strategy: blast_core.label.strategy.librinfo
 
+# ################## CHANNEL DESC #########################
+
     lisem.admin.channel_description:
         class: AppBundle\Admin\ChannelDescriptionAdmin
         arguments: [~, AppBundle\Entity\ChannelDescription, BlastCoreBundle:CRUD ]
@@ -100,6 +102,8 @@ services:
               group: admin
               label: lisem.channel_description_admin.label
               label_translator_strategy: blast_core.label.strategy.librinfo
+
+# ################## PACKAGING #########################
 
     lisem.admin.packaging:
         class: AppBundle\Admin\PackagingAdmin
@@ -112,6 +116,22 @@ services:
               label_translator_strategy: blast_core.label.strategy.librinfo
         calls:
             - [ setTemplate, [ edit, AppBundle:PackagingAdmin:edit.html.twig ] ]
+
+# ################## OVERRIDE ECOMMERCE CUSTOMER ADMIN #########################
+
+    librinfo_ecommerce.admin.customer:
+        class: AppBundle\Admin\CustomerAdmin
+        arguments: [~, Librinfo\CRMBundle\Entity\Organism, LibrinfoCRMBundle:OrganismAdmin]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: Customers Relationship Management
+              label: librinfo.crm.customer_admin.label
+              label_translator_strategy: blast_core.label.strategy.librinfo
+        calls:
+            - [ setCodeGenerator, ['@librinfo_crm.code_generator.customer']]
+            - [ setTemplate, [edit, LibrinfoCRMBundle:OrganismAdmin:edit.html.twig]]
+            - [ setTemplate, [show, LibrinfoCRMBundle:OrganismAdmin:show.html.twig]]
 
     # # UNCOMMENT IF NEEDED AND UPDATE ALL blast.yml when circles property is used
     # lisem.admin.circle:
