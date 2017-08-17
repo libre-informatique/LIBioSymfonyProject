@@ -226,3 +226,11 @@ services:
         parent: sylius.email_sender.adapter.abstract
         class: AppBundle\Mailer\Adapter\CustomAdapter
         arguments: ["@mailer"]
+
+### SYLIUS CUSTOMER REGISTRATION SUBSCRIBER ###
+
+    lisem.sylius.customer_registration.subscriber:
+        class: AppBundle\Form\EventListener\CustomerRegistrationFormListener
+        arguments: ["@sylius.repository.customer"]
+        tags:
+            - { name: kernel.event_listener, event: sylius.customer.post_register, method: onPostRegister }
