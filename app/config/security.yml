@@ -46,7 +46,7 @@ security:
 
         # Sylius firewalls :
 
-        admin:
+        sylius:
             switch_user: true
             context: admin
             pattern: "%sylius.security.admin_regex%"
