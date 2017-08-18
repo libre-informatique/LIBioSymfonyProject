@@ -6,8 +6,8 @@ mkdir --parents "${HOME}/bin"
 # Ugly hack
 echo "memory_limit=-1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
 
-composer update --no-interaction --prefer-dist
-#composer install --no-interaction --prefer-dist
+# composer update --no-interaction --prefer-dist
+composer install --no-interaction --prefer-dist
 composer require --no-interaction --dev phpunit/phpunit
 #composer update --no-interaction "blast-project/*" 
 #composer update --no-interaction "libre-informatique/*"
