@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "chart.js": "^2.6.0",
     "jquery": "^2.2.0",
     "lightbox2": "^2.9.0",
     "semantic-ui-css": "^2.2.0"
@@ -29,4 +30,3 @@
   "author": "Libre Informatique",
   "license": "GPL-3.0"
 }
-
