@@ -12,7 +12,7 @@
 
 namespace AppBundle\Entity\OuterExtension;
 
-use AppBundle\Entity\Channel;
+use Librinfo\EcommerceBundle\Entity\Channel;
 
 /**
  * @author Romain SANCHEZ <romain.sanchez@libre-informatique.fr>

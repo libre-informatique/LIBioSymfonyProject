@@ -13,7 +13,7 @@ sylius_channel:
     resources:
         channel:
             classes:
-                model: AppBundle\Entity\Channel
+                model: Librinfo\EcommerceBundle\Entity\Channel
 
 sylius_money:
     locale: fr

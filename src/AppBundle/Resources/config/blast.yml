@@ -454,7 +454,7 @@ parameters:
                         main_group:
                             channel:
                                 type: entity
-                                class: AppBundle\Entity\Channel
+                                class: Librinfo\EcommerceBundle\Entity\Channel
                             value:
                                 type: Blast\UtilsBundle\Form\Type\TinyMceType
 
@@ -1015,3 +1015,90 @@ parameters:
                         xls: csv
                         json: csv
                         xml: csv
+
+################################################################################
+# Channel
+################################################################################
+
+        AppBundle\Admin\ChannelAdmin:
+            # SHOW
+            Sonata\AdminBundle\Show\ShowMapper:
+                add:
+                    main_tab:
+                        main_group:
+                            code: ~
+                            name: ~
+                            color: ~
+                            description: ~
+                            enabled: ~
+                            hostname: ~
+                            createdAt: ~
+                            updatedAt: ~
+                            #id: ~
+
+            # FORM
+            Sonata\AdminBundle\Form\FormMapper:
+                add:
+                    main_tab:
+                        main_group:
+                            code: ~
+                            name: ~
+                            color: ~
+                            description: ~
+                            enabled: ~
+                            hostname: ~
+                            createdAt: ~
+                            updatedAt: ~
+                            #id: ~
+
+            # LIST
+            Sonata\AdminBundle\Datagrid\ListMapper:
+                remove:
+                    id: ~
+                    baseCurrency: ~
+                    defaultLocale: ~
+                    defaultTaxZone: ~
+                    taxCalculationStrategy: ~
+                    currencies: ~
+                    locales: ~
+                    themeName: ~
+                    contactEmail: ~
+                    skippingShippingStepAllowed: ~
+                    skippingPaymentStepAllowed: ~
+                    accountVerificationRequired: ~
+                add:
+                    code: ~
+                    name: ~
+                    color: ~
+                    description: ~
+                    enabled: ~
+                    hostname: ~
+                    createdAt: ~
+                    updatedAt: ~
+                    _options:
+                        fieldsOrder:
+                            - code
+                            - name
+                            - color
+                            - description
+                            - enabled
+                            - hostname
+                            - createdAt
+                            - updatedAt
+                    #id: ~
+
+
+            # FILTERS
+            Sonata\AdminBundle\Datagrid\DatagridMapper:
+                remove:
+                    id: ~
+            #     add:
+            #         code: ~
+            #         name: ~
+            #         color: ~
+            #         description: ~
+            #         enabled: ~
+            #         hostname: ~
+            #         createdAt: ~
+            #         updatedAt: ~
+                    #id: ~
