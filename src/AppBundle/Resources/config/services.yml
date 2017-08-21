@@ -234,3 +234,13 @@ services:
         arguments: ["@sylius.repository.customer"]
         tags:
             - { name: kernel.event_listener, event: sylius.customer.post_register, method: onPostRegister }
+        calls:
+            - [setCodeGenerator, ["@librinfo_crm.code_generator.customer"]]
+
+
+    librinfo_ecommerce.order_customer_manager:
+        class: Librinfo\EcommerceBundle\Services\OrderCustomerManager
+        arguments:
+            - '@doctrine.orm.entity_manager'
+        calls:
+            - [setCodeGenerator, ["@librinfo_crm.code_generator.customer"]]

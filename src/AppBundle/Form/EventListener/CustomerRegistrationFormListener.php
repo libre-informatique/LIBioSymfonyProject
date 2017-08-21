@@ -16,6 +16,7 @@ use Sylius\Component\Resource\Repository\RepositoryInterface;
 use Symfony\Component\EventDispatcher\GenericEvent;
 use Symfony\Component\Form\Exception\UnexpectedTypeException;
 use Librinfo\CRMBundle\Entity\Organism;
+use Blast\CoreBundle\CodeGenerator\CodeGeneratorInterface;
 
 class CustomerRegistrationFormListener
 {
@@ -23,6 +24,11 @@ class CustomerRegistrationFormListener
      * @var RepositoryInterface
      */
     private $customerRepository;
+
+    /**
+     * @var CodeGeneratorInterface
+     */
+    private $codeGenerator;
 
     /**
      * @param RepositoryInterface $customerRepository
@@ -40,7 +46,21 @@ class CustomerRegistrationFormListener
             throw new UnexpectedTypeException($organism, Organism::class);
         }
 
+        if ($this->codeGenerator !== null) {
+            $customer->setCustomerCode($this->codeGenerator->generate($customer));
+        }
+
         $organism->setIsIndividual(true);
         $organism->setIsCustomer(true);
+    }
+
+    /**
+     * setCodeGenerator.
+     *
+     * @param CodeGeneratorInterface $codeGenerator
+     */
+    public function setCodeGenerator(CodeGeneratorInterface $codeGenerator)
+    {
+        $this->codeGenerator = $codeGenerator;
     }
 }

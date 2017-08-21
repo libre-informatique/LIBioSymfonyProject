@@ -62,7 +62,7 @@ class CustomerAdmin extends \Librinfo\SeedBatchBundle\Admin\OrganismAdmin
     {
         $object = parent::getNewInstance();
 
-        $object->setisCustomer(true);
+        $object->setIsCustomer(true);
         $object->setCustomerCode($this->codeGenerator->generate($object));
 
         return $object;
