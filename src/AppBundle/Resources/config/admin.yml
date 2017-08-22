@@ -144,11 +144,11 @@ services:
     #           label: librinfo_crm.label.admin.circle
     #           label_translator_strategy: blast_core.label.strategy.librinfo
     #
-    librinfo_ecommerce.admin.channel:
-        class: AppBundle\Admin\ChannelAdmin
-        arguments: [~, Librinfo\EcommerceBundle\Entity\Channel, BlastCoreBundle:CRUD]
-        tags:
-            - name: sonata.admin
-              manager_type: orm
-              group: admin
-              label: Channel
+    # librinfo_ecommerce.admin.channel:
+    #     class: AppBundle\Admin\ChannelAdmin
+    #     arguments: [~, Librinfo\EcommerceBundle\Entity\Channel, BlastCoreBundle:CRUD]
+    #     tags:
+    #         - name: sonata.admin
+    #           manager_type: orm
+    #           group: admin
+    #           label: Channel

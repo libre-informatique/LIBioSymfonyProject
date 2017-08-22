@@ -1,12 +1,17 @@
 imports:
+    - { resource: "@AppBundle/Resources/config/sonata.yml" }
+    - { resource: "@AppBundle/Resources/config/services.yml" }
+    - { resource: "@BlastUtilsBundle/Resources/config/sonata.yml" }
+    - { resource: "@LibrinfoMediaBundle/Resources/config/app/config.yml" }
+    - { resource: "@LibrinfoEcommerceBundle/Resources/config/app/config.yml" }
     - { resource: "@SyliusCoreBundle/Resources/config/app/config.yml" }
     - { resource: "@SonataSyliusUserBundle/Resources/config/app/config.yml" }
     - { resource: "@SyliusAdminBundle/Resources/config/app/config.yml" }
     - { resource: "@SyliusShopBundle/Resources/config/app/config.yml" }
     - { resource: "@SyliusAdminApiBundle/Resources/config/app/config.yml" }
-    - { resource: "@LibrinfoEcommerceBundle/Resources/config/app/config.yml" }
     - { resource: "@AppBundle/Resources/config/sylius-fixtures.yml" }
     - { resource: "@AppBundle/Resources/config/grids.yml" }
+    - { resource: "@AppBundle/Resources/config/varieties.yml" }
 
 sylius_channel:
     driver: doctrine/orm
