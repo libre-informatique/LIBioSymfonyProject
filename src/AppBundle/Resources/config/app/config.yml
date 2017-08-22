@@ -1,6 +1,7 @@
 imports:
     - { resource: "@AppBundle/Resources/config/sonata.yml" }
     - { resource: "@AppBundle/Resources/config/services.yml" }
+    - { resource: "@BlastCoreBundle/Resources/config/config.yml" }
     - { resource: "@BlastUtilsBundle/Resources/config/sonata.yml" }
     - { resource: "@LibrinfoMediaBundle/Resources/config/app/config.yml" }
     - { resource: "@LibrinfoEcommerceBundle/Resources/config/app/config.yml" }
