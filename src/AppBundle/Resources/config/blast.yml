@@ -479,7 +479,7 @@ parameters:
                             option:
                                 type: sonata_type_model_hidden
                             quantity:
-                                type: integer
+                                type: text
                                 mapped: false
                             unit:
                                 type: choice

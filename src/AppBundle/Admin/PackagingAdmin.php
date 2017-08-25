@@ -64,10 +64,11 @@ class PackagingAdmin extends ProductOptionValueAdmin
             $data = $event->getData();
             $bulk = !empty($data['bulk']);
             $data['code'] = $bulk ? 'BULK' :
-                sprintf('%03d%s', (int) $data['quantity'], $data['unit'] == 'seeds' ? 'S' : 'G');
+                sprintf('%03g%s', $data['quantity'], $data['unit'] == 'seeds' ? 'S' : 'G');
             // TODO: translate this :
             $data['value'] = $bulk ? 'Vrac' :
-                sprintf('%d%s', (int) $data['quantity'], $data['unit'] == 'seeds' ? ' graines' : 'g');
+                sprintf('%g%s', $data['quantity'], $data['unit'] == 'seeds' ? ' graines' : 'g');
+
             $event->setData($data);
         });
     }
