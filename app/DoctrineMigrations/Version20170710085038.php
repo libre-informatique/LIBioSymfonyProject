@@ -38,7 +38,7 @@ class Version20170710085038 extends AbstractMigration implements ContainerAwareI
             'code' => 'PRO',
         ]);
 
-        if ($existingCirclePRO) {
+        if ($existingCirclePRO && $existingCirclePRO->getId() !== 'b907691c-963f-4a7c-9098-5a95335cf21d') {
             $tables = [
                 'librinfo_crm_circle__sonatauser' => 'circle_id',
                 'librinfo_crm_organism__circle' => 'circle_id',
