@@ -46,14 +46,14 @@ librinfo_varieties:
                 type: text
                 options:
                     attr:
-                        class: new-line
-                        width: 30
+                        class: new-line-before
+                        width: 50
             germination_light:
                 type: text
                 options:
                     attr:
-                        class: new-line
-                        width: 30
+                        class: new-line-after
+                        width: 50
             sowing_density:
                 type: integer
                 options:
@@ -73,14 +73,14 @@ librinfo_varieties:
                 type: text
                 options:
                     attr:
-                        class: new-line
-                        width: 30
+                        class: new-line-before
+                        width: 50
             harvest_storage:
                 type: text
                 options:
                     attr:
-                        class: new-line
-                        width: 30
+                        class: inline-block
+                        width: 50
             exposure:
                 type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 options:
@@ -133,35 +133,35 @@ librinfo_varieties:
                 type: integer
                 options:
                     attr:
-                        class: new-line
-                        width: 30
+                        class: new-line-before
+                        width: 50
             seedling_irrigation_frequency:
                 type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 options:
                     attr:
-                        class: new-line
-                        width: 30
+                        class: inline-block
+                        width: 50
                     blast_choices: [quotidien, hebdomadaire]
                     choices_field: seedling_irrigation_frequency
             transplant_irrigation_quantity:
                 type: integer
                 options:
                     attr:
-                        class: new-line
-                        width: 30
+                        class: new-line-before
+                        width: 50
             transplant_irrigation_frequency:
                 type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 options:
                     attr:
-                        class: new-line
-                        width: 30
+                        class: inline-block
+                        width: 50
                     blast_choices: [quotidien, hebdomadaire]
                     choices_field: transplant_irrigation_frequency
             cuttings_period:
                 type: integer
                 options:
                     attr:
-                        class: new-line
+                        class: inline-block
                         width: 30
             cutting_date:
                 type: integer
@@ -237,6 +237,12 @@ librinfo_varieties:
                         class: inline-block
                 show:
                     type: boolean
+            inner_commment:
+                type: Blast\UtilsBundle\Form\Type\TinyMceType
+                show:
+                    template: BlastCoreBundle:CRUD:show_field_tinymce.html.twig
+                options:
+                    help: 'librinfo.help.no_help'
 ############# CONSEILS AMATEURS ####################
         amateur:
             possible_sowing_periods:
@@ -269,14 +275,14 @@ librinfo_varieties:
                 type: text
                 options:
                     attr:
-                        class: new-line
-                        width: 30
+                        class: new-line-before
+                        width: 50
             germination_light:
                 type: text
                 options:
                     attr:
-                        class: new-line
-                        width: 30
+                        class: inline-block
+                        width: 50
             sowing_density:
                 type: integer
                 options:
@@ -296,14 +302,14 @@ librinfo_varieties:
                 type: text
                 options:
                     attr:
-                        class: new-line
-                        width: 30
+                        class: new-line-before
+                        width: 50
             harvest_storage:
                 type: text
                 options:
                     attr:
-                        class: new-line
-                        width: 30
+                        class: inline-block
+                        width: 50
             exposure:
                 type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 options:
@@ -356,35 +362,35 @@ librinfo_varieties:
                 type: integer
                 options:
                     attr:
-                        class: new-line
-                        width: 30
+                        class: new-line-before
+                        width: 50
             seedling_irrigation_frequency:
                 type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 options:
                     attr:
-                        class: new-line
-                        width: 30
+                        class: inline-block
+                        width: 50
                     blast_choices: [quotidien, hebdomadaire]
                     choices_field: seedling_irrigation_frequency
             transplant_irrigation_quantity:
                 type: integer
                 options:
                     attr:
-                        class: new-line
-                        width: 30
+                        class: new-line-before
+                        width: 50
             transplant_irrigation_frequency:
                 type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 options:
                     attr:
-                        class: new-line
-                        width: 30
+                        class: inline-block
+                        width: 50
                     blast_choices: [quotidien, hebdomadaire]
                     choices_field: transplant_irrigation_frequency
             cuttings_period:
                 type: integer
                 options:
                     attr:
-                        class: new-line
+                        class: inline-block
                         width: 30
             cutting_date:
                 type: integer
@@ -460,6 +466,12 @@ librinfo_varieties:
                         class: inline-block
                 show:
                     type: boolean
+            inner_commment:
+                type: Blast\UtilsBundle\Form\Type\TinyMceType
+                show:
+                    template: BlastCoreBundle:CRUD:show_field_tinymce.html.twig
+                options:
+                    help: 'librinfo.help.no_help'
 ########### MISE EN PRODUCTION ##################
         production:
             possible_sowing_periods:
@@ -492,14 +504,14 @@ librinfo_varieties:
                 type: text
                 options:
                     attr:
-                        class: new-line
-                        width: 30
+                        class: new-line-before
+                        width: 50
             germination_light:
                 type: text
                 options:
                     attr:
-                        class: new-line
-                        width: 30
+                        class: inline-block
+                        width: 50
             sowing_density:
                 type: integer
                 options:
@@ -514,19 +526,19 @@ librinfo_varieties:
                 type: integer
                 options:
                     attr:
-                        class: inline-block
+                        class: new-line-after
             seed_storage:
                 type: text
                 options:
                     attr:
-                        class: new-line
-                        width: 30
+                        class: inline-block
+                        width: 50
             harvest_storage:
                 type: text
                 options:
                     attr:
-                        class: new-line
-                        width: 30
+                        class: inline-block
+                        width: 50
             exposure:
                 type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 options:
@@ -579,35 +591,35 @@ librinfo_varieties:
                 type: integer
                 options:
                     attr:
-                        class: new-line
-                        width: 30
+                        class: inline-block
+                        width: 50
             seedling_irrigation_frequency:
                 type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 options:
                     attr:
-                        class: new-line
-                        width: 30
+                        class: inline-block
+                        width: 50
                     blast_choices: [quotidien, hebdomadaire]
                     choices_field: seedling_irrigation_frequency
             transplant_irrigation_quantity:
                 type: integer
                 options:
                     attr:
-                        class: new-line
-                        width: 30
+                        class: inline-block
+                        width: 50
             transplant_irrigation_frequency:
                 type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 options:
                     attr:
-                        class: new-line
-                        width: 30
+                        class: inline-block
+                        width: 50
                     blast_choices: [quotidien, hebdomadaire]
                     choices_field: transplant_irrigation_frequency
             cuttings_period:
                 type: integer
                 options:
                     attr:
-                        class: new-line
+                        class: inline-block
                         width: 30
             cutting_date:
                 type: integer
@@ -685,17 +697,17 @@ librinfo_varieties:
                     type: boolean
 ########## TRI OFFRE COMMERCIAL ###################
         commercial:
-            plant_type:
-                type: Blast\UtilsBundle\Form\Type\CustomChoiceType
-                options:
-                    attr:
-                        class: inline-block
-                    blast_choices:
-                        - Feuille
-                        - Fruit
-                        - Racine
-                        - Fleur
-                    choices_field: plant_type
+            # plant_type:
+            #     type: Blast\UtilsBundle\Form\Type\CustomChoiceType
+            #     options:
+            #         attr:
+            #             class: inline-block
+            #         blast_choices:
+            #             - Feuille
+            #             - Fruit
+            #             - Racine
+            #             - Fleur
+            #         choices_field: plant_type
             precocity:
                 type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 options:
@@ -724,14 +736,14 @@ librinfo_varieties:
                 type: text
                 options:
                     attr:
-                        class: new-line
-                        width: 30
+                        class: inline-block
+                        width: 50
             secondary_color:
                 type: text
                 options:
                     attr:
-                        class: new-line
-                        width: 30
+                        class: inline-block
+                        width: 50
             taste_rating:
                 type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 options:
@@ -828,14 +840,14 @@ librinfo_varieties:
                 type: integer
                 options:
                     attr:
-                        class: new-line
-                        width: 30
+                        class: inline-block
+                        width: 50
             min_harvest_span:
                 type: integer
                 options:
                     attr:
-                        class: new-line
-                        width: 30
+                        class: inline-block
+                        width: 50
             prefered_zone:
                 type: Blast\UtilsBundle\Form\Type\CustomChoiceType
                 options:
@@ -949,14 +961,14 @@ librinfo_varieties:
                 type: text
                 options:
                     attr:
-                        class: new-line
-                        width: 30
+                        class: inline-block
+                        width: 50
             strain_origin:
                 type: text
                 options:
                     attr:
-                        class: new-line
-                        width: 30
+                        class: inline-block
+                        width: 50
 #            several_strains:
 #                type: Blast\UtilsBundle\Form\Type\CustomCheckboxTypeseversever
             description:

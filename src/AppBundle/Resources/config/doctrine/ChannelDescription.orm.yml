@@ -5,3 +5,5 @@ AppBundle\Entity\ChannelDescription:
     fields:
         value:
             type: string
+        title:
+            type: string

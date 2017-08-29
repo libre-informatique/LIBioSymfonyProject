@@ -26,6 +26,11 @@ class ChannelDescription
     /**
      * @var string
      */
+    private $title;
+
+    /**
+     * @var string
+     */
     private $value;
 
     /**
@@ -50,5 +55,25 @@ class ChannelDescription
     public function getValue()
     {
         return $this->value;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * @param string title
+     *
+     * @return self
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+
+        return $this;
     }
 }

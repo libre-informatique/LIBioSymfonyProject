@@ -444,6 +444,7 @@ parameters:
             # SHOW
             Sonata\AdminBundle\Show\ShowMapper:
                 add:
+                    title: ~
                     value: ~
                     id: ~
 
@@ -455,6 +456,9 @@ parameters:
                             channel:
                                 type: entity
                                 class: Librinfo\EcommerceBundle\Entity\Channel
+                            title:
+                                type: text
+                                label: librinfo.label.description_title
                             value:
                                 type: Blast\UtilsBundle\Form\Type\TinyMceType
 

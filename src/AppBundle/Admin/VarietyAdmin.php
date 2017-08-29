@@ -31,7 +31,7 @@ class VarietyAdmin extends BaseAdmin
         parent::configureFormFields($mapper);
         $mapper
             ->tab('form_tab_general')
-                ->with('form_group_general')
+                ->with('form_group_identification')
                     ->add('packagings', 'sonata_type_model',
                         [
                         'multiple' => true,
