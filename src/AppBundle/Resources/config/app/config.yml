@@ -8,6 +8,9 @@ imports:
     - { resource: "@BlastCoreBundle/Resources/config/config.yml" }
     - { resource: "@LibrinfoMediaBundle/Resources/config/app/config.yml" }
     - { resource: "@LibrinfoEcommerceBundle/Resources/config/app/config.yml" }
+    - { resource: "@LibrinfoCRMBundle/Resources/config/app/config.yml" }
+    - { resource: "@LibrinfoEmailBundle/Resources/config/app/config.yml" }
+    - { resource: "@LibrinfoSeedBatchBundle/Resources/config/app/config.yml" }
     - { resource: "@SonataSyliusUserBundle/Resources/config/app/config.yml" }
 
     - { resource: "@AppBundle/Resources/config/varieties.yml" }

@@ -182,18 +182,13 @@ blast_base_entities:
             sortable: true
             normalize: true
             syliusGuidable: true
-
-
-#    Organism:
-#        normalize:
-#            city: [uppercase]   # possible values: uppercase, titlecase
-#            country: [uppercase]
-#    Contact:
-#        normalize:
-#            firstname: [titlecase]
-#            name: [uppercase]
-#            city: [uppercase]
-#            country: [uppercase]
+    entity_search_indexes: ~
+        # Librinfo\SeedBatchBundle\Entity\SeedBatch:
+        #     fields:
+        #         - code
+        #         - batchNumber
+        #         - productionYear
+        #         - variety
 
 fos_rest:
     exception: ~
