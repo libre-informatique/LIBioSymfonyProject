@@ -87,6 +87,10 @@ class MenuBuilder
         // Shop settings
         $submenu = $menu->addChild('libio.menu_label.shop_settings');
         $submenu->addChild('libio.menu_label.channels_list', ['route' => 'admin_librinfo_ecommerce_channel_list']);
+        $submenu->addChild(
+            'libio.menu_label.shipping_methods_list',
+            ['route' => 'admin_librinfo_ecommerce_shipping_method_list']
+        );
         $submenu->addChild('libio.menu_label.taxon_list', ['route' => 'admin_librinfo_ecommerce_taxon_list']);
         $submenu->addChild('libio.menu_label.product_attributes', ['route' => 'admin_librinfo_ecommerce_productattribute_list']);
         $submenu->addChild('libio.menu_label.product_options', ['route' => 'admin_librinfo_ecommerce_productoption_list']);
