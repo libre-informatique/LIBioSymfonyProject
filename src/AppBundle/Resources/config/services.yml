@@ -39,6 +39,11 @@ services:
         tags:
             - { name: knp_menu.menu, alias: parameters_sidebar_menu }   # The alias is what is used to retrieve the menu
 
+### BLAST CALLBACKS ###
+
+    librinfo.ecommerce.filters.customer:
+        class: Librinfo\CRMBundle\Services\Filters\OrganismFilter
+
 #### SYLIUS CHECKERS ####
 
     lisem.checker.product_variants_parity:
