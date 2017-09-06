@@ -19,6 +19,13 @@ imports:
     - { resource: "@AppBundle/Resources/config/sylius-fixtures.yml" }
     - { resource: "@AppBundle/Resources/config/grids.yml" }
 
+sylius_resource:
+    resources:
+        blast.utils:
+            classes:
+                model: Librinfo\SonataSyliusUserBundle\Entity\SonataUser
+                interface: Blast\CoreBundle\Model\UserInterface
+
 sylius_channel:
     driver: doctrine/orm
     resources:

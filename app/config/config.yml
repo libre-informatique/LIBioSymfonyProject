@@ -105,6 +105,10 @@ doctrine:
                 ilike: Blast\DoctrinePgsqlBundle\DoctrineExtensions\Functions\Ilike
                 concat_ws: Oro\ORM\Query\AST\Functions\String\ConcatWs
 
+        # Commented because it is managed by Sylius (see src/AppBundle/Resources/config/app/config.yml:sylius_resource)
+        # resolve_target_entities:
+        #     Blast\CoreBundle\Model\UserInterface: Librinfo\SonataSyliusUserBundle\Entity\SonataUser
+
 # Swiftmailer Configuration
 swiftmailer:
     default_mailer: direct_mailer
