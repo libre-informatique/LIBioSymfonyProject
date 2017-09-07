@@ -3,7 +3,8 @@
     "chart.js": "^2.6.0",
     "jquery": "^2.2.0",
     "lightbox2": "^2.9.0",
-    "semantic-ui-css": "^2.2.0"
+    "semantic-ui-css": "^2.2.0",
+    "spinkit": "^1.2.5"
   },
   "devDependencies": {
     "gulp": "^3.9.0",
