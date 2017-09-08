@@ -25,7 +25,7 @@ $I->fillField("//input[@id='_password']", 'lisem');
 $I->click("//button[@type='submit']");
 
 testLink($I, 'Contacts');
-testLink($I, 'Courriels groupés');
+testLink($I, 'Emailing');
 testLink($I, 'Èspèces');
 testLink($I, 'Variétés');
 testLink($I, 'Lots');
