@@ -56,12 +56,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/blast-project/BaseEntitiesBundle.git",
-                "reference": "66688b4c43ef0b857c2956ae6f107e910b3aae24"
+                "reference": "2741c2d0e0ea8281c6abe6a75e29bb80dff0d3cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blast-project/BaseEntitiesBundle/zipball/66688b4c43ef0b857c2956ae6f107e910b3aae24",
-                "reference": "66688b4c43ef0b857c2956ae6f107e910b3aae24",
+                "url": "https://api.github.com/repos/blast-project/BaseEntitiesBundle/zipball/2741c2d0e0ea8281c6abe6a75e29bb80dff0d3cb",
+                "reference": "2741c2d0e0ea8281c6abe6a75e29bb80dff0d3cb",
                 "shasum": ""
             },
             "require": {
@@ -114,7 +114,7 @@
                 "libio",
                 "symfony"
             ],
-            "time": "2017-09-08 08:01:14"
+            "time": "2017-09-08 10:42:53"
         },
         {
             "name": "blast-project/core-bundle",
@@ -122,12 +122,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/blast-project/CoreBundle.git",
-                "reference": "7865d16a59d529a3c03da52aad4e974d9ea31d0f"
+                "reference": "c89f3f39cfb3dffe7786141f44e50c11dcf8ab62"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blast-project/CoreBundle/zipball/7865d16a59d529a3c03da52aad4e974d9ea31d0f",
-                "reference": "7865d16a59d529a3c03da52aad4e974d9ea31d0f",
+                "url": "https://api.github.com/repos/blast-project/CoreBundle/zipball/c89f3f39cfb3dffe7786141f44e50c11dcf8ab62",
+                "reference": "c89f3f39cfb3dffe7786141f44e50c11dcf8ab62",
                 "shasum": ""
             },
             "require": {
@@ -185,7 +185,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-09-08 07:58:24"
+            "time": "2017-09-08 12:54:05"
         },
         {
             "name": "blast-project/doctrine-pgsql-bundle",
@@ -382,12 +382,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/blast-project/UtilsBundle.git",
-                "reference": "fd11f4ec49693d9f05e135553c4324072e6ef814"
+                "reference": "82e6331ec053fdd5c39537a7e296184d9822da44"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blast-project/UtilsBundle/zipball/fd11f4ec49693d9f05e135553c4324072e6ef814",
-                "reference": "fd11f4ec49693d9f05e135553c4324072e6ef814",
+                "url": "https://api.github.com/repos/blast-project/UtilsBundle/zipball/82e6331ec053fdd5c39537a7e296184d9822da44",
+                "reference": "82e6331ec053fdd5c39537a7e296184d9822da44",
                 "shasum": ""
             },
             "require": {
@@ -445,7 +445,7 @@
                 "symfony",
                 "utils"
             ],
-            "time": "2017-09-06 16:21:37"
+            "time": "2017-09-08 10:56:43"
         },
         {
             "name": "clue/stream-filter",
@@ -1032,7 +1032,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2017-07-22 20:45:23"
+            "time": "2017-07-22T20:45:23+00:00"
         },
         {
             "name": "doctrine/doctrine-bundle",
@@ -1644,7 +1644,7 @@
                 "database",
                 "orm"
             ],
-            "time": "2017-08-19 16:47:32"
+            "time": "2017-08-19T16:47:32+00:00"
         },
         {
             "name": "friendsofsymfony/jsrouting-bundle",
@@ -3515,7 +3515,7 @@
                 "pdf",
                 "snappy"
             ],
-            "time": "2017-07-17 14:39:20"
+            "time": "2017-07-17T14:39:20+00:00"
         },
         {
             "name": "kriswallsmith/assetic",
@@ -3796,12 +3796,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/EcommerceBundle.git",
-                "reference": "277bb2082c942fe44baa2e95c3a95b568dbc8b82"
+                "reference": "ff1b76df5ea3f69ce32e2b9a592bbb80f914c38e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/EcommerceBundle/zipball/277bb2082c942fe44baa2e95c3a95b568dbc8b82",
-                "reference": "277bb2082c942fe44baa2e95c3a95b568dbc8b82",
+                "url": "https://api.github.com/repos/libre-informatique/EcommerceBundle/zipball/ff1b76df5ea3f69ce32e2b9a592bbb80f914c38e",
+                "reference": "ff1b76df5ea3f69ce32e2b9a592bbb80f914c38e",
                 "shasum": ""
             },
             "require": {
@@ -3854,7 +3854,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-09-08 08:01:06"
+            "time": "2017-09-08 10:57:08"
         },
         {
             "name": "libre-informatique/email-bundle",
@@ -4117,12 +4117,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/SonataSyliusUserBundle.git",
-                "reference": "6c5c84c91be2c964ef3210bfff00e5ec8692777a"
+                "reference": "eb68328234f030ba9d91b49cb0c8b6b8b52d341e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/SonataSyliusUserBundle/zipball/6c5c84c91be2c964ef3210bfff00e5ec8692777a",
-                "reference": "6c5c84c91be2c964ef3210bfff00e5ec8692777a",
+                "url": "https://api.github.com/repos/libre-informatique/SonataSyliusUserBundle/zipball/eb68328234f030ba9d91b49cb0c8b6b8b52d341e",
+                "reference": "eb68328234f030ba9d91b49cb0c8b6b8b52d341e",
                 "shasum": ""
             },
             "require": {
@@ -4174,7 +4174,7 @@
                 "sylius",
                 "symfony"
             ],
-            "time": "2017-09-08 07:58:01"
+            "time": "2017-09-08 12:53:31"
         },
         {
             "name": "libre-informatique/varieties-bundle",
@@ -4399,7 +4399,7 @@
                 "payment",
                 "payum"
             ],
-            "time": "2017-01-12 21:08:19"
+            "time": "2017-01-12T21:08:19+00:00"
         },
         {
             "name": "michelf/php-markdown",
@@ -7002,7 +7002,7 @@
                 "mails",
                 "notifications"
             ],
-            "time": "2017-08-31 17:50:41"
+            "time": "2017-08-31T17:50:41+00:00"
         },
         {
             "name": "sylius/mailer-bundle",
@@ -7082,7 +7082,7 @@
                 "mailer",
                 "swiftmailer"
             ],
-            "time": "2017-08-31 17:50:41"
+            "time": "2017-08-31T17:50:41+00:00"
         },
         {
             "name": "sylius/sylius",
@@ -7090,12 +7090,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sylius/Sylius.git",
-                "reference": "b979ab212485df38ab07481bcdb0683f5416eb7d"
+                "reference": "ae5d954e441338718161c99a1bbf6aafbff0abe2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sylius/Sylius/zipball/b979ab212485df38ab07481bcdb0683f5416eb7d",
-                "reference": "b979ab212485df38ab07481bcdb0683f5416eb7d",
+                "url": "https://api.github.com/repos/Sylius/Sylius/zipball/ae5d954e441338718161c99a1bbf6aafbff0abe2",
+                "reference": "ae5d954e441338718161c99a1bbf6aafbff0abe2",
                 "shasum": ""
             },
             "require": {
@@ -7263,7 +7263,7 @@
             ],
             "description": "E-Commerce platform for PHP, based on Symfony framework.",
             "homepage": "http://sylius.org",
-            "time": "2017-09-07 17:59:01"
+            "time": "2017-09-08T13:13:54+00:00"
         },
         {
             "name": "symfony/assetic-bundle",
