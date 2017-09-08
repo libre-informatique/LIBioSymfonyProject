@@ -187,12 +187,10 @@ blast_base_entities:
             normalize: true
             syliusGuidable: true
     entity_search_indexes: ~
-        # Librinfo\SeedBatchBundle\Entity\SeedBatch:
-        #     fields:
-        #         - code
-        #         - batchNumber
-        #         - productionYear
-        #         - variety
+
+blast_utils:
+    features:
+        customFilters: true
 
 fos_rest:
     exception: ~
