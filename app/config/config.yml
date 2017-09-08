@@ -190,7 +190,8 @@ blast_base_entities:
 
 blast_utils:
     features:
-        customFilters: true
+        customFilters:
+            enabled: true
 
 fos_rest:
     exception: ~
