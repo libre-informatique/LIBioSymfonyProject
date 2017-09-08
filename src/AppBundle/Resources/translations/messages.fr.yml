@@ -44,10 +44,12 @@ libio:
         create_seed_product: Ajouter un Article (semences)
         create_species: Ajouter une Espèce
         create_variety: Ajouter une Variété
-        crm: Relations publiques
         crm_categories_list: Categories
         crm_circles_list: Groupes
+        crm_contacts: Contacts
+        crm_emailing: Courriels groupés
         crm_settings: Relations publiques
+        crm: Relations publiques
         customer_group: Groupes de client
         customers_list: Liste des Clients
         emailing_list: Emailing
@@ -55,8 +57,8 @@ libio:
         genuses_list: Genres
         germination_tests: Tests de germination
         inventory: Inventaire
-        orders: Commandes
         orders_list: Liste des Commandes
+        orders: Commandes
         organisms_list: Liste des Tiers
         other_products_list: Autres
         packagings: Conditionnement
@@ -71,9 +73,9 @@ libio:
         products: Articles
         rates_list: Tarifs forfaits
         sales_journal: Journal des ventes
-        seed_batches: Lots
         seed_batches_list: Liste des Lots
         seed_batches_settings: Lots
+        seed_batches: Lots
         seed_products_list: Semences
         shipping_methods_list: Méthodes de livraison
         shop_settings: Boutique
@@ -84,15 +86,10 @@ libio:
         user_groups: Groupes
         user_roles: Profils
         user_users: Utilisateurs
-        varieties: Variétés
         varieties_list: Liste des Variétés
         varieties_settings: Variétés
+        varieties: Variétés
         zones_list: Zones géographiques
-        crm_contacts: Contacts
-        crm_emailing: Courriels groupés
-        species: Èspèces
-        plot: Parcelles
-        producers: Producteurs
     other_product_admin:
         label: Article (autres)
     other_product_variant_admin:

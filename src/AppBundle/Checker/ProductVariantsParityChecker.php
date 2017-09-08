@@ -25,7 +25,7 @@ final class ProductVariantsParityChecker implements ProductVariantsParityChecker
     /**
      * {@inheritdoc}
      */
-    public function checkParity(ProductVariantInterface $variant, ProductInterface $product)
+    public function checkParity(ProductVariantInterface $variant, ProductInterface $product): bool
     {
         foreach ($product->getVariants() as $existingVariant) {
             // This check is required, because this function has to look for any other different variant with same option values set

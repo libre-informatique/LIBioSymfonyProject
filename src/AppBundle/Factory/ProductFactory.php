@@ -16,6 +16,7 @@ use Librinfo\EcommerceBundle\Entity\Product;
 use Librinfo\VarietiesBundle\Entity\Variety;
 use Sylius\Component\Product\Factory\ProductFactoryInterface;
 use Sylius\Component\Product\Repository\ProductOptionRepositoryInterface;
+use Sylius\Component\Product\Model\ProductInterface;
 
 /**
  * @author Marcos Bezerra de Menezes <marcos.bezerra@libre-informatique.fr>
@@ -62,7 +63,7 @@ class ProductFactory implements ProductFactoryInterface
      *
      * @return Product
      */
-    public function createWithVariant($seedsProduct = false)
+    public function createWithVariant($seedsProduct = false): ProductInterface
     {
         $product = $this->decoratedFactory->createWithVariant();
 

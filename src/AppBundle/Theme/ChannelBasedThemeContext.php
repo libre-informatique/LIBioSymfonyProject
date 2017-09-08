@@ -17,6 +17,7 @@ use Sylius\Bundle\ThemeBundle\Repository\ThemeRepositoryInterface;
 use Sylius\Component\Channel\Context\ChannelContextInterface;
 use Sylius\Component\Channel\Context\ChannelNotFoundException;
 use Sylius\Component\Core\Model\ChannelInterface;
+use Sylius\Bundle\ThemeBundle\Model\ThemeInterface;
 
 /**
  * @author Kamil Kokot <kamil.kokot@lakion.com>
@@ -49,7 +50,7 @@ final class ChannelBasedThemeContext implements ThemeContextInterface
     /**
      * {@inheritdoc}
      */
-    public function getTheme()
+    public function getTheme(): ?ThemeInterface
     {
         try {
             /* @var ChannelInterface $channel */

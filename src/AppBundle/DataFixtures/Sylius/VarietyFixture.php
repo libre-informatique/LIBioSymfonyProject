@@ -28,7 +28,7 @@ final class VarietyFixture extends AbstractResourceFixture
     /**
      * {@inheritdoc}
      */
-    public function getName()
+    public function getName(): string
     {
         return 'variety';
     }
@@ -36,7 +36,7 @@ final class VarietyFixture extends AbstractResourceFixture
     /**
      * {@inheritdoc}
      */
-    protected function configureResourceNode(ArrayNodeDefinition $resourceNode)
+    protected function configureResourceNode(ArrayNodeDefinition $resourceNode): void
     {
         $resourceNode
             ->children()

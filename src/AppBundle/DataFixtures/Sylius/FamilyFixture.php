@@ -23,7 +23,7 @@ final class FamilyFixture extends BaseResourceFixture
     /**
      * {@inheritdoc}
      */
-    public function getName()
+    public function getName(): string
     {
         return 'family';
     }
@@ -31,7 +31,7 @@ final class FamilyFixture extends BaseResourceFixture
     /**
      * {@inheritdoc}
      */
-    protected function configureResourceNode(ArrayNodeDefinition $resourceNode)
+    protected function configureResourceNode(ArrayNodeDefinition $resourceNode): void
     {
         $resourceNode
             ->children()

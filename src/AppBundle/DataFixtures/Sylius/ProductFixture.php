@@ -24,7 +24,7 @@ final class ProductFixture extends BaseAbstractFixture
     /**
      * {@inheritdoc}
      */
-    public function getName()
+    public function getName(): string
     {
         return 'lisem_product';
     }
@@ -32,7 +32,7 @@ final class ProductFixture extends BaseAbstractFixture
     /**
      * {@inheritdoc}
      */
-    protected function configureResourceNode(ArrayNodeDefinition $resourceNode)
+    protected function configureResourceNode(ArrayNodeDefinition $resourceNode): void
     {
         $resourceNode
             ->children()

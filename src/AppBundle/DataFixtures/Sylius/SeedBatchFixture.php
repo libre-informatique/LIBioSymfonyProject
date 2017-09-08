@@ -27,7 +27,7 @@ final class SeedBatchFixture extends AbstractResourceFixture
     /**
      * {@inheritdoc}
      */
-    public function getName()
+    public function getName(): string
     {
         return 'seed_batch';
     }
@@ -35,7 +35,7 @@ final class SeedBatchFixture extends AbstractResourceFixture
     /**
      * {@inheritdoc}
      */
-    protected function configureResourceNode(ArrayNodeDefinition $resourceNode)
+    protected function configureResourceNode(ArrayNodeDefinition $resourceNode): void
     {
         $resourceNode
             ->children()

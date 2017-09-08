@@ -61,7 +61,7 @@ final class ProductVariantGenerator implements ProductVariantGeneratorInterface
      * @param ProductInterface $product
      * @param ArrayCollection  $seedBatches
      */
-    public function generate(ProductInterface $product, $seedBatches = null)
+    public function generate(ProductInterface $product, $seedBatches = null): void
     {
         Assert::true($product->hasOptions(), 'Cannot generate variants for an object without options.');
 
