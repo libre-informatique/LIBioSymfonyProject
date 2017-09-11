@@ -188,11 +188,6 @@ blast_base_entities:
             syliusGuidable: true
     entity_search_indexes: ~
 
-blast_utils:
-    features:
-        customFilters:
-            enabled: true
-
 fos_rest:
     exception: ~
 

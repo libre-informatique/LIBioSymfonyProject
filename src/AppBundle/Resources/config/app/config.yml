@@ -78,6 +78,11 @@ sylius_mailer:
             subject: A new movie {{ movie.title }} has been submitted
             template: AppBundle:Email:testEmail.html.twig
 
+blast_utils:
+    features:
+        customFilters:
+            enabled: true
+
 librinfo_crm:
     Circle:
         allow_positions: false  # default: false
