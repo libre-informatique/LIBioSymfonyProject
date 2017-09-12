@@ -27,7 +27,7 @@ class AppExtension extends BlastCoreExtension
      */
     public function load(array $configs, ContainerBuilder $container)
     {
-        parent::load($configs,$container);
+        parent::load($configs, $container);
         // Loads Librinfo Decorator sonata layout insteadof blastcore layout
         $sonataTemplates = $container->getParameter('sonata.admin.configuration.templates');
         $sonataTemplates['layout'] = 'LibrinfoDecoratorBundle:Admin:layout.html.twig';
