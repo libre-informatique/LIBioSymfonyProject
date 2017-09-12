@@ -147,7 +147,7 @@ sylius_taxonomy:
     driver: doctrine/orm
 
 sylius_locale:
-    locale: fr_FR
+    locale: '%locale%'
 
 stof_doctrine_extensions:
     orm:
