@@ -1032,7 +1032,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2017-07-22 20:45:23"
+            "time": "2017-07-22T20:45:23+00:00"
         },
         {
             "name": "doctrine/doctrine-bundle",
@@ -1644,7 +1644,7 @@
                 "database",
                 "orm"
             ],
-            "time": "2017-08-19 16:47:32"
+            "time": "2017-08-19T16:47:32+00:00"
         },
         {
             "name": "egulias/email-validator",
@@ -3634,7 +3634,7 @@
                 "pdf",
                 "snappy"
             ],
-            "time": "2017-07-17 14:39:20"
+            "time": "2017-07-17T14:39:20+00:00"
         },
         {
             "name": "kriswallsmith/assetic",
@@ -3981,12 +3981,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/EmailBundle.git",
-                "reference": "2a38c5f85f2380fe084dbf534ef3272e0386b201"
+                "reference": "ab69c7a8bd73855111b322b2986adedf156e97bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/EmailBundle/zipball/2a38c5f85f2380fe084dbf534ef3272e0386b201",
-                "reference": "2a38c5f85f2380fe084dbf534ef3272e0386b201",
+                "url": "https://api.github.com/repos/libre-informatique/EmailBundle/zipball/ab69c7a8bd73855111b322b2986adedf156e97bf",
+                "reference": "ab69c7a8bd73855111b322b2986adedf156e97bf",
                 "shasum": ""
             },
             "require": {
@@ -4040,7 +4040,7 @@
                 "spool",
                 "symfony"
             ],
-            "time": "2017-09-12 09:26:56"
+            "time": "2017-09-12 10:32:38"
         },
         {
             "name": "libre-informatique/email-crm-bundle",
@@ -4518,7 +4518,7 @@
                 "payment",
                 "payum"
             ],
-            "time": "2017-01-12 21:08:19"
+            "time": "2017-01-12T21:08:19+00:00"
         },
         {
             "name": "michelf/php-markdown",
@@ -7307,7 +7307,7 @@
                 "mails",
                 "notifications"
             ],
-            "time": "2017-08-31 17:50:41"
+            "time": "2017-08-31T17:50:41+00:00"
         },
         {
             "name": "sylius/mailer-bundle",
@@ -7387,7 +7387,7 @@
                 "mailer",
                 "swiftmailer"
             ],
-            "time": "2017-09-10 07:57:51"
+            "time": "2017-09-10T07:57:51+00:00"
         },
         {
             "name": "sylius/sylius",
@@ -7395,12 +7395,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sylius/Sylius.git",
-                "reference": "60e5dae1e5830afb93f337798e935c9238b93efa"
+                "reference": "dbdbf3ff9cb52c5bd0baa03fa9ea5ef774c1992c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sylius/Sylius/zipball/60e5dae1e5830afb93f337798e935c9238b93efa",
-                "reference": "60e5dae1e5830afb93f337798e935c9238b93efa",
+                "url": "https://api.github.com/repos/Sylius/Sylius/zipball/dbdbf3ff9cb52c5bd0baa03fa9ea5ef774c1992c",
+                "reference": "dbdbf3ff9cb52c5bd0baa03fa9ea5ef774c1992c",
                 "shasum": ""
             },
             "require": {
@@ -7568,7 +7568,7 @@
             ],
             "description": "E-Commerce platform for PHP, based on Symfony framework.",
             "homepage": "http://sylius.org",
-            "time": "2017-09-12 09:39:39"
+            "time": "2017-09-12T09:45:42+00:00"
         },
         {
             "name": "symfony/assetic-bundle",
