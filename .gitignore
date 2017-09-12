@@ -27,6 +27,7 @@
 !/bin/console
 !/bin/ci-scripts
 !/bin/git-script
+!/bin/standard-install.sh
 
 /vendor/*
 
