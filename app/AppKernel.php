@@ -16,7 +16,7 @@ use Symfony\Component\Yaml\Yaml;
 
 class AppKernel extends Kernel
 {
-    public function registerBundles()
+    public function registerBundles(): array
     {
         $bundles = array(
             new Sylius\Bundle\AdminBundle\SyliusAdminBundle(),
