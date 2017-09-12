@@ -74,3 +74,6 @@ _sonata_admin:
 sonata_sylius_user_security:
     resource: "@SonataSyliusUserBundle/Resources/config/routing/security.yml"
     prefix: /admin
+
+_liip_imagine:
+    resource: "@LiipImagineBundle/Resources/config/routing.xml"
