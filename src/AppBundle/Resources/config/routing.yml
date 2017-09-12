@@ -1,25 +1,22 @@
-libio_test:
-    path:     /test/{name}
-    defaults: { _controller: AppBundle:Default:test }
-
 libio_not_implemented:
-    path:   /not_implemented
+    path:   /admin/not_implemented
     defaults: { _controller: AppBundle:Default:notImplemented }
 
 lisem_test_email:
-    path:   /lisem_test_email
+    path:   /admin/lisem_test_email
     defaults: { _controller: AppBundle:Default:testEmail }
 
 blast_core:
     resource: "@BlastCoreBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix: /admin
 
 blast_utils:
     resource: "@BlastUtilsBundle/Resources/config/routing.yml"
+    prefix: /admin
 
 blast_base_entities:
     resource: "@BlastBaseEntitiesBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /admin
 
 # not used any more
 #librinfo_security:
@@ -28,7 +25,7 @@ blast_base_entities:
 
 librinfo_decorator:
     resource: "@LibrinfoDecoratorBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /admin
 
 # not used any more
 #librinfo_user:
@@ -37,27 +34,27 @@ librinfo_decorator:
 
 librinfo_varieties:
     resource: "@LibrinfoVarietiesBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /admin
 
 librinfo_seed_batch:
     resource: "@LibrinfoSeedBatchBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /admin
 
 librinfo_crm:
     resource: "@LibrinfoCRMBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /admin
 
 librinfo_email:
     resource: "@LibrinfoEmailBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /admin
 
 librinfo_email_crm:
     resource: "@LibrinfoEmailCRMBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /admin
 
 librinfo_media:
     resource: "@LibrinfoMediaBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /admin
 
 librinfo_ecommerce:
     resource: "@LibrinfoEcommerceBundle/Resources/config/routing.yml"
@@ -65,15 +62,15 @@ librinfo_ecommerce:
 
 admin:
     resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
-    prefix: /
+    prefix: /admin
 
 _sonata_admin:
     resource: .
     type: sonata_admin
-    prefix: /
+    prefix: /admin
 
 # Security routing for SyliusUserBundle
 # (defines login, logout and login_check routes)
 sonata_sylius_user_security:
     resource: "@SonataSyliusUserBundle/Resources/config/routing/security.yml"
-    prefix: /
+    prefix: /admin
