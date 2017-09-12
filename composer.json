@@ -23,7 +23,7 @@
         "incenteev/composer-parameter-handler": "^2.1",
         "jms/security-extra-bundle": "^1.6",
         "jms/serializer-bundle": "^2.0",
-        "knplabs/knp-snappy-bundle": "^1.5@dev",
+        "knplabs/knp-snappy-bundle": "dev-master",
         "libre-informatique/crm-bundle": "dev-wip-lisem",
         "libre-informatique/decorator-bundle": "dev-wip-lisem",
         "libre-informatique/ecommerce-bundle": "dev-wip-lisem",
@@ -69,16 +69,20 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+            "Librinfo\\EcommerceBundle\\Tools\\ComposerScriptHandler::installSyliusThemeAssets",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget",
+            "Blast\\CoreBundle\\Tools\\Patches\\Patcher::applyPatches"
         ],
         "post-update-cmd": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+            "Librinfo\\EcommerceBundle\\Tools\\ComposerScriptHandler::installSyliusThemeAssets",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget",
+            "Blast\\CoreBundle\\Tools\\Patches\\Patcher::applyPatches"
         ]
     },
     "config": {

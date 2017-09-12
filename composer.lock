@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "38f760083abd46a31eefd761ded7b7df",
+    "content-hash": "73e0a307c7d44bd2ec3ea438cbcfed85",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -1032,7 +1032,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2017-07-22T20:45:23+00:00"
+            "time": "2017-07-22 20:45:23"
         },
         {
             "name": "doctrine/doctrine-bundle",
@@ -1644,7 +1644,7 @@
                 "database",
                 "orm"
             ],
-            "time": "2017-08-19T16:47:32+00:00"
+            "time": "2017-08-19 16:47:32"
         },
         {
             "name": "egulias/email-validator",
@@ -3443,7 +3443,7 @@
                     "email": "stof@notk.org"
                 },
                 {
-                    "name": "KnpLabs",
+                    "name": "Knplabs",
                     "homepage": "http://knplabs.com"
                 },
                 {
@@ -3502,7 +3502,7 @@
                     "email": "stof@notk.org"
                 },
                 {
-                    "name": "KnpLabs",
+                    "name": "Knplabs",
                     "homepage": "http://knplabs.com"
                 },
                 {
@@ -3587,12 +3587,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/KnpSnappyBundle.git",
-                "reference": "40b780fd8c0176c1a055ebd14b900fef345caeba"
+                "reference": "75e63f9fc9dea08aac00f1121ad03ddb5ae5f67a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/KnpSnappyBundle/zipball/40b780fd8c0176c1a055ebd14b900fef345caeba",
-                "reference": "40b780fd8c0176c1a055ebd14b900fef345caeba",
+                "url": "https://api.github.com/repos/KnpLabs/KnpSnappyBundle/zipball/75e63f9fc9dea08aac00f1121ad03ddb5ae5f67a",
+                "reference": "75e63f9fc9dea08aac00f1121ad03ddb5ae5f67a",
                 "shasum": ""
             },
             "require": {
@@ -3600,10 +3600,19 @@
                 "php": ">=5.6",
                 "symfony/framework-bundle": "~2.7|~3.0"
             },
+            "require-dev": {
+                "doctrine/annotations": "~1.0",
+                "phpunit/phpunit": "~4.5",
+                "symfony/asset": "~2.7|~3.0",
+                "symfony/finder": "~2.7|~3.0",
+                "symfony/security-csrf": "~2.7|~3.0",
+                "symfony/templating": "~2.7|~3.0",
+                "symfony/validator": "~2.7|~3.0"
+            },
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.5.x-dev"
+                    "dev-master": "2.x-dev"
                 }
             },
             "autoload": {
@@ -3634,7 +3643,7 @@
                 "pdf",
                 "snappy"
             ],
-            "time": "2017-07-17T14:39:20+00:00"
+            "time": "2017-09-12 08:41:19"
         },
         {
             "name": "kriswallsmith/assetic",
@@ -3915,19 +3924,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/EcommerceBundle.git",
-                "reference": "684c8025506aca811944f152606a02a6f53bc2a1"
+                "reference": "df55aa3b12bb781a1ba4c5f4ff9c32cdf2aa06d1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/EcommerceBundle/zipball/684c8025506aca811944f152606a02a6f53bc2a1",
-                "reference": "684c8025506aca811944f152606a02a6f53bc2a1",
+                "url": "https://api.github.com/repos/libre-informatique/EcommerceBundle/zipball/df55aa3b12bb781a1ba4c5f4ff9c32cdf2aa06d1",
+                "reference": "df55aa3b12bb781a1ba4c5f4ff9c32cdf2aa06d1",
                 "shasum": ""
             },
             "require": {
                 "blast-project/base-entities-bundle": "dev-wip-lisem",
                 "blast-project/core-bundle": "dev-wip-lisem",
                 "blast-project/utils-bundle": "dev-wip-lisem",
-                "knplabs/knp-snappy-bundle": "^1.5@dev",
+                "knplabs/knp-snappy-bundle": "dev-master",
                 "libre-informatique/crm-bundle": "dev-wip-lisem",
                 "libre-informatique/sonata-sylius-user-bundle": "dev-wip-lisem",
                 "php": ">=5.6",
@@ -3961,7 +3970,7 @@
                     "homepage": "http://www.libre-informatique.fr/"
                 },
                 {
-                    "name": "Marcos BEZERRA de MENEZES",
+                    "name": "Marcos Bezerra de Menezes",
                     "email": "marcos.bezerra@libre-informatique.fr"
                 }
             ],
@@ -3973,7 +3982,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-09-12 09:26:25"
+            "time": "2017-09-12 12:29:59"
         },
         {
             "name": "libre-informatique/email-bundle",
@@ -4518,7 +4527,7 @@
                 "payment",
                 "payum"
             ],
-            "time": "2017-01-12T21:08:19+00:00"
+            "time": "2017-01-12 21:08:19"
         },
         {
             "name": "michelf/php-markdown",
@@ -7307,7 +7316,7 @@
                 "mails",
                 "notifications"
             ],
-            "time": "2017-08-31T17:50:41+00:00"
+            "time": "2017-08-31 17:50:41"
         },
         {
             "name": "sylius/mailer-bundle",
@@ -7387,7 +7396,7 @@
                 "mailer",
                 "swiftmailer"
             ],
-            "time": "2017-09-10T07:57:51+00:00"
+            "time": "2017-09-10 07:57:51"
         },
         {
             "name": "sylius/sylius",
@@ -7395,12 +7404,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sylius/Sylius.git",
-                "reference": "dbdbf3ff9cb52c5bd0baa03fa9ea5ef774c1992c"
+                "reference": "310cc93083e7aae8ab2a5a5e9cd2a92bc6c8e714"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sylius/Sylius/zipball/dbdbf3ff9cb52c5bd0baa03fa9ea5ef774c1992c",
-                "reference": "dbdbf3ff9cb52c5bd0baa03fa9ea5ef774c1992c",
+                "url": "https://api.github.com/repos/Sylius/Sylius/zipball/310cc93083e7aae8ab2a5a5e9cd2a92bc6c8e714",
+                "reference": "310cc93083e7aae8ab2a5a5e9cd2a92bc6c8e714",
                 "shasum": ""
             },
             "require": {
@@ -7568,7 +7577,7 @@
             ],
             "description": "E-Commerce platform for PHP, based on Symfony framework.",
             "homepage": "http://sylius.org",
-            "time": "2017-09-12T09:45:42+00:00"
+            "time": "2017-09-12 14:25:08"
         },
         {
             "name": "symfony/assetic-bundle",
