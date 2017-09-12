@@ -78,32 +78,32 @@ final class SeedBatchExampleFactory extends ExampleFactory implements ExampleFac
         $organismRepository = $entityManager->getRepository('LibrinfoCRMBundle:Organism');
 
         $this->optionsResolver =
-            (new OptionsResolver())
-                ->setDefault('seed_farm', 'LiSem AS')
-                ->setAllowedTypes('seed_farm', ['null', 'string', SeedFarm::class])
-                ->setNormalizer('seed_farm', $this->findOneBy($seedFarmRepository, 'name'))
+                               (new OptionsResolver())
+                               ->setDefault('seed_farm', 'LiSem AS')
+                               ->setAllowedTypes('seed_farm', ['null', 'string', SeedFarm::class])
+                               ->setNormalizer('seed_farm', $this->findOneBy($seedFarmRepository, 'name'))
 
-                ->setDefault('variety', $this->randomOne($varietyRepository))
-                ->setAllowedTypes('variety', ['null', 'string', Variety::class])
-                ->setNormalizer('variety', $this->findOneBy($varietyRepository, 'name'))
+                               ->setDefault('variety', $this->randomOne($varietyRepository))
+                               ->setAllowedTypes('variety', ['null', 'string', Variety::class])
+                               ->setNormalizer('variety', $this->findOneBy($varietyRepository, 'name'))
 
-                ->setDefault('producer', null)
-                ->setAllowedTypes('producer', ['null', 'string', Organism::class])
-                // TODO: Wrong query. Should be: "find seed producer with name..."
-                ->setNormalizer('producer', $this->findOneBy($organismRepository, 'name'))
+                               ->setDefault('producer', null)
+                               ->setAllowedTypes('producer', ['null', 'string', Organism::class])
+                               // TODO: Wrong query. Should be: "find seed producer with name..."
+                               ->setNormalizer('producer', $this->findOneBy($organismRepository, 'name'))
 
-                ->setDefault('plot', null)
-                ->setAllowedTypes('plot', ['null', 'string', Plot::class])
-                ->setNormalizer('plot', $this->findOneBy($plotRepository, 'name'))
+                               ->setDefault('plot', null)
+                               ->setAllowedTypes('plot', ['null', 'string', Plot::class])
+                               ->setNormalizer('plot', $this->findOneBy($plotRepository, 'name'))
 
-                ->setDefault('production_year', $this->faker->dateTimeBetween('-5 years', 'now')->format('Y'))
-                ->setAllowedTypes('production_year', ['string'])
+                               ->setDefault('production_year', $this->faker->dateTimeBetween('-5 years', 'now')->format('Y'))
+                               ->setAllowedTypes('production_year', ['string'])
 
-                ->setDefault('batch_number', '1')
-                ->setAllowedTypes('batch_number', ['string'])
+                               ->setDefault('batch_number', '1')
+                               ->setAllowedTypes('batch_number', ['string'])
 
-                ->setDefault('description', '')
-        ;
+                               ->setDefault('description', '')
+                               ;
     }
 
     /**
@@ -154,8 +154,9 @@ final class SeedBatchExampleFactory extends ExampleFactory implements ExampleFac
         $producer = new Organism();
         $producer->setName($this->faker->company)
             ->setSeedProducer(true)
-            ->setEmail($email = $this->faker->email)
-            ->setEmailCanonical($email);
+            ->setEmail($email = $this->faker->email);
+        // No more fluent
+        $producer->setEmailCanonical($email);
         $producer->setSeedProducerCode($this->seedProducerCodeGenerator->generate($producer));
         $this->entityManager->persist($producer);
 
@@ -173,7 +174,7 @@ final class SeedBatchExampleFactory extends ExampleFactory implements ExampleFac
     {
         $plot = new Plot();
         $plot->setName('Parcelle ' . $this->faker->city)
-            ->setProducer($producer);
+                                   ->setProducer($producer);
         $this->entityManager->persist($plot);
 
         return $plot;
