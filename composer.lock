@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "73e0a307c7d44bd2ec3ea438cbcfed85",
+    "content-hash": "c0565443da299acd5b9da785e699b7aa",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -1032,7 +1032,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2017-07-22 20:45:23"
+            "time": "2017-07-22T20:45:23+00:00"
         },
         {
             "name": "doctrine/doctrine-bundle",
@@ -1644,7 +1644,7 @@
                 "database",
                 "orm"
             ],
-            "time": "2017-08-19 16:47:32"
+            "time": "2017-08-19T16:47:32+00:00"
         },
         {
             "name": "egulias/email-validator",
@@ -3443,7 +3443,7 @@
                     "email": "stof@notk.org"
                 },
                 {
-                    "name": "Knplabs",
+                    "name": "KnpLabs",
                     "homepage": "http://knplabs.com"
                 },
                 {
@@ -3502,7 +3502,7 @@
                     "email": "stof@notk.org"
                 },
                 {
-                    "name": "Knplabs",
+                    "name": "KnpLabs",
                     "homepage": "http://knplabs.com"
                 },
                 {
@@ -3643,7 +3643,7 @@
                 "pdf",
                 "snappy"
             ],
-            "time": "2017-09-12 08:41:19"
+            "time": "2017-09-12T08:41:19+00:00"
         },
         {
             "name": "kriswallsmith/assetic",
@@ -3924,26 +3924,25 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/EcommerceBundle.git",
-                "reference": "69fd050a30215e06d4838b05943948e7d8e25857"
+                "reference": "bcd567bd5e32e3d05c604380ea6a4dce7df10948"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/EcommerceBundle/zipball/69fd050a30215e06d4838b05943948e7d8e25857",
-                "reference": "69fd050a30215e06d4838b05943948e7d8e25857",
+                "url": "https://api.github.com/repos/libre-informatique/EcommerceBundle/zipball/bcd567bd5e32e3d05c604380ea6a4dce7df10948",
+                "reference": "bcd567bd5e32e3d05c604380ea6a4dce7df10948",
                 "shasum": ""
             },
             "require": {
                 "blast-project/base-entities-bundle": "dev-wip-lisem",
                 "blast-project/core-bundle": "dev-wip-lisem",
+                "blast-project/outer-extension-bundle": "dev-wip-lisem",
                 "blast-project/utils-bundle": "dev-wip-lisem",
                 "knplabs/knp-snappy-bundle": "dev-master",
                 "libre-informatique/crm-bundle": "dev-wip-lisem",
                 "libre-informatique/sonata-sylius-user-bundle": "dev-wip-lisem",
-                "php": ">=5.6",
-                "sylius/locale-bundle": "1.0.x-dev",
-                "sylius/product-bundle": "1.0.x-dev",
-                "sylius/sylius": "1.0.x-dev",
-                "symfony/symfony": ">=3.2"
+                "php": ">= 7.1",
+                "sylius/sylius": "^1.0",
+                "symfony/symfony": ">=3.3"
             },
             "require-dev": {
                 "symfony/phpunit-bridge": ">=3.2"
@@ -3982,7 +3981,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-09-13 08:37:03"
+            "time": "2017-09-13 12:33:24"
         },
         {
             "name": "libre-informatique/email-bundle",
@@ -4245,26 +4244,20 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/SonataSyliusUserBundle.git",
-                "reference": "737a561a6a303f1b574ae56872baa5f3c8a2384c"
+                "reference": "590aedca8f0a3f9450bcbb4af42a45893d848cf2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/SonataSyliusUserBundle/zipball/737a561a6a303f1b574ae56872baa5f3c8a2384c",
-                "reference": "737a561a6a303f1b574ae56872baa5f3c8a2384c",
+                "url": "https://api.github.com/repos/libre-informatique/SonataSyliusUserBundle/zipball/590aedca8f0a3f9450bcbb4af42a45893d848cf2",
+                "reference": "590aedca8f0a3f9450bcbb4af42a45893d848cf2",
                 "shasum": ""
             },
             "require": {
                 "blast-project/base-entities-bundle": "dev-wip-lisem",
                 "blast-project/core-bundle": "dev-wip-lisem",
-                "php": ">=5.6",
-                "sylius/mailer": "1.0.x-dev",
-                "sylius/mailer-bundle": "1.0.x-dev",
-                "sylius/registry": "1.0.x-dev",
-                "sylius/resource": "1.0.x-dev",
-                "sylius/resource-bundle": "1.0.x-dev",
-                "sylius/user": "1.0.x-dev",
-                "sylius/user-bundle": "1.0.x-dev",
-                "symfony/symfony": ">=3.2"
+                "php": ">=7.1",
+                "sylius/sylius": "^1.0",
+                "symfony/symfony": ">=3.3"
             },
             "require-dev": {
                 "symfony/phpunit-bridge": ">=3.2"
@@ -4291,7 +4284,7 @@
                     "homepage": "http://www.libre-informatique.fr/"
                 },
                 {
-                    "name": "Marcos BEZERRA de MENEZES",
+                    "name": "Marcos Bezerra de Menezes",
                     "email": "marcos.bezerra@libre-informatique.fr"
                 }
             ],
@@ -4302,7 +4295,7 @@
                 "sylius",
                 "symfony"
             ],
-            "time": "2017-09-12 09:27:30"
+            "time": "2017-09-13 12:29:46"
         },
         {
             "name": "libre-informatique/varieties-bundle",
@@ -4527,7 +4520,7 @@
                 "payment",
                 "payum"
             ],
-            "time": "2017-01-12 21:08:19"
+            "time": "2017-01-12T21:08:19+00:00"
         },
         {
             "name": "michelf/php-markdown",
@@ -7260,156 +7253,17 @@
             "time": "2017-09-11T15:44:45+00:00"
         },
         {
-            "name": "sylius/mailer",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Sylius/Mailer.git",
-                "reference": "6069cb88bb81b7df5dd99f815bd6b1fb49f6e368"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Sylius/Mailer/zipball/6069cb88bb81b7df5dd99f815bd6b1fb49f6e368",
-                "reference": "6069cb88bb81b7df5dd99f815bd6b1fb49f6e368",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.1",
-                "webmozart/assert": "^1.0"
-            },
-            "require-dev": {
-                "phpspec/phpspec": "^4.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Sylius\\Component\\Mailer\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Sylius project",
-                    "homepage": "http://sylius.org"
-                },
-                {
-                    "name": "Community contributions",
-                    "homepage": "http://github.com/Sylius/Sylius/contributors"
-                },
-                {
-                    "name": "Paweł Jędrzejewski",
-                    "homepage": "http://pjedrzejewski.com"
-                }
-            ],
-            "description": "Mails management and sending abstraction.",
-            "homepage": "http://sylius.org",
-            "keywords": [
-                "email",
-                "mails",
-                "notifications"
-            ],
-            "time": "2017-08-31 17:50:41"
-        },
-        {
-            "name": "sylius/mailer-bundle",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Sylius/SyliusMailerBundle.git",
-                "reference": "8b73f6f9f5c1dfedd17aabd59206fe4b0a35f4db"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Sylius/SyliusMailerBundle/zipball/8b73f6f9f5c1dfedd17aabd59206fe4b0a35f4db",
-                "reference": "8b73f6f9f5c1dfedd17aabd59206fe4b0a35f4db",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.1",
-                "sylius/mailer": "^1.0",
-                "symfony/framework-bundle": "^3.2"
-            },
-            "require-dev": {
-                "doctrine/doctrine-bundle": "~1.3",
-                "doctrine/orm": "~2.5.0",
-                "incenteev/composer-parameter-handler": "~2.0",
-                "ocramius/proxy-manager": "^1.0",
-                "phpspec/phpspec": "^4.0",
-                "phpunit/phpunit": "^5.6",
-                "polishsymfonycommunity/symfony-mocker-container": "^1.0",
-                "swiftmailer/swiftmailer": "^6.0",
-                "symfony/browser-kit": "^3.2",
-                "symfony/form": "^3.2",
-                "symfony/proxy-manager-bridge": "^3.3",
-                "symfony/security-csrf": "^3.2",
-                "symfony/swiftmailer-bundle": "^3.0",
-                "symfony/templating": "^3.2",
-                "symfony/translation": "^3.2",
-                "symfony/twig-bundle": "^3.2",
-                "symfony/validator": "^3.2",
-                "twig/twig": "^2.0"
-            },
-            "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                },
-                "incenteev-parameters": {
-                    "file": "test/app/config/parameters.yml"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Sylius\\Bundle\\MailerBundle\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Sylius project",
-                    "homepage": "http://sylius.org"
-                },
-                {
-                    "name": "Community contributions",
-                    "homepage": "http://github.com/Sylius/Sylius/contributors"
-                },
-                {
-                    "name": "Paweł Jędrzejewski",
-                    "homepage": "http://pjedrzejewski.com"
-                }
-            ],
-            "description": "Mailers and e-mail template management for Symfony2 projects.",
-            "homepage": "http://sylius.org",
-            "keywords": [
-                "email",
-                "mailer",
-                "swiftmailer"
-            ],
-            "time": "2017-09-10 07:57:51"
-        },
-        {
             "name": "sylius/sylius",
-            "version": "dev-master",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sylius/Sylius.git",
-                "reference": "10710b39d7d51ad8d7fa99bef567354a0b65bd65"
+                "reference": "b5920f580e7ffddacdd507161f3cb94a1e7f4ed2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sylius/Sylius/zipball/10710b39d7d51ad8d7fa99bef567354a0b65bd65",
-                "reference": "10710b39d7d51ad8d7fa99bef567354a0b65bd65",
+                "url": "https://api.github.com/repos/Sylius/Sylius/zipball/b5920f580e7ffddacdd507161f3cb94a1e7f4ed2",
+                "reference": "b5920f580e7ffddacdd507161f3cb94a1e7f4ed2",
                 "shasum": ""
             },
             "require": {
@@ -7578,7 +7432,7 @@
             ],
             "description": "E-Commerce platform for PHP, based on Symfony framework.",
             "homepage": "http://sylius.org",
-            "time": "2017-09-13 08:37:21"
+            "time": "2017-09-13T10:31:29+00:00"
         },
         {
             "name": "symfony/assetic-bundle",
@@ -9524,20 +9378,12 @@
         "libre-informatique/seed-batch-bundle": 20,
         "libre-informatique/sonata-sylius-user-bundle": 20,
         "libre-informatique/varieties-bundle": 20,
-        "marem/payum-paybox": 20,
-        "sylius/mailer-bundle": 20,
-        "sylius/mailer": 20,
-        "sylius/registry": 20,
-        "sylius/resource-bundle": 20,
-        "sylius/resource": 20,
-        "sylius/sylius": 20,
-        "sylius/user-bundle": 20,
-        "sylius/user": 20
+        "marem/payum-paybox": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.6"
+        "php": ">=7.1"
     },
     "platform-dev": []
 }
