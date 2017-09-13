@@ -95,7 +95,7 @@ class AppKernel extends Kernel
         return array_merge(parent::registerBundles(), $bundles);
     }
 
-    public function registerContainerConfiguration(LoaderInterface $loader)
+    public function registerContainerConfiguration(LoaderInterface $loader): void
     {
         $loader->load(sprintf(
             '%s/config/config_%s.yml',
