@@ -57,3 +57,4 @@
 /tests/acceptance.suite.yml
 
 /.php_cs.cache
+/.web-server-pid
