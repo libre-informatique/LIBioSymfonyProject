@@ -44,7 +44,7 @@ wget http://chromedriver.storage.googleapis.com/2.32/chromedriver_linux64.zip
 unzip chromedriver_linux64.zip
 mv chromedriver ${HOME}/bin/
 
-composer require --no-interaction --dev se/selenium-server-standalone '^2.52'
+composer require --no-interaction --dev se/selenium-server-standalone '^3.5'
 
 chromium-browser --version
 chromedriver --version
