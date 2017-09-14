@@ -56,10 +56,10 @@ class SeedsProductAdmin extends ProductAdmin
                     ->with('form_group_general')
                         ->add('variety', 'sonata_type_model_autocomplete',
                             [
-                                'property' => ['name', 'code'],
-                                'required' => true,
+                                'property'    => ['name', 'code'],
+                                'required'    => true,
                                 'constraints' => [new NotBlank()],
-                                'attr' => [
+                                'attr'        => [
                                     'class' => 'inline-block',
                                     'width' => 50,
                                 ],

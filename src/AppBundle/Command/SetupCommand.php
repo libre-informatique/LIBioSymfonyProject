@@ -210,10 +210,10 @@ EOT
         $options = [
             ['code' => Product::$PACKAGING_OPTION_CODE,  'name' => 'Conditionnement', 'type' => 'text', 'values' => [
                 'BULK' => ['locale' => 'fr_FR', 'value' => 'Vrac'],
-                '1G' => ['locale' => 'fr_FR', 'value' => '1g'],
-                '5G' => ['locale' => 'fr_FR', 'value' => '5g'],
-                '20S' => ['locale' => 'fr_FR', 'value' => '20 graines'],
-                '50S' => ['locale' => 'fr_FR', 'value' => '50 graines'],
+                '1G'   => ['locale' => 'fr_FR', 'value' => '1g'],
+                '5G'   => ['locale' => 'fr_FR', 'value' => '5g'],
+                '20S'  => ['locale' => 'fr_FR', 'value' => '20 graines'],
+                '50S'  => ['locale' => 'fr_FR', 'value' => '50 graines'],
             ]],
         ];
 
@@ -377,7 +377,7 @@ EOT
         $output->writeln(['', 'Running <info>doctrine:fixtures:load --append --fixtures=src/AppBundle/DataFixtures</info> command...']);
         $fixturesCommand = $this->getApplication()->find('doctrine:fixtures:load');
         $fixturesInput = new ArrayInput([
-            '--append' => true,
+            '--append'   => true,
             '--fixtures' => 'src/AppBundle/DataFixtures',
         ]);
         $fixturesInput->setInteractive(false);

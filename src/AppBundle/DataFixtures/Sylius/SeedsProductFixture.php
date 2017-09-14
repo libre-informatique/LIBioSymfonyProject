@@ -87,12 +87,12 @@ final class SeedsProductFixture extends AbstractFixture
         $options = $this->optionsResolver->resolve($options);
 
         $this->taxonFixture->load(['custom' => [[
-            'code' => 'category',
-            'name' => 'Catégorie',
+            'code'     => 'category',
+            'name'     => 'Catégorie',
             'children' => [
                 [
-                    'code' => 'seeds',
-                    'name' => 'Semences',
+                    'code'     => 'seeds',
+                    'name'     => 'Semences',
                     'children' => [
                         ['code' => 'seeds_LFE',  'name' => 'Légumes-feuille'],
                         ['code' => 'seeds_LFR',  'name' => 'Légumes-fruit'],
@@ -108,8 +108,8 @@ final class SeedsProductFixture extends AbstractFixture
         foreach ($varieties as $variety) {
             $products[] = [
                 'main_taxon' => 'seeds_LFR',      // TODO (Variety taxon)
-                'taxons' => ['seeds_LFR'],        // TODO (Variety taxon)
-                'images' => [
+                'taxons'     => ['seeds_LFR'],        // TODO (Variety taxon)
+                'images'     => [
                     [sprintf('%s/../../Resources/fixtures/%s', __DIR__, 'tomate-stpierre.jpg'), 'main'],  // TODO (Variety media)
                     [sprintf('%s/../../Resources/fixtures/%s', __DIR__, 'tomate-stpierre.jpg'), 'thumbnail'],  // TODO (Variety media)
                 ],

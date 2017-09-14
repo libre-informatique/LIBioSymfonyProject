@@ -36,7 +36,7 @@ class VarietyAdmin extends BaseAdmin
                         [
                         'multiple' => true,
                         'required' => false,
-                        'query' => $this->packagingQueryBuilder(),
+                        'query'    => $this->packagingQueryBuilder(),
                         ], ['admin_code' => 'lisem.admin.packaging']
                     )
                 ->end()

@@ -97,13 +97,13 @@ final class TshirtProductFixture extends AbstractFixture
         $options = $this->optionsResolver->resolve($options);
 
         $this->taxonFixture->load(['custom' => [[
-            'code' => 'category',
-            'name' => 'Catégorie',
+            'code'     => 'category',
+            'name'     => 'Catégorie',
             'children' => [
                 [
-                    'code' => 't_shirts',
-                    'name' => 'T-Shirts',
-                    'slug' => 't-shirts',
+                    'code'     => 't_shirts',
+                    'name'     => 'T-Shirts',
+                    'slug'     => 't-shirts',
                     'children' => [
                         [
                             'code' => 'mens_t_shirts',
@@ -126,22 +126,22 @@ final class TshirtProductFixture extends AbstractFixture
 
         $this->productOptionFixture->load(['custom' => [
             [
-                'name' => 'Couleur',
-                'code' => 't_shirt_color',
+                'name'   => 'Couleur',
+                'code'   => 't_shirt_color',
                 'values' => [
-                    't_shirt_color_red' => 'Rouge',
+                    't_shirt_color_red'   => 'Rouge',
                     't_shirt_color_black' => 'Noir',
                     't_shirt_color_white' => 'Blanc',
                 ],
             ],
             [
-                'name' => 'Taille',
-                'code' => 't_shirt_size',
+                'name'   => 'Taille',
+                'code'   => 't_shirt_size',
                 'values' => [
-                    't_shirt_size_s' => 'S',
-                    't_shirt_size_m' => 'M',
-                    't_shirt_size_l' => 'L',
-                    't_shirt_size_xl' => 'XL',
+                    't_shirt_size_s'   => 'S',
+                    't_shirt_size_m'   => 'M',
+                    't_shirt_size_l'   => 'L',
+                    't_shirt_size_xl'  => 'XL',
                     't_shirt_size_xxl' => 'XXL',
                 ],
             ],
@@ -153,17 +153,17 @@ final class TshirtProductFixture extends AbstractFixture
             $categoryTaxonCode = $this->faker->randomElement(['mens_t_shirts', 'womens_t_shirts']);
 
             $products[] = [
-                'name' => sprintf('T-Shirt "%s"', $productsNames[$i]),
-                'code' => sprintf('TSH-%04d', $i + 1),
-                'main_taxon' => $categoryTaxonCode,
-                'taxons' => [$categoryTaxonCode],
+                'name'               => sprintf('T-Shirt "%s"', $productsNames[$i]),
+                'code'               => sprintf('TSH-%04d', $i + 1),
+                'main_taxon'         => $categoryTaxonCode,
+                'taxons'             => [$categoryTaxonCode],
                 'product_attributes' => [
-                    't_shirt_brand' => $this->faker->randomElement(['Nike', 'Adidas', 'JKM-476 Streetwear', 'Potato', 'Centipede Wear']),
+                    't_shirt_brand'      => $this->faker->randomElement(['Nike', 'Adidas', 'JKM-476 Streetwear', 'Potato', 'Centipede Wear']),
                     't_shirt_collection' => sprintf('Sylius %s %s', $this->faker->randomElement(['Été', 'Hiver', 'Printemps', 'Automne']), mt_rand(1995, 2012)),
-                    't_shirt_material' => $this->faker->randomElement(['Centipede', 'Laine', 'Centipede 10% / Laine 90%', 'Pomme de terre 100%']),
+                    't_shirt_material'   => $this->faker->randomElement(['Centipede', 'Laine', 'Centipede 10% / Laine 90%', 'Pomme de terre 100%']),
                 ],
                 'product_options' => ['t_shirt_color', 't_shirt_size'],
-                'images' => [
+                'images'          => [
                     [sprintf('%s/../../Resources/fixtures/%s', __DIR__, 't-shirts.jpg'), 'main'],
                     [sprintf('%s/../../Resources/fixtures/%s', __DIR__, 't-shirts.jpg'), 'thumbnail'],
                 ],

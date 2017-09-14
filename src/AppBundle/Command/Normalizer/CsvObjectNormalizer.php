@@ -110,10 +110,10 @@ class CsvObjectNormalizer extends ObjectNormalizer
     protected function getMappings()
     {
         return [
-            Genus::class . '.family' => [Family::class, 'name'],
-            Species::class . '.genus' => [Genus::class, 'name'],
+            Genus::class . '.family'           => [Family::class, 'name'],
+            Species::class . '.genus'          => [Genus::class, 'name'],
             Species::class . '.parent_species' => [Species::class, 'name'],
-            Variety::class . '.species' => [Species::class, 'name'],
+            Variety::class . '.species'        => [Species::class, 'name'],
         ];
     }
 }

@@ -120,8 +120,8 @@ EOT
     {
         // TODO: this should go in a configuration file !
         $files = [
-            'Librinfo\VarietiesBundle\Entity\Family' => 'famille.csv',
-            'Librinfo\VarietiesBundle\Entity\Genus' => 'genre.csv',
+            'Librinfo\VarietiesBundle\Entity\Family'  => 'famille.csv',
+            'Librinfo\VarietiesBundle\Entity\Genus'   => 'genre.csv',
             'Librinfo\VarietiesBundle\Entity\Species' => 'espece.csv',
             'Librinfo\VarietiesBundle\Entity\Variety' => 'variete.csv',
         ];

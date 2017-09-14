@@ -90,8 +90,8 @@ final class BookProductFixture extends AbstractFixture
         $options = $this->optionsResolver->resolve($options);
 
         $this->taxonFixture->load(['custom' => [[
-            'code' => 'category',
-            'name' => 'Catégorie',
+            'code'     => 'category',
+            'name'     => 'Catégorie',
             'children' => [
                 [
                     'code' => 'books',
@@ -106,12 +106,12 @@ final class BookProductFixture extends AbstractFixture
             ['name' => 'ISBN', 'code' => 'book_isbn', 'type' => TextAttributeType::TYPE],
             ['name' => 'Nombre de pages', 'code' => 'book_pages', 'type' => IntegerAttributeType::TYPE],
             [
-                'name' => 'Genre littéraire',
-                'code' => 'book_genre',
-                'type' => SelectAttributeType::TYPE,
+                'name'          => 'Genre littéraire',
+                'code'          => 'book_genre',
+                'type'          => SelectAttributeType::TYPE,
                 'configuration' => [
                     'multiple' => true,
-                    'choices' => $bookGenres,
+                    'choices'  => $bookGenres,
                 ],
             ],
         ]]);
@@ -122,14 +122,14 @@ final class BookProductFixture extends AbstractFixture
             $authorName = $this->faker->name;
 
             $products[] = [
-                'name' => sprintf('Livre "%s", par %s', $productsNames[$i], $authorName),
-                'code' => sprintf('LIV-%04d', $i + 1),
-                'main_taxon' => 'books',
-                'taxons' => ['books'],
+                'name'               => sprintf('Livre "%s", par %s', $productsNames[$i], $authorName),
+                'code'               => sprintf('LIV-%04d', $i + 1),
+                'main_taxon'         => 'books',
+                'taxons'             => ['books'],
                 'product_attributes' => [
                     'book_author' => $authorName,
-                    'book_isbn' => $this->faker->isbn13,
-                    'book_pages' => $this->faker->numberBetween(42, 1024),
+                    'book_isbn'   => $this->faker->isbn13,
+                    'book_pages'  => $this->faker->numberBetween(42, 1024),
                 ],
                 'images' => [
                     [sprintf('%s/../../Resources/fixtures/%s', __DIR__, 'books.jpg'), 'main'],

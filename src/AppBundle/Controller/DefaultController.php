@@ -74,9 +74,9 @@ class DefaultController extends Controller
         }
 
         $data = [
-            'order' => $order,
-            'number' => $number,
-            'date' => date('d/m/Y'),
+            'order'    => $order,
+            'number'   => $number,
+            'date'     => date('d/m/Y'),
             'base_dir' => '',
         ];
 

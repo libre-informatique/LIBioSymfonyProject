@@ -12,7 +12,6 @@
 
 namespace AppBundle\Admin;
 
-use Librinfo\CRMBundle\Admin\OrganismAdmin;
 use Librinfo\CRMBundle\Form\DataTransformer\CustomerCodeTransformer;
 use Librinfo\CRMBundle\CodeGenerator\CustomerCodeGenerator;
 use Sonata\AdminBundle\Form\FormMapper;
