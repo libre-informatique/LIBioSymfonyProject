@@ -23,9 +23,9 @@ set +v
 set -v
 
 npm -v
-travis_retry npm install
+npm install
 #npm install -g gulp-cli
-travis_retry npm run gulp
+npm run gulp
 
 
 # start server

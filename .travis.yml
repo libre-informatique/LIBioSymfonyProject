@@ -49,7 +49,7 @@ install:
   - if [ -x ${SCRIPTS_FOLDER}/install_${TARGET}.sh ]; then ${SCRIPTS_FOLDER}/install_${TARGET}.sh; fi;
 
 before_script:
-  - if [ -x ${SCRIPTS_FOLDER}/before_script_${TARGET}.sh ]; then ${SCRIPTS_FOLDER}/before_script_${TARGET}.sh; fi;
+  - if [ -x ${SCRIPTS_FOLDER}/before_script_${TARGET}.sh ]; then travis_retry ${SCRIPTS_FOLDER}/before_script_${TARGET}.sh; fi;
 
 script:
   - make $TARGET
