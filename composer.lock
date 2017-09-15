@@ -108,7 +108,7 @@
                 "libio",
                 "symfony"
             ],
-            "time": "2017-09-15 09:33:41"
+            "time": "2017-09-15T09:33:41+00:00"
         },
         {
             "name": "blast-project/core-bundle",
@@ -173,7 +173,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-09-15 09:38:50"
+            "time": "2017-09-15T09:38:50+00:00"
         },
         {
             "name": "blast-project/doctrine-pgsql-bundle",
@@ -215,7 +215,7 @@
                     "homepage": "http://www.libre-informatique.fr/"
                 },
                 {
-                    "name": "Marcos BEZERRA de MENEZES",
+                    "name": "Marcos Bezerra de Menezes",
                     "email": "marcos.bezerra@libre-informatique.fr"
                 }
             ],
@@ -228,7 +228,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-09-15 09:39:21"
+            "time": "2017-09-15T09:39:21+00:00"
         },
         {
             "name": "blast-project/doctrine-session-bundle",
@@ -286,7 +286,7 @@
                 "doctrine",
                 "symfony"
             ],
-            "time": "2017-09-15 09:39:42"
+            "time": "2017-09-15T09:39:42+00:00"
         },
         {
             "name": "blast-project/outer-extension-bundle",
@@ -344,7 +344,7 @@
                 "outer extension",
                 "symfony"
             ],
-            "time": "2017-09-15 09:39:58"
+            "time": "2017-09-15T09:39:58+00:00"
         },
         {
             "name": "blast-project/utils-bundle",
@@ -409,7 +409,7 @@
                 "symfony",
                 "utils"
             ],
-            "time": "2017-09-15 09:40:38"
+            "time": "2017-09-15T09:40:38+00:00"
         },
         {
             "name": "clue/stream-filter",
@@ -3811,7 +3811,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-09-15 09:41:22"
+            "time": "2017-09-15T09:41:22+00:00"
         },
         {
             "name": "libre-informatique/decorator-bundle",
@@ -3868,7 +3868,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-09-15 09:42:01"
+            "time": "2017-09-15T09:42:01+00:00"
         },
         {
             "name": "libre-informatique/ecommerce-bundle",
@@ -3927,7 +3927,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-09-15 09:42:35"
+            "time": "2017-09-15T09:42:35+00:00"
         },
         {
             "name": "libre-informatique/email-bundle",
@@ -3988,7 +3988,7 @@
                 "spool",
                 "symfony"
             ],
-            "time": "2017-09-15 09:43:05"
+            "time": "2017-09-15T09:43:05+00:00"
         },
         {
             "name": "libre-informatique/email-crm-bundle",
@@ -4048,7 +4048,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-09-15 09:43:36"
+            "time": "2017-09-15T09:43:36+00:00"
         },
         {
             "name": "libre-informatique/media-bundle",
@@ -4102,7 +4102,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-09-15 09:44:32"
+            "time": "2017-09-15T09:44:32+00:00"
         },
         {
             "name": "libre-informatique/seed-batch-bundle",
@@ -4146,7 +4146,7 @@
                     "homepage": "http://www.libre-informatique.fr/"
                 },
                 {
-                    "name": "Marcos BEZERRA DE MENEZES",
+                    "name": "Marcos Bezerra de Menezes",
                     "email": "marcos.bezerra@libre-informatique.fr"
                 }
             ],
@@ -4158,7 +4158,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-09-15 09:45:06"
+            "time": "2017-09-15T09:45:06+00:00"
         },
         {
             "name": "libre-informatique/sonata-sylius-user-bundle",
@@ -4166,12 +4166,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/SonataSyliusUserBundle.git",
-                "reference": "01febaf9bbf9e7a65bdc7d7099b28ac0e2808fe3"
+                "reference": "d501231c240b5ee884a0ece3c624ff668403fd14"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/SonataSyliusUserBundle/zipball/01febaf9bbf9e7a65bdc7d7099b28ac0e2808fe3",
-                "reference": "01febaf9bbf9e7a65bdc7d7099b28ac0e2808fe3",
+                "url": "https://api.github.com/repos/libre-informatique/SonataSyliusUserBundle/zipball/d501231c240b5ee884a0ece3c624ff668403fd14",
+                "reference": "d501231c240b5ee884a0ece3c624ff668403fd14",
                 "shasum": ""
             },
             "require": {
@@ -4185,12 +4185,6 @@
                 "symfony/phpunit-bridge": ">=3.2"
             },
             "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.4.x-dev",
-                    "dev-wip-lisem": "0.4.x-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Librinfo\\SonataSyliusUserBundle\\": "src/"
@@ -4217,7 +4211,7 @@
                 "sylius",
                 "symfony"
             ],
-            "time": "2017-09-15 08:04:03"
+            "time": "2017-09-15T09:46:06+00:00"
         },
         {
             "name": "libre-informatique/varieties-bundle",
@@ -4225,12 +4219,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/VarietiesBundle.git",
-                "reference": "e4f2296c77875a384d1d84af10c3c7909f365f82"
+                "reference": "e16934f2484a49a7c35c22399816700e8faa7edd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/VarietiesBundle/zipball/e4f2296c77875a384d1d84af10c3c7909f365f82",
-                "reference": "e4f2296c77875a384d1d84af10c3c7909f365f82",
+                "url": "https://api.github.com/repos/libre-informatique/VarietiesBundle/zipball/e16934f2484a49a7c35c22399816700e8faa7edd",
+                "reference": "e16934f2484a49a7c35c22399816700e8faa7edd",
                 "shasum": ""
             },
             "require": {
@@ -4249,12 +4243,6 @@
                 "libre-informatique/crm-bundle": "Manage contacts, organisms and more..."
             },
             "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.4.x-dev",
-                    "dev-wip-lisem": "0.4.x-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Librinfo\\VarietiesBundle\\": "src/"
@@ -4289,7 +4277,7 @@
                 "taxonomy",
                 "variety"
             ],
-            "time": "2017-09-15 08:01:18"
+            "time": "2017-09-15T09:46:32+00:00"
         },
         {
             "name": "liip/imagine-bundle",
