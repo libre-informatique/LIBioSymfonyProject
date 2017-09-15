@@ -10,6 +10,9 @@ bin/console doctrine:schema:create --no-interaction
 
 # lisem
 bin/console lisem:install:setup --with-samples --yes
+bin/console librinfo:patchs:apply
+bin/console assets:install
+bin/console sylius:theme:assets:install # must be done after assets:install
 
 
 #nvm use stable
