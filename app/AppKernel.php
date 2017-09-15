@@ -104,7 +104,7 @@ class AppKernel extends Kernel
         ));
     }
 
-    public function getCacheDir()
+    public function getCacheDir(): string
     {
         $yaml = Yaml::parse(file_get_contents(sprintf('%s/config/parameters.yml', $this->getRootDir())));
 
@@ -124,7 +124,7 @@ class AppKernel extends Kernel
         );
     }
 
-    public function getLogDir()
+    public function getLogDir(): string
     {
         $yaml = Yaml::parse(file_get_contents(sprintf('%s/config/parameters.yml', $this->getRootDir())));
 
@@ -139,7 +139,7 @@ class AppKernel extends Kernel
         return sprintf('%s/logs', $this->rootDir);
     }
 
-    private function getInstance()
+    private function getInstance(): string
     {
         $parts = explode('/', dirname(__DIR__));
 
