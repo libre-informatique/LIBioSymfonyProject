@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "38d1a923adf7945c9c68e9fe4dd5183d",
+    "content-hash": "060784ef5abaa0e80a25294938db39a2",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -52,16 +52,16 @@
         },
         {
             "name": "blast-project/base-entities-bundle",
-            "version": "dev-master",
+            "version": "dev-wip-lisem",
             "source": {
                 "type": "git",
                 "url": "https://github.com/blast-project/BaseEntitiesBundle.git",
-                "reference": "f3c584c52557e0cb591b2a8ccde68c5b14144482"
+                "reference": "b663c837abe96e03e686053358c729570f0dcecf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blast-project/BaseEntitiesBundle/zipball/f3c584c52557e0cb591b2a8ccde68c5b14144482",
-                "reference": "f3c584c52557e0cb591b2a8ccde68c5b14144482",
+                "url": "https://api.github.com/repos/blast-project/BaseEntitiesBundle/zipball/b663c837abe96e03e686053358c729570f0dcecf",
+                "reference": "b663c837abe96e03e686053358c729570f0dcecf",
                 "shasum": ""
             },
             "require": {
@@ -76,12 +76,6 @@
                 "libre-informatique/crm-bundle": "Manage contacts, organisms and more..."
             },
             "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.4.x-dev",
-                    "dev-wip-lisem": "0.4.x-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Blast\\BaseEntitiesBundle\\": "src/"
@@ -114,20 +108,20 @@
                 "libio",
                 "symfony"
             ],
-            "time": "2017-09-15 07:43:05"
+            "time": "2017-09-15 09:33:41"
         },
         {
             "name": "blast-project/core-bundle",
-            "version": "dev-master",
+            "version": "dev-wip-lisem",
             "source": {
                 "type": "git",
                 "url": "https://github.com/blast-project/CoreBundle.git",
-                "reference": "9e660e17b7ed36a0b8e9cc097f747e98700bdd8e"
+                "reference": "739aacef3b5e8b7f98e4f5a39e91a54bcd3fd974"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blast-project/CoreBundle/zipball/9e660e17b7ed36a0b8e9cc097f747e98700bdd8e",
-                "reference": "9e660e17b7ed36a0b8e9cc097f747e98700bdd8e",
+                "url": "https://api.github.com/repos/blast-project/CoreBundle/zipball/739aacef3b5e8b7f98e4f5a39e91a54bcd3fd974",
+                "reference": "739aacef3b5e8b7f98e4f5a39e91a54bcd3fd974",
                 "shasum": ""
             },
             "require": {
@@ -144,12 +138,6 @@
                 "symfony/phpunit-bridge": ">=3.2"
             },
             "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.4.x-dev",
-                    "dev-wip-lisem": "0.4.x-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Blast\\CoreBundle\\": "src/"
@@ -185,20 +173,20 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-09-15 07:46:22"
+            "time": "2017-09-15 09:38:50"
         },
         {
             "name": "blast-project/doctrine-pgsql-bundle",
-            "version": "dev-master",
+            "version": "dev-wip-lisem",
             "source": {
                 "type": "git",
                 "url": "https://github.com/blast-project/DoctrinePgsqlBundle.git",
-                "reference": "1b207a5473fff148e238402660884082784138d0"
+                "reference": "c93edb2474399b1074b4fb7a4939757efa1ea164"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blast-project/DoctrinePgsqlBundle/zipball/1b207a5473fff148e238402660884082784138d0",
-                "reference": "1b207a5473fff148e238402660884082784138d0",
+                "url": "https://api.github.com/repos/blast-project/DoctrinePgsqlBundle/zipball/c93edb2474399b1074b4fb7a4939757efa1ea164",
+                "reference": "c93edb2474399b1074b4fb7a4939757efa1ea164",
                 "shasum": ""
             },
             "require": {
@@ -212,12 +200,6 @@
                 "symfony/phpunit-bridge": ">=3.2"
             },
             "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.4.x-dev",
-                    "dev-wip-lisem": "0.4.x-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Blast\\DoctrinePgsqlBundle\\": "src/"
@@ -233,7 +215,7 @@
                     "homepage": "http://www.libre-informatique.fr/"
                 },
                 {
-                    "name": "Marcos Bezerra de Menezes",
+                    "name": "Marcos BEZERRA de MENEZES",
                     "email": "marcos.bezerra@libre-informatique.fr"
                 }
             ],
@@ -246,20 +228,20 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-09-15 07:51:22"
+            "time": "2017-09-15 09:39:21"
         },
         {
             "name": "blast-project/doctrine-session-bundle",
-            "version": "dev-master",
+            "version": "dev-wip-lisem",
             "source": {
                 "type": "git",
                 "url": "https://github.com/blast-project/DoctrineSessionBundle.git",
-                "reference": "6896a0f70cb28be5d5d1219f7d9f549c6ddf680c"
+                "reference": "0461b82b4fa415090088e9c4da7cff7166835d52"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blast-project/DoctrineSessionBundle/zipball/6896a0f70cb28be5d5d1219f7d9f549c6ddf680c",
-                "reference": "6896a0f70cb28be5d5d1219f7d9f549c6ddf680c",
+                "url": "https://api.github.com/repos/blast-project/DoctrineSessionBundle/zipball/0461b82b4fa415090088e9c4da7cff7166835d52",
+                "reference": "0461b82b4fa415090088e9c4da7cff7166835d52",
                 "shasum": ""
             },
             "require": {
@@ -278,12 +260,6 @@
                 "blast-project/core-bundle": "Define sonata admins in yml and more"
             },
             "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.4.x-dev",
-                    "dev-wip-lisem": "0.4.x-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Blast\\DoctrineSessionBundle\\": "src/"
@@ -310,20 +286,20 @@
                 "doctrine",
                 "symfony"
             ],
-            "time": "2017-09-15 07:50:56"
+            "time": "2017-09-15 09:39:42"
         },
         {
             "name": "blast-project/outer-extension-bundle",
-            "version": "dev-master",
+            "version": "dev-wip-lisem",
             "source": {
                 "type": "git",
                 "url": "https://github.com/blast-project/OuterExtensionBundle.git",
-                "reference": "f196395c75045b01c41cc6935c14f9e1e55bb776"
+                "reference": "bf0188d3deafb8a9dac036902bfd484586e1e5c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blast-project/OuterExtensionBundle/zipball/f196395c75045b01c41cc6935c14f9e1e55bb776",
-                "reference": "f196395c75045b01c41cc6935c14f9e1e55bb776",
+                "url": "https://api.github.com/repos/blast-project/OuterExtensionBundle/zipball/bf0188d3deafb8a9dac036902bfd484586e1e5c1",
+                "reference": "bf0188d3deafb8a9dac036902bfd484586e1e5c1",
                 "shasum": ""
             },
             "require": {
@@ -334,12 +310,6 @@
                 "symfony/phpunit-bridge": ">=3.2"
             },
             "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.4.x-dev",
-                    "dev-wip-lisem": "0.4.x-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Blast\\OuterExtensionBundle\\": "src/"
@@ -374,20 +344,20 @@
                 "outer extension",
                 "symfony"
             ],
-            "time": "2017-09-15 07:46:43"
+            "time": "2017-09-15 09:39:58"
         },
         {
             "name": "blast-project/utils-bundle",
-            "version": "dev-master",
+            "version": "dev-wip-lisem",
             "source": {
                 "type": "git",
                 "url": "https://github.com/blast-project/UtilsBundle.git",
-                "reference": "af8acee96ac0047965d36098ce46976ff4fb5690"
+                "reference": "93cbbca4de7015714f58fa7a3b6bf0e64ec476cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blast-project/UtilsBundle/zipball/af8acee96ac0047965d36098ce46976ff4fb5690",
-                "reference": "af8acee96ac0047965d36098ce46976ff4fb5690",
+                "url": "https://api.github.com/repos/blast-project/UtilsBundle/zipball/93cbbca4de7015714f58fa7a3b6bf0e64ec476cd",
+                "reference": "93cbbca4de7015714f58fa7a3b6bf0e64ec476cd",
                 "shasum": ""
             },
             "require": {
@@ -404,12 +374,6 @@
                 "blast-project/outer-extension-bundle": "Extend your doctrine entities from the outside"
             },
             "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.4.x-dev",
-                    "dev-wip-lisem": "0.4.x-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Blast\\UtilsBundle\\": "src/"
@@ -445,7 +409,7 @@
                 "symfony",
                 "utils"
             ],
-            "time": "2017-09-15 07:50:32"
+            "time": "2017-09-15 09:40:38"
         },
         {
             "name": "clue/stream-filter",
@@ -3792,16 +3756,16 @@
         },
         {
             "name": "libre-informatique/crm-bundle",
-            "version": "dev-master",
+            "version": "dev-wip-lisem",
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/CRMBundle.git",
-                "reference": "ae6fd30d338f82cd702d4f279ca317f7284b9a4e"
+                "reference": "44a06ea3f7ced8abb1ac8d2a32160dd77edcf4c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/CRMBundle/zipball/ae6fd30d338f82cd702d4f279ca317f7284b9a4e",
-                "reference": "ae6fd30d338f82cd702d4f279ca317f7284b9a4e",
+                "url": "https://api.github.com/repos/libre-informatique/CRMBundle/zipball/44a06ea3f7ced8abb1ac8d2a32160dd77edcf4c2",
+                "reference": "44a06ea3f7ced8abb1ac8d2a32160dd77edcf4c2",
                 "shasum": ""
             },
             "require": {
@@ -3820,12 +3784,6 @@
                 "symfony/phpunit-bridge": ">=3.2"
             },
             "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.4.x-dev",
-                    "dev-wip-lisem": "0.4.x-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Librinfo\\CRMBundle\\": "src/"
@@ -3853,20 +3811,20 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-09-15 08:54:10"
+            "time": "2017-09-15 09:41:22"
         },
         {
             "name": "libre-informatique/decorator-bundle",
-            "version": "dev-master",
+            "version": "dev-wip-lisem",
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/DecoratorBundle.git",
-                "reference": "d5fdd86dca145e3f894318a2137dadf8a72838af"
+                "reference": "73a989d28d425f2eab7d8367f66292730fefd6fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/DecoratorBundle/zipball/d5fdd86dca145e3f894318a2137dadf8a72838af",
-                "reference": "d5fdd86dca145e3f894318a2137dadf8a72838af",
+                "url": "https://api.github.com/repos/libre-informatique/DecoratorBundle/zipball/73a989d28d425f2eab7d8367f66292730fefd6fe",
+                "reference": "73a989d28d425f2eab7d8367f66292730fefd6fe",
                 "shasum": ""
             },
             "require": {
@@ -3883,12 +3841,6 @@
                 "libre-informatique/crm-bundle": "Manage contacts, organisms and more..."
             },
             "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.4.x-dev",
-                    "dev-wip-lisem": "0.4.x-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Librinfo\\DecoratorBundle\\": "src/"
@@ -3916,20 +3868,20 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-09-15 07:58:31"
+            "time": "2017-09-15 09:42:01"
         },
         {
             "name": "libre-informatique/ecommerce-bundle",
-            "version": "dev-master",
+            "version": "dev-wip-lisem",
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/EcommerceBundle.git",
-                "reference": "2d99f8ae3ae43ac3c52077d04be2883a1960eafd"
+                "reference": "1dd91a38a0774367f412bdeb91e81a20d5598a94"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/EcommerceBundle/zipball/2d99f8ae3ae43ac3c52077d04be2883a1960eafd",
-                "reference": "2d99f8ae3ae43ac3c52077d04be2883a1960eafd",
+                "url": "https://api.github.com/repos/libre-informatique/EcommerceBundle/zipball/1dd91a38a0774367f412bdeb91e81a20d5598a94",
+                "reference": "1dd91a38a0774367f412bdeb91e81a20d5598a94",
                 "shasum": ""
             },
             "require": {
@@ -3948,12 +3900,6 @@
                 "symfony/phpunit-bridge": ">=3.2"
             },
             "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.4.x-dev",
-                    "dev-wip-lisem": "0.4.x-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Librinfo\\EcommerceBundle\\": "src/"
@@ -3981,20 +3927,20 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-09-15 07:40:42"
+            "time": "2017-09-15 09:42:35"
         },
         {
             "name": "libre-informatique/email-bundle",
-            "version": "dev-master",
+            "version": "dev-wip-lisem",
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/EmailBundle.git",
-                "reference": "b0214f1b0aea1ac0df54f23d1a23fb21ace0af14"
+                "reference": "03628d1654503ebdaef057899d48e8c623b30e66"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/EmailBundle/zipball/b0214f1b0aea1ac0df54f23d1a23fb21ace0af14",
-                "reference": "b0214f1b0aea1ac0df54f23d1a23fb21ace0af14",
+                "url": "https://api.github.com/repos/libre-informatique/EmailBundle/zipball/03628d1654503ebdaef057899d48e8c623b30e66",
+                "reference": "03628d1654503ebdaef057899d48e8c623b30e66",
                 "shasum": ""
             },
             "require": {
@@ -4014,12 +3960,6 @@
                 "symfony/phpunit-bridge": ">=3.2"
             },
             "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.4.x-dev",
-                    "dev-wip-lisem": "0.4.x-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Librinfo\\EmailBundle\\": "src/"
@@ -4048,20 +3988,20 @@
                 "spool",
                 "symfony"
             ],
-            "time": "2017-09-15 08:03:35"
+            "time": "2017-09-15 09:43:05"
         },
         {
             "name": "libre-informatique/email-crm-bundle",
-            "version": "dev-master",
+            "version": "dev-wip-lisem",
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/EmailCRMBundle.git",
-                "reference": "790cd2f8da0076e213343577c7431d5afb67906f"
+                "reference": "d34d071964747fa3df88b118622f7a79b57ada7a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/EmailCRMBundle/zipball/790cd2f8da0076e213343577c7431d5afb67906f",
-                "reference": "790cd2f8da0076e213343577c7431d5afb67906f",
+                "url": "https://api.github.com/repos/libre-informatique/EmailCRMBundle/zipball/d34d071964747fa3df88b118622f7a79b57ada7a",
+                "reference": "d34d071964747fa3df88b118622f7a79b57ada7a",
                 "shasum": ""
             },
             "require": {
@@ -4079,12 +4019,6 @@
                 "symfony/phpunit-bridge": ">=3.2"
             },
             "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.4.x-dev",
-                    "dev-wip-lisem": "0.4.x-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Librinfo\\EmailCRMBundle\\": "src/"
@@ -4114,20 +4048,20 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-09-15 08:02:25"
+            "time": "2017-09-15 09:43:36"
         },
         {
             "name": "libre-informatique/media-bundle",
-            "version": "dev-master",
+            "version": "dev-wip-lisem",
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/MediaBundle.git",
-                "reference": "a118ab4e4ffe1a09a7fbfd033fe29896d226c33c"
+                "reference": "bc839f0255f7224406c8fdcdbdae272652b5e538"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/MediaBundle/zipball/a118ab4e4ffe1a09a7fbfd033fe29896d226c33c",
-                "reference": "a118ab4e4ffe1a09a7fbfd033fe29896d226c33c",
+                "url": "https://api.github.com/repos/libre-informatique/MediaBundle/zipball/bc839f0255f7224406c8fdcdbdae272652b5e538",
+                "reference": "bc839f0255f7224406c8fdcdbdae272652b5e538",
                 "shasum": ""
             },
             "require": {
@@ -4140,12 +4074,6 @@
                 "symfony/phpunit-bridge": ">=3.2"
             },
             "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.4.x-dev",
-                    "dev-wip-lisem": "0.4.x-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Librinfo\\MediaBundle\\": "src/"
@@ -4174,20 +4102,20 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-09-15 08:05:09"
+            "time": "2017-09-15 09:44:32"
         },
         {
             "name": "libre-informatique/seed-batch-bundle",
-            "version": "dev-master",
+            "version": "dev-wip-lisem",
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/SeedBatchBundle.git",
-                "reference": "15ddff41d1a410ec67e5bed644dcd4de22f8620b"
+                "reference": "42e47319e84d2ece9e922bb2887233fdccc1853e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/SeedBatchBundle/zipball/15ddff41d1a410ec67e5bed644dcd4de22f8620b",
-                "reference": "15ddff41d1a410ec67e5bed644dcd4de22f8620b",
+                "url": "https://api.github.com/repos/libre-informatique/SeedBatchBundle/zipball/42e47319e84d2ece9e922bb2887233fdccc1853e",
+                "reference": "42e47319e84d2ece9e922bb2887233fdccc1853e",
                 "shasum": ""
             },
             "require": {
@@ -4203,12 +4131,6 @@
                 "symfony/phpunit-bridge": ">=3.2"
             },
             "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.4.x-dev",
-                    "dev-wip-lisem": "0.4.x-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Librinfo\\SeedBatchBundle\\": "src/"
@@ -4236,11 +4158,11 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-09-15 07:59:57"
+            "time": "2017-09-15 09:45:06"
         },
         {
             "name": "libre-informatique/sonata-sylius-user-bundle",
-            "version": "dev-master",
+            "version": "dev-wip-lisem",
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/SonataSyliusUserBundle.git",
@@ -4299,7 +4221,7 @@
         },
         {
             "name": "libre-informatique/varieties-bundle",
-            "version": "dev-master",
+            "version": "dev-wip-lisem",
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/VarietiesBundle.git",
