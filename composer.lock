@@ -352,12 +352,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/blast-project/UtilsBundle.git",
-                "reference": "93cbbca4de7015714f58fa7a3b6bf0e64ec476cd"
+                "reference": "0f8fe183046d0e81c9c9bea0608432eb426ddcaa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blast-project/UtilsBundle/zipball/93cbbca4de7015714f58fa7a3b6bf0e64ec476cd",
-                "reference": "93cbbca4de7015714f58fa7a3b6bf0e64ec476cd",
+                "url": "https://api.github.com/repos/blast-project/UtilsBundle/zipball/0f8fe183046d0e81c9c9bea0608432eb426ddcaa",
+                "reference": "0f8fe183046d0e81c9c9bea0608432eb426ddcaa",
                 "shasum": ""
             },
             "require": {
@@ -409,7 +409,7 @@
                 "symfony",
                 "utils"
             ],
-            "time": "2017-09-15T09:40:38+00:00"
+            "time": "2017-09-18T11:15:40+00:00"
         },
         {
             "name": "clue/stream-filter",
@@ -1540,12 +1540,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/doctrine2.git",
-                "reference": "36dc28d43eeacf37faa23cbb441ae226a1fb0ee9"
+                "reference": "24d95796bb27ee06f4687b03c58ecba057be15f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/36dc28d43eeacf37faa23cbb441ae226a1fb0ee9",
-                "reference": "36dc28d43eeacf37faa23cbb441ae226a1fb0ee9",
+                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/24d95796bb27ee06f4687b03c58ecba057be15f9",
+                "reference": "24d95796bb27ee06f4687b03c58ecba057be15f9",
                 "shasum": ""
             },
             "require": {
@@ -1608,7 +1608,7 @@
                 "database",
                 "orm"
             ],
-            "time": "2017-08-19T16:47:32+00:00"
+            "time": "2017-09-18T06:52:10+00:00"
         },
         {
             "name": "egulias/email-validator",
@@ -3876,12 +3876,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/EcommerceBundle.git",
-                "reference": "1dd91a38a0774367f412bdeb91e81a20d5598a94"
+                "reference": "73bdc2134e40369b36a696e3b66aa56a6ef41c1b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/EcommerceBundle/zipball/1dd91a38a0774367f412bdeb91e81a20d5598a94",
-                "reference": "1dd91a38a0774367f412bdeb91e81a20d5598a94",
+                "url": "https://api.github.com/repos/libre-informatique/EcommerceBundle/zipball/73bdc2134e40369b36a696e3b66aa56a6ef41c1b",
+                "reference": "73bdc2134e40369b36a696e3b66aa56a6ef41c1b",
                 "shasum": ""
             },
             "require": {
@@ -3927,7 +3927,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-09-15T09:42:35+00:00"
+            "time": "2017-09-15T15:38:05+00:00"
         },
         {
             "name": "libre-informatique/email-bundle",
