@@ -36,7 +36,7 @@ parameters:
             super: true
 
     # CRM Fake email feature
-    lisem.fakeEmail:
+    librinfo.fakeEmail:
         domain: lisem.eu
         prefix: 'FAKE'
         suffix: ''
