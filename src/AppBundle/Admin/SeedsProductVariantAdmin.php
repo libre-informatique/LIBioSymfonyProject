@@ -23,11 +23,11 @@ use Sonata\CoreBundle\Validator\ErrorElement;
  */
 class SeedsProductVariantAdmin extends ProductVariantAdmin
 {
-    protected $baseRouteName = 'admin_libio_seeds_productvariant';
-    protected $baseRoutePattern = 'libio/seeds_productvariant';
+    protected $baseRouteName = 'admin_lisem_seeds_productvariant';
+    protected $baseRoutePattern = 'lisem/seeds_productvariant';
     protected $classnameLabel = 'SeedsProductVariant';
 
-    protected $productAdminCode = 'libio.admin.seeds_product';
+    protected $productAdminCode = 'lisem.admin.seeds_product';
 
     public function configureFormFields(\Sonata\AdminBundle\Form\FormMapper $mapper)
     {

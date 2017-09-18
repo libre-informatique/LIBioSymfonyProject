@@ -13,8 +13,8 @@ parameters:
                     - librinfo_emailcrm.admin.organism
 #                    - librinfo_emailcrm.admin.contact
                     - librinfo_varieties.admin.species
-                    - libio.admin.variety
-                    - libio.admin.seeds_product
+                    - lisem.admin.variety
+                    - lisem.admin.seeds_product
                     - librinfo_seedbatch.admin.organism
                     - librinfo_seedbatch.admin.seedfarm
                     - librinfo_seedbatch.admin.seedbatch
@@ -123,13 +123,13 @@ parameters:
                     form_group_general:
                         '':
                             variety:
-                                admin_code: libio.admin.variety
+                                admin_code: lisem.admin.variety
                             _options:
                                 fieldsOrder: [name, code, variety]
                     show_tab_variants:
                         '':
                             variants:
-                                admin_code: libio.admin.seeds_product_variant
+                                admin_code: lisem.admin.seeds_product_variant
 
                     _options:
                         tabsOrder: [form_group_general, show_tab_variants, form_group_specifics]
@@ -151,7 +151,7 @@ parameters:
                                     class: inline-block
                                     width: 50
                                 _options:
-                                    admin_code: libio.admin.variety
+                                    admin_code: lisem.admin.variety
                             name:
                                 type: text
                                 label: librinfo.label.product_name
@@ -176,7 +176,7 @@ parameters:
                                 _options:
                                     edit: modal
                                     inline: table-list
-                                    admin_code: libio.admin.seeds_product_variant
+                                    admin_code: lisem.admin.seeds_product_variant
             #LIST
             Sonata\AdminBundle\Datagrid\ListMapper:
                 remove:
@@ -184,7 +184,7 @@ parameters:
                 add:
                     name: ~
                     code:
-                        label: libio.label.product_code
+                        label: lisem.label.product_code
                         identifier: true
                     variety:
                         admin_code: librinfo_varieties.admin.variety
@@ -210,7 +210,7 @@ parameters:
                     show_tab_variants:
                         '':
                             variants:
-                                admin_code: libio.admin.other_product_variant
+                                admin_code: lisem.admin.other_product_variant
 
             # FORM
             Sonata\AdminBundle\Form\FormMapper:
@@ -233,7 +233,7 @@ parameters:
                                 _options:
                                     edit: modal
                                     inline: table-list
-                                    admin_code: libio.admin.other_product_variant
+                                    admin_code: lisem.admin.other_product_variant
             # LIST
             Sonata\AdminBundle\Datagrid\ListMapper:
                 add: ~
@@ -256,7 +256,7 @@ parameters:
                     form_tab_general:
                         form_group_general:
                             product:
-                                admin_code: libio.admin.seeds_product
+                                admin_code: lisem.admin.seeds_product
                                 attr:
                                     readonly: ~
                                 disabled: true
@@ -285,7 +285,7 @@ parameters:
                             product:
                                 type: sonata_type_model_hidden
                                 _options:
-                                    admin_code: libio.admin.seeds_product
+                                    admin_code: lisem.admin.seeds_product
                             name:
                                 type: text
                                 required: true
@@ -327,7 +327,7 @@ parameters:
                     code: ~
                     name: ~
                     product:
-                        admin_code: libio.admin.seeds_product
+                        admin_code: lisem.admin.seeds_product
                     packaging: ~
                     seedBatch:
                         admin_code: librinfo_seedbatch.admin.seedbatch
@@ -365,7 +365,7 @@ parameters:
                     form_group_general:
                         '':
                             product:
-                                admin_code: libio.admin.other_product
+                                admin_code: lisem.admin.other_product
             # FORM
             Sonata\AdminBundle\Form\FormMapper:
                 remove:

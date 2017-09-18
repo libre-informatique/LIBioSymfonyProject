@@ -23,8 +23,8 @@ use Symfony\Component\Form\FormEvents;
  */
 class PackagingAdmin extends ProductOptionValueAdmin
 {
-    protected $baseRouteName = 'admin_libio_packaging';
-    protected $baseRoutePattern = 'libio/packaging';
+    protected $baseRouteName = 'admin_lisem_packaging';
+    protected $baseRoutePattern = 'lisem/packaging';
     protected $classnameLabel = 'Packaging';
 
     /**

@@ -1,4 +1,4 @@
-libio_not_implemented:
+lisem_not_implemented:
     path:   /admin/not_implemented
     defaults: { _controller: AppBundle:Default:notImplemented }
 

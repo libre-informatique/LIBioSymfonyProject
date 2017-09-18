@@ -15,7 +15,7 @@ show_group_info: Informations supplémentaires
 form_group_expeditors: Éxpédition
 form_group_grouped_expeditors: Envoi par groupes
 
-libio:
+lisem:
     help:
         product_price: en Centimes
         packaging: ex. 5g / 20 graines / vrac

@@ -22,8 +22,8 @@ use Sylius\Component\Product\Model\ProductInterface;
  */
 class OtherProductAdmin extends ProductAdmin
 {
-    protected $baseRouteName = 'admin_libio_other_product';
-    protected $baseRoutePattern = 'libio/other_product';
+    protected $baseRouteName = 'admin_lisem_other_product';
+    protected $baseRoutePattern = 'lisem/other_product';
     protected $classnameLabel = 'OtherProduct';
 
     public function createQuery($context = 'list')

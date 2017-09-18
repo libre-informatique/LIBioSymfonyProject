@@ -28,13 +28,13 @@ services:
 
 ### CUSTOM SIDEBAR MENUS ###
 
-    libio.menu_builder:
+    lisem.menu_builder:
         class: AppBundle\Menu\MenuBuilder
         arguments: ["@knp_menu.factory"]
 
-    libio.sidebar_menu.paremeters:
+    lisem.sidebar_menu.paremeters:
         class: Knp\Menu\MenuItem                                  # the service definition requires setting the class
-        factory: ["@libio.menu_builder", createParametersSidebarMenu]
+        factory: ["@lisem.menu_builder", createParametersSidebarMenu]
         arguments: ["@request_stack"]
         tags:
             - { name: knp_menu.menu, alias: parameters_sidebar_menu }   # The alias is what is used to retrieve the menu
