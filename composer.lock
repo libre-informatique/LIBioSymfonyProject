@@ -116,12 +116,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/blast-project/CoreBundle.git",
-                "reference": "739aacef3b5e8b7f98e4f5a39e91a54bcd3fd974"
+                "reference": "c1e89585196b42015d6b7f24bf1cc771e32b1df5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blast-project/CoreBundle/zipball/739aacef3b5e8b7f98e4f5a39e91a54bcd3fd974",
-                "reference": "739aacef3b5e8b7f98e4f5a39e91a54bcd3fd974",
+                "url": "https://api.github.com/repos/blast-project/CoreBundle/zipball/c1e89585196b42015d6b7f24bf1cc771e32b1df5",
+                "reference": "c1e89585196b42015d6b7f24bf1cc771e32b1df5",
                 "shasum": ""
             },
             "require": {
@@ -173,7 +173,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-09-15T09:38:50+00:00"
+            "time": "2017-09-18T15:55:52+00:00"
         },
         {
             "name": "blast-project/doctrine-pgsql-bundle",
@@ -352,12 +352,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/blast-project/UtilsBundle.git",
-                "reference": "0f8fe183046d0e81c9c9bea0608432eb426ddcaa"
+                "reference": "06f59424be24696ee18523ece8ccafcafd2829ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blast-project/UtilsBundle/zipball/0f8fe183046d0e81c9c9bea0608432eb426ddcaa",
-                "reference": "0f8fe183046d0e81c9c9bea0608432eb426ddcaa",
+                "url": "https://api.github.com/repos/blast-project/UtilsBundle/zipball/06f59424be24696ee18523ece8ccafcafd2829ab",
+                "reference": "06f59424be24696ee18523ece8ccafcafd2829ab",
                 "shasum": ""
             },
             "require": {
@@ -409,7 +409,7 @@
                 "symfony",
                 "utils"
             ],
-            "time": "2017-09-18T11:15:40+00:00"
+            "time": "2017-09-18T15:40:08+00:00"
         },
         {
             "name": "clue/stream-filter",
@@ -4166,12 +4166,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/SonataSyliusUserBundle.git",
-                "reference": "d501231c240b5ee884a0ece3c624ff668403fd14"
+                "reference": "b2b9108cb8a1e55a91b60f2fbaa6682a522f35f1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/SonataSyliusUserBundle/zipball/d501231c240b5ee884a0ece3c624ff668403fd14",
-                "reference": "d501231c240b5ee884a0ece3c624ff668403fd14",
+                "url": "https://api.github.com/repos/libre-informatique/SonataSyliusUserBundle/zipball/b2b9108cb8a1e55a91b60f2fbaa6682a522f35f1",
+                "reference": "b2b9108cb8a1e55a91b60f2fbaa6682a522f35f1",
                 "shasum": ""
             },
             "require": {
@@ -4211,7 +4211,7 @@
                 "sylius",
                 "symfony"
             ],
-            "time": "2017-09-15T09:46:06+00:00"
+            "time": "2017-09-18T15:58:30+00:00"
         },
         {
             "name": "libre-informatique/varieties-bundle",
