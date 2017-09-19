@@ -1034,88 +1034,74 @@ parameters:
                         xml: csv
 
 ################################################################################
-# Channel
+# ORDER
 ################################################################################
+        Librinfo\EcommerceBundle\Admin\OrderAdmin:
+            Sonata\AdminBundle\Show\ShowMapper:
+                add: ~
+            Sonata\AdminBundle\Datagrid\ListMapper:
+                add: ~
+            Sonata\AdminBundle\Datagrid\DatagridMapper:
+                add: ~
+            Sonata\AdminBundle\Form\FormMapper:
+                remove:
+                    channel: ~
+                    notes: ~
+                    shipping_address: ~
+                    billing_address: ~
+                    customer: ~
+                add:
+                    form_tab_general:
+                        form_group_general:
+                            channel:
+                                label: librinfo.label.channel
+                                required: true
+                            currency_code:
+                                type: sonata_type_model
+                                class: Sylius\Component\Currency\Model\Currency
+                            notes: ~
+                        form_group_shippingAddress:
+                            shippingAddress:
+                                label: false
+                                type: AppBundle\Form\Type\OrderAddressType
+                                data_class: Librinfo\CRMBundle\Entity\Address
+                                attr:
+                                    class: nested-form
+                                constraints:
+                                    - Symfony\Component\Validator\Constraints\Valid
+                        form_group_billingAddress:
+                            billingAddress:
+                                label: false
+                                type: AppBundle\Form\Type\OrderAddressType
+                                data_class: Librinfo\CRMBundle\Entity\Address
+                                attr:
+                                    class: nested-form
+                                constraints:
+                                    - Symfony\Component\Validator\Constraints\Valid
 
-        # AppBundle\Admin\ChannelAdmin:
-        #     # SHOW
-        #     Sonata\AdminBundle\Show\ShowMapper:
-        #         add:
-        #             main_tab:
-        #                 main_group:
-        #                     code: ~
-        #                     name: ~
-        #                     color: ~
-        #                     description: ~
-        #                     enabled: ~
-        #                     hostname: ~
-        #                     createdAt: ~
-        #                     updatedAt: ~
-        #                     #id: ~
-        #
-        #     # FORM
-        #     Sonata\AdminBundle\Form\FormMapper:
-        #         add:
-        #             main_tab:
-        #                 main_group:
-        #                     code: ~
-        #                     name: ~
-        #                     color: ~
-        #                     description: ~
-        #                     enabled: ~
-        #                     hostname: ~
-        #                     createdAt: ~
-        #                     updatedAt: ~
-        #                     #id: ~
-        #
-        #     # LIST
-        #     Sonata\AdminBundle\Datagrid\ListMapper:
-        #         remove:
-        #             id: ~
-        #             baseCurrency: ~
-        #             defaultLocale: ~
-        #             defaultTaxZone: ~
-        #             taxCalculationStrategy: ~
-        #             currencies: ~
-        #             locales: ~
-        #             themeName: ~
-        #             contactEmail: ~
-        #             skippingShippingStepAllowed: ~
-        #             skippingPaymentStepAllowed: ~
-        #             accountVerificationRequired: ~
-        #         add:
-        #             code: ~
-        #             name: ~
-        #             color: ~
-        #             description: ~
-        #             enabled: ~
-        #             hostname: ~
-        #             createdAt: ~
-        #             updatedAt: ~
-        #             _options:
-        #                 fieldsOrder:
-        #                     - code
-        #                     - name
-        #                     - color
-        #                     - description
-        #                     - enabled
-        #                     - hostname
-        #                     - createdAt
-        #                     - updatedAt
-        #             #id: ~
-        #
-        #
-        #     # FILTERS
-        #     Sonata\AdminBundle\Datagrid\DatagridMapper:
-        #         remove:
-        #             id: ~
-        #     #     add:
-        #     #         code: ~
-        #     #         name: ~
-        #     #         color: ~
-        #     #         description: ~
-        #     #         enabled: ~
-        #     #         hostname: ~
-        #     #         createdAt: ~
-        #     #         updatedAt: ~
-        #             #id: ~
+                            #
+                            # shipping_address:
+                            #     type: Sonata\AdminBundle\Form\Type\AdminType
+                            #     class: Librinfo\CRMBundle\Entity\Address
+                            #     by_reference: false
+                            #     delete: false
+                            #     admin_code: librinfo_crm.admin.address
+                            #     _options:
+                            #         targetEntity: Librinfo\CRMBundle\Entity\Address
+                            # billing_address:
+                            #     type: Sonata\AdminBundle\Form\Type\AdminType
+                            #     class: Librinfo\CRMBundle\Entity\Address
+                            #     by_reference: false
+                            #     delete: false
+                            #     admin_code: librinfo_crm.admin.address
+                            #     _options:
+                            #         targetEntity: Librinfo\CRMBundle\Entity\Address
+
+                            # customer:
+                            #     # type: sonata_type_model
+                            #     multiple: false
+                            #     expanded: false
+                            #     btn_add: add
+                            #     required: false
+                            #     class: Librinfo\CRMBundle\Entity\Organism
+                            #     admin_code: librinfo_seedbatch.admin.organism

@@ -249,3 +249,9 @@ services:
             - '@doctrine.orm.entity_manager'
         calls:
             - [setCodeGenerator, ["@librinfo_crm.code_generator.customer"]]
+
+    app_bundle.hooks.layout.javascripts:
+        parent: blast_utils.hooks.abstract_hook
+        class: AppBundle\Hook\Layout\Javascripts
+        tags:
+            - { name: blast.hook, hook: layout.javascripts, template: AppBundle:Hook/Layout:javascripts.html.twig }

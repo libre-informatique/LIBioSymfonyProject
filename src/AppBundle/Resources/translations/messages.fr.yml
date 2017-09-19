@@ -1,19 +1,21 @@
 
 Dashboard: Tableau de Bord
-Strains: Souches
-Varieties: Variétés
+form_group_billingAddress: Adresse de facturation
 form_group_channel_descriptions: Descriptions spécifiques
-form_tab_channel_descriptions: Déscriptions spécifiques
-form_tab_new_variety_variant : Ajouter un article (semences)
-show_group_channel_descriptions: Descriptions spécifiques
-form_tab_channel_descriptions: Descriptions spécifiques
-show_tab_contactInformations: Coordonnées
-form_tab_contactInformations: Coordonnées
-show_group_defaultPhone: Téléphone principal
-show_group_defaultAddress: Adresse principale
-show_group_info: Informations supplémentaires
 form_group_expeditors: Éxpédition
 form_group_grouped_expeditors: Envoi par groupes
+form_group_shippingAddress: Adresse de livraison
+form_tab_channel_descriptions: Descriptions spécifiques
+form_tab_channel_descriptions: Déscriptions spécifiques
+form_tab_contactInformations: Coordonnées
+form_tab_new_variety_variant : Ajouter un article (semences)
+show_group_channel_descriptions: Descriptions spécifiques
+show_group_defaultAddress: Adresse principale
+show_group_defaultPhone: Téléphone principal
+show_group_info: Informations supplémentaires
+show_tab_contactInformations: Coordonnées
+Strains: Souches
+Varieties: Variétés
 
 lisem:
     help:
@@ -102,18 +104,29 @@ lisem:
 librinfo:
     label:
         bulk: Vrac
-        channel: Utilisation
-        packaging: Conditionnement
-        packagings: Conditionnements
-        price: Prix
-        quantity: Quantité
-        seed_batch: Lot
-        value: Contenu
+        channel: Canal de vente
+        city: Ville
+        company: Société
+        country_code: Pays
         created_by: Créé par
-        updated_by: Màj par
+        description_title: Titre
         enabled: Activé
         field_to_additionnals: Destinataires additonnels
-        description_title: Titre
+        first_name: Prénom
+        last_name: Nom
+        packaging: Conditionnement
+        packagings: Conditionnements
+        post_code: Code postal
+        price: Prix
+        province_code: Code province
+        province_name: Région
+        quantity: Quantité
+        seed_batch: Lot
+        street: Rue
+        useSameAddressForBilling: Utiliser la même adresse pour la facturation
+        updated_by: Màj par
+        value: Contenu
+
     link:
         dashboard: Tableau de Bord
         other_product_create: Ajouter un article (autres)
