@@ -121,11 +121,11 @@ class OrderAddressType extends BaseType
         parent::configureOptions($resolver);
     }
 
-   /**
-    * {@inheritdoc}
-    */
-   public function getBlockPrefix()
-   {
-       return self::class;
-   }
+    /**
+     * {@inheritdoc}
+     */
+    public function getBlockPrefix()
+    {
+        return self::class;
+    }
 }

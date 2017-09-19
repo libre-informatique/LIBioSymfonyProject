@@ -16,5 +16,4 @@ use Blast\UtilsBundle\Hook\Component\AbstractHook;
 
 class Javascripts extends AbstractHook
 {
-    
 }

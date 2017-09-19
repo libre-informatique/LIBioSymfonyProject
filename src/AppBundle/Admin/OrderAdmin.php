@@ -118,7 +118,7 @@ class OrderAdmin extends BaseOrderAdmin
 
         // @TODO: Add order payment form and traitment
         //
-        ///** @var PaymentInterface $payment */
+        // /** @var PaymentInterface $payment */
         // $payment = $this->container->get('sylius.factory.payment')->createNew();
         //
         // $payment->setMethod($this->container->get('sylius.repository.payment_method')->findOneBy(['code' => 'offline']));
