@@ -133,16 +133,6 @@ services:
             - [ setTemplate, [edit, LibrinfoCRMBundle:OrganismAdmin:edit.html.twig]]
             - [ setTemplate, [show, LibrinfoCRMBundle:OrganismAdmin:show.html.twig]]
 
-    lisem.ecommerce.admin.order:
-        class: AppBundle\Admin\OrderAdmin
-        arguments: [~, Librinfo\EcommerceBundle\Entity\Order, BlastCoreBundle:CRUD ]
-        tags:
-            - name: sonata.admin
-              manager_type: orm
-              group: admin
-              label: lisem.ecommerce.admin.order.label
-              label_translator_strategy: blast_core.label.strategy.librinfo
-
     # # UNCOMMENT IF NEEDED AND UPDATE ALL blast.yml when circles property is used
     # lisem.admin.circle:
     #     class: AppBundle\Admin\CircleAdmin
