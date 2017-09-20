@@ -116,12 +116,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/blast-project/CoreBundle.git",
-                "reference": "c1e89585196b42015d6b7f24bf1cc771e32b1df5"
+                "reference": "59a11b6d8944ca7b465cc9a1defb24e6810b5102"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blast-project/CoreBundle/zipball/c1e89585196b42015d6b7f24bf1cc771e32b1df5",
-                "reference": "c1e89585196b42015d6b7f24bf1cc771e32b1df5",
+                "url": "https://api.github.com/repos/blast-project/CoreBundle/zipball/59a11b6d8944ca7b465cc9a1defb24e6810b5102",
+                "reference": "59a11b6d8944ca7b465cc9a1defb24e6810b5102",
                 "shasum": ""
             },
             "require": {
@@ -173,7 +173,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-09-18T15:55:52+00:00"
+            "time": "2017-09-20T09:35:11+00:00"
         },
         {
             "name": "blast-project/doctrine-pgsql-bundle",
@@ -352,12 +352,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/blast-project/UtilsBundle.git",
-                "reference": "06f59424be24696ee18523ece8ccafcafd2829ab"
+                "reference": "e87053958adbc3bc9eb6c18b49eb3e608d51b329"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blast-project/UtilsBundle/zipball/06f59424be24696ee18523ece8ccafcafd2829ab",
-                "reference": "06f59424be24696ee18523ece8ccafcafd2829ab",
+                "url": "https://api.github.com/repos/blast-project/UtilsBundle/zipball/e87053958adbc3bc9eb6c18b49eb3e608d51b329",
+                "reference": "e87053958adbc3bc9eb6c18b49eb3e608d51b329",
                 "shasum": ""
             },
             "require": {
@@ -409,7 +409,7 @@
                 "symfony",
                 "utils"
             ],
-            "time": "2017-09-18T15:40:08+00:00"
+            "time": "2017-09-20T09:35:34+00:00"
         },
         {
             "name": "clue/stream-filter",
@@ -2670,20 +2670,20 @@
         },
         {
             "name": "jeroendesloovere/vcard-bundle",
-            "version": "1.2.1",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jeroendesloovere/vcard-bundle.git",
-                "reference": "c5b903834252ce5a66be06f9988d934c5c3408e9"
+                "reference": "70caaa208ded11b5f73147dc4cea233174ad796f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jeroendesloovere/vcard-bundle/zipball/c5b903834252ce5a66be06f9988d934c5c3408e9",
-                "reference": "c5b903834252ce5a66be06f9988d934c5c3408e9",
+                "url": "https://api.github.com/repos/jeroendesloovere/vcard-bundle/zipball/70caaa208ded11b5f73147dc4cea233174ad796f",
+                "reference": "70caaa208ded11b5f73147dc4cea233174ad796f",
                 "shasum": ""
             },
             "require": {
-                "jeroendesloovere/vcard": "~1.2",
+                "jeroendesloovere/vcard": "^1.5",
                 "php": ">=5.3.3"
             },
             "require-dev": {
@@ -2717,7 +2717,7 @@
                 "php",
                 "vCard"
             ],
-            "time": "2015-12-22T12:45:25+00:00"
+            "time": "2017-09-19T11:13:16+00:00"
         },
         {
             "name": "jms/aop-bundle",
@@ -3551,12 +3551,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/KnpSnappyBundle.git",
-                "reference": "75e63f9fc9dea08aac00f1121ad03ddb5ae5f67a"
+                "reference": "eb71ce25b7b551d8a759b9c354fbf98029d884c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/KnpSnappyBundle/zipball/75e63f9fc9dea08aac00f1121ad03ddb5ae5f67a",
-                "reference": "75e63f9fc9dea08aac00f1121ad03ddb5ae5f67a",
+                "url": "https://api.github.com/repos/KnpLabs/KnpSnappyBundle/zipball/eb71ce25b7b551d8a759b9c354fbf98029d884c0",
+                "reference": "eb71ce25b7b551d8a759b9c354fbf98029d884c0",
                 "shasum": ""
             },
             "require": {
@@ -3607,7 +3607,7 @@
                 "pdf",
                 "snappy"
             ],
-            "time": "2017-09-12T08:41:19+00:00"
+            "time": "2017-09-19T16:27:52+00:00"
         },
         {
             "name": "kriswallsmith/assetic",
@@ -3819,12 +3819,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/DecoratorBundle.git",
-                "reference": "73a989d28d425f2eab7d8367f66292730fefd6fe"
+                "reference": "5311ef7831cb5d6d773a3d4a274da78cefa0fe41"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/DecoratorBundle/zipball/73a989d28d425f2eab7d8367f66292730fefd6fe",
-                "reference": "73a989d28d425f2eab7d8367f66292730fefd6fe",
+                "url": "https://api.github.com/repos/libre-informatique/DecoratorBundle/zipball/5311ef7831cb5d6d773a3d4a274da78cefa0fe41",
+                "reference": "5311ef7831cb5d6d773a3d4a274da78cefa0fe41",
                 "shasum": ""
             },
             "require": {
@@ -3868,7 +3868,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-09-15T09:42:01+00:00"
+            "time": "2017-09-19T15:56:06+00:00"
         },
         {
             "name": "libre-informatique/ecommerce-bundle",
@@ -3876,12 +3876,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/EcommerceBundle.git",
-                "reference": "7bca12e7bee6382156b64fcb088d294d453683d6"
+                "reference": "eab1e2f934a16acd95439636f65136e3505f8895"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/EcommerceBundle/zipball/7bca12e7bee6382156b64fcb088d294d453683d6",
-                "reference": "7bca12e7bee6382156b64fcb088d294d453683d6",
+                "url": "https://api.github.com/repos/libre-informatique/EcommerceBundle/zipball/eab1e2f934a16acd95439636f65136e3505f8895",
+                "reference": "eab1e2f934a16acd95439636f65136e3505f8895",
                 "shasum": ""
             },
             "require": {
@@ -3927,7 +3927,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-09-18T15:14:10+00:00"
+            "time": "2017-09-20T09:34:56+00:00"
         },
         {
             "name": "libre-informatique/email-bundle",
@@ -6343,33 +6343,38 @@
         },
         {
             "name": "sonata-project/block-bundle",
-            "version": "3.3.2",
+            "version": "3.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataBlockBundle.git",
-                "reference": "7cdf6e5620696cdd962eb4c404beeedaf20c3570"
+                "reference": "052f1eb4b84951eb6c25acaf52787346845fc6d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataBlockBundle/zipball/7cdf6e5620696cdd962eb4c404beeedaf20c3570",
-                "reference": "7cdf6e5620696cdd962eb4c404beeedaf20c3570",
+                "url": "https://api.github.com/repos/sonata-project/SonataBlockBundle/zipball/052f1eb4b84951eb6c25acaf52787346845fc6d3",
+                "reference": "052f1eb4b84951eb6c25acaf52787346845fc6d3",
                 "shasum": ""
             },
             "require": {
                 "doctrine/common": "^2.3",
                 "php": "^5.3 || ^7.0",
                 "sonata-project/cache": "^1.0",
-                "sonata-project/core-bundle": "^3.0",
+                "sonata-project/core-bundle": "^3.4",
                 "symfony/form": "^2.3 || ^3.0",
                 "symfony/http-kernel": "^2.3 || ^3.0"
             },
+            "conflict": {
+                "jms/di-extra-bundle": "<1.7.0"
+            },
             "require-dev": {
+                "jms/di-extra-bundle": "^1.7",
                 "knplabs/knp-menu-bundle": "^2.0",
                 "sllh/php-cs-fixer-styleci-bridge": "^2.0",
-                "sonata-project/admin-bundle": "^3.0",
+                "sonata-project/admin-bundle": "^3.22",
                 "symfony/phpunit-bridge": "^2.7 || ^3.0"
             },
             "suggest": {
+                "jms/di-extra-bundle": "Annotations for Block definition",
                 "knplabs/knp-menu-bundle": "^2.0",
                 "sonata-project/cache-bundle": "^3.0"
             },
@@ -6411,7 +6416,7 @@
                 "block",
                 "sonata"
             ],
-            "time": "2017-03-23T12:54:15+00:00"
+            "time": "2017-09-19T15:14:45+00:00"
         },
         {
             "name": "sonata-project/cache",
@@ -6478,16 +6483,16 @@
         },
         {
             "name": "sonata-project/core-bundle",
-            "version": "3.4.0",
+            "version": "3.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataCoreBundle.git",
-                "reference": "a1b837101262af856c45b22e8f0887553edf0fb0"
+                "reference": "592f82c732466fb784d502e1b0fceeffd168b67f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataCoreBundle/zipball/a1b837101262af856c45b22e8f0887553edf0fb0",
-                "reference": "a1b837101262af856c45b22e8f0887553edf0fb0",
+                "url": "https://api.github.com/repos/sonata-project/SonataCoreBundle/zipball/592f82c732466fb784d502e1b0fceeffd168b67f",
+                "reference": "592f82c732466fb784d502e1b0fceeffd168b67f",
                 "shasum": ""
             },
             "require": {
@@ -6553,7 +6558,7 @@
             "keywords": [
                 "sonata"
             ],
-            "time": "2017-05-09T15:05:32+00:00"
+            "time": "2017-09-19T15:29:38+00:00"
         },
         {
             "name": "sonata-project/datagrid-bundle",
