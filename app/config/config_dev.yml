@@ -1,6 +1,11 @@
 imports:
     - { resource: config.yml }
 
+# # Uncomment for displaying template names in html source comments
+#
+# twig:
+#     base_template_class: Blast\CoreBundle\Twig\DebugTemplate
+
 framework:
     router:
         resource: "%kernel.root_dir%/config/routing_dev.yml"
