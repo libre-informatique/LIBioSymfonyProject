@@ -1,4 +1,4 @@
-<div class="ui bottom attached tab segment active" data-tab="variety">
+<div class="ui bottom attached tab segment" data-tab="variety">
     {{ product.variety.name }} - <em>{{ product.variety.latinName }}</em>
 
     {% if product.variety.commercial_descriptions|length > 0 %}
@@ -17,10 +17,10 @@
             {% for desc in product.variety.commercial_descriptions %}
                 <tr>
                     <td width="33%">
-                        {{ (desc.field)|raw|trans }}
+                        {{ displayVarietyDescriptionLabel(desc) }}
                     </td>
                     <td>
-                        {{ (desc.value)|raw }}
+                        {{ displayVarietyDescriptionValue(desc) }}
                     </td>
                 </tr>
             {% endfor %}
