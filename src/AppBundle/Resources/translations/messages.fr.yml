@@ -162,6 +162,9 @@ lisem:
         grams: grammes
         seeds: graines
 
+sylius:
+    ui:
+        details: Description
 
 http_error:
     404: >
