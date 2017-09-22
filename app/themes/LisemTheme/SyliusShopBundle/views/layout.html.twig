@@ -71,6 +71,8 @@
     {% include '@SyliusUi/_javascripts.html.twig' with {'path': 'assets/shop/js/app.js'} %}
 
     {{ sonata_block_render_event('sylius.shop.layout.javascripts') }}
+
+    <script src="{{ asset('bundles/syliusshop/js/main.js') }}"></script>
 {% endblock %}
 
 {% include '@SyliusUi/Modal/_confirmation.html.twig' %}
