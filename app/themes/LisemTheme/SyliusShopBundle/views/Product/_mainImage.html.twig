@@ -6,4 +6,13 @@
     {% set path = asset('/bundles/syliusshop/img/default-product-image.png')|imagine_filter(filter|default('sylius_shop_product_thumbnail')) %}
 {% endif %}
 
-<img src="{{ path }}" alt="{{ product.name }}" class="ui bordered image" />
+<div class="ui fluid image bordered" style="
+    background-image:url({{ path }});
+    background-position: 50% 50%;
+    background-size:contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height:275px;
+">
+
+</div>

@@ -12,8 +12,15 @@
 {% endif %}
 
 <div data-product-image="{{ path }}" data-product-link="{{ original_path }}"></div>
-<a href="{{ original_path }}" class="ui fluid image" data-lightbox="sylius-product-image">
-    <img src="{{ path }}" id="main-image" alt="" />
+<a href="{{ original_path }}" class="ui fluid image" data-lightbox="sylius-product-image" style="
+    background-image:url({{ path }});
+    background-position: 50% 50%;
+    background-size:contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height:400px;
+">
+
 </a>
 {% if product.images|length > 1 %}
 <div class="ui divider"></div>
