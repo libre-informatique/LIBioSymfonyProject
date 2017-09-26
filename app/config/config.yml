@@ -201,5 +201,12 @@ bazinga_js_translation:
 fos_js_routing:
     routes_to_expose: [ .*librinfo_.*, .*blast_utils.* ]
 
+lexik_maintenance:
+    driver:
+        class: '\Lexik\Bundle\MaintenanceBundle\Drivers\FileDriver'                # class for file driver
+        options: {file_path: %cache_dir%/cache/lock}
+    response:
+        code: 503
+        status: "Service Temporarily Unavailable"
 # doctrine_migrations:
 #     custom_template: src/Resources/tpl/migration.tpl

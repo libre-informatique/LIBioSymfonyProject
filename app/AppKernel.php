@@ -18,50 +18,46 @@ class AppKernel extends Kernel
 {
     public function registerBundles(): array
     {
-        $bundles = array(
-            new Sylius\Bundle\AdminBundle\SyliusAdminBundle(),
-            new Sylius\Bundle\ShopBundle\SyliusShopBundle(),
-            new FOS\OAuthServerBundle\FOSOAuthServerBundle(), // Required by SyliusApiBundle
-            new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
-//            new Sylius\Bundle\ApiBundle\SyliusApiBundle(),
-
-//            new Symfony\Bundle\FrameworkBundle\FrameworkBundle(), provided by Sylius
-//            new Symfony\Bundle\SecurityBundle\SecurityBundle(), provided by Sylius
-//            new Symfony\Bundle\TwigBundle\TwigBundle(), provided by Sylius
-//            new Symfony\Bundle\MonologBundle\MonologBundle(), provided by Sylius
-//            new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(), provided by Sylius
+        $bundles = [
+            // Symfony bundles
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
-
-//            new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(), provided by Sylius
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
 
-//            new Knp\Bundle\MenuBundle\KnpMenuBundle(), provided by Sylius
+            // Sylius bundles
+            new Sylius\Bundle\AdminBundle\SyliusAdminBundle(),
+            new Sylius\Bundle\ShopBundle\SyliusShopBundle(),
+            new Sylius\Bundle\AdminApiBundle\SyliusAdminApiBundle(),
 
-//            new Knp\DoctrineBehaviors\Bundle\DoctrineBehaviorsBundle(),
+            // Sonata bundles
+            new Sonata\AdminBundle\SonataAdminBundle(),
+            new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
 
+            // FOS bundles
+            new FOS\OAuthServerBundle\FOSOAuthServerBundle(),
+            new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
+
+            // JMS bundles
             new JMS\AopBundle\JMSAopBundle(),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new JMS\DiExtraBundle\JMSDiExtraBundle($this),
-//            new JMS\SerializerBundle\JMSSerializerBundle($this), provided by Sylius
 
-//            new winzou\Bundle\StateMachineBundle\winzouStateMachineBundle(), provided by Sylius
-
-//            new FOS\RestBundle\FOSRestBundle(),
-
+            // Other bundles
             new JeroenDesloovere\Bundle\VCardBundle\JeroenDesloovereVCardBundle(),
+            new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
+            new Sparkling\VATBundle\SparklingVATBundle(),
+            new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
+            new Bazinga\Bundle\JsTranslationBundle\BazingaJsTranslationBundle(),
+            new Lexik\Bundle\MaintenanceBundle\LexikMaintenanceBundle(),
 
-//            new Sonata\CoreBundle\SonataCoreBundle(),  provided by Sylius
-            new Sonata\AdminBundle\SonataAdminBundle(),
-//            new Sonata\BlockBundle\SonataBlockBundle(),
-            new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
-//            new Sonata\IntlBundle\SonataIntlBundle(), provided by Sylius
-
+            // Blast bundles
             new Blast\CoreBundle\BlastCoreBundle(),
             new Blast\OuterExtensionBundle\BlastOuterExtensionBundle(),
             new Blast\BaseEntitiesBundle\BlastBaseEntitiesBundle(),
             new Blast\UtilsBundle\BlastUtilsBundle(),
             new Blast\DoctrinePgsqlBundle\BlastDoctrinePgsqlBundle(),
+            new Blast\DoctrineSessionBundle\BlastDoctrineSessionBundle(),
 
+            // Librinfo bundles
             new Librinfo\DecoratorBundle\LibrinfoDecoratorBundle(),
             new Librinfo\CRMBundle\LibrinfoCRMBundle(),
             new Librinfo\SonataSyliusUserBundle\SonataSyliusUserBundle(),
@@ -71,23 +67,13 @@ class AppKernel extends Kernel
             new Librinfo\EmailCRMBundle\LibrinfoEmailCRMBundle(),
             new Librinfo\MediaBundle\LibrinfoMediaBundle(),
             new Librinfo\EcommerceBundle\LibrinfoEcommerceBundle(),
+
+            // Lisem App
             new AppBundle\AppBundle(),
-
-            new Sparkling\VATBundle\SparklingVATBundle(),
-            new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
-            new Blast\DoctrineSessionBundle\BlastDoctrineSessionBundle(),
-            new Sylius\Bundle\AdminApiBundle\SyliusAdminApiBundle(),
-
-            new Bazinga\Bundle\JsTranslationBundle\BazingaJsTranslationBundle(),
-            new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
-        );
+        ];
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
-            //            $bundles[] = new Symfony\Bundle\DebugBundle\DebugBundle(); provided by Sylius
-            //            $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle(); provided by Sylius
-            //            $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
-            //            $bundles[] = new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(); provided by Sylius
             $bundles[] = new Alex\DoctrineExtraBundle\AlexDoctrineExtraBundle();
             $bundles[] = new Trappar\AliceGeneratorBundle\TrapparAliceGeneratorBundle();
         }

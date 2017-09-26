@@ -175,5 +175,9 @@ http_error:
         Cet accès est restreint, vous ne possedez pas les privilièges suffisant pour accéder à cette page.
     218: >
         Cette fonctionnalité n'a pas encore été implémentée.
+    503: >
+        La plateforme est en cours de maintenance.
     previous_page: Retour à la page précédente
     not_implemented: Non implémentée
+    maintenance_in_progress: Maintenance en cours
+    please_be_patient: Merci de patienter
