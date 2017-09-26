@@ -116,12 +116,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/blast-project/CoreBundle.git",
-                "reference": "59a11b6d8944ca7b465cc9a1defb24e6810b5102"
+                "reference": "51d40f3344cfb79623abe044dcb34b8d97e87f6d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blast-project/CoreBundle/zipball/59a11b6d8944ca7b465cc9a1defb24e6810b5102",
-                "reference": "59a11b6d8944ca7b465cc9a1defb24e6810b5102",
+                "url": "https://api.github.com/repos/blast-project/CoreBundle/zipball/51d40f3344cfb79623abe044dcb34b8d97e87f6d",
+                "reference": "51d40f3344cfb79623abe044dcb34b8d97e87f6d",
                 "shasum": ""
             },
             "require": {
@@ -173,7 +173,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-09-20T09:35:11+00:00"
+            "time": "2017-09-21T15:50:55+00:00"
         },
         {
             "name": "blast-project/doctrine-pgsql-bundle",
@@ -3482,20 +3482,21 @@
         },
         {
             "name": "knplabs/knp-snappy",
-            "version": "v0.5.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/snappy.git",
-                "reference": "370da31fa92a8e583e34558c589e630647617a38"
+                "reference": "f294d1c50d49fb116a5ecb78ecd53fc727a2ba30"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/snappy/zipball/370da31fa92a8e583e34558c589e630647617a38",
-                "reference": "370da31fa92a8e583e34558c589e630647617a38",
+                "url": "https://api.github.com/repos/KnpLabs/snappy/zipball/f294d1c50d49fb116a5ecb78ecd53fc727a2ba30",
+                "reference": "f294d1c50d49fb116a5ecb78ecd53fc727a2ba30",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.6",
+                "psr/log": "^1.0",
                 "symfony/process": "~2.3|~3.0"
             },
             "require-dev": {
@@ -3511,7 +3512,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.5.x-dev"
+                    "dev-master": "0.6.x-dev"
                 }
             },
             "autoload": {
@@ -3543,7 +3544,7 @@
                 "thumbnail",
                 "wkhtmltopdf"
             ],
-            "time": "2017-06-16T07:50:40+00:00"
+            "time": "2017-09-21T11:34:49+00:00"
         },
         {
             "name": "knplabs/knp-snappy-bundle",
@@ -3551,16 +3552,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/KnpSnappyBundle.git",
-                "reference": "eb71ce25b7b551d8a759b9c354fbf98029d884c0"
+                "reference": "7479ff2bcecb18fd2b9a9df9ebaafecfa8d4308f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/KnpSnappyBundle/zipball/eb71ce25b7b551d8a759b9c354fbf98029d884c0",
-                "reference": "eb71ce25b7b551d8a759b9c354fbf98029d884c0",
+                "url": "https://api.github.com/repos/KnpLabs/KnpSnappyBundle/zipball/7479ff2bcecb18fd2b9a9df9ebaafecfa8d4308f",
+                "reference": "7479ff2bcecb18fd2b9a9df9ebaafecfa8d4308f",
                 "shasum": ""
             },
             "require": {
-                "knplabs/knp-snappy": "~0.1",
+                "knplabs/knp-snappy": "~1.0,>=1.0.1",
                 "php": ">=5.6",
                 "symfony/framework-bundle": "~2.7|~3.0"
             },
@@ -3576,7 +3577,7 @@
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.x-dev"
+                    "dev-master": "1.x-dev"
                 }
             },
             "autoload": {
@@ -3607,7 +3608,7 @@
                 "pdf",
                 "snappy"
             ],
-            "time": "2017-09-19T16:27:52+00:00"
+            "time": "2017-09-21T11:45:04+00:00"
         },
         {
             "name": "kriswallsmith/assetic",
@@ -3876,12 +3877,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/EcommerceBundle.git",
-                "reference": "eab1e2f934a16acd95439636f65136e3505f8895"
+                "reference": "94dcc95a7b5fdef117c29924a6d6c2cb9addeb66"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/EcommerceBundle/zipball/eab1e2f934a16acd95439636f65136e3505f8895",
-                "reference": "eab1e2f934a16acd95439636f65136e3505f8895",
+                "url": "https://api.github.com/repos/libre-informatique/EcommerceBundle/zipball/94dcc95a7b5fdef117c29924a6d6c2cb9addeb66",
+                "reference": "94dcc95a7b5fdef117c29924a6d6c2cb9addeb66",
                 "shasum": ""
             },
             "require": {
@@ -3927,7 +3928,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-09-20T09:34:56+00:00"
+            "time": "2017-09-26T10:43:23+00:00"
         },
         {
             "name": "libre-informatique/email-bundle",
@@ -4219,12 +4220,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/VarietiesBundle.git",
-                "reference": "e16934f2484a49a7c35c22399816700e8faa7edd"
+                "reference": "e5d0036bcb07144d7863c475479131b5392452ad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/VarietiesBundle/zipball/e16934f2484a49a7c35c22399816700e8faa7edd",
-                "reference": "e16934f2484a49a7c35c22399816700e8faa7edd",
+                "url": "https://api.github.com/repos/libre-informatique/VarietiesBundle/zipball/e5d0036bcb07144d7863c475479131b5392452ad",
+                "reference": "e5d0036bcb07144d7863c475479131b5392452ad",
                 "shasum": ""
             },
             "require": {
@@ -4277,7 +4278,7 @@
                 "taxonomy",
                 "variety"
             ],
-            "time": "2017-09-15T09:46:32+00:00"
+            "time": "2017-09-26T10:43:49+00:00"
         },
         {
             "name": "liip/imagine-bundle",
@@ -6483,16 +6484,16 @@
         },
         {
             "name": "sonata-project/core-bundle",
-            "version": "3.5.0",
+            "version": "3.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataCoreBundle.git",
-                "reference": "592f82c732466fb784d502e1b0fceeffd168b67f"
+                "reference": "a8cc1731d832e6bde3fdad2334cfd158d1d45fbb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataCoreBundle/zipball/592f82c732466fb784d502e1b0fceeffd168b67f",
-                "reference": "592f82c732466fb784d502e1b0fceeffd168b67f",
+                "url": "https://api.github.com/repos/sonata-project/SonataCoreBundle/zipball/a8cc1731d832e6bde3fdad2334cfd158d1d45fbb",
+                "reference": "a8cc1731d832e6bde3fdad2334cfd158d1d45fbb",
                 "shasum": ""
             },
             "require": {
@@ -6558,7 +6559,7 @@
             "keywords": [
                 "sonata"
             ],
-            "time": "2017-09-19T15:29:38+00:00"
+            "time": "2017-09-20T14:14:38+00:00"
         },
         {
             "name": "sonata-project/datagrid-bundle",
@@ -9023,24 +9024,24 @@
         },
         {
             "name": "zendframework/zend-hydrator",
-            "version": "2.2.2",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-hydrator.git",
-                "reference": "e3ecc4920c1724e1949213163fee82200e8e6f6c"
+                "reference": "7aa33949227fcabb5634a61f97fe78cccbb25c98"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-hydrator/zipball/e3ecc4920c1724e1949213163fee82200e8e6f6c",
-                "reference": "e3ecc4920c1724e1949213163fee82200e8e6f6c",
+                "url": "https://api.github.com/repos/zendframework/zend-hydrator/zipball/7aa33949227fcabb5634a61f97fe78cccbb25c98",
+                "reference": "7aa33949227fcabb5634a61f97fe78cccbb25c98",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.0 || ^5.6",
+                "php": "^5.6 || ^7.0",
                 "zendframework/zend-stdlib": "^3.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^6.0.10 || ^5.7.17",
+                "phpunit/phpunit": "^5.7.21 || ^6.3",
                 "zendframework/zend-coding-standard": "~1.0.0",
                 "zendframework/zend-eventmanager": "^3.0",
                 "zendframework/zend-filter": "^2.6",
@@ -9059,8 +9060,8 @@
                 "branch-alias": {
                     "dev-release-1.0": "1.0-dev",
                     "dev-release-1.1": "1.1-dev",
-                    "dev-master": "2.2-dev",
-                    "dev-develop": "2.3-dev"
+                    "dev-master": "2.3-dev",
+                    "dev-develop": "2.4-dev"
                 },
                 "zf": {
                     "component": "Zend\\Hydrator",
@@ -9081,7 +9082,7 @@
                 "hydrator",
                 "zf2"
             ],
-            "time": "2017-05-17T18:40:45+00:00"
+            "time": "2017-09-20T22:02:25+00:00"
         },
         {
             "name": "zendframework/zend-stdlib",
