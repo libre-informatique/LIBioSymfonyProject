@@ -6,6 +6,10 @@
 
 services:
 
+    blast_core.label.strategy.librinfo_lisemapp:
+        class: Blast\CoreBundle\Translator\LibrinfoLabelTranslatorStrategy
+        arguments: ['Lisem\AppBundle']
+
     librinfo_ecommerce.code_generator.product_variant:
         class: Librinfo\EcommerceBundle\CodeGenerator\ProductVariantCodeGenerator
         factory:   ['@blast_core.code_generator_factory', create]

@@ -154,7 +154,6 @@ parameters:
                                     admin_code: lisem.admin.variety
                             name:
                                 type: text
-                                label: librinfo.label.product_name
                                 attr:
                                     class: inline-block
                                     width: 50
@@ -184,7 +183,6 @@ parameters:
                 add:
                     name: ~
                     code:
-                        label: lisem.label.product_code
                         identifier: true
                     variety:
                         admin_code: librinfo_varieties.admin.variety
@@ -307,7 +305,6 @@ parameters:
                         form_group_pricing:
                             taxCategory: ~
                             channelPricings:
-                                label: librinfo.label.product_variant_prices
                                 type: sonata_type_collection
                                 type_options:
                                     btn_add: false
@@ -351,7 +348,6 @@ parameters:
                         type: boolean
                     tracked:
                         type: boolean
-                        label: librinfo.label.tracked_stock
                     _options:
                         fieldsOrder:
                             - name
@@ -435,7 +431,6 @@ parameters:
                         type: boolean
                     tracked:
                         type: boolean
-                        label: librinfo.label.tracked_stock
                     optionValues:
                         type: null
                         admin_code: librinfo_ecommerce_option_value.admin.product
@@ -472,7 +467,6 @@ parameters:
                                 class: Librinfo\EcommerceBundle\Entity\Channel
                             title:
                                 type: text
-                                label: librinfo.label.description_title
                             value:
                                 type: Blast\UtilsBundle\Form\Type\TinyMceType
 
@@ -559,8 +553,7 @@ parameters:
                                 template: 'LibrinfoCRMBundle:CRUD:show_field_supplier.html.twig'
                             isSeedProducer:
                                 template: 'LibrinfoSeedBatchBundle:CRUD:show_field_seedProducer.html.twig'
-                            description:
-                                label: librinfo.label.organism_description
+                            description: ~
                             circles: ~
                             category.name: ~
                             email:
@@ -914,7 +907,6 @@ parameters:
                 add:
                     name:
                         identifier: true
-                        label: librinfo.label.list_circle_name
                     code: ~
                     type: ~
                     users: ~
@@ -957,7 +949,6 @@ parameters:
                             field_to:
                                 type: text
                                 required: false
-                                label: librinfo.label.field_to_additionnals
                                 help: librinfo.help.field_to
                             field_cc:
                                 type: text
@@ -967,7 +958,6 @@ parameters:
                                 required: false
                         form_group_grouped_expeditors:
                             circles:
-                                label: librinfo.label.circles
                                 type: sonata_type_model
                                 multiple: true
                                 expanded: false
@@ -1031,10 +1021,8 @@ parameters:
                 add:
                     circles:
                         type: null
-                        label: librinfo.label.circles
                     field_to:
                         type: null
-                        label: librinfo.label.field_to_additionnals
                     _options:
                         fieldsOrder:
                             - circles
