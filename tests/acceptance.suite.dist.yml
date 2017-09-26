@@ -7,6 +7,11 @@
 class_name: WebGuy
 modules:
     enabled:
-      - WebDriver:
+        - Symfony:
+            part: SERVICES
+        - Doctrine2:
+            depends: Symfony
+        - WebDriver:
             url: 'http://127.0.0.1:8000/'
             browser: chrome
+      
