@@ -13,3 +13,7 @@
     min-height: 261px;
     max-width : 261px;
 }
+
+#librinfo-product-bulk-chooser {
+    display: none;
+}
