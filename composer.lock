@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "1588f97f0815cd172e3ef254d84d8bd2",
+    "content-hash": "3c0c74faa1855660d96df59735dbb988",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -52,7 +52,7 @@
         },
         {
             "name": "blast-project/base-entities-bundle",
-            "version": "dev-wip-lisem",
+            "version": "dev-wip-locale",
             "source": {
                 "type": "git",
                 "url": "https://github.com/blast-project/BaseEntitiesBundle.git",
@@ -112,16 +112,16 @@
         },
         {
             "name": "blast-project/core-bundle",
-            "version": "dev-wip-lisem",
+            "version": "dev-wip-locale",
             "source": {
                 "type": "git",
                 "url": "https://github.com/blast-project/CoreBundle.git",
-                "reference": "51d40f3344cfb79623abe044dcb34b8d97e87f6d"
+                "reference": "4e995cc7736eef80bb0a8cabcd8aeb61417f942f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blast-project/CoreBundle/zipball/51d40f3344cfb79623abe044dcb34b8d97e87f6d",
-                "reference": "51d40f3344cfb79623abe044dcb34b8d97e87f6d",
+                "url": "https://api.github.com/repos/blast-project/CoreBundle/zipball/4e995cc7736eef80bb0a8cabcd8aeb61417f942f",
+                "reference": "4e995cc7736eef80bb0a8cabcd8aeb61417f942f",
                 "shasum": ""
             },
             "require": {
@@ -173,11 +173,11 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-09-21T15:50:55+00:00"
+            "time": "2017-09-26T07:43:41+00:00"
         },
         {
             "name": "blast-project/doctrine-pgsql-bundle",
-            "version": "dev-wip-lisem",
+            "version": "dev-wip-locale",
             "source": {
                 "type": "git",
                 "url": "https://github.com/blast-project/DoctrinePgsqlBundle.git",
@@ -215,7 +215,7 @@
                     "homepage": "http://www.libre-informatique.fr/"
                 },
                 {
-                    "name": "Marcos Bezerra de Menezes",
+                    "name": "Marcos BEZERRA de MENEZES",
                     "email": "marcos.bezerra@libre-informatique.fr"
                 }
             ],
@@ -232,7 +232,7 @@
         },
         {
             "name": "blast-project/doctrine-session-bundle",
-            "version": "dev-wip-lisem",
+            "version": "dev-wip-locale",
             "source": {
                 "type": "git",
                 "url": "https://github.com/blast-project/DoctrineSessionBundle.git",
@@ -290,7 +290,7 @@
         },
         {
             "name": "blast-project/outer-extension-bundle",
-            "version": "dev-wip-lisem",
+            "version": "dev-wip-locale",
             "source": {
                 "type": "git",
                 "url": "https://github.com/blast-project/OuterExtensionBundle.git",
@@ -348,7 +348,7 @@
         },
         {
             "name": "blast-project/utils-bundle",
-            "version": "dev-wip-lisem",
+            "version": "dev-wip-locale",
             "source": {
                 "type": "git",
                 "url": "https://github.com/blast-project/UtilsBundle.git",
@@ -3816,7 +3816,7 @@
         },
         {
             "name": "libre-informatique/crm-bundle",
-            "version": "dev-wip-lisem",
+            "version": "dev-wip-locale",
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/CRMBundle.git",
@@ -3875,7 +3875,7 @@
         },
         {
             "name": "libre-informatique/decorator-bundle",
-            "version": "dev-wip-lisem",
+            "version": "dev-wip-locale",
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/DecoratorBundle.git",
@@ -3932,7 +3932,7 @@
         },
         {
             "name": "libre-informatique/ecommerce-bundle",
-            "version": "dev-wip-lisem",
+            "version": "dev-wip-locale",
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/EcommerceBundle.git",
@@ -3975,7 +3975,7 @@
                     "homepage": "http://www.libre-informatique.fr/"
                 },
                 {
-                    "name": "Marcos Bezerra de Menezes",
+                    "name": "Marcos BEZERRA de MENEZES",
                     "email": "marcos.bezerra@libre-informatique.fr"
                 }
             ],
@@ -3991,7 +3991,7 @@
         },
         {
             "name": "libre-informatique/email-bundle",
-            "version": "dev-wip-lisem",
+            "version": "dev-wip-locale",
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/EmailBundle.git",
@@ -4052,7 +4052,7 @@
         },
         {
             "name": "libre-informatique/email-crm-bundle",
-            "version": "dev-wip-lisem",
+            "version": "dev-wip-locale",
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/EmailCRMBundle.git",
@@ -4094,7 +4094,7 @@
                     "homepage": "http://www.libre-informatique.fr/"
                 },
                 {
-                    "name": "Marcos Bezerra de Menezes",
+                    "name": "Marcos BEZERRA de MENEZES",
                     "email": "marcos.bezerra@libre-informatique.fr"
                 }
             ],
@@ -4112,7 +4112,7 @@
         },
         {
             "name": "libre-informatique/media-bundle",
-            "version": "dev-wip-lisem",
+            "version": "dev-wip-locale",
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/MediaBundle.git",
@@ -4166,7 +4166,7 @@
         },
         {
             "name": "libre-informatique/seed-batch-bundle",
-            "version": "dev-wip-lisem",
+            "version": "dev-wip-locale",
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/SeedBatchBundle.git",
@@ -4206,7 +4206,7 @@
                     "homepage": "http://www.libre-informatique.fr/"
                 },
                 {
-                    "name": "Marcos Bezerra de Menezes",
+                    "name": "Marcos BEZERRA de MENEZES",
                     "email": "marcos.bezerra@libre-informatique.fr"
                 }
             ],
@@ -4222,7 +4222,7 @@
         },
         {
             "name": "libre-informatique/sonata-sylius-user-bundle",
-            "version": "dev-wip-lisem",
+            "version": "dev-wip-locale",
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/SonataSyliusUserBundle.git",
@@ -4260,7 +4260,7 @@
                     "homepage": "http://www.libre-informatique.fr/"
                 },
                 {
-                    "name": "Marcos Bezerra de Menezes",
+                    "name": "Marcos BEZERRA de MENEZES",
                     "email": "marcos.bezerra@libre-informatique.fr"
                 }
             ],
@@ -4275,7 +4275,7 @@
         },
         {
             "name": "libre-informatique/varieties-bundle",
-            "version": "dev-wip-lisem",
+            "version": "dev-wip-locale",
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/VarietiesBundle.git",
@@ -4318,7 +4318,7 @@
                     "homepage": "http://www.libre-informatique.fr/"
                 },
                 {
-                    "name": "Marcos Bezerra de Menezes",
+                    "name": "Marcos BEZERRA de MENEZES",
                     "email": "marcos.bezerra@libre-informatique.fr"
                 }
             ],
