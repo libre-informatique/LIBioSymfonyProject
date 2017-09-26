@@ -57,7 +57,7 @@
         "alexandresalome/doctrine-extra-bundle": "^0.3.0",
         "nelmio/alice": "^2.2"
     },
-    "version": "dev-wip-lisem",
+    "version": "dev-wip-locale",
     "scripts": {
         "post-install-cmd": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
