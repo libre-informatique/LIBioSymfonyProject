@@ -240,6 +240,3 @@ sylius_fixtures:
         lisem_customer:
             listeners:
                 logger: ~
-
-            fixtures:
-                lisem_customer_customer: ~
