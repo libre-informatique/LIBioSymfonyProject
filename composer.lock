@@ -116,12 +116,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/blast-project/CoreBundle.git",
-                "reference": "976b47d485755c01f2c285010112eaf623edd203"
+                "reference": "77838abfaba9a009cfd24b2c7351e704a62fda13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blast-project/CoreBundle/zipball/976b47d485755c01f2c285010112eaf623edd203",
-                "reference": "976b47d485755c01f2c285010112eaf623edd203",
+                "url": "https://api.github.com/repos/blast-project/CoreBundle/zipball/77838abfaba9a009cfd24b2c7351e704a62fda13",
+                "reference": "77838abfaba9a009cfd24b2c7351e704a62fda13",
                 "shasum": ""
             },
             "require": {
@@ -173,7 +173,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-09-26T14:43:28+00:00"
+            "time": "2017-09-26T15:38:13+00:00"
         },
         {
             "name": "blast-project/doctrine-pgsql-bundle",
@@ -4279,12 +4279,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/VarietiesBundle.git",
-                "reference": "e5d0036bcb07144d7863c475479131b5392452ad"
+                "reference": "84a9311a16acecc7a023e4ee5d5c02970693bf74"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/VarietiesBundle/zipball/e5d0036bcb07144d7863c475479131b5392452ad",
-                "reference": "e5d0036bcb07144d7863c475479131b5392452ad",
+                "url": "https://api.github.com/repos/libre-informatique/VarietiesBundle/zipball/84a9311a16acecc7a023e4ee5d5c02970693bf74",
+                "reference": "84a9311a16acecc7a023e4ee5d5c02970693bf74",
                 "shasum": ""
             },
             "require": {
@@ -4318,7 +4318,7 @@
                     "homepage": "http://www.libre-informatique.fr/"
                 },
                 {
-                    "name": "Marcos BEZERRA de MENEZES",
+                    "name": "Marcos Bezerra de Menezes",
                     "email": "marcos.bezerra@libre-informatique.fr"
                 }
             ],
@@ -4337,7 +4337,7 @@
                 "taxonomy",
                 "variety"
             ],
-            "time": "2017-09-26T10:43:49+00:00"
+            "time": "2017-09-26T15:34:52+00:00"
         },
         {
             "name": "liip/imagine-bundle",
