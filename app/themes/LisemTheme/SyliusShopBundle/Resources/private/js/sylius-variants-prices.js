@@ -30,8 +30,6 @@ function handleProductOptionsChange() {
             $selector += '[data-' + $(this).attr('data-option') + '="' + option + '"]';
         });
 
-        console.info($selector);
-
         var $price = $('#sylius-variants-pricing').find($selector).attr('data-value');
 
         if ($price !== undefined) {

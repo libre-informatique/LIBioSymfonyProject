@@ -62,7 +62,7 @@ class ProductVariantCodeGenerator extends BaseCodeGenerator
     {
         $request = self::$requestStack;
 
-        if ($productVariant->getSeedBatch() === null || $productVariant->getPackaging() === null) {
+        if ($productVariant->getSeedBatches() === null || $productVariant->getPackaging() === null) {
             $formName = $request->getCurrentRequest()->get('uniqid', null);
 
             $seedBatch = $request->getCurrentRequest()->get(sprintf('%s_%s', $formName, 'seedBatch'), null);
@@ -76,11 +76,11 @@ class ProductVariantCodeGenerator extends BaseCodeGenerator
             }
         }
 
-        if (!$seedBatch = $productVariant->getSeedBatch()) {
+        if (!$seedBatch = $productVariant->getSeedBatches()) {
             throw new InvalidEntityCodeException('librinfo.error.missing_seed_batch');
         }
-        if (!$seedBatchCode = $seedBatch->getCode()) {
-            throw new InvalidEntityCodeException('librinfo.error.missing_seed_batch_code');
+        if (!$varietyCode = $productVariant->getProduct()->getCode()) {
+            throw new InvalidEntityCodeException('librinfo.error.missing_variety_code');
         }
         if (!$packaging = $productVariant->getPackaging()) {
             throw new InvalidEntityCodeException('librinfo.error.missing_packaging');
@@ -91,7 +91,7 @@ class ProductVariantCodeGenerator extends BaseCodeGenerator
 
         // Check unicity of generated code
 
-        $newCode = sprintf('%s-%s', $seedBatchCode, $packagingCode);
+        $newCode = sprintf('%s-%s', $varietyCode, $packagingCode);
 
         $sql = 'SELECT MAX(p.code) as lastcode FROM ' . self::$em->getClassMetadata(get_class($productVariant))->getTableName() . ' p WHERE p.code ILIKE ?;';
 

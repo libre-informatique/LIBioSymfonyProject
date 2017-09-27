@@ -52,7 +52,7 @@ services:
 #### SYLIUS GENERATORS ####
 
     lisem.generator.product_variant:
-        class: AppBundle\Generator\ProductVariantGenerator
+        class: AppBundle\DataFixtures\Sylius\Generator\ProductVariantGenerator
         arguments:
             - "@sylius.factory.product_variant"
             - "@lisem.checker.product_variants_parity"
@@ -60,7 +60,7 @@ services:
 ### SYLIUS FACTORIES ###
 
     lisem.factory.product:
-        class: AppBundle\Factory\ProductFactory
+        class: AppBundle\DataFixtures\Sylius\Factory\ProductFactory
         decorates: sylius.factory.product
         arguments: ['@lisem.factory.product.inner', '@sylius.repository.product_option']
         public: false

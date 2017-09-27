@@ -10,7 +10,7 @@
  * file that was distributed with this source code.
  */
 
-namespace AppBundle\Generator;
+namespace AppBundle\DataFixtures\Sylius\Generator;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Librinfo\SeedBatchBundle\Entity\SeedBatch;
@@ -70,9 +70,9 @@ final class ProductVariantGenerator implements ProductVariantGeneratorInterface
             if ($seedBatches === null) {
                 $seedBatches = $varietySeedBatches;
             } else {
-                $seedBatches = $seedBatches . filter(
+                $seedBatches = $seedBatches->filter(
                     function ($sb) use ($varietySeedBatches) {
-                        return $varietySeedBatches . contains($sb);
+                        return $varietySeedBatches->contains($sb);
                     }
                 );
             }
@@ -139,7 +139,7 @@ final class ProductVariantGenerator implements ProductVariantGeneratorInterface
 
         foreach ($permutation as $id) {
             if ($optionMap[$id] instanceof SeedBatch) {
-                $variant->setSeedBatch($optionMap[$id]);
+                $variant->addSeedBatch($optionMap[$id]);
             } else {
                 $variant->addOptionValue($optionMap[$id]);
             }

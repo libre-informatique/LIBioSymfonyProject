@@ -170,7 +170,7 @@ parameters:
                                 label: false
                                 by_reference: true
                                 attr:
-                                    data-showFields: 'id,name,seedBatch,packaging,code'
+                                    data-showFields: 'id,name,packaging,code,enabled'
                                 type_options:
                                     btn_add: false
                                 _options:
@@ -265,7 +265,13 @@ parameters:
                                 admin_code: librinfo_seedbatch.admin.seedbatch
                             code: ~
                             _options:
-                                fieldsOrder: [product, packaging, seedBatch, name, code, price]
+                                fieldsOrder:
+                                    - product
+                                    - packaging
+                                    - seedBatch
+                                    - name
+                                    - code
+                                    - price
             # FORM
             Sonata\AdminBundle\Form\FormMapper:
                 remove:
@@ -293,7 +299,11 @@ parameters:
                                 type: Blast\CoreBundle\Form\Type\EntityCodeType
                                 required: true
                             _options:
-                                fieldsOrder: [name, packaging, seedBatch, code]
+                                fieldsOrder:
+                                    - name
+                                    - packaging
+                                    - seedBatch
+                                    - code
                         form_group_pricing:
                             taxCategory: ~
                             channelPricings:
@@ -307,7 +317,11 @@ parameters:
                                     edit: inline
                                     inline: table
                         _options:
-                            groupsOrder: [form_group_general,form_group_pricing,form_group_properties,form_group_stock]
+                            groupsOrder:
+                                - form_group_general
+                                - form_group_pricing
+                                - form_group_properties
+                                - form_group_stock
             # LIST
             Sonata\AdminBundle\Datagrid\ListMapper:
                 remove:

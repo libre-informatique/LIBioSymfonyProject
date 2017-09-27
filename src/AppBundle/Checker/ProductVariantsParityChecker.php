@@ -29,9 +29,11 @@ final class ProductVariantsParityChecker implements ProductVariantsParityChecker
     {
         foreach ($product->getVariants() as $existingVariant) {
             // This check is required, because this function has to look for any other different variant with same option values set
-            if ($variant === $existingVariant ||
+            if (
+                $variant === $existingVariant ||
                 count($variant->getOptionValues()) !== count($product->getOptions()) ||
-                $variant->getSeedBatch() != $existingVariant->getSeedBatch()) {
+                $this->checkSeedBatchIsAlreadyUsed($existingVariant->getSeedBatches(), $variant->getSeedBatches())
+            ) {
                 continue;
             }
 
@@ -58,5 +60,16 @@ final class ProductVariantsParityChecker implements ProductVariantsParityChecker
         }
 
         return true;
+    }
+
+    private function checkSeedBatchIsAlreadyUsed($existingSeedBatches, $seedBatches)
+    {
+        $intersection = false;
+        $existingSeedBatches->forAll(function($seedBatch) use ($seedBatches) {
+            if ($seedBatches->contains($seedBatch)) {
+                $intersection = true;
+            }
+        });
+        return $intersection;
     }
 }

@@ -46,6 +46,7 @@ class SeedsProductVariantAdmin extends ProductVariantAdmin
         // seedBatch field
         $product = $this->getProduct();
         $options = [
+            'multiple' => true,
             'property' => 'code',
             'required' => true,
             'callback' => function ($admin, $property, $value) use ($product) {
@@ -58,7 +59,7 @@ class SeedsProductVariantAdmin extends ProductVariantAdmin
             'translation_domain' => 'messages',
         ];
         $fieldDescriptionOptions = ['admin_code' => 'librinfo_seedbatch.admin.seedbatch', 'translation_domain' => 'messages'];
-        $mapper->add('seedBatch', 'sonata_type_model_autocomplete', $options, $fieldDescriptionOptions);
+        $mapper->add('seedBatches', 'sonata_type_model_autocomplete', $options, $fieldDescriptionOptions);
 
         $mapper->end()->end();
 
@@ -81,7 +82,7 @@ class SeedsProductVariantAdmin extends ProductVariantAdmin
             ->with('packaging')
                 ->assertNotBlank()
             ->end()
-            ->with('seedBatch')
+            ->with('seedBatches')
                 ->assertNotBlank()
                 ->assertNotNull()
             ->end()

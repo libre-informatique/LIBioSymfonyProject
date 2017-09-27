@@ -25,7 +25,7 @@
         </div>
     </div>
     <input type=hidden name="product-variety-density"
-        value="{{ getDescription(product.variety, constant('Librinfo\\VarietiesBundle\\Entity\\VarietyDescription::DESCRIPTION_AMATEUR'), 'sowing_density').value }}"
+        value="{{ getDescriptionValue(product.variety, constant('Librinfo\\VarietiesBundle\\Entity\\VarietyDescription::DESCRIPTION_AMATEUR'), 'sowing_density') }}"
     />
     <input type=hidden name="product-variety-tkw" value="{{ product.variety.tkw }}" />
 </div>

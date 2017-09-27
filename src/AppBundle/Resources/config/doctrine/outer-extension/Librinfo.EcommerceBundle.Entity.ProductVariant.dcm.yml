@@ -1,7 +1,7 @@
 Librinfo\EcommerceBundle\Entity\ProductVariant:
     type: entity
 
-    manyToOne:
-        seedBatch:
+    manyToMany:
+        seedBatches:
             targetEntity: Librinfo\SeedBatchBundle\Entity\SeedBatch
             inversedBy: productVariants
