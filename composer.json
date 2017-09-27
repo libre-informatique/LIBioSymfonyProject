@@ -55,7 +55,8 @@
     },
     "require-dev": {
         "alexandresalome/doctrine-extra-bundle": "^0.3.0",
-        "nelmio/alice": "^2.2"
+        "nelmio/alice": "^2.2",
+        "codeception/codeception": "^2.3"
     },
     "version": "dev-wip-locale",
     "scripts": {
