@@ -56,12 +56,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/blast-project/BaseEntitiesBundle.git",
-                "reference": "3efd319cb0207e95f5091a9c49c9207c1c66abe9"
+                "reference": "ac160794259e9449c05935bb1c980c4602d36565"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blast-project/BaseEntitiesBundle/zipball/3efd319cb0207e95f5091a9c49c9207c1c66abe9",
-                "reference": "3efd319cb0207e95f5091a9c49c9207c1c66abe9",
+                "url": "https://api.github.com/repos/blast-project/BaseEntitiesBundle/zipball/ac160794259e9449c05935bb1c980c4602d36565",
+                "reference": "ac160794259e9449c05935bb1c980c4602d36565",
                 "shasum": ""
             },
             "require": {
@@ -108,7 +108,7 @@
                 "libio",
                 "symfony"
             ],
-            "time": "2017-09-26T14:43:59+00:00"
+            "time": "2017-09-27T14:34:09+00:00"
         },
         {
             "name": "blast-project/core-bundle",
@@ -116,12 +116,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/blast-project/CoreBundle.git",
-                "reference": "77838abfaba9a009cfd24b2c7351e704a62fda13"
+                "reference": "cffee5fdeb1f0465355b5f780c14337acc39648e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blast-project/CoreBundle/zipball/77838abfaba9a009cfd24b2c7351e704a62fda13",
-                "reference": "77838abfaba9a009cfd24b2c7351e704a62fda13",
+                "url": "https://api.github.com/repos/blast-project/CoreBundle/zipball/cffee5fdeb1f0465355b5f780c14337acc39648e",
+                "reference": "cffee5fdeb1f0465355b5f780c14337acc39648e",
                 "shasum": ""
             },
             "require": {
@@ -173,7 +173,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-09-26T15:38:13+00:00"
+            "time": "2017-09-27T13:49:56+00:00"
         },
         {
             "name": "blast-project/doctrine-pgsql-bundle",
@@ -3820,12 +3820,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/CRMBundle.git",
-                "reference": "b246e9b0f7f6b16e7a50523c59f418a694f9d024"
+                "reference": "0b6ff03fd33b8035ccdbc7c1f30eabaa63baf357"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/CRMBundle/zipball/b246e9b0f7f6b16e7a50523c59f418a694f9d024",
-                "reference": "b246e9b0f7f6b16e7a50523c59f418a694f9d024",
+                "url": "https://api.github.com/repos/libre-informatique/CRMBundle/zipball/0b6ff03fd33b8035ccdbc7c1f30eabaa63baf357",
+                "reference": "0b6ff03fd33b8035ccdbc7c1f30eabaa63baf357",
                 "shasum": ""
             },
             "require": {
@@ -3871,7 +3871,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-09-26T15:29:57+00:00"
+            "time": "2017-09-27T16:13:44+00:00"
         },
         {
             "name": "libre-informatique/decorator-bundle",
@@ -4170,12 +4170,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/SeedBatchBundle.git",
-                "reference": "1492c6e69fe95ad4f8e884bb5be0db88326b3354"
+                "reference": "2ec9d25ded4ccfcb3950ba4e05c5ef899695f04f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/SeedBatchBundle/zipball/1492c6e69fe95ad4f8e884bb5be0db88326b3354",
-                "reference": "1492c6e69fe95ad4f8e884bb5be0db88326b3354",
+                "url": "https://api.github.com/repos/libre-informatique/SeedBatchBundle/zipball/2ec9d25ded4ccfcb3950ba4e05c5ef899695f04f",
+                "reference": "2ec9d25ded4ccfcb3950ba4e05c5ef899695f04f",
                 "shasum": ""
             },
             "require": {
@@ -4218,7 +4218,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-09-26T15:33:24+00:00"
+            "time": "2017-09-27T16:15:44+00:00"
         },
         {
             "name": "libre-informatique/sonata-sylius-user-bundle",
