@@ -1,15 +1,25 @@
 <?php
 
+/*
+ * This file is part of the Lisem Project.
+ *
+ * Copyright (C) 2015-2017 Libre Informatique
+ *
+ * This file is licenced under the GNU GPL v3.
+ * For the full copyright and license information, please view the LICENSE.md
+ * file that was distributed with this source code.
+ */
+
 $I = new WebGuy($scenario);
 $I->wantTo('Test All Route');
 
-#### LOGIN ####
+//### LOGIN ####
 $I->amOnPage('/admin/login');
 $I->fillField("//input[@id='_username']", 'lisem@lisem.eu');
 $I->fillField("//input[@id='_password']", 'lisem');
 $I->click("//button[@type='submit']");
 
-#### ROUTER ####
+//### ROUTER ####
 $curRouter = $I->grabServiceFromContainer('router');
 
 foreach ($curRouter->getRouteCollection() as $curRoute) {
@@ -24,8 +34,8 @@ foreach ($curRouter->getRouteCollection() as $curRoute) {
             /* Are we in a sonata admin ? */
             if (isset($routeDefault['_controller']) && array_key_exists('_sonata_admin', $routeDefault)) {
                 /* @todo find if those route have to be disable or not */
-                if (! preg_match('/export|generateEntityCode|validateVat|generateFakeEmail/', $routePath)) {
-    #                if ( preg_match('/list|create|show|edit/', $routePath)) {
+                if (!preg_match('/export|generateEntityCode|validateVat|generateFakeEmail/', $routePath)) {
+                    //                if ( preg_match('/list|create|show|edit/', $routePath)) {
                     dump($curRoute->getPath());
                     dump($curRoute->getMethods());
                     dump($curRoute->getRequirements());
@@ -34,17 +44,16 @@ foreach ($curRouter->getRouteCollection() as $curRoute) {
                     dump($curRoute->getCondition());
                     dump('######################################################################');
                     $I->amOnPage($routePath);
-                    $I->waitForText("Libre", 10); // secs
+                    $I->waitForText('Libre', 10); // secs
                 }
             }
         }
     }
 }
 
-
-#dump($I);
-#$I->getSymfonyRoute();
-#->getModule('Symfony')->grabServiceFromContainer('myservice');
+//dump($I);
+//$I->getSymfonyRoute();
+//->getModule('Symfony')->grabServiceFromContainer('myservice');
 // $curContainer = $I
 //               ->getModule('Symfony')
 //               ->grabService('kernel')
