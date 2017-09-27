@@ -113,13 +113,17 @@ $(document).ready(function() {
             if (calculationType === 'surfaceToWeight') {
                 Surface = this.numberToFixed(sourceInput.val()) * SurfaceUnitRatio;
 
-                Weight = (Surface * Density) / Tkw;
+                SeedNumber = Surface * Density;
+
+                Weight = SeedNumber * Tkw / 1000;
 
                 destInput.val(this.numberToFixed(Weight / WeightUnitRatio));
             } else {
                 Weight = this.numberToFixed(sourceInput.val()) * WeightUnitRatio;
 
-                Surface = (Weight * Tkw) / Density;
+                SeedNumber = Weight * 1000 / Tkw;
+
+                Surface = SeedNumber / Density;
 
                 destInput.val(this.numberToFixed(Surface / SurfaceUnitRatio));
             }
