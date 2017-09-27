@@ -10,7 +10,11 @@
  * file that was distributed with this source code.
  */
 
-class WebGuy extends \Codeception\Actor
+namespace Helper;
+
+// here you can define custom actions
+// all public methods declared in helper class will be available in $I
+
+class WebGuy extends \Codeception\Module
 {
-    use _generated\WebGuyActions;
 }
