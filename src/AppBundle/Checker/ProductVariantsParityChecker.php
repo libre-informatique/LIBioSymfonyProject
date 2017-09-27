@@ -65,7 +65,7 @@ final class ProductVariantsParityChecker implements ProductVariantsParityChecker
     private function checkSeedBatchIsAlreadyUsed($existingSeedBatches, $seedBatches)
     {
         $intersection = false;
-        $existingSeedBatches->forAll(function($seedBatch) use ($seedBatches) {
+        $existingSeedBatches->forAll(function ($seedBatch) use ($seedBatches) {
             if ($seedBatches->contains($seedBatch)) {
                 $intersection = true;
             }
