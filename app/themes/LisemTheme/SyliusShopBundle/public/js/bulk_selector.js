@@ -44,6 +44,13 @@ $(document).ready(function() {
          */
         this.varietyTkw = '';
 
+        /**
+         * The bulk variant unit price
+         *
+         * @type {string}
+         */
+        this.bulkUnitPrice = null;
+
         this.__construct = function() {
             // init properties
             this.packagingSelect = $('[name*="sylius_add_to_cart[cartItem][variant][_lisem_packaging]"]');
@@ -51,6 +58,7 @@ $(document).ready(function() {
             this.quantityChooser = $('#sylius_add_to_cart_cartItem_quantity').parent();
             this.varietyDensity = this.bulkForm.find('input[name="product-variety-density"]').val();
             this.varietyTkw = this.bulkForm.find('input[name="product-variety-tkw"]').val();
+            this.bulkUnitPrice = $('#sylius-variants-pricing').find('div[data-_lisem_packaging="BULK"]').data('value');
 
             // init form events
             this.initEvents();
@@ -106,27 +114,40 @@ $(document).ready(function() {
             var WeightUnitRatio;
             var Surface;
             var SurfaceUnitRatio;
+            var result = 0;
+            var source = 0;
 
             WeightUnitRatio = this.numberToFixed(this.bulkForm.find('select[name="bulk-weight-unit"] option:selected').data('ratio'));
             SurfaceUnitRatio = this.numberToFixed(this.bulkForm.find('select[name="bulk-surface-unit"] option:selected').data('ratio'));
 
             if (calculationType === 'surfaceToWeight') {
-                Surface = this.numberToFixed(sourceInput.val()) * SurfaceUnitRatio;
+                source = Surface = this.numberToFixed(sourceInput.val() * SurfaceUnitRatio);
 
                 SeedNumber = Surface * Density;
 
                 Weight = SeedNumber * Tkw / 1000;
 
-                destInput.val(this.numberToFixed(Weight / WeightUnitRatio));
+                result = this.numberToFixed(Weight / WeightUnitRatio);
             } else {
-                Weight = this.numberToFixed(sourceInput.val()) * WeightUnitRatio;
+                source = Weight = this.numberToFixed(sourceInput.val() * WeightUnitRatio);
 
                 SeedNumber = Weight * 1000 / Tkw;
 
                 Surface = SeedNumber / Density;
 
-                destInput.val(this.numberToFixed(Surface / SurfaceUnitRatio));
+                result = this.numberToFixed(Surface / SurfaceUnitRatio);
             }
+            this.computePrice(calculationType === 'surfaceToWeight' ? result : source);
+
+            destInput.val(result);
+        };
+
+        this.computePrice = function(weight) {
+            const regex = /([\d]*)[\,\.]?([\d]*).*/g;
+            const subst = '$1.$2';
+
+            let bulkPrice = this.bulkUnitPrice.replace(regex, subst);
+            console.info(weight, bulkPrice);
         };
 
         this.numberToFixed = function(value) {
