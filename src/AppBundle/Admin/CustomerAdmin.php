@@ -51,7 +51,8 @@ class CustomerAdmin extends \Librinfo\SeedBatchBundle\Admin\OrganismAdmin
     protected function postConfigureFormFields(FormMapper $mapper)
     {
         parent::postConfigureFormFields($mapper);
-        $mapper->get('customerCode')->addViewTransformer(new CustomerCodeTransformer());
+        /* it look like 'customercode' does not exit */
+        #$mapper->get('customerCode')->addViewTransformer(new CustomerCodeTransformer());
     }
 
     /**
