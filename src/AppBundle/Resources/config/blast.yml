@@ -392,7 +392,7 @@ parameters:
                                 fieldsOrder: [name, code]
                         form_group_options:
                             optionValues:
-                                type: null
+                                #type: null
                                 _options:
                                     admin_code: librinfo_ecommerce_option_value.admin.product
             # LIST
