@@ -3,6 +3,13 @@ $(document).ready(function() {
     var BulkSelector = function() {
 
         /**
+         * The calculator precision length
+         *
+         * @type {Number}
+         */
+        this.decimals = 3;
+
+        /**
          * Boolean to enable or disable bulk form
          *
          * @type {Boolean}
@@ -12,42 +19,42 @@ $(document).ready(function() {
         /**
          * Packaging select input
          *
-         * @type {object}
+         * @type {Object}
          */
         this.packagingSelect = null;
 
         /**
          * The custom form wrapper
          *
-         * @type {object}
+         * @type {Object}
          */
         this.bulkForm = null;
 
         /**
          * The default quantity input
          *
-         * @type {object}
+         * @type {Object}
          */
         this.quantityChooser = null;
 
         /**
          * The variety seed density for calculation
          *
-         * @type {float}
+         * @type {Float}
          */
         this.varietyDensity = '';
 
         /**
          * The variety thousand kernel weight
          *
-         * @type {float}
+         * @type {Float}
          */
         this.varietyTkw = '';
 
         /**
          * The bulk variant unit price
          *
-         * @type {string}
+         * @type {String}
          */
         this.bulkUnitPrice = null;
 
@@ -102,7 +109,12 @@ $(document).ready(function() {
             let calculationType,
                 destInput;
 
-            if (sourceInput.val() === '') return;
+            this.computePrice(0);
+
+            if (sourceInput.val() === '') {
+                this.resetBulkForm();
+                return;
+            }
 
             calculationType = sourceInput.attr('name') === 'bulk-weight' ? 'weightToSurface' : 'surfaceToWeight';
 
@@ -110,10 +122,12 @@ $(document).ready(function() {
 
             var Density = this.varietyDensity;
             var Tkw = this.varietyTkw;
+
             var Weight;
             var WeightUnitRatio;
             var Surface;
             var SurfaceUnitRatio;
+
             var result = 0;
             var source = 0;
 
@@ -143,15 +157,23 @@ $(document).ready(function() {
         };
 
         this.computePrice = function(weight) {
-            const regex = /([\d]*)[\,\.]?([\d]*).*/g;
+            if (weight === 0) {
+                $('#product-price').html(this.bulkUnitPrice);
+                return;
+            }
+
+            const regex = /(\d+)[\,\.]?(\d*)\W?([\€\$])/g;
             const subst = '$1.$2';
+            const substMoney = '$3';
 
             let bulkPrice = this.bulkUnitPrice.replace(regex, subst);
-            console.info(weight, bulkPrice);
+            let bulkMoney = this.bulkUnitPrice.replace(regex, substMoney);
+
+            $('#product-price').html(this.numberToFixed(weight * bulkPrice) + " " + bulkMoney);
         };
 
         this.numberToFixed = function(value) {
-            return parseFloat(value.toString().replace(',', '.')).toFixed(2);
+            return parseFloat(value.toString().replace(',', '.')).toFixed(this.decimals);
         };
 
         this.handleChange = function(select, value) {
@@ -172,6 +194,11 @@ $(document).ready(function() {
                 this.quantityChooser.show();
                 this.bulkForm.hide();
             }
+        };
+
+        this.resetBulkForm = function() {
+            this.bulkForm.find('input[name="bulk-surface"]').val('');
+            this.bulkForm.find('input[name="bulk-weight"]').val('');
         };
 
         this.__construct(); // Hack to simulate class constructor call when instanciating

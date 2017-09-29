@@ -249,3 +249,8 @@ services:
             - '@doctrine.orm.entity_manager'
         calls:
             - [setCodeGenerator, ["@librinfo_crm.code_generator.customer"]]
+
+    app.twig.unit_conveter:
+        class: AppBundle\Twig\UnitConverter
+        tags:
+            - { name: twig.extension }
