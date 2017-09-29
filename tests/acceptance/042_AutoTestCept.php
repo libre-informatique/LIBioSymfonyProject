@@ -34,7 +34,7 @@ foreach ($curRouter->getRouteCollection() as $curRoute) {
             /* Are we in a sonata admin ? */
             if (isset($routeDefault['_controller']) && array_key_exists('_sonata_admin', $routeDefault)) {
                 /* @todo find if those route have to be disable or not */
-                if (!preg_match('/export|generateEntityCode|validateVat|generateFakeEmail|batch|getAddressAutocompleteItems/', $routePath)) {
+                if (!preg_match('/export|generateEntityCode|validateVat|generateFakeEmail|batch|getAddressAutocompleteItems|generate_product_slug|setAsCoverImage/', $routePath)) {
                     //                if ( preg_match('/list|create|show|edit/', $routePath)) {
                     dump($curRoute->getPath());
                     dump($curRoute->getMethods());
