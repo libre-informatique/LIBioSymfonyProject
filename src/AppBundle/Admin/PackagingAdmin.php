@@ -54,10 +54,13 @@ class PackagingAdmin extends ProductOptionValueAdmin
 
         $builder->addEventListener(FormEvents::POST_SET_DATA, function (FormEvent $event) {
             $form = $event->getForm();
+            
             $entity = $event->getData();
-            $form->get('quantity')->setData($entity->getQuantity());
-            $form->get('unit')->setData($entity->getUnit());
-            $form->get('bulk')->setData($entity->isBulk());
+            if (isset($entity)) {
+                $form->get('quantity')->setData($entity->getQuantity());
+                $form->get('unit')->setData($entity->getUnit());
+                $form->get('bulk')->setData($entity->isBulk());
+            }
         });
 
         $builder->addEventListener(FormEvents::PRE_SUBMIT, function (FormEvent $event) {
