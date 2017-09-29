@@ -35,16 +35,18 @@ foreach ($curRouter->getRouteCollection() as $curRoute) {
             if (isset($routeDefault['_controller']) && array_key_exists('_sonata_admin', $routeDefault)) {
                 /* @todo find if those route have to be disable or not */
                 if (!preg_match('/export|generateEntityCode|validateVat|generateFakeEmail|batch|getAddressAutocompleteItems|generate_product_slug|setAsCoverImage/', $routePath)) {
-                    //                if ( preg_match('/list|create|show|edit/', $routePath)) {
+                    // if ( preg_match('/list|create|show|edit/', $routePath)) {
+                    // if (preg_match('/packaging/', $routePath)) {
                     dump($curRoute->getPath());
-                    dump($curRoute->getMethods());
-                    dump($curRoute->getRequirements());
-                    dump($curRoute->getOptions());
-                    dump($curRoute->getDefaults());
-                    dump($curRoute->getCondition());
-                    dump('######################################################################');
+                    #dump($curRoute->getMethods());
+                    #dump($curRoute->getRequirements());
+                    #dump($curRoute->getOptions());
+                    #dump($curRoute->getDefaults());
+                    #dump($curRoute->getCondition());
+                    #dump('######################################################################');
                     $I->amOnPage($routePath);
                     $I->waitForText('Libre', 10); // secs
+                    // }
                 }
             }
         }
