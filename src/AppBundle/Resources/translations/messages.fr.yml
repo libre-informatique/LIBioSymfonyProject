@@ -1,6 +1,6 @@
 lisem:
     appbundle:
-        
+
         seedsproduct:
             list:
                 _action: Action
@@ -49,182 +49,270 @@ lisem:
                 transmitted_diseases: Maladies transmises par les semences
                 updatedat: Modifié le 
                 updatedby: Modifié par
-
+            form:
+                _action: Action
+                alias: Synonymes
+                area_per_kg: Surface pour produire 1kg de graines
+                base_seed_per_kg: Besoins semence de base pour 1kg de graines
+                children: Liste des souches
+                code: Code
+                code: Code
+                createdat: Créé le
+                createdby: Créé par
+                description: Description
+                distance_between_lines: Écartement des lignes
+                distance_on_line: Distance sur la ligne
+                germination_rate: Taux de germination
+                is_strain: Souche
+                latin_name: Nom latin
+                legal_germination_rate: Taux de germination légal
+                life_cycle: Cycle végétatif
+                name: Nom
+                official: Inscrit au catalogue officiel
+                official_date_in: Date d'inscription
+                #'
+                official_date_out: Date de radiation
+                official_maintainer: Mainteneur
+                official_name: Nom au catalogue officiel
+                plant_categories: Catégories
+                raise_duration: Durée de levée dans les conditions naturelles
+                regulatory_status: Statut réglementaire
+                seed_lifespan: Durée de vie théorique de la graine
+                seedhead_yield: Rendement par porte-graines
+                seedheads_per_kg: Nombre de porte-graines par kg
+                selection_advice: Conseils de sélection
+                selection_criteria: Critères de sélection
+                several_strains: Plusieurs souches
+                species: Espèce
+                tkw: Poids de mille graines
+                transmitted_diseases: Maladies transmises par les semences
+                updatedat: Modifié le 
+                updatedby: Modifié par
                 
-
+        customer:
+            breadcrumb:
+                customer_create: Nouveau client
+                customer_list: Liste des clients
+            form:
+                active: Actif
+                alert: Alerte
+                catalogue_send_mean: Méthode d'envoi
+                #'
+                catalogue_sent: Catalogue envoyé
+                catalogue_type: Type de catalogue
+                circles: Groupes
+                createdat: Créer le
+                createdby: Créer par
+                description: Description
+                email: Email
+                emailnonewsletter: Pas de Newsletter
+                emailnpai: Mauvais Email
+                first_catalogue_sent_date: Date premier envoi catalogue
+                firstname: Prénom
+                iban: RIB (IBAN)
+                iscustomer: Est un client
+                issupplier: Est un fournisseur
+                last_catalogue_sent_date: Date dernier envoi catalogue
+                lastname: Nom de famille
+                name: 'Nom'
+                seedproducer: Producteur de semence
+                siret: N° Siret
+                source: Source
+                title: Titre
+                updatedat: Modifié le
+                updatedby: Modifié par
+                url: Site web
+                vat: N° TVA
                 
-Dashboard.old: Tableau de Bord
-form_group_billingAddress.old: Adresse de facturation
-form_group_channel_descriptions.old: Descriptions spécifiques
-form_group_expeditors.old: Éxpédition
-form_group_grouped_expeditors.old: Envoi par groupes
-form_group_shippingAddress.old: Adresse de livraison
-form_tab_channel_descriptions.old: Descriptions spécifiques
-form_tab_channel_descriptions.old: Déscriptions spécifiques
-form_tab_contactInformations.old: Coordonnées
-form_tab_new_variety_variant .old: Ajouter un article (semences)
-show_group_channel_descriptions.old: Descriptions spécifiques
-show_group_defaultAddress.old: Adresse principale
-show_group_defaultPhone.old: Téléphone principal
-show_group_info.old: Informations supplémentaires
-show_tab_contactInformations.old: Coordonnées
-Strains.old: Souches
-Varieties.old: Variétés
-
-lisem.old:
-    help.old:
-        product_price.old: en Centimes
-        packaging.old: ex. 5g / 20 graines / vrac
-    label.old:
-        product_code.old: Code article
-    menu_label.old:
-        accounting.old: Gestion / Compta
-        admin_settings.old: Application
-        app_settings.old: Paramétrage
-        cash_book.old: Livre de caisse
-        catalogs.old: Catalogues
-        certifications_list.old: Certifications
-        certificators_list.old: Organismes certificateurs
-        channels_list.old: Canaux de vente
-        contacts_list.old: Liste des Contacts
-        create_certification.old: Ajouter un Certificat
-        create_contact.old: Ajouter un Contact
-        create_customer.old: Ajouter un Client
-        create_emailing.old: Ajouter un Emailing
-        create_order.old: Ajouter une Commandes
-        create_organism.old: Ajouter un Tiers
-        create_other_product.old: Ajouter un Article (autres)
-        create_plot.old: Ajouter une Parcelle
-        create_producer.old: Ajouter un Producteur
-        create_seed_batch.old: Ajouter un Lot
-        create_seed_product.old: Ajouter un Article (semences)
-        create_species.old: Ajouter une Espèce
-        create_variety.old: Ajouter une Variété
-        crm_categories_list.old: Categories
-        crm_circles_list.old: Groupes
-        crm_contacts.old: Contacts
-        crm_emailing.old: Courriels groupés
-        crm_settings.old: Relations publiques
-        crm.old: Relations publiques
-        customer_group.old: Groupes de client
-        customers_list.old: Liste des Clients
-        emailing_list.old: Emailing
-        families_list.old: Familles
-        genuses_list.old: Genres
-        germination_tests.old: Tests de germination
-        inventory.old: Inventaire
-        orders_list.old: Liste des Commandes
-        orders.old: Commandes
-        organisms_list.old: Liste des Tiers
-        other_products_list.old: Autres
-        packagings.old: Conditionnement
-        payment_methods_list.old: Méthodes de paiement
-        phone_types_list.old: Types de téléphone
-        plant_categories_list.old: Catégories de plantes
-        plots_list.old: Liste des Parcelles
-        position_types_list.old: Types de fonctions
-        producers_list.old: Liste des Producteurs
-        product_attributes.old: Attributs des articles
-        product_options.old: Options des articles
-        products.old: Articles
-        rates_list.old: Tarifs forfaits
-        sales_journal.old: Journal des ventes
-        seed_batches_list.old: Liste des Lots
-        seed_batches_settings.old: Lots
-        seed_batches.old: Lots
-        seed_products_list.old: Semences
-        shipping_methods_list.old: Méthodes de livraison
-        shop_settings.old: Boutique
-        species_list.old: Liste des Espèces
-        tax_categories_list.old: Catégories de TVA
-        tax_rates_list.old: Taux de TVA
-        taxon_list.old: Catégories
-        user_groups.old: Groupes
-        user_roles.old: Profils
-        user_users.old: Utilisateurs
-        varieties_list.old: Liste des Variétés
-        varieties_settings.old: Variétés
-        varieties.old: Variétés
-        zones_list.old: Zones géographiques
-    other_product_admin.old:
-        label.old: Article (autres)
-    other_product_variant_admin.old:
-        label.old: Déclinaison d'article (autres)
-    seeds_product_admin.old:
-        label.old: Article (semences)
-    seeds_product_variant_admin.old:
-        label.old: Déclinaison d'article (semences)
-
-librinfo.old:
-    label.old:
-        bulk.old: Vrac
-        channel.old: Canal de vente
-        city.old: Ville
-        company.old: Société
-        country_code.old: Pays
-        created_by.old: Créé par
-        description_title.old: Titre
-        enabled.old: Activé
-        field_to_additionnals.old: Destinataires additonnels
-        first_name.old: Prénom
-        last_name.old: Nom
-        packaging.old: Conditionnement
-        packagings.old: Conditionnements
-        post_code.old: Code postal
-        price.old: Prix
-        province_code.old: Code province
-        province_name.old: Région
-        quantity.old: Quantité
-        seed_batch.old: Lot
-        street.old: Rue
-        useSameAddressForBilling.old: Utiliser la même adresse pour la facturation
-        updated_by.old: Màj par
-        value.old: Contenu
-
-    link.old:
-        dashboard.old: Tableau de Bord
-        other_product_create.old: Ajouter un article (autres)
-        other_product_list.old: Liste des articles (autres)
-        other_product_variant_create.old: Nouvelle déclinaisons d'article (autres)
-        other_product_variant_list.old: Liste des déclinaisons d'article (autres)
-        otherproduct_list.old: Liste des articles (autres)
-        otherproductvariant_list.old: Liste des déclinaison d'article (autres)
-        packaging_create.old: Nouveau conditionnement
-        packaging_list.old: Liste des conditionnements
-        seed_product_list.old: Liste des articles (semences)
-        seeds_product_create.old: Ajouter un article (semences)
-        seeds_product_list.old: Liste des articles (semences)
-        seeds_product_variant_create.old: Nouvelle déclinaisons d'article (semences)
-        seeds_product_variant_list.old: Liste des déclinaisons d'article (semences)
-        seedsproduct_list.old: Liste des articles (semences)
-        seedsproductvariant_list.old: Liste des déclinaisons d'article (semences)
-        organism_list.old: Liste des contacts
-        email_list.old: Liste des courriels groupés
-        sales_journal.old: Journal des ventes
-        payment_list.old: Livre de caisse
-    crm.old:
-        organism_admin.old:
-            # Translation to be confirmed
-            label.old: LISEM
-    title.old:
-        sonata_admin_login.old: Login
-
-lisem.old:
-    packaging_admin.old:
-        label.old: Conditionnement
-    packaging_unit.old:
-        grams.old: grammes
-        seeds.old: graines
+        otherproductvariant:
+            breadcrumb:
+                otherproduct_create: Ajouter un article (autres)
+                otherproduct_list: Liste des article (autres)
+                otherproductvariant_create: Nouvelle déclinaison d'article
+                #'
+                otherproductvariant_list:  Liste des déclinaisons d'article
+                #'
+            form:
+                channels: Canal de vente
+                code: Code
+                description: Description
+                enabled: Actif
+                maintaxon: Catégorie principale
+                metadescription: Méta description
+                metakeywords: Méta mots-clés
+                name: Nom
+                options: Options
+                shortdescription: Brève description
+                slug: Slug
+                taxons: Catégories
+                
+        packaging:
+            breadcrumb:
+                packaging_create: Nouveau conditionnement
+                packaging_list: Liste des conditionnements
+                variety_create: Nouvelle variété
+                variety_list: Liste des variétés
+            form:
+                bulk: Vrac
+                packagings: Conditionnements
+                quantity: Quantité
+                
+        seedsproduct:
+            form:
+                code: Code
+                name: Nom
+                taxcategory: Catégorie de taxe
+                
+        seedsproductvariant:
+                channels: Canal de vente
+                code: Code
+                depth: Profondeur
+                description: Description
+                enabled: Actif
+                height: Hauteur
+                enabled: Actif
+                maintaxon: Catégorie principale
+                metadescription: Méta description
+                metakeywords: Méta mots-clés
+                onhand: Stock actuel
+                onhold: En attente
+                packaging: Conditionnement
+                seedbatch: Lot
+                shortdescription: Brève description
+                slug: Slug
+                taxons: Catégorie
+                tracked: Suivi
+                weight: Poids
+                width: Largeur
+                
+        seedsproductvariantembedded:
+                depth: Profondeur
+                height: Hauteur
+                onhand: Stock actuel
+                onhold: En attente
+                packaging: Conditionnement
+                seedbatch: Lot
+                tracked: Suivi
+                weight: Poids
+                width: Largeur
 
 
-http_error.old:
-    404.old: >
+    help:
+        product_price: en Centimes
+        packaging: ex. 5g / 20 graines / vrac
+    menu_label:
+        accounting: Gestion / Compta
+        admin_settings: Application
+        app_settings: Paramétrage
+        cash_book: Livre de caisse
+        catalogs: Catalogues
+        certifications_list: Certifications
+        certificators_list: Organismes certificateurs
+        channels_list: Canaux de vente
+        contacts_list: Liste des Contacts
+        create_certification: Ajouter un Certificat
+        create_contact: Ajouter un Contact
+        create_customer: Ajouter un Client
+        create_emailing: Ajouter un Emailing
+        create_order: Ajouter une Commandes
+        create_organism: Ajouter un Tiers
+        create_other_product: Ajouter un Article (autres)
+        create_plot: Ajouter une Parcelle
+        create_producer: Ajouter un Producteur
+        create_seed_batch: Ajouter un Lot
+        create_seed_product: Ajouter un Article (semences)
+        create_species: Ajouter une Espèce
+        create_variety: Ajouter une Variété
+        crm_categories_list: Categories
+        crm_circles_list: Groupes
+        crm_contacts: Contacts
+        crm_emailing: Courriels groupés
+        crm_settings: Relations publiques
+        crm: Relations publiques
+        customer_group: Groupes de client
+        customers_list: Liste des Clients
+        emailing_list: Emailing
+        families_list: Familles
+        genuses_list: Genres
+        germination_tests: Tests de germination
+        inventory: Inventaire
+        orders_list: Liste des Commandes
+        orders: Commandes
+        organisms_list: Liste des Tiers
+        other_products_list: Autres
+        packagings: Conditionnement
+        payment_methods_list: Méthodes de paiement
+        phone_types_list: Types de téléphone
+        plant_categories_list: Catégories de plantes
+        plots_list: Liste des Parcelles
+        position_types_list: Types de fonctions
+        producers_list: Liste des Producteurs
+        product_attributes: Attributs des articles
+        product_options: Options des articles
+        products: Articles
+        rates_list: Tarifs forfaits
+        sales_journal: Journal des ventes
+        seed_batches_list: Liste des Lots
+        seed_batches_settings: Lots
+        seed_batches: Lots
+        seed_products_list: Semences
+        shipping_methods_list: Méthodes de livraison
+        shop_settings: Boutique
+        species_list: Liste des Espèces
+        tax_categories_list: Catégories de TVA
+        tax_rates_list: Taux de TVA
+        taxon_list: Catégories
+        user_groups: Groupes
+        user_roles: Profils
+        user_users: Utilisateurs
+        varieties_list: Liste des Variétés
+        varieties_settings: Variétés
+        varieties: Variétés
+        zones_list: Zones géographiques
+    other_product_admin:
+        label: Article (autres)
+    other_product_variant_admin:
+        label: Déclinaison d'article (autres)
+        #'
+    seeds_product_admin:
+        label: Article (semences)
+    seeds_product_variant_admin:
+        label: Déclinaison d'article (semences)
+        #'
+    packaging_admin:
+        label: Conditionnement
+    packaging_unit:
+        grams: grammes
+        seeds: graines
+
+Dashboard: Tableau de Bord
+form_group_billingAddress: Adresse de facturation
+form_group_channel_descriptions: Descriptions spécifiques
+form_group_expeditors: Éxpédition
+form_group_grouped_expeditors: Envoi par groupes
+form_group_shippingAddress: Adresse de livraison
+form_tab_channel_descriptions: Descriptions spécifiques
+form_tab_channel_descriptions: Déscriptions spécifiques
+form_tab_contactInformations: Coordonnées
+form_tab_new_variety_variant : Ajouter un article (semences)
+show_group_channel_descriptions: Descriptions spécifiques
+show_group_defaultAddress: Adresse principale
+show_group_defaultPhone: Téléphone principal
+show_group_info: Informations supplémentaires
+show_tab_contactInformations: Coordonnées
+Strains: Souches
+Varieties: Variétés
+
+http_error:
+    404: >
         Page non trouvée. Vérifiez que l'URL est valide et que la page existe encore.
-    500.old: >
+    #'
+    500: >
         Une erreur interne vient de se produire.
-    403.old: >
+    403: >
         Cet accès est restreint, vous ne possedez pas les privilièges suffisant pour accéder à cette page.
-    218.old: >
+    218: >
         Cette fonctionnalité n'a pas encore été implémentée.
-    previous_page.old: Retour à la page précédente
-    not_implemented.old: Non implémentée
+    #'
+    previous_page: Retour à la page précédente
+    not_implemented: Non implémentée
