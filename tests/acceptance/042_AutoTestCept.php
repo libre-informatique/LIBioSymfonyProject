@@ -16,7 +16,7 @@ $I->wantTo('Test All Route');
 function doLogin($webGuy)
 {
     $webGuy->wantTo('Login');
-    ### LOGIN ####
+    //## LOGIN ####
     $webGuy->amOnPage('/admin/login');
     $webGuy->fillField("//input[@id='_username']", 'lisem@lisem.eu');
     $webGuy->fillField("//input[@id='_password']", 'lisem');
@@ -25,7 +25,7 @@ function doLogin($webGuy)
 
 doLogin($I);
 
-### Get Some Symfony Service ####
+//## Get Some Symfony Service ####
 $curRouter = $I->grabServiceFromContainer('router');
 $curTranslator = $I->grabServiceFromContainer('translator');
 $curCatalogue = $curTranslator->getCatalogue();
@@ -35,14 +35,12 @@ if (empty($curCatalogue->all('messages'))) {
 }
 $curMessage = $curCatalogue->all('messages');
 
-
-
 foreach ($curRouter->getRouteCollection() as $curRoute) {
     $routePath = $curRoute->getPath();
     $routeDefault = $curRoute->getDefaults();
     $routeMethod = $curRoute->getMethods();
     $curAction = basename($routePath); /* ugly way to get the action */
-    
+
     /* Select only usefull route (or not) */
     if (preg_match('/lisem|librinfo/', $routePath) && !preg_match('/{|}/', $routePath) && !preg_match('/login/', $routePath)) {
         /* Check if we can GET (or not) */
@@ -52,34 +50,36 @@ foreach ($curRouter->getRouteCollection() as $curRoute) {
                 $curAdmin = $I->grabServiceFromContainer($routeDefault['_sonata_admin']);
                 $curContext = null;
                 switch ($curAction) {
-                    case "list":
-                    case "show":
+                    case 'list':
+                    case 'show':
                         break;
-                    case "create":
-                    case "edit":
-                        $curContext = "form";
+                    case 'create':
+                    case 'edit':
+                        $curContext = 'form';
                         break;
                 }
                 if (isset($curContext)) {
                     $curLabel = $curAdmin->getLabelTranslatorStrategy()->getLabel('', $curContext, '');
-                    
+
                     /* @todo find if those route have to be disable or not */
                     // if (!preg_match('/export|generateEntityCode|validateVat|generateFakeEmail|batch|getAddressAutocompleteItems|generate_product_slug|setAsCoverImage/', $routePath)) {
                     // if ( preg_match('/list|create|show|edit/', $routePath)) {
                     // if (preg_match('/packaging/', $routePath)) {
-                    $I->wantTo('Test Route: '. $routePath);
+                    $I->wantTo('Test Route: ' . $routePath);
                     $I->amOnPage($routePath);
                     $I->waitForText('Libre', 10); // secs
 
                     $libKeys = preg_grep('/^' . $curLabel . '/', array_keys($curMessage));
-                    
+
                     foreach ($libKeys as $curKeys) {
                         $I->wantTo('Check Translation for: '
                                    . $curKeys
                                    . ', It should be: '
                                    . $curMessage[$curKeys]);
                         $I->cantSee($curKeys); /* We should not see label key */
-                        $I->canSee($curMessage[$curKeys]); /* We should see label value */
+                        if (isset($curMessage[$curKeys])) {
+                            $I->canSee($curMessage[$curKeys]); /* We should see label value */
+                        }
                     }
 
                     // }
