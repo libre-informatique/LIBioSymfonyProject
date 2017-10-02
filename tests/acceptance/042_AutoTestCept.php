@@ -13,57 +13,78 @@
 $I = new WebGuy($scenario);
 $I->wantTo('Test All Route');
 
-//### LOGIN ####
-$I->amOnPage('/admin/login');
-$I->fillField("//input[@id='_username']", 'lisem@lisem.eu');
-$I->fillField("//input[@id='_password']", 'lisem');
-$I->click("//button[@type='submit']");
+function doLogin($webGuy)
+{
+    $webGuy->wantTo('Login');
+    ### LOGIN ####
+    $webGuy->amOnPage('/admin/login');
+    $webGuy->fillField("//input[@id='_username']", 'lisem@lisem.eu');
+    $webGuy->fillField("//input[@id='_password']", 'lisem');
+    $webGuy->click("//button[@type='submit']");
+}
 
-//### ROUTER ####
+doLogin($I);
+
+### Get Some Symfony Service ####
 $curRouter = $I->grabServiceFromContainer('router');
+$curTranslator = $I->grabServiceFromContainer('translator');
+$curCatalogue = $curTranslator->getCatalogue();
+/* As we don't use the good locale ... */
+if (empty($curCatalogue->all('messages'))) {
+    $curCatalogue = $curCatalogue->getFallbackCatalogue();
+}
+$curMessage = $curCatalogue->all('messages');
+
+
 
 foreach ($curRouter->getRouteCollection() as $curRoute) {
     $routePath = $curRoute->getPath();
     $routeDefault = $curRoute->getDefaults();
     $routeMethod = $curRoute->getMethods();
-
+    $curAction = basename($routePath); /* ugly way to get the action */
+    
     /* Select only usefull route (or not) */
     if (preg_match('/lisem|librinfo/', $routePath) && !preg_match('/{|}/', $routePath) && !preg_match('/login/', $routePath)) {
         /* Check if we can GET (or not) */
         if (empty($routeMethod) || in_array('GET', $routeMethod)) {
             /* Are we in a sonata admin ? */
             if (isset($routeDefault['_controller']) && array_key_exists('_sonata_admin', $routeDefault)) {
-                /* @todo find if those route have to be disable or not */
-                if (!preg_match('/export|generateEntityCode|validateVat|generateFakeEmail|batch|getAddressAutocompleteItems|generate_product_slug|setAsCoverImage/', $routePath)) {
+                $curAdmin = $I->grabServiceFromContainer($routeDefault['_sonata_admin']);
+                $curContext = null;
+                switch ($curAction) {
+                    case "list":
+                    case "show":
+                        break;
+                    case "create":
+                    case "edit":
+                        $curContext = "form";
+                        break;
+                }
+                if (isset($curContext)) {
+                    $curLabel = $curAdmin->getLabelTranslatorStrategy()->getLabel('', $curContext, '');
+                    
+                    /* @todo find if those route have to be disable or not */
+                    // if (!preg_match('/export|generateEntityCode|validateVat|generateFakeEmail|batch|getAddressAutocompleteItems|generate_product_slug|setAsCoverImage/', $routePath)) {
                     // if ( preg_match('/list|create|show|edit/', $routePath)) {
                     // if (preg_match('/packaging/', $routePath)) {
-                    dump($curRoute->getPath());
-                    #dump($curRoute->getMethods());
-                    #dump($curRoute->getRequirements());
-                    #dump($curRoute->getOptions());
-                    #dump($curRoute->getDefaults());
-                    #dump($curRoute->getCondition());
-                    #dump('######################################################################');
+                    $I->wantTo('Test Route: '. $routePath);
                     $I->amOnPage($routePath);
                     $I->waitForText('Libre', 10); // secs
+
+                    $libKeys = preg_grep('/^' . $curLabel . '/', array_keys($curMessage));
+                    
+                    foreach ($libKeys as $curKeys) {
+                        $I->wantTo('Check Translation for: '
+                                   . $curKeys
+                                   . ', It should be: '
+                                   . $curMessage[$curKeys]);
+                        $I->cantSee($curKeys); /* We should not see label key */
+                        $I->canSee($curMessage[$curKeys]); /* We should see label value */
+                    }
+
                     // }
                 }
             }
         }
     }
 }
-
-//dump($I);
-//$I->getSymfonyRoute();
-//->getModule('Symfony')->grabServiceFromContainer('myservice');
-// $curContainer = $I
-//               ->getModule('Symfony')
-//               ->grabService('kernel')
-//               ->getContainer();
-
-// $curRouter = $I->getModule('Symfony')->grabServiceFromContainer('router');
-
-// foreach ($curContainer->get('router')->getRouteCollection() as $curRoute) {
-//     dump('1');
-//     dump($curRoute);
-// }
