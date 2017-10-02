@@ -169,11 +169,14 @@ $(document).ready(function() {
             let bulkPrice = this.bulkUnitPrice.replace(regex, subst);
             let bulkMoney = this.bulkUnitPrice.replace(regex, substMoney);
 
-            $('#product-price').html(this.numberToFixed(weight * bulkPrice) + " " + bulkMoney);
+            $('#product-price').html(this.numberToFixed(weight * bulkPrice, 2) + " " + bulkMoney);
         };
 
-        this.numberToFixed = function(value) {
-            return parseFloat(value.toString().replace(',', '.')).toFixed(this.decimals);
+        this.numberToFixed = function(value, decimals) {
+            if (typeof decimals === 'undefined' || decimals === null) {
+                decimals = this.decimals;
+            }
+            return parseFloat(value.toString().replace(',', '.')).toFixed(decimals);
         };
 
         this.handleChange = function(select, value) {
