@@ -29,7 +29,7 @@ npm run gulp
 
 
 # start server
-bin/console server:start --no-interaction
+bin/console server:start --no-interaction 127.0.0.1:8042
 
 
 ######### TOOLS
