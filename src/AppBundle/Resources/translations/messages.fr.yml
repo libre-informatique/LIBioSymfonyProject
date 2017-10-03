@@ -5,6 +5,204 @@ lisem:
             seeds_product: Article
             variety: Variété
 
+        channeldescription:
+            breadcrumb:
+                variety_list: Liste des variétés
+
+            filter:
+                alias: Synonymes
+                amateur_descriptions:
+                area_per_kg: Surface pour produire 1kg de graines
+                base_seed_per_kg: Besoins semence de base pour 1kg de graines
+                code: Code
+                commercial_descriptions:
+                culture_descriptions:
+                description: Description
+                distance_between_lines: Écartement des lignes
+                distance_on_line: Distance sur la ligne
+                germination_rate: Taux de germination
+                inner_descriptions:
+                latin_name: Nom latin
+                legal_germination_rate: Taux de germination légal
+                life_cycle: Cycle végétatif
+                name: Nom
+                official: Inscrit au catalogue officiel
+                official_date_in: Date d'inscription
+                #'
+                official_date_out: Date de radiation
+                official_maintainer: Mainteneur
+                official_name: Nom au catalogue officiel
+                parent: Parent
+                plant_categories: Catégories
+                plant_descriptions:
+                production_descriptions:
+                professional_descriptions:
+                raise_duration: Durée de levée dans les conditions naturelles
+                regulatory_status: Statut réglementaire
+                seedheads_per_kg: Nombre de porte-graines par kg
+                seedhead_yield: Rendement par porte-graines
+                seed_lifespan: Durée de vie théorique de la graine
+                selection_advice: Conseils de sélection
+                selection_criteria: Critères de sélection
+                species: Espèce
+                tkw: Poids de mille graines
+                transmitted_diseases: Maladies transmises par les semences
+
+        customer:
+            breadcrumb:
+                customer_create: Nouveau client
+                customer_list: Liste des clients
+            form:
+                active: Actif
+                alert: Alerte
+                catalogue_send_mean: Méthode d'envoi
+                #'
+                catalogue_sent: Catalogue envoyé
+                catalogue_type: Type de catalogue
+                circles: Groupes
+                createdat: Créé le
+                createdby: Créé par
+                description: Description
+                email: Email
+                emailnonewsletter: Pas de Newsletter
+                emailnpai: Mauvais Email
+                first_catalogue_sent_date: Date premier envoi catalogue
+                firstname: Prénom
+                iban: RIB (IBAN)
+                iscustomer: Est un client
+                issupplier: Est un fournisseur
+                last_catalogue_sent_date: Date dernier envoi catalogue
+                lastname: Nom de famille
+                name: 'Nom'
+                seedproducer: Producteur de semence
+                siret: N° Siret
+                source: Source
+                title: Titre
+                updatedat: Modifié le
+                updatedby: Modifié par
+                url: Site web
+                vat: N° TVA
+
+        link:
+            otherproduct_list: Liste des article (autres)
+            seedsproduct_list: Liste des articles (semences)
+            variety_list: Liste des variétés
+               
+        otherproduct:
+            list:
+                _action: Action
+                code: Code
+                enabled: Actif
+                name: Nom
+                
+        otherproductvariant:
+            breadcrumb:
+                otherproduct_create: Ajouter un article (autres)
+                otherproduct_list: Liste des article (autres)
+                otherproductvariant_create: Nouvelle déclinaison d'article
+                #'
+                otherproductvariant_list:  Liste des déclinaisons d'article
+                #'
+            filter:
+                code: Code
+                enabled: Actif
+                translations_description: Description
+                translations_metadescription: Méta description
+                translations_metakeywords: Méta mots-clés
+                translations_name: Nom
+                translations_shortdescription: Brève description
+            form:
+                channels: Canal de vente
+                code: Code
+                description: Description
+                enabled: Actif
+                maintaxon: Catégorie principale
+                metadescription: Méta description
+                metakeywords: Méta mots-clés
+                name: Nom
+                options: Options
+                optionvalues: Options
+                shortdescription: Brève description
+                slug: Slug
+                taxons: Catégories
+                
+        packaging:
+            breadcrumb:
+                packaging_create: Nouveau conditionnement
+                packaging_list: Liste des conditionnements
+                variety_create: Nouvelle variété
+                variety_list: Liste des variétés
+            form:
+                bulk: Vrac
+                packagings: Conditionnements
+                quantity: Quantité
+                
+        seedsproduct:
+            breadcrumb:
+                seedsproductvariant_create: Nouvelle déclinaisons d'article (semences)
+                #'
+                seedsproductvariantembedded_create: Nouvelle variante
+                seedsproductvariantembedded_list: Liste des variantes
+                seedsproductvariant_list: Liste des déclinaisons d'article (semences)
+                #'
+            form:
+                channelpricings: Prix
+                code: Code
+                name: Nom
+                taxcategory: Catégories de TVA
+            list:
+                _action: Action
+                code: Code Article
+                enabled: Activé
+                name: Nom
+                variety: Variété
+                        
+        seedsproductvariant:
+            breadcrumb:
+                seedsproduct_list: Liste des articles (semences)
+
+            filter:
+                code: Code
+                enabled: Actif
+                translations_description: Description
+                translations_metadescription: Méta description
+                translations_metakeywords: Méta mots-clés
+                translations_name: Nom
+                translations_shortdescription: Brève description
+            form:
+                channels: Canal de vente
+                code: Code
+                depth: Profondeur
+                description: Description
+                enabled: Actif
+                height: Hauteur
+                isstrain: Souche
+                maintaxon: Catégorie principale
+                metadescription: Méta description
+                metakeywords: Méta mots-clés
+                onhand: Stock actuel
+                onhold: En attente
+                packaging: Conditionnement
+                seedbatch: Lot
+                shortdescription: Brève description
+                slug: Slug
+                taxons: Catégorie
+                tracked: Suivi
+                weight: Poids
+                width: Largeur
+                
+        seedsproductvariantembedded:
+            form:
+                depth: Profondeur
+                height: Hauteur
+                onhand: Stock actuel
+                onhold: En attente
+                packaging: Conditionnement
+                seedbatch: Lot
+                tracked: Suivi
+                weight: Poids
+                width: Largeur
+        
         variety:
             breadcrumb:
                 seedsproduct_create: Ajouter un article (semences)
@@ -92,131 +290,7 @@ lisem:
                 updatedat: Modifié le 
                 updatedby: Modifié par
                 variety: Variété
-                
-        customer:
-            breadcrumb:
-                customer_create: Nouveau client
-                customer_list: Liste des clients
-            form:
-                active: Actif
-                alert: Alerte
-                catalogue_send_mean: Méthode d'envoi
-                #'
-                catalogue_sent: Catalogue envoyé
-                catalogue_type: Type de catalogue
-                circles: Groupes
-                createdat: Créé le
-                createdby: Créé par
-                description: Description
-                email: Email
-                emailnonewsletter: Pas de Newsletter
-                emailnpai: Mauvais Email
-                first_catalogue_sent_date: Date premier envoi catalogue
-                firstname: Prénom
-                iban: RIB (IBAN)
-                iscustomer: Est un client
-                issupplier: Est un fournisseur
-                last_catalogue_sent_date: Date dernier envoi catalogue
-                lastname: Nom de famille
-                name: 'Nom'
-                seedproducer: Producteur de semence
-                siret: N° Siret
-                source: Source
-                title: Titre
-                updatedat: Modifié le
-                updatedby: Modifié par
-                url: Site web
-                vat: N° TVA
-                
-        otherproductvariant:
-            breadcrumb:
-                otherproduct_create: Ajouter un article (autres)
-                otherproduct_list: Liste des article (autres)
-                otherproductvariant_create: Nouvelle déclinaison d'article
-                #'
-                otherproductvariant_list:  Liste des déclinaisons d'article
-                #'
-            form:
-                channels: Canal de vente
-                code: Code
-                description: Description
-                enabled: Actif
-                maintaxon: Catégorie principale
-                metadescription: Méta description
-                metakeywords: Méta mots-clés
-                name: Nom
-                options: Options
-                optionvalues: Options
-                shortdescription: Brève description
-                slug: Slug
-                taxons: Catégories
-                
-        packaging:
-            breadcrumb:
-                packaging_create: Nouveau conditionnement
-                packaging_list: Liste des conditionnements
-                variety_create: Nouvelle variété
-                variety_list: Liste des variétés
-            form:
-                bulk: Vrac
-                packagings: Conditionnements
-                quantity: Quantité
-                
-        seedsproduct:
-            breadcrumb:
-                seedsproductvariant_create: Nouvelle déclinaisons d'article (semences)
-                #'
-                seedsproductvariantembedded_create: Nouvelle variante
-                seedsproductvariantembedded_list: Liste des variantes
-                seedsproductvariant_list: Liste des déclinaisons d'article (semences)
-                #'
-            form:
-                channelpricings: Prix
-                code: Code
-                name: Nom
-                taxcategory: Catégories de TVA
-            list:
-                _action: Action
-                code: Code Article
-                enabled: Activé
-                name: Nom
-                variety: Variété
-                        
-        seedsproductvariant:
-            form:
-                channels: Canal de vente
-                code: Code
-                depth: Profondeur
-                description: Description
-                enabled: Actif
-                height: Hauteur
-                enabled: Actif
-                maintaxon: Catégorie principale
-                metadescription: Méta description
-                metakeywords: Méta mots-clés
-                onhand: Stock actuel
-                onhold: En attente
-                packaging: Conditionnement
-                seedbatch: Lot
-                shortdescription: Brève description
-                slug: Slug
-                taxons: Catégorie
-                tracked: Suivi
-                weight: Poids
-                width: Largeur
-                
-        seedsproductvariantembedded:
-            form:
-                depth: Profondeur
-                height: Hauteur
-                onhand: Stock actuel
-                onhold: En attente
-                packaging: Conditionnement
-                seedbatch: Lot
-                tracked: Suivi
-                weight: Poids
-                width: Largeur
-
+ 
 
     help:
         product_price: en Centimes
