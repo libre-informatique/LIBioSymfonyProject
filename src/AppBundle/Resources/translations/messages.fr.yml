@@ -1,15 +1,14 @@
 lisem:
     appbundle:
+        admin:
+            packaging: Conditionnement
+            seeds_product: Article
+            variety: Variété
 
-        seedsproduct:
-            list:
-                _action: Action
-                code: Code Article
-                enabled: Activé
-                name: Nom
-                variety: Variété
-        
         variety:
+            breadcrumb:
+                seedsproduct_create: Ajouter un article (semences)
+                seedsproduct_list: Liste des articles (semences)
             list:
                 _action: Action
                 alias: Synonymes
@@ -63,10 +62,12 @@ lisem:
                 distance_between_lines: Écartement des lignes
                 distance_on_line: Distance sur la ligne
                 germination_rate: Taux de germination
+                images: Images
                 is_strain: Souche
                 latin_name: Nom latin
                 legal_germination_rate: Taux de germination légal
                 life_cycle: Cycle végétatif
+                misc_advice: Astuces diverses
                 name: Nom
                 official: Inscrit au catalogue officiel
                 official_date_in: Date d'inscription
@@ -74,7 +75,9 @@ lisem:
                 official_date_out: Date de radiation
                 official_maintainer: Mainteneur
                 official_name: Nom au catalogue officiel
+                parent: Parent
                 plant_categories: Catégories
+                plant_type: Type de plante
                 raise_duration: Durée de levée dans les conditions naturelles
                 regulatory_status: Statut réglementaire
                 seed_lifespan: Durée de vie théorique de la graine
@@ -88,6 +91,7 @@ lisem:
                 transmitted_diseases: Maladies transmises par les semences
                 updatedat: Modifié le 
                 updatedby: Modifié par
+                variety: Variété
                 
         customer:
             breadcrumb:
@@ -101,8 +105,8 @@ lisem:
                 catalogue_sent: Catalogue envoyé
                 catalogue_type: Type de catalogue
                 circles: Groupes
-                createdat: Créer le
-                createdby: Créer par
+                createdat: Créé le
+                createdby: Créé par
                 description: Description
                 email: Email
                 emailnonewsletter: Pas de Newsletter
@@ -142,6 +146,7 @@ lisem:
                 metakeywords: Méta mots-clés
                 name: Nom
                 options: Options
+                optionvalues: Options
                 shortdescription: Brève description
                 slug: Slug
                 taxons: Catégories
@@ -158,12 +163,27 @@ lisem:
                 quantity: Quantité
                 
         seedsproduct:
+            breadcrumb:
+                seedsproductvariant_create: Nouvelle déclinaisons d'article (semences)
+                #'
+                seedsproductvariantembedded_create: Nouvelle variante
+                seedsproductvariantembedded_list: Liste des variantes
+                seedsproductvariant_list: Liste des déclinaisons d'article (semences)
+                #'
             form:
+                channelpricings: Prix
                 code: Code
                 name: Nom
-                taxcategory: Catégorie de taxe
-                
+                taxcategory: Catégories de TVA
+            list:
+                _action: Action
+                code: Code Article
+                enabled: Activé
+                name: Nom
+                variety: Variété
+                        
         seedsproductvariant:
+            form:
                 channels: Canal de vente
                 code: Code
                 depth: Profondeur
@@ -186,6 +206,7 @@ lisem:
                 width: Largeur
                 
         seedsproductvariantembedded:
+            form:
                 depth: Profondeur
                 height: Hauteur
                 onhand: Stock actuel
@@ -269,22 +290,38 @@ lisem:
         varieties_settings: Variétés
         varieties: Variétés
         zones_list: Zones géographiques
-    other_product_admin:
-        label: Article (autres)
-    other_product_variant_admin:
-        label: Déclinaison d'article (autres)
-        #'
-    seeds_product_admin:
-        label: Article (semences)
-    seeds_product_variant_admin:
-        label: Déclinaison d'article (semences)
-        #'
-    packaging_admin:
-        label: Conditionnement
     packaging_unit:
         grams: grammes
         seeds: graines
 
+
+librinfo:
+    label:
+        city: Ville
+        company: Société
+        country_code: Pays
+        customer_code: Code client
+        dashboard_title: Statistiques de vente
+        email: Email
+        first_name: Prénom
+        last_name: Nom
+        life_cycle_annual:
+        life_cycle_biennial:
+        life_cycle_perennial:
+        organization: Organisations
+        payment_method: Mode de paiement
+        post_code: Code postal
+        province_name: Nom de région
+        sales_amount: Chiffre d'affaire
+        #'
+        shipping_method: Mode de livraison
+        street: Rue
+        taxCalculationStrategy: Stratégie de calcul des taxes
+        themeName: Nom du thème
+        useSameAddressForBilling: Utiliser la même adresse pour la facturation
+        validate_vat: Vérifier le n° TVA
+
+        
 Dashboard: Tableau de Bord
 form_group_billingAddress: Adresse de facturation
 form_group_channel_descriptions: Descriptions spécifiques
