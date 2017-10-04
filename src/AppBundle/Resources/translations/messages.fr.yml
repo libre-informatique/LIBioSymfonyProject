@@ -5,291 +5,126 @@ lisem:
             seeds_product: Article
             variety: Variété
 
-        channeldescription:
-            breadcrumb:
-                variety_list: Liste des variétés
-
-            filter:
-                alias: Synonymes
-                amateur_descriptions: Conseils Jardiniers
-                area_per_kg: Surface pour produire 1kg de graines
-                base_seed_per_kg: Besoins semence de base pour 1kg de graines
-                code: Code
-                commercial_descriptions: Commercial
-                culture_descriptions: Culture
-                description: Description
-                distance_between_lines: Écartement des lignes
-                distance_on_line: Distance sur la ligne
-                germination_rate: Taux de germination
-                inner_descriptions: Commentaires / description spécifique
-                latin_name: Nom latin
-                legal_germination_rate: Taux de germination légal
-                life_cycle: Cycle végétatif
-                name: Nom
-                official: Inscrit au catalogue officiel
-                official_date_in: Date d'inscription
-                #'
-                official_date_out: Date de radiation
-                official_maintainer: Mainteneur
-                official_name: Nom au catalogue officiel
-                parent: Parent
-                plant_categories: Catégories
-                plant_descriptions: Caractéristiques de la plante
-                production_descriptions: Mise en production
-                professional_descriptions: Conseils pros
-                raise_duration: Durée de levée dans les conditions naturelles
-                regulatory_status: Statut réglementaire
-                seedheads_per_kg: Nombre de porte-graines par kg
-                seedhead_yield: Rendement par porte-graines
-                seed_lifespan: Durée de vie théorique de la graine
-                selection_advice: Conseils de sélection
-                selection_criteria: Critères de sélection
-                species: Espèce
-                tkw: Poids de mille graines
-                transmitted_diseases: Maladies transmises par les semences
-
-        customer:
-            breadcrumb:
-                customer_create: Nouveau client
-                customer_list: Liste des clients
-            form:
-                active: Actif
-                alert: Alerte
-                catalogue_send_mean: Méthode d'envoi
-                #'
-                catalogue_sent: Catalogue envoyé
-                catalogue_type: Type de catalogue
-                circles: Groupes
-                createdat: Créé le
-                createdby: Créé par
-                description: Description
-                email: Email
-                emailnonewsletter: Pas de Newsletter
-                emailnpai: Mauvais Email
-                first_catalogue_sent_date: Date premier envoi catalogue
-                firstname: Prénom
-                iban: RIB (IBAN)
-                iscustomer: Est un client
-                issupplier: Est un fournisseur
-                last_catalogue_sent_date: Date dernier envoi catalogue
-                lastname: Nom de famille
-                name: 'Nom'
-                seedproducer: Producteur de semence
-                siret: N° Siret
-                source: Source
-                title: Titre
-                updatedat: Modifié le
-                updatedby: Modifié par
-                url: Site web
-                vat: N° TVA
-
-        link:
-            otherproduct_list: Liste des article (autres)
-            seedsproduct_list: Liste des articles (semences)
-            variety_list: Liste des variétés
-               
-        otherproduct:
-            list:
-                _action: Action
-                code: Code
-                enabled: Actif
-                name: Nom
-                
-        otherproductvariant:
-            breadcrumb:
-                otherproduct_create: Ajouter un article (autres)
-                otherproduct_list: Liste des article (autres)
-                otherproductvariant_create: Nouvelle déclinaison d'article
-                #'
-                otherproductvariant_list:  Liste des déclinaisons d'article
-                #'
-            filter:
-                code: Code
-                enabled: Actif
-                translations_description: Description
-                translations_metadescription: Méta description
-                translations_metakeywords: Méta mots-clés
-                translations_name: Nom
-                translations_shortdescription: Brève description
-            form:
-                channels: Canal de vente
-                code: Code
-                description: Description
-                enabled: Actif
-                maintaxon: Catégorie principale
-                metadescription: Méta description
-                metakeywords: Méta mots-clés
-                name: Nom
-                options: Options
-                optionvalues: Options
-                shortdescription: Brève description
-                slug: Slug
-                taxons: Catégories
-                
-        packaging:
-            breadcrumb:
-                packaging_create: Nouveau conditionnement
-                packaging_list: Liste des conditionnements
-                variety_create: Nouvelle variété
-                variety_list: Liste des variétés
-            form:
-                bulk: Vrac
-                packagings: Conditionnements
-                quantity: Quantité
-                
-        seedsproduct:
-            breadcrumb:
-                seedsproductvariant_create: Nouvelle déclinaisons d'article (semences)
-                #'
-                seedsproductvariantembedded_create: Nouvelle variante
-                seedsproductvariantembedded_list: Liste des variantes
-                seedsproductvariant_list: Liste des déclinaisons d'article (semences)
-                #'
-            form:
-                channelpricings: Prix
-                code: Code
-                name: Nom
-                taxcategory: Catégories de TVA
-            list:
-                _action: Action
-                code: Code Article
-                enabled: Activé
-                name: Nom
-                variety: Variété
-                        
-        seedsproductvariant:
-            breadcrumb:
-                seedsproduct_list: Liste des articles (semences)
-
-            filter:
-                code: Code
-                enabled: Actif
-                translations_description: Description
-                translations_metadescription: Méta description
-                translations_metakeywords: Méta mots-clés
-                translations_name: Nom
-                translations_shortdescription: Brève description
-            form:
-                channels: Canal de vente
-                code: Code
-                depth: Profondeur
-                description: Description
-                enabled: Actif
-                height: Hauteur
-                isstrain: Souche
-                maintaxon: Catégorie principale
-                metadescription: Méta description
-                metakeywords: Méta mots-clés
-                onhand: Stock actuel
-                onhold: En attente
-                packaging: Conditionnement
-                seedbatch: Lot
-                shortdescription: Brève description
-                slug: Slug
-                taxons: Catégorie
-                tracked: Suivi
-                weight: Poids
-                width: Largeur
-                
-        seedsproductvariantembedded:
-            form:
-                depth: Profondeur
-                height: Hauteur
-                onhand: Stock actuel
-                onhold: En attente
-                packaging: Conditionnement
-                seedbatch: Lot
-                tracked: Suivi
-                weight: Poids
-                width: Largeur
-        
-        variety:
-            breadcrumb:
-                seedsproduct_create: Ajouter un article (semences)
-                seedsproduct_list: Liste des articles (semences)
-            list:
-                _action: Action
-                alias: Synonymes
-                area_per_kg: Surface pour produire 1kg de graines
-                base_seed_per_kg: Besoins semence de base pour 1kg de graines
-                children: Liste des souches
-                code: Code
-                createdat: Créé le
-                createdby: Créé par
-                description: Description
-                distance_between_lines: Écartement des lignes
-                distance_on_line: Distance sur la ligne
-                germination_rate: Taux de germination
-                isstrain: Souche
-                is_strain: Souche
-                latin_name: Nom latin
-                legal_germination_rate: Taux de germination légal
-                life_cycle: Cycle végétatif
-                name: Nom
-                official: Inscrit au catalogue officiel
-                official_date_in: Date d'inscription
-                #'
-                official_date_out: Date de radiation
-                official_maintainer: Mainteneur
-                official_name: Nom au catalogue officiel
-                plant_categories: Catégories
-                raise_duration: Durée de levée dans les conditions naturelles
-                regulatory_status: Statut réglementaire
-                seed_lifespan: Durée de vie théorique de la graine
-                seedhead_yield: Rendement par porte-graines
-                seedheads_per_kg: Nombre de porte-graines par kg
-                selection_advice: Conseils de sélection
-                selection_criteria: Critères de sélection
-                several_strains: Plusieurs souches
-                species: Espèce
-                tkw: Poids de mille graines
-                transmitted_diseases: Maladies transmises par les semences
-                updatedat: Modifié le 
-                updatedby: Modifié par
-            form:
-                _action: Action
-                alias: Synonymes
-                area_per_kg: Surface pour produire 1kg de graines
-                base_seed_per_kg: Besoins semence de base pour 1kg de graines
-                children: Liste des souches
-                code: Code
-                code: Code
-                createdat: Créé le
-                createdby: Créé par
-                description: Description
-                distance_between_lines: Écartement des lignes
-                distance_on_line: Distance sur la ligne
-                germination_rate: Taux de germination
-                images: Images
-                is_strain: Souche
-                latin_name: Nom latin
-                legal_germination_rate: Taux de germination légal
-                life_cycle: Cycle végétatif
-                misc_advice: Astuces diverses
-                name: Nom
-                official: Inscrit au catalogue officiel
-                official_date_in: Date d'inscription
-                #'
-                official_date_out: Date de radiation
-                official_maintainer: Mainteneur
-                official_name: Nom au catalogue officiel
-                parent: Parent
-                plant_categories: Catégories
-                plant_type: Type de plante
-                raise_duration: Durée de levée dans les conditions naturelles
-                regulatory_status: Statut réglementaire
-                seed_lifespan: Durée de vie théorique de la graine
-                seedhead_yield: Rendement par porte-graines
-                seedheads_per_kg: Nombre de porte-graines par kg
-                selection_advice: Conseils de sélection
-                selection_criteria: Critères de sélection
-                several_strains: Plusieurs souches
-                species: Espèce
-                tkw: Poids de mille graines
-                transmitted_diseases: Maladies transmises par les semences
-                updatedat: Modifié le 
-                updatedby: Modifié par
-                variety: Variété
+        _action: Action
+        active: Actif
+        alert: Alerte
+        alias: Synonymes
+        amateur_descriptions: Conseils Jardiniers
+        area_per_kg: Surface pour produire 1kg de graines
+        base_seed_per_kg: Besoins semence de base pour 1kg de graines
+        bulk: Vrac
+        catalogue_send_mean: 'Méthode d''envoi'
+        catalogue_sent: Catalogue envoyé
+        catalogue_type: Type de catalogue
+        channelpricings: Prix
+        channels: Canal de vente
+        children: Liste des souches
+        circles: Groupes
+        code: Code
+        commercial_descriptions: Commercial
+        createdat: Créé le
+        createdby: Créé par
+        culture_descriptions: Culture
+        customer_create: Nouveau client
+        customer_list: Liste des clients
+        depth: Profondeur
+        description: Description
+        distance_between_lines: Écartement des lignes
+        distance_on_line: Distance sur la ligne
+        email: Email
+        emailnonewsletter: Pas de Newsletter
+        emailnpai: Mauvais Email
+        enabled: Actif
+        first_catalogue_sent_date: Date premier envoi catalogue
+        firstname: Prénom
+        germination_rate: Taux de germination
+        height: Hauteur
+        iban: RIB (IBAN)
+        images: Images
+        inner_descriptions: Commentaires / description spécifique
+        is_strain: Souche
+        iscustomer: Est un client
+        isstrain: Souche
+        issupplier: Est un fournisseur
+        last_catalogue_sent_date: Date dernier envoi catalogue
+        lastname: Nom de famille
+        latin_name: Nom latin
+        legal_germination_rate: Taux de germination légal
+        life_cycle: Cycle végétatif
+        maintaxon: Catégorie principale
+        metadescription: Méta description
+        metakeywords: Méta mots-clés
+        misc_advice: Astuces diverses
+        name: Nom
+        official: Inscrit au catalogue officiel
+        official_date_in: 'Date d''inscription'
+        official_date_out: Date de radiation
+        official_maintainer: Mainteneur
+        official_name: Nom au catalogue officiel
+        onhand: Stock actuel
+        onhold: En attente
+        options: Options
+        optionvalues: Options
+        otherproduct_create: Ajouter un article (autres)
+        otherproduct_list: Liste des article (autres)
+        otherproductvariant_create: 'Nouvelle déclinaison d''article'
+        otherproductvariant_list: 'Liste des déclinaisons d''article'
+        packaging: Conditionnement
+        packaging_create: Nouveau conditionnement
+        packaging_list: Liste des conditionnements
+        packagings: Conditionnements
+        parent: Parent
+        plant_categories: Catégories
+        plant_descriptions: Caractéristiques de la plante
+        plant_type: Type de plante
+        production_descriptions: Mise en production
+        professional_descriptions: Conseils pros
+        quantity: Quantité
+        raise_duration: Durée de levée dans les conditions naturelles
+        regulatory_status: Statut réglementaire
+        seed_lifespan: Durée de vie théorique de la graine
+        seedbatch: Lot
+        seedhead_yield: Rendement par porte-graines
+        seedheads_per_kg: Nombre de porte-graines par kg
+        seedproducer: Producteur de semence
+        seedsproduct_create: Ajouter un article (semences)
+        seedsproduct_list: Liste des articles (semences)
+        seedsproductvariant_create: 'Nouvelle déclinaisons d''article (semences)'
+        seedsproductvariant_list: 'Liste des déclinaisons d''article (semences)'
+        seedsproductvariantembedded_create: Nouvelle variante
+        seedsproductvariantembedded_list: Liste des variantes
+        selection_advice: Conseils de sélection
+        selection_criteria: Critères de sélection
+        several_strains: Plusieurs souches
+        shortdescription: Brève description
+        siret: N° Siret
+        slug: Slug
+        source: Source
+        species: Espèce
+        taxcategory: Catégories de TVA
+        taxons: Catégorie
+        taxons: Catégories
+        title: Titre
+        tkw: Poids de mille graines
+        tracked: Suivi
+        translations_description: Description
+        translations_metadescription: Méta description
+        translations_metakeywords: Méta mots-clés
+        translations_name: Nom
+        translations_shortdescription: Brève description
+        transmitted_diseases: Maladies transmises par les semences
+        updatedat: Modifié le
+        updatedby: Modifié par
+        url: Site web
+        variety: Variété
+        variety_create: Nouvelle variété
+        variety_list: Liste des variétés
+        vat: N° TVA
+        weight: Poids
+        width: Largeur
+        otherproduct_list: Liste des article (autres)
+        seedsproduct_list: Liste des articles (semences)
+        variety_list: Liste des variétés
  
 
     help:
@@ -386,8 +221,7 @@ librinfo:
         payment_method: Mode de paiement
         post_code: Code postal
         province_name: Nom de région
-        sales_amount: Chiffre d'affaire
-        #'
+        sales_amount: 'Chiffre d''affaire'
         shipping_method: Mode de livraison
         street: Rue
         taxCalculationStrategy: Stratégie de calcul des taxes
