@@ -72,13 +72,15 @@ foreach ($curRouter->getRouteCollection() as $curRoute) {
                     $libKeys = preg_grep('/^' . $curLabel . '/', array_keys($curMessage));
 
                     foreach ($libKeys as $curKeys) {
-                        $I->wantTo('Check Translation for: '
+                        $I->wantTo('On: '
+                                   . $routePath
+                                   . ', Check Translation for: '
                                    . $curKeys
                                    . ', It should be: '
                                    . $curMessage[$curKeys]);
-                        $I->cantSee($curKeys); /* We should not see label key */
+                        $I->cantSeeInSource($curKeys); /* We should not see label key */
                         if (isset($curMessage[$curKeys])) {
-                            $I->canSee($curMessage[$curKeys]); /* We should see label value */
+                            $I->canSeeInSource($curMessage[$curKeys]); /* We should see label value */
                         }
                     }
 
