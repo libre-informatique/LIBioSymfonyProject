@@ -11,17 +11,17 @@ lisem:
 
             filter:
                 alias: Synonymes
-                amateur_descriptions:
+                amateur_descriptions: Conseils Jardiniers
                 area_per_kg: Surface pour produire 1kg de graines
                 base_seed_per_kg: Besoins semence de base pour 1kg de graines
                 code: Code
-                commercial_descriptions:
-                culture_descriptions:
+                commercial_descriptions: Commercial
+                culture_descriptions: Culture
                 description: Description
                 distance_between_lines: Écartement des lignes
                 distance_on_line: Distance sur la ligne
                 germination_rate: Taux de germination
-                inner_descriptions:
+                inner_descriptions: Commentaires / description spécifique
                 latin_name: Nom latin
                 legal_germination_rate: Taux de germination légal
                 life_cycle: Cycle végétatif
@@ -34,9 +34,9 @@ lisem:
                 official_name: Nom au catalogue officiel
                 parent: Parent
                 plant_categories: Catégories
-                plant_descriptions:
-                production_descriptions:
-                professional_descriptions:
+                plant_descriptions: Caractéristiques de la plante
+                production_descriptions: Mise en production
+                professional_descriptions: Conseils pros
                 raise_duration: Durée de levée dans les conditions naturelles
                 regulatory_status: Statut réglementaire
                 seedheads_per_kg: Nombre de porte-graines par kg
@@ -214,13 +214,13 @@ lisem:
                 base_seed_per_kg: Besoins semence de base pour 1kg de graines
                 children: Liste des souches
                 code: Code
-                code: Code
                 createdat: Créé le
                 createdby: Créé par
                 description: Description
                 distance_between_lines: Écartement des lignes
                 distance_on_line: Distance sur la ligne
                 germination_rate: Taux de germination
+                isstrain: Souche
                 is_strain: Souche
                 latin_name: Nom latin
                 legal_germination_rate: Taux de germination légal
