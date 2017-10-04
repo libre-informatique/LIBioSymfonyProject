@@ -81,6 +81,7 @@ foreach ($curRouter->getRouteCollection() as $curRoute) {
                                    . $curMessage[$curKeys]);
                         */
                         $I->cantSeeInSource($curKeys); /* We should not see label key */
+                        $I->cantSee('Stack Traces'); /* :) :) we hope so */
                         //         if (isset($curMessage[$curKeys])) {
                         //   $I->canSeeInSource($curMessage[$curKeys]); /* We should see label value */
                         // }
