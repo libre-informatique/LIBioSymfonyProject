@@ -13,7 +13,7 @@ services:
             - name: sonata.admin
               manager_type: orm
               group: admin
-              label: lisem.appbunle.admin.variety
+              label: lisem.appbundle.admin.variety
               label_translator_strategy: blast_core.label.strategy.librinfo_lisemapp
         calls:
             - [ setTemplate, [ list, LibrinfoVarietiesBundle:VarietyAdmin:list.html.twig ] ]
