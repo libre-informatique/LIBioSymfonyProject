@@ -23,7 +23,7 @@
         "incenteev/composer-parameter-handler": "^2.1",
         "jms/security-extra-bundle": "^1.6",
         "jms/serializer-bundle": "^2.0",
-        "knplabs/knp-snappy-bundle": "dev-master",
+        "knplabs/knp-snappy-bundle": "^1.0",
         "lexik/maintenance-bundle": "^2.1",
         "libre-informatique/crm-bundle": "self.version",
         "libre-informatique/decorator-bundle": "self.version",
