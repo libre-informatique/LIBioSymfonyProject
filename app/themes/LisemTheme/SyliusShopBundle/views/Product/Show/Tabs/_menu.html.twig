@@ -2,7 +2,7 @@
 {% if product.attributes|length > 0 %}
     <a class="item" data-tab="attributes">{{ 'sylius.ui.attributes'|trans }}</a>
 {% endif %}
-{% if product.variety is defined %}
+{% if product.variety is defined and product.variety is not null %}
     <a class="item" data-tab="variety">{{ 'librinfo.ui.commercial_tab_title'|trans }}</a>
 {% endif %}
 <a class="item" data-tab="reviews">{{ 'sylius.ui.reviews'|trans }} ({{ product.acceptedReviews|length }})</a>
