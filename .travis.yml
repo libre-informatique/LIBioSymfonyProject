@@ -52,6 +52,7 @@ before_script:
   - if [ -x ${SCRIPTS_FOLDER}/before_script_${TARGET}.sh ]; then travis_retry ${SCRIPTS_FOLDER}/before_script_${TARGET}.sh; fi;
 
 script:
+    - if [ -x ${SCRIPTS_FOLDER}/run_${TARGET}.sh ]; then ${SCRIPTS_FOLDER}/run_${TARGET}.sh; fi;
   - make $TARGET
 
 after_success:

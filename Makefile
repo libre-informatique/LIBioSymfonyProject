@@ -7,7 +7,7 @@ lint:
 	composer validate --no-check-lock
 
 test:
-	./bin/ci-script/run_test.sh
+	echo hello
 
 docs:
 	cd src/Resources/doc && sphinx-build -b html -d _build/doctrees . _build/html
