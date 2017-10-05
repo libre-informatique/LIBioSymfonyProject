@@ -3938,12 +3938,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/EcommerceBundle.git",
-                "reference": "1eb7c99f79f5ed8c4518d50751f3dae60beb8a86"
+                "reference": "dfb3f9e8fc38590b16eead525dcc9c2da7064218"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/EcommerceBundle/zipball/1eb7c99f79f5ed8c4518d50751f3dae60beb8a86",
-                "reference": "1eb7c99f79f5ed8c4518d50751f3dae60beb8a86",
+                "url": "https://api.github.com/repos/libre-informatique/EcommerceBundle/zipball/dfb3f9e8fc38590b16eead525dcc9c2da7064218",
+                "reference": "dfb3f9e8fc38590b16eead525dcc9c2da7064218",
                 "shasum": ""
             },
             "require": {
@@ -3989,7 +3989,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-10-05T10:54:05+00:00"
+            "time": "2017-10-05T12:15:50+00:00"
         },
         {
             "name": "libre-informatique/email-bundle",
