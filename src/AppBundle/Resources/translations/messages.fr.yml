@@ -203,8 +203,6 @@ lisem:
         grams: grammes
         seeds: graines
 
-
-librinfo:
     label:
         city: Ville
         company: Société
@@ -213,10 +211,13 @@ librinfo:
         dashboard_title: Statistiques de vente
         email: Email
         first_name: Prénom
+        isCustomer: Est un client
+        isNotCustomer: 'N''est pas un client'
+        isNotSupplier: 'N''est pas un fournisseur'
         last_name: Nom
-        life_cycle_annual:
-        life_cycle_biennial:
-        life_cycle_perennial:
+        life_cycle_annual: Plante annuelle
+        life_cycle_biennial: Plante bisannuelle
+        life_cycle_perennial: Plante vivace
         organization: Organisations
         payment_method: Mode de paiement
         post_code: Code postal
@@ -229,6 +230,8 @@ librinfo:
         useSameAddressForBilling: Utiliser la même adresse pour la facturation
         validate_vat: Vérifier le n° TVA
 
+    title:
+        sonata_admin_login: Login
         
 Dashboard: Tableau de Bord
 form_group_billingAddress: Adresse de facturation
