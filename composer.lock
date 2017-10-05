@@ -3938,12 +3938,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/EcommerceBundle.git",
-                "reference": "23e70dcf2443e78cb6a838174bbc163cb8d49ebb"
+                "reference": "8f8f1589f810f0eecba5ad009ddf540d3d98b528"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/EcommerceBundle/zipball/23e70dcf2443e78cb6a838174bbc163cb8d49ebb",
-                "reference": "23e70dcf2443e78cb6a838174bbc163cb8d49ebb",
+                "url": "https://api.github.com/repos/libre-informatique/EcommerceBundle/zipball/8f8f1589f810f0eecba5ad009ddf540d3d98b528",
+                "reference": "8f8f1589f810f0eecba5ad009ddf540d3d98b528",
                 "shasum": ""
             },
             "require": {
@@ -3989,7 +3989,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-10-05T12:22:01+00:00"
+            "time": "2017-10-05T14:19:52+00:00"
         },
         {
             "name": "libre-informatique/email-bundle",
@@ -4281,12 +4281,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/VarietiesBundle.git",
-                "reference": "b0ae953df1af0bdab478832a28604d4baeac60ee"
+                "reference": "ee2fbee886a5a58ba4115c72aaa353f3b9507ee0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/VarietiesBundle/zipball/b0ae953df1af0bdab478832a28604d4baeac60ee",
-                "reference": "b0ae953df1af0bdab478832a28604d4baeac60ee",
+                "url": "https://api.github.com/repos/libre-informatique/VarietiesBundle/zipball/ee2fbee886a5a58ba4115c72aaa353f3b9507ee0",
+                "reference": "ee2fbee886a5a58ba4115c72aaa353f3b9507ee0",
                 "shasum": ""
             },
             "require": {
@@ -4339,7 +4339,7 @@
                 "taxonomy",
                 "variety"
             ],
-            "time": "2017-10-05T13:10:42+00:00"
+            "time": "2017-10-05T14:22:44+00:00"
         },
         {
             "name": "liip/imagine-bundle",
