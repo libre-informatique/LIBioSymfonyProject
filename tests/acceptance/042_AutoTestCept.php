@@ -42,29 +42,31 @@ foreach ($curRouter->getRouteCollection() as $curRoute) {
     $curAction = basename($routePath); /* ugly way to get the action */
 
     /* Select only usefull route (or not) */
-    if (preg_match('/lisem|librinfo/', $routePath) && !preg_match('/{|}/', $routePath) && !preg_match('/login/', $routePath)) {
+    if (preg_match('/lisem|librinfo/', $routePath)
+        && !preg_match('/{|}/', $routePath)
+        && !preg_match('/login/', $routePath)) {
         /* Check if we can GET (or not) */
-        if (empty($routeMethod) || in_array('GET', $routeMethod)) {
+        if (empty($routeMethod)
+            || in_array('GET', $routeMethod)) {
             /* Are we in a sonata admin ? */
-            if (isset($routeDefault['_controller']) && array_key_exists('_sonata_admin', $routeDefault)) {
+            if (isset($routeDefault['_controller'])
+                && array_key_exists('_sonata_admin', $routeDefault)) {
                 $curAdmin = $I->grabServiceFromContainer($routeDefault['_sonata_admin']);
-                $curContext = null;
+                $curMapper = null;
                 switch ($curAction) {
                     case 'list':
+                        $curMapper = 'list';
+                        break;
                     case 'show':
+                        $curMapper = 'show';
                         break;
                     case 'create':
                     case 'edit':
-                        $curContext = 'form';
+                        $curMapper = 'form';
                         break;
                 }
-                if (isset($curContext)) {
-                    $curLabel = $curAdmin->getLabelTranslatorStrategy()->getLabel('', $curContext, '');
-
-                    /* @todo find if those route have to be disable or not */
-                    // if (!preg_match('/export|generateEntityCode|validateVat|generateFakeEmail|batch|getAddressAutocompleteItems|generate_product_slug|setAsCoverImage/', $routePath)) {
-                    // if ( preg_match('/list|create|show|edit/', $routePath)) {
-                    // if (preg_match('/packaging/', $routePath)) {
+                if (isset($curMapper)) {
+                    $curLabel = $curAdmin->getLabelTranslatorStrategy()->getLabel('', '', '');
                     $I->wantTo('Test Route: ' . $routePath);
                     $I->amOnPage($routePath);
                     $I->waitForText('Libre', 10); // secs
@@ -72,19 +74,8 @@ foreach ($curRouter->getRouteCollection() as $curRoute) {
                     $libKeys = preg_grep('/^' . $curLabel . '/', array_keys($curMessage));
 
                     foreach ($libKeys as $curKeys) {
-                        /*
-                          $I->wantTo('On: '
-                                   . $routePath
-                                   . ', Check Translation for: '
-                                   . $curKeys
-                                   . ', It should be: '
-                                   . $curMessage[$curKeys]);
-                        */
                         $I->cantSeeInSource($curKeys); /* We should not see label key */
-                        $I->cantSee('Stack Traces'); /* :) :) we hope so */
-                        //         if (isset($curMessage[$curKeys])) {
-                        //   $I->canSeeInSource($curMessage[$curKeys]); /* We should see label value */
-                        // }
+                        $I->dontSee('Stack Traces'); /* :) :) we hope so */
                     }
 
                     // }
