@@ -203,6 +203,7 @@ lisem:
         grams: grammes
         seeds: graines
 
+librinfo:        
     label:
         city: Ville
         company: Société
