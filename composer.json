@@ -25,6 +25,7 @@
         "jms/serializer-bundle": "^2.0",
         "knplabs/knp-snappy-bundle": "^1.0",
         "lexik/maintenance-bundle": "^2.1",
+        "lexik/translation-bundle": "^4.0",
         "libre-informatique/crm-bundle": "self.version",
         "libre-informatique/decorator-bundle": "self.version",
         "libre-informatique/ecommerce-bundle": "self.version",

@@ -23,3 +23,20 @@ bin/console server:stop
 bin/console cache:clear
 bin/console server:start --no-interaction
 
+# optional
+./bin/console lexik:translations:import BlastOuterExtensionBundle
+./bin/console lexik:translations:import BlastBaseEntitiesBundle
+./bin/console lexik:translations:import BlastUtilsBundle
+./bin/console lexik:translations:import BlastDoctrinePgsqlBundle
+./bin/console lexik:translations:import BlastDoctrineSessionBundle
+./bin/console lexik:translations:import LibrinfoDecoratorBundle
+./bin/console lexik:translations:import LibrinfoCRMBundle
+./bin/console lexik:translations:import SonataSyliusUserBundle
+./bin/console lexik:translations:import LibrinfoVarietiesBundle
+./bin/console lexik:translations:import LibrinfoSeedBatchBundle
+./bin/console lexik:translations:import LibrinfoEmailBundle
+./bin/console lexik:translations:import LibrinfoEmailCRMBundle
+./bin/console lexik:translations:import LibrinfoMediaBundle
+./bin/console lexik:translations:import LibrinfoEcommerceBundle
+./bin/console lexik:translations:import AppBundle
+

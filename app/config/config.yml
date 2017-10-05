@@ -212,3 +212,16 @@ lexik_maintenance:
         status: "Service Temporarily Unavailable"
 # doctrine_migrations:
 #     custom_template: src/Resources/tpl/migration.tpl
+
+
+lexik_translation:
+    fallback_locale: [fr]
+    managed_locales: [fr]
+    auto_cache_clean: true
+    auto_cache_clean_interval: 600
+    dev_tools:
+        enable: true
+        create_missing: true
+        file_format: yml
+    exporter:
+        use_yml_tree: true
