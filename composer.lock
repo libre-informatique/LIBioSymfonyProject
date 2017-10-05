@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "72090e9b10b4206c3c1b0842525f3472",
+    "content-hash": "60debdcb4434b05ae60d1ba4a92cd6fb",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -3550,7 +3550,7 @@
         },
         {
             "name": "knplabs/knp-snappy-bundle",
-            "version": "dev-master",
+            "version": "v1.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/KnpSnappyBundle.git",
@@ -3938,12 +3938,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/EcommerceBundle.git",
-                "reference": "dfb3f9e8fc38590b16eead525dcc9c2da7064218"
+                "reference": "23e70dcf2443e78cb6a838174bbc163cb8d49ebb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/EcommerceBundle/zipball/dfb3f9e8fc38590b16eead525dcc9c2da7064218",
-                "reference": "dfb3f9e8fc38590b16eead525dcc9c2da7064218",
+                "url": "https://api.github.com/repos/libre-informatique/EcommerceBundle/zipball/23e70dcf2443e78cb6a838174bbc163cb8d49ebb",
+                "reference": "23e70dcf2443e78cb6a838174bbc163cb8d49ebb",
                 "shasum": ""
             },
             "require": {
@@ -3951,7 +3951,7 @@
                 "blast-project/core-bundle": "self.version",
                 "blast-project/outer-extension-bundle": "self.version",
                 "blast-project/utils-bundle": "self.version",
-                "knplabs/knp-snappy-bundle": "dev-master",
+                "knplabs/knp-snappy-bundle": "^1.0",
                 "libre-informatique/crm-bundle": "self.version",
                 "libre-informatique/sonata-sylius-user-bundle": "self.version",
                 "php": ">= 7.1",
@@ -3989,7 +3989,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-10-05T12:15:50+00:00"
+            "time": "2017-10-05T12:22:01+00:00"
         },
         {
             "name": "libre-informatique/email-bundle",
@@ -4281,12 +4281,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/VarietiesBundle.git",
-                "reference": "4b8c48bfe75b6ae18d7d350a8e80a8ecdda4217f"
+                "reference": "b0ae953df1af0bdab478832a28604d4baeac60ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/VarietiesBundle/zipball/4b8c48bfe75b6ae18d7d350a8e80a8ecdda4217f",
-                "reference": "4b8c48bfe75b6ae18d7d350a8e80a8ecdda4217f",
+                "url": "https://api.github.com/repos/libre-informatique/VarietiesBundle/zipball/b0ae953df1af0bdab478832a28604d4baeac60ee",
+                "reference": "b0ae953df1af0bdab478832a28604d4baeac60ee",
                 "shasum": ""
             },
             "require": {
@@ -4339,7 +4339,7 @@
                 "taxonomy",
                 "variety"
             ],
-            "time": "2017-10-05T10:30:29+00:00"
+            "time": "2017-10-05T13:10:42+00:00"
         },
         {
             "name": "liip/imagine-bundle",
@@ -10938,7 +10938,6 @@
         "blast-project/doctrine-session-bundle": 20,
         "blast-project/outer-extension-bundle": 20,
         "blast-project/utils-bundle": 20,
-        "knplabs/knp-snappy-bundle": 20,
         "libre-informatique/crm-bundle": 20,
         "libre-informatique/decorator-bundle": 20,
         "libre-informatique/ecommerce-bundle": 20,
