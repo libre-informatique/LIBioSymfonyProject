@@ -50,7 +50,6 @@ class Version20170928101450 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'postgresql', 'Migration can only be executed safely on \'postgresql\'.');
 
-        $this->addSql('CREATE SCHEMA public');
         $this->addSql('ALTER TABLE sylius_adjustment DROP CONSTRAINT IF EXISTS FK_ACA6E0F2E415FB15');
         $this->addSql('ALTER TABLE sylius_order_item_unit DROP CONSTRAINT IF EXISTS FK_82BF226EE415FB15');
         $this->addSql('CREATE TABLE sylius_order_item (id UUID NOT NULL, order_id UUID NOT NULL, variant_id UUID NOT NULL, quantity INT NOT NULL, unit_price INT NOT NULL, units_total INT NOT NULL, adjustments_total INT NOT NULL, total INT NOT NULL, is_immutable BOOLEAN NOT NULL, PRIMARY KEY(id))');
