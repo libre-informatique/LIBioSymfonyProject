@@ -70,7 +70,7 @@ foreach ($curRouter->getRouteCollection() as $curRoute) {
                     $I->wantTo('Test Route: ' . $routePath);
                     $I->amOnPage($routePath);
                     $I->waitForText('Libre', 10); // secs
-                    $I->dontSee('Stack Traces'); /* :) :) we hope so */
+                    $I->dontSee('Stack Trace'); /* :) :) we hope so */
                     
                     // $libKeys = preg_grep('/^' . $curLabel . '/', array_keys($curMessage));
                     
