@@ -45,7 +45,7 @@
         "libre-informatique/seed-batch-bundle": "self.version",
         "libre-informatique/sonata-sylius-user-bundle": "self.version",
         "libre-informatique/varieties-bundle": "self.version",
-        "marem/payum-paybox": "dev-master",
+        "libre-informatique/sylius-paybox-bundle": "self.version",
         "nelmio/api-doc-bundle": "^2.13",
         "sensio/distribution-bundle": "^5.0",
         "sensio/framework-extra-bundle": "^3.0.2",
