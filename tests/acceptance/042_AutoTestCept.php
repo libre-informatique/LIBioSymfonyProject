@@ -13,7 +13,6 @@
 $I = new WebGuy($scenario);
 $I->wantTo('Test All Route');
 
-
 function doLogin($webGuy)
 {
     $webGuy->wantTo('Login');
@@ -31,11 +30,10 @@ function checkPage($webGuy, $urlPage, &$linkList)
     $webGuy->waitForText('Libre', 10); // secs
     $webGuy->dontSee('Stack Trace'); /* :) :) we hope so */
 
-
     $allLink = $webGuy->grabMultiple('a', 'href');
-    $allShow =  preg_grep('/show$/', $allLink);
-    $allEdit =  preg_grep('/edit$/', $allLink);
-    
+    $allShow = preg_grep('/show$/', $allLink);
+    $allEdit = preg_grep('/edit$/', $allLink);
+
     /* @todo : factorize this + should use a random (not always the first one)  */
     $cpt = 3;
     foreach ($allShow as $oneShow) {
@@ -44,7 +42,7 @@ function checkPage($webGuy, $urlPage, &$linkList)
             break;
         }
     }
-    
+
     $cpt = 3;
     foreach ($allEdit as $oneEdit) {
         array_push($linkList, $oneEdit);
@@ -56,7 +54,7 @@ function checkPage($webGuy, $urlPage, &$linkList)
     //return $linkList;
 }
 
-$allLink = array ();
+$allLink = array();
 doLogin($I);
 
 //## Get Some Symfony Service ####
@@ -68,8 +66,6 @@ $curRouter = $I->grabServiceFromContainer('router');
 //     $curCatalogue = $curCatalogue->getFallbackCatalogue();
 // }
 // $curMessage = $curCatalogue->all('messages');
-
-
 
 foreach ($curRouter->getRouteCollection() as $curRoute) {
     $routePath = $curRoute->getPath();
@@ -107,11 +103,9 @@ foreach ($curRouter->getRouteCollection() as $curRoute) {
                     //$curLabel = $curAdmin->getLabelTranslatorStrategy()->getLabel('', '', '');
                     checkPage($I, $routePath, $allLink);
                     //                    array_push($allLink, checkPage($I, $routePath));
-                
-                
-                
+
                 // $libKeys = preg_grep('/^' . $curLabel . '/', array_keys($curMessage));
-                
+
                 // foreach ($libKeys as $curKeys) {
                 //     $I->cantSeeInSource($curKeys); /* We should not see label key */
                 // }
@@ -121,9 +115,7 @@ foreach ($curRouter->getRouteCollection() as $curRoute) {
     }
 }
 
-
 $uniqLink = array_unique($allLink);
-
 
 foreach ($uniqLink as $curLink) {
     //dump($curLink);
@@ -131,8 +123,7 @@ foreach ($uniqLink as $curLink) {
     $I->amOnUrl($curLink);
     $I->waitForText('Libre', 10); // secs
     $I->dontSee('Stack Trace'); /* :) :) we hope so */
-    
-    
+
     $allLink = $I->grabMultiple('a', 'href');
     //    $allAnchor =  preg_grep('/^#/', $allLink);
 
