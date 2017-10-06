@@ -4184,12 +4184,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/MediaBundle.git",
-                "reference": "54adeee0ca1ed44202e9fefcf8e1ce682595c1f8"
+                "reference": "8640394bfd7daf3662c87f9f59b4814030a9cc17"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/MediaBundle/zipball/54adeee0ca1ed44202e9fefcf8e1ce682595c1f8",
-                "reference": "54adeee0ca1ed44202e9fefcf8e1ce682595c1f8",
+                "url": "https://api.github.com/repos/libre-informatique/MediaBundle/zipball/8640394bfd7daf3662c87f9f59b4814030a9cc17",
+                "reference": "8640394bfd7daf3662c87f9f59b4814030a9cc17",
                 "shasum": ""
             },
             "require": {
@@ -4230,7 +4230,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-10-04T10:11:16+00:00"
+            "time": "2017-10-05T15:41:51+00:00"
         },
         {
             "name": "libre-informatique/seed-batch-bundle",
@@ -4238,12 +4238,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/SeedBatchBundle.git",
-                "reference": "616b6002f2c7ebe4085f4fa477f34e2f20edd75e"
+                "reference": "e36d12e177ae7adf1c3134a712e629452694db41"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/SeedBatchBundle/zipball/616b6002f2c7ebe4085f4fa477f34e2f20edd75e",
-                "reference": "616b6002f2c7ebe4085f4fa477f34e2f20edd75e",
+                "url": "https://api.github.com/repos/libre-informatique/SeedBatchBundle/zipball/e36d12e177ae7adf1c3134a712e629452694db41",
+                "reference": "e36d12e177ae7adf1c3134a712e629452694db41",
                 "shasum": ""
             },
             "require": {
@@ -4274,7 +4274,7 @@
                     "homepage": "http://www.libre-informatique.fr/"
                 },
                 {
-                    "name": "Marcos Bezerra de Menezes",
+                    "name": "Marcos BEZERRA DE MENEZES",
                     "email": "marcos.bezerra@libre-informatique.fr"
                 }
             ],
@@ -4286,7 +4286,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-10-05T10:30:24+00:00"
+            "time": "2017-10-05T15:42:13+00:00"
         },
         {
             "name": "libre-informatique/sonata-sylius-user-bundle",
@@ -7609,16 +7609,16 @@
         },
         {
             "name": "symfony/phpunit-bridge",
-            "version": "v3.3.9",
+            "version": "v3.3.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/phpunit-bridge.git",
-                "reference": "27d159bd9bd14a3bd9d3e136081c321a0d621c03"
+                "reference": "6e40d1c8bc4037edf3852c0b29fdd2923c4e2133"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/phpunit-bridge/zipball/27d159bd9bd14a3bd9d3e136081c321a0d621c03",
-                "reference": "27d159bd9bd14a3bd9d3e136081c321a0d621c03",
+                "url": "https://api.github.com/repos/symfony/phpunit-bridge/zipball/6e40d1c8bc4037edf3852c0b29fdd2923c4e2133",
+                "reference": "6e40d1c8bc4037edf3852c0b29fdd2923c4e2133",
                 "shasum": ""
             },
             "require": {
@@ -7667,7 +7667,7 @@
             ],
             "description": "Symfony PHPUnit Bridge",
             "homepage": "https://symfony.com",
-            "time": "2017-09-05T11:23:06+00:00"
+            "time": "2017-10-02T06:54:00+00:00"
         },
         {
             "name": "symfony/polyfill-apcu",
@@ -8187,16 +8187,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v3.3.9",
+            "version": "v3.3.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "a9d2f68ae9946000e2bcc3403d218ec0124f992a"
+                "reference": "cfef3b2d505ae4375b17032bd03ed9a3da4b7b43"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/a9d2f68ae9946000e2bcc3403d218ec0124f992a",
-                "reference": "a9d2f68ae9946000e2bcc3403d218ec0124f992a",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/cfef3b2d505ae4375b17032bd03ed9a3da4b7b43",
+                "reference": "cfef3b2d505ae4375b17032bd03ed9a3da4b7b43",
                 "shasum": ""
             },
             "require": {
@@ -8336,7 +8336,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2017-09-11T16:13:42+00:00"
+            "time": "2017-10-05T23:40:32+00:00"
         },
         {
             "name": "trappar/alice-generator",
@@ -10209,16 +10209,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "6.3.1",
+            "version": "6.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "c0ff817b36a827e64bf5f57bc72278150cf30a77"
+                "reference": "a1bcaca096998de32c29535fdd2dea0c475e8f61"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/c0ff817b36a827e64bf5f57bc72278150cf30a77",
-                "reference": "c0ff817b36a827e64bf5f57bc72278150cf30a77",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/a1bcaca096998de32c29535fdd2dea0c475e8f61",
+                "reference": "a1bcaca096998de32c29535fdd2dea0c475e8f61",
                 "shasum": ""
             },
             "require": {
@@ -10263,7 +10263,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "6.3.x-dev"
+                    "dev-master": "6.4.x-dev"
                 }
             },
             "autoload": {
@@ -10289,7 +10289,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2017-09-24T07:25:54+00:00"
+            "time": "2017-10-06T03:14:57+00:00"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
