@@ -46,6 +46,9 @@ twig:
         - 'BlastUtilsBundle:Form:fields.html.twig'
         - 'BlastBaseEntitiesBundle:Form:fields.html.twig'
         - 'LibrinfoMediaBundle:Form:fields.html.twig'
+    globals:
+        librinfo:
+            url_prefix: "%librinfo.url_prefix%"
 
 # Assetic Configuration
 assetic:

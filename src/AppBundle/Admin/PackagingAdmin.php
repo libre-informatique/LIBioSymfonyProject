@@ -23,8 +23,8 @@ use Symfony\Component\Form\FormEvents;
  */
 class PackagingAdmin extends ProductOptionValueAdmin
 {
-    protected $baseRouteName = 'admin_lisem_packaging';
-    protected $baseRoutePattern = 'lisem/packaging';
+    protected $baseRouteName = 'admin_librinfo_packaging';
+    protected $baseRoutePattern = 'librinfo/packaging';
     protected $classnameLabel = 'Packaging';
 
     /**
@@ -54,7 +54,7 @@ class PackagingAdmin extends ProductOptionValueAdmin
 
         $builder->addEventListener(FormEvents::POST_SET_DATA, function (FormEvent $event) {
             $form = $event->getForm();
-            
+
             $entity = $event->getData();
             if (isset($entity)) {
                 $form->get('quantity')->setData($entity->getQuantity());

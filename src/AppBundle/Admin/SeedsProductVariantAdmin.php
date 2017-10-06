@@ -24,8 +24,8 @@ use Sonata\AdminBundle\Route\RouteCollection;
  */
 class SeedsProductVariantAdmin extends ProductVariantAdmin
 {
-    protected $baseRouteName = 'admin_lisem_seeds_productvariant';
-    protected $baseRoutePattern = 'lisem/seeds_productvariant';
+    protected $baseRouteName = 'admin_librinfo_seeds_productvariant';
+    protected $baseRoutePattern = 'librinfo/seeds_productvariant';
     protected $classnameLabel = 'SeedsProductVariant';
 
     protected $productAdminCode = 'lisem.admin.seeds_product';
