@@ -50,8 +50,7 @@ class AppKernel extends Kernel
 
             // Lexik bundles
             new Lexik\Bundle\MaintenanceBundle\LexikMaintenanceBundle(),
-            new Lexik\Bundle\TranslationBundle\LexikTranslationBundle(),
-            
+
             // Blast bundles
             new Blast\CoreBundle\BlastCoreBundle(),
             new Blast\OuterExtensionBundle\BlastOuterExtensionBundle(),
@@ -79,6 +78,7 @@ class AppKernel extends Kernel
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
             $bundles[] = new Alex\DoctrineExtraBundle\AlexDoctrineExtraBundle();
             $bundles[] = new Trappar\AliceGeneratorBundle\TrapparAliceGeneratorBundle();
+            $bundles[] = new Lexik\Bundle\TranslationBundle\LexikTranslationBundle();
         }
 
         return array_merge(parent::registerBundles(), $bundles);

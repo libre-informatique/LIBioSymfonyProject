@@ -71,3 +71,16 @@ swiftmailer:
             spool: { type: db }
             delivery_addresses: ['jardinenvie@lisem.eu']
             disable_delivery:  "%mailer_disable_delivery%"
+
+
+lexik_translation:
+    fallback_locale: [fr]
+    managed_locales: [fr]
+    auto_cache_clean: true
+    auto_cache_clean_interval: 600
+    dev_tools:
+        enable: true
+        create_missing: true
+        file_format: yml
+    exporter:
+        use_yml_tree: true

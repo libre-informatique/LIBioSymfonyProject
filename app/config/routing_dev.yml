@@ -16,3 +16,7 @@ _main:
 _assetic:
     resource: .
     type:     assetic
+
+lexik_translation_edition:
+    resource: "@LexikTranslationBundle/Resources/config/routing.yml"
+    prefix:   /lexik-translation
