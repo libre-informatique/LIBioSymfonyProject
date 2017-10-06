@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ddc6c5e7708df236c0e7df9131fbc6e1",
+    "content-hash": "d66c7ba73b70cc86fa72b346b28e857b",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -4342,6 +4342,50 @@
             "time": "2017-10-04T10:11:29+00:00"
         },
         {
+            "name": "libre-informatique/sylius-paybox-bundle",
+            "version": "dev-wip-lisem",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/libre-informatique/SyliusPayboxBundle.git",
+                "reference": "362f6ff09737887ac930c5dd82b4f82a1f036bab"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/libre-informatique/SyliusPayboxBundle/zipball/362f6ff09737887ac930c5dd82b4f82a1f036bab",
+                "reference": "362f6ff09737887ac930c5dd82b4f82a1f036bab",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1",
+                "sylius/sylius": "^1.0.0"
+            },
+            "type": "sylius-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Librinfo\\SyliusPayboxBundle\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Geoffroy de Corbiac",
+                    "email": "geoffroydecorbiac@gmail.com",
+                    "homepage": "https://github.com/gdecorbiac"
+                }
+            ],
+            "description": "Paybox gateway for Sylius projects.",
+            "keywords": [
+                "paybox",
+                "payum",
+                "sylius",
+                "symfony"
+            ],
+            "time": "2017-10-06T09:17:55+00:00"
+        },
+        {
             "name": "libre-informatique/varieties-bundle",
             "version": "dev-wip-lisem",
             "source": {
@@ -4507,58 +4551,6 @@
                 "transformation"
             ],
             "time": "2017-09-09T03:53:30+00:00"
-        },
-        {
-            "name": "marem/payum-paybox",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/remyma/payum-paybox.git",
-                "reference": "c022181d59bc5f9b990b3dee8d3f6bc196809f6a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/remyma/payum-paybox/zipball/c022181d59bc5f9b990b3dee8d3f6bc196809f6a",
-                "reference": "c022181d59bc5f9b990b3dee8d3f6bc196809f6a",
-                "shasum": ""
-            },
-            "require": {
-                "payum/core": "^1.3"
-            },
-            "require-dev": {
-                "payum/core": "^1.3@dev",
-                "php-http/guzzle6-adapter": "^1.0"
-            },
-            "type": "project",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.3-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Marem\\PayumPaybox\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Matthieu REMY",
-                    "email": "remy.matthieu@gmail.com",
-                    "homepage": "https://github.com/remyma"
-                }
-            ],
-            "description": "Paybox extension for Payum",
-            "homepage": "https://github.com/remyma/payum-paybox",
-            "keywords": [
-                "paybox",
-                "payment",
-                "payum"
-            ],
-            "time": "2017-01-12T21:08:19+00:00"
         },
         {
             "name": "michelf/php-markdown",
@@ -11013,12 +11005,20 @@
         "libre-informatique/seed-batch-bundle": 20,
         "libre-informatique/sonata-sylius-user-bundle": 20,
         "libre-informatique/varieties-bundle": 20,
-        "marem/payum-paybox": 20
+        "libre-informatique/sylius-paybox-bundle": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.1"
+        "php": ">=7.1",
+        "ext-exif": "*",
+        "ext-fileinfo": "*",
+        "ext-gd": "*",
+        "ext-pgsql": "*",
+        "ext-curl": "*",
+        "ext-intl": "*",
+        "ext-mbstring": "*",
+        "ext-zip": "*"
     },
     "platform-dev": []
 }
