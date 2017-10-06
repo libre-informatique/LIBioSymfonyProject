@@ -16,10 +16,10 @@
         "ext-gd": "*",
         "ext-pgsql": "*",
         "ext-curl": "*",
-        "ext-intl": "*", 
+        "ext-intl": "*",
         "ext-mbstring" : "*",
         "ext-zip": "*",
-        
+
         "blast-project/base-entities-bundle": "self.version",
         "blast-project/core-bundle": "self.version",
         "blast-project/doctrine-pgsql-bundle": "self.version",
@@ -35,7 +35,6 @@
         "jms/serializer-bundle": "^2.0",
         "knplabs/knp-snappy-bundle": "^1.0",
         "lexik/maintenance-bundle": "^2.1",
-        "lexik/translation-bundle": "^4.0",
         "libre-informatique/crm-bundle": "self.version",
         "libre-informatique/decorator-bundle": "self.version",
         "libre-informatique/ecommerce-bundle": "self.version",
@@ -66,7 +65,8 @@
     "require-dev": {
         "alexandresalome/doctrine-extra-bundle": "^0.3.0",
         "nelmio/alice": "^2.2",
-        "codeception/codeception": "^2.3"
+        "codeception/codeception": "^2.3",
+        "lexik/translation-bundle": "^4.0"
     },
     "version": "dev-wip-lisem",
     "scripts": {

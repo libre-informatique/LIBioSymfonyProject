@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d66c7ba73b70cc86fa72b346b28e857b",
+    "content-hash": "151decac365bfc80b88f61b35a6350c3",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -3817,72 +3817,6 @@
             "time": "2016-03-15T09:38:32+00:00"
         },
         {
-            "name": "lexik/translation-bundle",
-            "version": "v4.0.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/lexik/LexikTranslationBundle.git",
-                "reference": "93410b11f1064a58dd6f0dba1ee99a5a32cb03fe"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/lexik/LexikTranslationBundle/zipball/93410b11f1064a58dd6f0dba1ee99a5a32cb03fe",
-                "reference": "93410b11f1064a58dd6f0dba1ee99a5a32cb03fe",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.6 || ^7.0",
-                "symfony/framework-bundle": "~2.8|~3.0"
-            },
-            "require-dev": {
-                "doctrine/data-fixtures": "~1.1",
-                "doctrine/doctrine-bundle": "~1.2",
-                "doctrine/mongodb-odm-bundle": "~3.0",
-                "doctrine/orm": "^2.2.3",
-                "phpunit/phpunit": "^5.7",
-                "propel/propel-bundle": "~1.5|3.0.0-alpha1@dev"
-            },
-            "suggest": {
-                "doctrine/mongodb-odm-bundle": "~3.0",
-                "doctrine/orm": ">=2.4",
-                "propel/propel-bundle": "~1.5"
-            },
-            "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "4.x.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Lexik\\Bundle\\TranslationBundle\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Dev Lexik",
-                    "email": "dev@lexik.fr"
-                },
-                {
-                    "name": "Cedric Girard",
-                    "email": "c.girard@lexik.fr"
-                }
-            ],
-            "description": "This bundle allows to import translation files content into the database and provide a GUI to edit translations.",
-            "homepage": "https://github.com/lexik/LexikTranslationBundle",
-            "keywords": [
-                "Symfony2",
-                "bundle",
-                "i18n",
-                "translation"
-            ],
-            "time": "2017-10-05T10:09:07+00:00"
-        },
-        {
             "name": "libre-informatique/crm-bundle",
             "version": "dev-wip-lisem",
             "source": {
@@ -4238,12 +4172,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/SeedBatchBundle.git",
-                "reference": "e36d12e177ae7adf1c3134a712e629452694db41"
+                "reference": "c96e1e6219969c8bcbb9a872cc82f18f2367d89d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/SeedBatchBundle/zipball/e36d12e177ae7adf1c3134a712e629452694db41",
-                "reference": "e36d12e177ae7adf1c3134a712e629452694db41",
+                "url": "https://api.github.com/repos/libre-informatique/SeedBatchBundle/zipball/c96e1e6219969c8bcbb9a872cc82f18f2367d89d",
+                "reference": "c96e1e6219969c8bcbb9a872cc82f18f2367d89d",
                 "shasum": ""
             },
             "require": {
@@ -4286,7 +4220,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-10-05T15:42:13+00:00"
+            "time": "2017-10-06T10:06:22+00:00"
         },
         {
             "name": "libre-informatique/sonata-sylius-user-bundle",
@@ -9531,6 +9465,72 @@
                 "webdriver"
             ],
             "time": "2017-04-28T14:54:49+00:00"
+        },
+        {
+            "name": "lexik/translation-bundle",
+            "version": "v4.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lexik/LexikTranslationBundle.git",
+                "reference": "93410b11f1064a58dd6f0dba1ee99a5a32cb03fe"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lexik/LexikTranslationBundle/zipball/93410b11f1064a58dd6f0dba1ee99a5a32cb03fe",
+                "reference": "93410b11f1064a58dd6f0dba1ee99a5a32cb03fe",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.6 || ^7.0",
+                "symfony/framework-bundle": "~2.8|~3.0"
+            },
+            "require-dev": {
+                "doctrine/data-fixtures": "~1.1",
+                "doctrine/doctrine-bundle": "~1.2",
+                "doctrine/mongodb-odm-bundle": "~3.0",
+                "doctrine/orm": "^2.2.3",
+                "phpunit/phpunit": "^5.7",
+                "propel/propel-bundle": "~1.5|3.0.0-alpha1@dev"
+            },
+            "suggest": {
+                "doctrine/mongodb-odm-bundle": "~3.0",
+                "doctrine/orm": ">=2.4",
+                "propel/propel-bundle": "~1.5"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.x.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Lexik\\Bundle\\TranslationBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dev Lexik",
+                    "email": "dev@lexik.fr"
+                },
+                {
+                    "name": "Cedric Girard",
+                    "email": "c.girard@lexik.fr"
+                }
+            ],
+            "description": "This bundle allows to import translation files content into the database and provide a GUI to edit translations.",
+            "homepage": "https://github.com/lexik/LexikTranslationBundle",
+            "keywords": [
+                "Symfony2",
+                "bundle",
+                "i18n",
+                "translation"
+            ],
+            "time": "2017-10-05T10:09:07+00:00"
         },
         {
             "name": "myclabs/deep-copy",
