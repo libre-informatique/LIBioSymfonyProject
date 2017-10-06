@@ -21,8 +21,8 @@ use Librinfo\EcommerceBundle\Admin\ProductVariantAdmin;
  */
 class OtherProductVariantAdmin extends ProductVariantAdmin
 {
-    protected $baseRouteName = 'admin_lisem_other_productvariant';
-    protected $baseRoutePattern = 'lisem/other_productvariant';
+    protected $baseRouteName = 'admin_librinfo_other_productvariant';
+    protected $baseRoutePattern = 'librinfo/other_productvariant';
     protected $classnameLabel = 'OtherProductVariant';
 
     protected $productAdminCode = 'lisem.admin.other_product';

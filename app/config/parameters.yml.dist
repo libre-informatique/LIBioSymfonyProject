@@ -50,3 +50,5 @@ parameters:
 
     sylius_fr_web_channel_hostname: 127.0.0.1
     sylius_fr_web_channel_code: 'fr_web'
+
+    librinfo.url_prefix: /lisem

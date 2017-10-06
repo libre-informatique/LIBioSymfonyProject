@@ -47,7 +47,7 @@ sonata_admin:
                 icon:  '<i class="fa fa-tree"></i>'
                 on_top: true
                 items:
-                    - route: admin_lisem_variety_list
+                    - route: admin_librinfo_variety_list
                       label: lisem.menu_label.varieties_list
 
             # ##################################################################
@@ -94,10 +94,10 @@ sonata_admin:
                 label: lisem.menu_label.products
                 icon:  '<i class="fa fa-shopping-cart"></i>'
                 items:
-                    - route: admin_lisem_seeds_product_list
+                    - route: admin_librinfo_seeds_product_list
                       label: lisem.menu_label.seed_products_list
                     - label: lisem.menu_label.other_products_list
-                      route: admin_lisem_other_product_list
+                      route: admin_librinfo_other_product_list
 
             lisem.menu.packagings:
                 label: lisem.menu_label.packagings

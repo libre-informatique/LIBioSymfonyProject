@@ -2,7 +2,7 @@
 # http://symfony.com/doc/current/book/security.html
 
 parameters:
-    sonata.security.regex: "^/admin"
+    sonata.security.regex: "^%librinfo.url_prefix%(?:/.*)?$"
     sylius.security.admin_regex: "^/sylius-admin"
     sylius.security.api_regex: "^/api"
     sylius.security.shop_regex: ""
@@ -30,7 +30,7 @@ security:
         sonata:
             switch_user: true
             context: sonata
-            pattern: "^/admin(?:/.*)?$"
+            pattern: "%sonata.security.regex%"
             form_login:
                 provider: sonata_user_provider
                 login_path: sonata_sylius_user_login
@@ -100,12 +100,11 @@ security:
     access_control:
 
         # Sonata access control
-        - { path: ^/(css|images|js), role: IS_AUTHENTICATED_ANONYMOUSLY } # allow assets for anonymous users
-        - { path: ^/admin/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY } # allow resetting password for anonymous users
-#        - { path: ^/, roles: IS_AUTHENTICATED_REMEMBERED } # filter entire application
-        - { path: ^/admin/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/admin/login-check$, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: "^/admin.*", role: ROLE_SONATA_ADMIN }
+        - { path: "^/(css|images|js)", role: IS_AUTHENTICATED_ANONYMOUSLY } # allow assets for anonymous users
+        - { path: "^%librinfo.url_prefix%/resetting", role: IS_AUTHENTICATED_ANONYMOUSLY } # allow resetting password for anonymous users
+        - { path: "^%librinfo.url_prefix%/login$", role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: "^%librinfo.url_prefix%/login-check$", role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: "^%librinfo.url_prefix%.*", role: ROLE_SONATA_ADMIN }
 
         # EmailBundle tracking
         - { path: ^/tracking, role: IS_AUTHENTICATED_ANONYMOUSLY }

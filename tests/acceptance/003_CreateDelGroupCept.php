@@ -12,12 +12,12 @@
 
 $I = new WebGuy($scenario);
 $I->wantTo('Create And Delete Group');
-$I->amOnPage('/admin/login');
+$I->amOnPage('/lisem/login');
 $I->fillField("//input[@id='_username']", 'lisem@lisem.eu');
 $I->fillField("//input[@id='_password']", 'lisem');
 $I->click("//button[@type='submit']");
 $I->waitForText('Libre', 30); // secs
-$I->amOnPage('/admin/librinfo/crm/circle/list');
+$I->amOnPage('/lisem/librinfo/crm/circle/list');
 $I->waitForText('Ajouter', 30); // secs
 $I->click('Ajouter');
 $I->fillField("//input[contains(@id, 'name')]", 'SelGroup');

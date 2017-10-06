@@ -18,7 +18,7 @@ function doLogin($webGuy)
 {
     $webGuy->wantTo('Login');
     //## LOGIN ####
-    $webGuy->amOnPage('/admin/login');
+    $webGuy->amOnPage('/lisem/login');
     $webGuy->fillField("//input[@id='_username']", 'lisem@lisem.eu');
     $webGuy->fillField("//input[@id='_password']", 'lisem');
     $webGuy->click("//button[@type='submit']");
@@ -81,7 +81,7 @@ foreach ($curRouter->getRouteCollection() as $curRoute) {
     if (preg_match('/lisem|librinfo/', $routePath)
         && !preg_match('/{|}/', $routePath)
         && !preg_match('/login/', $routePath)
-        //  && preg_match('/channel/', $routePath)
+        && !preg_match('/searchindexentity/', $routePath)
     ) {
         /* Check if we can GET (or not) */
         if (empty($routeMethod)

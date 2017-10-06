@@ -26,8 +26,8 @@ use Symfony\Component\Validator\Constraints\NotBlank;
  */
 class SeedsProductAdmin extends ProductAdmin
 {
-    protected $baseRouteName = 'admin_lisem_seeds_product';
-    protected $baseRoutePattern = 'lisem/seeds_product';
+    protected $baseRouteName = 'admin_librinfo_seeds_product';
+    protected $baseRoutePattern = 'librinfo/seeds_product';
     protected $classnameLabel = 'SeedsProduct';
 
     /**

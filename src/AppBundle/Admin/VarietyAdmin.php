@@ -23,8 +23,8 @@ use Sonata\AdminBundle\Route\RouteCollection;
  */
 class VarietyAdmin extends BaseAdmin
 {
-    protected $baseRouteName = 'admin_lisem_variety';
-    protected $baseRoutePattern = 'lisem/variety';
+    protected $baseRouteName = 'admin_librinfo_variety';
+    protected $baseRoutePattern = 'librinfo/variety';
 
     public function configureFormFields(\Sonata\AdminBundle\Form\FormMapper $mapper)
     {

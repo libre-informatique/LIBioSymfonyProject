@@ -12,7 +12,7 @@
 
 $I = new WebGuy($scenario);
 $I->wantTo('Test Login');
-$I->amOnPage('/admin/login');
+$I->amOnPage('/lisem/login');
 $I->fillField("//input[@id='_username']", 'lisem@lisem.eu');
 $I->fillField("//input[@id='_password']", 'lisem');
 $I->click("//button[@type='submit']");
