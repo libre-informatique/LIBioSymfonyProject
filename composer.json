@@ -10,6 +10,16 @@
         "classmap": ["app/VendorOverride/", "app/AppKernel.php", "app/AppCache.php"]
     },
     "require": {
+        "php": ">=7.1",
+        "ext-exif": "*",
+        "ext-fileinfo": "*",
+        "ext-gd": "*",
+        "ext-pgsql": "*",
+        "ext-curl": "*",
+        "ext-intl": "*", 
+        "ext-mbstring" : "*",
+        "ext-zip": "*",
+        
         "blast-project/base-entities-bundle": "self.version",
         "blast-project/core-bundle": "self.version",
         "blast-project/doctrine-pgsql-bundle": "self.version",
@@ -37,7 +47,6 @@
         "libre-informatique/varieties-bundle": "self.version",
         "marem/payum-paybox": "dev-master",
         "nelmio/api-doc-bundle": "^2.13",
-        "php": ">=7.1",
         "sensio/distribution-bundle": "^5.0",
         "sensio/framework-extra-bundle": "^3.0.2",
         "sensio/generator-bundle": "^3.0",
