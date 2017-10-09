@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "34e68891d3f5a6e5cd6fd33cc3f1bb87",
+    "content-hash": "151decac365bfc80b88f61b35a6350c3",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -3984,12 +3984,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/EcommerceBundle.git",
-                "reference": "e959a61b343c70da742fbe6356c102c09c4d3b94"
+                "reference": "383a665ce4fe4ed4265b4646daf36235be0b2aea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/EcommerceBundle/zipball/e959a61b343c70da742fbe6356c102c09c4d3b94",
-                "reference": "e959a61b343c70da742fbe6356c102c09c4d3b94",
+                "url": "https://api.github.com/repos/libre-informatique/EcommerceBundle/zipball/383a665ce4fe4ed4265b4646daf36235be0b2aea",
+                "reference": "383a665ce4fe4ed4265b4646daf36235be0b2aea",
                 "shasum": ""
             },
             "require": {
@@ -3997,6 +3997,7 @@
                 "blast-project/core-bundle": "self.version",
                 "blast-project/outer-extension-bundle": "self.version",
                 "blast-project/utils-bundle": "self.version",
+                "h4cc/wkhtmltopdf-amd64": "^0.12.3",
                 "knplabs/knp-snappy-bundle": "^1.0",
                 "libre-informatique/crm-bundle": "self.version",
                 "libre-informatique/sonata-sylius-user-bundle": "self.version",
@@ -4035,7 +4036,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-10-06T15:31:59+00:00"
+            "time": "2017-10-09T09:42:59+00:00"
         },
         {
             "name": "libre-informatique/email-bundle",
