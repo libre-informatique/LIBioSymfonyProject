@@ -188,6 +188,7 @@ lisem:
         seed_products_list: Semences
         shipping_methods_list: Méthodes de livraison
         shop_settings: Boutique
+        shop_user: Client boutique
         species_list: Liste des Espèces
         tax_categories_list: Catégories de TVA
         tax_rates_list: Taux de TVA
