@@ -30,6 +30,7 @@ class AppKernel extends Kernel
 
             // Sonata bundles
             new Sonata\AdminBundle\SonataAdminBundle(),
+            new Exporter\Bridge\Symfony\Bundle\SonataExporterBundle(),
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
 
             // FOS bundles
