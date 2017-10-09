@@ -101,6 +101,7 @@ class MenuBuilder
         $submenu->addChild('lisem.menu_label.shipping_methods_list', ['route' => 'admin_librinfo_ecommerce_shipping_method_list']);
         $submenu->addChild('lisem.menu_label.tax_categories_list', ['route' => 'admin_librinfo_ecommerce_taxcategory_list']);
         $submenu->addChild('lisem.menu_label.tax_rates_list', ['route' => 'admin_librinfo_ecommerce_taxrate_list']);
+        $submenu->addChild('lisem.menu_label.shop_user', ['route' => 'admin_librinfo_ecommerce_shop_user_list']);
 
         return $menu;
     }
