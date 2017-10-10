@@ -31,11 +31,14 @@ $I->click("//button[@name='btn_create_and_list']");
 
 $I->waitForText('Filtres', 30); // secs
 $I->click('Filtres');
+$I->wait(1);
 $I->click('i.fa.fa-square-o');
 //$I->click("//ul[2]/li/ul/li/a/i");
+$I->wait(1);
 $I->click("//input[@id='filter_name_value']");
 $I->fillField("//input[@id='filter_name_value']", 'Sel');
 $I->click("//button[@type='submit']");
-//$I->click('//label/div/ins');
-//$I->click("//input[@value='OK']");
-//$I->click("//button[@type='submit']");
+$I->wait(1);
+$I->click('//label/div/ins');
+$I->click("//input[@value='OK']");
+$I->click("//button[@type='submit']");
