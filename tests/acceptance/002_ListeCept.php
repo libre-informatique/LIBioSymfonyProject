@@ -24,24 +24,24 @@ $I->fillField("//input[@id='_username']", 'lisem@lisem.eu');
 $I->fillField("//input[@id='_password']", 'lisem');
 $I->click("//button[@type='submit']");
 
-testLink($I, 'Contacts');
-testLink($I, 'Emailing');
+//testLink($I, 'Contacts');
+//testLink($I, 'Emailing');
 testLink($I, 'Èspèces');
 testLink($I, 'Variétés');
 testLink($I, 'Lots');
 testLink($I, 'Parcelles');
 //testLink($I, 'Producteurs');
-$I->click('Articles');
+//$I->click('Articles');
 testLink($I, 'Semences');
-testLink($I, 'Autres');
+//testLink($I, 'Autres');
 
 // testLink($I, 'Conditionnement');
 // testLink($I, 'Inventaire');
 // testLink($I, 'Catalogues');
-testLink($I, 'Commandes');
+//testLink($I, 'Commandes');
 
-$I->click('Gestion / Compta');
-testLink($I, 'Livre de caisse');
+//$I->click('Gestion / Compta');
+//testLink($I, 'Livre de caisse');
 
 // $I->click('Paramétrage');
 // $I->click('Relations publiques');
