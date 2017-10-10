@@ -25,13 +25,20 @@ function doLogin($webGuy)
     $webGuy->click("//button[@type='submit']");
 }
 
+function stdCheck($webGuy)
+{
+    $webGuy->waitForText('Libre', 10); // secs
+    $webGuy->dontSee('Stack Trace'); /* :) :) we hope so */
+    // $webGuy->seeResponseCodeIs(HttpCode::OK); /* does not work with selenium */
+    $webGuy->dontSeeInSource('<div class="exceptionContainer">'); /* :) :) we hope so too */
+}
+
 function checkPage($webGuy, $urlPage, &$linkList)
 {
     $webGuy->wantTo('Test Route: ' . $urlPage);
     $webGuy->amOnPage($urlPage);
-    $webGuy->waitForText('Libre', 10); // secs
-    $webGuy->dontSee('Stack Trace'); /* :) :) we hope so */
-    // $webGuy->seeResponseCodeIs(HttpCode::OK); /* does not work with selenium */
+    stdCheck($webGuy);
+    
     $allLink = $webGuy->grabMultiple('a', 'href');
     $allShow = preg_grep('/show$/', $allLink);
     $allEdit = preg_grep('/edit$/', $allLink);
@@ -123,8 +130,7 @@ foreach ($uniqLink as $curLink) {
     //dump($curLink);
     $I->wantTo('Test Link: ' . $curLink);
     $I->amOnUrl($curLink);
-    $I->waitForText('Libre', 10); // secs
-    $I->dontSee('Stack Trace'); /* :) :) we hope so */
+    stdCheck($I);
 
     $allLink = $I->grabMultiple('a', 'href');
     //    $allAnchor =  preg_grep('/^#/', $allLink);
