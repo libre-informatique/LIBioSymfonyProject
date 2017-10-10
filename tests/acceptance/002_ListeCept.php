@@ -32,7 +32,7 @@ testLink($I, 'Lots');
 testLink($I, 'Parcelles');
 //testLink($I, 'Producteurs');
 //$I->click('Articles');
-testLink($I, 'Semences');
+//testLink($I, 'Semences');
 //testLink($I, 'Autres');
 
 // testLink($I, 'Conditionnement');
