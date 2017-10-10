@@ -10,7 +10,7 @@
  * file that was distributed with this source code.
  */
 
-use \Codeception\Util\HttpCode;
+use Codeception\Util\HttpCode;
 
 $I = new WebGuy($scenario);
 $I->wantTo('Test All Route');
@@ -31,7 +31,7 @@ function checkPage($webGuy, $urlPage, &$linkList)
     $webGuy->amOnPage($urlPage);
     $webGuy->waitForText('Libre', 10); // secs
     $webGuy->dontSee('Stack Trace'); /* :) :) we hope so */
-    $webGuy->seeResponseCodeIs(HttpCode::OK);
+    // $webGuy->seeResponseCodeIs(HttpCode::OK); /* does not work with selenium */
     $allLink = $webGuy->grabMultiple('a', 'href');
     $allShow = preg_grep('/show$/', $allLink);
     $allEdit = preg_grep('/edit$/', $allLink);
