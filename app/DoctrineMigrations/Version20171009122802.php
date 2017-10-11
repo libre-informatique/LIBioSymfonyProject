@@ -40,7 +40,7 @@ class Version20171009122802 extends AbstractMigration
         }
 
         if (!$this->connection->getSchemaManager()->tablesExist(['librinfo_ecommerce_salesjournalitem'])) {
-            $this->addSql('CREATE TABLE librinfo_ecommerce_salesjournalitem (id UUID NOT NULL, order_id UUID DEFAULT NULL, invoice_id UUID DEFAULT NULL, payment_id UUID DEFAULT NULL, operation_date TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, account VARCHAR(64) NOT NULL, label VARCHAR(255) NOT NULL, debit INT NOT NULL, credit INT NOT NULL, PRIMARY KEY(id))'):
+            $this->addSql('CREATE TABLE librinfo_ecommerce_salesjournalitem (id UUID NOT NULL, order_id UUID DEFAULT NULL, invoice_id UUID DEFAULT NULL, payment_id UUID DEFAULT NULL, operation_date TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, account VARCHAR(64) NOT NULL, label VARCHAR(255) NOT NULL, debit INT NOT NULL, credit INT NOT NULL, PRIMARY KEY(id))');
             $this->addSql('CREATE INDEX IDX_6AA2A2038D9F6D38 ON librinfo_ecommerce_salesjournalitem (order_id)');
             $this->addSql('CREATE INDEX IDX_6AA2A2032989F1FD ON librinfo_ecommerce_salesjournalitem (invoice_id)');
             $this->addSql('CREATE INDEX IDX_6AA2A2034C3A3BB ON librinfo_ecommerce_salesjournalitem (payment_id)');
