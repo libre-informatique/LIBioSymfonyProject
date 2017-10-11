@@ -23,7 +23,7 @@ bin/console server:stop
 bin/console cache:clear
 bin/console server:start --no-interaction
 
-# optional
+# optional for database translation
 ./bin/console lexik:translations:import BlastOuterExtensionBundle
 ./bin/console lexik:translations:import BlastBaseEntitiesBundle
 ./bin/console lexik:translations:import BlastUtilsBundle
@@ -40,3 +40,10 @@ bin/console server:start --no-interaction
 ./bin/console lexik:translations:import LibrinfoEcommerceBundle
 ./bin/console lexik:translations:import AppBundle
 
+# optional to reset db
+bin/console doctrine:schema:drop --force --no-interaction
+bin/console doctrine:schema:create --no-interaction
+bin/console lisem:install:setup --with-samples --yes
+
+# option to update composer.lock
+composer update; git commit composer.lock -m 'Update Version';  git push
