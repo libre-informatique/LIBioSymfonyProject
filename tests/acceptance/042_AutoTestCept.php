@@ -10,7 +10,7 @@
  * file that was distributed with this source code.
  */
 
-use Codeception\Util\HttpCode;
+// use Codeception\Util\HttpCode;
 
 $I = new WebGuy($scenario);
 $I->wantTo('Test All Route');
@@ -38,7 +38,7 @@ function checkPage($webGuy, $urlPage, &$linkList)
     $webGuy->wantTo('Test Route: ' . $urlPage);
     $webGuy->amOnPage($urlPage);
     stdCheck($webGuy);
-    
+
     $allLink = $webGuy->grabMultiple('a', 'href');
     $allShow = preg_grep('/show$/', $allLink);
     $allEdit = preg_grep('/edit$/', $allLink);
