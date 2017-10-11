@@ -48,6 +48,7 @@ class AppKernel extends Kernel
             new Sparkling\VATBundle\SparklingVATBundle(),
             new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
             new Bazinga\Bundle\JsTranslationBundle\BazingaJsTranslationBundle(),
+            new Librinfo\SyliusPayboxBundle\LibrinfoSyliusPayboxBundle(),
 
             // Lexik bundles
             new Lexik\Bundle\MaintenanceBundle\LexikMaintenanceBundle(),

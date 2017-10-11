@@ -28,7 +28,7 @@ class Version20171009122802 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'postgresql', 'Migration can only be executed safely on \'postgresql\'.');
 
-        if (!$this->connection->getSchemaManager()->tablesExist(['librinfo_ecommerce_payment']) === true) {
+        if (!$this->connection->getSchemaManager()->tablesExist(['librinfo_ecommerce_payment'])) {
             $this->addSql('CREATE TABLE librinfo_ecommerce_payment (id UUID NOT NULL, method_id UUID DEFAULT NULL, order_id UUID NOT NULL, currency_code VARCHAR(3) NOT NULL, amount INT NOT NULL, state VARCHAR(255) NOT NULL, created_at TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, updated_at TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, details TEXT NOT NULL, PRIMARY KEY(id))');
             $this->addSql('CREATE INDEX IDX_FB4B829419883967 ON librinfo_ecommerce_payment (method_id)');
             $this->addSql('CREATE INDEX IDX_FB4B82948D9F6D38 ON librinfo_ecommerce_payment (order_id)');
@@ -37,6 +37,16 @@ class Version20171009122802 extends AbstractMigration
             $this->addSql('ALTER TABLE librinfo_ecommerce_payment ADD CONSTRAINT FK_FB4B82948D9F6D38 FOREIGN KEY (order_id) REFERENCES librinfo_ecommerce_order (id) ON DELETE CASCADE NOT DEFERRABLE INITIALLY IMMEDIATE');
             $this->addSql('INSERT INTO librinfo_ecommerce_payment (id,method_id,order_id,currency_code,amount,state,created_at,updated_at,details) SELECT id,method_id,order_id,currency_code,amount,state,created_at,updated_at,\'a:0:{}\' AS details FROM sylius_payment');
             $this->addSql('DROP TABLE sylius_payment');
+        }
+
+        if (!$this->connection->getSchemaManager()->tablesExist(['librinfo_ecommerce_salesjournalitem'])) {
+            $this->addSql('CREATE TABLE librinfo_ecommerce_salesjournalitem (id UUID NOT NULL, order_id UUID DEFAULT NULL, invoice_id UUID DEFAULT NULL, payment_id UUID DEFAULT NULL, operation_date TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, account VARCHAR(64) NOT NULL, label VARCHAR(255) NOT NULL, debit INT NOT NULL, credit INT NOT NULL, PRIMARY KEY(id))'):
+            $this->addSql('CREATE INDEX IDX_6AA2A2038D9F6D38 ON librinfo_ecommerce_salesjournalitem (order_id)');
+            $this->addSql('CREATE INDEX IDX_6AA2A2032989F1FD ON librinfo_ecommerce_salesjournalitem (invoice_id)');
+            $this->addSql('CREATE INDEX IDX_6AA2A2034C3A3BB ON librinfo_ecommerce_salesjournalitem (payment_id)');
+            $this->addSql('ALTER TABLE librinfo_ecommerce_salesjournalitem ADD CONSTRAINT FK_6AA2A2038D9F6D38 FOREIGN KEY (order_id) REFERENCES librinfo_ecommerce_order (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
+            $this->addSql('ALTER TABLE librinfo_ecommerce_salesjournalitem ADD CONSTRAINT FK_6AA2A2032989F1FD FOREIGN KEY (invoice_id) REFERENCES librinfo_ecommerce_invoice (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
+            $this->addSql('ALTER TABLE librinfo_ecommerce_salesjournalitem ADD CONSTRAINT FK_6AA2A2034C3A3BB FOREIGN KEY (payment_id) REFERENCES librinfo_ecommerce_payment (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
         }
     }
 
@@ -59,6 +69,10 @@ class Version20171009122802 extends AbstractMigration
             $this->addSql('DROP TABLE librinfo_ecommerce_payment');
             $this->addSql('ALTER TABLE sylius_payment ADD CONSTRAINT fk_d9191bd419883967 FOREIGN KEY (method_id) REFERENCES sylius_payment_method (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
             $this->addSql('ALTER TABLE sylius_payment ADD CONSTRAINT fk_d9191bd48d9f6d38 FOREIGN KEY (order_id) REFERENCES librinfo_ecommerce_order (id) ON DELETE CASCADE NOT DEFERRABLE INITIALLY IMMEDIATE');
+        }
+
+        if ($this->connection->getSchemaManager()->tablesExist(['librinfo_ecommerce_salesjournalitem'])) {
+            $this->addSql('DROP TABLE librinfo_ecommerce_salesjournalitem');
         }
     }
 }

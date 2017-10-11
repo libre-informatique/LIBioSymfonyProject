@@ -225,7 +225,7 @@ services:
 
     lisem.gateway_factory.paybox:
         class: Payum\Core\Bridge\Symfony\Builder\GatewayFactoryBuilder
-        arguments: [Marem\PayumPaybox\PayboxGatewayFactory]
+        arguments: [Librinfo\SyliusPayboxBundle\PayumPaybox\PayboxGatewayFactory]
         tags:
             - { name: payum.gateway_factory_builder, factory: paybox }
 

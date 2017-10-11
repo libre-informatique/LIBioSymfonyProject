@@ -66,51 +66,61 @@ assetic:
 # Doctrine Configuration
 doctrine:
     dbal:
-        driver:   pdo_pgsql
-        host:     "%database_host%"
-        port:     "%database_port%"
-        dbname:   "%database_name%"
-        user:     "%database_user%"
-        password: "%database_password%"
-        charset:  UTF8
+        default_connection: default
+        connections:
+            default:
+                driver:   pdo_pgsql
+                host:     "%database_host%"
+                port:     "%database_port%"
+                dbname:   "%database_name%"
+                user:     "%database_user%"
+                password: "%database_password%"
+                charset:  UTF8
+            session:
+                driver:   pdo_pgsql
+                host:     "%database_host%"
+                port:     "%database_port%"
+                dbname:   "%database_name%"
+                user:     "%database_user%"
+                password: "%database_password%"
+                charset:  UTF8
 
     orm:
+        default_entity_manager: default
         auto_generate_proxy_classes: "%kernel.debug%"
-        naming_strategy: doctrine.orm.naming_strategy.underscore
-        auto_mapping: true
-        mappings:
-            BlastBaseEntitiesBundle:
-                type: yml
-            # Librinfo bundles
-            LibrinfoVarietiesBundle:
-                type: yml
-            LibrinfoSeedBatchBundle:
-                type: yml
-            LibrinfoCRMBundle:
-                type: yml
-#            LibrinfoUserBundle:
-#                type: yml
-            LibrinfoEcommerceBundle:
-                type: yml
-#            FOSUserBundle:
-#                type: xml
-#            SonataUserBundle: ~
-            # TODO: this should go in BaseEntitiesBundle
-            gedmo_loggable:
-                type: annotation
-                prefix: Gedmo\Loggable\Entity
-                dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Loggable/Entity"
-                alias: GedmoLoggable # (optional) it will default to the name set for the mappingmapping
-                is_bundle: false
-
-        dql:
-            string_functions:
-                ilike: Blast\DoctrinePgsqlBundle\DoctrineExtensions\Functions\Ilike
-                concat_ws: Oro\ORM\Query\AST\Functions\String\ConcatWs
-
-        # Commented because it is managed by Sylius (see src/AppBundle/Resources/config/app/config.yml:sylius_resource)
-        # resolve_target_entities:
-        #     Blast\CoreBundle\Model\UserInterface: Librinfo\SonataSyliusUserBundle\Entity\SonataUser
+        entity_managers:
+            default:
+                connection: default
+                naming_strategy: doctrine.orm.naming_strategy.underscore
+                auto_mapping: true
+                mappings:
+                    BlastBaseEntitiesBundle:
+                        type: yml
+                    LibrinfoVarietiesBundle:
+                        type: yml
+                    LibrinfoSeedBatchBundle:
+                        type: yml
+                    LibrinfoCRMBundle:
+                        type: yml
+                    LibrinfoEcommerceBundle:
+                        type: yml
+                    gedmo_loggable:
+                        type: annotation
+                        prefix: Gedmo\Loggable\Entity
+                        dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Loggable/Entity"
+                        alias: GedmoLoggable # (optional) it will default to the name set for the mappingmapping
+                        is_bundle: false
+                dql:
+                    string_functions:
+                        ilike: Blast\DoctrinePgsqlBundle\DoctrineExtensions\Functions\Ilike
+                        concat_ws: Oro\ORM\Query\AST\Functions\String\ConcatWs
+            session:
+                connection: session
+                naming_strategy: doctrine.orm.naming_strategy.underscore
+                auto_mapping: false # Only one entity manager can have auto_mappping set to true
+                mappings:
+                    BlastDoctrineSessionBundle:
+                        type: yml
 
 # Swiftmailer Configuration
 swiftmailer:
@@ -133,18 +143,6 @@ swiftmailer:
             spool: { type: db }
             delivery_addresses: ['jardinenvie@lisem.eu']
             disable_delivery:  "%mailer_disable_delivery%"
-
-# FosUser Configuration
-# Not used any more (now using SonataSyliusUser)
-#fos_user:
-#    db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
-#    firewall_name: N/A
-#    user_class: Blast\BaseEntitiesBundle\Entity\GenericEntity
-#    group:
-#        group_class: Blast\BaseEntitiesBundle\Entity\GenericEntity
-#        group_manager: sonata.user.orm.group_manager
-#    service:
-#        user_manager: sonata.user.orm.user_manager
 
 sylius_taxonomy:
     driver: doctrine/orm
