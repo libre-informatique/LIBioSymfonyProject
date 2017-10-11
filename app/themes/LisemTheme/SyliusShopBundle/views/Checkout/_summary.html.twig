@@ -17,7 +17,7 @@
                     {% if item.isBulk() %}
                         {{ convertValueWithUnit(item.quantity, 'g', 'mg') }}
                     {% else %}
-                        {{ form_widget(item.quantity) }}
+                        {{ item.quantity }}
                     {% endif %}
                 </td>
                 <td id="sylius-item-{{ item.variant.product.slug }}-subtotal">{{ money.convertAndFormat(item.subtotal) }}</td>
