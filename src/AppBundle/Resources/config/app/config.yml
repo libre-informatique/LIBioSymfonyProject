@@ -12,6 +12,7 @@ imports:
     - { resource: "@LibrinfoEmailBundle/Resources/config/app/config.yml" }
     - { resource: "@LibrinfoSeedBatchBundle/Resources/config/app/config.yml" }
     - { resource: "@SonataSyliusUserBundle/Resources/config/app/config.yml" }
+    - { resource: "@LibrinfoSyliusPayboxBundle/Resources/config/app/config.yml" }
 
     - { resource: "@AppBundle/Resources/config/varieties.yml" }
     - { resource: "@AppBundle/Resources/config/sonata.yml" }

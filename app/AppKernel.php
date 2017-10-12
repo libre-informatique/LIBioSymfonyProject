@@ -48,7 +48,6 @@ class AppKernel extends Kernel
             new Sparkling\VATBundle\SparklingVATBundle(),
             new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
             new Bazinga\Bundle\JsTranslationBundle\BazingaJsTranslationBundle(),
-            new Librinfo\SyliusPayboxBundle\LibrinfoSyliusPayboxBundle(),
 
             // Lexik bundles
             new Lexik\Bundle\MaintenanceBundle\LexikMaintenanceBundle(),
@@ -71,12 +70,13 @@ class AppKernel extends Kernel
             new Librinfo\EmailCRMBundle\LibrinfoEmailCRMBundle(),
             new Librinfo\MediaBundle\LibrinfoMediaBundle(),
             new Librinfo\EcommerceBundle\LibrinfoEcommerceBundle(),
+            new Librinfo\SyliusPayboxBundle\LibrinfoSyliusPayboxBundle(),
 
             // Lisem App
             new AppBundle\AppBundle(),
         ];
 
-        if (in_array($this->getEnvironment(), array('dev', 'test'))) {
+        if (in_array($this->getEnvironment(), ['dev', 'test'])) {
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
             $bundles[] = new Alex\DoctrineExtraBundle\AlexDoctrineExtraBundle();
             $bundles[] = new Trappar\AliceGeneratorBundle\TrapparAliceGeneratorBundle();
