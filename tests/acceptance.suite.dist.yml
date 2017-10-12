@@ -11,11 +11,10 @@ modules:
             app_path: 'app'
             var_path: 'var'
             part: SERVICES
-            environment: 'dev'
-            debug: true
+            environment: 'prod'
+            debug: false
         - Doctrine2:
             depends: Symfony
         - WebDriver:
             url: 'http://127.0.0.1:8042/'
             browser: chrome
-      
