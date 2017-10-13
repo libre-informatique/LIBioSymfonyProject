@@ -52,3 +52,9 @@ parameters:
     sylius_fr_web_channel_code: 'fr_web'
 
     librinfo.url_prefix: /lisem
+
+    paybox.site: ~
+    paybox.rang: ~
+    paybox.identifiant: ~
+    paybox.hmac: ~
+    paybox.sandbox: false

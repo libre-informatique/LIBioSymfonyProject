@@ -56,11 +56,11 @@ payum:
     gateways:
         paybox:
             factory: paybox
-            site: 1999888
-            rang: 32
-            identifiant: 3
-            hmac: 0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF
-            sandbox: true
+            site: %paybox.site%
+            rang: %paybox.rang%
+            identifiant: %paybox.identifiant%
+            hmac: %paybox.hmac%
+            sandbox: %paybox.sandbox%
 
 sylius_customer:
     driver: doctrine/orm
