@@ -143,3 +143,14 @@ services:
     #           group: Customers Relationship Management
     #           label: lisem.appbunle.admin.circle
     #           label_translator_strategy: blast_core.label.strategy.librinfo_lisemapp
+
+
+    librinfo_ecommerce.admin.payment_method:
+        class: AppBundle\Admin\PaymentMethodAdmin
+        arguments: [~, Sylius\Component\Core\Model\PaymentMethod, LibrinfoEcommerceBundle:PaymentCRUD]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: admin
+              label: librinfo.ecommercebundle.admin.payment_method
+              label_translator_strategy: blast_core.label.strategy.librinfo_ecommerce

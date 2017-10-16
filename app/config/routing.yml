@@ -13,8 +13,12 @@ sylius_shop:
     resource: "@SyliusShopBundle/Resources/config/routing.yml"
     prefix: /
 
-payum:
+payum_capture:
     resource: "@PayumBundle/Resources/config/routing/capture.xml"
+    prefix: /
+
+payum_notify:
+    resource: "@PayumBundle/Resources/config/routing/notify.xml"
     prefix: /
 
 sylius_admin:

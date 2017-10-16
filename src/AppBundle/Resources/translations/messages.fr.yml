@@ -37,6 +37,7 @@ lisem:
         enabled: Actif
         first_catalogue_sent_date: Date premier envoi catalogue
         firstname: Prénom
+        gateway_config: Configuration de la passerelle
         germination_rate: Taux de germination
         height: Hauteur
         iban: RIB (IBAN)
@@ -125,7 +126,7 @@ lisem:
         otherproduct_list: Liste des article (autres)
         seedsproduct_list: Liste des articles (semences)
         variety_list: Liste des variétés
- 
+
 
     help:
         product_price: en Centimes
@@ -204,7 +205,7 @@ lisem:
         grams: grammes
         seeds: graines
 
-librinfo:        
+librinfo:
     label:
         city: Ville
         company: Société
@@ -234,7 +235,7 @@ librinfo:
 
     title:
         sonata_admin_login: Login
-        
+
 Dashboard: Tableau de Bord
 form_group_billingAddress: Adresse de facturation
 form_group_channel_descriptions: Descriptions spécifiques
