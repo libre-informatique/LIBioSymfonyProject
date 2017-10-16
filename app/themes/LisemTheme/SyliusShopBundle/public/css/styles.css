@@ -8,12 +8,17 @@
     width     : auto;
 }
 
-.ui.card > .image,
-.ui.cards > .card > .image {
+.ui.fluid.card .blurring.dimmable.image .ui.fluid.image {
     min-height: 261px;
-    max-width : 261px;
 }
 
 #librinfo-product-bulk-chooser {
     display: none;
+}
+
+#sylius-cart-items td.single.line div.image {
+    min-height: 80px;
+    max-height: 80px;
+    min-width : 80px;
+    max-width : 80px;
 }
