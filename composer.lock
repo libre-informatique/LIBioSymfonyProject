@@ -3984,12 +3984,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/EcommerceBundle.git",
-                "reference": "8404d1f40d66a6606bb4c7bbab2a3303a274088d"
+                "reference": "e035e3047ba789595b1611ab02ae2626efd946df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/EcommerceBundle/zipball/8404d1f40d66a6606bb4c7bbab2a3303a274088d",
-                "reference": "8404d1f40d66a6606bb4c7bbab2a3303a274088d",
+                "url": "https://api.github.com/repos/libre-informatique/EcommerceBundle/zipball/e035e3047ba789595b1611ab02ae2626efd946df",
+                "reference": "e035e3047ba789595b1611ab02ae2626efd946df",
                 "shasum": ""
             },
             "require": {
@@ -4036,7 +4036,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-10-13T16:34:33+00:00"
+            "time": "2017-10-16T15:32:00+00:00"
         },
         {
             "name": "libre-informatique/email-bundle",
@@ -4328,12 +4328,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/SyliusPayboxBundle.git",
-                "reference": "33a4470f4b3d81c8f0d530ac92b9f13ef8695fcb"
+                "reference": "55e40a91b34f7bf25d213fe572408a95b8a61a89"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/SyliusPayboxBundle/zipball/33a4470f4b3d81c8f0d530ac92b9f13ef8695fcb",
-                "reference": "33a4470f4b3d81c8f0d530ac92b9f13ef8695fcb",
+                "url": "https://api.github.com/repos/libre-informatique/SyliusPayboxBundle/zipball/55e40a91b34f7bf25d213fe572408a95b8a61a89",
+                "reference": "55e40a91b34f7bf25d213fe572408a95b8a61a89",
                 "shasum": ""
             },
             "require": {
@@ -4364,7 +4364,7 @@
                 "sylius",
                 "symfony"
             ],
-            "time": "2017-10-11T10:29:45+00:00"
+            "time": "2017-10-16T14:59:16+00:00"
         },
         {
             "name": "libre-informatique/varieties-bundle",
@@ -10334,16 +10334,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "6.4.2",
+            "version": "6.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "ae6e2e062ff55263c7b04374c190aca45872b26a"
+                "reference": "06b28548fd2b4a20c3cd6e247dc86331a7d4db13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/ae6e2e062ff55263c7b04374c190aca45872b26a",
-                "reference": "ae6e2e062ff55263c7b04374c190aca45872b26a",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/06b28548fd2b4a20c3cd6e247dc86331a7d4db13",
+                "reference": "06b28548fd2b4a20c3cd6e247dc86331a7d4db13",
                 "shasum": ""
             },
             "require": {
@@ -10414,7 +10414,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2017-10-15T06:16:19+00:00"
+            "time": "2017-10-16T13:18:59+00:00"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
