@@ -1034,3 +1034,8 @@ parameters:
                         xls: csv
                         json: csv
                         xml: csv
+
+
+        AppBundle\Admin\PaymentMethodAdmin:
+            Sonata\AdminBundle\Form\FormMapper:
+                add: ~

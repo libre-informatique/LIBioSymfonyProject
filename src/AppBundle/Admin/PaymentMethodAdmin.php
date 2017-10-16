@@ -15,6 +15,7 @@ namespace AppBundle\Admin;
 use Librinfo\EcommerceBundle\Admin\PaymentMethodAdmin as BasePaymentMethodAdmin;
 use Sonata\AdminBundle\Form\FormMapper;
 use Librinfo\SyliusPayboxBundle\Form\Type\PayboxGatewayConfigurationType;
+use Symfony\Component\Validator\Constraints\Valid;
 
 class PaymentMethodAdmin extends BasePaymentMethodAdmin
 {
@@ -25,8 +26,14 @@ class PaymentMethodAdmin extends BasePaymentMethodAdmin
     {
         parent::configureFormFields($mapper);
 
-        $mapper->add('gatewayConfig.config', PayboxGatewayConfigurationType::class, [
-            'label' => 'lisem.appbundle.gateway_config'
-        ]);
+        if ($this->getSubject()->getGatewayConfig()->getGatewayName() === 'paybox') {
+            $mapper
+            ->with('form_group_paybox_configuration')
+                ->add('gatewayConfig.config', PayboxGatewayConfigurationType::class, [
+                    'label'       => false,
+                    'constraints' => new Valid(),
+                ])
+            ->end();
+        }
     }
 }
