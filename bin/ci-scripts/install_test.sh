@@ -40,7 +40,7 @@ sudo apt-get install chromium-browser
 
 #wget http://chromedriver.storage.googleapis.com/2.12/chromedriver_linux64.zip
 #wget http://chromedriver.storage.googleapis.com/2.29/chromedriver_linux64.zip
-wget http://chromedriver.storage.googleapis.com/2.32/chromedriver_linux64.zip
+wget http://chromedriver.storage.googleapis.com/2.33/chromedriver_linux64.zip
 unzip chromedriver_linux64.zip
 mv chromedriver ${HOME}/bin/
 
