@@ -29,20 +29,23 @@ fi
 chmod u+x "${HOME}/bin/codecept"
 
 # Coveralls client install
-wget https://github.com/satooshi/php-coveralls/releases/download/v1.0.1/coveralls.phar --output-document="${HOME}/bin/coveralls"
-chmod u+x "${HOME}/bin/coveralls"
+#wget https://github.com/satooshi/php-coveralls/releases/download/v1.0.1/coveralls.phar --output-document="${HOME}/bin/coveralls"
+#chmod u+x "${HOME}/bin/coveralls"
 
 
 # for selenium
 sudo apt-get install xvfb
 sudo apt-get install chromium-browser
-
+sudo apt-get install chromium-chromedriver
 
 #wget http://chromedriver.storage.googleapis.com/2.12/chromedriver_linux64.zip
 #wget http://chromedriver.storage.googleapis.com/2.29/chromedriver_linux64.zip
-wget http://chromedriver.storage.googleapis.com/2.33/chromedriver_linux64.zip
-unzip chromedriver_linux64.zip
-mv chromedriver ${HOME}/bin/
+#wget http://chromedriver.storage.googleapis.com/2.33/chromedriver_linux64.zip
+#unzip chromedriver_linux64.zip
+#mv chromedriver ${HOME}/bin/
+ln -s /usr/lib/chromium-browser/chromedriver ${HOME}/bin/chromedriver
+
+
 
 composer require --no-interaction --dev se/selenium-server-standalone '^3.5'
 
