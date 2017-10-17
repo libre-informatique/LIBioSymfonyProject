@@ -3984,12 +3984,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/EcommerceBundle.git",
-                "reference": "e035e3047ba789595b1611ab02ae2626efd946df"
+                "reference": "6fd9a821b4f60823ac65eef95e11afda8dbb8315"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/EcommerceBundle/zipball/e035e3047ba789595b1611ab02ae2626efd946df",
-                "reference": "e035e3047ba789595b1611ab02ae2626efd946df",
+                "url": "https://api.github.com/repos/libre-informatique/EcommerceBundle/zipball/6fd9a821b4f60823ac65eef95e11afda8dbb8315",
+                "reference": "6fd9a821b4f60823ac65eef95e11afda8dbb8315",
                 "shasum": ""
             },
             "require": {
@@ -4036,7 +4036,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-10-16T15:32:00+00:00"
+            "time": "2017-10-17T14:32:43+00:00"
         },
         {
             "name": "libre-informatique/email-bundle",
@@ -4165,12 +4165,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/MediaBundle.git",
-                "reference": "8640394bfd7daf3662c87f9f59b4814030a9cc17"
+                "reference": "9af1944528f95ff800fe85a32bc9f1340412f106"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/MediaBundle/zipball/8640394bfd7daf3662c87f9f59b4814030a9cc17",
-                "reference": "8640394bfd7daf3662c87f9f59b4814030a9cc17",
+                "url": "https://api.github.com/repos/libre-informatique/MediaBundle/zipball/9af1944528f95ff800fe85a32bc9f1340412f106",
+                "reference": "9af1944528f95ff800fe85a32bc9f1340412f106",
                 "shasum": ""
             },
             "require": {
@@ -4211,7 +4211,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-10-05T15:41:51+00:00"
+            "time": "2017-10-17T12:15:06+00:00"
         },
         {
             "name": "libre-informatique/seed-batch-bundle",
