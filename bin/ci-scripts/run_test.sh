@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-codecept run -d --steps --fail-fast --no-interaction --no-exit
-cat selenium.log
+codecept run -d --steps --fail-fast --no-interaction
 
-echo # Ah ah return 0
+# --no-exit
+# echo # Ah ah return 0
