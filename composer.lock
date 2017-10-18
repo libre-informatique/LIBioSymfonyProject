@@ -116,12 +116,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/blast-project/CoreBundle.git",
-                "reference": "e4c31da3e6c292599b2017bb3093a2b3eaecb45b"
+                "reference": "ad08783b59bce50ae9dc660d712c55951f5db82f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blast-project/CoreBundle/zipball/e4c31da3e6c292599b2017bb3093a2b3eaecb45b",
-                "reference": "e4c31da3e6c292599b2017bb3093a2b3eaecb45b",
+                "url": "https://api.github.com/repos/blast-project/CoreBundle/zipball/ad08783b59bce50ae9dc660d712c55951f5db82f",
+                "reference": "ad08783b59bce50ae9dc660d712c55951f5db82f",
                 "shasum": ""
             },
             "require": {
@@ -173,7 +173,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-10-09T16:17:37+00:00"
+            "time": "2017-10-18T08:55:44+00:00"
         },
         {
             "name": "blast-project/doctrine-pgsql-bundle",
@@ -3984,12 +3984,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/EcommerceBundle.git",
-                "reference": "6fd9a821b4f60823ac65eef95e11afda8dbb8315"
+                "reference": "4e75648ebdb4ffcd9bc8baa0e3b96967add2b9d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/EcommerceBundle/zipball/6fd9a821b4f60823ac65eef95e11afda8dbb8315",
-                "reference": "6fd9a821b4f60823ac65eef95e11afda8dbb8315",
+                "url": "https://api.github.com/repos/libre-informatique/EcommerceBundle/zipball/4e75648ebdb4ffcd9bc8baa0e3b96967add2b9d9",
+                "reference": "4e75648ebdb4ffcd9bc8baa0e3b96967add2b9d9",
                 "shasum": ""
             },
             "require": {
@@ -4036,7 +4036,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-10-17T14:32:43+00:00"
+            "time": "2017-10-18T08:59:30+00:00"
         },
         {
             "name": "libre-informatique/email-bundle",
