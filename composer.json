@@ -66,7 +66,9 @@
         "alexandresalome/doctrine-extra-bundle": "^0.3.0",
         "nelmio/alice": "^2.2",
         "codeception/codeception": "^2.3",
-        "lexik/translation-bundle": "^4.0"
+        "lexik/translation-bundle": "^4.0",
+        "phpunit/phpunit": "^6.4",
+        "se/selenium-server-standalone": "^3.6"
     },
     "version": "dev-wip-lisem",
     "scripts": {

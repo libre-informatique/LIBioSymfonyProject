@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "151decac365bfc80b88f61b35a6350c3",
+    "content-hash": "6320bf3c0822e0b0cd9b99e52d2b2040",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -116,12 +116,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/blast-project/CoreBundle.git",
-                "reference": "e4c31da3e6c292599b2017bb3093a2b3eaecb45b"
+                "reference": "d17de76c50e5ac33a24d0a3f518bd6dcd07f540e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blast-project/CoreBundle/zipball/e4c31da3e6c292599b2017bb3093a2b3eaecb45b",
-                "reference": "e4c31da3e6c292599b2017bb3093a2b3eaecb45b",
+                "url": "https://api.github.com/repos/blast-project/CoreBundle/zipball/d17de76c50e5ac33a24d0a3f518bd6dcd07f540e",
+                "reference": "d17de76c50e5ac33a24d0a3f518bd6dcd07f540e",
                 "shasum": ""
             },
             "require": {
@@ -173,7 +173,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-10-09T16:17:37+00:00"
+            "time": "2017-10-18T15:22:25+00:00"
         },
         {
             "name": "blast-project/doctrine-pgsql-bundle",
@@ -3868,12 +3868,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/CRMBundle.git",
-                "reference": "35ce9537d9591acd67e50fae554500fb52496e04"
+                "reference": "d62eb020e2b8a5b959e807cda80bf8e1a19817e4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/CRMBundle/zipball/35ce9537d9591acd67e50fae554500fb52496e04",
-                "reference": "35ce9537d9591acd67e50fae554500fb52496e04",
+                "url": "https://api.github.com/repos/libre-informatique/CRMBundle/zipball/d62eb020e2b8a5b959e807cda80bf8e1a19817e4",
+                "reference": "d62eb020e2b8a5b959e807cda80bf8e1a19817e4",
                 "shasum": ""
             },
             "require": {
@@ -3919,7 +3919,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-10-10T11:42:56+00:00"
+            "time": "2017-10-17T14:48:59+00:00"
         },
         {
             "name": "libre-informatique/decorator-bundle",
@@ -3984,12 +3984,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/EcommerceBundle.git",
-                "reference": "6fd9a821b4f60823ac65eef95e11afda8dbb8315"
+                "reference": "e93f4dc254e3ec85b4cafa1696d39d63fa00d7fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/EcommerceBundle/zipball/6fd9a821b4f60823ac65eef95e11afda8dbb8315",
-                "reference": "6fd9a821b4f60823ac65eef95e11afda8dbb8315",
+                "url": "https://api.github.com/repos/libre-informatique/EcommerceBundle/zipball/e93f4dc254e3ec85b4cafa1696d39d63fa00d7fe",
+                "reference": "e93f4dc254e3ec85b4cafa1696d39d63fa00d7fe",
                 "shasum": ""
             },
             "require": {
@@ -4036,7 +4036,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-10-17T14:32:43+00:00"
+            "time": "2017-10-19T10:13:48+00:00"
         },
         {
             "name": "libre-informatique/email-bundle",
@@ -4219,12 +4219,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/SeedBatchBundle.git",
-                "reference": "c96e1e6219969c8bcbb9a872cc82f18f2367d89d"
+                "reference": "5d2cb1eb10e4707b73890372ece2141f6b1c13e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/SeedBatchBundle/zipball/c96e1e6219969c8bcbb9a872cc82f18f2367d89d",
-                "reference": "c96e1e6219969c8bcbb9a872cc82f18f2367d89d",
+                "url": "https://api.github.com/repos/libre-informatique/SeedBatchBundle/zipball/5d2cb1eb10e4707b73890372ece2141f6b1c13e6",
+                "reference": "5d2cb1eb10e4707b73890372ece2141f6b1c13e6",
                 "shasum": ""
             },
             "require": {
@@ -4267,7 +4267,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-10-06T10:06:22+00:00"
+            "time": "2017-10-17T14:47:18+00:00"
         },
         {
             "name": "libre-informatique/sonata-sylius-user-bundle",
@@ -4275,12 +4275,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/SonataSyliusUserBundle.git",
-                "reference": "09c7256a04a269378beb1dfd831318daf9d31ece"
+                "reference": "c72b7d6dc75ea687d9b16d2e9d4d08e257efbf50"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/SonataSyliusUserBundle/zipball/09c7256a04a269378beb1dfd831318daf9d31ece",
-                "reference": "09c7256a04a269378beb1dfd831318daf9d31ece",
+                "url": "https://api.github.com/repos/libre-informatique/SonataSyliusUserBundle/zipball/c72b7d6dc75ea687d9b16d2e9d4d08e257efbf50",
+                "reference": "c72b7d6dc75ea687d9b16d2e9d4d08e257efbf50",
                 "shasum": ""
             },
             "require": {
@@ -4309,7 +4309,7 @@
                     "homepage": "http://www.libre-informatique.fr/"
                 },
                 {
-                    "name": "Marcos Bezerra de Menezes",
+                    "name": "Marcos BEZERRA DE MENEZES",
                     "email": "marcos.bezerra@libre-informatique.fr"
                 }
             ],
@@ -4320,7 +4320,7 @@
                 "sylius",
                 "symfony"
             ],
-            "time": "2017-10-04T10:11:29+00:00"
+            "time": "2017-10-17T14:47:50+00:00"
         },
         {
             "name": "libre-informatique/sylius-paybox-bundle",
@@ -10477,6 +10477,45 @@
                 "xunit"
             ],
             "time": "2017-08-03T14:08:16+00:00"
+        },
+        {
+            "name": "se/selenium-server-standalone",
+            "version": "3.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sveneisenschmidt/selenium-server-standalone.git",
+                "reference": "170b450650d237b5b3922d2ec88cde5ec86b6115"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sveneisenschmidt/selenium-server-standalone/zipball/170b450650d237b5b3922d2ec88cde5ec86b6115",
+                "reference": "170b450650d237b5b3922d2ec88cde5ec86b6115",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "bin": [
+                "bin/selenium-server-standalone"
+            ],
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache 2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Sven Eisenschmidt",
+                    "email": "sven.eisenschmidt@gmail.com"
+                }
+            ],
+            "description": "Composer distribution of Selenium Server Standalone, the browser automation framework. Adds a executable to your composer bin directory.",
+            "homepage": "https://github.com/sveneisenschmidt/selenium-server-standalone",
+            "keywords": [
+                "selenium",
+                "testing"
+            ],
+            "time": "2017-10-11T17:47:15+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
