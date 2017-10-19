@@ -6,7 +6,7 @@ set -ev
 composer install --no-interaction --prefer-dist
 composer require --no-interaction --dev phpunit/phpunit
 composer require --no-interaction --dev codeception/codeception
-composer require --no-interaction --dev se/selenium-server-standalone 
+composer require --no-interaction --dev se/selenium-server-standalone
 
 
 ######## LISEM
@@ -21,9 +21,10 @@ npm install
 npm run gulp
 
 # database creation
-bin/console doctrine:schema:drop --force --no-interaction
+bin/console doctrine:schema:drop --force --no-interaction  --full-database      # --full-database drops default + session connections
 bin/console doctrine:database:create --if-not-exists --no-interaction
-bin/console doctrine:schema:create --no-interaction
+bin/console doctrine:schema:create --no-interaction --em=default
+bin/console doctrine:schema:create --no-interaction --em=session
 #bin/console doctrine:schema:update --force --no-interaction
 #bin/console doctrine:schema:validate --no-interaction
 
@@ -32,8 +33,3 @@ bin/console lisem:install:setup --with-samples --yes
 bin/console librinfo:patchs:apply
 bin/console assets:install
 bin/console sylius:theme:assets:install # must be done after assets:install
-
-
-
-
-
