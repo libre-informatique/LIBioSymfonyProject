@@ -13,6 +13,7 @@
 namespace AppBundle\Command;
 
 use Doctrine\ORM\EntityManager;
+use AppBundle\Command\Configuration\CsvMappingConfiguration;
 use Librinfo\VarietiesBundle\Entity\Family;
 use Librinfo\VarietiesBundle\Entity\Genus;
 use Librinfo\VarietiesBundle\Entity\Species;
@@ -39,6 +40,11 @@ final class ImportCsvCommand extends ContainerAwareCommand
      * @var string Directory where the CSV files are located
      */
     protected $dir;
+
+    /**
+     * @var array Mapping configuration of csv datas
+     */
+    private $mapping;
 
     protected $speciesCodes = [];
     protected $varietyCodes = [];
@@ -118,18 +124,12 @@ EOT
      */
     protected function getCsvFilePath($entityClass)
     {
-        // TODO: this should go in a configuration file !
-        $files = [
-            'Librinfo\VarietiesBundle\Entity\Family'  => 'famille.csv',
-            'Librinfo\VarietiesBundle\Entity\Genus'   => 'genre.csv',
-            'Librinfo\VarietiesBundle\Entity\Species' => 'espece.csv',
-            'Librinfo\VarietiesBundle\Entity\Variety' => 'variete.csv',
-        ];
+        $this->mapping = CsvMappingConfiguration::getInstance()->getMapping();
 
-        if (!key_exists($entityClass, $files)) {
+        if (!key_exists($entityClass, $this->mapping)) {
             throw new \Exception('Entity class not supported: ' . $entityClass);
         }
-        $csv = $this->dir . '/' . $files[$entityClass];
+        $csv = $this->dir . '/' . $this->mapping[$entityClass]['filename'];
         if (!file_exists($csv)) {
             throw new \Exception('File not found: ' . $csv);
         }
