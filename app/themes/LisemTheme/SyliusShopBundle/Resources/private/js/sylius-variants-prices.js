@@ -25,7 +25,7 @@ function handleProductOptionsChange() {
     $('[name*="sylius_add_to_cart[cartItem][variant]"]').on('change', function() {
         var $selector = '';
 
-        $('#sylius-product-adding-to-cart select:not([data-product-choice-ignore])').each(function() {
+        $('#sylius-product-adding-to-cart select[data-option]').each(function() {
             var option = $(this).find('option:selected').val();
             $selector += '[data-' + $(this).attr('data-option') + '="' + option + '"]';
         });
