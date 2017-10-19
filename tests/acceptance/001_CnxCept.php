@@ -10,6 +10,8 @@
  * file that was distributed with this source code.
  */
 
+// @group login
+
 $I = new WebGuy($scenario);
 $I->wantTo('Test Login');
 $I->amOnPage('/lisem/login');
