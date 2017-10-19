@@ -10,6 +10,8 @@
  * file that was distributed with this source code.
  */
 
+// @group menu
+
 function testLink($I, $linkName)
 {
     $I->waitForText($linkName, 30); // secs

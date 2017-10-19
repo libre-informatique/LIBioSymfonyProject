@@ -10,6 +10,8 @@
  * file that was distributed with this source code.
  */
 
+// @group ecommerce
+
 $randNbr = rand(1, 1000);
 $randSelEmail = 'sel-' . $randNbr . '@lisem.eu';
 $randName = 'sel-' . $randNbr;

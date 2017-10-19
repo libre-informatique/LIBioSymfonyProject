@@ -10,6 +10,8 @@
  * file that was distributed with this source code.
  */
 
+// @group crm
+
 $I = new WebGuy($scenario);
 $I->wantTo('Create And Delete Group');
 $I->amOnPage('/lisem/login');

@@ -10,7 +10,7 @@
  * file that was distributed with this source code.
  */
 
-// use Codeception\Util\HttpCode;
+// @group route
 
 $I = new WebGuy($scenario);
 $I->wantTo('Test All Route');
