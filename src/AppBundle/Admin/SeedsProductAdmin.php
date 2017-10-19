@@ -26,8 +26,8 @@ use Symfony\Component\Validator\Constraints\NotBlank;
  */
 class SeedsProductAdmin extends ProductAdmin
 {
-    protected $baseRouteName = 'admin_libio_seeds_product';
-    protected $baseRoutePattern = 'libio/seeds_product';
+    protected $baseRouteName = 'admin_librinfo_seeds_product';
+    protected $baseRoutePattern = 'librinfo/seeds_product';
     protected $classnameLabel = 'SeedsProduct';
 
     /**
@@ -54,7 +54,9 @@ class SeedsProductAdmin extends ProductAdmin
             $mapper
                 ->tab('form_tab_general')
                     ->with('form_group_general')
-                        ->add('variety', 'sonata_type_model_autocomplete',
+                        ->add(
+                            'variety',
+                            'sonata_type_model_autocomplete',
                             [
                                 'property'    => ['name', 'code'],
                                 'required'    => true,
@@ -65,8 +67,9 @@ class SeedsProductAdmin extends ProductAdmin
                                 ],
                             ],
                             [
-                                'admin_code' => 'libio.admin.variety',
-                            ])
+                                'admin_code' => 'lisem.admin.variety',
+                            ]
+                        )
                     ->end()
                 ->end()
             ;

@@ -24,7 +24,7 @@ trait ProductVariantExtension
     // TODO: temporarily removed because it conflicts with Sylius AdminUser
     // use \Librinfo\SonataSyliusUserBundle\Entity\Traits\Traceable;
 
-    use \Librinfo\SeedBatchBundle\Entity\OuterExtension\HasSeedBatch;
+    use \Librinfo\SeedBatchBundle\Entity\OuterExtension\HasSeedBatches;
 
     /**
      * @param string $optionCode
@@ -35,7 +35,7 @@ trait ProductVariantExtension
     {
         return $this->optionValues->filter(
             function ($optionValue) use ($optionCode) {
-                return $optionValue->getOptionCode() == $optionCode;
+                return $optionValue->getOption()->getCode() == $optionCode;
             }
         );
     }
@@ -66,5 +66,10 @@ trait ProductVariantExtension
         $this->addOptionValue($packaging);
 
         return $this;
+    }
+
+    public function initCollections()
+    {
+        $this->seedBatches = new ArrayCollection();
     }
 }

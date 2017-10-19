@@ -71,6 +71,7 @@ EOT
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $this->csvDir = $input->getOption('csv-dir');
+
         if ($this->csvDir) {
             if (!$input->getOption('with-samples')) {
                 throw new \Exception('The "csv-dir" option requires the "sample-data" option');
@@ -79,6 +80,7 @@ EOT
                 throw new \Exception('Could not find directory: ' . $this->csvDir);
             }
         }
+
         if ($input->getOption('with-samples')) {
             $output->writeln(['', '<question>This will erease the existing data.</question>']);
             if (!$input->getOption('yes')) {
@@ -335,7 +337,7 @@ EOT
             $em->createQuery('DELETE FROM LibrinfoCRMBundle:City')->execute();
             $handle = fopen($file, 'r');
             $i = 0;
-            $batchSize = 20;
+            $batchSize = 200;
             while (($line = fgetcsv($handle)) !== false) {
                 ++$i;
                 $city = new \Librinfo\CRMBundle\Entity\City();

@@ -17,14 +17,14 @@ use Librinfo\VarietiesBundle\Admin\VarietyAdmin as BaseAdmin;
 use Sonata\AdminBundle\Route\RouteCollection;
 
 /**
- * Libio Sonata admin for varieties.
+ * Lisem Sonata admin for varieties.
  *
  * @author Marcos Bezerra de Menezes <marcos.bezerra@libre-informatique.fr>
  */
 class VarietyAdmin extends BaseAdmin
 {
-    protected $baseRouteName = 'admin_libio_variety';
-    protected $baseRoutePattern = 'libio/variety';
+    protected $baseRouteName = 'admin_librinfo_variety';
+    protected $baseRoutePattern = 'librinfo/variety';
 
     public function configureFormFields(\Sonata\AdminBundle\Form\FormMapper $mapper)
     {
@@ -32,12 +32,15 @@ class VarietyAdmin extends BaseAdmin
         $mapper
             ->tab('form_tab_general')
                 ->with('form_group_identification')
-                    ->add('packagings', 'sonata_type_model',
+                    ->add(
+                        'packagings',
+                        'sonata_type_model',
                         [
                         'multiple' => true,
                         'required' => false,
                         'query'    => $this->packagingQueryBuilder(),
-                        ], ['admin_code' => 'lisem.admin.packaging']
+                        ],
+                        ['admin_code' => 'lisem.admin.packaging']
                     )
                 ->end()
             ->end();

@@ -1,6 +1,6 @@
 Librinfo\SeedBatchBundle\Entity\SeedBatch:
     type: entity
-    oneToMany:
+    manyToMany:
         productVariants:
             targetEntity: Librinfo\EcommerceBundle\Entity\ProductVariant
-            mappedBy: seedBatch
+            mappedBy: seedBatches

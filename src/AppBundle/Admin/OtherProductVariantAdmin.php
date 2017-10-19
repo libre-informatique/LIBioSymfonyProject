@@ -21,11 +21,11 @@ use Librinfo\EcommerceBundle\Admin\ProductVariantAdmin;
  */
 class OtherProductVariantAdmin extends ProductVariantAdmin
 {
-    protected $baseRouteName = 'admin_libio_other_productvariant';
-    protected $baseRoutePattern = 'libio/other_productvariant';
+    protected $baseRouteName = 'admin_librinfo_other_productvariant';
+    protected $baseRoutePattern = 'librinfo/other_productvariant';
     protected $classnameLabel = 'OtherProductVariant';
 
-    protected $productAdminCode = 'libio.admin.other_product';
+    protected $productAdminCode = 'lisem.admin.other_product';
 
     public function createQuery($context = 'list')
     {

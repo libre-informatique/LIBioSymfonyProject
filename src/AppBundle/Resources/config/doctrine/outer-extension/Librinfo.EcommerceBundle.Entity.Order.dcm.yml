@@ -1,0 +1,16 @@
+Librinfo\EcommerceBundle\Entity\Order:
+    type: entity
+
+    oneToOne:
+        shippingAddress:
+            targetEntity: Librinfo\CRMBundle\Entity\Address
+            name: shipping_address_id
+            joinColumn:
+                name: shipping_address_id
+                referencedColumnName: id
+        billingAddress:
+            targetEntity: Librinfo\CRMBundle\Entity\Address
+            name: billing_address_id
+            joinColumn:
+                name: billing_address_id
+                referencedColumnName: id

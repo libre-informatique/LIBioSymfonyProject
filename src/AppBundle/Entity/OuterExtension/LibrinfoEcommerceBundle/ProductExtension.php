@@ -19,7 +19,7 @@ trait ProductExtension
 {
     use \Librinfo\VarietiesBundle\Entity\OuterExtension\HasVariety;
 
-    public static $PACKAGING_OPTION_CODE = '_libio_packaging';
+    public static $PACKAGING_OPTION_CODE = '_lisem_packaging';
 
     /**
      * @param string $optionCode

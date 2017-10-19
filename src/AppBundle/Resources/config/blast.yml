@@ -13,8 +13,8 @@ parameters:
                     - librinfo_emailcrm.admin.organism
 #                    - librinfo_emailcrm.admin.contact
                     - librinfo_varieties.admin.species
-                    - libio.admin.variety
-                    - libio.admin.seeds_product
+                    - lisem.admin.variety
+                    - lisem.admin.seeds_product
                     - librinfo_seedbatch.admin.organism
                     - librinfo_seedbatch.admin.seedfarm
                     - librinfo_seedbatch.admin.seedbatch
@@ -123,13 +123,13 @@ parameters:
                     form_group_general:
                         '':
                             variety:
-                                admin_code: libio.admin.variety
+                                admin_code: lisem.admin.variety
                             _options:
                                 fieldsOrder: [name, code, variety]
                     show_tab_variants:
                         '':
                             variants:
-                                admin_code: libio.admin.seeds_product_variant
+                                admin_code: lisem.admin.seeds_product_variant
 
                     _options:
                         tabsOrder: [form_group_general, show_tab_variants, form_group_specifics]
@@ -151,10 +151,9 @@ parameters:
                                     class: inline-block
                                     width: 50
                                 _options:
-                                    admin_code: libio.admin.variety
+                                    admin_code: lisem.admin.variety
                             name:
                                 type: text
-                                label: librinfo.label.product_name
                                 attr:
                                     class: inline-block
                                     width: 50
@@ -170,13 +169,13 @@ parameters:
                                 label: false
                                 by_reference: true
                                 attr:
-                                    data-showFields: 'id,name,seedBatch,packaging,code'
+                                    data-showFields: 'id,name,packaging,code,enabled'
                                 type_options:
                                     btn_add: false
                                 _options:
                                     edit: modal
                                     inline: table-list
-                                    admin_code: libio.admin.seeds_product_variant
+                                    admin_code: lisem.admin.seeds_product_variant
             #LIST
             Sonata\AdminBundle\Datagrid\ListMapper:
                 remove:
@@ -184,7 +183,6 @@ parameters:
                 add:
                     name: ~
                     code:
-                        label: libio.label.product_code
                         identifier: true
                     variety:
                         admin_code: librinfo_varieties.admin.variety
@@ -210,7 +208,7 @@ parameters:
                     show_tab_variants:
                         '':
                             variants:
-                                admin_code: libio.admin.other_product_variant
+                                admin_code: lisem.admin.other_product_variant
 
             # FORM
             Sonata\AdminBundle\Form\FormMapper:
@@ -233,7 +231,7 @@ parameters:
                                 _options:
                                     edit: modal
                                     inline: table-list
-                                    admin_code: libio.admin.other_product_variant
+                                    admin_code: lisem.admin.other_product_variant
             # LIST
             Sonata\AdminBundle\Datagrid\ListMapper:
                 add: ~
@@ -256,7 +254,7 @@ parameters:
                     form_tab_general:
                         form_group_general:
                             product:
-                                admin_code: libio.admin.seeds_product
+                                admin_code: lisem.admin.seeds_product
                                 attr:
                                     readonly: ~
                                 disabled: true
@@ -265,7 +263,13 @@ parameters:
                                 admin_code: librinfo_seedbatch.admin.seedbatch
                             code: ~
                             _options:
-                                fieldsOrder: [product, packaging, seedBatch, name, code, price]
+                                fieldsOrder:
+                                    - product
+                                    - packaging
+                                    - seedBatch
+                                    - name
+                                    - code
+                                    - price
             # FORM
             Sonata\AdminBundle\Form\FormMapper:
                 remove:
@@ -285,7 +289,7 @@ parameters:
                             product:
                                 type: sonata_type_model_hidden
                                 _options:
-                                    admin_code: libio.admin.seeds_product
+                                    admin_code: lisem.admin.seeds_product
                             name:
                                 type: text
                                 required: true
@@ -293,11 +297,14 @@ parameters:
                                 type: Blast\CoreBundle\Form\Type\EntityCodeType
                                 required: true
                             _options:
-                                fieldsOrder: [name, packaging, seedBatch, code]
+                                fieldsOrder:
+                                    - name
+                                    - packaging
+                                    - seedBatch
+                                    - code
                         form_group_pricing:
                             taxCategory: ~
                             channelPricings:
-                                label: librinfo.label.product_variant_prices
                                 type: sonata_type_collection
                                 type_options:
                                     btn_add: false
@@ -307,7 +314,11 @@ parameters:
                                     edit: inline
                                     inline: table
                         _options:
-                            groupsOrder: [form_group_general,form_group_pricing,form_group_properties,form_group_stock]
+                            groupsOrder:
+                                - form_group_general
+                                - form_group_pricing
+                                - form_group_properties
+                                - form_group_stock
             # LIST
             Sonata\AdminBundle\Datagrid\ListMapper:
                 remove:
@@ -327,7 +338,7 @@ parameters:
                     code: ~
                     name: ~
                     product:
-                        admin_code: libio.admin.seeds_product
+                        admin_code: lisem.admin.seeds_product
                     packaging: ~
                     seedBatch:
                         admin_code: librinfo_seedbatch.admin.seedbatch
@@ -337,7 +348,6 @@ parameters:
                         type: boolean
                     tracked:
                         type: boolean
-                        label: librinfo.label.tracked_stock
                     _options:
                         fieldsOrder:
                             - name
@@ -365,7 +375,7 @@ parameters:
                     form_group_general:
                         '':
                             product:
-                                admin_code: libio.admin.other_product
+                                admin_code: lisem.admin.other_product
             # FORM
             Sonata\AdminBundle\Form\FormMapper:
                 remove:
@@ -396,7 +406,7 @@ parameters:
                                 fieldsOrder: [name, code]
                         form_group_options:
                             optionValues:
-                                type: null
+                                #type: null
                                 _options:
                                     admin_code: librinfo_ecommerce_option_value.admin.product
             # LIST
@@ -421,7 +431,6 @@ parameters:
                         type: boolean
                     tracked:
                         type: boolean
-                        label: librinfo.label.tracked_stock
                     optionValues:
                         type: null
                         admin_code: librinfo_ecommerce_option_value.admin.product
@@ -458,7 +467,6 @@ parameters:
                                 class: Librinfo\EcommerceBundle\Entity\Channel
                             title:
                                 type: text
-                                label: librinfo.label.description_title
                             value:
                                 type: Blast\UtilsBundle\Form\Type\TinyMceType
 
@@ -545,8 +553,7 @@ parameters:
                                 template: 'LibrinfoCRMBundle:CRUD:show_field_supplier.html.twig'
                             isSeedProducer:
                                 template: 'LibrinfoSeedBatchBundle:CRUD:show_field_seedProducer.html.twig'
-                            description:
-                                label: librinfo.label.organism_description
+                            description: ~
                             circles: ~
                             category.name: ~
                             email:
@@ -900,7 +907,6 @@ parameters:
                 add:
                     name:
                         identifier: true
-                        label: librinfo.label.list_circle_name
                     code: ~
                     type: ~
                     users: ~
@@ -943,7 +949,6 @@ parameters:
                             field_to:
                                 type: text
                                 required: false
-                                label: librinfo.label.field_to_additionnals
                                 help: librinfo.help.field_to
                             field_cc:
                                 type: text
@@ -953,7 +958,6 @@ parameters:
                                 required: false
                         form_group_grouped_expeditors:
                             circles:
-                                label: librinfo.label.circles
                                 type: sonata_type_model
                                 multiple: true
                                 expanded: false
@@ -1017,10 +1021,8 @@ parameters:
                 add:
                     circles:
                         type: null
-                        label: librinfo.label.circles
                     field_to:
                         type: null
-                        label: librinfo.label.field_to_additionnals
                     _options:
                         fieldsOrder:
                             - circles
@@ -1033,89 +1035,7 @@ parameters:
                         json: csv
                         xml: csv
 
-################################################################################
-# Channel
-################################################################################
 
-        # AppBundle\Admin\ChannelAdmin:
-        #     # SHOW
-        #     Sonata\AdminBundle\Show\ShowMapper:
-        #         add:
-        #             main_tab:
-        #                 main_group:
-        #                     code: ~
-        #                     name: ~
-        #                     color: ~
-        #                     description: ~
-        #                     enabled: ~
-        #                     hostname: ~
-        #                     createdAt: ~
-        #                     updatedAt: ~
-        #                     #id: ~
-        #
-        #     # FORM
-        #     Sonata\AdminBundle\Form\FormMapper:
-        #         add:
-        #             main_tab:
-        #                 main_group:
-        #                     code: ~
-        #                     name: ~
-        #                     color: ~
-        #                     description: ~
-        #                     enabled: ~
-        #                     hostname: ~
-        #                     createdAt: ~
-        #                     updatedAt: ~
-        #                     #id: ~
-        #
-        #     # LIST
-        #     Sonata\AdminBundle\Datagrid\ListMapper:
-        #         remove:
-        #             id: ~
-        #             baseCurrency: ~
-        #             defaultLocale: ~
-        #             defaultTaxZone: ~
-        #             taxCalculationStrategy: ~
-        #             currencies: ~
-        #             locales: ~
-        #             themeName: ~
-        #             contactEmail: ~
-        #             skippingShippingStepAllowed: ~
-        #             skippingPaymentStepAllowed: ~
-        #             accountVerificationRequired: ~
-        #         add:
-        #             code: ~
-        #             name: ~
-        #             color: ~
-        #             description: ~
-        #             enabled: ~
-        #             hostname: ~
-        #             createdAt: ~
-        #             updatedAt: ~
-        #             _options:
-        #                 fieldsOrder:
-        #                     - code
-        #                     - name
-        #                     - color
-        #                     - description
-        #                     - enabled
-        #                     - hostname
-        #                     - createdAt
-        #                     - updatedAt
-        #             #id: ~
-        #
-        #
-        #     # FILTERS
-        #     Sonata\AdminBundle\Datagrid\DatagridMapper:
-        #         remove:
-        #             id: ~
-        #     #     add:
-        #     #         code: ~
-        #     #         name: ~
-        #     #         color: ~
-        #     #         description: ~
-        #     #         enabled: ~
-        #     #         hostname: ~
-        #     #         createdAt: ~
-        #     #         updatedAt: ~
-        #             #id: ~
+        AppBundle\Admin\PaymentMethodAdmin:
+            Sonata\AdminBundle\Form\FormMapper:
+                add: ~

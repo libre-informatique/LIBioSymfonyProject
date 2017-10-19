@@ -62,11 +62,11 @@ EOT
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        //$currency = $this->get('sylius.setup.currency')->setup($input, $output, $this->getHelper('question'));
         $currency = $this->get('lisem.sylius.setup.currency')->setup($input, $output, $this->getHelper('question'));
         $locale = $this->get('sylius.setup.locale')->setup($input, $output);
         $this->get('sylius.setup.channel')->setup($locale, $currency);
         $this->setupAdministratorUser($input, $output, $locale->getCode());
+        $this->createPayboxPaymentMethod($input, $output);
     }
 
     /**
@@ -216,5 +216,38 @@ EOT
             ->setHidden(true)
             ->setHiddenFallback(false)
         ;
+    }
+
+    /**
+     * @param InputInterface  $input
+     * @param OutputInterface $output
+     */
+    protected function createPayboxPaymentMethod(InputInterface $input, OutputInterface $output): void
+    {
+        $output->writeln('Creating Paybox payment method');
+
+        $paymentMethod = $this->getContainer()->get('sylius.factory.payment_method')->createWithGateway('paybox');
+        $paymentMethod->setCode('paybox');
+        $paymentMethod->setName('Paybox');
+
+        $config = $paymentMethod->getGatewayConfig();
+
+        $config->setGatewayName('paybox');
+        $config->setConfig([
+            'hmac'        => $this->getContainer()->getParameter('paybox.hmac'),
+            'identifiant' => $this->getContainer()->getParameter('paybox.identifiant'),
+            'rang'        => $this->getContainer()->getParameter('paybox.rang'),
+            'sandbox'     => $this->getContainer()->getParameter('paybox.sandbox'),
+            'site'        => $this->getContainer()->getParameter('paybox.site'),
+        ]);
+
+        foreach ($this->getContainer()->get('sylius.repository.channel')->findAll() as $channel) {
+            $paymentMethod->addChannel($channel);
+        }
+
+        $this->getContainer()->get('sylius.manager.payment_method')->persist($paymentMethod);
+        $this->getContainer()->get('sylius.manager.payment_method')->flush();
+
+        $output->writeln('Paybox payment method created');
     }
 }

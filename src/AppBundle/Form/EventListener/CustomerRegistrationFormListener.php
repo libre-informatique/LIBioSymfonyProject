@@ -47,7 +47,7 @@ class CustomerRegistrationFormListener
         }
 
         if ($this->codeGenerator !== null) {
-            $customer->setCustomerCode($this->codeGenerator->generate($customer));
+            $organism->setCustomerCode($this->codeGenerator->generate($organism));
         }
 
         $organism->setIsIndividual(true);

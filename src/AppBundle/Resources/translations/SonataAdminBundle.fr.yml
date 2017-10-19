@@ -3,7 +3,7 @@ Dashboard: Tableau de Bord
 Strains: Souches
 Varieties: Variétés
 
-libio:
+lisem:
     menu_label:
         accounting: Gestion / Compta
         app_settings: Paramétrage

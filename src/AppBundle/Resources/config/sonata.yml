@@ -15,75 +15,75 @@ sonata_admin:
             # ##################################################################
 
             lisem.menu.crm_contacts:
-                label: libio.menu_label.crm_contacts
+                label: lisem.menu_label.crm_contacts
                 icon:  '<i class="fa fa-address-card"></i>'
                 on_top: true
                 items:
                     - route: admin_librinfo_seedbatch_organism_list
-                      label: libio.menu_label.organisms_list
+                      label: lisem.menu_label.organisms_list
 
             lisem.menu.crm_emailing:
-                label: libio.menu_label.crm_emailing
+                label: lisem.menu_label.crm_emailing
                 icon:  '<i class="fa fa-envelope-o"></i>'
                 on_top: true
                 items:
                     - route: admin_librinfo_email_email_list
-                      label: libio.menu_label.emailing_list
+                      label: lisem.menu_label.emailing_list
 
             # ##################################################################
             # VARIETIES
             # ##################################################################
 
             lisem.menu.species:
-                label: libio.menu_label.species
+                label: lisem.menu_label.species
                 icon:  '<i class="fa fa-pagelines"></i>'
                 on_top: true
                 items:
                     - route: admin_librinfo_varieties_species_list
-                      label: libio.menu_label.species_list
+                      label: lisem.menu_label.species_list
 
             lisem.menu.varieties:
-                label: libio.menu_label.varieties
+                label: lisem.menu_label.varieties
                 icon:  '<i class="fa fa-tree"></i>'
                 on_top: true
                 items:
-                    - route: admin_libio_variety_list
-                      label: libio.menu_label.varieties_list
+                    - route: admin_librinfo_variety_list
+                      label: lisem.menu_label.varieties_list
 
             # ##################################################################
             # SEED BATCHES
             # ##################################################################
 
             lisem.menu.seedbatch:
-                label: libio.menu_label.seed_batches
+                label: lisem.menu_label.seed_batches
                 icon:  '<i class="fa fa-shopping-bag"></i>'
                 on_top: true
                 items:
                     - route: admin_librinfo_seedbatch_seedbatch_list
-                      label: libio.menu_label.seed_batches_list
+                      label: lisem.menu_label.seed_batches_list
 
             lisem.menu.plot:
-                label: libio.menu_label.plot
+                label: lisem.menu_label.plot
                 icon:  '<i class="fa fa-th"></i>'
                 on_top: true
                 items:
                     - route: admin_librinfo_seedbatch_plot_list
-                      label: libio.menu_label.plots_list
+                      label: lisem.menu_label.plots_list
 
             lisem.menu.germination_tests:
-                label: libio.menu_label.germination_tests
+                label: lisem.menu_label.germination_tests
                 icon:  '<i class="fa fa-eyedropper"></i>'
                 on_top: true
                 items:
-                    - label: libio.menu_label.germination_tests
-                      route: libio_not_implemented
+                    - label: lisem.menu_label.germination_tests
+                      route: lisem_not_implemented
 
             lisem.menu.producers:
-                label: libio.menu_label.producers
+                label: lisem.menu_label.producers
                 icon:  '<i class="fa fa-user-circle"></i>'
                 on_top: true
                 items:
-                    - label: libio.menu_label.producers_list
+                    - label: lisem.menu_label.producers_list
                       route: admin_librinfo_seedbatch_seedProducer_list
 
             # ##################################################################
@@ -91,64 +91,64 @@ sonata_admin:
             # ##################################################################
 
             lisem.menu.products:
-                label: libio.menu_label.products
+                label: lisem.menu_label.products
                 icon:  '<i class="fa fa-shopping-cart"></i>'
                 items:
-                    - route: admin_libio_seeds_product_list
-                      label: libio.menu_label.seed_products_list
-                    - label: libio.menu_label.other_products_list
-                      route: admin_libio_other_product_list
+                    - route: admin_librinfo_seeds_product_list
+                      label: lisem.menu_label.seed_products_list
+                    - label: lisem.menu_label.other_products_list
+                      route: admin_librinfo_other_product_list
 
             lisem.menu.packagings:
-                label: libio.menu_label.packagings
+                label: lisem.menu_label.packagings
                 icon:  '<i class="fa fa-archive"></i>'
                 on_top: true
                 items:
-                    - label: libio.menu_label.packagings
-                      route: libio_not_implemented
+                    - label: lisem.menu_label.packagings
+                      route: lisem_not_implemented
 
             # ##################################################################
             # PRODUCTS
             # ##################################################################
 
             lisem.menu.inventory:
-                label: libio.menu_label.inventory
+                label: lisem.menu_label.inventory
                 icon:  '<i class="fa fa-list"></i>'
                 on_top: true
                 items:
-                    - label: libio.menu_label.inventory
-                      route: libio_not_implemented
+                    - label: lisem.menu_label.inventory
+                      route: lisem_not_implemented
 
             lisem.menu.catalogs:
-                label: libio.menu_label.catalogs
+                label: lisem.menu_label.catalogs
                 icon:  '<i class="fa fa-book"></i>'
                 on_top: true
                 items:
-                    - label: libio.menu_label.catalogs
-                      route: libio_not_implemented
+                    - label: lisem.menu_label.catalogs
+                      route: lisem_not_implemented
 
             # ##################################################################
             # ORDERS
             # ##################################################################
 
             lisem.menu.orders:
-                label: libio.menu_label.orders
+                label: lisem.menu_label.orders
                 icon:  '<i class="fa fa-money"></i>'
                 on_top: true
                 items:
-                    - label: libio.menu_label.orders_list
+                    - label: lisem.menu_label.orders_list
                       route: admin_librinfo_ecommerce_order_list
-                    # - label: libio.menu_label.customers_list
+                    # - label: lisem.menu_label.customers_list
                     #   route: admin_librinfo_crm_customer_list
 
 
             lisem.menu.accounting:
-                label: libio.menu_label.accounting
+                label: lisem.menu_label.accounting
                 icon:  '<i class="fa fa-balance-scale"></i>'
                 items:
-                    - label: libio.menu_label.sales_journal
+                    - label: lisem.menu_label.sales_journal
                       route: admin_librinfo_ecommerce_sales_journal_list
-                    - label: libio.menu_label.cash_book
+                    - label: lisem.menu_label.cash_book
                       route: admin_librinfo_ecommerce_payment_list
             App settings:
                 provider: parameters_sidebar_menu

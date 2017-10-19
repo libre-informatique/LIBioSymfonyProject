@@ -28,7 +28,7 @@ class SeedsProductVariantEmbeddedCodeGenerator extends ProductVariantCodeGenerat
     {
         $request = self::getRequestStack();
 
-        if ($productVariant->getSeedBatch() === null || $productVariant->getPackaging() === null) {
+        if ($productVariant->getSeedBatches() === null || $productVariant->getPackaging() === null) {
             $formName = $request->getCurrentRequest()->query->get('puniqid', null);
             $formData = $request->getCurrentRequest()->request->get($formName, null);
 
@@ -52,11 +52,11 @@ class SeedsProductVariantEmbeddedCodeGenerator extends ProductVariantCodeGenerat
             }
         }
 
-        if (!$seedBatch = $productVariant->getSeedBatch()) {
+        if (!$seedBatch = $productVariant->getSeedBatches()) {
             throw new InvalidEntityCodeException('librinfo.error.missing_seed_batch');
         }
-        if (!$seedBatchCode = $seedBatch->getCode()) {
-            throw new InvalidEntityCodeException('librinfo.error.missing_seed_batch_code');
+        if (!$varietyCode = $productVariant->getProduct()->getCode()) {
+            throw new InvalidEntityCodeException('librinfo.error.missing_variety_code');
         }
         if (!$packaging = $productVariant->getPackaging()) {
             throw new InvalidEntityCodeException('librinfo.error.missing_packaging');
@@ -65,6 +65,6 @@ class SeedsProductVariantEmbeddedCodeGenerator extends ProductVariantCodeGenerat
             throw new InvalidEntityCodeException('librinfo.error.missing_packaging_code');
         }
 
-        return sprintf('%s-%s', $seedBatchCode, $packagingCode);
+        return sprintf('%s-%s', $varietyCode, $packagingCode);
     }
 }

@@ -50,7 +50,6 @@ class Version20170828093613 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'postgresql', 'Migration can only be executed safely on \'postgresql\'.');
 
-        $this->addSql('CREATE SCHEMA public');
         $this->addSql('CREATE TABLE sylius_product (id UUID NOT NULL, main_taxon_id UUID DEFAULT NULL, code VARCHAR(255) NOT NULL, created_at TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, updated_at TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, enabled BOOLEAN NOT NULL, variant_selection_method VARCHAR(255) NOT NULL, average_rating DOUBLE PRECISION DEFAULT \'0\' NOT NULL, PRIMARY KEY(id))');
         $this->addSql('CREATE INDEX idx_677b9b74731e505 ON sylius_product (main_taxon_id)');
         $this->addSql('CREATE UNIQUE INDEX uniq_677b9b7477153098 ON sylius_product (code)');

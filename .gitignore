@@ -58,3 +58,4 @@
 
 /.php_cs.cache
 /.web-server-pid
+/npm-debug.log

@@ -1,4 +1,6 @@
 #!/usr/bin/env sh
 set -ev
 
-coveralls -v
+#coveralls -v
+
+echo success

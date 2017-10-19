@@ -1,6 +1,6 @@
-# ProjetLiBio
+# ProjetLisem
 
-LiBio is an ERP specialized for seeds producers and craftmen
+Lisem is an ERP specialized for seeds producers and craftmen
 
 THIS PROJECT IS STILL UNUSABLE, IT'S YET A WORK IN PROGRESS
 
@@ -258,7 +258,7 @@ security:
 
 ```
 # app/config/routing.yml
-_libio_user:
+_lisem_user:
     resource: routing/sonata-user-bundle.yml
 ```
 

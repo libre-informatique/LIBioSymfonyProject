@@ -12,6 +12,7 @@ imports:
     - { resource: "@LibrinfoEmailBundle/Resources/config/app/config.yml" }
     - { resource: "@LibrinfoSeedBatchBundle/Resources/config/app/config.yml" }
     - { resource: "@SonataSyliusUserBundle/Resources/config/app/config.yml" }
+    - { resource: "@LibrinfoSyliusPayboxBundle/Resources/config/app/config.yml" }
 
     - { resource: "@AppBundle/Resources/config/varieties.yml" }
     - { resource: "@AppBundle/Resources/config/sonata.yml" }
@@ -55,11 +56,11 @@ payum:
     gateways:
         paybox:
             factory: paybox
-            site: 1999888
-            rang: 32
-            identifiant: 3
-            hmac: 0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF
-            sandbox: true
+            site: %paybox.site%
+            rang: %paybox.rang%
+            identifiant: %paybox.identifiant%
+            hmac: %paybox.hmac%
+            sandbox: %paybox.sandbox%
 
 sylius_customer:
     driver: doctrine/orm
@@ -82,6 +83,48 @@ blast_utils:
     features:
         customFilters:
             enabled: true
+
+sonata_admin:
+    templates:
+        history_revision_timestamp: SonataIntlBundle:CRUD:history_revision_timestamp.html.twig
+        user_block:                 SonataSyliusUserBundle:Admin/Block:user_block.html.twig
+        add_block:                  SonataAdminBundle:Core:add_block.html.twig
+        layout:                     LibrinfoDecoratorBundle:Admin:layout.html.twig
+        ajax:                       SonataAdminBundle::ajax_layout.html.twig
+        dashboard:                  SonataAdminBundle:Core:dashboard.html.twig
+        search:                     SonataAdminBundle:Core:search.html.twig
+        list:                       BlastCoreBundle:CRUD:base_list.html.twig
+        filter:                     SonataAdminBundle:Form:filter_admin_fields.html.twig
+        show:                       BlastCoreBundle:CRUD:base_show.html.twig
+        show_compare:               SonataAdminBundle:CRUD:show_compare.html.twig
+        edit:                       BlastCoreBundle:CRUD:base_edit.html.twig
+        preview:                    SonataAdminBundle:CRUD:preview.html.twig
+        history:                    SonataAdminBundle:CRUD:history.html.twig
+        acl:                        SonataAdminBundle:CRUD:acl.html.twig
+        action:                     SonataAdminBundle:CRUD:action.html.twig
+        select:                     SonataAdminBundle:CRUD:list__select.html.twig
+        list_block:                 SonataAdminBundle:Block:block_admin_list.html.twig
+        search_result_block:        SonataAdminBundle:Block:block_search_result.html.twig
+        short_object_description:   SonataAdminBundle:Helper:short-object-description.html.twig
+        delete:                     SonataAdminBundle:CRUD:delete.html.twig
+        batch:                      SonataAdminBundle:CRUD:list__batch.html.twig
+        batch_confirmation:         SonataAdminBundle:CRUD:batch_confirmation.html.twig
+        inner_list_row:             SonataAdminBundle:CRUD:list_inner_row.html.twig
+        outer_list_rows_mosaic:     SonataAdminBundle:CRUD:list_outer_rows_mosaic.html.twig
+        outer_list_rows_list:       SonataAdminBundle:CRUD:list_outer_rows_list.html.twig
+        outer_list_rows_tree:       SonataAdminBundle:CRUD:list_outer_rows_tree.html.twig
+        base_list_field:            SonataAdminBundle:CRUD:base_list_field.html.twig
+        pager_links:                SonataAdminBundle:Pager:links.html.twig
+        pager_results:              SonataAdminBundle:Pager:results.html.twig
+        tab_menu_template:          SonataAdminBundle:Core:tab_menu_template.html.twig
+        knp_menu_template:          SonataAdminBundle:Menu:sonata_menu.html.twig
+        action_create:              SonataAdminBundle:CRUD:dashboard__action_create.html.twig
+        button_acl:                 SonataAdminBundle:Button:acl_button.html.twig
+        button_create:              SonataAdminBundle:Button:create_button.html.twig
+        button_edit:                SonataAdminBundle:Button:edit_button.html.twig
+        button_history:             SonataAdminBundle:Button:history_button.html.twig
+        button_list:                SonataAdminBundle:Button:list_button.html.twig
+        button_show:                SonataAdminBundle:Button:show_button.html.twig
 
 librinfo_crm:
     Circle:

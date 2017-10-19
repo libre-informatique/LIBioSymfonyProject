@@ -19,9 +19,9 @@ namespace AppBundle\Admin;
  */
 class OtherProductVariantEmbeddedAdmin extends OtherProductVariantAdmin
 {
-    protected $baseRouteName = 'admin_libio_other_productvariant_embedded';
-    protected $baseRoutePattern = 'libio/other_productvariant_embedded';
+    protected $baseRouteName = 'admin_librinfo_other_productvariant_embedded';
+    protected $baseRoutePattern = 'librinfo/other_productvariant_embedded';
     protected $classnameLabel = 'OtherProductVariant';
 
-    protected $productAdminCode = 'libio.admin.other_product_embedded';
+    protected $productAdminCode = 'lisem.admin.other_product_embedded';
 }

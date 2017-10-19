@@ -10,7 +10,7 @@
  * file that was distributed with this source code.
  */
 
-namespace AppBundle\Factory;
+namespace AppBundle\DataFixtures\Sylius\Factory;
 
 use Librinfo\EcommerceBundle\Entity\Product;
 use Librinfo\VarietiesBundle\Entity\Variety;

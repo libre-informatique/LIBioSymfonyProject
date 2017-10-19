@@ -15,6 +15,7 @@ namespace AppBundle\Admin;
 use Librinfo\EcommerceBundle\Admin\ProductVariantAdmin;
 use Librinfo\EcommerceBundle\Entity\Product;
 use Sonata\CoreBundle\Validator\ErrorElement;
+use Sonata\AdminBundle\Route\RouteCollection;
 
 /**
  * Sonata admin for product variants from seeds products.
@@ -23,11 +24,11 @@ use Sonata\CoreBundle\Validator\ErrorElement;
  */
 class SeedsProductVariantAdmin extends ProductVariantAdmin
 {
-    protected $baseRouteName = 'admin_libio_seeds_productvariant';
-    protected $baseRoutePattern = 'libio/seeds_productvariant';
+    protected $baseRouteName = 'admin_librinfo_seeds_productvariant';
+    protected $baseRoutePattern = 'librinfo/seeds_productvariant';
     protected $classnameLabel = 'SeedsProductVariant';
 
-    protected $productAdminCode = 'libio.admin.seeds_product';
+    protected $productAdminCode = 'lisem.admin.seeds_product';
 
     public function configureFormFields(\Sonata\AdminBundle\Form\FormMapper $mapper)
     {
@@ -46,6 +47,7 @@ class SeedsProductVariantAdmin extends ProductVariantAdmin
         // seedBatch field
         $product = $this->getProduct();
         $options = [
+            'multiple' => true,
             'property' => 'code',
             'required' => true,
             'callback' => function ($admin, $property, $value) use ($product) {
@@ -58,7 +60,7 @@ class SeedsProductVariantAdmin extends ProductVariantAdmin
             'translation_domain' => 'messages',
         ];
         $fieldDescriptionOptions = ['admin_code' => 'librinfo_seedbatch.admin.seedbatch', 'translation_domain' => 'messages'];
-        $mapper->add('seedBatch', 'sonata_type_model_autocomplete', $options, $fieldDescriptionOptions);
+        $mapper->add('seedBatches', 'sonata_type_model_autocomplete', $options, $fieldDescriptionOptions);
 
         $mapper->end()->end();
 
@@ -81,7 +83,7 @@ class SeedsProductVariantAdmin extends ProductVariantAdmin
             ->with('packaging')
                 ->assertNotBlank()
             ->end()
-            ->with('seedBatch')
+            ->with('seedBatches')
                 ->assertNotBlank()
                 ->assertNotNull()
             ->end()
@@ -109,11 +111,40 @@ class SeedsProductVariantAdmin extends ProductVariantAdmin
     protected function optionValuesQueryBuilder()
     {
         $repository = $this->getConfigurationPool()->getContainer()->get('sylius.repository.product_option_value');
-        $queryBuilder = $repository->createQueryBuilder('pov')
-            ->leftJoin('pov.option', 'option')
-            ->andWhere('option.code = :packagingCode')
+        $queryBuilder = $repository->createQueryBuilder('pov');
+        $queryBuilder
+            ->join('pov.option', 'option')
+            ->where('option.code = :packagingCode')
             ->setParameter('packagingCode', Product::$PACKAGING_OPTION_CODE)
         ;
+
+        if ($this->getProduct() !== null) {
+            $productVariants = $this->getProduct()->getVariants();
+
+            $usedOptionValuesIds = [];
+            foreach ($productVariants as $pv) {
+                $optionValues = $pv->getOptionValues()->filter(function ($ov) {
+                    return $ov->getOption()->getCode() === Product::$PACKAGING_OPTION_CODE;
+                });
+                foreach ($optionValues as $ov) {
+                    $usedOptionValuesIds[] = $ov->getId();
+                }
+            }
+
+            if ($variant = $this->getSubject()) {
+                $optionValues = $variant->getOptionValues()->filter(function ($ov) {
+                    return $ov->getOption()->getCode() === Product::$PACKAGING_OPTION_CODE;
+                });
+                foreach ($optionValues as $ov) {
+                    if (in_array($ov->getId(), $usedOptionValuesIds)) {
+                        unset($usedOptionValuesIds[array_search($ov->getId(), $usedOptionValuesIds)]);
+                    }
+                }
+            }
+
+            $queryBuilder
+                ->andWhere($queryBuilder->expr()->notIn('pov.id', $usedOptionValuesIds));
+        }
 
         return $queryBuilder;
     }
