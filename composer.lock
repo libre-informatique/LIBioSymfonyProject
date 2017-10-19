@@ -3984,12 +3984,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/EcommerceBundle.git",
-                "reference": "78c967ecc13a017baca7a72001ab2e2c4a30d938"
+                "reference": "4020448174f37e80de98cface7578a7f59b8c4e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/EcommerceBundle/zipball/78c967ecc13a017baca7a72001ab2e2c4a30d938",
-                "reference": "78c967ecc13a017baca7a72001ab2e2c4a30d938",
+                "url": "https://api.github.com/repos/libre-informatique/EcommerceBundle/zipball/4020448174f37e80de98cface7578a7f59b8c4e2",
+                "reference": "4020448174f37e80de98cface7578a7f59b8c4e2",
                 "shasum": ""
             },
             "require": {
@@ -4036,7 +4036,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-10-19T13:12:15+00:00"
+            "time": "2017-10-19T14:22:49+00:00"
         },
         {
             "name": "libre-informatique/email-bundle",
@@ -4328,12 +4328,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/SyliusPayboxBundle.git",
-                "reference": "55e40a91b34f7bf25d213fe572408a95b8a61a89"
+                "reference": "ba0be45828c7180a251aa755753435f8322c6815"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/SyliusPayboxBundle/zipball/55e40a91b34f7bf25d213fe572408a95b8a61a89",
-                "reference": "55e40a91b34f7bf25d213fe572408a95b8a61a89",
+                "url": "https://api.github.com/repos/libre-informatique/SyliusPayboxBundle/zipball/ba0be45828c7180a251aa755753435f8322c6815",
+                "reference": "ba0be45828c7180a251aa755753435f8322c6815",
                 "shasum": ""
             },
             "require": {
@@ -4364,7 +4364,7 @@
                 "sylius",
                 "symfony"
             ],
-            "time": "2017-10-16T14:59:16+00:00"
+            "time": "2017-10-19T14:16:10+00:00"
         },
         {
             "name": "libre-informatique/varieties-bundle",
