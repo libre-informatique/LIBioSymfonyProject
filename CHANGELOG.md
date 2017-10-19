@@ -1,5 +1,8 @@
 # Change Log
 
+## [0.5.1](https://github.com/libre-informatique/LISemSymfonyProject/tree/0.5.1) (2017-09-15)
+[Full Changelog](https://github.com/libre-informatique/LISemSymfonyProject/compare/0.4.5...0.5.1)
+
 ## [0.4.5](https://github.com/libre-informatique/LISemSymfonyProject/tree/0.4.5) (2017-07-28)
 [Full Changelog](https://github.com/libre-informatique/LISemSymfonyProject/compare/0.4.4...0.4.5)
 
