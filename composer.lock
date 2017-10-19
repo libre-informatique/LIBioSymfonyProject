@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "151decac365bfc80b88f61b35a6350c3",
+    "content-hash": "6320bf3c0822e0b0cd9b99e52d2b2040",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -3984,12 +3984,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/EcommerceBundle.git",
-                "reference": "dfe19bd7e6bf207f4b9e0271f55d06e307481240"
+                "reference": "e93f4dc254e3ec85b4cafa1696d39d63fa00d7fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/EcommerceBundle/zipball/dfe19bd7e6bf207f4b9e0271f55d06e307481240",
-                "reference": "dfe19bd7e6bf207f4b9e0271f55d06e307481240",
+                "url": "https://api.github.com/repos/libre-informatique/EcommerceBundle/zipball/e93f4dc254e3ec85b4cafa1696d39d63fa00d7fe",
+                "reference": "e93f4dc254e3ec85b4cafa1696d39d63fa00d7fe",
                 "shasum": ""
             },
             "require": {
@@ -4036,7 +4036,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-10-18T15:16:00+00:00"
+            "time": "2017-10-19T10:13:48+00:00"
         },
         {
             "name": "libre-informatique/email-bundle",
@@ -10477,6 +10477,45 @@
                 "xunit"
             ],
             "time": "2017-08-03T14:08:16+00:00"
+        },
+        {
+            "name": "se/selenium-server-standalone",
+            "version": "3.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sveneisenschmidt/selenium-server-standalone.git",
+                "reference": "170b450650d237b5b3922d2ec88cde5ec86b6115"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sveneisenschmidt/selenium-server-standalone/zipball/170b450650d237b5b3922d2ec88cde5ec86b6115",
+                "reference": "170b450650d237b5b3922d2ec88cde5ec86b6115",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "bin": [
+                "bin/selenium-server-standalone"
+            ],
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache 2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Sven Eisenschmidt",
+                    "email": "sven.eisenschmidt@gmail.com"
+                }
+            ],
+            "description": "Composer distribution of Selenium Server Standalone, the browser automation framework. Adds a executable to your composer bin directory.",
+            "homepage": "https://github.com/sveneisenschmidt/selenium-server-standalone",
+            "keywords": [
+                "selenium",
+                "testing"
+            ],
+            "time": "2017-10-11T17:47:15+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
