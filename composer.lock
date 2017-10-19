@@ -116,12 +116,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/blast-project/CoreBundle.git",
-                "reference": "d17de76c50e5ac33a24d0a3f518bd6dcd07f540e"
+                "reference": "90cd73665a4a7fd369f516400ce3b7f9e6ead5dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blast-project/CoreBundle/zipball/d17de76c50e5ac33a24d0a3f518bd6dcd07f540e",
-                "reference": "d17de76c50e5ac33a24d0a3f518bd6dcd07f540e",
+                "url": "https://api.github.com/repos/blast-project/CoreBundle/zipball/90cd73665a4a7fd369f516400ce3b7f9e6ead5dc",
+                "reference": "90cd73665a4a7fd369f516400ce3b7f9e6ead5dc",
                 "shasum": ""
             },
             "require": {
@@ -173,7 +173,7 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-10-18T15:22:25+00:00"
+            "time": "2017-10-19T13:13:20+00:00"
         },
         {
             "name": "blast-project/doctrine-pgsql-bundle",
