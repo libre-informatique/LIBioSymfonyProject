@@ -90,6 +90,7 @@ function CreateCmd($webGuy)
     //$webGuy->click("Carotte nantaise");
     $webGuy->amOnPage('/products/carotte-nantaise'); /* Hum... Carotte */
     $webGuy->click("//button[@type='submit']");
+    $webGuy->wait(5);
     $webGuy->waitForText('Paiement', 30);
     $webGuy->click("(//a[contains(text(),'Paiement')])[2]");
     $webGuy->fillField('#sylius_checkout_address_shippingAddress_firstName', 'selfirst');
