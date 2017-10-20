@@ -15,7 +15,6 @@ namespace AppBundle\Admin;
 use Librinfo\EcommerceBundle\Admin\ProductVariantAdmin;
 use Librinfo\EcommerceBundle\Entity\Product;
 use Sonata\CoreBundle\Validator\ErrorElement;
-use Sonata\AdminBundle\Route\RouteCollection;
 
 /**
  * Sonata admin for product variants from seeds products.
