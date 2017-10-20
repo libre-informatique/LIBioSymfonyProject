@@ -85,6 +85,7 @@ lisem:
         regulatory_status: Statut réglementaire
         seed_lifespan: Durée de vie théorique de la graine
         seedbatch: Lot
+        seedbatches: Lots
         seedhead_yield: Rendement par porte-graines
         seedheads_per_kg: Nombre de porte-graines par kg
         seedproducer: Producteur de semence
