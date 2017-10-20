@@ -142,8 +142,10 @@ class SeedsProductVariantAdmin extends ProductVariantAdmin
                 }
             }
 
-            $queryBuilder
-                ->andWhere($queryBuilder->expr()->notIn('pov.id', $usedOptionValuesIds));
+            if (count($usedOptionValuesIds) > 0) {
+                $queryBuilder
+                    ->andWhere($queryBuilder->expr()->notIn('pov.id', $usedOptionValuesIds));
+            }
         }
 
         return $queryBuilder;
