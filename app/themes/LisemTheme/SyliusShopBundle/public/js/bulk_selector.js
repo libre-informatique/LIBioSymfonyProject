@@ -188,6 +188,7 @@ $(document).ready(function() {
         this.showBulkForm = function() {
             if (this.enabled) {
                 this.bulkForm.show();
+                this.bulkForm.find('input[name="product-is-bulk"]').val(1);
                 this.quantityChooser.hide();
             }
         };
@@ -196,6 +197,7 @@ $(document).ready(function() {
             if (this.enabled) {
                 this.quantityChooser.show();
                 this.bulkForm.hide();
+                this.bulkForm.find('input[name="product-is-bulk"]').val(0);
             }
         };
 
