@@ -10,6 +10,8 @@
  * file that was distributed with this source code.
  */
 
+// @group ecommerce
+
 $randNbr = rand(1, 1000);
 $randSelEmail = 'sel-' . $randNbr . '@lisem.eu';
 $randName = 'sel-' . $randNbr;
@@ -90,6 +92,7 @@ function CreateCmd($webGuy)
     //$webGuy->click("Carotte nantaise");
     $webGuy->amOnPage('/products/carotte-nantaise'); /* Hum... Carotte */
     $webGuy->click("//button[@type='submit']");
+    $webGuy->wait(5);
     $webGuy->waitForText('Paiement', 30);
     $webGuy->click("(//a[contains(text(),'Paiement')])[2]");
     $webGuy->fillField('#sylius_checkout_address_shippingAddress_firstName', 'selfirst');
