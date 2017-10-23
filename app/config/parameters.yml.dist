@@ -53,8 +53,8 @@ parameters:
 
     librinfo.url_prefix: /lisem
 
-    paybox.site: ~
-    paybox.rang: ~
-    paybox.identifiant: ~
-    paybox.hmac: ~
-    paybox.sandbox: false
+    paybox.site: test
+    paybox.rang: 1234
+    paybox.identifiant: test
+    paybox.hmac: ABCDEF
+    paybox.sandbox: true
