@@ -70,7 +70,6 @@
         "phpunit/phpunit": "^6.4",
         "se/selenium-server-standalone": "^3.6"
     },
-    "version": "dev-wip-lisem",
     "scripts": {
         "post-install-cmd": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",

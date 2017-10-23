@@ -15,7 +15,6 @@ namespace AppBundle\Admin;
 use Librinfo\EcommerceBundle\Admin\ProductVariantAdmin;
 use Librinfo\EcommerceBundle\Entity\Product;
 use Sonata\CoreBundle\Validator\ErrorElement;
-use Sonata\AdminBundle\Route\RouteCollection;
 
 /**
  * Sonata admin for product variants from seeds products.
@@ -142,8 +141,10 @@ class SeedsProductVariantAdmin extends ProductVariantAdmin
                 }
             }
 
-            $queryBuilder
-                ->andWhere($queryBuilder->expr()->notIn('pov.id', $usedOptionValuesIds));
+            if (count($usedOptionValuesIds) > 0) {
+                $queryBuilder
+                    ->andWhere($queryBuilder->expr()->notIn('pov.id', $usedOptionValuesIds));
+            }
         }
 
         return $queryBuilder;
