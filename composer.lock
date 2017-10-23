@@ -4377,12 +4377,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/VarietiesBundle.git",
-                "reference": "827fecb5372b9aaf83bfecafad4fd4a477bf2fa6"
+                "reference": "a1d1dd62e75c94ec3ec07e112a29d0a6ea79537f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/VarietiesBundle/zipball/827fecb5372b9aaf83bfecafad4fd4a477bf2fa6",
-                "reference": "827fecb5372b9aaf83bfecafad4fd4a477bf2fa6",
+                "url": "https://api.github.com/repos/libre-informatique/VarietiesBundle/zipball/a1d1dd62e75c94ec3ec07e112a29d0a6ea79537f",
+                "reference": "a1d1dd62e75c94ec3ec07e112a29d0a6ea79537f",
                 "shasum": ""
             },
             "require": {
@@ -4435,7 +4435,7 @@
                 "taxonomy",
                 "variety"
             ],
-            "time": "2017-10-19T17:28:32+00:00"
+            "time": "2017-10-23T08:21:57+00:00"
         },
         {
             "name": "liip/imagine-bundle",
