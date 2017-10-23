@@ -52,16 +52,6 @@ librinfo_ecommerce:
         product_variant: AppBundle\CodeGenerator\ProductVariantCodeGenerator
         product_variant_embedded: AppBundle\CodeGenerator\ProductVariantEmbeddedCodeGenerator
 
-payum:
-    gateways:
-        paybox:
-            factory: paybox
-            site: %paybox.site%
-            rang: %paybox.rang%
-            identifiant: %paybox.identifiant%
-            hmac: %paybox.hmac%
-            sandbox: %paybox.sandbox%
-
 sylius_customer:
     driver: doctrine/orm
     resources:

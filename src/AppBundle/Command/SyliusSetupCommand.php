@@ -234,11 +234,11 @@ EOT
 
         $config->setGatewayName('paybox');
         $config->setConfig([
-            'hmac'        => $this->getContainer()->getParameter('paybox.hmac'),
             'identifiant' => $this->getContainer()->getParameter('paybox.identifiant'),
             'rang'        => $this->getContainer()->getParameter('paybox.rang'),
-            'sandbox'     => $this->getContainer()->getParameter('paybox.sandbox'),
             'site'        => $this->getContainer()->getParameter('paybox.site'),
+            'hmac'        => $this->getContainer()->getParameter('paybox.hmac'),
+            'sandbox'     => $this->getContainer()->getParameter('paybox.sandbox'),
         ]);
 
         foreach ($this->getContainer()->get('sylius.repository.channel')->findAll() as $channel) {
