@@ -36,7 +36,7 @@ $config = PhpCsFixer\Config::create()
         '@Symfony'               => true,
         'binary_operator_spaces' => ['align_double_arrow' => true],
         'concat_space'           => ['spacing'=>'one'],
-        'use_yoda_style'         => false,
+        'yoda_style'             => null,
     ))
     ->setFinder($finder);
 
