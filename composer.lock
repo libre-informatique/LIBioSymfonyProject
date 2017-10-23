@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "149abd799dd8600955ba6e294f35a0db",
+    "content-hash": "6af3df62045393d7a7edf9cff62ef699",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -52,7 +52,7 @@
         },
         {
             "name": "blast-project/base-entities-bundle",
-            "version": "dev-master",
+            "version": "0.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/blast-project/BaseEntitiesBundle.git",
@@ -112,7 +112,7 @@
         },
         {
             "name": "blast-project/core-bundle",
-            "version": "dev-master",
+            "version": "0.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/blast-project/CoreBundle.git",
@@ -177,7 +177,7 @@
         },
         {
             "name": "blast-project/doctrine-pgsql-bundle",
-            "version": "dev-master",
+            "version": "0.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/blast-project/DoctrinePgsqlBundle.git",
@@ -232,7 +232,7 @@
         },
         {
             "name": "blast-project/doctrine-session-bundle",
-            "version": "dev-master",
+            "version": "0.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/blast-project/DoctrineSessionBundle.git",
@@ -290,7 +290,7 @@
         },
         {
             "name": "blast-project/outer-extension-bundle",
-            "version": "dev-master",
+            "version": "0.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/blast-project/OuterExtensionBundle.git",
@@ -348,7 +348,7 @@
         },
         {
             "name": "blast-project/utils-bundle",
-            "version": "dev-master",
+            "version": "0.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/blast-project/UtilsBundle.git",
@@ -3864,7 +3864,7 @@
         },
         {
             "name": "libre-informatique/crm-bundle",
-            "version": "dev-master",
+            "version": "0.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/CRMBundle.git",
@@ -3923,7 +3923,7 @@
         },
         {
             "name": "libre-informatique/decorator-bundle",
-            "version": "dev-master",
+            "version": "0.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/DecoratorBundle.git",
@@ -3980,16 +3980,16 @@
         },
         {
             "name": "libre-informatique/ecommerce-bundle",
-            "version": "dev-master",
+            "version": "0.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/EcommerceBundle.git",
-                "reference": "8311b3ec9681db4a6134037ddb50d4c506455601"
+                "reference": "de359541647f15fb324b71ab543c005103fba433"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/EcommerceBundle/zipball/8311b3ec9681db4a6134037ddb50d4c506455601",
-                "reference": "8311b3ec9681db4a6134037ddb50d4c506455601",
+                "url": "https://api.github.com/repos/libre-informatique/EcommerceBundle/zipball/de359541647f15fb324b71ab543c005103fba433",
+                "reference": "de359541647f15fb324b71ab543c005103fba433",
                 "shasum": ""
             },
             "require": {
@@ -4036,11 +4036,11 @@
                 "sonata",
                 "symfony"
             ],
-            "time": "2017-10-20T15:02:04+00:00"
+            "time": "2017-10-20T10:17:11+00:00"
         },
         {
             "name": "libre-informatique/email-bundle",
-            "version": "dev-master",
+            "version": "0.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/EmailBundle.git",
@@ -4101,7 +4101,7 @@
         },
         {
             "name": "libre-informatique/email-crm-bundle",
-            "version": "dev-master",
+            "version": "0.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/EmailCRMBundle.git",
@@ -4161,7 +4161,7 @@
         },
         {
             "name": "libre-informatique/media-bundle",
-            "version": "dev-master",
+            "version": "0.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/MediaBundle.git",
@@ -4215,7 +4215,7 @@
         },
         {
             "name": "libre-informatique/seed-batch-bundle",
-            "version": "dev-master",
+            "version": "0.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/SeedBatchBundle.git",
@@ -4271,7 +4271,7 @@
         },
         {
             "name": "libre-informatique/sonata-sylius-user-bundle",
-            "version": "dev-master",
+            "version": "0.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/SonataSyliusUserBundle.git",
@@ -4324,7 +4324,7 @@
         },
         {
             "name": "libre-informatique/sylius-paybox-bundle",
-            "version": "dev-master",
+            "version": "0.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/SyliusPayboxBundle.git",
@@ -4373,16 +4373,16 @@
         },
         {
             "name": "libre-informatique/varieties-bundle",
-            "version": "dev-master",
+            "version": "0.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/libre-informatique/VarietiesBundle.git",
-                "reference": "a1d1dd62e75c94ec3ec07e112a29d0a6ea79537f"
+                "reference": "82f8653b00e3a7b9c5a4294a712731d214d6a4d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/libre-informatique/VarietiesBundle/zipball/a1d1dd62e75c94ec3ec07e112a29d0a6ea79537f",
-                "reference": "a1d1dd62e75c94ec3ec07e112a29d0a6ea79537f",
+                "url": "https://api.github.com/repos/libre-informatique/VarietiesBundle/zipball/82f8653b00e3a7b9c5a4294a712731d214d6a4d4",
+                "reference": "82f8653b00e3a7b9c5a4294a712731d214d6a4d4",
                 "shasum": ""
             },
             "require": {
@@ -4435,7 +4435,7 @@
                 "taxonomy",
                 "variety"
             ],
-            "time": "2017-10-23T08:21:57+00:00"
+            "time": "2017-10-23T10:37:53+00:00"
         },
         {
             "name": "liip/imagine-bundle",
@@ -11170,24 +11170,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "blast-project/base-entities-bundle": 20,
-        "blast-project/core-bundle": 20,
-        "blast-project/doctrine-pgsql-bundle": 20,
-        "blast-project/doctrine-session-bundle": 20,
-        "blast-project/outer-extension-bundle": 20,
-        "blast-project/utils-bundle": 20,
-        "libre-informatique/crm-bundle": 20,
-        "libre-informatique/decorator-bundle": 20,
-        "libre-informatique/ecommerce-bundle": 20,
-        "libre-informatique/email-bundle": 20,
-        "libre-informatique/email-crm-bundle": 20,
-        "libre-informatique/media-bundle": 20,
-        "libre-informatique/seed-batch-bundle": 20,
-        "libre-informatique/sonata-sylius-user-bundle": 20,
-        "libre-informatique/varieties-bundle": 20,
-        "libre-informatique/sylius-paybox-bundle": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
