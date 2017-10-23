@@ -101,6 +101,7 @@
             "version-constraints": true
         }
     },
+    "version": "dev-wip-lisem",
     "extra": {
         "symfony-app-dir": "app",
         "symfony-web-dir": "web",
