@@ -46,7 +46,14 @@ final class ImportCsvCommand extends ContainerAwareCommand
      */
     private $mapping;
 
+    /**
+     * @var array
+     */
     protected $speciesCodes = [];
+
+    /**
+     * @var array
+     */
     protected $varietyCodes = [];
 
     protected function configure()
@@ -113,6 +120,7 @@ EOT
             }
         }
         $this->em->flush();
+        $output->writeln('DONE (' . basename($csv) . ')...');
     }
 
     /**
