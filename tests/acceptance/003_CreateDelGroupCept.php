@@ -17,9 +17,9 @@ $I = new WebGuy($scenario);
 $I->loginLisem();
 
 $I->wantTo('Create And Delete Group (Circle)');
-createCircle($I);
-deleteCircle($I);
-createCircle($I);
+createCRMCircle($I);
+deleteCRMCircle($I);
+createCRMCircle($I);
 
 function createCRMCircle($I)
 {
@@ -30,9 +30,8 @@ function createCRMCircle($I)
     $I->fillField("//input[contains(@id, 'code')]", 'SELGRP');
     $I->fillField("//textarea[contains(@id, 'description')]", 'Sel desc');
     $I->selectDrop('_type', 'Autres');
-    $I->scrollTo("//button[@name='btn_create_and_list']", 100, 100);
-    $I->click("//button[@name='btn_create_and_list']");
-    $I->waitForText('succès', 30); // secs
+  
+    $I->clickCreateAndList();
 }
 
 function deleteCRMCircle($I)

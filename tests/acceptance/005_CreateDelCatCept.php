@@ -35,9 +35,7 @@ function createCRMCategory($I, $selCat, $selCatParent = null)
     if (isset($selCatParent)) {
         $I->selectDrop('_treeParent', 'SelCatParent');
     }
-
-    $I->scrollTo("//button[@name='btn_create_and_list']", 100, 100);
-    $I->click("//button[@name='btn_create_and_list']");
+    $I->clickCreateAndList();
 }
 
 function deleteCRMCategory($I)

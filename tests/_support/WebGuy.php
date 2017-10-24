@@ -26,6 +26,25 @@ class WebGuy extends \Codeception\Actor
         $this->waitForText('Libre', 30);
     }
 
+
+    public function hideSymfonyToolBar()
+    {
+        try {
+            $this->seeElement('.hide-button');
+            $this->click(['css' => '.hide-button']);
+        } catch (Exception $e) {
+        }
+    }
+    
+    public function clickCreateAndList()
+    {
+        /* @todo: do the same for confirm action and for list batch action button */
+        $this->hideSymfonyToolBar();
+        $this->scrollTo("//button[@name='btn_create_and_list']", 100, 100);
+        $this->click("//button[@name='btn_create_and_list']");
+        $this->waitForText('succès', 30); // secs
+    }
+    
     public function testLink($linkName, $linkRes = null)
     {
         $linkRes = (isset($linkRes)) ? $linkRes : $linkName;
