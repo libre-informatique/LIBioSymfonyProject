@@ -28,6 +28,11 @@ class Version20171017115108 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'postgresql', 'Migration can only be executed safely on \'postgresql\'.');
 
+        if ($schema->getTable('librinfo_varieties_species')->hasColumn('germination_rate')) {
+            // Skipping migration if table librinfo_varieties_species already has germination_rate column
+            return;
+        }
+
         $this->addSql('ALTER TABLE librinfo_varieties_species ADD germination_rate INT DEFAULT 0');
     }
 

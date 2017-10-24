@@ -15,6 +15,11 @@ class Version20170828093613 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'postgresql', 'Migration can only be executed safely on \'postgresql\'.');
 
+        if (!$schema->hasTable('sylius_product_variant')) {
+            // Skipping this migration because table sylius_product_variant doesn't exist
+            return;
+        }
+
         $this->addSql('ALTER TABLE sylius_product_variant DROP CONSTRAINT fk_a29b5234584665a');
         $this->addSql('ALTER TABLE sylius_product_channels DROP CONSTRAINT fk_f9ef269b4584665a');
         $this->addSql('ALTER TABLE sylius_product_options DROP CONSTRAINT fk_2b5ff0094584665a');
