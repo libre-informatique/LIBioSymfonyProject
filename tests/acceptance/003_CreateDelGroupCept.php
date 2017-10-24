@@ -30,8 +30,8 @@ function createCRMCircle($I)
     $I->fillField("//input[contains(@id, 'code')]", 'SELGRP');
     $I->fillField("//textarea[contains(@id, 'description')]", 'Sel desc');
     $I->selectDrop('_type', 'Autres');
-  
-    $I->clickCreateAndList();
+
+    $I->clickCreate();
 }
 
 function deleteCRMCircle($I)

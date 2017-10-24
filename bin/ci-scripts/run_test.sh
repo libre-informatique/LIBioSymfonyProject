@@ -9,3 +9,5 @@ $CODECEPTCMD -g menu
 $CODECEPTCMD -g crm
 
 #$CODECEPTCMD -g ecommerce
+
+#$CODECEPTCMD -g scenarii

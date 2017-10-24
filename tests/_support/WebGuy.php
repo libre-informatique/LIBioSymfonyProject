@@ -14,6 +14,31 @@ class WebGuy extends \Codeception\Actor
 {
     use _generated\WebGuyActions;
 
+    public $randNbr = null;
+    public $randName = null;
+
+    public function setRand($new = false)
+    {
+        if ($new || !isset($this->randNbr)) {
+            $this->randNbr = rand(1, 1000);
+            $this->randName = 'sel-' . $this->randNbr;
+        }
+    }
+
+    public function getRandNbr($new = false)
+    {
+        $this->setRand($new);
+
+        return $this->randNbr;
+    }
+
+    public function getRandName($new = false)
+    {
+        $this->setRand($new);
+
+        return $this->randName;
+    }
+
     public function loginLisem()
     {
         $this->wantTo('Test Login');
@@ -26,7 +51,6 @@ class WebGuy extends \Codeception\Actor
         $this->waitForText('Libre', 30);
     }
 
-
     public function hideSymfonyToolBar()
     {
         try {
@@ -35,16 +59,25 @@ class WebGuy extends \Codeception\Actor
         } catch (Exception $e) {
         }
     }
-    
-    public function clickCreateAndList()
+
+    public function scrollDown()
+    {
+        $this->executeJS('window.scrollTo(0, document.body.scrollHeight);');
+    }
+
+    public function clickCreate($name = 'btn_create_and_list')
     {
         /* @todo: do the same for confirm action and for list batch action button */
         $this->hideSymfonyToolBar();
-        $this->scrollTo("//button[@name='btn_create_and_list']", 100, 100);
-        $this->click("//button[@name='btn_create_and_list']");
+        //$this->resizeWindow(2048, 2048);
+        //$this->scrollDown();
+        $this->scrollTo("//button[@name='" . $name . "']"); //, 10, 10);
+        //$this->resizeWindow(1024, 1024);
+        //$this->wait(30);
+        $this->click("//button[@name='" . $name . "']");
         $this->waitForText('succès', 30); // secs
     }
-    
+
     public function testLink($linkName, $linkRes = null)
     {
         $linkRes = (isset($linkRes)) ? $linkRes : $linkName;
@@ -53,12 +86,12 @@ class WebGuy extends \Codeception\Actor
         $this->waitForText($linkRes, 30); // secs
     }
 
-    public function selectDrop($id, $value)
+    public function selectDrop($id, $value, $tag = 'a')
     {
         /* @todo test if there is more than one select on the page */
         // REAL example to click select2 elements below
         /* where does the s2id come from */
-        $this->clickWithLeftButton('div[id^="s2id_"][id$="' . $id . '"] a');
+        $this->clickWithLeftButton('div[id^="s2id_"][id$="' . $id . '"] ' . $tag . '');
         $this->clickWithLeftButton('//div[@id="select2-drop"]/ul/li/div[text()="' . $value . '"]');
     }
 }
