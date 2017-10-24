@@ -16,8 +16,6 @@ $I = new WebGuy($scenario);
 
 $I->loginLisem();
 
-
-
 $I->wantTo('Create and delete category');
 $cat = 'SelCat';
 $catParent = 'SelCatParent';
@@ -25,7 +23,6 @@ $catParent = 'SelCatParent';
 createCRMCategory($I, $catParent);
 createCRMCategory($I, $cat, $catParent);
 deleteCRMCategory($I);
-
 
 function createCRMCategory($I, $selCat, $selCatParent = null)
 {
@@ -38,7 +35,7 @@ function createCRMCategory($I, $selCat, $selCatParent = null)
     if (isset($selCatParent)) {
         $I->selectDrop('_treeParent', 'SelCatParent');
     }
-    
+
     $I->scrollTo("//button[@name='btn_create_and_list']", 100, 100);
     $I->click("//button[@name='btn_create_and_list']");
 }

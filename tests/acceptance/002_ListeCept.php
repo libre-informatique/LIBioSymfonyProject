@@ -12,7 +12,6 @@
 
 // @group menu
 
-
 $I = new WebGuy($scenario);
 $I->loginLisem();
 

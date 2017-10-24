@@ -26,7 +26,6 @@ class WebGuy extends \Codeception\Actor
         $this->waitForText('Libre', 30);
     }
 
-
     public function testLink($linkName, $linkRes = null)
     {
         $linkRes = (isset($linkRes)) ? $linkRes : $linkName;
@@ -40,7 +39,7 @@ class WebGuy extends \Codeception\Actor
         /* @todo test if there is more than one select on the page */
         // REAL example to click select2 elements below
         /* where does the s2id come from */
-        $this->clickWithLeftButton('div[id^="s2id_"][id$="'.$id.'"] a');
-        $this->clickWithLeftButton('//div[@id="select2-drop"]/ul/li/div[text()="'.$value.'"]');
+        $this->clickWithLeftButton('div[id^="s2id_"][id$="' . $id . '"] a');
+        $this->clickWithLeftButton('//div[@id="select2-drop"]/ul/li/div[text()="' . $value . '"]');
     }
 }

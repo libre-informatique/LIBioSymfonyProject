@@ -35,7 +35,6 @@ function createCRMCircle($I)
     $I->waitForText('succès', 30); // secs
 }
 
-
 function deleteCRMCircle($I)
 {
     $I->wantTo('Delete Group (Circle)');
