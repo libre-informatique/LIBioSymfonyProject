@@ -19,7 +19,7 @@ $I = new WebGuy($scenario);
 $I->wantTo('Test Commande from Sylius To Lisem');
 
 SyliusCreateAccount($I, $randSelEmail, $randName);
-LoginLisem($I);
+$I->loginLisem();
 ActiveUser($I, $randSelEmail);
 LogUser($I, $randSelEmail);
 CreateCmd($I);
@@ -39,15 +39,6 @@ function SyliusCreateAccount($webGuy, $selEmail, $selName)
     $webGuy->fillField('#sylius_customer_registration_user_plainPassword_second', 'selpwd');
     $webGuy->click("//button[@type='submit']");
     $webGuy->waitForText('Succès', 10); // secs
-}
-
-function LoginLisem($webGuy)
-{
-    $webGuy->wantTo('LoginLisem');
-    $webGuy->amOnPage('/lisem/login');
-    $webGuy->fillField('#_username', 'lisem@lisem.eu');
-    $webGuy->fillField('#_password', 'lisem');
-    $webGuy->click("//button[@type='submit']");
 }
 
 function ActiveUser($webGuy, $selEmail)
