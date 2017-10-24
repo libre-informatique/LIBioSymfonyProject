@@ -47,6 +47,10 @@ parameters:
                         show_group_channel_descriptions:
                             channelDescriptions:
                                 template: AppBundle:CRUD:show_field_channel_descriptions.html.twig
+                    form_tab_seed_batches:
+                        show_group_seed_batches:
+                            seedBatches:
+                                admin_code: librinfo_seedbatch.admin.seedbatch
                     _options:
                         tabsOrder:
                             - form_tab_general
@@ -60,6 +64,7 @@ parameters:
                             - form_tab_professional
                             - form_tab_amateur
                             - form_tab_strains
+                            - form_tab_seed_batches
                             - form_tab_images
                     _helper_links:
                         - url: https://framacalc.org/libio_validation_varietes
@@ -977,6 +982,7 @@ parameters:
                             attachments:
                                 type: Librinfo\MediaBundle\Form\Type\DropzoneType
                                 required: false
+                                dropzoneTemplate: LibrinfoEmailBundle:dropzone:dropzone_template.mustache.twig
                             _options:
                                 fieldsOrder:
                                     - field_from
