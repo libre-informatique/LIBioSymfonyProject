@@ -10,29 +10,51 @@
  * file that was distributed with this source code.
  */
 
-// @group scenarii
+// @group scenarii variety
 
 $I = new WebGuy($scenario);
 
 $I->loginLisem();
 
-createVarietyGenus($I);
-createVarietyPlantCategory($I);
-createVarietySpecies($I); //Need Genus and Cat Created before
+$selGenus = createVarietyGenus($I);
+$selPlantCat =  createVarietyPlantCategory($I);
+$selSpecies = createVarietySpecies($I, $selGenus, $selPlantCat);
+createVariety($I, $selSpecies, $selPlantCat);
 
 //createSeedBatchProducer($I);
 
-// OK
-function createVarietySpecies(Webguy $I)
+function createVariety(Webguy $I, $speciesName, $plantCatName)
 {
-    $I->wantTo('Create Species');
-    $I->amOnPage('/lisem/librinfo/varieties/species/create');
-    $I->fillField("//input[contains(@id,'name')]", $I->getRandName() . '-species-name');
+    $varietyName =  $I->getRandName() . '-variety';
+    $I->wantTo('Create Variety');
+    $I->amOnPage('/lisem/librinfo/variety/create');
+    $I->fillField("//input[contains(@id,'name')]", $varietyName);
+    $I->fillField("//input[contains(@id,'latin_name')]", 'latium-' . $varietyName);
+    $I->selectDrop('_species', $speciesName);
+    $I->selectDrop('_plant_categories', $plantCatName, 'ul');
     $I->click("//a[contains(@id, 'code_generate_code')]");
     $I->waitForElementNotVisible('.sk-folding-cube', 30);
-    $I->selectDrop('_genus', $I->getRandName() . '-genus');
-    $I->fillField("//input[contains(@id,'latin_name')]", $I->getRandName() . '-specium');
-    $I->selectDrop('plant_categories', $I->getRandName() . '-plant-cat', 'ul');
+    $I->click("//a[contains(@id, 'plant_type_add_choice')]/i");
+    $I->fillField("//div[contains(@id,'popover')]/div[2]/div/form/div/div/div/input", $I->getRandName() . '-plant');
+    $I->click("//div[contains(@id,'popover')]/div[2]/div/form/div/div/div[2]/button");
+    $I->clickCreate();
+    return $varietyName;
+}
+
+
+// OK
+function createVarietySpecies(Webguy $I, $genusName, $plantCatName)
+{
+    $speciesName = $I->getRandName() . '-species-name';
+    
+    $I->wantTo('Create Species ' . $speciesName);
+    $I->amOnPage('/lisem/librinfo/varieties/species/create');
+    $I->fillField("//input[contains(@id,'name')]", $speciesName);
+    $I->click("//a[contains(@id, 'code_generate_code')]");
+    $I->waitForElementNotVisible('.sk-folding-cube', 30);
+    $I->selectDrop('_genus', $genusName);
+    $I->fillField("//input[contains(@id,'latin_name')]", 'latium-' . $speciesName);
+    $I->selectDrop('_plant_categories', $plantCatName, 'ul');
    
     //$I->scrollTo("//input[contains(@id,'latin_name')]");
     //$I->wait(10);
@@ -41,47 +63,34 @@ function createVarietySpecies(Webguy $I)
 
     $I->clickCreate();
     // $I->clickCreate('btn_create_and_edit');
+    return $speciesName;
 }
 
 // OK
 function createVarietyGenus(Webguy $I)
 {
-    $I->wantTo('Create Genus');
+    $genusName =  $I->getRandName() . '-genus';
+    $I->wantTo('Create Genus ' . $genusName);
     $I->amOnPage('/lisem/librinfo/varieties/genus/create');
-    $I->fillField("//input[contains(@id,'name')]", $I->getRandName() . '-genus');
-    $I->fillField("//textarea[contains(@id,'description')]", $I->getRandName() . '-genus-desc');
+    $I->fillField("//input[contains(@id,'name')]", $genusName);
+    $I->fillField("//textarea[contains(@id,'description')]", $genusName . '-desc');
     $I->clickCreate();
-    /* @todo : should return genus name to be used for other test like species creation for example */
+    return $genusName;
 }
 
 // OK
 function createVarietyPlantCategory(Webguy $I)
 {
-    $I->wantTo('Create Plant Category');
+    $plantCatName = $I->getRandName() . '-plant-cat';
+    $I->wantTo('Create Plant Category ' . $plantCatName);
     $I->amOnPage('/lisem/librinfo/varieties/plantcategory/create');
-    $I->fillField("//input[contains(@id,'name')]", $I->getRandName() . '-plant-cat');
+ 
+    $I->fillField("//input[contains(@id,'name')]", $plantCatName);
     $I->fillField("//input[contains(@id,'code')]", $I->getRandNbr());
     $I->clickCreate();
-    /* @todo : should return category name to be used for other test like species creation for example */
+    return $plantCatName;
 }
 
-function createVariety(Webguy $I)
-{
-    $I->wantTo('createVariety');
-    $I->amOnPage('/lisem/librinfo/variety/create');
-    $I->click("//a[@id='plant_type_add_choice']/i");
-    $I->fillField("//div[@id='popover549508']/div[2]/div/form/div/div/div/input", $I->getRandName() . '-plant');
-    $I->click("//div[@id='popover549508']/div[2]/div/form/div/div/div[2]/button");
-    $I->click("//div[@id='s2id_s59edea191f677_plant_categories']/ul");
-    $I->fillField("//input[@id='name']", $I->getRandName() . '-var');
-    $I->fillField("//input[@id='latin_name']", $I->getRandName() . '-var-latin');
-    $I->fillField("//input[@id='species']", 'sel');
-    $I->click("//div[@id='s2id_s59edea191f677_packagings']/ul");
-    $I->click('Generer le code');
-    $I->click('input[name=btn_create_and_edit]');
-    $I->click("Liste d'actions");
-    $I->click('Afficher');
-}
 
 function createPlot(Webguy $I)
 {

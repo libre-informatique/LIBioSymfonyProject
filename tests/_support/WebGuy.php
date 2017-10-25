@@ -20,7 +20,7 @@ class WebGuy extends \Codeception\Actor
     public function setRand($new = false)
     {
         if ($new || !isset($this->randNbr)) {
-            $this->randNbr = rand(1, 1000);
+            $this->randNbr = rand(1, 10000);
             $this->randName = 'sel-' . $this->randNbr;
         }
     }
@@ -41,14 +41,17 @@ class WebGuy extends \Codeception\Actor
 
     public function loginLisem()
     {
-        $this->wantTo('Test Login');
-        $this->amOnPage('/lisem/login');
-        $this->waitForText('Courriel', 30);
-        $this->waitForText('Mot de passe', 30);
-        $this->fillField("//input[@id='_username']", 'lisem@lisem.eu');
-        $this->fillField("//input[@id='_password']", 'lisem');
-        $this->click("//button[@type='submit']");
-        $this->waitForText('Libre', 30);
+        if (!$this->loadSessionSnapshot('login')) {
+            $this->wantTo('Test Login');
+            $this->amOnPage('/lisem/login');
+            $this->waitForText('Courriel', 30);
+            $this->waitForText('Mot de passe', 30);
+            $this->fillField("//input[@id='_username']", 'lisem@lisem.eu');
+            $this->fillField("//input[@id='_password']", 'lisem');
+            $this->click("//button[@type='submit']");
+            $this->waitForText('Libre', 30);
+            $this->saveSessionSnapshot('login');
+        }
     }
 
     public function hideSymfonyToolBar()
