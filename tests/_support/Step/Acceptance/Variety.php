@@ -14,6 +14,17 @@ namespace Step\Acceptance;
 
 class Variety extends \WebGuy
 {
+    public function fullCreate()
+    {
+        /* todo: maybe add this variable as class attribut */
+        $selGenus = $this->createGenus();
+        $selPlantCat = $this->createPlantCategory();
+        $selSpecies = $this->createSpecies($selGenus, $selPlantCat);
+        $selVariety = $this->create($selSpecies, $selPlantCat);
+
+        return $selVariety;
+    }
+
     public function create($speciesName, $plantCatName)
     {
         $varietyName = $this->getRandName() . '-variety';
@@ -23,11 +34,10 @@ class Variety extends \WebGuy
         $this->fillField("//input[contains(@id,'latin_name')]", 'latium-' . $varietyName);
         $this->selectDrop('_species', $speciesName);
         $this->selectDrop('_plant_categories', $plantCatName, 'ul');
-        $this->click("//a[contains(@id, 'code_generate_code')]");
-        $this->waitForElementNotVisible('.sk-folding-cube', 30);
         $this->click("//a[contains(@id, 'plant_type_add_choice')]/i");
         $this->fillField("//div[contains(@id,'popover')]/div[2]/div/form/div/div/div/input", $this->getRandName() . '-plant');
         $this->click("//div[contains(@id,'popover')]/div[2]/div/form/div/div/div[2]/button");
+        $this->generateCode();
         $this->clickCreate();
 
         return $varietyName;
@@ -39,8 +49,7 @@ class Variety extends \WebGuy
         $this->wantTo('Create Species ' . $speciesName);
         $this->amOnPage('/lisem/librinfo/varieties/species/create');
         $this->fillField("//input[contains(@id,'name')]", $speciesName);
-        $this->click("//a[contains(@id, 'code_generate_code')]");
-        $this->waitForElementNotVisible('.sk-folding-cube', 30);
+
         $this->selectDrop('_genus', $genusName);
         $this->fillField("//input[contains(@id,'latin_name')]", 'latium-' . $speciesName);
         $this->selectDrop('_plant_categories', $plantCatName, 'ul');
@@ -50,6 +59,7 @@ class Variety extends \WebGuy
         //$this->scrollTo("//input[contains(@id,'seed_lifespan')]");
         //$this->wait(10);
 
+        $this->generateCode();
         $this->clickCreate();
         // $this->clickCreate('btn_create_and_edit');
         return $speciesName;
