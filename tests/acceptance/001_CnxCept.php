@@ -12,6 +12,7 @@
 
 // @group login
 
-$I = new WebGuy($scenario);
+use Step\Acceptance\Lisem as LisemTester;
 
-$I->loginLisem();
+$lisem = new LisemTester($scenario);
+$lisem->loginLisem();

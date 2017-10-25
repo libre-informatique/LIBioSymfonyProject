@@ -11,28 +11,29 @@
  */
 
 // @group menu
+use Step\Acceptance\Lisem as LisemTester;
 
-$I = new WebGuy($scenario);
-$I->loginLisem();
+$lisem = new LisemTester($scenario);
+$lisem->loginLisem();
 
-$I->wantTo('Click on Menu List');
-$I->testLink('Contacts');
-$I->testLink('Emailing');
-$I->testLink('Èspèces');
-$I->testLink('Variétés');
-$I->testLink('Lots');
-$I->testLink('Parcelles');
-//$I->testLink('Tests de germination');
-$I->testLink('Producteurs');
-$I->click('Articles');
-$I->testLink('Semences');
-$I->testLink('Autres');
+$lisem->wantTo('Click on Menu List');
+$lisem->testLink('Contacts');
+$lisem->testLink('Emailing');
+$lisem->testLink('Èspèces');
+$lisem->testLink('Variétés');
+$lisem->testLink('Lots');
+$lisem->testLink('Parcelles');
+//$lisem->testLink('Tests de germination');
+$lisem->testLink('Producteurs');
+$lisem->click('Articles');
+$lisem->testLink('Semences');
+$lisem->testLink('Autres');
 
-//$I->testLink('Conditionnement');
-//$I->testLink('Inventaire');
-//$I->testLink('Catalogues');
-$I->testLink('Commandes');
+//$lisem->testLink('Conditionnement');
+//$lisem->testLink('Inventaire');
+//$lisem->testLink('Catalogues');
+$lisem->testLink('Commandes');
 
-$I->click('Gestion / Compta');
-$I->testLink('Journal des ventes');
-$I->testLink('Livre de caisse');
+$lisem->click('Gestion / Compta');
+$lisem->testLink('Journal des ventes');
+$lisem->testLink('Livre de caisse');
