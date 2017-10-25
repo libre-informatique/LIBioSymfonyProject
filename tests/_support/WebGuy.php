@@ -39,7 +39,6 @@ class WebGuy extends \Codeception\Actor
         return $this->randName;
     }
 
-  
     public function hideSymfonyToolBar()
     {
         try {

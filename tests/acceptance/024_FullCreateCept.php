@@ -10,9 +10,8 @@
  * file that was distributed with this source code.
  */
 
-
-// @group scenarii 
-// @group variety 
+// @group scenarii
+// @group variety
 // @group seedbatch
 
 use Step\Acceptance\Variety as VarietyTester;
@@ -23,17 +22,14 @@ $variety = new VarietyTester($scenario);
 
 $lisem->loginLisem();
 
-
 // Variety Test
 $selGenus = $variety->createGenus();
-$selPlantCat =  $variety->createPlantCategory();
+$selPlantCat = $variety->createPlantCategory();
 $selSpecies = $variety->createSpecies($selGenus, $selPlantCat);
 $selVariety = $variety->create($selSpecies, $selPlantCat);
 
 // SeedBatch Test
 //$selProducer = createSeedBatchProducer($I);
-
-
 
 function createSeedBatchPlot(Webguy $I)
 {
@@ -56,7 +52,7 @@ function createSeedBatch(Webguy $I)
 // OK
 function createSeedBatchProducer(Webguy $I)
 {
-    $producerName =  $I->getRandName() . '-producer';
+    $producerName = $I->getRandName() . '-producer';
     $I->wantTo('Create a producer ' . $producerName);
     $I->amOnPage('/lisem/librinfo/seedbatch/seed-producer/create');
 
@@ -69,5 +65,6 @@ function createSeedBatchProducer(Webguy $I)
     $I->fillField("//input[contains(@id,'_lastname')]", 'last-' . $producerName);
     $I->fillField("//input[contains(@id,'_email')]", $producerName . '@lisem.eu');
     $I->clickCreate();
+
     return $producerName;
 }
