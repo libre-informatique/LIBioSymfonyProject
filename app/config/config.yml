@@ -200,7 +200,7 @@ bazinga_js_translation:
     default_domain:       messages
 
 fos_js_routing:
-    routes_to_expose: [ .*librinfo_.*, .*blast_utils.* ]
+    routes_to_expose: [ .*librinfo_.*, .*blast_utils.*, .*sonata_admin.* ]
 
 lexik_maintenance:
     authorized:
