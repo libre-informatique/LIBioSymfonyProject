@@ -28,4 +28,7 @@ $lisem->loginLisem();
 $selVariety = $variety->fullCreate();
 
 // SeedBatch Test
-$selSeedBatch = $seedbatch->fullCreate();
+$selSeedBatch = $seedbatch->fullCreate($selVariety);
+
+
+//$seedbatch->create('sel-7700-variety', '2823', 'sel-7382-plot');

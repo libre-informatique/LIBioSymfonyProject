@@ -17,7 +17,8 @@ class Variety extends \WebGuy
     public function fullCreate()
     {
         /* todo: maybe add this variable as class attribut */
-        $selGenus = $this->createGenus();
+        $selFamily = $this->createFamily();
+        $selGenus = $this->createGenus($selFamily);
         $selPlantCat = $this->createPlantCategory();
         $selSpecies = $this->createSpecies($selGenus, $selPlantCat);
         $selVariety = $this->create($selSpecies, $selPlantCat);
@@ -28,6 +29,7 @@ class Variety extends \WebGuy
     public function create($speciesName, $plantCatName)
     {
         $varietyName = $this->getRandName() . '-variety';
+        
         $this->wantTo('Create Variety ' . $varietyName);
         $this->amOnPage('/lisem/librinfo/variety/create');
         $this->fillField("//input[contains(@id,'name')]", $varietyName);
@@ -46,46 +48,55 @@ class Variety extends \WebGuy
     public function createSpecies($genusName, $plantCatName)
     {
         $speciesName = $this->getRandName() . '-species-name';
+        
         $this->wantTo('Create Species ' . $speciesName);
         $this->amOnPage('/lisem/librinfo/varieties/species/create');
         $this->fillField("//input[contains(@id,'name')]", $speciesName);
-
         $this->selectDrop('_genus', $genusName);
         $this->fillField("//input[contains(@id,'latin_name')]", 'latium-' . $speciesName);
         $this->selectDrop('_plant_categories', $plantCatName, 'ul');
-
-        //$this->scrollTo("//input[contains(@id,'latin_name')]");
-        //$this->wait(10);
-        //$this->scrollTo("//input[contains(@id,'seed_lifespan')]");
-        //$this->wait(10);
-
         $this->generateCode();
         $this->clickCreate();
         // $this->clickCreate('btn_create_and_edit');
         return $speciesName;
     }
 
-    /**
-     * @depends Lisem:loginLisem
-     */
-    public function createGenus()
+   
+    public function createGenus($familyName)
     {
         $genusName = $this->getRandName() . '-genus';
+        
         $this->wantTo('Create Genus ' . $genusName);
         $this->amOnPage('/lisem/librinfo/varieties/genus/create');
         $this->fillField("//input[contains(@id,'name')]", $genusName);
         $this->fillField("//textarea[contains(@id,'description')]", $genusName . '-desc');
+        $this->selectDrop('_family', $familyName);
         $this->clickCreate();
 
         return $genusName;
     }
 
+   
+    public function createFamily()
+    {
+        $familyName = $this->getRandName() . '-family';
+        
+        $this->wantTo('Create Family ' . $familyName);
+        $this->amOnPage('/lisem/librinfo/varieties/family/create');
+        $this->fillField("//input[contains(@id,'name')]", $familyName);
+        $this->fillField("//input[contains(@id,'latin_name')]", 'latium-' . $familyName);
+        // $this->fillField("//textarea[contains(@id,'description')]", $familyName . '-desc');
+        $this->clickCreate();
+
+        return $familyName;
+    }
+
     public function createPlantCategory()
     {
         $plantCatName = $this->getRandName() . '-plant-cat';
+        
         $this->wantTo('Create Plant Category ' . $plantCatName);
         $this->amOnPage('/lisem/librinfo/varieties/plantcategory/create');
-
         $this->fillField("//input[contains(@id,'name')]", $plantCatName);
         $this->fillField("//input[contains(@id,'code')]", $this->getRandNbr());
         $this->clickCreate();

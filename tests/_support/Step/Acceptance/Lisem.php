@@ -27,5 +27,6 @@ class Lisem extends \WebGuy
             $this->waitForText('Libre', 30);
             $this->saveSessionSnapshot('login');
         }
+         $this->hideSymfonyToolBar();
     }
 }

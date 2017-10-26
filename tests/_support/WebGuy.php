@@ -51,6 +51,13 @@ class WebGuy extends \Codeception\Actor
     public function scrollDown()
     {
         $this->executeJS('window.scrollTo(0, document.body.scrollHeight);');
+        $this->wait(1); // ah ah js tempo
+    }
+
+    public function scrollUp()
+    {
+        $this->executeJS('window.scrollTo(0, 0);');
+        $this->wait(1); // ah ah js tempo
     }
 
     public function clickCreate($name = 'btn_create_and_list')
@@ -74,11 +81,16 @@ class WebGuy extends \Codeception\Actor
         $this->waitForText($linkRes, 30); // secs
     }
 
-    public function generateCode()
+    public function waitCube($class = 'sk-folding-cube')
     {
-        $this->click("//a[contains(@id, 'code_generate_code')]");
         $this->wait(1);
-        $this->waitForElementNotVisible('.sk-folding-cube', 30);
+        $this->waitForElementNotVisible('.' . $class, 30);
+    }
+    
+    public function generateCode($id = 'code_generate_code')
+    {
+        $this->click("//a[contains(@id, '" . $id . "')]");
+        $this->waitCube();
     }
 
     public function selectSearchDrop($id, $value)
@@ -93,9 +105,9 @@ class WebGuy extends \Codeception\Actor
         // $this->pressKey('//div[@id="select2-drop"]/div/input[contains(@id,"_search")]', 'sel'); // //$this->pressKey('//div[@id="select2-drop"]/div/input[contains(@id,"_search")]', \WebDriverKeys::ENTER);
         // $this->fillField('//div[@id="select2-drop"]/div/input[contains(@id,"_search")]', 'sel');
         $this->fillField('//div[@id="select2-drop"]/div/input[contains(@id,"_search")]', $value);
-        $this->wait(1);
-        $this->waitForElementNotVisible('.sk-folding-cube', 30);
+        $this->waitCube();
         $this->clickWithLeftButton('//div[@id="select2-drop"]/ul/li/div/div[contains(string(), "' . $value . '")]');
+        $this->waitCube();
     }
 
     public function selectDrop($id, $value, $tag = 'a')
@@ -104,5 +116,6 @@ class WebGuy extends \Codeception\Actor
         // REAL example to click select2 elements below
         $this->clickWithLeftButton('div[id^="s2id_"][id$="' . $id . '"] ' . $tag . '');
         $this->clickWithLeftButton('//div[@id="select2-drop"]/ul/li/div[text()="' . $value . '"]');
+        $this->waitCube();
     }
 }
