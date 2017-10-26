@@ -74,11 +74,34 @@ class WebGuy extends \Codeception\Actor
         $this->waitForText($linkRes, 30); // secs
     }
 
+    public function generateCode()
+    {
+        $this->click("//a[contains(@id, 'code_generate_code')]");
+        $this->wait(1);
+        $this->waitForElementNotVisible('.sk-folding-cube', 30);
+    }
+
+    public function selectSearchDrop($id, $value)
+    {
+        // UGLY FIRST WORKING WAY
+        //$this->clickWithLeftButton('div[id^="s2id_"][id$="_producer_autocomplete_input"] a');
+        //$this->pressKey('#s2id_autogen8_search', 'sel'); // ugly working way
+
+        // UGLY SECOND WORKING WAY
+        $this->clickWithLeftButton('div[id^="s2id_"][id$="' . $id . '"] a');
+        $this->scrollTo('//div[@id="select2-drop"]/div/input[contains(@id,"_search")]'); // is it in the footer ? moved by js ? webdriver is not aware of this move ?
+        // $this->pressKey('//div[@id="select2-drop"]/div/input[contains(@id,"_search")]', 'sel'); // //$this->pressKey('//div[@id="select2-drop"]/div/input[contains(@id,"_search")]', \WebDriverKeys::ENTER);
+        // $this->fillField('//div[@id="select2-drop"]/div/input[contains(@id,"_search")]', 'sel');
+        $this->fillField('//div[@id="select2-drop"]/div/input[contains(@id,"_search")]', $value);
+        $this->wait(1);
+        $this->waitForElementNotVisible('.sk-folding-cube', 30);
+        $this->clickWithLeftButton('//div[@id="select2-drop"]/ul/li/div/div[contains(string(), "' . $value . '")]');
+    }
+
     public function selectDrop($id, $value, $tag = 'a')
     {
         /* @todo test if there is more than one select on the page */
         // REAL example to click select2 elements below
-        /* where does the s2id come from */
         $this->clickWithLeftButton('div[id^="s2id_"][id$="' . $id . '"] ' . $tag . '');
         $this->clickWithLeftButton('//div[@id="select2-drop"]/ul/li/div[text()="' . $value . '"]');
     }

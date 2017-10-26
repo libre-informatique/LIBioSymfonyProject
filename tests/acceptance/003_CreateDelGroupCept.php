@@ -20,6 +20,6 @@ $lisem->loginLisem();
 $crm = new CRMTester($scenario);
 
 $crm->wantTo('Create And Delete Group (Circle)');
-$crm->createCircle($I);
-$crm->deleteCircle($I);
-$crm->createCircle($I);
+$crm->createCircle();
+$crm->deleteCircle();
+$crm->createCircle();
