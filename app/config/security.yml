@@ -8,6 +8,19 @@ parameters:
     sylius.security.shop_regex: ""
 
 security:
+
+    role_hierarchy:
+
+        ROLE_ADMINISTRATION_ACCESS:
+            - ROLE_USER
+
+        ROLE_SONATA_ADMIN:
+            - ROLE_ADMINISTRATION_ACCESS
+
+        ROLE_SUPER_ADMIN:
+            - ROLE_SONATA_ADMIN
+            - ROLE_ALLOWED_TO_SWITCH
+
     encoders:
         Sylius\Component\User\Model\UserInterface: sha512
 

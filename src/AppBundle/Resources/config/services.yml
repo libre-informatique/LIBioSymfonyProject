@@ -35,6 +35,9 @@ services:
     lisem.menu_builder:
         class: AppBundle\Menu\MenuBuilder
         arguments: ["@knp_menu.factory"]
+        calls:
+            - [setTokenStorage, ['@security.token_storage']]
+            - [setAuthorizationChecker, ['@security.authorization_checker']]
 
     lisem.sidebar_menu.paremeters:
         class: Knp\Menu\MenuItem                                  # the service definition requires setting the class

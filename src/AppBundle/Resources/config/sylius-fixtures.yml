@@ -108,7 +108,7 @@ sylius_fixtures:
 
         lisem_default:
             listeners:
-#                orm_purger: ~
+                orm_purger: false
                 logger: ~
 
             fixtures:

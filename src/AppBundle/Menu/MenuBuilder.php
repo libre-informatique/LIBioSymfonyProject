@@ -14,6 +14,8 @@ namespace AppBundle\Menu;
 
 use Knp\Menu\FactoryInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
+use Symfony\Component\Security\Core\Authorization\AuthorizationChecker;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage;
 
 /**
  * Extension for Sonata Admin sidebar menu.
@@ -25,6 +27,16 @@ use Symfony\Component\HttpFoundation\RequestStack;
 class MenuBuilder
 {
     private $factory;
+
+    /**
+     * @var TokenStorage
+     */
+    private $tokenStorage;
+
+    /**
+     * @var AuthorizationChecker
+     */
+    private $authorizationChecker;
 
     /**
      * @param FactoryInterface $factory
@@ -60,11 +72,14 @@ class MenuBuilder
         $menu = $this->factory->createItem('lisem.menu_label.app_settings');
 
         // Admin settings
-        $submenu = $menu->addChild('lisem.menu_label.admin_settings');
+
         // TODO (we are not using LibrinfoUserBundle any more. Adapt this for SonataSyliusUserBundle) :
-        //$submenu->addChild('lisem.menu_label.user_users', ['route' => 'admin_librinfo_user_user_list']);
-        //$submenu->addChild('lisem.menu_label.user_groups', ['route' => 'admin_librinfo_user_group_list']);
-        //$submenu->addChild('lisem.menu_label.user_roles', ['route' => 'lisem_not_implemented']);
+        if ($this->authorizationChecker->isGranted('ROLE_SUPER_ADMIN', $this->tokenStorage->getToken()->getUser())) {
+            $submenu = $menu->addChild('lisem.menu_label.admin_settings');
+            $submenu->addChild('lisem.menu_label.user_users', ['route' => 'admin_librinfo_sonatasyliususer_sonatauser_list']);
+            //$submenu->addChild('lisem.menu_label.user_groups', ['route' => 'admin_librinfo_user_group_list']);
+            //$submenu->addChild('lisem.menu_label.user_roles', ['route' => 'lisem_not_implemented']);
+        }
 
         // CRM settings
         $submenu = $menu->addChild('lisem.menu_label.crm_settings');
@@ -104,5 +119,21 @@ class MenuBuilder
         $submenu->addChild('lisem.menu_label.shop_user', ['route' => 'admin_librinfo_ecommerce_shop_user_list']);
 
         return $menu;
+    }
+
+    /**
+     * @param TokenStorage $tokenStorage
+     */
+    public function setTokenStorage(TokenStorage $tokenStorage): void
+    {
+        $this->tokenStorage = $tokenStorage;
+    }
+
+    /**
+     * @param AuthorizationChecker $authorizationChecker
+     */
+    public function setAuthorizationChecker(AuthorizationChecker $authorizationChecker): void
+    {
+        $this->authorizationChecker = $authorizationChecker;
     }
 }

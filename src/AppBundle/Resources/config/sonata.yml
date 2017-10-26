@@ -69,14 +69,16 @@ sonata_admin:
                 items:
                     - route: admin_librinfo_seedbatch_plot_list
                       label: lisem.menu_label.plots_list
-
-            lisem.menu.germination_tests:
-                label: lisem.menu_label.germination_tests
-                icon:  '<i class="fa fa-eyedropper"></i>'
-                on_top: true
-                items:
-                    - label: lisem.menu_label.germination_tests
-                      route: lisem_not_implemented
+                      
+            # TEMPORARILY DISABLED
+            #
+            # lisem.menu.germination_tests:
+            #     label: lisem.menu_label.germination_tests
+            #     icon:  '<i class="fa fa-eyedropper"></i>'
+            #     on_top: true
+            #     items:
+            #         - label: lisem.menu_label.germination_tests
+            #           route: lisem_not_implemented
 
             lisem.menu.producers:
                 label: lisem.menu_label.producers
@@ -99,33 +101,37 @@ sonata_admin:
                     - label: lisem.menu_label.other_products_list
                       route: admin_librinfo_other_product_list
 
-            lisem.menu.packagings:
-                label: lisem.menu_label.packagings
-                icon:  '<i class="fa fa-archive"></i>'
-                on_top: true
-                items:
-                    - label: lisem.menu_label.packagings
-                      route: lisem_not_implemented
+            # TEMPORARILY DISABLED
+            #
+            # lisem.menu.packagings:
+            #     label: lisem.menu_label.packagings
+            #     icon:  '<i class="fa fa-archive"></i>'
+            #     on_top: true
+            #     items:
+            #         - label: lisem.menu_label.packagings
+            #           route: lisem_not_implemented
 
             # ##################################################################
             # PRODUCTS
             # ##################################################################
 
-            lisem.menu.inventory:
-                label: lisem.menu_label.inventory
-                icon:  '<i class="fa fa-list"></i>'
-                on_top: true
-                items:
-                    - label: lisem.menu_label.inventory
-                      route: lisem_not_implemented
-
-            lisem.menu.catalogs:
-                label: lisem.menu_label.catalogs
-                icon:  '<i class="fa fa-book"></i>'
-                on_top: true
-                items:
-                    - label: lisem.menu_label.catalogs
-                      route: lisem_not_implemented
+            # TEMPORARILY DISABLED
+            #
+            # lisem.menu.inventory:
+            #     label: lisem.menu_label.inventory
+            #     icon:  '<i class="fa fa-list"></i>'
+            #     on_top: true
+            #     items:
+            #         - label: lisem.menu_label.inventory
+            #           route: lisem_not_implemented
+            #
+            # lisem.menu.catalogs:
+            #     label: lisem.menu_label.catalogs
+            #     icon:  '<i class="fa fa-book"></i>'
+            #     on_top: true
+            #     items:
+            #         - label: lisem.menu_label.catalogs
+            #           route: lisem_not_implemented
 
             # ##################################################################
             # ORDERS
