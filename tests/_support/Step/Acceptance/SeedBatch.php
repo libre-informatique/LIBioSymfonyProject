@@ -18,7 +18,7 @@ class SeedBatch extends \WebGuy
     {
         $plotName = $this->getRandName() . '-plot';
 
-        $this->wantTo('Create Plot ' . $plotName);
+        $this->amGoingTo('Create Plot ' . $plotName);
         $this->amOnPage('/lisem/librinfo/seedbatch/plot/create');
         $this->fillField("//input[contains(@id,'_name')]", $plotName);
         $this->selectSearchDrop('_producer_autocomplete_input', $producerName);
@@ -35,7 +35,7 @@ class SeedBatch extends \WebGuy
     {
         $producerName = $this->getRandName() . '-producer';
 
-        $this->wantTo('Create a producer ' . $producerName);
+        $this->amGoingTo('Create a producer ' . $producerName);
         $this->amOnPage('/lisem/librinfo/seedbatch/seed-producer/create');
         //$this->click("//li[2]/div/label/div/ins"); //ugly work
         /* @todo: find a way to click without use li[2] ... */
@@ -49,11 +49,11 @@ class SeedBatch extends \WebGuy
         return $producerName;
     }
 
-    public function create($varietyName, $producerName, $plotName)
+    public function createSeedBatch($varietyName, $producerName, $plotName)
     {
         $seedBatchName = $this->getRandName() . '-seedbatch';
 
-        $this->wantTo('Create Seed Batch' . $seedBatchName);
+        $this->amGoingTo('Create Seed Batch' . $seedBatchName);
         $this->amOnPage('lisem/librinfo/seedbatch/seedbatch/create');
         $this->selectSearchDrop('_variety_autocomplete_input', $varietyName);
         $this->selectSearchDrop('_producer_autocomplete_input', $producerName);
@@ -66,16 +66,5 @@ class SeedBatch extends \WebGuy
         $this->clickCreate();
 
         return $seedBatchName;
-    }
-
-    public function fullCreate($varietyName)
-    {
-        $selProducer = $this->createProducer();
-        //warning we replace producer name because search box for it does not work well with sel-1234
-        $selProducer = $this->getRandNbr();
-        $selPlot = $this->createPlot($selProducer);
-        $selSeedBatch = $this->create($varietyName, $selProducer, $selPlot);
-
-        return $selSeedBatch;
     }
 }

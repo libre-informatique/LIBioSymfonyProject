@@ -17,7 +17,7 @@ class Lisem extends \WebGuy
     public function loginLisem()
     {
         if (!$this->loadSessionSnapshot('login')) {
-            $this->wantTo('Test Login');
+            $this->amGoingTo('Test Login');
             $this->amOnPage('/lisem/login');
             $this->waitForText('Courriel', 30);
             $this->waitForText('Mot de passe', 30);
@@ -27,6 +27,5 @@ class Lisem extends \WebGuy
             $this->waitForText('Libre', 30);
             $this->saveSessionSnapshot('login');
         }
-         $this->hideSymfonyToolBar();
     }
 }

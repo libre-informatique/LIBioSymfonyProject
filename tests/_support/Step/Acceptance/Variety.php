@@ -14,23 +14,11 @@ namespace Step\Acceptance;
 
 class Variety extends \WebGuy
 {
-    public function fullCreate()
-    {
-        /* todo: maybe add this variable as class attribut */
-        $selFamily = $this->createFamily();
-        $selGenus = $this->createGenus($selFamily);
-        $selPlantCat = $this->createPlantCategory();
-        $selSpecies = $this->createSpecies($selGenus, $selPlantCat);
-        $selVariety = $this->create($selSpecies, $selPlantCat);
-
-        return $selVariety;
-    }
-
-    public function create($speciesName, $plantCatName)
+    public function createVariety($speciesName, $plantCatName)
     {
         $varietyName = $this->getRandName() . '-variety';
         
-        $this->wantTo('Create Variety ' . $varietyName);
+        $this->amGoingTo('Create Variety ' . $varietyName);
         $this->amOnPage('/lisem/librinfo/variety/create');
         $this->fillField("//input[contains(@id,'name')]", $varietyName);
         $this->fillField("//input[contains(@id,'latin_name')]", 'latium-' . $varietyName);
@@ -49,7 +37,7 @@ class Variety extends \WebGuy
     {
         $speciesName = $this->getRandName() . '-species-name';
         
-        $this->wantTo('Create Species ' . $speciesName);
+        $this->amGoingTo('Create Species ' . $speciesName);
         $this->amOnPage('/lisem/librinfo/varieties/species/create');
         $this->fillField("//input[contains(@id,'name')]", $speciesName);
         $this->selectDrop('_genus', $genusName);
@@ -66,7 +54,7 @@ class Variety extends \WebGuy
     {
         $genusName = $this->getRandName() . '-genus';
         
-        $this->wantTo('Create Genus ' . $genusName);
+        $this->amGoingTo('Create Genus ' . $genusName);
         $this->amOnPage('/lisem/librinfo/varieties/genus/create');
         $this->fillField("//input[contains(@id,'name')]", $genusName);
         $this->fillField("//textarea[contains(@id,'description')]", $genusName . '-desc');
@@ -81,7 +69,7 @@ class Variety extends \WebGuy
     {
         $familyName = $this->getRandName() . '-family';
         
-        $this->wantTo('Create Family ' . $familyName);
+        $this->amGoingTo('Create Family ' . $familyName);
         $this->amOnPage('/lisem/librinfo/varieties/family/create');
         $this->fillField("//input[contains(@id,'name')]", $familyName);
         $this->fillField("//input[contains(@id,'latin_name')]", 'latium-' . $familyName);
@@ -95,7 +83,7 @@ class Variety extends \WebGuy
     {
         $plantCatName = $this->getRandName() . '-plant-cat';
         
-        $this->wantTo('Create Plant Category ' . $plantCatName);
+        $this->amGoingTo('Create Plant Category ' . $plantCatName);
         $this->amOnPage('/lisem/librinfo/varieties/plantcategory/create');
         $this->fillField("//input[contains(@id,'name')]", $plantCatName);
         $this->fillField("//input[contains(@id,'code')]", $this->getRandNbr());

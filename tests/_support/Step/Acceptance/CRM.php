@@ -14,13 +14,13 @@ namespace Step\Acceptance;
 
 class CRM extends \WebGuy
 {
-    public function createCircle()
+    public function createCircle($groupName = 'SelGroup', $groupCode = 'SELGRP')
     {
-        $this->wantTo('Create Group (Circle)');
+        $this->goingTo('Create Circle ' . $groupName . '(' .  $groupCode . ')');
         $this->amOnPage('/lisem/librinfo/crm/circle/list');
         $this->testLink('Ajouter', 'Nom');
-        $this->fillField("//input[contains(@id, 'name')]", 'SelGroup');
-        $this->fillField("//input[contains(@id, 'code')]", 'SELGRP');
+        $this->fillField("//input[contains(@id, 'name')]", $groupName);
+        $this->fillField("//input[contains(@id, 'code')]", $groupCode);
         $this->fillField("//textarea[contains(@id, 'description')]", 'Sel desc');
         $this->selectDrop('_type', 'Autres');
 
@@ -29,7 +29,7 @@ class CRM extends \WebGuy
 
     public function deleteCircle($filter = 'Sel')
     {
-        $this->wantTo('Delete Group (Circle)');
+        $this->goingTo('Delete Circle ' . $filter);
         $this->amOnPage('/lisem/librinfo/crm/circle/list');
         $this->testLink('Filtres');
         $this->wait(1);
@@ -48,7 +48,7 @@ class CRM extends \WebGuy
 
     public function createCategory($selCat, $selCatParent = null)
     {
-        $this->wantTo('Create Category');
+        $this->goingTo('Create Category ' . $selCat);
 
         $this->amOnPage('/lisem/librinfo/crm/category/list');
         $this->testLink('Ajouter', 'Nom');
@@ -62,7 +62,7 @@ class CRM extends \WebGuy
 
     public function deleteCategory($filter = 'Sel')
     {
-        $this->wantTo('Delete Category');
+        $this->goingTo('Delete Category ' . $filter);
         $this->amOnPage('/lisem/librinfo/crm/category/list');
         $this->testLink('Filtres');
         $this->wait(1);
