@@ -24,6 +24,11 @@ env:
     - UPSTREAM_URL=https://github.com/libre-informatique/LISemSymfonyProject.git
     - XMLLINT_INDENT="    "
 
+notifications:
+  email:
+    on_success: change
+    on_failure: always
+    
 matrix:
   fast_finish: true
   include:
