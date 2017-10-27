@@ -17,7 +17,7 @@ class Variety extends \WebGuy
     public function createVariety($speciesName, $plantCatName)
     {
         $varietyName = $this->getRandName() . '-variety';
-        
+
         $this->amGoingTo('Create Variety ' . $varietyName);
         $this->amOnPage('/lisem/librinfo/variety/create');
         $this->fillField("//input[contains(@id,'name')]", $varietyName);
@@ -36,7 +36,7 @@ class Variety extends \WebGuy
     public function createSpecies($genusName, $plantCatName)
     {
         $speciesName = $this->getRandName() . '-species-name';
-        
+
         $this->amGoingTo('Create Species ' . $speciesName);
         $this->amOnPage('/lisem/librinfo/varieties/species/create');
         $this->fillField("//input[contains(@id,'name')]", $speciesName);
@@ -49,11 +49,10 @@ class Variety extends \WebGuy
         return $speciesName;
     }
 
-   
     public function createGenus($familyName)
     {
         $genusName = $this->getRandName() . '-genus';
-        
+
         $this->amGoingTo('Create Genus ' . $genusName);
         $this->amOnPage('/lisem/librinfo/varieties/genus/create');
         $this->fillField("//input[contains(@id,'name')]", $genusName);
@@ -64,11 +63,10 @@ class Variety extends \WebGuy
         return $genusName;
     }
 
-   
     public function createFamily()
     {
         $familyName = $this->getRandName() . '-family';
-        
+
         $this->amGoingTo('Create Family ' . $familyName);
         $this->amOnPage('/lisem/librinfo/varieties/family/create');
         $this->fillField("//input[contains(@id,'name')]", $familyName);
@@ -82,7 +80,7 @@ class Variety extends \WebGuy
     public function createPlantCategory()
     {
         $plantCatName = $this->getRandName() . '-plant-cat';
-        
+
         $this->amGoingTo('Create Plant Category ' . $plantCatName);
         $this->amOnPage('/lisem/librinfo/varieties/plantcategory/create');
         $this->fillField("//input[contains(@id,'name')]", $plantCatName);

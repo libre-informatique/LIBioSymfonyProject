@@ -16,7 +16,7 @@ class CRM extends \WebGuy
 {
     public function createCircle($groupName = 'SelGroup', $groupCode = 'SELGRP')
     {
-        $this->amGoingTo('Create Circle ' . $groupName . '(' .  $groupCode . ')');
+        $this->amGoingTo('Create Circle ' . $groupName . '(' . $groupCode . ')');
         $this->amOnPage('/lisem/librinfo/crm/circle/list');
         $this->testLink('Ajouter', 'Nom');
         $this->fillField("//input[contains(@id, 'name')]", $groupName);

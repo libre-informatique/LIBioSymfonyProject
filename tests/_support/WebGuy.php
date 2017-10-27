@@ -86,7 +86,7 @@ class WebGuy extends \Codeception\Actor
         $this->wait(1);
         $this->waitForElementNotVisible('.' . $class, 30);
     }
-    
+
     public function generateCode($id = 'code_generate_code')
     {
         $this->click("//a[contains(@id, '" . $id . "')]");

@@ -29,7 +29,7 @@ class SeedBatch extends \WebGuy
 
         return $plotName;
     }
-    
+
     /* @todo add a test for organism (not individual) */
     public function createProducer()
     {

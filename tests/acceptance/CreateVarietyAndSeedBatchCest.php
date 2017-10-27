@@ -14,7 +14,6 @@
 // @group variety
 // @group seedbatch
 
-
 use Step\Acceptance\Lisem as LisemTester;
 use Step\Acceptance\Variety as VarietyTester;
 use Step\Acceptance\SeedBatch as SeedBatchTester;
@@ -40,7 +39,6 @@ class CreateVarietyAndSeedBatchCest
         $lisem->hideSymfonyToolBar();
     }
 
-
     /**
      * @depends testLogin
      */
@@ -49,7 +47,6 @@ class CreateVarietyAndSeedBatchCest
         $lisem->loginLisem();
         $this->selFamily = $variety->createFamily();
     }
-
 
     /**
      * @depends testLogin
@@ -70,7 +67,7 @@ class CreateVarietyAndSeedBatchCest
         $this->selPlantCat = $variety->createPlantCategory();
     }
 
-     /**
+    /**
      * @depends testLogin
      * @depends testGenus
      * @depends testPlantCategory
@@ -81,7 +78,7 @@ class CreateVarietyAndSeedBatchCest
         $this->selSpecies = $variety->createSpecies($this->selGenus, $this->selPlantCat);
     }
 
-     /**
+    /**
      * @depends testLogin
      * @depends testSpecies
      * @depends testPlantCategory
@@ -91,7 +88,6 @@ class CreateVarietyAndSeedBatchCest
         $lisem->loginLisem();
         $this->selVariety = $variety->createVariety($this->selSpecies, $this->selPlantCat);
     }
-    
 
     /**
      * @depends testLogin
@@ -103,6 +99,7 @@ class CreateVarietyAndSeedBatchCest
         //warning we replace producer name because search box for it does not work well with sel-1234
         $this->selProducer = $seedbatch->getRandNbr();
     }
+
     /**
      * @depends testLogin
      * @depends testProducter
@@ -112,7 +109,7 @@ class CreateVarietyAndSeedBatchCest
         $lisem->loginLisem();
         $this->selPlot = $seedbatch->createPlot($this->selProducer);
     }
-    
+
     /**
      * @depends testLogin
      * @depends testProducter
