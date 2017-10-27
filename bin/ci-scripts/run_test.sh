@@ -11,7 +11,7 @@ CODECEPTCMD="bin/codecept run -d --steps --fail-fast --no-interaction --no-exit"
 CODECEPTGROUP=$@
 if [ $# -eq 0 ]
 then
-   CODECEPTGROUP="login menu crm variety ecommerce scenarii" 
+   CODECEPTGROUP="login menu crm variety ecommerce" 
 fi
 
 

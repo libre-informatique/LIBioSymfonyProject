@@ -57,16 +57,13 @@ class Lisem extends \WebGuy
 
     public function filterList($filter, $type = 'name')
     {
+        $this->waitForText('Filtres', 30); // secs
         $this->click('Filtres');
-        $this->waitForElementVisible('.sonata-toggle-filter', 30); // $this->wait(1);
-        //$this->click($type);
+        $this->waitForElementVisible('.sonata-toggle-filter', 30);
         $this->click('a[filter-target$="' . $type . '"]');
-        $this->wait(1);
-        //$this->click('#filter_customer__fulltextName_value');
-        $this->click('input[id^="filter_"][id$="_value"]');
-        //$this->fillField('#filter_customer__fulltextName_value', $filter);
-        $this->fillField('input[id^="filter_"][id$="_value"]', $filter);
-        //$this->click('button.btn.btn-primary');
+        $this->waitForElementVisible('.sonata-filter-form', 30);
+        $this->click('//input[contains(@id,"' . $type . '")]'); // Generic 'input[id^="filter_"][id$="_value"]' not always work
+        $this->fillField('//input[contains(@id,"' . $type . '")]', $filter);
         $this->click('Filtrer');
     }
     
@@ -79,9 +76,6 @@ class Lisem extends \WebGuy
         // UGLY SECOND WORKING WAY
         $this->clickWithLeftButton('div[id^="s2id_"][id$="' . $id . '"] a');
         $this->scrollTo('//div[@id="select2-drop"]/div/input[contains(@id,"_search")]'); // is it in the footer ? moved by js ? webdriver is not aware of this move ?
-        // $this->pressKey('//div[@id="select2-drop"]/div/input[contains(@id,"_search")]', 'sel');
-        //$this->pressKey('//div[@id="select2-drop"]/div/input[contains(@id,"_search")]', \WebDriverKeys::ENTER);
-        // $this->fillField('//div[@id="select2-drop"]/div/input[contains(@id,"_search")]', 'sel');
         $this->fillField('//div[@id="select2-drop"]/div/input[contains(@id,"_search")]', $value);
         $this->waitCube();
         $this->clickWithLeftButton('//div[@id="select2-drop"]/ul/li/div/div[contains(string(), "' . $value . '")]');

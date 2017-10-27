@@ -37,6 +37,8 @@ CreateCmd($lisem);
 //CheckCmd($lisem, $randName);
 $ecommerce->checkOrder($randSelEmail);
 
+//$ecommerce->checkOrder('sel-8053@lisem.eu');
+
 function SyliusCreateAccount($webGuy, $selEmail, $selName)
 {
     /* warning there is a big exception if the email is already used by someone else */

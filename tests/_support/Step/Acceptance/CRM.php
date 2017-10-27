@@ -31,15 +31,17 @@ class CRM extends Lisem
     {
         $this->amGoingTo('Delete Circle ' . $filter);
         $this->amOnPage('/lisem/librinfo/crm/circle/list');
-        $this->testLink('Filtres');
-        $this->wait(1);
-        $this->click('i.fa.fa-square-o');
-        //$this->click("//ul[2]/li/ul/li/a/i");
-        $this->wait(1);
-        $this->click("//input[@id='filter_name_value']");
-        $this->fillField("//input[@id='filter_name_value']", $filter);
-        $this->click("//button[@type='submit']");
-        $this->wait(1);
+        $this->filterList($filter, 'name');
+        // $this->testLink('Filtres');
+        // $this->wait(1);
+        // $this->click('i.fa.fa-square-o');
+        // //$this->click("//ul[2]/li/ul/li/a/i");
+        // $this->wait(1);
+        // $this->click("//input[@id='filter_name_value']");
+        // $this->fillField("//input[@id='filter_name_value']", $filter);
+        // $this->click("//button[@type='submit']");
+        // $this->wait(1);
+        /* @todo check if it is the good default choice */
         $this->click('//label/div/ins');
         $this->click("//input[@value='OK']");
         $this->click("//button[@type='submit']");
@@ -64,13 +66,16 @@ class CRM extends Lisem
     {
         $this->amGoingTo('Delete Category ' . $filter);
         $this->amOnPage('/lisem/librinfo/crm/category/list');
-        $this->testLink('Filtres');
-        $this->wait(1);
-        $this->click('i.fa.fa-square-o');
-        $this->wait(1);
-        $this->click("//input[@id='filter_name_value']");
-        $this->fillField("//input[@id='filter_name_value']", $filter);
-        $this->click("//button[@type='submit']");
+        $this->filterList($filter, 'name');
+
+        // $this->testLink('Filtres');
+        // $this->wait(1);
+        // $this->click('i.fa.fa-square-o');
+        // $this->wait(1);
+        // $this->click("//input[@id='filter_name_value']");
+        // $this->fillField("//input[@id='filter_name_value']", $filter);
+        // $this->click("//button[@type='submit']");
+        /* @todo check if it is the good default choice */
         $this->click('//label/div/ins');
         $this->click("//input[@value='OK']");
         $this->click("//button[@type='submit']");
