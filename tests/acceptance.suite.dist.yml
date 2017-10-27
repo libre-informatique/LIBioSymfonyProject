@@ -17,4 +17,10 @@ modules:
             depends: Symfony
         - WebDriver:
             url: 'http://127.0.0.1:8042/'
+            wait: 1           
             browser: chrome
+            capabilities:
+                chromeOptions:
+                    args: ["--disable-gpu", "window-size=1024x1024"]
+
+                    # "--headless", test with this option to avoid using xfvb
