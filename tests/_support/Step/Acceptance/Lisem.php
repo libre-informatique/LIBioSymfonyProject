@@ -29,7 +29,7 @@ class Lisem extends \WebGuy
         }
     }
 
-    public function logout()
+    public function logoutLisem()
     {
         $this->click('li.dropdown.user-menu a');
         $this->waitForElementVisible('.dropdown-menu.dropdown-user', 30);
@@ -97,8 +97,13 @@ class Lisem extends \WebGuy
         $this->waitCube();
     }
 
-    public function clickCheckbox($name)
+    public function clickCheckbox($name, $value = '1')
     {
-        $this->clickWithLeftButton('input[type="checkbox"][name$="[' . $name . ']"] + ins');
+        $this->clickWithLeftButton('input[type="checkbox"][name$="[' . $name . ']"][value="' . $value . '"] + ins');
+    }
+
+    public function clickRadio($name, $value = '1')
+    {
+        $this->clickWithLeftButton('input[type="radio"][name$="[' . $name . ']"][value="' . $value . '"] + ins');
     }
 }
