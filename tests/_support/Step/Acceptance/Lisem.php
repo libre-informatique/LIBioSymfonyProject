@@ -29,7 +29,7 @@ class Lisem extends \WebGuy
         }
     }
 
-    public function logout()
+    public function logoutLisem()
     {
         //$this->scrollUp(); // logout is on top of page
         $this->click('li.dropdown.user-menu a');
@@ -98,8 +98,13 @@ class Lisem extends \WebGuy
         $this->waitCube();
     }
 
-    public function clickCheckbox($name)
+    public function clickCheckbox($name, $value = '1')
     {
-        $this->clickWithLeftButton('input[type="checkbox"][name$="[' . $name . ']"] + ins');
+        $this->clickWithLeftButton('input[type="checkbox"][name$="[' . $name . ']"][value="' . $value . '"] + ins');
+    }
+
+    public function clickRadio($name, $value = '1')
+    {
+        $this->clickWithLeftButton('input[type="radio"][name$="[' . $name . ']"][value="' . $value . '"] + ins');
     }
 }
