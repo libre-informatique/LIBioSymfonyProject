@@ -12,7 +12,10 @@
 
 namespace Step\Acceptance;
 
-class Lisem extends \WebGuy
+/** @todo: should use traits or something for all those click and wait tools */
+/** @todo: should be renamed as SilWebApp or SilWebAppTestTool or Something like that */
+
+class Lisem extends Common
 {
     public function loginLisem($username = 'lisem@lisem.eu', $password = 'lisem', $force = false)
     {
@@ -37,6 +40,16 @@ class Lisem extends \WebGuy
         $this->testLink('Déconnexion', 'Login');
     }
 
+    
+    public function testLink($linkName, $linkRes = null)
+    {
+        $linkRes = (isset($linkRes)) ? $linkRes : $linkName;
+        $this->waitForText($linkName, 30); // secs
+        $this->click($linkName);
+        $this->waitForText($linkRes, 30); // secs
+    }
+
+    
     public function clickCreate($name = 'btn_create_and_list')
     {
         /* @todo: do the same for confirm action and for list batch action button */
