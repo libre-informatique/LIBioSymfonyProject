@@ -36,6 +36,7 @@ sylius_fixtures:
                                     - "%currency%"
                                 enabled: true
                                 theme_name: librinfo/lisem-theme
+                                contact_email: contact@lisem.eu
 
                 payment_method:
                     options:
