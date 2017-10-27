@@ -15,7 +15,6 @@ namespace Step\Acceptance;
 /** @todo find a clean way to extends the good configured class in codeception config suite file */
 class Common extends \WebGuy
 {
-    
     public $randNbr = null;
     public $randName = null;
 
