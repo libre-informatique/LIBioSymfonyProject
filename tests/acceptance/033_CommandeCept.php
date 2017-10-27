@@ -10,10 +10,8 @@
  * file that was distributed with this source code.
  */
 
-
- // @group scenarii
+// @group scenarii
  // @group ecommerce
- 
 
 use Step\Acceptance\Lisem as LisemTester;
 use Step\Acceptance\Ecommerce as EcommerceTester;

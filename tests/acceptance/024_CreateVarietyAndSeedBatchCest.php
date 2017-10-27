@@ -15,7 +15,6 @@
  * @group variety
  * @group seedbatch
  */
-
 use Step\Acceptance\Lisem as LisemTester;
 use Step\Acceptance\Variety as VarietyTester;
 use Step\Acceptance\SeedBatch as SeedBatchTester;

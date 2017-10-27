@@ -42,7 +42,6 @@ class Lisem extends \WebGuy
         $this->waitForText('succès', 30); // secs
     }
 
-
     public function waitCube($class = 'sk-folding-cube')
     {
         $this->wait(1);
@@ -66,7 +65,7 @@ class Lisem extends \WebGuy
         $this->fillField('//input[contains(@id,"' . $type . '")]', $filter);
         $this->click('Filtrer');
     }
-    
+
     public function selectSearchDrop($id, $value)
     {
         // UGLY FIRST WORKING WAY

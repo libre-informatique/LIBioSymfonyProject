@@ -60,7 +60,6 @@ class WebGuy extends \Codeception\Actor
         $this->wait(1); // ah ah js tempo
     }
 
-  
     public function testLink($linkName, $linkRes = null)
     {
         $linkRes = (isset($linkRes)) ? $linkRes : $linkName;
