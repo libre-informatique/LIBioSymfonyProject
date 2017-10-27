@@ -14,9 +14,9 @@ namespace Step\Acceptance;
 
 class Lisem extends \WebGuy
 {
-    public function loginLisem($username = 'lisem@lisem.eu', $password = 'lisem')
+    public function loginLisem($username = 'lisem@lisem.eu', $password = 'lisem', $force = false)
     {
-        if (!$this->loadSessionSnapshot('login')) {
+        if (!$this->loadSessionSnapshot('login') || $force) {
             $this->amGoingTo('Test Login');
             $this->amOnPage('/lisem/login');
             $this->waitForText('Courriel', 30);
@@ -27,6 +27,13 @@ class Lisem extends \WebGuy
             $this->waitForText('Libre', 30);
             $this->saveSessionSnapshot('login');
         }
+    }
+
+    public function logout()
+    {
+        $this->click('li.dropdown.user-menu a');
+        $this->waitForElementVisible('.dropdown-menu.dropdown-user', 30);
+        $this->testLink('Déconnexion', 'Login');
     }
 
     public function clickCreate($name = 'btn_create_and_list')
@@ -88,5 +95,10 @@ class Lisem extends \WebGuy
         $this->clickWithLeftButton('div[id^="s2id_"][id$="' . $id . '"] ' . $tag . '');
         $this->clickWithLeftButton('//div[@id="select2-drop"]/ul/li/div[text()="' . $value . '"]');
         $this->waitCube();
+    }
+
+    public function clickCheckbox($name)
+    {
+        $this->clickWithLeftButton('input[type="checkbox"][name$="[' . $name . ']"] + ins');
     }
 }
