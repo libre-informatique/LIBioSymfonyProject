@@ -12,7 +12,7 @@
 
 namespace Step\Acceptance;
 
-class CRM extends \WebGuy
+class CRM extends Lisem
 {
     public function createCircle($groupName = 'SelGroup', $groupCode = 'SELGRP')
     {

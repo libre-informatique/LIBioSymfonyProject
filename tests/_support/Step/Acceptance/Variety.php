@@ -12,7 +12,7 @@
 
 namespace Step\Acceptance;
 
-class Variety extends \WebGuy
+class Variety extends Lisem
 {
     public function createVariety($speciesName, $plantCatName)
     {

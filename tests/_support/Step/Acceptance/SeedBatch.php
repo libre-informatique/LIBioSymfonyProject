@@ -12,7 +12,7 @@
 
 namespace Step\Acceptance;
 
-class SeedBatch extends \WebGuy
+class SeedBatch extends Lisem
 {
     public function createPlot($producerName)
     {

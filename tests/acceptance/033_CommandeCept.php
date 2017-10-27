@@ -10,29 +10,37 @@
  * file that was distributed with this source code.
  */
 
-$randNbr = rand(1, 1000);
-$randSelEmail = 'sel-' . $randNbr . '@lisem.eu';
-$randName = 'sel-' . $randNbr;
-$I = new WebGuy($scenario);
 
-/*
- * @group scenarii
- * @group ecommerce
- */
+ // @group scenarii
+ // @group ecommerce
+ 
 
-$I->wantTo('Test Commande from Sylius To Lisem');
+use Step\Acceptance\Lisem as LisemTester;
+use Step\Acceptance\Ecommerce as EcommerceTester;
 
-SyliusCreateAccount($I, $randSelEmail, $randName);
-$I->loginLisem();
-ActiveUser($I, $randSelEmail);
-LogUser($I, $randSelEmail);
-CreateCmd($I);
-CheckCmd($I, $randName);
+$lisem = new LisemTester($scenario);
+$lisem->loginLisem();
+$lisem->amGoingTo('Test Order from Sylius To Lisem');
+
+$randNbr = $lisem->getRandNbr();
+$randSelEmail = $lisem->getRandName() . '@lisem.eu';
+$randName = $lisem->getRandName();
+
+$ecommerce = new EcommerceTester($scenario);
+//$ecommerce->loginLisem();
+
+SyliusCreateAccount($lisem, $randSelEmail, $randName);
+//ActiveUser($lisem, $randSelEmail);
+$ecommerce->activeAccount($randSelEmail);
+LogUser($lisem, $randSelEmail);
+CreateCmd($lisem);
+//CheckCmd($lisem, $randName);
+$ecommerce->checkOrder($randSelEmail);
 
 function SyliusCreateAccount($webGuy, $selEmail, $selName)
 {
     /* warning there is a big exception if the email is already used by someone else */
-    $webGuy->wantTo('SyliusCreateAccount');
+    $webGuy->amGoingTo('SyliusCreateAccount');
     $webGuy->amOnPage('/');
     $webGuy->click('Connexion');
     $webGuy->click("(//a[contains(@href, '/register')])[2]");
@@ -47,7 +55,7 @@ function SyliusCreateAccount($webGuy, $selEmail, $selName)
 
 function ActiveUser($webGuy, $selEmail)
 {
-    $webGuy->wantTo('ActiveUser');
+    $webGuy->amGoingTo('ActiveUser');
     $webGuy->amOnPage('/lisem/librinfo/ecommerce/shop_user/list');
 
     $webGuy->waitForText('Filtres', 30); // secs
@@ -67,7 +75,7 @@ function ActiveUser($webGuy, $selEmail)
 
 function LogUser($webGuy, $selEmail)
 {
-    $webGuy->wantTo('LogUser');
+    $webGuy->amGoingTo('LogUser');
     $webGuy->amOnPage('/');
     $webGuy->click('Connexion');
     $webGuy->fillField('#_username', $selEmail);
@@ -78,7 +86,7 @@ function LogUser($webGuy, $selEmail)
 
 function CreateCmd($webGuy)
 {
-    $webGuy->wantTo('CreateCmd');
+    $webGuy->amGoingTo('CreateCmd');
     $webGuy->amOnPage('/');
     // $webGuy->amOnPage("/taxons/legumes-fruit");
     // $webGuy->click("Semences");
@@ -112,7 +120,7 @@ function CreateCmd($webGuy)
 
 function CheckCmd($webGuy, $selName)
 {
-    $webGuy->wantTo('CheckCmd');
+    $webGuy->amGoingTo('CheckCmd');
     $webGuy->amOnPage('/lisem/librinfo/ecommerce/order/list');
     $webGuy->waitForText('Filtres', 30); // secs
     $webGuy->click('Filtres');

@@ -10,9 +10,11 @@
  * file that was distributed with this source code.
  */
 
-// @group scenarii
-// @group variety
-// @group seedbatch
+/**
+ * @group scenarii
+ * @group variety
+ * @group seedbatch
+ */
 
 use Step\Acceptance\Lisem as LisemTester;
 use Step\Acceptance\Variety as VarietyTester;
@@ -35,16 +37,16 @@ class CreateVarietyAndSeedBatchCest
     /* Ah Ah always Needed */
     public function testLogin(LisemTester $lisem)
     {
-        $lisem->loginLisem();
         $lisem->hideSymfonyToolBar();
+        $lisem->loginLisem();
     }
 
     /**
      * @depends testLogin
      */
-    public function testFamily(LisemTester $lisem, VarietyTester $variety)
+    public function testFamily(VarietyTester $variety)
     {
-        $lisem->loginLisem();
+        $variety->loginLisem();
         $this->selFamily = $variety->createFamily();
     }
 
@@ -52,18 +54,18 @@ class CreateVarietyAndSeedBatchCest
      * @depends testLogin
      * @depends testFamily
      */
-    public function testGenus(LisemTester $lisem, VarietyTester $variety)
+    public function testGenus(VarietyTester $variety)
     {
-        $lisem->loginLisem();
+        $variety->loginLisem();
         $this->selGenus = $variety->createGenus($this->selFamily);
     }
 
     /**
      * @depends testLogin
      */
-    public function testPlantCategory(LisemTester $lisem, VarietyTester $variety)
+    public function testPlantCategory(VarietyTester $variety)
     {
-        $lisem->loginLisem();
+        $variety->loginLisem();
         $this->selPlantCat = $variety->createPlantCategory();
     }
 
@@ -72,9 +74,9 @@ class CreateVarietyAndSeedBatchCest
      * @depends testGenus
      * @depends testPlantCategory
      */
-    public function testSpecies(LisemTester $lisem, VarietyTester $variety)
+    public function testSpecies(VarietyTester $variety)
     {
-        $lisem->loginLisem();
+        $variety->loginLisem();
         $this->selSpecies = $variety->createSpecies($this->selGenus, $this->selPlantCat);
     }
 
@@ -83,18 +85,18 @@ class CreateVarietyAndSeedBatchCest
      * @depends testSpecies
      * @depends testPlantCategory
      */
-    public function testVariety(LisemTester $lisem, VarietyTester $variety)
+    public function testVariety(VarietyTester $variety)
     {
-        $lisem->loginLisem();
+        $variety->loginLisem();
         $this->selVariety = $variety->createVariety($this->selSpecies, $this->selPlantCat);
     }
 
     /**
      * @depends testLogin
      */
-    public function testProducter(LisemTester $lisem, SeedBatchTester $seedbatch)
+    public function testProducter(SeedBatchTester $seedbatch)
     {
-        $lisem->loginLisem();
+        $seedbatch->loginLisem();
         $this->selProducer = $seedbatch->createProducer();
         //warning we replace producer name because search box for it does not work well with sel-1234
         $this->selProducer = $seedbatch->getRandNbr();
@@ -104,9 +106,9 @@ class CreateVarietyAndSeedBatchCest
      * @depends testLogin
      * @depends testProducter
      */
-    public function testPlot(LisemTester $lisem, SeedBatchTester $seedbatch)
+    public function testPlot(SeedBatchTester $seedbatch)
     {
-        $lisem->loginLisem();
+        $seedbatch->loginLisem();
         $this->selPlot = $seedbatch->createPlot($this->selProducer);
     }
 
@@ -116,9 +118,9 @@ class CreateVarietyAndSeedBatchCest
      * @depends testPlot
      * @depends testVariety
      */
-    public function testSeedBatch(LisemTester $lisem, SeedBatchTester $seedbatch)
+    public function testSeedBatch(SeedBatchTester $seedbatch)
     {
-        $lisem->loginLisem();
+        $seedbatch->loginLisem();
         $this->selSeedBatch = $seedbatch->createSeedBatch($this->selVariety, $this->selProducer, $this->selPlot);
     }
 }
