@@ -22,7 +22,9 @@ class Ecommerce extends Lisem
         $this->filterList($userLogin, 'username');
 
         $this->click('Éditer');
-        $this->click('ins.iCheck-helper');
+        //$this->click('ins.iCheck-helper');
+        $this->clickCheckbox('enabled');
+        
         $this->clickCreate('btn_update_and_list');
     }
 

@@ -30,6 +30,7 @@ class SonataSyliusUser extends Lisem
         $this->fillField("//input[contains(@id, 'plainPassword_second')]", $password);
 
         $this->clickCreate();
+        $this->waitForText('succès', 30); // secs
     }
 
     public function loggedAs($email)

@@ -29,7 +29,7 @@ class Lisem extends Common
             $this->waitForText('Libre', 30);
             $this->saveSessionSnapshot('login');
         }
-        // $this->hideSymfonyToolBar(); //useless for test and may hide important element
+        $this->hideSymfonyToolBar(); //useless for test and may hide important element
     }
 
     public function logoutLisem()
@@ -51,11 +51,10 @@ class Lisem extends Common
     public function clickCreate($name = 'btn_create_and_list')
     {
         /* @todo: do the same for confirm action and for list batch action button */
-        //$this->hideSymfonyToolBar();
         $this->scrollDown(); // submit button is on bottom of page
         // $this->scrollTo("//button[@name='" . $name . "']"); //, 10, 10);
         $this->click("//button[@name='" . $name . "']");
-        $this->waitForText('succès', 30); // secs
+        //$this->waitForText('succès', 30); // secs
     }
 
     public function waitCube($class = 'sk-folding-cube')

@@ -18,8 +18,6 @@ use Step\Acceptance\Ecommerce as EcommerceTester;
 
 $lisem = new LisemTester($scenario);
 $ecommerce = new EcommerceTester($scenario);
-$lisem->hideSymfonyToolBar(); //useless for test and may hide important element
-
 $lisem->loginLisem();
 $lisem->amGoingTo('Test Order from Sylius To Lisem');
 
@@ -43,6 +41,7 @@ function SyliusCreateAccount($webGuy, $selEmail, $selName)
     /* warning there is a big exception if the email is already used by someone else */
     $webGuy->amGoingTo('SyliusCreateAccount');
     $webGuy->amOnPage('/');
+    $webGuy->hideSymfonyToolBar();
     $webGuy->click('Connexion');
     $webGuy->click("(//a[contains(@href, '/register')])[2]");
     $webGuy->fillField('#sylius_customer_registration_firstName', $selName . '-First');

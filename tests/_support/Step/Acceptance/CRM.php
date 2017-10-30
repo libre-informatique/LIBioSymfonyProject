@@ -23,8 +23,8 @@ class CRM extends Lisem
         $this->fillField("//input[contains(@id, 'code')]", $groupCode);
         $this->fillField("//textarea[contains(@id, 'description')]", 'Sel desc');
         $this->selectDrop('_type', 'Autres');
-
         $this->clickCreate();
+        $this->waitForText('succès', 30); // secs
     }
 
     public function deleteCircle($filter = 'Sel')
@@ -60,6 +60,7 @@ class CRM extends Lisem
             $this->selectDrop('_treeParent', 'SelCatParent');
         }
         $this->clickCreate();
+        $this->waitForText('succès', 30); // secs
     }
 
     public function deleteCategory($filter = 'Sel')

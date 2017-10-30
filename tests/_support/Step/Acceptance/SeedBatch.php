@@ -26,7 +26,7 @@ class SeedBatch extends Lisem
         $this->fillField("//input[contains(@id,'_zip')]", $this->getRandNbr());
         $this->generateCode();
         $this->clickCreate();
-
+        $this->waitForText('succès', 30); // secs
         return $plotName;
     }
 
@@ -45,7 +45,7 @@ class SeedBatch extends Lisem
         $this->fillField("//input[contains(@id,'_lastname')]", 'last-' . $producerName);
         $this->fillField("//input[contains(@id,'_email')]", $producerName . '@lisem.eu');
         $this->clickCreate();
-
+        $this->waitForText('succès', 30); // secs
         return $producerName;
     }
 
@@ -64,7 +64,7 @@ class SeedBatch extends Lisem
         $this->scrollUp(); // code generator is on top of page
         $this->generateCode();
         $this->clickCreate();
-
+        $this->waitForText('succès', 30); // secs
         return $seedBatchName;
     }
 }
