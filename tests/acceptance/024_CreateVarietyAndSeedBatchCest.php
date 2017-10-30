@@ -36,7 +36,7 @@ class CreateVarietyAndSeedBatchCest
     /* Ah Ah always Needed */
     public function testLogin(LisemTester $lisem)
     {
-        $lisem->hideSymfonyToolBar();
+        //$lisem->hideSymfonyToolBar();
         $lisem->loginLisem();
     }
 

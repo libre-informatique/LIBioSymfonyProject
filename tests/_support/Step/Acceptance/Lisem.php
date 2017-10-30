@@ -29,8 +29,9 @@ class Lisem extends Common
             $this->waitForText('Libre', 30);
             $this->saveSessionSnapshot('login');
         }
-        $this->hideSymfonyToolBar(); //useless for test and may hide important element
+        //$this->hideSymfonyToolBar(); //useless for test and may hide important element
     }
+
 
     public function logoutLisem()
     {
