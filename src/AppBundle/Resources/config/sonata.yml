@@ -69,7 +69,7 @@ sonata_admin:
                 items:
                     - route: admin_librinfo_seedbatch_plot_list
                       label: lisem.menu_label.plots_list
-                      
+
             # TEMPORARILY DISABLED
             #
             # lisem.menu.germination_tests:
@@ -156,6 +156,25 @@ sonata_admin:
                       route: admin_librinfo_ecommerce_sales_journal_list
                     - label: lisem.menu_label.cash_book
                       route: admin_librinfo_ecommerce_payment_list
+
+            sil.menu.stock:
+                label: librinfo.menu_label.stock_management
+                icon:  '<i class="fa fa-cubes"></i>'
+                items:
+                    - label: librinfo.menu_label.items
+                      route: admin_stock_item_list
+                    - label: librinfo.menu_label.operations
+                      route: admin_stock_operation_list
+                    - label: librinfo.menu_label.movements
+                      route: admin_stock_movement_list
+
+            sil.menu.manufacturing:
+                label: librinfo.menu_label.manufacturing
+                icon:  '<i class="fa fa-industry"></i>'
+                items:
+                    - label: librinfo.menu_label.bom
+                      route: admin_manufacturing_bom_list
+
             App settings:
                 provider: parameters_sidebar_menu
                 icon:     '<i class="fa fa-sliders"></i>'

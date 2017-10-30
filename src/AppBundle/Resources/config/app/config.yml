@@ -6,6 +6,7 @@ imports:
 
     - { resource: "@BlastUtilsBundle/Resources/config/sonata.yml" }
     - { resource: "@BlastCoreBundle/Resources/config/config.yml" }
+    - { resource: "@BlastResourceBundle/Resources/config/app/config.yml" }
     - { resource: "@LibrinfoMediaBundle/Resources/config/app/config.yml" }
     - { resource: "@LibrinfoEcommerceBundle/Resources/config/app/config.yml" }
     - { resource: "@LibrinfoCRMBundle/Resources/config/app/config.yml" }
@@ -13,6 +14,8 @@ imports:
     - { resource: "@LibrinfoSeedBatchBundle/Resources/config/app/config.yml" }
     - { resource: "@SonataSyliusUserBundle/Resources/config/app/config.yml" }
     - { resource: "@LibrinfoSyliusPayboxBundle/Resources/config/app/config.yml" }
+    - { resource: "@SilStockBundle/Resources/config/app/config.yml" }
+    - { resource: "@SilManufacturingBundle/Resources/config/app/config.yml" }
 
     - { resource: "@AppBundle/Resources/config/varieties.yml" }
     - { resource: "@AppBundle/Resources/config/sonata.yml" }

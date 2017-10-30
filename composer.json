@@ -45,6 +45,9 @@
         "libre-informatique/sonata-sylius-user-bundle": "self.version",
         "libre-informatique/varieties-bundle": "self.version",
         "libre-informatique/sylius-paybox-bundle": "self.version",
+        "blast-project/resource-bundle": "self.version",
+        "sil-project/stock-bundle": "self.version",
+        "sil-project/manufacturing-bundle": "self.version",
         "nelmio/api-doc-bundle": "^2.13",
         "sensio/distribution-bundle": "^5.0",
         "sensio/framework-extra-bundle": "^3.0.2",
@@ -93,13 +96,7 @@
         ]
     },
     "config": {
-        "bin-dir": "bin",
-        "sllh-composer-lint": {
-            "php": true,
-            "type": true,
-            "minimum-stability": false,
-            "version-constraints": true
-        }
+        "bin-dir": "bin"
     },
     "version": "dev-wip-lisem",
     "extra": {
