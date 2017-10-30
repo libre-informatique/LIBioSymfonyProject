@@ -6,7 +6,7 @@ OUTPUTDIR=tests/_output
 rm -rf $OUTPUTDIR/*.png
 rm -rf $OUTPUTDIR/*.html
 
-CODECEPTCMD="bin/codecept run -d --steps --fail-fast --no-interaction --no-exit"
+CODECEPTCMD="bin/codecept run -d --steps --fail-fast --no-interaction --no-exit --env=chrome"
 
 CODECEPTGROUP=$@
 if [ $# -eq 0 ]
