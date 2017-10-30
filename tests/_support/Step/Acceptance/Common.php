@@ -42,11 +42,13 @@ class Common extends \WebGuy
 
     public function hideSymfonyToolBar()
     {
+        $this->amOnPage('/');
         try {
             $this->seeElement('.hide-button');
             $this->click(['css' => '.hide-button']);
         } catch (Exception $e) {
         }
+        return true;
     }
 
     public function scrollDown()
