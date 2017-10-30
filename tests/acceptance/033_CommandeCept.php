@@ -18,8 +18,6 @@ use Step\Acceptance\Ecommerce as EcommerceTester;
 
 $lisem = new LisemTester($scenario);
 $ecommerce = new EcommerceTester($scenario);
-$lisem->hideSymfonyToolBar(); //useless for test and may hide important element
-
 $lisem->loginLisem();
 $lisem->amGoingTo('Test Order from Sylius To Lisem');
 

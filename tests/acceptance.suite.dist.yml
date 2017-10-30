@@ -15,12 +15,49 @@ modules:
             debug: true
         - Doctrine2:
             depends: Symfony
+
         - WebDriver:
             url: 'http://127.0.0.1:8042/'
-            wait: 1           
-            browser: chrome
+            wait: 5
+            browser: 'chrome'
             capabilities:
                 chromeOptions:
                     args: ["--disable-gpu", "window-size=1024x1024"]
-
                     # "--headless", test with this option to avoid using xfvb
+            
+# env:
+#    chrome:
+#        modules:
+#            enabled:
+#                - WebDriver:
+#                    url: 'http://127.0.0.1:8042/'
+#                    wait: 5
+#                    browser: 'chrome'
+#                    capabilities:
+#                        chromeOptions:
+#                            args: ["--disable-gpu", "window-size=1024x1024"]
+#                            # "--headless", test with this option to avoid using xfvb
+#        
+#    phantom:
+#        modules:
+#            enabled:
+#                - WebDriver:
+#                    url: 'http://127.0.0.1:8042/'
+#                    browser: 'phantomjs'
+#                    
+#
+#    firefox:
+#        modules:
+#            enabled:
+#                - WebDriver:
+#                    url: 'http://127.0.0.1:8042/'
+#                    wait: 5
+#                    browser: 'firefox'
+#                    
+#
+#    phpbrowser:
+#        modules:
+#            enabled:
+#                - PhpBrowser:
+#                    url: 'http://127.0.0.1:8042/'
+#

@@ -29,7 +29,7 @@ class Variety extends Lisem
         $this->click("//div[contains(@id,'popover')]/div[2]/div/form/div/div/div[2]/button");
         $this->generateCode();
         $this->clickCreate();
-
+        $this->waitForText('succès', 30); // secs
         return $varietyName;
     }
 
@@ -46,6 +46,7 @@ class Variety extends Lisem
         $this->generateCode();
         $this->clickCreate();
         // $this->clickCreate('btn_create_and_edit');
+        $this->waitForText('succès', 30); // secs
         return $speciesName;
     }
 
@@ -59,7 +60,7 @@ class Variety extends Lisem
         $this->fillField("//textarea[contains(@id,'description')]", $genusName . '-desc');
         $this->selectDrop('_family', $familyName);
         $this->clickCreate();
-
+        $this->waitForText('succès', 30); // secs
         return $genusName;
     }
 
@@ -73,7 +74,7 @@ class Variety extends Lisem
         $this->fillField("//input[contains(@id,'latin_name')]", 'latium-' . $familyName);
         // $this->fillField("//textarea[contains(@id,'description')]", $familyName . '-desc');
         $this->clickCreate();
-
+        $this->waitForText('succès', 30); // secs
         return $familyName;
     }
 
@@ -86,7 +87,7 @@ class Variety extends Lisem
         $this->fillField("//input[contains(@id,'name')]", $plantCatName);
         $this->fillField("//input[contains(@id,'code')]", $this->getRandNbr());
         $this->clickCreate();
-
+        $this->waitForText('succès', 30); // secs
         return $plantCatName;
     }
 }

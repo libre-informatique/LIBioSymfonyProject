@@ -40,9 +40,24 @@ class Common extends \WebGuy
         return $this->randName;
     }
 
+
+    
     public function hideSymfonyToolBar()
     {
-        $this->amOnPage('/');
+        // if (strpos('/', $this->grabFromCurrentUrl()) !== false) {
+        //     $this->amOnPage('/');
+        //     $this->wait(2);
+        // }
+
+        // Dirty Hack Check if there is some sfToolbar
+        // if (count($this->grabMultiple("//div[contains(@id, 'sfToolbarMainContent')]") > 0)) {
+        //     $style = $this->grabAttributeFrom("//div[contains(@id, 'sfToolbarMainContent')]", 'style');
+        //     // Dirty Hack Check if it is visible
+        //     if (strpos('display: block;', $style) !== false) {
+        //         $this->click(['css' => '.hide-button']);
+        //     }
+        // }
+        // Dirty Hack as even with try catch it create some failed output (on screen and in _output dir)
         try {
             $this->seeElement('.hide-button');
             $this->click(['css' => '.hide-button']);
