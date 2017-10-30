@@ -17,15 +17,16 @@ use Step\Acceptance\Lisem as LisemTester;
 use Step\Acceptance\Ecommerce as EcommerceTester;
 
 $lisem = new LisemTester($scenario);
+$ecommerce = new EcommerceTester($scenario);
+$lisem->hideSymfonyToolBar(); //useless for test and may hide important element
+
 $lisem->loginLisem();
 $lisem->amGoingTo('Test Order from Sylius To Lisem');
+
 
 $randNbr = $lisem->getRandNbr();
 $randSelEmail = $lisem->getRandName() . '@lisem.eu';
 $randName = $lisem->getRandName();
-
-$ecommerce = new EcommerceTester($scenario);
-//$ecommerce->loginLisem();
 
 SyliusCreateAccount($lisem, $randSelEmail, $randName);
 //ActiveUser($lisem, $randSelEmail);
@@ -53,26 +54,6 @@ function SyliusCreateAccount($webGuy, $selEmail, $selName)
     $webGuy->waitForText('Succès', 10); // secs
 }
 
-function ActiveUser($webGuy, $selEmail)
-{
-    $webGuy->amGoingTo('ActiveUser');
-    $webGuy->amOnPage('/lisem/librinfo/ecommerce/shop_user/list');
-
-    $webGuy->waitForText('Filtres', 30); // secs
-    $webGuy->click('Filtres');
-    $webGuy->wait(1);
-
-    $webGuy->click('i.fa.fa-square-o');
-    $webGuy->wait(1);
-    $webGuy->click('#filter_username_value');
-    $webGuy->fillField('#filter_username_value', $selEmail);
-    $webGuy->click('button.btn.btn-primary');
-    $webGuy->click('Éditer');
-    $webGuy->click('ins.iCheck-helper');
-    $webGuy->scrollTo("//button[@name='btn_update_and_list']", 100, 100);
-    $webGuy->click("//button[@name='btn_update_and_list']");
-}
-
 function LogUser($webGuy, $selEmail)
 {
     $webGuy->amGoingTo('LogUser');
@@ -80,6 +61,7 @@ function LogUser($webGuy, $selEmail)
     $webGuy->click('Connexion');
     $webGuy->fillField('#_username', $selEmail);
     $webGuy->fillField('#_password', 'selpwd');
+    //$webGuy->click("//button[@type='submit']");
     $webGuy->click("//button[@type='submit']");
     $webGuy->see('Mon compte Gérer vos informations personnelles et préférences', '//h1');
 }
@@ -116,22 +98,4 @@ function CreateCmd($webGuy)
     $webGuy->scrollTo("//button[@type='submit']", 100, 100);
     $webGuy->click("//button[@type='submit']");
     $webGuy->see('Merci ! Votre commande a bien été prise en compte.', '#sylius-thank-you');
-}
-
-function CheckCmd($webGuy, $selName)
-{
-    $webGuy->amGoingTo('CheckCmd');
-    $webGuy->amOnPage('/lisem/librinfo/ecommerce/order/list');
-    $webGuy->waitForText('Filtres', 30); // secs
-    $webGuy->click('Filtres');
-    $webGuy->wait(1);
-    $webGuy->click('Nom complet client');
-    $webGuy->wait(1);
-    $webGuy->click('#filter_customer__fulltextName_value');
-    $webGuy->fillField('#filter_customer__fulltextName_value', $selName);
-    $webGuy->click('button.btn.btn-primary');
-    $webGuy->click('i.fa.fa-eye');
-    $webGuy->click("Liste d'actions");
-    $webGuy->click('Retourner à la liste');
-    $webGuy->waitForText('Liste des commandes', 30); // secs
 }
