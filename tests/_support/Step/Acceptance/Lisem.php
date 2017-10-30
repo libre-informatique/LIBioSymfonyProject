@@ -12,7 +12,9 @@
 
 namespace Step\Acceptance;
 
-class Lisem extends \WebGuy
+/** @todo: should use traits or something for all those click and wait tools */
+/** @todo: should be renamed as SilWebApp or SilWebAppTestTool or Something like that */
+class Lisem extends Common
 {
     public function loginLisem($username = 'lisem@lisem.eu', $password = 'lisem', $force = false)
     {
@@ -31,20 +33,26 @@ class Lisem extends \WebGuy
 
     public function logoutLisem()
     {
+        //$this->scrollUp(); // logout is on top of page
         $this->click('li.dropdown.user-menu a');
         $this->waitForElementVisible('.dropdown-menu.dropdown-user', 30);
         $this->testLink('Déconnexion', 'Login');
+    }
+
+    public function testLink($linkName, $linkRes = null)
+    {
+        $linkRes = (isset($linkRes)) ? $linkRes : $linkName;
+        $this->waitForText($linkName, 30); // secs
+        $this->click($linkName);
+        $this->waitForText($linkRes, 30); // secs
     }
 
     public function clickCreate($name = 'btn_create_and_list')
     {
         /* @todo: do the same for confirm action and for list batch action button */
         $this->hideSymfonyToolBar();
-        //$this->resizeWindow(2048, 2048);
-        //$this->scrollDown();
-        $this->scrollTo("//button[@name='" . $name . "']"); //, 10, 10);
-        //$this->resizeWindow(1024, 1024);
-        //$this->wait(30);
+        $this->scrollDown(); // submit button is on bottom of page
+        // $this->scrollTo("//button[@name='" . $name . "']"); //, 10, 10);
         $this->click("//button[@name='" . $name . "']");
         $this->waitForText('succès', 30); // secs
     }
@@ -63,6 +71,7 @@ class Lisem extends \WebGuy
 
     public function filterList($filter, $type = 'name')
     {
+        //$this->scrollUp(); // Filter should be on top of page
         $this->waitForText('Filtres', 30); // secs
         $this->click('Filtres');
         $this->waitForElementVisible('.sonata-toggle-filter', 30);
@@ -80,8 +89,10 @@ class Lisem extends \WebGuy
         //$this->pressKey('#s2id_autogen8_search', 'sel'); // ugly working way
 
         // UGLY SECOND WORKING WAY
+        // $this->scrollTo('div[id^="s2id_"][id$="' . $id . '"] a', 0, -100);
         $this->clickWithLeftButton('div[id^="s2id_"][id$="' . $id . '"] a');
-        $this->scrollTo('//div[@id="select2-drop"]/div/input[contains(@id,"_search")]'); // is it in the footer ? moved by js ? webdriver is not aware of this move ?
+        // $this->scrollTo('//div[@id="select2-drop"]/div/input[contains(@id,"_search")]'); // is it in the footer ? moved by js ? webdriver is not aware of this move ?
+        $this->waitForElementVisible('//div[@id="select2-drop"]/div/input[contains(@id,"_search")]', 30);
         $this->fillField('//div[@id="select2-drop"]/div/input[contains(@id,"_search")]', $value);
         $this->waitCube();
         $this->clickWithLeftButton('//div[@id="select2-drop"]/ul/li/div/div[contains(string(), "' . $value . '")]');
