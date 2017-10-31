@@ -6,12 +6,10 @@
 
 parameters:
     blast:
-
         configuration:
             search:
                 add:
                     - librinfo_emailcrm.admin.organism
-#                    - librinfo_emailcrm.admin.contact
                     - librinfo_varieties.admin.species
                     - lisem.admin.variety
                     - lisem.admin.seeds_product
@@ -122,21 +120,32 @@ parameters:
                 - LibrinfoEcommerceBundle:Form:fields.html.twig
             # SHOW
             Sonata\AdminBundle\Show\ShowMapper:
+                forceTabs: true
                 remove:
                     options: ~
+                    variants: ~
+                    description: ~
+                    shortDescription: ~
                 add:
                     form_group_general:
                         '':
                             variety:
                                 admin_code: lisem.admin.variety
+                            description:
+                                safe: true
+                            shortDescription:
+                                safe: true
                             _options:
-                                fieldsOrder: [name, code, variety]
+                                fieldsOrder:
+                                    - name
+                                    - code
+                                    - variety
                     show_tab_variants:
                         '':
                             variants:
                                 label: false
                                 admin_code: lisem.admin.seeds_product_variant
-                                template: LibrinfoEcommerceBundle:ProductAdmin:show_field_product_variants.html.twig
+                                template: AppBundle:SeedsProductAdmin:show_field_seeds_product_variants.html.twig
                     _options:
                         tabsOrder: [form_group_general, show_tab_variants, form_group_specifics]
             # FORM
@@ -194,9 +203,6 @@ parameters:
                         admin_code: librinfo_varieties.admin.variety
                     _options:
                         fieldsOrder: [name, code, variety, enabled]
-                    # _actions:
-                    #     variants:
-                    #         template: 'AppBundle:SeedsProductAdmin:list__action_variants.html.twig'
 
             Sonata\AdminBundle\Datagrid\DatagridMapper:
                 add: ~
@@ -431,16 +437,6 @@ parameters:
                                 #type: null
                                 _options:
                                     admin_code: librinfo_ecommerce_option_value.admin.product
-                        form_group_stock:
-                            inStockQty:
-                                mapped: false
-                                template: SilStockBundle:StockItemAdmin/Show:show_computed_qty.html.twig
-                            reservedQty:
-                                mapped: false
-                                template: SilStockBundle:StockItemAdmin/Show:show_computed_qty.html.twig
-                            availableQty:
-                                mapped: false
-                                template: SilStockBundle:StockItemAdmin/Show:show_computed_qty.html.twig
             # LIST
             Sonata\AdminBundle\Datagrid\ListMapper:
                 remove:
