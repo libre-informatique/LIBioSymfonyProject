@@ -105,7 +105,6 @@ lisem:
         source: Source
         species: Espèce
         taxcategory: Catégories de TVA
-        taxons: Catégorie
         taxons: Catégories
         title: Titre
         tkw: Poids de mille graines
