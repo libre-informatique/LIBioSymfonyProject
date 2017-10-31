@@ -44,6 +44,8 @@ class Variety extends Lisem
         $this->fillField("//input[contains(@id,'latin_name')]", 'latium-' . $speciesName);
         $this->selectDrop('_plant_categories', $plantCatName, 'ul');
         $this->generateCode();
+        $this->wait(5);// Why Species generate code take as much time on travis ?
+        
         $this->clickCreate();
         // $this->clickCreate('btn_create_and_edit');
         $this->waitForText('succès', 30); // secs
