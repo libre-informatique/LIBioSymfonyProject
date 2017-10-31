@@ -15,7 +15,6 @@ namespace AppBundle\Admin;
 use Librinfo\EcommerceBundle\Admin\ProductAdmin;
 use Librinfo\VarietiesBundle\Entity\Variety;
 use Sonata\AdminBundle\Form\FormMapper;
-use Sonata\AdminBundle\Show\ShowMapper;
 use Sonata\DatagridBundle\ProxyQuery\ProxyQueryInterface;
 use Sylius\Component\Product\Model\ProductInterface;
 use Symfony\Component\Validator\Constraints\NotBlank;

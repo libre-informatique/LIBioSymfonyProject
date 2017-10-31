@@ -1,4 +1,5 @@
 <?php
+
 /*
  * This file is part of the Lisem Project.
  *
@@ -8,6 +9,7 @@
  * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
+
 namespace AppBundle\Admin;
 
 use Sil\Bundle\StockBundle\Admin\OperationAdmin as BaseStockOperationAdmin;
@@ -19,12 +21,10 @@ use Sil\Bundle\StockBundle\Domain\Entity\OperationType;
  */
 class StockOperationAdmin extends BaseStockOperationAdmin
 {
-
     /**
-     * 
-     * @param type $group
+     * @param type          $group
      * @param OperationType $type
-     * @param FormMapper $mapper
+     * @param FormMapper    $mapper
      */
     protected function createPartnerField($group, OperationType $type,
         FormMapper $mapper)
@@ -32,7 +32,7 @@ class StockOperationAdmin extends BaseStockOperationAdmin
         $em = $this->getConfigurationPool()->getContainer()->get('doctrine.orm.entity_manager');
         $repository = $em->getRepository('LibrinfoCRMBundle:Organism');
 
-        if ( $type->isReceipt() ) {
+        if ($type->isReceipt()) {
             $parters = $repository->findBy(['isSupplier' => true]);
         } else {
             $parters = $repository->findAll();
@@ -40,8 +40,8 @@ class StockOperationAdmin extends BaseStockOperationAdmin
 
         $group->add('partner', 'choice',
             [
-                'choices' => $parters,
-                'choice_label' => 'fulltextName'
+                'choices'      => $parters,
+                'choice_label' => 'fulltextName',
             ], ['admin_code' => 'librinfo_seedbatch.admin.organism']
         );
     }
