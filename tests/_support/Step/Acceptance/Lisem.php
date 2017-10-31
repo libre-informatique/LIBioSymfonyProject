@@ -18,7 +18,8 @@ class Lisem extends Common
 {
     public function loginLisem($username = 'lisem@lisem.eu', $password = 'lisem', $force = false)
     {
-        if (!$this->loadSessionSnapshot('login') || $force) {
+        $sessionSnapShot = 'login_lisem_' . $username;
+        if (!$this->loadSessionSnapshot($sessionSnapShot)) { // || $force) {
             $this->amGoingTo('Test Login');
             $this->amOnPage('/lisem/login');
             $this->waitForText('Courriel', 30);
@@ -27,7 +28,7 @@ class Lisem extends Common
             $this->fillField("//input[@id='_password']", $password);
             $this->click("//button[@type='submit']");
             $this->waitForText('Libre', 30);
-            $this->saveSessionSnapshot('login');
+            $this->saveSessionSnapshot($sessionSnapShot);
         }
         //$this->hideSymfonyToolBar(); //useless for test and may hide important element
     }
