@@ -15,14 +15,13 @@ modules:
             debug: true
         - Doctrine2:
             depends: Symfony
-
         - WebDriver:
             url: 'http://127.0.0.1:8042/'
             wait: 5
             browser: 'chrome'
             capabilities:
                 chromeOptions:
-                    args: ["--disable-gpu", "window-size=1280x720"]
+                    args: ["--disable-gpu", "--window-size=1680,1050"]
                     # "--headless", test with this option to avoid using xfvb
             
 # env:
