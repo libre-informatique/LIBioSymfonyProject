@@ -68,6 +68,7 @@ class Lisem extends Common
     {
         $this->click("//a[contains(@id, '" . $id . "')]");
         $this->waitCube();
+        $this->wait(1);
     }
 
     public function filterList($filter, $type = 'name')
