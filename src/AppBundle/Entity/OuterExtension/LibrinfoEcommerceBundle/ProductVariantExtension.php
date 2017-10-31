@@ -15,6 +15,7 @@ namespace AppBundle\Entity\OuterExtension\LibrinfoEcommerceBundle;
 use Doctrine\Common\Collections\ArrayCollection;
 use Librinfo\EcommerceBundle\Entity\ProductOptionValue;
 use Librinfo\EcommerceBundle\Entity\Product;
+use Sil\Bundle\StockBundle\Domain\Entity\StockItemInterface;
 
 /**
  * @author Marcos Bezerra de Menezes <marcos.bezerra@libre-informatique.fr>
@@ -25,6 +26,11 @@ trait ProductVariantExtension
     // use \Librinfo\SonataSyliusUserBundle\Entity\Traits\Traceable;
 
     use \Librinfo\SeedBatchBundle\Entity\OuterExtension\HasSeedBatches;
+
+    /**
+     * @var StockItemInterface
+     */
+    protected $stockItem;
 
     /**
      * @param string $optionCode
@@ -71,5 +77,21 @@ trait ProductVariantExtension
     public function initCollections()
     {
         $this->seedBatches = new ArrayCollection();
+    }
+
+    /**
+     * @return StockItemInterface
+     */
+    public function getStockItem(): StockItemInterface
+    {
+        return $this->stockItem;
+    }
+
+    /**
+     * @param StockItemInterface $stockItem
+     */
+    public function setStockItem(StockItemInterface $stockItem): void
+    {
+        $this->stockItem = $stockItem;
     }
 }

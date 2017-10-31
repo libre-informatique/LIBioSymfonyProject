@@ -4,3 +4,6 @@ Librinfo\CRMBundle\Entity\Organism:
         siret:
             type: string
             nullable: true
+    manyToMany:
+        orders:
+            targetEntity: Librinfo\EcommerceBundle\Entity\Order

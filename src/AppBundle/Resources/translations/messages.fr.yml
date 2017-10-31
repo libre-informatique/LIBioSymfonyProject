@@ -4,7 +4,7 @@ lisem:
             packaging: Conditionnement
             seeds_product: Article
             variety: Variété
-
+            other_product: Autre article
         _action: Action
         active: Actif
         alert: Alerte
@@ -129,6 +129,8 @@ lisem:
         otherproduct_list: Liste des article (autres)
         seedsproduct_list: Liste des articles (semences)
         variety_list: Liste des variétés
+
+        available: Disponible
 
 
     help:
