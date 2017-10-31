@@ -16,7 +16,7 @@ class Sylius extends Common
 {
     public function loginSylius($userLogin, $userPassword = 'selpwd')
     {
-        $sessionSnapShot = 'login_sylius_' . $username;
+        $sessionSnapShot = 'login_sylius_' . $userLogin;
         if (!$this->loadSessionSnapshot($sessionSnapShot)) {
             $this->amGoingTo('Login Online Shop as ' . $userLogin);
             $this->amOnPage('/');
