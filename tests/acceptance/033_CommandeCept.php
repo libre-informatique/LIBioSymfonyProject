@@ -15,54 +15,29 @@
 
 use Step\Acceptance\Lisem as LisemTester;
 use Step\Acceptance\Ecommerce as EcommerceTester;
+use Step\Acceptance\Sylius as SyliusTester;
 
 $lisem = new LisemTester($scenario);
 $ecommerce = new EcommerceTester($scenario);
+$sylius = new SyliusTester($scenario);
+
 $lisem->loginLisem();
 $lisem->amGoingTo('Test Order from Sylius To Lisem');
-
 
 $randNbr = $lisem->getRandNbr();
 $randSelEmail = $lisem->getRandName() . '@lisem.eu';
 $randName = $lisem->getRandName();
 
-SyliusCreateAccount($lisem, $randSelEmail, $randName);
+$randSelEmail = $sylius->createAccount();
 //ActiveUser($lisem, $randSelEmail);
 $ecommerce->activeAccount($randSelEmail);
-LogUser($lisem, $randSelEmail);
-CreateCmd($lisem);
+$sylius->loginSylius($randSelEmail);
+// CreateCmd($lisem);
 //CheckCmd($lisem, $randName);
-$ecommerce->checkOrder($randSelEmail);
+// $ecommerce->checkOrder($randSelEmail);
 
 //$ecommerce->checkOrder('sel-8053@lisem.eu');
 
-function SyliusCreateAccount($webGuy, $selEmail, $selName)
-{
-    /* warning there is a big exception if the email is already used by someone else */
-    $webGuy->amGoingTo('SyliusCreateAccount');
-    $webGuy->amOnPage('/');
-    $webGuy->click('Connexion');
-    $webGuy->click("(//a[contains(@href, '/register')])[2]");
-    $webGuy->fillField('#sylius_customer_registration_firstName', $selName . '-First');
-    $webGuy->fillField('#sylius_customer_registration_lastName', $selName . '-Last');
-    $webGuy->fillField('#sylius_customer_registration_email', $selEmail);
-    $webGuy->fillField('#sylius_customer_registration_user_plainPassword_first', 'selpwd');
-    $webGuy->fillField('#sylius_customer_registration_user_plainPassword_second', 'selpwd');
-    $webGuy->click("//button[@type='submit']");
-    $webGuy->waitForText('Succès', 10); // secs
-}
-
-function LogUser($webGuy, $selEmail)
-{
-    $webGuy->amGoingTo('LogUser');
-    $webGuy->amOnPage('/');
-    $webGuy->click('Connexion');
-    $webGuy->fillField('#_username', $selEmail);
-    $webGuy->fillField('#_password', 'selpwd');
-    //$webGuy->click("//button[@type='submit']");
-    $webGuy->click("//button[@type='submit']");
-    $webGuy->see('Mon compte Gérer vos informations personnelles et préférences', '//h1');
-}
 
 function CreateCmd($webGuy)
 {
@@ -77,7 +52,8 @@ function CreateCmd($webGuy)
     $webGuy->click("//button[@type='submit']");
     //$webGuy->wait(5);
     //$webGuy->waitForText('Paiement', 30);
-    $webGuy->waitForElementVisible("(//a[contains(@href, '/checkout')])[2]", 30);
+    //$webGuy->waitForElementVisible("(//a[contains(@href, '/checkout')])[2]", 30);
+    $webGuy->scrollTo("(//a[contains(@href, '/checkout')])[2]");
     $webGuy->click("(//a[contains(@href, '/checkout')])[2]");
     //    $webGuy->click("(//a[contains(text(),'Paiement')])[2]");
     $webGuy->fillField('#sylius_checkout_address_shippingAddress_firstName', 'selfirst');
