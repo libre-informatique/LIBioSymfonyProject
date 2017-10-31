@@ -1,6 +1,7 @@
 #!/usr/bin/env sh
 set -ev
 
+rm -rf composer.lock # vendor
 
 # composer update --no-interaction --prefer-dist
 composer install --no-interaction --prefer-dist
