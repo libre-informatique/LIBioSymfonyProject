@@ -14,14 +14,27 @@ imports:
     - { resource: "@LibrinfoSeedBatchBundle/Resources/config/app/config.yml" }
     - { resource: "@SonataSyliusUserBundle/Resources/config/app/config.yml" }
     - { resource: "@LibrinfoSyliusPayboxBundle/Resources/config/app/config.yml" }
+    
     - { resource: "@SilStockBundle/Resources/config/app/config.yml" }
+    - { resource: "@SilStockBundle/Resources/config/services.yml" }
+    - { resource: "@SilStockBundle/Resources/config/admin.yml" }
     - { resource: "@SilManufacturingBundle/Resources/config/app/config.yml" }
+    - { resource: "@SilManufacturingBundle/Resources/config/services.yml" }
+    - { resource: "@SilManufacturingBundle/Resources/config/admin.yml" }
+
 
     - { resource: "@AppBundle/Resources/config/varieties.yml" }
     - { resource: "@AppBundle/Resources/config/sonata.yml" }
     - { resource: "@AppBundle/Resources/config/services.yml" }
     - { resource: "@AppBundle/Resources/config/sylius-fixtures.yml" }
     - { resource: "@AppBundle/Resources/config/grids.yml" }
+
+
+doctrine:
+    orm: 
+        resolve_target_entities:
+            Sil\Bundle\StockBundle\Domain\Entity\PartnerInterface:  Librinfo\CRMBundle\Entity\Organism
+
 
 sylius_resource:
     resources:
