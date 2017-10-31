@@ -22,7 +22,7 @@ modules:
             browser: 'chrome'
             capabilities:
                 chromeOptions:
-                    args: ["--disable-gpu", "window-size=1024x1024"]
+                    args: ["--disable-gpu", "window-size=1280x720"]
                     # "--headless", test with this option to avoid using xfvb
             
 # env:
