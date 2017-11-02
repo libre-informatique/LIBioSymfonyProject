@@ -38,6 +38,7 @@ lisem:
         enabled: Actif
         first_catalogue_sent_date: Date premier envoi catalogue
         firstname: Prénom
+        fulltextname: Nom complet du client
         gateway_config: Configuration de la passerelle
         germination_rate: Taux de germination
         height: Hauteur
@@ -128,7 +129,6 @@ lisem:
         otherproduct_list: Liste des article (autres)
         seedsproduct_list: Liste des articles (semences)
         variety_list: Liste des variétés
-
         available: Disponible
 
 
@@ -219,6 +219,7 @@ librinfo:
         dashboard_title: Statistiques de vente
         email: Email
         first_name: Prénom
+        individual: Individu
         isCustomer: Est un client
         isNotCustomer: 'N''est pas un client'
         isNotSupplier: 'N''est pas un fournisseur'

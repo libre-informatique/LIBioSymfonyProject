@@ -12,16 +12,37 @@
 
 namespace Step\Acceptance;
 
-class Sylius extends \WebGuy
+class Sylius extends Common
 {
-    public function createAccount()
+    public function loginSylius($userLogin, $userPassword = 'selpwd')
     {
-        $I = $this;
+        $this->amGoingTo('Login Online Shop as ' . $userLogin);
+        $this->amOnPage('/');
+        $this->click('Connexion');
+        $this->fillField('#_username', $userLogin);
+        $this->fillField('#_password', $userPassword);
+        $this->click("//button[@type='submit']");
+        $this->see('Mon compte Gérer vos informations personnelles et préférences', '//h1');
     }
 
-    public function logUser()
+    public function createAccount($userName = null, $userEmail = null, $userPassword = 'selpwd')
     {
-        $I = $this;
+        $userName = (isset($userName)) ? $userName : $this->getRandName() . '-shop-user';
+        /* warning there is a big exception if the email is already used by someone else */
+        $userEmail = (isset($userEmail)) ? $userEmail : $userName . '@lisem.eu';
+
+        $this->amGoingTo('Create Shop User Account ' . $userName);
+        $this->amOnPage('/');
+        $this->click('Connexion');
+        $this->click("(//a[contains(@href, '/register')])[2]");
+        $this->fillField('#sylius_customer_registration_firstName', $userName . '-First');
+        $this->fillField('#sylius_customer_registration_lastName', $userName . '-Last');
+        $this->fillField('#sylius_customer_registration_email', $userEmail);
+        $this->fillField('#sylius_customer_registration_user_plainPassword_first', $userPassword);
+        $this->fillField('#sylius_customer_registration_user_plainPassword_second', $userPassword);
+        $this->click("//button[@type='submit']");
+        $this->waitForText('Succès', 10); // secs
+        return $userEmail;
     }
 
     public function createOrder()

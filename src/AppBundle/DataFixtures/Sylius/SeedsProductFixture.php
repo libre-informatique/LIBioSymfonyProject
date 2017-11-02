@@ -110,7 +110,7 @@ final class SeedsProductFixture extends AbstractFixture
                 'main_taxon' => 'seeds_LFR',      // TODO (Variety taxon)
                 'taxons'     => ['seeds_LFR'],        // TODO (Variety taxon)
                 'images'     => [],
-                'variety' => $variety,
+                'variety'    => $variety,
             ];
         }
 

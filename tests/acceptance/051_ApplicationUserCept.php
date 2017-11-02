@@ -28,6 +28,6 @@ $password = 'sel-user' . $randIndex;
 
 $user->createUser($username, $email, $password);
 $user->logoutLisem();
-$lisem->loginLisem($email, $password, true);
+$lisem->loginLisem($email, $password); //, true);
 
 $user->loggedAs($username);
