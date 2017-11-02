@@ -14,6 +14,29 @@ namespace Step\Acceptance;
 
 class Ecommerce extends Lisem
 {
+    public function createShopCategory($categoryName)
+    {
+        /* Category submit does not work yet */
+    }
+    
+    
+    public function createChannel($channelName)
+    {
+        $this->amGoingTo('Create Channel ' . $channelName);
+        $this->amOnPage('/lisem/librinfo/ecommerce/channel/create');
+
+        $this->fillField("//input[contains(@id,'_name')]", $channelName);
+        $this->fillField(
+            "//input[contains(@id,'_code')]",
+            /** @todo we should have a generate code on each admin */
+            strtoupper(substr($channelName, 0, 1)) . ($this->getRandNbr() % 100)
+        );
+        $this->fillField("//input[contains(@id,'_hostname')]", '127.0.0.1');
+        $this->fillField("//input[contains(@id,'_contactEmail')]", '127.0.0.1');
+        $this->selectDrop('_themeName', 'Sylius LiSem');
+        $this->clickCreate();
+    }
+
     public function activeAccount($userLogin)
     {
         $this->amGoingTo('Active Shop User Account ' . $userLogin);
@@ -34,10 +57,9 @@ class Ecommerce extends Lisem
         $this->amOnPage('/lisem/librinfo/ecommerce/order/list');
 
         $this->filterList($customerName, 'fulltextName');
-
-        //$this->click('i.fa.fa-eye');
-        //$this->click("Liste d'actions");
-        //$this->click('Retourner à la liste');
-        //$this->waitForText('Liste des commandes', 30); // secs
+        $this->click("(//a[contains(@href, '/show')])");
+        $this->click("Liste d'actions");
+        $this->click('Retourner à la liste');
+        $this->waitForText('Liste des commandes', 30); // secs
     }
 }
