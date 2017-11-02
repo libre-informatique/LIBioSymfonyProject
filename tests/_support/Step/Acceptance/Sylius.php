@@ -16,17 +16,13 @@ class Sylius extends Common
 {
     public function loginSylius($userLogin, $userPassword = 'selpwd')
     {
-        $sessionSnapShot = 'login_sylius_' . $userLogin;
-        if (!$this->loadSessionSnapshot($sessionSnapShot)) {
-            $this->amGoingTo('Login Online Shop as ' . $userLogin);
-            $this->amOnPage('/');
-            $this->click('Connexion');
-            $this->fillField('#_username', $userLogin);
-            $this->fillField('#_password', $userPassword);
-            $this->click("//button[@type='submit']");
-            $this->see('Mon compte Gérer vos informations personnelles et préférences', '//h1');
-            $this->saveSessionSnapshot($sessionSnapShot);
-        }
+        $this->amGoingTo('Login Online Shop as ' . $userLogin);
+        $this->amOnPage('/');
+        $this->click('Connexion');
+        $this->fillField('#_username', $userLogin);
+        $this->fillField('#_password', $userPassword);
+        $this->click("//button[@type='submit']");
+        $this->see('Mon compte Gérer vos informations personnelles et préférences', '//h1');
     }
 
     public function createAccount($userName = null, $userEmail = null, $userPassword = 'selpwd')
