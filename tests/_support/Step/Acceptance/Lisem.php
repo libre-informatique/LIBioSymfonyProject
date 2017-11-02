@@ -62,9 +62,14 @@ class Lisem extends Common
         $this->waitForElementNotVisible('.' . $class, 30);
     }
 
-    public function generateCode($id = 'code_generate_code')
+    public function generateCode($linkId = 'code_generate_code', $inputId = '_code')
     {
-        $this->click("//a[contains(@id, '" . $id . "')]");
+        // Sometime generate code don't work as expected, so we prefil the form
+        $this->fillField(
+            '//input[contains(@id, "' . $inputId . '")]',
+            $this->getRandNbr()
+        );
+        $this->click("//a[contains(@id, '" . $linkId . "')]");
         $this->waitCube();
         $this->wait(1);
     }
