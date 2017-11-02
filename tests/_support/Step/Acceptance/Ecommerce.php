@@ -18,8 +18,7 @@ class Ecommerce extends Lisem
     {
         /* Category submit does not work yet */
     }
-    
-    
+
     public function createChannel($channelName)
     {
         $this->amGoingTo('Create Channel ' . $channelName);
@@ -28,7 +27,7 @@ class Ecommerce extends Lisem
         $this->fillField("//input[contains(@id,'_name')]", $channelName);
         $this->fillField(
             "//input[contains(@id,'_code')]",
-            /** @todo we should have a generate code on each admin */
+            /* @todo we should have a generate code on each admin */
             strtoupper(substr($channelName, 0, 1)) . ($this->getRandNbr() % 100)
         );
         $this->fillField("//input[contains(@id,'_hostname')]", '127.0.0.1');
