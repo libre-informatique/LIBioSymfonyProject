@@ -22,6 +22,7 @@ imports:
     - { resource: "@AppBundle/Resources/config/services.yml" }
     - { resource: "@AppBundle/Resources/config/sylius-fixtures.yml" }
     - { resource: "@AppBundle/Resources/config/grids.yml" }
+    - { resource: "@AppBundle/Resources/config/app/state_machine.yml" }
 
 sylius_resource:
     resources:

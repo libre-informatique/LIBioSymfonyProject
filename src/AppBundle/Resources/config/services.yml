@@ -261,3 +261,11 @@ services:
         class: AppBundle\Twig\UnitConverter
         tags:
             - { name: twig.extension }
+
+
+# STOCK HANDLER
+
+    app.stock_handler:
+        class: AppBundle\Stock\StockHandler
+        calls:
+            - [setStockOperationHandler, ['@sil.stock.domain_service.operation']]
