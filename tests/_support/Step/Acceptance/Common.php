@@ -40,8 +40,6 @@ class Common extends \WebGuy
         return $this->randName;
     }
 
-
-    
     public function hideSymfonyToolBar()
     {
         // if (strpos('/', $this->grabFromCurrentUrl()) !== false) {
@@ -63,6 +61,7 @@ class Common extends \WebGuy
             $this->click(['css' => '.hide-button']);
         } catch (Exception $e) {
         }
+
         return true;
     }
 

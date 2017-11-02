@@ -20,20 +20,19 @@ class Lisem extends Common
     {
         //$sessionSnapShot = 'login_lisem_' . $username;
         //        if (!$this->loadSessionSnapshot($sessionSnapShot) || $force) {
-            $this->amGoingTo('Test Login');
-            $this->amOnPage('/lisem/login');
-            $this->waitForText('Courriel', 30);
-            $this->waitForText('Mot de passe', 30);
-            $this->fillField("//input[@id='_username']", $username);
-            $this->fillField("//input[@id='_password']", $password);
-            $this->click("//button[@type='submit']");
-            $this->waitForText('Libre', 30);
-            $this->amOnPage('/lisem/dashboard');
-            //  $this->saveSessionSnapshot($sessionSnapShot);
+        $this->amGoingTo('Test Login');
+        $this->amOnPage('/lisem/login');
+        $this->waitForText('Courriel', 30);
+        $this->waitForText('Mot de passe', 30);
+        $this->fillField("//input[@id='_username']", $username);
+        $this->fillField("//input[@id='_password']", $password);
+        $this->click("//button[@type='submit']");
+        $this->waitForText('Libre', 30);
+        $this->amOnPage('/lisem/dashboard');
+        //  $this->saveSessionSnapshot($sessionSnapShot);
             // }
         //$this->hideSymfonyToolBar(); //useless for test and may hide important element
     }
-
 
     public function logoutLisem()
     {

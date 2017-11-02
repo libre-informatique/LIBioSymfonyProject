@@ -28,13 +28,12 @@ class Sylius extends Common
             $this->saveSessionSnapshot($sessionSnapShot);
         }
     }
-    
 
     public function createAccount($userName = null, $userEmail = null, $userPassword = 'selpwd')
     {
         $userName = (isset($userName)) ? $userName : $this->getRandName() . '-shop-user';
         /* warning there is a big exception if the email is already used by someone else */
-        $userEmail = (isset($userEmail)) ? $userEmail :$userName . '@lisem.eu';
+        $userEmail = (isset($userEmail)) ? $userEmail : $userName . '@lisem.eu';
 
         $this->amGoingTo('Create Shop User Account ' . $userName);
         $this->amOnPage('/');

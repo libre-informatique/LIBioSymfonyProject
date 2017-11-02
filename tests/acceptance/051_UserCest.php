@@ -13,7 +13,6 @@
 /**
  * @group user
  */
-
 use Step\Acceptance\SonataSyliusUser as SonataSyliusUserTester;
 use Step\Acceptance\Ecommerce as EcommerceTester;
 use Step\Acceptance\Sylius as SyliusTester;
@@ -23,10 +22,10 @@ class CreateUserCest
     public function testLisemUser(SonataSyliusUserTester $lisem)
     {
         $userList = [];
-        $cpt = 2;// + $lisem->getRandNbr(true) % 2;
+        $cpt = 2; // + $lisem->getRandNbr(true) % 2;
         // see https://github.com/Codeception/Codeception/issues/4008
         while ($cpt-- > 0) {
-            $userList [] = ['name' => $lisem->getRandName(true) . '-name',  'email' => $lisem->getRandName(true) . '@lisem.eu', 'password' => 'pwd_' . $lisem->getRandNbr(true) ];
+            $userList[] = ['name' => $lisem->getRandName(true) . '-name',  'email' => $lisem->getRandName(true) . '@lisem.eu', 'password' => 'pwd_' . $lisem->getRandNbr(true)];
         }
 
         foreach ($userList as $curUser) {
@@ -45,7 +44,7 @@ class CreateUserCest
         $cpt = 2; // + $lisem->getRandNbr(true) % 2;
         // see https://github.com/Codeception/Codeception/issues/4008
         while ($cpt-- > 0) {
-            $userList [] = ['name' => $lisem->getRandName(true) . '-name',  'email' => $lisem->getRandName(true) . '@lisem.eu', 'password' => 'pwd_' . $lisem->getRandNbr(true) ];
+            $userList[] = ['name' => $lisem->getRandName(true) . '-name',  'email' => $lisem->getRandName(true) . '@lisem.eu', 'password' => 'pwd_' . $lisem->getRandNbr(true)];
         }
 
         foreach ($userList as $curUser) {
