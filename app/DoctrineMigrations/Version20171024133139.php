@@ -28,6 +28,10 @@ class Version20171024133139 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'postgresql', 'Migration can only be executed safely on \'postgresql\'.');
 
+        if (!$schema->getTable('channel_description')->hasIndex('uniq_743ebf0772f5a1aa')) {
+            return;
+        }
+
         $this->addSql('DROP INDEX uniq_743ebf0772f5a1aa');
         $this->addSql('CREATE INDEX IDX_743EBF0772F5A1AA ON channel_description (channel_id)');
     }
@@ -37,6 +41,10 @@ class Version20171024133139 extends AbstractMigration
      */
     public function down(Schema $schema)
     {
+        if ($schema->getTable('channel_description')->hasIndex('uniq_743ebf0772f5a1aa')) {
+            return;
+        }
+
         // this down() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'postgresql', 'Migration can only be executed safely on \'postgresql\'.');
 

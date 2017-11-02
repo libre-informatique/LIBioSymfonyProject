@@ -28,8 +28,7 @@ class Version20170927072336 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'postgresql', 'Migration can only be executed safely on \'postgresql\'.');
 
-        if (!$schema->hasTable('librinfo_ecommerce_productvariant__seedbatch')) {
-            // Skipping this migration because librinfo_ecommerce_productvariant__seedbatch already exist
+        if ($schema->hasTable('librinfo_ecommerce_productvariant__seedbatch')) {
             return;
         }
 
