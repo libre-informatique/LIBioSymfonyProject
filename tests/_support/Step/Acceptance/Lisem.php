@@ -16,10 +16,10 @@ namespace Step\Acceptance;
 /** @todo: should be renamed as SilWebApp or SilWebAppTestTool or Something like that */
 class Lisem extends Common
 {
-    public function loginLisem($username = 'lisem@lisem.eu', $password = 'lisem') //, $force = false)
+    public function loginLisem($username = 'lisem@lisem.eu', $password = 'lisem')//, $force = false)
     {
-        $sessionSnapShot = 'login_lisem_' . $username;
-        if (!$this->loadSessionSnapshot($sessionSnapShot)) { // || $force) {
+        //$sessionSnapShot = 'login_lisem_' . $username;
+        //        if (!$this->loadSessionSnapshot($sessionSnapShot) || $force) {
             $this->amGoingTo('Test Login');
             $this->amOnPage('/lisem/login');
             $this->waitForText('Courriel', 30);
@@ -28,8 +28,9 @@ class Lisem extends Common
             $this->fillField("//input[@id='_password']", $password);
             $this->click("//button[@type='submit']");
             $this->waitForText('Libre', 30);
-            $this->saveSessionSnapshot($sessionSnapShot);
-        }
+            $this->amOnPage('/lisem/dashboard');
+            //  $this->saveSessionSnapshot($sessionSnapShot);
+            // }
         //$this->hideSymfonyToolBar(); //useless for test and may hide important element
     }
 
@@ -37,6 +38,7 @@ class Lisem extends Common
     public function logoutLisem()
     {
         //$this->scrollUp(); // logout is on top of page
+        $this->amOnPage('/lisem/dashboard');
         $this->click('li.dropdown.user-menu a');
         $this->waitForElementVisible('.dropdown-menu.dropdown-user', 30);
         $this->testLink('Déconnexion', 'Login');

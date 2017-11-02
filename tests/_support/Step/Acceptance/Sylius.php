@@ -30,11 +30,11 @@ class Sylius extends Common
     }
     
 
-    public function createAccount()
+    public function createAccount($userName = null, $userEmail = null, $userPassword = 'selpwd')
     {
-        $userName = $this->getRandName() . '-shop-user';
+        $userName = (isset($userName)) ? $userName : $this->getRandName() . '-shop-user';
         /* warning there is a big exception if the email is already used by someone else */
-        $userEmail = $userName . '@lisem.eu';
+        $userEmail = (isset($userEmail)) ? $userEmail :$userName . '@lisem.eu';
 
         $this->amGoingTo('Create Shop User Account ' . $userName);
         $this->amOnPage('/');
@@ -43,8 +43,8 @@ class Sylius extends Common
         $this->fillField('#sylius_customer_registration_firstName', $userName . '-First');
         $this->fillField('#sylius_customer_registration_lastName', $userName . '-Last');
         $this->fillField('#sylius_customer_registration_email', $userEmail);
-        $this->fillField('#sylius_customer_registration_user_plainPassword_first', 'selpwd');
-        $this->fillField('#sylius_customer_registration_user_plainPassword_second', 'selpwd');
+        $this->fillField('#sylius_customer_registration_user_plainPassword_first', $userPassword);
+        $this->fillField('#sylius_customer_registration_user_plainPassword_second', $userPassword);
         $this->click("//button[@type='submit']");
         $this->waitForText('Succès', 10); // secs
         return $userEmail;
