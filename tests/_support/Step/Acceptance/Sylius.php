@@ -14,7 +14,6 @@ namespace Step\Acceptance;
 
 class Sylius extends Common
 {
-
     public function loginSylius($userLogin, $userPassword = 'selpwd')
     {
         $this->amGoingTo('Login Online Shop as ' . $userLogin);
@@ -82,7 +81,7 @@ class Sylius extends Common
         $this->click("//button[@type='submit']");
         $this->see('Merci ! Votre commande a bien été prise en compte.', '#sylius-thank-you');
     }
-    
+
 
     public function createOrder()
     {
