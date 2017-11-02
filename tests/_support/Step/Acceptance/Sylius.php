@@ -17,14 +17,20 @@ class Sylius extends Common
     public function loginSylius($userLogin, $userPassword = 'selpwd')
     {
         $this->amGoingTo('Login Online Shop as ' . $userLogin);
-        $this->amOnPage('/');
-        $this->click('Connexion');
+        $this->amOnPage('/login');
+        //$this->click('Connexion');
         $this->fillField('#_username', $userLogin);
         $this->fillField('#_password', $userPassword);
         $this->click("//button[@type='submit']");
         $this->see('Mon compte Gérer vos informations personnelles et préférences', '//h1');
     }
 
+    public function logoutSylius()
+    {
+         $this->amGoingTo('LogOut Online Shop');
+         $this->amOnPage('/logout');
+    }
+    
     public function createAccount($userName = null, $userEmail = null, $userPassword = 'selpwd')
     {
         $userName = (isset($userName)) ? $userName : $this->getRandName() . '-shop-user';
@@ -32,9 +38,9 @@ class Sylius extends Common
         $userEmail = (isset($userEmail)) ? $userEmail : $userName . '@lisem.eu';
 
         $this->amGoingTo('Create Shop User Account ' . $userName);
-        $this->amOnPage('/');
-        $this->click('Connexion');
-        $this->click("(//a[contains(@href, '/register')])[2]");
+        $this->amOnPage('/register');
+        //$this->click('Connexion');
+        //$this->click("(//a[contains(@href, '/register')])[2]");
         $this->fillField('#sylius_customer_registration_firstName', $userName . '-First');
         $this->fillField('#sylius_customer_registration_lastName', $userName . '-Last');
         $this->fillField('#sylius_customer_registration_email', $userEmail);
