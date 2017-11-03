@@ -8,7 +8,7 @@ set -ev
 export DISPLAY=:99
 
 sel_start_date=$(date)
-bin/selenium-server-standalone -debug > selenium.log 2>&1  &
+bin/selenium-server-standalone -debug -enablePassThrough false > selenium.log 2>&1  &
 # -debug true
 
 set +e
