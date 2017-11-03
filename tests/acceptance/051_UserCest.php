@@ -12,6 +12,7 @@
 
 /**
  * @group user
+ * @group all
  */
 use Step\Acceptance\SonataSyliusUser as SonataSyliusUserTester;
 use Step\Acceptance\Ecommerce as EcommerceTester;

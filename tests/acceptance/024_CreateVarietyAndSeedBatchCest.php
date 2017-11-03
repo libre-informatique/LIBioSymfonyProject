@@ -11,9 +11,9 @@
  */
 
 /**
- * @group scenarii
  * @group variety
  * @group seedbatch
+ * @group all
  */
 use Step\Acceptance\Lisem as LisemTester;
 use Step\Acceptance\Variety as VarietyTester;

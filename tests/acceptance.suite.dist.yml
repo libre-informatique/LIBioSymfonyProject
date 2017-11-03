@@ -16,26 +16,39 @@ modules:
         - Doctrine2:
             depends: Symfony
         - WebDriver:
-            url: 'http://127.0.0.1:8042/'
-            wait: 5
-            browser: 'chrome'
-            capabilities:
-                chromeOptions:
-                    args: ["--disable-gpu", "--window-size=1680,1050"]
-                    # "--headless", test with this option to avoid using xfvb
-            
-# env:
-#    chrome:
-#        modules:
-#            enabled:
-#                - WebDriver:
-#                    url: 'http://127.0.0.1:8042/'
-#                    wait: 5
-#                    browser: 'chrome'
-#                    capabilities:
-#                        chromeOptions:
-#                            args: ["--disable-gpu", "window-size=1024x1024"]
-#                            # "--headless", test with this option to avoid using xfvb
+                url: 'http://127.0.0.1:8042/'
+                wait: 5
+                browser: 'firefox'
+# There is too much javascript (on submit and generate code, and select ... ) So phpbrowser is useless            
+# - PhpBrowser:
+    #url: 'http://127.0.0.1:8042/'
+    #wait: 5
+
+env:
+    firefox:
+        modules:
+            disabled :
+                - PhpBrowser
+            enabled:
+                - WebDriver:
+                    url: 'http://127.0.0.1:8042/'
+                    wait: 5
+                    browser: 'firefox'           
+
+    chrome:
+        modules:
+            disabled :
+                - PhpBrowser
+            enabled:
+                - WebDriver:
+                    url: 'http://127.0.0.1:8042/'
+                    wait: 5
+                    browser: 'chrome'
+                    capabilities:
+                        chromeOptions:
+                            args: ["--disable-gpu", "--window-size=1680,1050"]
+                            # "--headless", test with this option to avoid using xfvb
+
 #        
 #    phantom:
 #        modules:
@@ -44,19 +57,3 @@ modules:
 #                    url: 'http://127.0.0.1:8042/'
 #                    browser: 'phantomjs'
 #                    
-#
-#    firefox:
-#        modules:
-#            enabled:
-#                - WebDriver:
-#                    url: 'http://127.0.0.1:8042/'
-#                    wait: 5
-#                    browser: 'firefox'
-#                    
-#
-#    phpbrowser:
-#        modules:
-#            enabled:
-#                - PhpBrowser:
-#                    url: 'http://127.0.0.1:8042/'
-#

@@ -70,8 +70,7 @@
         "nelmio/alice": "^2.2",
         "codeception/codeception": "^2.3",
         "lexik/translation-bundle": "^4.0",
-        "phpunit/phpunit": "^6.4",
-        "se/selenium-server-standalone": "^3.5"
+        "phpunit/phpunit": "^6.4"
     },
     "scripts": {
         "post-install-cmd": [

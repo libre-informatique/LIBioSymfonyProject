@@ -11,6 +11,7 @@
  */
 
 // @group login
+// @group all
 
 use Step\Acceptance\Lisem as LisemTester;
 
