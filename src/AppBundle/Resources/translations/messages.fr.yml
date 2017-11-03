@@ -283,3 +283,11 @@ blast:
     doctrine_relations:
         seedBatches: Lots
         products: Produits
+        varieties: Variétés
+        specieses: Èspèces
+        genuses: Genres
+        channels: Canaux de vente
+        options: Options
+        plant_categories: Catégories de plante
+
+'Cannot delete "%entity%" because it is used by order(s)': 'Impossible de supprimer %entity% car cet objet est utilisé par une ou plusieurs commandes'

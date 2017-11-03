@@ -15,6 +15,7 @@ namespace AppBundle\Admin;
 use Librinfo\EcommerceBundle\Admin\ProductAdmin;
 use Librinfo\VarietiesBundle\Entity\Variety;
 use Sonata\AdminBundle\Form\FormMapper;
+use Sonata\AdminBundle\Route\RouteCollection;
 use Sonata\DatagridBundle\ProxyQuery\ProxyQueryInterface;
 use Sylius\Component\Product\Model\ProductInterface;
 use Symfony\Component\Validator\Constraints\NotBlank;
@@ -96,6 +97,12 @@ class SeedsProductAdmin extends ProductAdmin
         );
 
         return $query;
+    }
+
+    protected function configureRoutes(RouteCollection $collection)
+    {
+        parent::configureRoutes($collection);
+        $collection->remove('delete');
     }
 
     /**
