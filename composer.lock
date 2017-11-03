@@ -4209,7 +4209,7 @@
                     "homepage": "http://www.libre-informatique.fr/"
                 },
                 {
-                    "name": "Marcos Bezerra de Menezes",
+                    "name": "Marcos BEZERRA DE MENEZES",
                     "email": "marcos.bezerra@libre-informatique.fr"
                 }
             ],
@@ -8383,6 +8383,16 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/swiftmailer-bundle/zipball/9728097df87e76e2db71fc41fd7d211c06daea3e",
                 "reference": "9728097df87e76e2db71fc41fd7d211c06daea3e",
+            "version": "v3.1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/swiftmailer-bundle.git",
+                "reference": "62b7f9ff4d35f791bf4008dcc84a4ccd1d879079"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/swiftmailer-bundle/zipball/62b7f9ff4d35f791bf4008dcc84a4ccd1d879079",
+                "reference": "62b7f9ff4d35f791bf4008dcc84a4ccd1d879079",
                 "shasum": ""
             },
             "require": {
