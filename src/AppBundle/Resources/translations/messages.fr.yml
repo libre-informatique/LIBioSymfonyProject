@@ -278,3 +278,8 @@ http_error:
     not_implemented: Non implémentée
     maintenance_in_progress: Maintenance en cours
     please_be_patient: Merci de patienter
+
+blast:
+    doctrine_relations:
+        seedBatches: Lots
+        products: Produits

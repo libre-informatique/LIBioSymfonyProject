@@ -15,6 +15,7 @@ namespace AppBundle\Admin;
 use Librinfo\EcommerceBundle\Entity\Product;
 use Librinfo\VarietiesBundle\Admin\VarietyAdmin as BaseAdmin;
 use Sonata\AdminBundle\Route\RouteCollection;
+use Sonata\AdminBundle\Datagrid\ProxyQueryInterface;
 
 /**
  * Lisem Sonata admin for varieties.
@@ -66,5 +67,31 @@ class VarietyAdmin extends BaseAdmin
         ;
 
         return $queryBuilder->getQuery();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function preBatchAction($actionName, ProxyQueryInterface $query, array &$idx, $allElements)
+    {
+        parent::preBatchAction($actionName, $query, $idx, $allElements);
+        // if ($actionName === 'delete') {
+        //     $varieties = $this->getModelManager()->findBy($this->getClass(), ['id' => $idx]);
+        //
+        //     foreach ($varieties as $variety) {
+        //         // Check products
+        //         if ($variety->getProducts()->count() > 0) {
+        //             $errorMessage = sprintf('Cannot delete variety « %s » because it has product', $variety->getName());
+        //             $this->getFlashManager()->addMessage('warning', $errorMessage);
+        //             unset($idx[array_search($variety->getId(), $idx)]);
+        //         }
+        //
+        //         if ($variety->getSeedBatches()->count() > 0) {
+        //             $errorMessage = sprintf('Cannot delete variety « %s » because it has seed batches', $variety->getName());
+        //             $this->getFlashManager()->addMessage('warning', $errorMessage);
+        //             unset($idx[array_search($variety->getId(), $idx)]);
+        //         }
+        //     }
+        // }
     }
 }
