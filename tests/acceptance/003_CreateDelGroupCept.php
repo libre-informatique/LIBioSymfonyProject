@@ -11,6 +11,7 @@
  */
 
 // @group crm
+// @group all
 
 use Step\Acceptance\CRM as CRMTester;
 use Step\Acceptance\Lisem as LisemTester;

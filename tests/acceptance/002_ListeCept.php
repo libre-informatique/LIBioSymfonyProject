@@ -11,6 +11,8 @@
  */
 
 // @group menu
+// @group all
+
 use Step\Acceptance\Lisem as LisemTester;
 
 $lisem = new LisemTester($scenario);
