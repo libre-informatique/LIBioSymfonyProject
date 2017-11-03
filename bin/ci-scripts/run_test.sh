@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
 
+
 OUTPUTDIR=tests/_output
 
 # clean output
@@ -27,3 +28,4 @@ done
 # check output
 NBFAIL=$(find $OUTPUTDIR |grep fail|wc -w)
 exit $NBFAIL;
+
