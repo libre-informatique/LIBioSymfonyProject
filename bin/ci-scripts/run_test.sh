@@ -20,7 +20,7 @@ fi
 
 for i in $CODECEPTGROUP
 do
-    # $CODECEPTCMD -g $i --env=firefox
+    $CODECEPTCMD -g $i --env=firefox
     $CODECEPTCMD -g $i --env=chrome
 done
 
