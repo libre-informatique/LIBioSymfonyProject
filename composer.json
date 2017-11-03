@@ -97,7 +97,7 @@
     "config": {
         "bin-dir": "bin"
     },
-    "version": "dev-wip-lisem",
+    "version": "0.6.4",
     "extra": {
         "symfony-app-dir": "app",
         "symfony-web-dir": "web",
