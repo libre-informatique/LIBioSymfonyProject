@@ -87,11 +87,11 @@ doctrine:
 
     orm:
         default_entity_manager: default
-        auto_generate_proxy_classes: "%kernel.debug%"
+        auto_generate_proxy_classes: "%kernel.debug%"       
         entity_managers:
             default:
                 connection: default
-                naming_strategy: doctrine.orm.naming_strategy.underscore
+                naming_strategy: blast.resource.doctrine.orm.naming_strategy.underscored_bundle_prefix
                 auto_mapping: true
                 mappings:
                     BlastBaseEntitiesBundle:
@@ -113,10 +113,10 @@ doctrine:
                 dql:
                     string_functions:
                         ilike: Blast\DoctrinePgsqlBundle\DoctrineExtensions\Functions\Ilike
-                        concat_ws: Oro\ORM\Query\AST\Functions\String\ConcatWs
+                        concat_ws: Oro\ORM\Query\AST\Functions\String\ConcatWs      
             session:
                 connection: session
-                naming_strategy: doctrine.orm.naming_strategy.underscore
+                naming_strategy: blast.resource.doctrine.orm.naming_strategy.underscored_bundle_prefix
                 auto_mapping: false # Only one entity manager can have auto_mappping set to true
                 mappings:
                     BlastDoctrineSessionBundle:
@@ -200,7 +200,7 @@ bazinga_js_translation:
     default_domain:       messages
 
 fos_js_routing:
-    routes_to_expose: [ .*librinfo_.*, .*blast_utils.* ]
+    routes_to_expose: [ .*librinfo_.*, .*blast_utils.*, .*sonata_admin.* ]
 
 lexik_maintenance:
     authorized:

@@ -11,22 +11,21 @@
  */
 
 // @group crm
+// @group all
 
-$I = new WebGuy($scenario);
-$I->wantTo('Create and delete category');
-$I->amOnPage('/lisem/login');
-$I->fillField("//input[@id='_username']", 'lisem@lisem.eu');
-$I->fillField("//input[@id='_password']", 'lisem');
-$I->click("//button[@type='submit']");
-$I->waitForText('Libre', 30); // secs
-$I->amOnPage('/lisem/librinfo/crm/category/list');
-$I->waitForText('Ajouter', 30); // secs
-$I->click('Ajouter');
-$I->fillField("//input[contains(@id,'name')]", 'SelCat');
+use Step\Acceptance\CRM as CRMTester;
+use Step\Acceptance\Lisem as LisemTester;
 
-$I->scrollTo("//button[@name='btn_create_and_list']", 100, 100);
-$I->click("//button[@name='btn_create_and_list']");
+$lisem = new LisemTester($scenario);
+$lisem->loginLisem();
+$crm = new CRMTester($scenario);
 
-$I->click('//label/div/ins');
-$I->click("//input[@value='OK']");
-$I->click("//button[@type='submit']");
+$crm->wantTo('Create and delete category');
+$cat = 'SelCat';
+$catParent = 'SelCatParent';
+
+$crm->createCategory($catParent);
+$crm->createCategory($cat, $catParent);
+$crm->deleteCategory();
+$crm->createCategory($catParent);
+$crm->createCategory($cat, $catParent);

@@ -11,46 +11,31 @@
  */
 
 // @group menu
+// @group all
 
-function testLink($I, $linkName)
-{
-    $I->waitForText($linkName, 30); // secs
-    $I->click($linkName);
-    $I->waitForText($linkName, 30); // secs
-}
+use Step\Acceptance\Lisem as LisemTester;
 
-$I = new WebGuy($scenario);
-$I->wantTo('Click on Menu List');
-$I->amOnPage('/lisem/login');
-$I->fillField("//input[@id='_username']", 'lisem@lisem.eu');
-$I->fillField("//input[@id='_password']", 'lisem');
-$I->click("//button[@type='submit']");
+$lisem = new LisemTester($scenario);
+$lisem->loginLisem();
 
-//testLink($I, 'Contacts');
-//testLink($I, 'Emailing');
-testLink($I, 'Èspèces');
-testLink($I, 'Variétés');
-testLink($I, 'Lots');
-testLink($I, 'Parcelles');
-//testLink($I, 'Producteurs');
-//$I->click('Articles');
-//testLink($I, 'Semences');
-//testLink($I, 'Autres');
+$lisem->wantTo('Click on Menu List');
+$lisem->testLink('Contacts');
+$lisem->testLink('Emailing');
+$lisem->testLink('Èspèces');
+$lisem->testLink('Variétés');
+$lisem->testLink('Lots');
+$lisem->testLink('Parcelles');
+//$lisem->testLink('Tests de germination');
+$lisem->testLink('Producteurs');
+$lisem->click('Articles');
+$lisem->testLink('Semences');
+$lisem->testLink('Autres');
 
-// testLink($I, 'Conditionnement');
-// testLink($I, 'Inventaire');
-// testLink($I, 'Catalogues');
-//testLink($I, 'Commandes');
+//$lisem->testLink('Conditionnement');
+//$lisem->testLink('Inventaire');
+//$lisem->testLink('Catalogues');
+$lisem->testLink('Commandes');
 
-//$I->click('Gestion / Compta');
-//testLink($I, 'Livre de caisse');
-
-// $I->click('Paramétrage');
-// $I->click('Relations publiques');
-// $I->click('Groupes');
-// $I->waitForText('Paramétrage', 30); // secs
-
-// $I->click('Paramétrage');
-// $I->click('Relations publiques');
-// $I->click('Groupes');
-// $I->click('Catégories');
+$lisem->click('Gestion / Compta');
+$lisem->testLink('Journal des ventes');
+$lisem->testLink('Livre de caisse');

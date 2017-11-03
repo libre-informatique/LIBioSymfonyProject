@@ -70,13 +70,15 @@ sonata_admin:
                     - route: admin_librinfo_seedbatch_plot_list
                       label: lisem.menu_label.plots_list
 
-            lisem.menu.germination_tests:
-                label: lisem.menu_label.germination_tests
-                icon:  '<i class="fa fa-eyedropper"></i>'
-                on_top: true
-                items:
-                    - label: lisem.menu_label.germination_tests
-                      route: lisem_not_implemented
+            # TEMPORARILY DISABLED
+            #
+            # lisem.menu.germination_tests:
+            #     label: lisem.menu_label.germination_tests
+            #     icon:  '<i class="fa fa-eyedropper"></i>'
+            #     on_top: true
+            #     items:
+            #         - label: lisem.menu_label.germination_tests
+            #           route: lisem_not_implemented
 
             lisem.menu.producers:
                 label: lisem.menu_label.producers
@@ -99,33 +101,37 @@ sonata_admin:
                     - label: lisem.menu_label.other_products_list
                       route: admin_librinfo_other_product_list
 
-            lisem.menu.packagings:
-                label: lisem.menu_label.packagings
-                icon:  '<i class="fa fa-archive"></i>'
-                on_top: true
-                items:
-                    - label: lisem.menu_label.packagings
-                      route: lisem_not_implemented
+            # TEMPORARILY DISABLED
+            #
+            # lisem.menu.packagings:
+            #     label: lisem.menu_label.packagings
+            #     icon:  '<i class="fa fa-archive"></i>'
+            #     on_top: true
+            #     items:
+            #         - label: lisem.menu_label.packagings
+            #           route: lisem_not_implemented
 
             # ##################################################################
             # PRODUCTS
             # ##################################################################
 
-            lisem.menu.inventory:
-                label: lisem.menu_label.inventory
-                icon:  '<i class="fa fa-list"></i>'
-                on_top: true
-                items:
-                    - label: lisem.menu_label.inventory
-                      route: lisem_not_implemented
-
-            lisem.menu.catalogs:
-                label: lisem.menu_label.catalogs
-                icon:  '<i class="fa fa-book"></i>'
-                on_top: true
-                items:
-                    - label: lisem.menu_label.catalogs
-                      route: lisem_not_implemented
+            # TEMPORARILY DISABLED
+            #
+            # lisem.menu.inventory:
+            #     label: lisem.menu_label.inventory
+            #     icon:  '<i class="fa fa-list"></i>'
+            #     on_top: true
+            #     items:
+            #         - label: lisem.menu_label.inventory
+            #           route: lisem_not_implemented
+            #
+            # lisem.menu.catalogs:
+            #     label: lisem.menu_label.catalogs
+            #     icon:  '<i class="fa fa-book"></i>'
+            #     on_top: true
+            #     items:
+            #         - label: lisem.menu_label.catalogs
+            #           route: lisem_not_implemented
 
             # ##################################################################
             # ORDERS
@@ -150,6 +156,25 @@ sonata_admin:
                       route: admin_librinfo_ecommerce_sales_journal_list
                     - label: lisem.menu_label.cash_book
                       route: admin_librinfo_ecommerce_payment_list
+
+            # sil.menu.stock:
+            #     label: librinfo.menu_label.stock_management
+            #     icon:  '<i class="fa fa-cubes"></i>'
+            #     items:
+            #         - label: librinfo.menu_label.items
+            #           route: admin_stock_item_list
+            #         - label: librinfo.menu_label.operations
+            #           route: admin_stock_operation_list
+            #         - label: librinfo.menu_label.movements
+            #           route: admin_stock_movement_list
+            #
+            # sil.menu.manufacturing:
+            #     label: librinfo.menu_label.manufacturing
+            #     icon:  '<i class="fa fa-industry"></i>'
+            #     items:
+            #         - label: librinfo.menu_label.bom
+            #           route: admin_manufacturing_bom_list
+
             App settings:
                 provider: parameters_sidebar_menu
                 icon:     '<i class="fa fa-sliders"></i>'

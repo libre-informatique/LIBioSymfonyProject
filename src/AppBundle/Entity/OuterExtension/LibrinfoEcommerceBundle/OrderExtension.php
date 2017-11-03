@@ -12,6 +12,28 @@
 
 namespace AppBundle\Entity\OuterExtension\LibrinfoEcommerceBundle;
 
+use Sil\Bundle\StockBundle\Domain\Entity\Operation;
+
 trait OrderExtension
 {
+    /**
+     * @var Operation
+     */
+    protected $stockOperation;
+
+    /**
+     * @return Operation
+     */
+    public function getStockOperation(): Operation
+    {
+        return $this->stockOperation;
+    }
+
+    /**
+     * @param Operation $stockOperation
+     */
+    public function setStockOperation(Operation $stockOperation): void
+    {
+        $this->stockOperation = $stockOperation;
+    }
 }

@@ -11,36 +11,16 @@
  */
 
 // @group crm
+// @group all
 
-$I = new WebGuy($scenario);
-$I->wantTo('Create And Delete Group');
-$I->amOnPage('/lisem/login');
-$I->fillField("//input[@id='_username']", 'lisem@lisem.eu');
-$I->fillField("//input[@id='_password']", 'lisem');
-$I->click("//button[@type='submit']");
-$I->waitForText('Libre', 30); // secs
-$I->amOnPage('/lisem/librinfo/crm/circle/list');
-$I->waitForText('Ajouter', 30); // secs
-$I->click('Ajouter');
-$I->fillField("//input[contains(@id, 'name')]", 'SelGroup');
-$I->fillField("//input[contains(@id, 'code')]", 'SELGRP');
-$I->fillField("//textarea[contains(@id, 'description')]", 'Sel desc');
-$I->click('Historique');
-$I->waitForText('Historique', 10);
+use Step\Acceptance\CRM as CRMTester;
+use Step\Acceptance\Lisem as LisemTester;
 
-$I->scrollTo("//button[@name='btn_create_and_list']", 100, 100);
-$I->click("//button[@name='btn_create_and_list']");
+$lisem = new LisemTester($scenario);
+$lisem->loginLisem();
+$crm = new CRMTester($scenario);
 
-$I->waitForText('Filtres', 30); // secs
-$I->click('Filtres');
-$I->wait(1);
-$I->click('i.fa.fa-square-o');
-//$I->click("//ul[2]/li/ul/li/a/i");
-$I->wait(1);
-$I->click("//input[@id='filter_name_value']");
-$I->fillField("//input[@id='filter_name_value']", 'Sel');
-$I->click("//button[@type='submit']");
-$I->wait(1);
-$I->click('//label/div/ins');
-$I->click("//input[@value='OK']");
-$I->click("//button[@type='submit']");
+$crm->wantTo('Create And Delete Group (Circle)');
+$crm->createCircle();
+$crm->deleteCircle();
+$crm->createCircle();

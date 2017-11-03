@@ -14,6 +14,8 @@ namespace AppBundle\Menu;
 
 use Knp\Menu\FactoryInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
+use Symfony\Component\Security\Core\Authorization\AuthorizationChecker;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage;
 
 /**
  * Extension for Sonata Admin sidebar menu.
@@ -25,6 +27,16 @@ use Symfony\Component\HttpFoundation\RequestStack;
 class MenuBuilder
 {
     private $factory;
+
+    /**
+     * @var TokenStorage
+     */
+    private $tokenStorage;
+
+    /**
+     * @var AuthorizationChecker
+     */
+    private $authorizationChecker;
 
     /**
      * @param FactoryInterface $factory
@@ -60,11 +72,14 @@ class MenuBuilder
         $menu = $this->factory->createItem('lisem.menu_label.app_settings');
 
         // Admin settings
-        $submenu = $menu->addChild('lisem.menu_label.admin_settings');
+
         // TODO (we are not using LibrinfoUserBundle any more. Adapt this for SonataSyliusUserBundle) :
-        //$submenu->addChild('lisem.menu_label.user_users', ['route' => 'admin_librinfo_user_user_list']);
-        //$submenu->addChild('lisem.menu_label.user_groups', ['route' => 'admin_librinfo_user_group_list']);
-        //$submenu->addChild('lisem.menu_label.user_roles', ['route' => 'lisem_not_implemented']);
+        if ($this->authorizationChecker->isGranted('ROLE_SUPER_ADMIN', $this->tokenStorage->getToken()->getUser())) {
+            $submenu = $menu->addChild('lisem.menu_label.admin_settings');
+            $submenu->addChild('lisem.menu_label.user_users', ['route' => 'admin_librinfo_sonatasyliususer_sonatauser_list']);
+            //$submenu->addChild('lisem.menu_label.user_groups', ['route' => 'admin_librinfo_user_group_list']);
+            //$submenu->addChild('lisem.menu_label.user_roles', ['route' => 'lisem_not_implemented']);
+        }
 
         // CRM settings
         $submenu = $menu->addChild('lisem.menu_label.crm_settings');
@@ -75,8 +90,8 @@ class MenuBuilder
 
         // Varieties settings
         $submenu = $menu->addChild('lisem.menu_label.varieties_settings');
-        $submenu->addChild('lisem.menu_label.genuses_list', ['route' => 'admin_librinfo_varieties_genus_list']);
         $submenu->addChild('lisem.menu_label.families_list', ['route' => 'admin_librinfo_varieties_family_list']);
+        $submenu->addChild('lisem.menu_label.genuses_list', ['route' => 'admin_librinfo_varieties_genus_list']);
         $submenu->addChild('lisem.menu_label.plant_categories_list', ['route' => 'admin_librinfo_varieties_plantcategory_list']);
 
         // Seed batches settings
@@ -103,6 +118,31 @@ class MenuBuilder
         $submenu->addChild('lisem.menu_label.tax_rates_list', ['route' => 'admin_librinfo_ecommerce_taxrate_list']);
         $submenu->addChild('lisem.menu_label.shop_user', ['route' => 'admin_librinfo_ecommerce_shop_user_list']);
 
+        // Stock settings
+        /*
+        $submenu = $menu->addChild('sil.stock.menu_label.stock_management_settings');
+        $submenu->addChild('sil.stock.menu_label.warehouses', ['route' => 'admin_stock_warehouse_list']);
+        $submenu->addChild('sil.stock.menu_label.locations', ['route' => 'admin_stock_location_list']);
+        $submenu->addChild('sil.stock.menu_label.uom_types', ['route' => 'admin_stock_uomtype_list']);
+        $submenu->addChild('sil.stock.menu_label.uoms', ['route' => 'admin_stock_uom_list']);
+        */
+
         return $menu;
+    }
+
+    /**
+     * @param TokenStorage $tokenStorage
+     */
+    public function setTokenStorage(TokenStorage $tokenStorage): void
+    {
+        $this->tokenStorage = $tokenStorage;
+    }
+
+    /**
+     * @param AuthorizationChecker $authorizationChecker
+     */
+    public function setAuthorizationChecker(AuthorizationChecker $authorizationChecker): void
+    {
+        $this->authorizationChecker = $authorizationChecker;
     }
 }

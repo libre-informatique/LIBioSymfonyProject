@@ -35,16 +35,19 @@
         "jms/serializer-bundle": "^2.0",
         "knplabs/knp-snappy-bundle": "^1.0",
         "lexik/maintenance-bundle": "^2.1",
-        "libre-informatique/crm-bundle": "0.5.2",
-        "libre-informatique/decorator-bundle": "0.5.2",
-        "libre-informatique/ecommerce-bundle": "0.5.2",
-        "libre-informatique/email-bundle": "0.5.2",
-        "libre-informatique/email-crm-bundle": "0.5.2",
-        "libre-informatique/media-bundle": "0.5.2",
-        "libre-informatique/seed-batch-bundle": "0.5.2",
-        "libre-informatique/sonata-sylius-user-bundle": "0.5.2",
-        "libre-informatique/varieties-bundle": "0.5.2",
-        "libre-informatique/sylius-paybox-bundle": "0.5.2",
+        "libre-informatique/crm-bundle": "self.version",
+        "libre-informatique/decorator-bundle": "self.version",
+        "libre-informatique/ecommerce-bundle": "self.version",
+        "libre-informatique/email-bundle": "self.version",
+        "libre-informatique/email-crm-bundle": "self.version",
+        "libre-informatique/media-bundle": "self.version",
+        "libre-informatique/seed-batch-bundle": "self.version",
+        "libre-informatique/sonata-sylius-user-bundle": "self.version",
+        "libre-informatique/varieties-bundle": "self.version",
+        "libre-informatique/sylius-paybox-bundle": "self.version",
+        "blast-project/resource-bundle": "self.version",
+        "sil-project/stock-bundle": "self.version",
+        "sil-project/manufacturing-bundle": "self.version",
         "nelmio/api-doc-bundle": "^2.13",
         "sensio/distribution-bundle": "^5.0",
         "sensio/framework-extra-bundle": "^3.0.2",
@@ -67,8 +70,7 @@
         "nelmio/alice": "^2.2",
         "codeception/codeception": "^2.3",
         "lexik/translation-bundle": "^4.0",
-        "phpunit/phpunit": "^6.4",
-        "se/selenium-server-standalone": "^3.6"
+        "phpunit/phpunit": "^6.4"
     },
     "scripts": {
         "post-install-cmd": [
@@ -93,14 +95,9 @@
         ]
     },
     "config": {
-        "bin-dir": "bin",
-        "sllh-composer-lint": {
-            "php": true,
-            "type": true,
-            "minimum-stability": false,
-            "version-constraints": true
-        }
+        "bin-dir": "bin"
     },
+    "version": "dev-wip-lisem",
     "extra": {
         "symfony-app-dir": "app",
         "symfony-web-dir": "web",

@@ -14,3 +14,7 @@ Librinfo\EcommerceBundle\Entity\Order:
             joinColumn:
                 name: billing_address_id
                 referencedColumnName: id
+
+    manyToOne:
+        stockOperation:
+            targetEntity: Sil\Bundle\StockBundle\Domain\Entity\Operation

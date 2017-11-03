@@ -1,5 +1,15 @@
 <?php
 
+/*
+ * This file is part of the Lisem Project.
+ *
+ * Copyright (C) 2015-2017 Libre Informatique
+ *
+ * This file is licenced under the GNU GPL v3.
+ * For the full copyright and license information, please view the LICENSE.md
+ * file that was distributed with this source code.
+ */
+
 namespace Application\Migrations;
 
 use Doctrine\DBAL\Migrations\AbstractMigration;
@@ -17,6 +27,10 @@ class Version20170927072336 extends AbstractMigration
     {
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'postgresql', 'Migration can only be executed safely on \'postgresql\'.');
+
+        if ($schema->hasTable('librinfo_ecommerce_productvariant__seedbatch')) {
+            return;
+        }
 
         $this->addSql('CREATE TABLE librinfo_ecommerce_productvariant__seedbatch (productvariant_id UUID NOT NULL, seedbatch_id UUID NOT NULL, PRIMARY KEY(productvariant_id, seedbatch_id))');
         $this->addSql('CREATE INDEX IDX_E3BA80921855BE3F ON librinfo_ecommerce_productvariant__seedbatch (productvariant_id)');

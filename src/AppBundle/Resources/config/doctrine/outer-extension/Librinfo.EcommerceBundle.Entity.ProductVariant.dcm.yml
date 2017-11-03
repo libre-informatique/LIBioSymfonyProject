@@ -1,6 +1,8 @@
 Librinfo\EcommerceBundle\Entity\ProductVariant:
     type: entity
-
+    manyToOne:
+        stockItem:
+            targetEntity: Sil\Bundle\StockBundle\Domain\Entity\StockItem
     manyToMany:
         seedBatches:
             targetEntity: Librinfo\SeedBatchBundle\Entity\SeedBatch

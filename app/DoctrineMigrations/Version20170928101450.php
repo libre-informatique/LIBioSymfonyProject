@@ -28,6 +28,11 @@ class Version20170928101450 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'postgresql', 'Migration can only be executed safely on \'postgresql\'.');
 
+        if (!$schema->hasTable('sylius_order_item')) {
+            // Skipping this migration if table sylius_order_item doesn't exist
+            return;
+        }
+
         $this->addSql('ALTER TABLE sylius_order_item_unit DROP CONSTRAINT IF EXISTS FK_82BF226EE415FB15');
         $this->addSql('CREATE TABLE librinfo_ecommerce_orderitem (id UUID NOT NULL, order_id UUID NOT NULL, variant_id UUID NOT NULL, quantity INT NOT NULL, unit_price INT NOT NULL, units_total INT NOT NULL, adjustments_total INT NOT NULL, total INT NOT NULL, is_immutable BOOLEAN NOT NULL, PRIMARY KEY(id))');
         $this->addSql('CREATE INDEX IDX_58CB71818D9F6D38 ON librinfo_ecommerce_orderitem (order_id)');
