@@ -100,7 +100,8 @@ class Lisem extends Common
         $this->waitForElementVisible('//div[@id="select2-drop"]/div/input[contains(@id,"_search")]', 30);
         $this->fillField('//div[@id="select2-drop"]/div/input[contains(@id,"_search")]', $value);
         $this->waitCube();
-        $this->clickWithLeftButton('//div[@id="select2-drop"]/ul/li/div/div[contains(string(), "' . $value . '")]');
+        //$this->clickWithLeftButton('//div[@id="select2-drop"]/ul/li/div/div[contains(string(), "' . $value . '")]');
+        $this->click('//div[@id="select2-drop"]/ul/li/div/div[contains(string(), "' . $value . '")]');
         $this->waitCube();
     }
 
@@ -108,18 +109,23 @@ class Lisem extends Common
     {
         /* @todo test if there is more than one select on the page */
         // REAL example to click select2 elements below
-        $this->clickWithLeftButton('div[id^="s2id_"][id$="' . $id . '"] ' . $tag . '');
-        $this->clickWithLeftButton('//div[@id="select2-drop"]/ul/li/div[text()="' . $value . '"]');
+        //$this->clickWithLeftButton('div[id^="s2id_"][id$="' . $id . '"] ' . $tag . '');
+        //$this->clickWithLeftButton('//div[@id="select2-drop"]/ul/li/div[text()="' . $value . '"]');
+        $this->click('div[id^="s2id_"][id$="' . $id . '"] ' . $tag . '');
+        $this->click('//div[@id="select2-drop"]/ul/li/div[text()="' . $value . '"]');
+
         $this->waitCube();
     }
 
     public function clickCheckbox($name, $value = '1')
     {
-        $this->clickWithLeftButton('input[type="checkbox"][name$="[' . $name . ']"][value="' . $value . '"] + ins');
+        //$this->clickWithLeftButton('input[type="checkbox"][name$="[' . $name . ']"][value="' . $value . '"] + ins');
+        $this->click('input[type="checkbox"][name$="[' . $name . ']"][value="' . $value . '"] + ins');
     }
 
     public function clickRadio($name, $value = '1')
     {
-        $this->clickWithLeftButton('input[type="radio"][name$="[' . $name . ']"][value="' . $value . '"] + ins');
+        //$this->clickWithLeftButton('input[type="radio"][name$="[' . $name . ']"][value="' . $value . '"] + ins');
+        $this->click('input[type="radio"][name$="[' . $name . ']"][value="' . $value . '"] + ins');
     }
 }
