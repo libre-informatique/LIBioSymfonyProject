@@ -52,6 +52,7 @@ class CreateUserCest
             $lisem->loginLisem();
             $lisem->activeAccount($curUser['email']);
             $sylius->loginSylius($curUser['email'], $curUser['password']);
+            $sylius->logoutSylius();
         }
     }
 }
