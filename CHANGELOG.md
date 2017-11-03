@@ -1,6 +1,13 @@
 # Change Log
 
-## [0.5.2](https://github.com/libre-informatique/LISemSymfonyProject/tree/0.5.2) (2017-10-19)
+## [0.6.4](https://github.com/libre-informatique/LISemSymfonyProject/tree/0.6.4) (2017-11-03)
+[Full Changelog](https://github.com/libre-informatique/LISemSymfonyProject/compare/0.5.2...0.6.4)
+
+**Merged pull requests:**
+
+- Lisem fix & features [\#16](https://github.com/libre-informatique/LISemSymfonyProject/pull/16) ([FanchTheSystem](https://github.com/FanchTheSystem))
+
+## [0.5.2](https://github.com/libre-informatique/LISemSymfonyProject/tree/0.5.2) (2017-10-23)
 [Full Changelog](https://github.com/libre-informatique/LISemSymfonyProject/compare/0.5.1...0.5.2)
 
 **Merged pull requests:**
