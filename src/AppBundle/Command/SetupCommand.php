@@ -97,6 +97,7 @@ EOT
             $this->setupUsers($output);
             $this->setupCircles($output);
             $this->setupProductOptions($output);
+            $this->setupData($output, ['lisem_requirements']);
             $this->setupSampleData($output);
             $this->setupCities($output);
             $this->setupAssets($output);
@@ -105,6 +106,7 @@ EOT
             $this->setupUsers($output);
             $this->setupCircles($output);
             $this->setupProductOptions($output);
+            $this->setupData($output, ['lisem_requirements']);
             $this->setupCities($output);
             $this->setupAssets($output);
         }
@@ -385,7 +387,18 @@ EOT
         $fixturesInput->setInteractive(false);
         $fixturesCommand->run($fixturesInput, $output);
 
-        foreach (['lisem_default', 'lisem_varieties', 'lisem_products'] as $suite) {
+        $fixturesSuites = [
+            'lisem_default',
+            'lisem_varieties',
+            'lisem_products',
+        ];
+
+        $this->setupData($output, $fixturesSuites);
+    }
+
+    protected function setupData(OutputInterface $output, array $fixturesSuites)
+    {
+        foreach ($fixturesSuites as $suite) {
             if ($suite == 'lisem_varieties' && $this->csvDir) {
                 $fixturesCommand = $this->getApplication()->find('lisem:import:csv');
                 $output->writeln(['', 'Running <info>lisem:import:csv ' . $this->csvDir . '</info> command...']);

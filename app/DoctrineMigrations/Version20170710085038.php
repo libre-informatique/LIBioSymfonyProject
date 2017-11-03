@@ -34,6 +34,15 @@ class Version20170710085038 extends AbstractMigration implements ContainerAwareI
      */
     public function up(Schema $schema)
     {
+        $circlePROD = $this->container->get('doctrine')->getRepository('LibrinfoCRMBundle:Circle')->findOneBy([
+            'code' => 'PROD',
+        ]);
+
+        if ($circlePROD !== null) {
+            // Skipping this migration because PROD cricle already exists
+            return;
+        }
+
         $existingCirclePRO = $this->container->get('doctrine')->getRepository('LibrinfoCRMBundle:Circle')->findOneBy([
             'code' => 'PRO',
         ]);
@@ -41,8 +50,8 @@ class Version20170710085038 extends AbstractMigration implements ContainerAwareI
         if ($existingCirclePRO && $existingCirclePRO->getId() !== 'b907691c-963f-4a7c-9098-5a95335cf21d') {
             $tables = [
                 'librinfo_crm_circle__sonatauser' => 'circle_id',
-                'librinfo_crm_organism__circle' => 'circle_id',
-                'librinfo_crm_position__circle' => 'circle_id',
+                'librinfo_crm_organism__circle'   => 'circle_id',
+                'librinfo_crm_position__circle'   => 'circle_id',
             ];
 
             // Move Items to new PRO circle

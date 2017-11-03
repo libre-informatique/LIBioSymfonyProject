@@ -52,7 +52,7 @@ class CustomerAdmin extends \Librinfo\SeedBatchBundle\Admin\OrganismAdmin
     {
         parent::postConfigureFormFields($mapper);
         /* it look like 'customercode' does not exit */
-        #$mapper->get('customerCode')->addViewTransformer(new CustomerCodeTransformer());
+        //$mapper->get('customerCode')->addViewTransformer(new CustomerCodeTransformer());
     }
 
     /**

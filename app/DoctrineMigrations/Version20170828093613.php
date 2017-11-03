@@ -1,5 +1,15 @@
 <?php
 
+/*
+ * This file is part of the Lisem Project.
+ *
+ * Copyright (C) 2015-2017 Libre Informatique
+ *
+ * This file is licenced under the GNU GPL v3.
+ * For the full copyright and license information, please view the LICENSE.md
+ * file that was distributed with this source code.
+ */
+
 namespace Application\Migrations;
 
 use Doctrine\DBAL\Migrations\AbstractMigration;
@@ -14,6 +24,11 @@ class Version20170828093613 extends AbstractMigration
     {
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'postgresql', 'Migration can only be executed safely on \'postgresql\'.');
+
+        if (!$schema->hasTable('sylius_product_variant')) {
+            // Skipping this migration because table sylius_product_variant doesn't exist
+            return;
+        }
 
         $this->addSql('ALTER TABLE sylius_product_variant DROP CONSTRAINT fk_a29b5234584665a');
         $this->addSql('ALTER TABLE sylius_product_channels DROP CONSTRAINT fk_f9ef269b4584665a');

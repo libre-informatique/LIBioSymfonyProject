@@ -24,6 +24,11 @@ env:
     - UPSTREAM_URL=https://github.com/libre-informatique/LISemSymfonyProject.git
     - XMLLINT_INDENT="    "
 
+notifications:
+  email:
+    on_success: change
+    on_failure: always
+    
 matrix:
   fast_finish: true
   include:
@@ -46,14 +51,13 @@ before_install:
     - if [ -x ${SCRIPTS_FOLDER}/create_travis_database_${TARGET}.sh ]; then ${SCRIPTS_FOLDER}/create_travis_database_${TARGET}.sh; fi;
   
 install:
-    - if [ -x ${SCRIPTS_FOLDER}/install_${TARGET}.sh ]; then ${SCRIPTS_FOLDER}/install_${TARGET}.sh; fi;
+    - if [ -x ${SCRIPTS_FOLDER}/install_${TARGET}.sh ]; then travis_retry ${SCRIPTS_FOLDER}/install_${TARGET}.sh; fi;
   
 before_script:
-    - if [ -x ${SCRIPTS_FOLDER}/before_script_${TARGET}.sh ]; then travis_retry ${SCRIPTS_FOLDER}/before_script_${TARGET}.sh; fi;
+    - if [ -x ${SCRIPTS_FOLDER}/before_script_${TARGET}.sh ]; then travis_retry travis_retry ${SCRIPTS_FOLDER}/before_script_${TARGET}.sh; fi;
 
 script:
     - if [ -x ${SCRIPTS_FOLDER}/run_${TARGET}.sh ]; then ${SCRIPTS_FOLDER}/run_${TARGET}.sh; fi;
-    # - make $TARGET
 
 after_success:
     - if [ -x ${SCRIPTS_FOLDER}/after_success_${TARGET}.sh ]; then ${SCRIPTS_FOLDER}/after_success_${TARGET}.sh; fi;

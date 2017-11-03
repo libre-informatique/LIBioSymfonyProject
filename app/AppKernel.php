@@ -59,6 +59,7 @@ class AppKernel extends Kernel
             new Blast\UtilsBundle\BlastUtilsBundle(),
             new Blast\DoctrinePgsqlBundle\BlastDoctrinePgsqlBundle(),
             new Blast\DoctrineSessionBundle\BlastDoctrineSessionBundle(),
+            new Blast\Bundle\ResourceBundle\BlastResourceBundle(),
 
             // Librinfo bundles
             new Librinfo\DecoratorBundle\LibrinfoDecoratorBundle(),
@@ -71,6 +72,8 @@ class AppKernel extends Kernel
             new Librinfo\MediaBundle\LibrinfoMediaBundle(),
             new Librinfo\EcommerceBundle\LibrinfoEcommerceBundle(),
             new Librinfo\SyliusPayboxBundle\LibrinfoSyliusPayboxBundle(),
+            new Sil\Bundle\StockBundle\SilStockBundle(),
+            new Sil\Bundle\ManufacturingBundle\SilManufacturingBundle(),
 
             // Lisem App
             new AppBundle\AppBundle(),

@@ -67,17 +67,21 @@ class CsvObjectNormalizer extends ObjectNormalizer
      */
     protected function setAttributeValue($object, $attribute, $value, $format = null, array $context = array())
     {
+        $this->cleanUpValue($value);
+
         $key = get_class($object) . '.' . $attribute;
         if (isset($this->mappings[$key])) {
             list($associationClass, $field) = $this->mappings[$key];
             $value = $this->fetchAssociation($associationClass, $field, $value);
         }
 
-        if ($value == '') {
+        if ($value === '') {
             $value = null;
         }
 
-        parent::setAttributeValue($object, $attribute, $value, $format, $context);
+        if ($attribute !== '' && $attribute !== null) {
+            parent::setAttributeValue($object, $attribute, $value, $format, $context);
+        }
     }
 
     /**
@@ -115,5 +119,10 @@ class CsvObjectNormalizer extends ObjectNormalizer
             Species::class . '.parent_species' => [Species::class, 'name'],
             Variety::class . '.species'        => [Species::class, 'name'],
         ];
+    }
+
+    protected function cleanUpValue(&$value): void
+    {
+        $value = trim($value);
     }
 }

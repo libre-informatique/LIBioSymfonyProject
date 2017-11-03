@@ -6,6 +6,7 @@ imports:
 
     - { resource: "@BlastUtilsBundle/Resources/config/sonata.yml" }
     - { resource: "@BlastCoreBundle/Resources/config/config.yml" }
+    - { resource: "@BlastResourceBundle/Resources/config/app/config.yml" }
     - { resource: "@LibrinfoMediaBundle/Resources/config/app/config.yml" }
     - { resource: "@LibrinfoEcommerceBundle/Resources/config/app/config.yml" }
     - { resource: "@LibrinfoCRMBundle/Resources/config/app/config.yml" }
@@ -13,12 +14,28 @@ imports:
     - { resource: "@LibrinfoSeedBatchBundle/Resources/config/app/config.yml" }
     - { resource: "@SonataSyliusUserBundle/Resources/config/app/config.yml" }
     - { resource: "@LibrinfoSyliusPayboxBundle/Resources/config/app/config.yml" }
+    
+    - { resource: "@SilStockBundle/Resources/config/app/config.yml" }
+    - { resource: "@SilStockBundle/Resources/config/services.yml" }
+    - { resource: "@SilStockBundle/Resources/config/admin.yml" }
+    - { resource: "@SilManufacturingBundle/Resources/config/app/config.yml" }
+    - { resource: "@SilManufacturingBundle/Resources/config/services.yml" }
+    - { resource: "@SilManufacturingBundle/Resources/config/admin.yml" }
+
 
     - { resource: "@AppBundle/Resources/config/varieties.yml" }
     - { resource: "@AppBundle/Resources/config/sonata.yml" }
     - { resource: "@AppBundle/Resources/config/services.yml" }
     - { resource: "@AppBundle/Resources/config/sylius-fixtures.yml" }
     - { resource: "@AppBundle/Resources/config/grids.yml" }
+    - { resource: "@AppBundle/Resources/config/app/state_machine.yml" }
+
+
+doctrine:
+    orm: 
+        resolve_target_entities:
+            Sil\Bundle\StockBundle\Domain\Entity\PartnerInterface:  Librinfo\CRMBundle\Entity\Organism
+
 
 sylius_resource:
     resources:
@@ -51,16 +68,6 @@ librinfo_ecommerce:
     code_generator:
         product_variant: AppBundle\CodeGenerator\ProductVariantCodeGenerator
         product_variant_embedded: AppBundle\CodeGenerator\ProductVariantEmbeddedCodeGenerator
-
-payum:
-    gateways:
-        paybox:
-            factory: paybox
-            site: %paybox.site%
-            rang: %paybox.rang%
-            identifiant: %paybox.identifiant%
-            hmac: %paybox.hmac%
-            sandbox: %paybox.sandbox%
 
 sylius_customer:
     driver: doctrine/orm
