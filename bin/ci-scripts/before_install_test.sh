@@ -54,7 +54,7 @@ set +v
 set -v
 
 # install node 4.2.6
-nvm install 6
+nvm install 8.9
 
 
 
