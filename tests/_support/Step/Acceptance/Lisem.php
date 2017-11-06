@@ -67,7 +67,7 @@ class Lisem extends Common
         // Sometime generate code don't work as expected, so we prefil the form
         $this->fillField(
             '//input[contains(@id, "' . $inputId . '")]',
-            $this->getRandNbr()
+            substr('S' . $this->getRandNbr(), 0, 2)
         );
         $this->click("//a[contains(@id, '" . $linkId . "')]");
         $this->waitCube();
