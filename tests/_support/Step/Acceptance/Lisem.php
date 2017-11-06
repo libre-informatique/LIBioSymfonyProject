@@ -67,7 +67,7 @@ class Lisem extends Common
         // Sometime generate code don't work as expected, so we prefil the form
         $this->fillField(
             '//input[contains(@id, "' . $inputId . '")]',
-            $this->getRandNbr()
+            str_pad(substr('S' . $this->getRandNbr(), 0, 2), 3, '0')
         );
         $this->click("//a[contains(@id, '" . $linkId . "')]");
         $this->waitCube();
@@ -125,14 +125,12 @@ class Lisem extends Common
     public function clickCheckbox($name, $value = '1')
     {
         //$this->clickWithLeftButton('input[type="checkbox"][name$="[' . $name . ']"][value="' . $value . '"] + ins');
-        $this->waitForElementVisible('input[type="checkbox"][name$="[' . $name . ']"][value="' . $value . '"] + ins');
         $this->click('input[type="checkbox"][name$="[' . $name . ']"][value="' . $value . '"] + ins');
     }
 
     public function clickRadio($name, $value = '1')
     {
         //$this->clickWithLeftButton('input[type="radio"][name$="[' . $name . ']"][value="' . $value . '"] + ins');
-        $this->waitForElementVisible('input[type="radio"][name$="[' . $name . ']"][value="' . $value . '"] + ins');
         $this->click('input[type="radio"][name$="[' . $name . ']"][value="' . $value . '"] + ins');
     }
 }
