@@ -1,6 +1,0 @@
-Librinfo\CRMBundle\Entity\Circle:
-    type: entity
-
-    manyToMany:
-        users:
-            targetEntity: Librinfo\SonataSyliusUserBundle\Entity\SonataUser

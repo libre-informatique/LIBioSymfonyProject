@@ -1,8 +1,0 @@
-AppBundle\Entity\ChannelDescription:
-    type: entity
-    manyToOne:
-        channel:
-            targetEntity: Librinfo\EcommerceBundle\Entity\Channel
-        variety:
-            targetEntity: Librinfo\VarietiesBundle\Entity\Variety
-            inversedBy: channelDescriptions

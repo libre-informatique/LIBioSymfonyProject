@@ -1,9 +1,0 @@
-Librinfo\CRMBundle\Entity\Organism:
-    type: entity
-    fields:
-        siret:
-            type: string
-            nullable: true
-    manyToMany:
-        orders:
-            targetEntity: Librinfo\EcommerceBundle\Entity\Order

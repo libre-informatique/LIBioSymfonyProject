@@ -1,5 +1,6 @@
-AppBundle\Entity\ChannelDescription:
+LisemBundle\Entity\ChannelDescription:
     type: entity
+    table: lisem_channel_description
     blast:
         loggable: true
     fields:
@@ -7,3 +8,8 @@ AppBundle\Entity\ChannelDescription:
             type: string
         title:
             type: string
+
+    manyToOne:
+        variety:
+            targetEntity: Sil\Bundle\VarietyBundle\Entity\VarietyInterface
+            inversedBy: channelDescriptions

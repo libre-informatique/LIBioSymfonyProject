@@ -1,2 +1,12 @@
 parameters:
+    sil_ecommerce.entity.product.class:                 LisemBundle\Entity\SilEcommerceBundle\Product
+    sil_ecommerce.entity.order.class:                   LisemBundle\Entity\SilEcommerceBundle\Order
+    sil_ecommerce.entity.product_variant.class:         LisemBundle\Entity\SilEcommerceBundle\ProductVariant
+    sil_ecommerce.entity.product_option_value.class:    LisemBundle\Entity\SilEcommerceBundle\ProductOptionValue
+
+    sil_variety.entity.family.class:                    LisemBundle\Entity\SilVarietyBundle\Family
+    sil_variety.entity.variety.class:                   LisemBundle\Entity\SilVarietyBundle\Variety
+    sil_variety.entity.species.class:                   LisemBundle\Entity\SilVarietyBundle\Species
+    sil_variety.entity.genus.class:                     LisemBundle\Entity\SilVarietyBundle\Genus
+
     sil_seed_batch.entity.seed_batch.class:             LisemBundle\Entity\SilSeedBatchBundle\SeedBatch

@@ -2,7 +2,11 @@ parameters:
     sonata.core.flashmessage.manager.class: Sil\Bundle\EcommerceBundle\Services\FlashManager
 
 imports:
+    - { resource: "parameters.yml"}
+
     - { resource: "@SilEcommerceBundle/Resources/config/app/state_machine.yml"}
+
+    - { resource: "vendor/doctrine.yml"}
 
 sylius_theme:
     context: lisem.theme.context.channel_based

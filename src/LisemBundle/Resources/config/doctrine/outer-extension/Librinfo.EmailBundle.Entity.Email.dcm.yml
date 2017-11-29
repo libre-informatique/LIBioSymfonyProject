@@ -1,9 +1,0 @@
-Librinfo\EmailBundle\Entity\Email:
-    type: entity
-    fields:
-        field_to:
-            type: string
-            nullable: true
-    manyToMany:
-        circles:
-            targetEntity: Librinfo\CRMBundle\Entity\Circle

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "2f0ac28d746a71ef54f8cfa8291bfb27",
+    "content-hash": "24d0b6a182e2921bc78bc21314630614",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -5539,16 +5539,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sil-project/Platform.git",
-                "reference": "c936b28234a1ceec93daf5fbdbd94f9e16fdb789"
+                "reference": "c6764c2273aa5453642485bdad3515a304e69aff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sil-project/Platform/zipball/c936b28234a1ceec93daf5fbdbd94f9e16fdb789",
-                "reference": "c936b28234a1ceec93daf5fbdbd94f9e16fdb789",
+                "url": "https://api.github.com/repos/sil-project/Platform/zipball/c6764c2273aa5453642485bdad3515a304e69aff",
+                "reference": "c6764c2273aa5453642485bdad3515a304e69aff",
                 "shasum": ""
             },
             "require": {
                 "doctrine/doctrine-bundle": ">=1.6",
+                "doctrine/doctrine-migrations-bundle": "^1.2",
                 "doctrine/orm": "^2.5",
                 "ext-curl": "*",
                 "ext-exif": "*",
@@ -5619,7 +5620,7 @@
                 "proprietary"
             ],
             "description": "Platform Is The Sil Dev Platform.",
-            "time": "2017-11-29T10:39:10+00:00"
+            "time": "2017-11-29T16:26:51+00:00"
         },
         {
             "name": "sonata-project/admin-bundle",

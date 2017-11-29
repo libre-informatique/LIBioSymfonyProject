@@ -1,0 +1,4 @@
+doctrine_migrations:
+    dir_name:           '%kernel.project_dir%/src/LisemBundle/Migrations'
+    table_name:         lisem_migration_versions
+    custom_template:    '%kernel.project_dir%/vendor/sil-project/platform/src/PlatformBundle/Resources/views/skeleton/migration_template.skeleton'
