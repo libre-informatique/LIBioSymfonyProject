@@ -46,9 +46,6 @@ monolog:
         #    type:   chromephp
         #    level:  info
 
-assetic:
-    use_controller: true
-
 swiftmailer:
     default_mailer: direct_mailer
     mailers:
@@ -59,7 +56,7 @@ swiftmailer:
             username:  "%mailer_user%"
             password:  "%mailer_password%"
             encryption: "%mailer_encryption%"
-            delivery_addresses: ['jardinenvie@lisem.eu']
+            delivery_addresses: "%mailer_delivery_addresses%"
             disable_delivery:  "%mailer_disable_delivery%"
         spool_mailer:
             transport: "%mailer_transport%"
@@ -69,18 +66,18 @@ swiftmailer:
             password:  "%mailer_password%"
             encryption: "%mailer_encryption%"
             spool: { type: db }
-            delivery_addresses: ['jardinenvie@lisem.eu']
+            delivery_addresses: "%mailer_delivery_addresses%"
             disable_delivery:  "%mailer_disable_delivery%"
 
 
-lexik_translation:
-    fallback_locale: [fr]
-    managed_locales: [fr]
-    auto_cache_clean: true
-    auto_cache_clean_interval: 600
-    dev_tools:
-        enable: true
-        create_missing: true
-        file_format: yml
-    exporter:
-        use_yml_tree: true
+# lexik_translation:
+#     fallback_locale: [fr]
+#     managed_locales: [fr]
+#     auto_cache_clean: true
+#     auto_cache_clean_interval: 600
+#     dev_tools:
+#         enable: true
+#         create_missing: true
+#         file_format: yml
+#     exporter:
+#         use_yml_tree: true

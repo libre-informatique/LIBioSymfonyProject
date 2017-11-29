@@ -3,65 +3,53 @@ imports:
      - { resource: security.yml }
      - { resource: services.yml }
 
-     - { resource: "@AppBundle/Resources/config/app/config.yml" }
+    # Platform Bundle
 
+     - { resource: "@PlatformBundle/Resources/config/parameters.yml" }
+     - { resource: "@PlatformBundle/Resources/config/config.yml" }
 
 parameters:
     locale: fr_FR
     currency: EUR
 
-    # TODO : this should be configured in BaseEntities bundle :
-    #doctrine.orm.metadata.yml.class: Blast\BaseEntitiesBundle\Doctrine\ORM\Driver\SearchableYamlDriver
-
 framework:
-    secret:          "%secret%"
+    #esi: ~
+    translator: { fallbacks: ['%locale%'] }
+    secret: '%secret%'
     router:
-        resource: "%kernel.root_dir%/config/routing.yml"
+        resource: '%kernel.project_dir%/app/config/routing.yml'
         strict_requirements: ~
-    form:            ~
+    form: ~
     csrf_protection: ~
-    validation:      { enabled: true, enable_annotations: true }
+    validation: { enable_annotations: true }
+    #serializer: { enable_annotations: true }
     templating:
         engines: ['twig']
-    default_locale:  "%locale%"
-    translator: { fallbacks: ["%locale%"] }
-    trusted_hosts:   ~
-    trusted_proxies: ~
-    session: ~
+    default_locale: '%locale%'
+    trusted_hosts: ~
     session:
         handler_id: blast_doctrine_handler
-    fragments:       ~
+    fragments: ~
     http_method_override: true
+    assets: ~
+    php_errors:
+        log: true
 
 # Twig Configuration
 twig:
-    debug:            "%kernel.debug%"
-    strict_variables: "%kernel.debug%"
+    debug: '%kernel.debug%'
+    strict_variables: '%kernel.debug%'
     form_themes:
-        # TODO: move all these form themes to the bundles (not here !)
         - 'SonataCoreBundle:Form:datepicker.html.twig'
         - 'SonataCoreBundle:Form:colorpicker.html.twig'
-#        - 'bootstrap_3_layout.html.twig'  # is not used (?) and conflicts with Sylius forms (?)
         - 'BlastCoreBundle:Admin/Form:fields.html.twig'
         - 'BlastUtilsBundle:Form:fields.html.twig'
         - 'BlastBaseEntitiesBundle:Form:fields.html.twig'
-        - 'LibrinfoMediaBundle:Form:fields.html.twig'
+        - 'SilMediaBundle:Form:fields.html.twig'
     globals:
-        librinfo:
-            url_prefix: "%librinfo.url_prefix%"
+        sil:
+            url_prefix: "%sil.url_prefix%"
 
-# Assetic Configuration
-assetic:
-    debug:          "%kernel.debug%"
-    use_controller:
-        enabled:  "%kernel.debug%"
-        profiler: false
-    bundles:
-        - LibrinfoDecoratorBundle
-        - AppBundle
-        - SyliusShopBundle
-    filters:
-        cssrewrite: ~
 
 # Doctrine Configuration
 doctrine:
@@ -87,23 +75,55 @@ doctrine:
 
     orm:
         default_entity_manager: default
-        auto_generate_proxy_classes: "%kernel.debug%"       
+        auto_generate_proxy_classes: "%kernel.debug%"
         entity_managers:
             default:
                 connection: default
                 naming_strategy: blast.resource.doctrine.orm.naming_strategy.underscored_bundle_prefix
+                # naming_strategy: doctrine.orm.naming_strategy.underscore
                 auto_mapping: true
                 mappings:
+
+                    # Blast
+
                     BlastBaseEntitiesBundle:
                         type: yml
-                    LibrinfoVarietiesBundle:
+
+                    # Sil
+
+                    SilCRMBundle:
                         type: yml
-                    LibrinfoSeedBatchBundle:
+                    SilEcommerceBundle:
                         type: yml
-                    LibrinfoCRMBundle:
+                    SilEmailBundle:
                         type: yml
-                    LibrinfoEcommerceBundle:
+                    SilEmailCRMBundle:
                         type: yml
+                    SilManufacturingBundle:
+                        type: yml
+                        prefix: Sil\Bundle\ManufacturingBundle\Domain\Entity
+                    SilMediaBundle:
+                        type: yml
+                    SilSeedBatchBundle:
+                        type: yml
+                    SilSonataSyliusUserBundle:
+                        type: yml
+                    SilStockBundle:
+                        type: yml
+                        prefix: Sil\Bundle\StockBundle\Domain\Entity
+                    SilVarietyBundle:
+                        type: yml
+
+                    # Platform
+
+                    PlatformBundle:
+                        type: yml
+
+                    # Lisem
+
+                    LisemBundle:
+                        type: yml
+
                     gedmo_loggable:
                         type: annotation
                         prefix: Gedmo\Loggable\Entity
@@ -113,10 +133,11 @@ doctrine:
                 dql:
                     string_functions:
                         ilike: Blast\DoctrinePgsqlBundle\DoctrineExtensions\Functions\Ilike
-                        concat_ws: Oro\ORM\Query\AST\Functions\String\ConcatWs      
+                        concat_ws: Oro\ORM\Query\AST\Functions\String\ConcatWs
             session:
                 connection: session
                 naming_strategy: blast.resource.doctrine.orm.naming_strategy.underscored_bundle_prefix
+                # naming_strategy: doctrine.orm.naming_strategy.underscore
                 auto_mapping: false # Only one entity manager can have auto_mappping set to true
                 mappings:
                     BlastDoctrineSessionBundle:
@@ -132,7 +153,7 @@ swiftmailer:
             port:      "%mailer_port%"
             username:  "%mailer_user%"
             password:  "%mailer_password%"
-            delivery_addresses: ['jardinenvie@lisem.eu']
+            delivery_addresses: "%mailer_delivery_addresses%"
             disable_delivery:  "%mailer_disable_delivery%"
         spool_mailer:
             transport: "%mailer_transport%"
@@ -141,75 +162,11 @@ swiftmailer:
             username:  "%mailer_user%"
             password:  "%mailer_password%"
             spool: { type: db }
-            delivery_addresses: ['jardinenvie@lisem.eu']
+            delivery_addresses: "%mailer_delivery_addresses%"
             disable_delivery:  "%mailer_disable_delivery%"
 
-sylius_taxonomy:
-    driver: doctrine/orm
-
-sylius_locale:
-    locale: '%locale%'
-
-stof_doctrine_extensions:
-    orm:
-        default:
-            tree: true
-            sluggable: true
-            timestampable: true
-
-# JMS serializer
-jms_serializer:
-    metadata:
-        auto_detection: true
-
-#Tinymce configuration
-stfalcon_tinymce:
-    tinymce_jquery: true
-    include_jquery: false
-    language: "%locale%"
-
-# Enable BlastBaseEntitiesBundle event listeners
-blast_base_entities:
-    orm:
-        default:
-            naming: true
-            guidable: true
-            timestampable: true
-            addressable: true
-            treeable: false
-            nested_treeable: true
-            nameable: true
-            labelable: true
-            emailable: true
-            descriptible: true
-            searchable: true
-            loggable: true
-            sortable: true
-            normalize: true
-            syliusGuidable: true
-    entity_search_indexes: ~
-
-fos_rest:
-    exception: ~
-
-bazinga_js_translation:
-    locale_fallback: fr
-    active_locales:
-        - fr
-        - en
-    default_domain:       messages
-
-fos_js_routing:
-    routes_to_expose: [ .*librinfo_.*, .*blast_utils.*, .*sonata_admin.* ]
-
-lexik_maintenance:
-    authorized:
-        query: { debugCheck: ya }
-    driver:
-        class: '\Lexik\Bundle\MaintenanceBundle\Drivers\FileDriver'                # class for file driver
-        options: {file_path: %cache_dir%/maintenance.lock}
-    response:
-        code: 503
-        status: "Service Temporarily Unavailable"
-# doctrine_migrations:
-#     custom_template: src/Resources/tpl/migration.tpl
+# bazinga_js_translation:
+#     locale_fallback: "%locale%"
+#     active_locales:
+#         - "%locale%"
+#     default_domain:       messages

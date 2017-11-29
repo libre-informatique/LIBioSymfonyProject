@@ -1,21 +1,17 @@
-# To get started with security, check out the documentation:
-# http://symfony.com/doc/current/book/security.html
-
 parameters:
-    sonata.security.regex: "^%librinfo.url_prefix%(?:/.*)?$"
-    sylius.security.admin_regex: "^/sylius-admin"
-    sylius.security.api_regex: "^/api"
-    sylius.security.shop_regex: ""
+    sonata.security.regex:          "^%sil.url_prefix%(?:/.*)?$"
+    sylius.security.shop_regex:     ""
 
 security:
 
+    # ##########################################################################
+    # ROLES
+    # ##########################################################################
+
     role_hierarchy:
 
-        ROLE_ADMINISTRATION_ACCESS:
-            - ROLE_USER
-
         ROLE_SONATA_ADMIN:
-            - ROLE_ADMINISTRATION_ACCESS
+            - ROLE_USER
 
         ROLE_SUPER_ADMIN:
             - ROLE_SONATA_ADMIN
@@ -32,16 +28,21 @@ security:
         sylius_shop_user_provider:
             id: sylius.shop_user_provider.email_or_name_based
 
+    # ##########################################################################
+    # FIREWALLS
+    # ##########################################################################
+
     firewalls:
-        # disables authentication for assets and the profiler, adapt it according to your needs
         dev:
-            pattern:  "^/(_(profiler|wdt)|css|images|js)/"
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
 
-        # Sonata firewall :
+        # ######################################################################
+        # SONATA
+        # ######################################################################
 
         sonata:
-            switch_user: true
+            switch_user: { role: ROLE_ALLOWED_TO_SWITCH }
             context: sonata
             pattern: "%sonata.security.regex%"
             form_login:
@@ -57,35 +58,26 @@ security:
                 target: sonata_sylius_user_login
             anonymous: true
 
-        # Sylius firewalls :
+        # ######################################################################
+        # SYLIUS
+        # ######################################################################
 
-        sylius:
-            switch_user: true
-            context: admin
-            pattern: "%sylius.security.admin_regex%"
-            form_login:
-                provider: sylius_admin_user_provider
-                login_path: sylius_admin_login
-                check_path: sylius_admin_login_check
-                failure_path: sylius_admin_login
-                default_target_path: sylius_admin_dashboard
-                use_forward: false
-                use_referer: true
-            logout:
-                path: sylius_admin_logout
-                target: sylius_admin_login
-            anonymous: true
-
-        oauth_token:
-            pattern:  "%sylius.security.api_regex%/oauth/v2/token"
-            security: false
-
-        api:
-            pattern:    "%sylius.security.api_regex%"
-            fos_oauth:  true
-            stateless:  true
-            anonymous:  true
-
+        # sylius:
+        #     switch_user: true
+        #     context: admin
+        #     pattern: "^/sylius-admin"
+        #     form_login:
+        #         provider: sylius_admin_user_provider
+        #         login_path: sylius_admin_login
+        #         check_path: sylius_admin_login_check
+        #         failure_path: sylius_admin_login
+        #         default_target_path: sylius_admin_dashboard
+        #         use_forward: false
+        #         use_referer: true
+        #     logout:
+        #         path: sylius_admin_logout
+        #         target: sylius_admin_login
+        #     anonymous: true
         shop:
             switch_user: { role: ROLE_ALLOWED_TO_SWITCH }
             context: shop
@@ -110,56 +102,37 @@ security:
                 target: sylius_shop_login
             anonymous: true
 
+    # ##########################################################################
+    # ACCESS CONTROL
+    # ##########################################################################
+
     access_control:
 
         # Sonata access control
-        - { path: "^/(css|images|js)", role: IS_AUTHENTICATED_ANONYMOUSLY } # allow assets for anonymous users
-        - { path: "^%librinfo.url_prefix%/resetting", role: IS_AUTHENTICATED_ANONYMOUSLY } # allow resetting password for anonymous users
-        - { path: "^%librinfo.url_prefix%/login$", role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: "^%librinfo.url_prefix%/login-check$", role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: "^%librinfo.url_prefix%.*", role: ROLE_SONATA_ADMIN }
 
-        # EmailBundle tracking
-        - { path: ^/tracking, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: "^/(css|images|js)", role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: "^%sil.url_prefix%/resetting", role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: "^%sil.url_prefix%/login$", role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: "^%sil.url_prefix%/login-check$", role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: "^%sil.url_prefix%.*", role: ROLE_SONATA_ADMIN }
+
+        # # EmailBundle tracking
+        # - { path: ^/tracking, role: IS_AUTHENTICATED_ANONYMOUSLY }
 
         # Sylius access control
-        - { path: "%sylius.security.admin_regex%/_partial", role: IS_AUTHENTICATED_ANONYMOUSLY, ips: [127.0.0.1, ::1] }
-        - { path: "%sylius.security.admin_regex%/_partial", role: ROLE_NO_ACCESS }
+        # - { path: "%sylius.security.admin_regex%/_partial", role: IS_AUTHENTICATED_ANONYMOUSLY, ips: [127.0.0.1, ::1] }
+        # - { path: "%sylius.security.admin_regex%/_partial", role: ROLE_NO_ACCESS }
         - { path: "%sylius.security.shop_regex%/_partial", role: IS_AUTHENTICATED_ANONYMOUSLY, ips: [127.0.0.1, ::1] }
         - { path: "%sylius.security.shop_regex%/_partial", role: ROLE_NO_ACCESS }
-
-        - { path: "%sylius.security.admin_regex%/login", role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: "%sylius.security.api_regex%/login", role: IS_AUTHENTICATED_ANONYMOUSLY }
+        #
+        # - { path: "%sylius.security.admin_regex%/login", role: IS_AUTHENTICATED_ANONYMOUSLY }
+        # - { path: "%sylius.security.api_regex%/login", role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: "%sylius.security.shop_regex%/login", role: IS_AUTHENTICATED_ANONYMOUSLY }
-
+        #
         - { path: "%sylius.security.shop_regex%/register", role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: "%sylius.security.shop_regex%/verify", role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: "%sylius.security.shop_regex%/order.*", role: IS_AUTHENTICATED_ANONYMOUSLY }
-
+        #
         - { path: "%sylius.security.shop_regex%/account", role: ROLE_USER }
-        - { path: "%sylius.security.admin_regex%", role: ROLE_ADMINISTRATION_ACCESS }
-        - { path: "%sylius.security.api_regex%", role: ROLE_API_ACCESS }
-
-
-#jms_security_extra:
-#    # Whether you want to secure all services (true), or only secure specific
-#    # services (false); see also below
-#    secure_all_services: false
-#
-#    # Enabling this setting will add an additional special attribute "ROLE_IDDQD".
-#    # Anybody with this attribute will effectively bypass all security checks.
-#    enable_iddqd_attribute: false
-#
-#    # Enables expression language
-#    expressions: true
-#
-#    # Allows you to disable some, or all built-in voters
-#    voters:
-#        disable_authenticated: false
-#        disable_role:          false
-#        disable_acl:           true
-
-#    # Allows you to specify access control rules for specific methods, such
-#    # as controller actions
-#    method_access_control:
-#        'FOSUserBundle:SecurityController:logoutAction$': 'isAuthenticated()'
+        # - { path: "%sylius.security.admin_regex%", role: ROLE_ADMINISTRATION_ACCESS }
+        # - { path: "%sylius.security.api_regex%", role: ROLE_API_ACCESS }

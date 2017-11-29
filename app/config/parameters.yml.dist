@@ -10,13 +10,15 @@ parameters:
     # You should uncomment this if you want use pdo_sqlite
     # database_path: "%kernel.root_dir%/data.db3"
 
-    mailer_transport:        smtp
-    mailer_host:             127.0.0.1
-    mailer_port:             ~
-    mailer_user:             ~
-    mailer_password:         ~
-    mailer_encryption:       ~
-    mailer_disable_delivery: true # set to false in prod or if you have a mailcatcher
+    mailer_transport:          smtp
+    mailer_host:               127.0.0.1
+    mailer_port:               ~
+    mailer_user:               ~
+    mailer_password:           ~
+    mailer_encryption:         ~
+    mailer_disable_delivery:   true # set to false in prod or if you have a mailcatcher
+    mailer_delivery_addresses: # list of delivery emails
+        - delivery@lisem.eu
 
     # A secret key that's used to generate certain security-related tokens
     secret:            ThisTokenIsNotSoSecretChangeIt
@@ -36,7 +38,7 @@ parameters:
             super: true
 
     # CRM Fake email feature
-    librinfo.fakeEmail:
+    sil.fakeEmail:
         domain: lisem.eu
         prefix: 'FAKE'
         suffix: ''
@@ -51,10 +53,11 @@ parameters:
     sylius_fr_web_channel_hostname: 127.0.0.1
     sylius_fr_web_channel_code: 'fr_web'
 
-    librinfo.url_prefix: /lisem
+    sil.url_prefix: /lisem
 
     paybox.site: test
     paybox.rang: 1234
     paybox.identifiant: test
     paybox.hmac: ABCDEF
     paybox.sandbox: true
+    symfony-web-dir: web
