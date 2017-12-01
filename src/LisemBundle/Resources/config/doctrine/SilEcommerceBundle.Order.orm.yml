@@ -1,6 +1,6 @@
 LisemBundle\Entity\SilEcommerceBundle\Order:
     type: entity
-
+    table: sil_ecommerce_order
     # associationOverride:
     #
     #     shippingAddress:

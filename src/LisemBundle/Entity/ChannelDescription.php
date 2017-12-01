@@ -102,4 +102,5 @@ class ChannelDescription
     {
         return $this->channel;
     }
+
 }

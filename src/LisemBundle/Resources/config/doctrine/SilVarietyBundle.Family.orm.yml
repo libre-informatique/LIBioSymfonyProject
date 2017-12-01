@@ -1,2 +1,3 @@
 LisemBundle\Entity\SilVarietyBundle\Family:
     type: entity
+    table: lisem_variety_family

@@ -1,12 +1,12 @@
 LisemBundle\Entity\SilSeedBatchBundle\SeedBatch:
     type: entity
-
+    table: lisem_seed_batch
     manyToMany:
         productVariants:
             targetEntity: Sil\Bundle\EcommerceBundle\Entity\ProductVariantInterface
             inversedBy: seedBatches
             joinTable:
-                name: lisem_seed_batch__lisem_product_variant
+                name: lisem_seed_batch__product_variant
                 joinColumns:
                     producVariant_id:
                         referencedColumnName: id

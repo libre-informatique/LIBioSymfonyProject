@@ -1,2 +1,3 @@
 LisemBundle\Entity\SilVarietyBundle\Species:
     type: entity
+    table: lisem_variety_species

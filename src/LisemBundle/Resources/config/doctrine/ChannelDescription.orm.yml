@@ -13,3 +13,5 @@ LisemBundle\Entity\ChannelDescription:
         variety:
             targetEntity: Sil\Bundle\VarietyBundle\Entity\VarietyInterface
             inversedBy: channelDescriptions
+        channel:
+            targetEntity: Sil\Bundle\EcommerceBundle\Entity\Channel

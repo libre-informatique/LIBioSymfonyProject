@@ -1,6 +1,6 @@
 LisemBundle\Entity\SilEcommerceBundle\Product:
     type: entity
-
+    table: sil_ecommerce_product
     manyToOne:
         variety:
             targetEntity: Sil\Bundle\VarietyBundle\Entity\VarietyInterface
