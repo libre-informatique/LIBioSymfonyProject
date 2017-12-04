@@ -1,5 +1,15 @@
 <?php
 
+/*
+ * This file is part of the Lisem Project.
+ *
+ * Copyright (C) 2015-2017 Libre Informatique
+ *
+ * This file is licenced under the GNU GPL v3.
+ * For the full copyright and license information, please view the LICENSE.md
+ * file that was distributed with this source code.
+ */
+
 namespace Application\Migrations;
 
 use Doctrine\DBAL\Migrations\AbstractMigration;
@@ -8,15 +18,14 @@ use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
-* Auto-generated Migration: Please modify to your needs!
-*/
+ * Auto-generated Migration: Please modify to your needs!
+ */
 class Version20171201152358 extends AbstractMigration implements ContainerAwareInterface
 {
     /**
      * @var ContainerInterface
      */
     private $container;
-
 
     public function up(Schema $schema)
     {
@@ -566,11 +575,9 @@ class Version20171201152358 extends AbstractMigration implements ContainerAwareI
         $this->addSql('ALTER TABLE lisem_variety_species__category ADD CONSTRAINT FK_438EBCAFB2A1D860 FOREIGN KEY (species_id) REFERENCES lisem_variety_plant_category (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
         $this->addSql('ALTER TABLE blast_custom_filter ADD CONSTRAINT FK_854D7261A76ED395 FOREIGN KEY (user_id) REFERENCES sil_user (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
 
-
         $this->addSql('CREATE SEQUENCE blast_session_id_seq INCREMENT BY 1 MINVALUE 1 START 1');
         $this->addSql('CREATE TABLE blast_session (id INT NOT NULL, session_id VARCHAR(255) NOT NULL, data BYTEA DEFAULT NULL, created_at TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, expires_at TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, PRIMARY KEY(id))');
         $this->addSql('CREATE INDEX blast_session_session_id_index ON blast_session (session_id)');
-
 
         $this->addSql('ALTER TABLE sil_stock_batch DISABLE TRIGGER ALL');
         $this->addSql('DELETE FROM sil_stock_batch');
@@ -1225,7 +1232,27 @@ class Version20171201152358 extends AbstractMigration implements ContainerAwareI
         $this->addSql('ALTER TABLE lisem_variety_description DISABLE TRIGGER ALL');
         $this->addSql('INSERT INTO lisem_variety_description SELECT * FROM librinfo_varieties_varietydescription');
         $this->addSql('ALTER TABLE sil_ecommerce_sales_journal_item DISABLE TRIGGER ALL');
-        $this->addSql('INSERT INTO sil_ecommerce_sales_journal_item SELECT * FROM librinfo_ecommerce_salesjournalitem');
+        $this->addSql('INSERT INTO sil_ecommerce_sales_journal_item (
+                id,
+                invoice_id,
+                payment_id,
+                order_id,
+                operation_date,
+                account,
+                label,
+                debit,
+                credit
+            ) SELECT
+                id,
+                invoice_id,
+                payment_id,
+                order_id,
+                operation_date,
+                account,
+                label,
+                debit,
+                credit
+             FROM librinfo_ecommerce_salesjournalitem');
         $this->addSql('ALTER TABLE sil_ecommerce_order_item DISABLE TRIGGER ALL');
         $this->addSql('INSERT INTO sil_ecommerce_order_item SELECT * FROM librinfo_ecommerce_orderitem');
         $this->addSql('ALTER TABLE sil_ecommerce_taxon DISABLE TRIGGER ALL');
@@ -1234,8 +1261,7 @@ class Version20171201152358 extends AbstractMigration implements ContainerAwareI
         $this->addSql('INSERT INTO sil_ecommerce_channel SELECT * FROM sylius_channel');
         $this->addSql('ALTER TABLE sylius_product_variant_option_value DISABLE TRIGGER ALL');
         $this->addSql('INSERT INTO sylius_product_variant_option_value SELECT * FROM librinfo_ecommerce_productvariant__productoptionvalue');
-
-
+        $this->addSql('UPDATE sil_ecommerce_channel SET theme_name = \'sil/lisem-theme\' WHERE code = \'FR_WEB\'');
 
         $this->addSql('ALTER TABLE sil_stock_batch ENABLE TRIGGER ALL');
         $this->addSql('ALTER TABLE sil_stock_location ENABLE TRIGGER ALL');
@@ -1304,7 +1330,6 @@ class Version20171201152358 extends AbstractMigration implements ContainerAwareI
         $this->addSql('ALTER TABLE sil_ecommerce_taxon ENABLE TRIGGER ALL');
         $this->addSql('ALTER TABLE sil_ecommerce_channel ENABLE TRIGGER ALL');
         $this->addSql('ALTER TABLE sylius_product_variant_option_value ENABLE TRIGGER ALL');
-
 
         $this->addSql('DROP TABLE channel_description');
         $this->addSql('DROP TABLE lexik_trans_unit');
