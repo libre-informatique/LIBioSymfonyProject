@@ -23,8 +23,9 @@ fi
 
 for i in $CODECEPTGROUP
 do
-    $CODECEPTCMD -g $i --env=firefox
-    #$CODECEPTCMD -g $i --env=chrome
+    # merge env http://codeception.com/docs/07-AdvancedUsage#Environments
+    $CODECEPTCMD -g $i --env=firefox,lisem
+    #$CODECEPTCMD -g $i --env=chrome,lisem
 done
 
 
