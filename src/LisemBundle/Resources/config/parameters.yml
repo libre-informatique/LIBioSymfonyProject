@@ -10,3 +10,5 @@ parameters:
     sil_variety.entity.genus.class:                     LisemBundle\Entity\SilVarietyBundle\Genus
 
     sil_seed_batch.entity.seed_batch.class:             LisemBundle\Entity\SilSeedBatchBundle\SeedBatch
+
+    lisem.entity.channel_description.class:             LisemBundle\Entity\ChannelDescription

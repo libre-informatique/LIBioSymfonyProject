@@ -1,7 +1,7 @@
 services:
     lisem.admin.channel_description:
         class: LisemBundle\Admin\ChannelDescriptionAdmin
-        arguments: [~, "%sil_platform.entity.channel_description.class%", BlastCoreBundle:CRUD]
+        arguments: [~, "%lisem.entity.channel_description.class%", BlastCoreBundle:CRUD]
         tags:
             -
                 name: sonata.admin

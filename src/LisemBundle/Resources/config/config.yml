@@ -3,8 +3,12 @@ parameters:
 
 imports:
     - { resource: "parameters.yml"}
+    - { resource: "services.yml"}
+    - { resource: "admin.yml"}
+    - { resource: "sonata.yml"}
 
     - { resource: "@SilEcommerceBundle/Resources/config/app/state_machine.yml"}
+    - { resource: "state_machine.yml"}
 
     - { resource: "vendor/doctrine.yml"}
 

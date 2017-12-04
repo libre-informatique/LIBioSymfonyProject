@@ -39,7 +39,7 @@ sonata_admin:
                 icon:  '<i class="fa fa-pagelines"></i>'
                 on_top: true
                 items:
-                    - route: admin_platform_silvarietybundle_species_list
+                    - route: admin_lisem_silvarietybundle_species_list
                       label: lisem.menu_label.species_list
 
             lisem.menu.varieties:

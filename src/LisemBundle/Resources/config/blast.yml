@@ -504,7 +504,7 @@ parameters:
 # CHANNEL DESCRIPTION
 #####################
 
-        PlatformBundle\Entity\ChannelDescription:
+        LisemBundle\Entity\ChannelDescription:
             # SHOW
             Sonata\AdminBundle\Show\ShowMapper:
                 add:
