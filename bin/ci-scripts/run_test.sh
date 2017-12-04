@@ -1,13 +1,16 @@
 #!/usr/bin/env sh
 
 
+export SYMFONY_DEPRECATIONS_HELPER=weak
+export SILURL="/sil"
+
 OUTPUTDIR=tests/_output
 
 # clean output
 rm -rf $OUTPUTDIR/*.png
 rm -rf $OUTPUTDIR/*.html
 
-CODECEPTCMD="bin/codecept run -d --steps --fail-fast --no-interaction --no-exit"
+CODECEPTCMD="bin/codecept run -d --steps --fail-fast --no-interaction"
 
 
 CODECEPTGROUP=$@
