@@ -54,7 +54,8 @@
 # Data (CSV files from seed farms)
 /data/
 
-/tests/acceptance.suite.yml
+!/tests/_envs/*.dist.yml
+/tests/_envs/*.yml
 
 /.php_cs.cache
 /.web-server-pid
