@@ -60,7 +60,11 @@
         "phpunit/phpunit": "^6.4"
     },
     "scripts": {
-        "post-install-cmd": [
+        "git-hook": [
+            "ln -f -s ../../bin/git-script/pre-commit.sh .git/hooks/pre-commit",
+            "git config branch.master.rebase true"
+        ],
+        "symfony-scripts": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
@@ -70,15 +74,13 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget",
             "Blast\\Bundle\\CoreBundle\\Tools\\Patches\\Patcher::applyPatches"
         ],
+        "post-install-cmd": [
+            "@symfony-scripts",
+            "@git-hook"
+        ],
         "post-update-cmd": [
-            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
-            "Sil\\Bundle\\EcommerceBundle\\Tools\\ComposerScriptHandler::installSyliusThemeAssets",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget",
-            "Blast\\Bundle\\CoreBundle\\Tools\\Patches\\Patcher::applyPatches"
+            "@symfony-scripts",
+            "@git-hook"
         ]
     },
     "config": {
