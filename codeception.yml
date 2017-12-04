@@ -1,5 +1,5 @@
 paths:
-    tests: tests
+    tests: vendor/sil-project/platform/src/Tests
     output: tests/_output
     data: tests/_data
     support: tests/_support
