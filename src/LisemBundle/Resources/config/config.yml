@@ -6,6 +6,7 @@ imports:
     - { resource: "services.yml"}
     - { resource: "admin.yml"}
     - { resource: "sonata.yml"}
+    - { resource: "varieties.yml"}
 
     - { resource: "@SilEcommerceBundle/Resources/config/app/state_machine.yml"}
     - { resource: "state_machine.yml"}
