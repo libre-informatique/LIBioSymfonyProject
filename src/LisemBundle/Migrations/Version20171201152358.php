@@ -585,7 +585,7 @@ class Version20171201152358 extends AbstractMigration implements ContainerAwareI
         $this->addSql('ALTER TABLE lisem_variety_species__category ADD CONSTRAINT FK_438EBCAFC2D8DA42 FOREIGN KEY (plant_category_id) REFERENCES lisem_variety_species (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
         $this->addSql('ALTER TABLE lisem_variety_species__category ADD CONSTRAINT FK_438EBCAFB2A1D860 FOREIGN KEY (species_id) REFERENCES lisem_variety_plant_category (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
         $this->addSql('ALTER TABLE blast_custom_filter ADD CONSTRAINT FK_854D7261A76ED395 FOREIGN KEY (user_id) REFERENCES sil_user (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
-        $this->addSql('ALTER TABLE sil_email__circle ADD CONSTRAINT FK_F39FD8C870EE2FF6 FOREIGN KEY (circle_id) REFERENCES sil_email (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
+        $this->addSql('ALTER TABLE sil_email__circle ADD CONSTRAINT FK_F39FD8C870EE2FF6 FOREIGN KEY (circle_id) REFERENCES sil_crm_circle (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
         $this->addSql('ALTER TABLE sil_email__circle ADD CONSTRAINT FK_F39FD8C8A832C1C9 FOREIGN KEY (email_id) REFERENCES sil_email (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
 
         $this->addSql('CREATE SEQUENCE blast_session_id_seq INCREMENT BY 1 MINVALUE 1 START 1');
