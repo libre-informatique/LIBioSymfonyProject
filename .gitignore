@@ -56,6 +56,9 @@
 
 !/tests/_envs/*.dist.yml
 /tests/_envs/*.yml
+/tests/_output/
+/tests/_support/
+selenium.log
 
 /.php_cs.cache
 /.web-server-pid
