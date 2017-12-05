@@ -111,7 +111,12 @@ class Version20171201152358 extends AbstractMigration implements ContainerAwareI
         $this->addSql('ALTER TABLE librinfo_varieties_species__plantcategory DROP CONSTRAINT fk_675259a4c2d8da42');
         $this->addSql('ALTER TABLE librinfo_varieties_species DROP CONSTRAINT fk_c36a0e84f5e25c30');
         $this->addSql('ALTER TABLE librinfo_varieties_variety DROP CONSTRAINT fk_5eb36881b2a1d860');
-        $this->addSql('ALTER TABLE sil_stock_operation DROP CONSTRAINT fk_e8d9ed2e668d0c5e');
+        if ($schema->hasTable('sil_stock_operation') && $schema->getTable('sil_stock_operation')->hasForeignKey('fk_e8d9ed2e668d0c5e')) {
+            $this->addSql('ALTER TABLE sil_stock_operation DROP CONSTRAINT fk_e8d9ed2e668d0c5e');
+        }
+        if ($schema->hasTable('sil_stock_operation') && $schema->getTable('sil_stock_operation')->hasForeignKey('fk_e8d9ed2e9393f8fe')) {
+            $this->addSql('ALTER TABLE sil_stock_operation DROP CONSTRAINT fk_e8d9ed2e9393f8fe');
+        }
         $this->addSql('ALTER TABLE sil_stock_movement DROP CONSTRAINT fk_78749426217a674b');
         $this->addSql('ALTER TABLE sil_manufacturing_bom DROP CONSTRAINT fk_6a250c85217a674b');
         $this->addSql('ALTER TABLE sil_stock_stock_unit DROP CONSTRAINT fk_2a851cf6217a674b');
@@ -208,7 +213,9 @@ class Version20171201152358 extends AbstractMigration implements ContainerAwareI
         $this->addSql('ALTER TABLE librinfo_crm_positionsearchindex DROP CONSTRAINT fk_32aefb0232d562b');
         $this->addSql('ALTER TABLE librinfo_varieties_genus DROP CONSTRAINT fk_fcf51373c35e566a');
         $this->addSql('ALTER TABLE librinfo_varieties_species DROP CONSTRAINT fk_c36a0e8485c4074c');
-        $this->addSql('ALTER TABLE sil_stock_operation DROP operation_type_id;');
+        if ($schema->hasTable('sil_stock_operation') && $schema->getTable('sil_stock_operation')->hasColumn('operation_type_id')) {
+            $this->addSql('ALTER TABLE sil_stock_operation DROP operation_type_id;');
+        }
         $this->addSql('DROP SEQUENCE lexik_trans_unit_id_seq CASCADE');
         $this->addSql('DROP SEQUENCE address_search_index_id_seq CASCADE');
         $this->addSql('DROP SEQUENCE email_search_index_id_seq CASCADE');
@@ -587,8 +594,10 @@ class Version20171201152358 extends AbstractMigration implements ContainerAwareI
         $this->addSql('DELETE FROM sil_stock_movement');
         $this->addSql('ALTER TABLE sil_stock_operation DISABLE TRIGGER ALL');
         $this->addSql('DELETE FROM sil_stock_operation');
-        $this->addSql('ALTER TABLE sil_stock_operation_type DISABLE TRIGGER ALL');
-        $this->addSql('DELETE FROM sil_stock_operation_type');
+        if ($schema->hasTable('sil_stock_operation_type')) {
+            $this->addSql('ALTER TABLE sil_stock_operation_type DISABLE TRIGGER ALL');
+            $this->addSql('DELETE FROM sil_stock_operation_type');
+        }
         $this->addSql('ALTER TABLE sil_stock_output_strategy DISABLE TRIGGER ALL');
         $this->addSql('DELETE FROM sil_stock_output_strategy');
         $this->addSql('ALTER TABLE sil_stock_partner DISABLE TRIGGER ALL');
@@ -1209,8 +1218,10 @@ class Version20171201152358 extends AbstractMigration implements ContainerAwareI
         $this->addSql('INSERT INTO lisem_variety SELECT * FROM librinfo_varieties_variety');
         $this->addSql('ALTER TABLE lisem_variety__product_option_value DISABLE TRIGGER ALL');
         $this->addSql('INSERT INTO lisem_variety__product_option_value SELECT * FROM librinfo_varieties_variety__productoptionvalue');
-        $this->addSql('ALTER TABLE lisem_migration_versions DISABLE TRIGGER ALL');
-        $this->addSql('INSERT INTO lisem_migration_versions SELECT * FROM migration_versions');
+        if ($schema->hasTable('lisem_migration_versions')) {
+            $this->addSql('ALTER TABLE lisem_migration_versions DISABLE TRIGGER ALL');
+            $this->addSql('INSERT INTO lisem_migration_versions SELECT * FROM migration_versions');
+        }
         $this->addSql('ALTER TABLE blast_select_choice DISABLE TRIGGER ALL');
         $this->addSql('INSERT INTO blast_select_choice SELECT * FROM select_choice');
         $this->addSql('ALTER TABLE sil_stock_item DISABLE TRIGGER ALL');
@@ -1267,7 +1278,9 @@ class Version20171201152358 extends AbstractMigration implements ContainerAwareI
         $this->addSql('ALTER TABLE sil_stock_location ENABLE TRIGGER ALL');
         $this->addSql('ALTER TABLE sil_stock_movement ENABLE TRIGGER ALL');
         $this->addSql('ALTER TABLE sil_stock_operation ENABLE TRIGGER ALL');
-        $this->addSql('ALTER TABLE sil_stock_operation_type ENABLE TRIGGER ALL');
+        if ($schema->hasTable('sil_stock_operation_type')) {
+            $this->addSql('ALTER TABLE sil_stock_operation_type ENABLE TRIGGER ALL');
+        }
         $this->addSql('ALTER TABLE sil_stock_output_strategy ENABLE TRIGGER ALL');
         $this->addSql('ALTER TABLE sil_stock_partner ENABLE TRIGGER ALL');
         $this->addSql('ALTER TABLE sil_stock_stock_item ENABLE TRIGGER ALL');
@@ -1314,7 +1327,9 @@ class Version20171201152358 extends AbstractMigration implements ContainerAwareI
         $this->addSql('ALTER TABLE lisem_variety__file ENABLE TRIGGER ALL');
         $this->addSql('ALTER TABLE lisem_variety ENABLE TRIGGER ALL');
         $this->addSql('ALTER TABLE lisem_variety__product_option_value ENABLE TRIGGER ALL');
-        $this->addSql('ALTER TABLE lisem_migration_versions ENABLE TRIGGER ALL');
+        if ($schema->hasTable('lisem_migration_versions')) {
+            $this->addSql('ALTER TABLE lisem_migration_versions ENABLE TRIGGER ALL');
+        }
         $this->addSql('ALTER TABLE blast_select_choice ENABLE TRIGGER ALL');
         $this->addSql('ALTER TABLE sil_stock_item ENABLE TRIGGER ALL');
         $this->addSql('ALTER TABLE lisem_variety_plant_category ENABLE TRIGGER ALL');
@@ -1393,7 +1408,9 @@ class Version20171201152358 extends AbstractMigration implements ContainerAwareI
         $this->addSql('DROP TABLE select_choice');
         $this->addSql('DROP TABLE librinfo_varieties_species');
         $this->addSql('DROP TABLE sf_session');
-        $this->addSql('DROP TABLE sil_stock_operation_type');
+        if ($schema->hasTable('sil_stock_operation_type')) {
+            $this->addSql('DROP TABLE sil_stock_operation_type');
+        }
         $this->addSql('DROP TABLE sil_stock_stock_item');
         $this->addSql('DROP TABLE sil_stock_stock_unit');
         $this->addSql('DROP TABLE sylius_shipping_method');
@@ -1431,7 +1448,9 @@ class Version20171201152358 extends AbstractMigration implements ContainerAwareI
         $this->addSql('ALTER TABLE sylius_product_association_product ADD CONSTRAINT FK_A427B9834584665A FOREIGN KEY (product_id) REFERENCES sil_ecommerce_product (id) ON DELETE CASCADE NOT DEFERRABLE INITIALLY IMMEDIATE');
         $this->addSql('ALTER TABLE sylius_product_variant_translation ADD CONSTRAINT FK_8DC18EDC2C2AC5D3 FOREIGN KEY (translatable_id) REFERENCES sil_ecommerce_product_variant (id) ON DELETE CASCADE NOT DEFERRABLE INITIALLY IMMEDIATE');
         $this->addSql('ALTER TABLE sil_stock_movement ADD CONSTRAINT FK_78749426217A674B FOREIGN KEY (stockitem_id) REFERENCES sil_stock_item (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
-        $this->addSql('ALTER TABLE sil_stock_operation ADD type_value VARCHAR(64) NOT NULL');
+        if ($schema->hasTable('sil_stock_operation') && !$schema->getTable('sil_stock_operation')->hasColumn('type_value')) {
+            $this->addSql('ALTER TABLE sil_stock_operation ADD type_value VARCHAR(64) NOT NULL');
+        }
         $this->addSql('ALTER TABLE sil_manufacturing_bom_line ADD CONSTRAINT FK_1E754391217A674B FOREIGN KEY (stockitem_id) REFERENCES sil_stock_item (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
         $this->addSql('ALTER TABLE sil_manufacturing_bom ADD CONSTRAINT FK_6A250C85217A674B FOREIGN KEY (stockitem_id) REFERENCES sil_stock_item (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
         $this->addSql('ALTER TABLE sylius_adjustment ADD CONSTRAINT FK_ACA6E0F28D9F6D38 FOREIGN KEY (order_id) REFERENCES sil_ecommerce_order (id) ON DELETE CASCADE NOT DEFERRABLE INITIALLY IMMEDIATE');
