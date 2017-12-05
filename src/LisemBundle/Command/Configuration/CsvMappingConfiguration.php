@@ -34,7 +34,7 @@ class CsvMappingConfiguration
      */
     private function loadCsvMapping(): void
     {
-        $configDirectory = 'src/Li/LisemBundle/Resources/config';
+        $configDirectory = 'src/LisemBundle/Resources/config';
 
         $locator = new FileLocator([$configDirectory]);
         $configFile = $locator->locate('csv_import.yml', null, true);

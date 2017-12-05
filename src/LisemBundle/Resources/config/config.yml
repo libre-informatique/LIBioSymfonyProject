@@ -7,6 +7,7 @@ imports:
     - { resource: "admin.yml"}
     - { resource: "sonata.yml"}
     - { resource: "varieties.yml"}
+    - { resource: "sylius-fixtures.yml"}
 
     - { resource: "@SilEcommerceBundle/Resources/config/app/state_machine.yml"}
     - { resource: "state_machine.yml"}

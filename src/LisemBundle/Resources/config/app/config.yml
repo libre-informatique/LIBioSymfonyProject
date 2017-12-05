@@ -11,7 +11,7 @@ sylius_theme:
             enabled: true
             filename: composer.json
             directories:
-                - "%kernel.project_dir%/src/Li/LisemBundle/Resources/themes"
+                - "%kernel.project_dir%/src/LisemBundle/Resources/themes"
 
 
 sylius_channel:
