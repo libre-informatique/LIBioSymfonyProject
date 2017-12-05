@@ -460,6 +460,10 @@ class Version20171201152358 extends AbstractMigration implements ContainerAwareI
         $this->addSql('CREATE INDEX IDX_854D7261A76ED395 ON blast_custom_filter (user_id)');
         $this->addSql('CREATE TABLE blast_select_choice (id UUID NOT NULL, label VARCHAR(255) NOT NULL, value VARCHAR(255) NOT NULL, PRIMARY KEY(id))');
         $this->addSql('CREATE TABLE sylius_admin_user (id UUID NOT NULL, username VARCHAR(255) DEFAULT NULL, username_canonical VARCHAR(255) DEFAULT NULL, enabled BOOLEAN NOT NULL, salt VARCHAR(255) NOT NULL, password VARCHAR(255) NOT NULL, last_login TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, password_reset_token VARCHAR(255) DEFAULT NULL, password_requested_at TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, email_verification_token VARCHAR(255) DEFAULT NULL, verified_at TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, locked BOOLEAN NOT NULL, expires_at TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, credentials_expire_at TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, roles TEXT NOT NULL, email VARCHAR(255) DEFAULT NULL, email_canonical VARCHAR(255) DEFAULT NULL, created_at TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, updated_at TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, first_name VARCHAR(255) DEFAULT NULL, last_name VARCHAR(255) DEFAULT NULL, locale_code VARCHAR(12) NOT NULL, PRIMARY KEY(id))');
+        $this->addSql('CREATE TABLE sil_email__circle (circle_id UUID NOT NULL, email_id UUID NOT NULL, PRIMARY KEY(circle_id, email_id))');
+        $this->addSql('CREATE INDEX IDX_F39FD8C870EE2FF6 ON sil_email__circle (circle_id)');
+        $this->addSql('CREATE INDEX IDX_F39FD8C8A832C1C9 ON sil_email__circle (email_id)');
+
         $this->addSql('COMMENT ON COLUMN sylius_admin_user.roles IS \'(DC2Type:array)\'');
         $this->addSql('ALTER TABLE sil_stock_unit ADD CONSTRAINT FK_2EE60B6564D218E FOREIGN KEY (location_id) REFERENCES sil_stock_location (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
         $this->addSql('ALTER TABLE sil_stock_unit ADD CONSTRAINT FK_2EE60B65210D48FE FOREIGN KEY (qty_uom_id) REFERENCES sil_stock_uom (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
@@ -581,6 +585,8 @@ class Version20171201152358 extends AbstractMigration implements ContainerAwareI
         $this->addSql('ALTER TABLE lisem_variety_species__category ADD CONSTRAINT FK_438EBCAFC2D8DA42 FOREIGN KEY (plant_category_id) REFERENCES lisem_variety_species (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
         $this->addSql('ALTER TABLE lisem_variety_species__category ADD CONSTRAINT FK_438EBCAFB2A1D860 FOREIGN KEY (species_id) REFERENCES lisem_variety_plant_category (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
         $this->addSql('ALTER TABLE blast_custom_filter ADD CONSTRAINT FK_854D7261A76ED395 FOREIGN KEY (user_id) REFERENCES sil_user (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
+        $this->addSql('ALTER TABLE sil_email__circle ADD CONSTRAINT FK_F39FD8C870EE2FF6 FOREIGN KEY (circle_id) REFERENCES sil_email (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
+        $this->addSql('ALTER TABLE sil_email__circle ADD CONSTRAINT FK_F39FD8C8A832C1C9 FOREIGN KEY (email_id) REFERENCES sil_email (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
 
         $this->addSql('CREATE SEQUENCE blast_session_id_seq INCREMENT BY 1 MINVALUE 1 START 1');
         $this->addSql('CREATE TABLE blast_session (id INT NOT NULL, session_id VARCHAR(255) NOT NULL, data BYTEA DEFAULT NULL, created_at TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, expires_at TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, PRIMARY KEY(id))');
