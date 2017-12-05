@@ -2,7 +2,7 @@
 
 
 export SYMFONY_DEPRECATIONS_HELPER=weak
-export SILURL="/sil"
+export SILURL="/lisem"
 
 OUTPUTDIR=tests/_output
 
@@ -32,4 +32,3 @@ done
 # check output
 NBFAIL=$(find $OUTPUTDIR |grep fail|wc -w)
 exit $NBFAIL;
-
