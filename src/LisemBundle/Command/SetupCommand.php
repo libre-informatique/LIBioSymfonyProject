@@ -161,7 +161,7 @@ EOT
     {
         $output->writeln(['', 'Running <info>sil:crm:init-circles</info> command...']);
         $command = $this->getApplication()->find('sil:crm:init-circles');
-        $circlesInput = new ArrayInput([]);
+        $circlesInput = new ArrayInput(['--no-interaction' => true]);
 
         return $command->run($circlesInput, $output);
     }
