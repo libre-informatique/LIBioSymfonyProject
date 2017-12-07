@@ -1,21 +1,22 @@
 <?php
 
 /*
+ * This file is part of the Lisem Project.
  *
  * Copyright (C) 2015-2017 Libre Informatique
  *
- * This file is licenced under the GNU LGPL v3.
+ * This file is licenced under the GNU GPL v3.
  * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
-namespace Sil\Bundle\VarietyBundle\EventListener;
+namespace VarietyBundle\EventListener;
 
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Blast\Bundle\CoreBundle\Admin\CoreAdmin;
-use Sil\Bundle\VarietyBundle\Entity\VarietyDescription;
+use VarietyBundle\Entity\VarietyDescription;
 use Doctrine\Common\Collections\ArrayCollection;
 
 class VarietyDescriptionsFormEventSubscriber implements EventSubscriberInterface

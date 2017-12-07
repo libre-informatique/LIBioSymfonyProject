@@ -1,19 +1,20 @@
 <?php
 
 /*
+ * This file is part of the Lisem Project.
  *
  * Copyright (C) 2015-2017 Libre Informatique
  *
- * This file is licenced under the GNU LGPL v3.
+ * This file is licenced under the GNU GPL v3.
  * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
-namespace Sil\Bundle\VarietyBundle\Admin;
+namespace VarietyBundle\Admin;
 
 use Sonata\CoreBundle\Validator\ErrorElement;
 use Blast\Bundle\CoreBundle\Admin\CoreAdmin;
-use Sil\Bundle\VarietyBundle\Entity\Species;
+use VarietyBundle\Entity\Species;
 
 class SpeciesAdmin extends CoreAdmin
 {
@@ -42,7 +43,7 @@ class SpeciesAdmin extends CoreAdmin
      */
     public function validateSpeciesCode(ErrorElement $errorElement, $object)
     {
-        $generator = $this->getConfigurationPool()->getContainer()->get('sil_variety.code_generator.species');
+        $generator = $this->getConfigurationPool()->getContainer()->get('variety.code_generator.species');
         if (!$generator->validate($object->getCode())) {
             $errorElement
                 ->with('code')

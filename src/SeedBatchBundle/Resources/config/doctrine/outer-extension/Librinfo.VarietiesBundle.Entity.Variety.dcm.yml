@@ -1,7 +1,7 @@
-Sil\Bundle\VarietyBundle\Entity\Variety:
+VarietyBundle\Entity\Variety:
     type: entity
 
     oneToMany:
         seedBatches:
-            targetEntity: Sil\Bundle\SeedBatchBundle\Entity\SeedBatch
+            targetEntity: SeedBatchBundle\Entity\SeedBatch
             mappedBy: variety

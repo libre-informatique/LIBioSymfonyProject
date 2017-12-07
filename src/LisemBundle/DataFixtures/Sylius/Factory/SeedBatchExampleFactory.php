@@ -1,10 +1,11 @@
 <?php
 
 /*
+ * This file is part of the Lisem Project.
  *
  * Copyright (C) 2015-2017 Libre Informatique
  *
- * This file is licenced under the GNU LGPL v3.
+ * This file is licenced under the GNU GPL v3.
  * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
@@ -13,12 +14,12 @@ namespace LisemBundle\DataFixtures\Sylius\Factory;
 
 use Doctrine\ORM\EntityManager;
 use Sil\Bundle\CRMBundle\Entity\OrganismInterface;
-use Sil\Bundle\SeedBatchBundle\CodeGenerator\PlotCodeGenerator;
-use Sil\Bundle\SeedBatchBundle\CodeGenerator\SeedBatchCodeGenerator;
-use Sil\Bundle\SeedBatchBundle\CodeGenerator\SeedProducerCodeGenerator;
-use Sil\Bundle\SeedBatchBundle\Entity\Plot;
-use Sil\Bundle\SeedBatchBundle\Entity\SeedFarm;
-use Sil\Bundle\VarietyBundle\Entity\VarietyInterface;
+use SeedBatchBundle\CodeGenerator\PlotCodeGenerator;
+use SeedBatchBundle\CodeGenerator\SeedBatchCodeGenerator;
+use SeedBatchBundle\CodeGenerator\SeedProducerCodeGenerator;
+use SeedBatchBundle\Entity\Plot;
+use SeedBatchBundle\Entity\SeedFarm;
+use VarietyBundle\Entity\VarietyInterface;
 use Sylius\Bundle\CoreBundle\Fixture\Factory\ExampleFactoryInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 

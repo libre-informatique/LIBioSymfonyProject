@@ -1,15 +1,16 @@
 <?php
 
 /*
+ * This file is part of the Lisem Project.
  *
  * Copyright (C) 2015-2017 Libre Informatique
  *
- * This file is licenced under the GNU LGPL v3.
+ * This file is licenced under the GNU GPL v3.
  * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
-namespace Sil\Bundle\SeedBatchBundle\Entity;
+namespace SeedBatchBundle\Entity;
 
 use Blast\Bundle\BaseEntitiesBundle\Entity\Traits\Addressable;
 use Blast\Bundle\BaseEntitiesBundle\Entity\Traits\BaseEntity;
@@ -75,11 +76,11 @@ class SeedFarm
     /**
      * Add seedBatch.
      *
-     * @param \Sil\Bundle\SeedBatchBundle\Entity\SeedBatch $seedBatch
+     * @param \SeedBatchBundle\Entity\SeedBatch $seedBatch
      *
      * @return SeedFarm
      */
-    public function addSeedBatch(\Sil\Bundle\SeedBatchBundle\Entity\SeedBatch $seedBatch)
+    public function addSeedBatch(\SeedBatchBundle\Entity\SeedBatch $seedBatch)
     {
         $this->seedBatches[] = $seedBatch;
 
@@ -89,11 +90,11 @@ class SeedFarm
     /**
      * Remove seedBatch.
      *
-     * @param \Sil\Bundle\SeedBatchBundle\Entity\SeedBatch $seedBatch
+     * @param \SeedBatchBundle\Entity\SeedBatch $seedBatch
      *
      * @return bool tRUE if this collection contained the specified element, FALSE otherwise
      */
-    public function removeSeedBatch(\Sil\Bundle\SeedBatchBundle\Entity\SeedBatch $seedBatch)
+    public function removeSeedBatch(\SeedBatchBundle\Entity\SeedBatch $seedBatch)
     {
         return $this->seedBatches->removeElement($seedBatch);
     }

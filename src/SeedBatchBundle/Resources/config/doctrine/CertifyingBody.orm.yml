@@ -1,4 +1,4 @@
-Sil\Bundle\SeedBatchBundle\Entity\CertifyingBody:
+SeedBatchBundle\Entity\CertifyingBody:
     type: entity
     table: lisem_seed_batch_certifying_body
     fields:

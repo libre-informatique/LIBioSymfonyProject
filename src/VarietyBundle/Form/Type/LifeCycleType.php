@@ -1,19 +1,20 @@
 <?php
 
 /*
+ * This file is part of the Lisem Project.
  *
  * Copyright (C) 2015-2017 Libre Informatique
  *
- * This file is licenced under the GNU LGPL v3.
+ * This file is licenced under the GNU GPL v3.
  * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
-namespace Sil\Bundle\VarietyBundle\Form\Type;
+namespace VarietyBundle\Form\Type;
 
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Blast\Bundle\CoreBundle\Form\AbstractType as BaseAbstractType;
-use Sil\Bundle\VarietyBundle\Entity\LifeCycle;
+use VarietyBundle\Entity\LifeCycle;
 
 class LifeCycleType extends BaseAbstractType
 {

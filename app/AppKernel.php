@@ -18,6 +18,8 @@ class AppKernel extends Kernel
     {
         $bundles = [
             new PlatformBundle\PlatformBundle(),
+            new SeedBatchBundle\SeedBatchBundle(),
+            new VarietyBundle\VarietyBundle(),
             new LisemBundle\LisemBundle(),
         ];
 

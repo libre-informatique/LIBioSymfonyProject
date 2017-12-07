@@ -1,22 +1,23 @@
 <?php
 
 /*
+ * This file is part of the Lisem Project.
  *
  * Copyright (C) 2015-2017 Libre Informatique
  *
- * This file is licenced under the GNU LGPL v3.
+ * This file is licenced under the GNU GPL v3.
  * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
-namespace Sil\Bundle\VarietyBundle\Entity\Test\Unit;
+namespace VarietyBundle\Entity\Test\Unit;
 
 use PHPUnit\Framework\TestCase;
-use Sil\Bundle\VarietyBundle\Entity\Variety;
+use VarietyBundle\Entity\Variety;
 use Doctrine\Common\Collections\ArrayCollection;
-use Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionPlant;
+use VarietyBundle\Entity\VarietyDescriptionPlant;
 
-//use AppBundle\Entity\OuterExtension\SilVarietyBundle\VarietyExtension;
+//use AppBundle\Entity\OuterExtension\VarietyBundle\VarietyExtension;
 
 class VarietyTest extends TestCase
 {
@@ -47,16 +48,16 @@ class VarietyTest extends TestCase
         $this->object = new Variety();
         $this->mockTraitNameable = $this->getMockForTrait('\Blast\Bundle\BaseEntitiesBundle\Entity\Traits\Nameable');
         $this->mockTraitOuterExtensible = $this->getMockForTrait('\Blast\Bundle\OuterExtensionBundle\Entity\Traits\OuterExtensible');
-        $this->mockVarietyDescriptionCulture = $this->createMock('\Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionCulture');
-        $this->mockSpecies = $this->createMock('\Sil\Bundle\VarietyBundle\Entity\Species');
-        $this->mockVariety = $this->createMock('\Sil\Bundle\VarietyBundle\Entity\Variety');
-        $this->mockVarietyDescriptionAmateur = $this->createMock('\Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionAmateur');
-        $this->mockVarietyDescriptionProfessional = $this->createMock('\Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionProfessional');
-        $this->mockPlantCategory = $this->createMock('\Sil\Bundle\VarietyBundle\Entity\PlantCategory');
-        $this->mockVarietyDescriptionPlant = $this->createMock('\Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionPlant');
-        $this->mockProductionDescription = $this->createMock('\Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionProduction');
-        $this->mockCommercialDescription = $this->createMock('\Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionCommercial');
-        $this->mockInnerDescription = $this->createMock('\Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionInner');
+        $this->mockVarietyDescriptionCulture = $this->createMock('\VarietyBundle\Entity\VarietyDescriptionCulture');
+        $this->mockSpecies = $this->createMock('\VarietyBundle\Entity\Species');
+        $this->mockVariety = $this->createMock('\VarietyBundle\Entity\Variety');
+        $this->mockVarietyDescriptionAmateur = $this->createMock('\VarietyBundle\Entity\VarietyDescriptionAmateur');
+        $this->mockVarietyDescriptionProfessional = $this->createMock('\VarietyBundle\Entity\VarietyDescriptionProfessional');
+        $this->mockPlantCategory = $this->createMock('\VarietyBundle\Entity\PlantCategory');
+        $this->mockVarietyDescriptionPlant = $this->createMock('\VarietyBundle\Entity\VarietyDescriptionPlant');
+        $this->mockProductionDescription = $this->createMock('\VarietyBundle\Entity\VarietyDescriptionProduction');
+        $this->mockCommercialDescription = $this->createMock('\VarietyBundle\Entity\VarietyDescriptionCommercial');
+        $this->mockInnerDescription = $this->createMock('\VarietyBundle\Entity\VarietyDescriptionInner');
 
         $this->varietydescriptionplant = new VarietyDescriptionPlant();
         $this->varietydescriptionplant->setField('foliage_type');
@@ -70,7 +71,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::initCollections
+     * @covers \VarietyBundle\Entity\Variety::initCollections
      */
     public function testInitCollections()
     {
@@ -88,7 +89,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::__clone
+     * @covers \VarietyBundle\Entity\Variety::__clone
      */
     public function test__clone()
     {
@@ -105,7 +106,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::__call
+     * @covers \VarietyBundle\Entity\Variety::__call
      *
      * @todo  I have to put the method name in variable because of the operator || used in  method name (maybe need to change it in the __call method of Variety.php)
      */
@@ -117,7 +118,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getName
+     * @covers \VarietyBundle\Entity\Variety::getName
      */
     public function testGetName()
     {
@@ -131,7 +132,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::hasParent
+     * @covers \VarietyBundle\Entity\Variety::hasParent
      */
     public function testHasParent()
     {
@@ -140,7 +141,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getSeveralStrains
+     * @covers \VarietyBundle\Entity\Variety::getSeveralStrains
      */
     public function testGetSeveralStrains()
     {
@@ -149,7 +150,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::setLatinName
+     * @covers \VarietyBundle\Entity\Variety::setLatinName
      */
     public function testSetLatinName()
     {
@@ -160,7 +161,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getLatinName
+     * @covers \VarietyBundle\Entity\Variety::getLatinName
      */
     public function testGetLatinName()
     {
@@ -174,7 +175,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::setIsStrain
+     * @covers \VarietyBundle\Entity\Variety::setIsStrain
      */
     public function testSetIsStrain()
     {
@@ -185,7 +186,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getIsStrain
+     * @covers \VarietyBundle\Entity\Variety::getIsStrain
      */
     public function testGetIsStrain()
     {
@@ -194,7 +195,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::setAlias
+     * @covers \VarietyBundle\Entity\Variety::setAlias
      */
     public function testSetAlias()
     {
@@ -205,7 +206,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getAlias
+     * @covers \VarietyBundle\Entity\Variety::getAlias
      */
     public function testGetAlias()
     {
@@ -214,7 +215,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::setCode
+     * @covers \VarietyBundle\Entity\Variety::setCode
      */
     public function testSetCode()
     {
@@ -225,7 +226,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getCode
+     * @covers \VarietyBundle\Entity\Variety::getCode
      */
     public function testGetCode()
     {
@@ -234,7 +235,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::setLifeCycle
+     * @covers \VarietyBundle\Entity\Variety::setLifeCycle
      */
     public function testSetLifeCycle()
     {
@@ -245,7 +246,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getLifeCycle
+     * @covers \VarietyBundle\Entity\Variety::getLifeCycle
      */
     public function testGetLifeCycle()
     {
@@ -259,7 +260,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::setOfficial
+     * @covers \VarietyBundle\Entity\Variety::setOfficial
      */
     public function testSetOfficial()
     {
@@ -270,7 +271,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getOfficial
+     * @covers \VarietyBundle\Entity\Variety::getOfficial
      */
     public function testGetOfficial()
     {
@@ -279,7 +280,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::setOfficialName
+     * @covers \VarietyBundle\Entity\Variety::setOfficialName
      */
     public function testSetOfficialName()
     {
@@ -290,7 +291,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getOfficialName
+     * @covers \VarietyBundle\Entity\Variety::getOfficialName
      */
     public function testGetOfficialName()
     {
@@ -299,7 +300,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::setOfficialDateIn
+     * @covers \VarietyBundle\Entity\Variety::setOfficialDateIn
      */
     public function testSetOfficialDateIn()
     {
@@ -310,7 +311,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getOfficialDateIn
+     * @covers \VarietyBundle\Entity\Variety::getOfficialDateIn
      */
     public function testGetOfficialDateIn()
     {
@@ -319,7 +320,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::setOfficialDateOut
+     * @covers \VarietyBundle\Entity\Variety::setOfficialDateOut
      */
     public function testSetOfficialDateOut()
     {
@@ -330,7 +331,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getOfficialDateOut
+     * @covers \VarietyBundle\Entity\Variety::getOfficialDateOut
      */
     public function testGetOfficialDateOut()
     {
@@ -339,7 +340,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::setOfficialMaintainer
+     * @covers \VarietyBundle\Entity\Variety::setOfficialMaintainer
      */
     public function testSetOfficialMaintainer()
     {
@@ -350,7 +351,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getOfficialMaintainer
+     * @covers \VarietyBundle\Entity\Variety::getOfficialMaintainer
      */
     public function testGetOfficialMaintainer()
     {
@@ -359,7 +360,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::setLegalGerminationRate
+     * @covers \VarietyBundle\Entity\Variety::setLegalGerminationRate
      */
     public function testSetLegalGerminationRate()
     {
@@ -370,7 +371,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getLegalGerminationRate
+     * @covers \VarietyBundle\Entity\Variety::getLegalGerminationRate
      *
      * @todo add test to this return
      *          if (!$this->legal_germination_rate && $this->getSpecies())
@@ -383,7 +384,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::setRegulatoryStatus
+     * @covers \VarietyBundle\Entity\Variety::setRegulatoryStatus
      */
     public function testSetRegulatoryStatus()
     {
@@ -394,7 +395,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getRegulatoryStatus
+     * @covers \VarietyBundle\Entity\Variety::getRegulatoryStatus
      */
     public function testGetRegulatoryStatus()
     {
@@ -403,7 +404,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::setGerminationRate
+     * @covers \VarietyBundle\Entity\Variety::setGerminationRate
      */
     public function testSetGerminationRate()
     {
@@ -414,7 +415,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getGerminationRate
+     * @covers \VarietyBundle\Entity\Variety::getGerminationRate
      */
     public function testGetGerminationRate()
     {
@@ -423,7 +424,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::setParent
+     * @covers \VarietyBundle\Entity\Variety::setParent
      */
     public function testSetParent()
     {
@@ -433,7 +434,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getParent
+     * @covers \VarietyBundle\Entity\Variety::getParent
      */
     public function testGetParent()
     {
@@ -442,7 +443,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::addChild
+     * @covers \VarietyBundle\Entity\Variety::addChild
      */
     public function testAddChild()
     {
@@ -452,7 +453,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::removeChild
+     * @covers \VarietyBundle\Entity\Variety::removeChild
      */
     public function testRemoveChild()
     {
@@ -463,7 +464,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getChildren
+     * @covers \VarietyBundle\Entity\Variety::getChildren
      */
     public function testGetChildren()
     {
@@ -472,7 +473,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::setSpecies
+     * @covers \VarietyBundle\Entity\Variety::setSpecies
      */
     public function testSetSpecies()
     {
@@ -482,7 +483,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getSpecies
+     * @covers \VarietyBundle\Entity\Variety::getSpecies
      */
     public function testGetSpecies()
     {
@@ -491,7 +492,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::addPlantCategory
+     * @covers \VarietyBundle\Entity\Variety::addPlantCategory
      */
     public function testAddPlantCategory()
     {
@@ -501,7 +502,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::removePlantCategory
+     * @covers \VarietyBundle\Entity\Variety::removePlantCategory
      */
     public function testRemovePlantCategory()
     {
@@ -512,7 +513,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getPlantCategories
+     * @covers \VarietyBundle\Entity\Variety::getPlantCategories
      *
      * @todo  test not complete need to test this  return $this->getSpecies()->getPlantCategories();
      */
@@ -524,7 +525,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::setPlantCategories
+     * @covers \VarietyBundle\Entity\Variety::setPlantCategories
      */
     public function testSetPlantCategories()
     {
@@ -534,7 +535,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::setSelectionAdvice
+     * @covers \VarietyBundle\Entity\Variety::setSelectionAdvice
      */
     public function testSetSelectionAdvice()
     {
@@ -545,7 +546,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getSelectionAdvice
+     * @covers \VarietyBundle\Entity\Variety::getSelectionAdvice
      */
     public function testGetSelectionAdvice()
     {
@@ -554,7 +555,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::setSelectionCriteria
+     * @covers \VarietyBundle\Entity\Variety::setSelectionCriteria
      */
     public function testSetSelectionCriteria()
     {
@@ -565,7 +566,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getSelectionCriteria
+     * @covers \VarietyBundle\Entity\Variety::getSelectionCriteria
      */
     public function testGetSelectionCriteria()
     {
@@ -574,7 +575,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::setMiscAdvice
+     * @covers \VarietyBundle\Entity\Variety::setMiscAdvice
      */
     public function testSetMiscAdvice()
     {
@@ -585,7 +586,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getMiscAdvice
+     * @covers \VarietyBundle\Entity\Variety::getMiscAdvice
      */
     public function testGetMiscAdvice()
     {
@@ -594,7 +595,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::setTkw
+     * @covers \VarietyBundle\Entity\Variety::setTkw
      */
     public function testSetTkw()
     {
@@ -605,7 +606,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getTkw
+     * @covers \VarietyBundle\Entity\Variety::getTkw
      *
      * @todo   Implement testGetTkw().
      */
@@ -618,7 +619,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::setSeedLifespan
+     * @covers \VarietyBundle\Entity\Variety::setSeedLifespan
      */
     public function testSetSeedLifespan()
     {
@@ -629,7 +630,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getSeedLifespan
+     * @covers \VarietyBundle\Entity\Variety::getSeedLifespan
      *
      * @todo    add Test to this return $this->getSpecies()->getSeedLifeSpan();
      */
@@ -640,7 +641,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::setRaiseDuration
+     * @covers \VarietyBundle\Entity\Variety::setRaiseDuration
      *
      * @todo   Implement testSetRaiseDuration().
      */
@@ -653,7 +654,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getRaiseDuration
+     * @covers \VarietyBundle\Entity\Variety::getRaiseDuration
      *
      * @todo   Implement testGetRaiseDuration().
      */
@@ -666,7 +667,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::setSeedheadYield
+     * @covers \VarietyBundle\Entity\Variety::setSeedheadYield
      */
     public function testSetSeedheadYield()
     {
@@ -677,7 +678,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getSeedheadYield
+     * @covers \VarietyBundle\Entity\Variety::getSeedheadYield
      */
     public function testGetSeedheadYield()
     {
@@ -686,7 +687,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::setDistanceOnLine
+     * @covers \VarietyBundle\Entity\Variety::setDistanceOnLine
      */
     public function testSetDistanceOnLine()
     {
@@ -697,7 +698,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getDistanceOnLine
+     * @covers \VarietyBundle\Entity\Variety::getDistanceOnLine
      */
     public function testGetDistanceOnLine()
     {
@@ -706,7 +707,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::setDistanceBetweenLines
+     * @covers \VarietyBundle\Entity\Variety::setDistanceBetweenLines
      */
     public function testSetDistanceBetweenLines()
     {
@@ -717,7 +718,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getDistanceBetweenLines
+     * @covers \VarietyBundle\Entity\Variety::getDistanceBetweenLines
      */
     public function testGetDistanceBetweenLines()
     {
@@ -726,7 +727,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::setPlantDensity
+     * @covers \VarietyBundle\Entity\Variety::setPlantDensity
      */
     public function testSetPlantDensity()
     {
@@ -737,7 +738,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getPlantDensity
+     * @covers \VarietyBundle\Entity\Variety::getPlantDensity
      */
     public function testGetPlantDensity()
     {
@@ -746,7 +747,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::setAreaPerKg
+     * @covers \VarietyBundle\Entity\Variety::setAreaPerKg
      */
     public function testSetAreaPerKg()
     {
@@ -757,7 +758,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getAreaPerKg
+     * @covers \VarietyBundle\Entity\Variety::getAreaPerKg
      */
     public function testGetAreaPerKg()
     {
@@ -766,7 +767,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::setSeedheadsPerKg
+     * @covers \VarietyBundle\Entity\Variety::setSeedheadsPerKg
      */
     public function testSetSeedheadsPerKg()
     {
@@ -777,7 +778,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getSeedheadsPerKg
+     * @covers \VarietyBundle\Entity\Variety::getSeedheadsPerKg
      */
     public function testGetSeedheadsPerKg()
     {
@@ -786,7 +787,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::setBaseSeedPerKg
+     * @covers \VarietyBundle\Entity\Variety::setBaseSeedPerKg
      */
     public function testSetBaseSeedPerKg()
     {
@@ -797,7 +798,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getBaseSeedPerKg
+     * @covers \VarietyBundle\Entity\Variety::getBaseSeedPerKg
      */
     public function testGetBaseSeedPerKg()
     {
@@ -806,7 +807,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::setTransmittedDiseases
+     * @covers \VarietyBundle\Entity\Variety::setTransmittedDiseases
      */
     public function testSetTransmittedDiseases()
     {
@@ -817,7 +818,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getTransmittedDiseases
+     * @covers \VarietyBundle\Entity\Variety::getTransmittedDiseases
      */
     public function testGetTransmittedDiseases()
     {
@@ -826,7 +827,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::setStrainCharacteristics
+     * @covers \VarietyBundle\Entity\Variety::setStrainCharacteristics
      */
     public function testSetStrainCharacteristics()
     {
@@ -837,7 +838,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getStrainCharacteristics
+     * @covers \VarietyBundle\Entity\Variety::getStrainCharacteristics
      */
     public function testGetStrainCharacteristics()
     {
@@ -846,7 +847,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::addProfessionalDescription
+     * @covers \VarietyBundle\Entity\Variety::addProfessionalDescription
      */
     public function testAddProfessionalDescription()
     {
@@ -856,7 +857,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::removeProfessionalDescription
+     * @covers \VarietyBundle\Entity\Variety::removeProfessionalDescription
      */
     public function testRemoveProfessionalDescription()
     {
@@ -867,7 +868,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getProfessionalDescriptions
+     * @covers \VarietyBundle\Entity\Variety::getProfessionalDescriptions
      */
     public function testGetProfessionalDescriptions()
     {
@@ -877,7 +878,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getProfessional_descriptions
+     * @covers \VarietyBundle\Entity\Variety::getProfessional_descriptions
      */
     public function testGetProfessional_descriptions()
     {
@@ -887,7 +888,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::setProfessionalDescriptions
+     * @covers \VarietyBundle\Entity\Variety::setProfessionalDescriptions
      *
      * @todo   Implement testSetProfessionalDescriptions().
      */
@@ -899,7 +900,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::addAmateurDescription
+     * @covers \VarietyBundle\Entity\Variety::addAmateurDescription
      */
     public function testAddAmateurDescription()
     {
@@ -909,7 +910,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::removeAmateurDescription
+     * @covers \VarietyBundle\Entity\Variety::removeAmateurDescription
      */
     public function testRemoveAmateurDescription()
     {
@@ -920,7 +921,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getAmateurDescriptions
+     * @covers \VarietyBundle\Entity\Variety::getAmateurDescriptions
      */
     public function testGetAmateurDescriptions()
     {
@@ -929,7 +930,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getAmateur_descriptions
+     * @covers \VarietyBundle\Entity\Variety::getAmateur_descriptions
      */
     public function testGetAmateur_descriptions()
     {
@@ -939,7 +940,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::setAmateurDescriptions
+     * @covers \VarietyBundle\Entity\Variety::setAmateurDescriptions
      *
      * @todo   Implement testSetAmateurDescriptions().
      */
@@ -952,7 +953,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::addProductionDescription
+     * @covers \VarietyBundle\Entity\Variety::addProductionDescription
      */
     public function testAddProductionDescription()
     {
@@ -962,7 +963,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::removeProductionDescription
+     * @covers \VarietyBundle\Entity\Variety::removeProductionDescription
      */
     public function testRemoveProductionDescription()
     {
@@ -973,7 +974,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getProductionDescriptions
+     * @covers \VarietyBundle\Entity\Variety::getProductionDescriptions
      */
     public function testGetProductionDescriptions()
     {
@@ -982,7 +983,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getProduction_descriptions
+     * @covers \VarietyBundle\Entity\Variety::getProduction_descriptions
      */
     public function testGetProduction_descriptions()
     {
@@ -992,7 +993,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::setProductionDescriptions
+     * @covers \VarietyBundle\Entity\Variety::setProductionDescriptions
      *
      * @todo   Implement testSetProductionDescriptions().
      */
@@ -1005,7 +1006,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::addCommercialDescription
+     * @covers \VarietyBundle\Entity\Variety::addCommercialDescription
      */
     public function testAddCommercialDescription()
     {
@@ -1015,7 +1016,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::removeCommercialDescription
+     * @covers \VarietyBundle\Entity\Variety::removeCommercialDescription
      */
     public function testRemoveCommercialDescription()
     {
@@ -1026,7 +1027,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getCommercialDescriptions
+     * @covers \VarietyBundle\Entity\Variety::getCommercialDescriptions
      */
     public function testGetCommercialDescriptions()
     {
@@ -1035,7 +1036,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getCommercial_descriptions
+     * @covers \VarietyBundle\Entity\Variety::getCommercial_descriptions
      */
     public function testGetCommercial_descriptions()
     {
@@ -1045,7 +1046,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::setCommercialDescriptions
+     * @covers \VarietyBundle\Entity\Variety::setCommercialDescriptions
      *
      * @todo   Implement testSetCommercialDescriptions().
      */
@@ -1058,7 +1059,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::addPlantDescription
+     * @covers \VarietyBundle\Entity\Variety::addPlantDescription
      */
     public function testAddPlantDescription()
     {
@@ -1068,7 +1069,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::removePlantDescription
+     * @covers \VarietyBundle\Entity\Variety::removePlantDescription
      */
     public function testRemovePlantDescription()
     {
@@ -1079,7 +1080,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getPlantDescriptions
+     * @covers \VarietyBundle\Entity\Variety::getPlantDescriptions
      */
     public function testGetPlantDescriptions()
     {
@@ -1088,7 +1089,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getPlant_descriptions
+     * @covers \VarietyBundle\Entity\Variety::getPlant_descriptions
      */
     public function testGetPlant_descriptions()
     {
@@ -1098,7 +1099,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::setPlantDescriptions
+     * @covers \VarietyBundle\Entity\Variety::setPlantDescriptions
      *
      * @todo   Implement testSetPlantDescriptions().
      */
@@ -1111,7 +1112,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::addCultureDescription
+     * @covers \VarietyBundle\Entity\Variety::addCultureDescription
      */
     public function testAddCultureDescription()
     {
@@ -1121,7 +1122,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::removeCultureDescription
+     * @covers \VarietyBundle\Entity\Variety::removeCultureDescription
      */
     public function testRemoveCultureDescription()
     {
@@ -1132,7 +1133,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getCultureDescriptions
+     * @covers \VarietyBundle\Entity\Variety::getCultureDescriptions
      */
     public function testGetCultureDescriptions()
     {
@@ -1141,7 +1142,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getCulture_descriptions
+     * @covers \VarietyBundle\Entity\Variety::getCulture_descriptions
      */
     public function testGetCulture_descriptions()
     {
@@ -1151,7 +1152,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::setCultureDescriptions
+     * @covers \VarietyBundle\Entity\Variety::setCultureDescriptions
      *
      * @todo   Implement testSetCultureDescriptions().
      */
@@ -1164,7 +1165,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::addInnerDescription
+     * @covers \VarietyBundle\Entity\Variety::addInnerDescription
      */
     public function testAddInnerDescription()
     {
@@ -1174,7 +1175,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::removeInnerDescription
+     * @covers \VarietyBundle\Entity\Variety::removeInnerDescription
      */
     public function testRemoveInnerDescription()
     {
@@ -1185,7 +1186,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getInnerDescriptions
+     * @covers \VarietyBundle\Entity\Variety::getInnerDescriptions
      */
     public function testGetInnerDescriptions()
     {
@@ -1194,7 +1195,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::setInnerDescriptions
+     * @covers \VarietyBundle\Entity\Variety::setInnerDescriptions
      */
     public function testSetInnerDescriptions()
     {
@@ -1205,7 +1206,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::addLibrinfoFile
+     * @covers \VarietyBundle\Entity\Variety::addLibrinfoFile
      *
      * @todo   Implement testAddLibrinfoFile().
      */
@@ -1218,7 +1219,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::removeLibrinfoFile
+     * @covers \VarietyBundle\Entity\Variety::removeLibrinfoFile
      *
      * @todo   Implement testRemoveLibrinfoFile().
      */
@@ -1231,7 +1232,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::setName
+     * @covers \VarietyBundle\Entity\Variety::setName
      *
      * @todo   Implement testSetName().
      */
@@ -1244,7 +1245,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getNameTrait
+     * @covers \VarietyBundle\Entity\Variety::getNameTrait
      *
      * @todo   Implement testGetNameTrait().
      */
@@ -1257,7 +1258,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getId
+     * @covers \VarietyBundle\Entity\Variety::getId
      *
      * @todo   Implement testGetId().
      */
@@ -1270,7 +1271,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::setId
+     * @covers \VarietyBundle\Entity\Variety::setId
      *
      * @todo   Implement testSetId().
      */
@@ -1283,7 +1284,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::isNew
+     * @covers \VarietyBundle\Entity\Variety::isNew
      *
      * @todo   Implement testIsNew().
      */
@@ -1296,7 +1297,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::__toString
+     * @covers \VarietyBundle\Entity\Variety::__toString
      *
      * @todo   Implement test__toString().
      */
@@ -1309,7 +1310,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::addImage
+     * @covers \VarietyBundle\Entity\Variety::addImage
      *
      * @todo   Implement testAddImage().
      */
@@ -1322,7 +1323,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::removeImage
+     * @covers \VarietyBundle\Entity\Variety::removeImage
      *
      * @todo   Implement testRemoveImage().
      */
@@ -1335,7 +1336,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getImages
+     * @covers \VarietyBundle\Entity\Variety::getImages
      *
      * @todo   Implement testGetImages().
      */
@@ -1348,7 +1349,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::setImages
+     * @covers \VarietyBundle\Entity\Variety::setImages
      *
      * @todo   Implement testSetImages().
      */
@@ -1361,7 +1362,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getLibrinfoFiles
+     * @covers \VarietyBundle\Entity\Variety::getLibrinfoFiles
      *
      * @todo   Implement testGetLibrinfoFiles().
      */
@@ -1374,7 +1375,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getCreatedAt
+     * @covers \VarietyBundle\Entity\Variety::getCreatedAt
      *
      * @todo   Implement testGetCreatedAt().
      */
@@ -1387,7 +1388,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::setCreatedAt
+     * @covers \VarietyBundle\Entity\Variety::setCreatedAt
      *
      * @todo   Implement testSetCreatedAt().
      */
@@ -1400,7 +1401,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getUpdatedAt
+     * @covers \VarietyBundle\Entity\Variety::getUpdatedAt
      *
      * @todo   Implement testGetUpdatedAt().
      */
@@ -1413,7 +1414,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::setUpdatedAt
+     * @covers \VarietyBundle\Entity\Variety::setUpdatedAt
      *
      * @todo   Implement testSetUpdatedAt().
      */
@@ -1426,7 +1427,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::setDescription
+     * @covers \VarietyBundle\Entity\Variety::setDescription
      *
      * @todo   Implement testSetDescription().
      */
@@ -1439,7 +1440,7 @@ class VarietyTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\Variety::getDescription
+     * @covers \VarietyBundle\Entity\Variety::getDescription
      *
      * @todo   Implement testGetDescription().
      */

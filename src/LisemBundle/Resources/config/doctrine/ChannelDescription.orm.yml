@@ -11,7 +11,7 @@ LisemBundle\Entity\ChannelDescription:
 
     manyToOne:
         variety:
-            targetEntity: Sil\Bundle\VarietyBundle\Entity\VarietyInterface
+            targetEntity: VarietyBundle\Entity\VarietyInterface
             inversedBy: channelDescriptions
         channel:
             targetEntity: Sil\Bundle\EcommerceBundle\Entity\Channel

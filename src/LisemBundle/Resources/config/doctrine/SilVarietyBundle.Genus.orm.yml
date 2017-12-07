@@ -1,3 +1,0 @@
-LisemBundle\Entity\SilVarietyBundle\Genus:
-    type: entity
-    table: lisem_variety_genus

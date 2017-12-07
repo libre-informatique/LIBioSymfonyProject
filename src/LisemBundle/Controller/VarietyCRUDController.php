@@ -12,7 +12,7 @@
 
 namespace LisemBundle\Controller;
 
-use Sil\Bundle\VarietyBundle\Controller\VarietyCRUDController as BaseController;
+use VarietyBundle\Controller\VarietyCRUDController as BaseController;
 
 /**
  * @author Marcos Bezerra de Menezes <marcos.bezerra@libre-informatique.fr>

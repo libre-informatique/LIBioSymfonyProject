@@ -1,0 +1,12 @@
+
+services:
+    variety.admin.variety_description_professional:
+        class: VarietyBundle\Admin\VarietyDescriptionAdmin
+        arguments: [~, "%variety.entity.variety_description_professionnal.class%", BlastCoreBundle:CRUD]
+        tags:
+            -
+                name: sonata.admin
+                manager_type: orm
+                group: admin
+                label: sil.variety.menu_label.variety_description_professional
+                label_translator_strategy: blast.resource.sonata.label_strategy.prefix

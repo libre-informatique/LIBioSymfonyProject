@@ -1,23 +1,29 @@
 <?php
 
 /*
+ * This file is part of the Lisem Project.
  *
  * Copyright (C) 2015-2017 Libre Informatique
  *
- * This file is licenced under the GNU LGPL v3.
+ * This file is licenced under the GNU GPL v3.
  * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
-namespace Sil\Bundle\VarietyBundle\Entity;
+namespace VarietyBundle\Entity;
 
 use Blast\Bundle\BaseEntitiesBundle\Entity\Traits\BaseEntity;
 use Blast\Bundle\BaseEntitiesBundle\Entity\Traits\Descriptible;
 use Blast\Bundle\BaseEntitiesBundle\Entity\Traits\Nameable;
 use Blast\Bundle\BaseEntitiesBundle\Entity\Traits\Timestampable;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
+use LisemBundle\Entity\ChannelDescription;
+use SeedBatchBundle\Entity\Association\HasSeedBatchesTrait;
+use Sil\Bundle\EcommerceBundle\Entity\Association\HasProductsTrait;
+use Sil\Bundle\EcommerceBundle\Entity\ProductOption;
 use Sil\Bundle\MediaBundle\Entity\File;
+use Sil\Bundle\SonataSyliusUserBundle\Entity\Traits\Traceable;
 
 /**
  * Variety.
@@ -30,7 +36,11 @@ class Variety implements VarietyInterface
 
     use BaseEntity,
         Timestampable,
-        Descriptible;
+        Descriptible,
+        Traceable,
+        HasSeedBatchesTrait,
+        HasProductsTrait
+    ;
 
     /**
      * @var string
@@ -237,6 +247,16 @@ class Variety implements VarietyInterface
      */
     protected $plant_type;
 
+    /**
+     * @var Collection|ChannelDescription[]
+     */
+    protected $channelDescriptions;
+
+    /**
+     * @var Collection|ProductOption[]
+     */
+    protected $packagings;
+
     public function initCollections()
     {
         $this->children = new ArrayCollection();
@@ -249,6 +269,10 @@ class Variety implements VarietyInterface
         $this->culture_descriptions = new ArrayCollection();
         $this->inner_descriptions = new ArrayCollection();
         $this->images = new ArrayCollection();
+        $this->channelDescriptions = new ArrayCollection();
+        $this->packagings = new ArrayCollection();
+        $this->products = new ArrayCollection();
+        $this->seedBatches = new ArrayCollection();
     }
 
     /**
@@ -634,11 +658,11 @@ class Variety implements VarietyInterface
     /**
      * Set parent.
      *
-     * @param \Sil\Bundle\VarietyBundle\Entity\Variety $parent
+     * @param Variety $parent
      *
      * @return Variety
      */
-    public function setParent(\Sil\Bundle\VarietyBundle\Entity\Variety $parent = null)
+    public function setParent(Variety $parent = null)
     {
         $this->parent = $parent;
 
@@ -658,11 +682,11 @@ class Variety implements VarietyInterface
     /**
      * Add child.
      *
-     * @param \Sil\Bundle\VarietyBundle\Entity\Variety $child
+     * @param Variety $child
      *
      * @return Variety
      */
-    public function addChild(\Sil\Bundle\VarietyBundle\Entity\Variety $child)
+    public function addChild(Variety $child)
     {
         $this->children[] = $child;
 
@@ -672,11 +696,11 @@ class Variety implements VarietyInterface
     /**
      * Remove child.
      *
-     * @param \Sil\Bundle\VarietyBundle\Entity\Variety $child
+     * @param Variety $child
      *
      * @return bool tRUE if this collection contained the specified element, FALSE otherwise
      */
-    public function removeChild(\Sil\Bundle\VarietyBundle\Entity\Variety $child)
+    public function removeChild(Variety $child)
     {
         return $this->children->removeElement($child);
     }
@@ -694,11 +718,11 @@ class Variety implements VarietyInterface
     /**
      * Set species.
      *
-     * @param \Sil\Bundle\VarietyBundle\Entity\Species $species
+     * @param Species $species
      *
      * @return Variety
      */
-    public function setSpecies(\Sil\Bundle\VarietyBundle\Entity\Species $species = null)
+    public function setSpecies(Species $species = null)
     {
         $this->species = $species;
 
@@ -722,11 +746,11 @@ class Variety implements VarietyInterface
     /**
      * Add plantCategory.
      *
-     * @param \Sil\Bundle\VarietyBundle\Entity\PlantCategory $plantCategory
+     * @param PlantCategory $plantCategory
      *
      * @return Variety
      */
-    public function addPlantCategory(\Sil\Bundle\VarietyBundle\Entity\PlantCategory $plantCategory)
+    public function addPlantCategory(PlantCategory $plantCategory)
     {
         $this->plant_categories[] = $plantCategory;
 
@@ -736,11 +760,11 @@ class Variety implements VarietyInterface
     /**
      * Remove plantCategory.
      *
-     * @param \Sil\Bundle\VarietyBundle\Entity\PlantCategory $plantCategory
+     * @param PlantCategory $plantCategory
      *
      * @return bool tRUE if this collection contained the specified element, FALSE otherwise
      */
-    public function removePlantCategory(\Sil\Bundle\VarietyBundle\Entity\PlantCategory $plantCategory)
+    public function removePlantCategory(PlantCategory $plantCategory)
     {
         return $this->plant_categories->removeElement($plantCategory);
     }
@@ -1142,11 +1166,11 @@ class Variety implements VarietyInterface
     /**
      * Set variety.
      *
-     * @param \Sil\Bundle\VarietyBundle\Entity\Variety $variety
+     * @param Variety $variety
      *
      * @return Strain
      */
-    public function setVariety(\Sil\Bundle\VarietyBundle\Entity\Variety $variety = null)
+    public function setVariety(Variety $variety = null)
     {
         $this->variety = $variety;
 
@@ -1166,11 +1190,11 @@ class Variety implements VarietyInterface
     /**
      * Add professionalDescription.
      *
-     * @param \Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionProfessional $professionalDescription
+     * @param VarietyDescriptionProfessional $professionalDescription
      *
      * @return Variety
      */
-    public function addProfessionalDescription(\Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionProfessional $professionalDescription)
+    public function addProfessionalDescription(VarietyDescriptionProfessional $professionalDescription)
     {
         $this->professional_descriptions[] = $professionalDescription;
 
@@ -1180,11 +1204,11 @@ class Variety implements VarietyInterface
     /**
      * Remove professionalDescription.
      *
-     * @param \Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionProfessional $professionalDescription
+     * @param VarietyDescriptionProfessional $professionalDescription
      *
      * @return bool tRUE if this collection contained the specified element, FALSE otherwise
      */
-    public function removeProfessionalDescription(\Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionProfessional $professionalDescription)
+    public function removeProfessionalDescription(VarietyDescriptionProfessional $professionalDescription)
     {
         return $this->professional_descriptions->removeElement($professionalDescription);
     }
@@ -1229,11 +1253,11 @@ class Variety implements VarietyInterface
     /**
      * Add amateurDescription.
      *
-     * @param \Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionAmateur amateurDescription
+     * @param VarietyDescriptionAmateur amateurDescription
      *
      * @return Variety
      */
-    public function addAmateurDescription(\Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionAmateur $amateurDescription)
+    public function addAmateurDescription(VarietyDescriptionAmateur $amateurDescription)
     {
         $this->amateur_descriptions[] = $amateurDescription;
 
@@ -1243,11 +1267,11 @@ class Variety implements VarietyInterface
     /**
      * Remove amateurDescription.
      *
-     * @param \Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionAmateur $amateurDescription
+     * @param VarietyDescriptionAmateur $amateurDescription
      *
      * @return bool tRUE if this collection contained the specified element, FALSE otherwise
      */
-    public function removeAmateurDescription(\Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionAmateur $amateurDescription)
+    public function removeAmateurDescription(VarietyDescriptionAmateur $amateurDescription)
     {
         return $this->amateur_descriptions->removeElement($amateurDescription);
     }
@@ -1292,11 +1316,11 @@ class Variety implements VarietyInterface
     /**
      * Add productionDescription.
      *
-     * @param \Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionProduction $productionDescription
+     * @param VarietyDescriptionProduction $productionDescription
      *
      * @return Variety
      */
-    public function addProductionDescription(\Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionProduction $productionDescription)
+    public function addProductionDescription(VarietyDescriptionProduction $productionDescription)
     {
         $this->production_descriptions[] = $productionDescription;
 
@@ -1306,11 +1330,11 @@ class Variety implements VarietyInterface
     /**
      * Remove productionDescription.
      *
-     * @param \Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionProduction $productionDescription
+     * @param VarietyDescriptionProduction $productionDescription
      *
      * @return bool tRUE if this collection contained the specified element, FALSE otherwise
      */
-    public function removeProductionDescription(\Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionProduction $productionDescription)
+    public function removeProductionDescription(VarietyDescriptionProduction $productionDescription)
     {
         return $this->production_descriptions->removeElement($productionDescription);
     }
@@ -1355,11 +1379,11 @@ class Variety implements VarietyInterface
     /**
      * Add commercialDescription.
      *
-     * @param \Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionCommercial $commercialDescription
+     * @param VarietyDescriptionCommercial $commercialDescription
      *
      * @return Variety
      */
-    public function addCommercialDescription(\Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionCommercial $commercialDescription)
+    public function addCommercialDescription(VarietyDescriptionCommercial $commercialDescription)
     {
         $this->commercial_descriptions[] = $commercialDescription;
 
@@ -1369,11 +1393,11 @@ class Variety implements VarietyInterface
     /**
      * Remove commercialDescription.
      *
-     * @param \Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionCommercial $commercialDescription
+     * @param VarietyDescriptionCommercial $commercialDescription
      *
      * @return bool tRUE if this collection contained the specified element, FALSE otherwise
      */
-    public function removeCommercialDescription(\Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionCommercial $commercialDescription)
+    public function removeCommercialDescription(VarietyDescriptionCommercial $commercialDescription)
     {
         return $this->commercial_descriptions->removeElement($commercialDescription);
     }
@@ -1418,11 +1442,11 @@ class Variety implements VarietyInterface
     /**
      * Add plantDescription.
      *
-     * @param \Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionPlant $plantDescription
+     * @param VarietyDescriptionPlant $plantDescription
      *
      * @return Variety
      */
-    public function addPlantDescription(\Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionPlant $plantDescription)
+    public function addPlantDescription(VarietyDescriptionPlant $plantDescription)
     {
         $this->plant_descriptions[] = $plantDescription;
 
@@ -1432,11 +1456,11 @@ class Variety implements VarietyInterface
     /**
      * Remove plantDescription.
      *
-     * @param \Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionPlant $plantDescription
+     * @param VarietyDescriptionPlant $plantDescription
      *
      * @return bool tRUE if this collection contained the specified element, FALSE otherwise
      */
-    public function removePlantDescription(\Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionPlant $plantDescription)
+    public function removePlantDescription(VarietyDescriptionPlant $plantDescription)
     {
         return $this->plant_descriptions->removeElement($plantDescription);
     }
@@ -1481,11 +1505,11 @@ class Variety implements VarietyInterface
     /**
      * Add cultureDescription.
      *
-     * @param \Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionCulture $cultureDescription
+     * @param VarietyDescriptionCulture $cultureDescription
      *
      * @return Variety
      */
-    public function addCultureDescription(\Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionCulture $cultureDescription)
+    public function addCultureDescription(VarietyDescriptionCulture $cultureDescription)
     {
         $this->culture_descriptions[] = $cultureDescription;
 
@@ -1495,11 +1519,11 @@ class Variety implements VarietyInterface
     /**
      * Remove cultureDescription.
      *
-     * @param \Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionCulture $cultureDescription
+     * @param VarietyDescriptionCulture $cultureDescription
      *
      * @return bool tRUE if this collection contained the specified element, FALSE otherwise
      */
-    public function removeCultureDescription(\Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionCulture $cultureDescription)
+    public function removeCultureDescription(VarietyDescriptionCulture $cultureDescription)
     {
         return $this->culture_descriptions->removeElement($cultureDescription);
     }
@@ -1544,11 +1568,11 @@ class Variety implements VarietyInterface
     /**
      * Add innerDescription.
      *
-     * @param \Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionInner $innerDescription
+     * @param VarietyDescriptionInner $innerDescription
      *
      * @return Variety
      */
-    public function addInnerDescription(\Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionInner $innerDescription)
+    public function addInnerDescription(VarietyDescriptionInner $innerDescription)
     {
         $this->inner_descriptions[] = $innerDescription;
 
@@ -1558,11 +1582,11 @@ class Variety implements VarietyInterface
     /**
      * Remove innerDescription.
      *
-     * @param \Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionInner $innerDescription
+     * @param VarietyDescriptionInner $innerDescription
      *
      * @return bool tRUE if this collection contained the specified element, FALSE otherwise
      */
-    public function removeInnerDescription(\Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionInner $innerDescription)
+    public function removeInnerDescription(VarietyDescriptionInner $innerDescription)
     {
         return $this->inner_descriptions->removeElement($innerDescription);
     }
@@ -1653,5 +1677,61 @@ class Variety implements VarietyInterface
         $this->plant_type = $plant_type;
 
         return $this;
+    }
+
+    /**
+     * @param ChannelDescription $channelDescription
+     */
+    public function addChannelDescription(ChannelDescription $channelDescription)
+    {
+        $this->channelDescriptions->add($channelDescription);
+    }
+
+    /**
+     * @param ChannelDescription $channelDescription
+     */
+    public function removeChannelDescription(ChannelDescription $channelDescription)
+    {
+        $this->channelDescriptions->removeElement($channelDescription);
+    }
+
+    /**
+     * @return Collection|ChannelDescription[]
+     */
+    public function getChannelDescriptions()
+    {
+        return $this->channelDescriptions;
+    }
+
+    /**
+     * @param ProductOption $packaging
+     */
+    public function addPackaging(ProductOption $packaging)
+    {
+        $this->packagings->add($packaging);
+    }
+
+    /**
+     * @param ProductOption $packaging
+     */
+    public function removePackaging(ProductOption $packaging)
+    {
+        $this->packagings->removeElement($packaging);
+    }
+
+    /**
+     * @return Collection|ProductOption[]
+     */
+    public function getPackagings()
+    {
+        return $this->packagings;
+    }
+
+    /**
+     * @param Collection|ProductOption[]
+     */
+    public function setPackagings(Collection $packagings)
+    {
+        $this->packagings = $packagings;
     }
 }

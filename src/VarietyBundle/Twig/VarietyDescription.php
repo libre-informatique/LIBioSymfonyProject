@@ -1,20 +1,21 @@
 <?php
 
 /*
+ * This file is part of the Lisem Project.
  *
  * Copyright (C) 2015-2017 Libre Informatique
  *
- * This file is licenced under the GNU LGPL v3.
+ * This file is licenced under the GNU GPL v3.
  * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
-namespace Sil\Bundle\VarietyBundle\Twig;
+namespace VarietyBundle\Twig;
 
 use Symfony\Component\Translation\TranslatorInterface;
 use Symfony\Component\PropertyAccess\PropertyAccessor;
-use Sil\Bundle\VarietyBundle\Entity\Variety;
-use Sil\Bundle\VarietyBundle\Entity\VarietyDescription as VarietyDescriptionEntity;
+use VarietyBundle\Entity\Variety;
+use VarietyBundle\Entity\VarietyDescription as VarietyDescriptionEntity;
 
 class VarietyDescription extends \Twig_Extension
 {

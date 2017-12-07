@@ -70,7 +70,7 @@ EOT
      */
     protected function postDeserializeSpecies(Species $species)
     {
-        $codeGenerator = $this->getContainer()->get('sil_variety.code_generator.species');
+        $codeGenerator = $this->getContainer()->get('variety.code_generator.species');
         $code = $codeGenerator::generate($species, $this->speciesCodes);
         $this->speciesCodes[] = $code;
         $species->setCode($code);
@@ -83,7 +83,7 @@ EOT
     {
         $code = $variety->getCode();
         if (!$code) {
-            $codeGenerator = $this->getContainer()->get('sil_variety.code_generator.variety');
+            $codeGenerator = $this->getContainer()->get('variety.code_generator.variety');
             $code = $codeGenerator::generate($variety, $this->varietyCodes);
             $variety->setCode($code);
         }

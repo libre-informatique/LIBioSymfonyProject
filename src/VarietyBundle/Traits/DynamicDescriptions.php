@@ -1,18 +1,19 @@
 <?php
 
 /*
+ * This file is part of the Lisem Project.
  *
  * Copyright (C) 2015-2017 Libre Informatique
  *
- * This file is licenced under the GNU LGPL v3.
+ * This file is licenced under the GNU GPL v3.
  * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
-namespace Sil\Bundle\VarietyBundle\Traits;
+namespace VarietyBundle\Traits;
 
 use Sonata\AdminBundle\Form\FormMapper;
-use Sil\Bundle\VarietyBundle\EventListener\VarietyDescriptionsFormEventSubscriber;
+use VarietyBundle\EventListener\VarietyDescriptionsFormEventSubscriber;
 
 trait DynamicDescriptions
 {
@@ -22,7 +23,7 @@ trait DynamicDescriptions
     protected function configureDynamicDescriptions($formMapper)
     {
         // Manage dynamic descriptions according to configuration settings
-        $config = $this->getConfigurationPool()->getContainer()->getParameter('sil_variety')['variety_descriptions'];
+        $config = $this->getConfigurationPool()->getContainer()->getParameter('variety')['variety_descriptions'];
         $admin = $this;
 
         $formMapper->getFormBuilder()->addEventSubscriber(new VarietyDescriptionsFormEventSubscriber($admin, $config));
@@ -30,7 +31,7 @@ trait DynamicDescriptions
 
     protected function configureShowDescriptions($showMapper)
     {
-        $config = $this->getConfigurationPool()->getContainer()->getParameter('sil_variety')['variety_descriptions'];
+        $config = $this->getConfigurationPool()->getContainer()->getParameter('variety')['variety_descriptions'];
 
         foreach ($config as $fieldset => $fields) {
             if (!$this->getSubject()) {

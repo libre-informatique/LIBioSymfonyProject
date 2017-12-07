@@ -1,4 +1,4 @@
-Sil\Bundle\VarietyBundle\Entity\Variety:
+VarietyBundle\Entity\Variety:
     type: mappedSuperclass
     table: lisem_variety
     blast:
@@ -118,41 +118,49 @@ Sil\Bundle\VarietyBundle\Entity\Variety:
             nullable: true
     oneToMany:
         children:
-            targetEntity: Sil\Bundle\VarietyBundle\Entity\VarietyInterface
+            targetEntity: VarietyBundle\Entity\VarietyInterface
             mappedBy: parent
             cascade: [persist, remove]
         professional_descriptions:
-            targetEntity: Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionProfessional
+            targetEntity: VarietyBundle\Entity\VarietyDescriptionProfessional
             mappedBy: variety
             cascade: [ persist , remove]
         amateur_descriptions:
-            targetEntity: Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionAmateur
+            targetEntity: VarietyBundle\Entity\VarietyDescriptionAmateur
             mappedBy: variety
             cascade: [ persist , remove]
         production_descriptions:
-            targetEntity: Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionProduction
+            targetEntity: VarietyBundle\Entity\VarietyDescriptionProduction
             mappedBy: variety
             cascade: [ persist , remove]
         commercial_descriptions:
-            targetEntity: Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionCommercial
+            targetEntity: VarietyBundle\Entity\VarietyDescriptionCommercial
             mappedBy: variety
             cascade: [ persist , remove]
         plant_descriptions:
-            targetEntity: Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionPlant
+            targetEntity: VarietyBundle\Entity\VarietyDescriptionPlant
             mappedBy: variety
             cascade: [ persist , remove]
         culture_descriptions:
-            targetEntity: Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionCulture
+            targetEntity: VarietyBundle\Entity\VarietyDescriptionCulture
             mappedBy: variety
             cascade: [ persist , remove]
         inner_descriptions:
-            targetEntity: Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionInner
+            targetEntity: VarietyBundle\Entity\VarietyDescriptionInner
             mappedBy: variety
             cascade: [ persist , remove]
+        products:
+            targetEntity: Sil\Bundle\EcommerceBundle\Entity\ProductInterface
+            mappedBy: variety
+        channelDescriptions:
+            targetEntity: LisemBundle\Entity\ChannelDescription
+            mappedBy: variety
+            cascade: [ persist, remove ]
+            orphanRemoval: true
+        seedBatches:
+            targetEntity: SeedBatchBundle\Entity\SeedBatchInterface
+            mappedBy: variety
     manyToMany:
-        plant_categories:
-            targetEntity: Sil\Bundle\VarietyBundle\Entity\PlantCategory
-            inversedBy: varieties
         images:
             targetEntity: Sil\Bundle\MediaBundle\Entity\FileInterface
             joinTable:
@@ -167,16 +175,40 @@ Sil\Bundle\VarietyBundle\Entity\Variety:
                         onDelete: CASCADE
                         unique: true
             cascade: [persist, remove]
+        packagings:
+            targetEntity: Sil\Bundle\EcommerceBundle\Entity\ProductOptionValueInterface
+            cascade: [ persist, remove ]
+            joinTable:
+                name: lisem_variety__product_option_value
+                joinColumns:
+                    productOptionValue_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    variety_id:
+                        referencedColumnName: id
+
+        plant_categories:
+            targetEntity: VarietyBundle\Entity\PlantCategory
+            inversedBy: varieties
+            joinTable:
+                name: lisem_variety__plant_category
+                joinColumns:
+                    plantCategory_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    variety_id:
+                        referencedColumnName: id
     manyToOne:
         parent:
-            targetEntity: Sil\Bundle\VarietyBundle\Entity\VarietyInterface
+            targetEntity: VarietyBundle\Entity\VarietyInterface
             inversedBy: children
         species:
-            targetEntity: Sil\Bundle\VarietyBundle\Entity\SpeciesInterface
+            targetEntity: VarietyBundle\Entity\SpeciesInterface
             inversedBy: varieties
             joinColumn:
                 name: species_id
             cascade: [ persist ]
+
 
     uniqueConstraints:
         lisem_variety_name_idx:

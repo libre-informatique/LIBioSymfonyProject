@@ -19,7 +19,7 @@ sonata_admin:
                 icon:  '<i class="fa fa-address-card"></i>'
                 on_top: true
                 items:
-                    - route: admin_sil_seed_batch_organism_list
+                    - route: admin_seed_batch_organism_list
                       label: lisem.menu_label.organisms_list
 
             lisem.menu.crm_emailing:
@@ -39,7 +39,7 @@ sonata_admin:
                 icon:  '<i class="fa fa-pagelines"></i>'
                 on_top: true
                 items:
-                    - route: admin_lisem_silvarietybundle_species_list
+                    - route: admin_lisem_VarietyBundle_species_list
                       label: lisem.menu_label.species_list
 
             lisem.menu.varieties:
@@ -47,7 +47,7 @@ sonata_admin:
                 icon:  '<i class="fa fa-tree"></i>'
                 on_top: true
                 items:
-                    - route: admin_sil_variety_list
+                    - route: admin_variety_list
                       label: lisem.menu_label.varieties_list
 
             # ##################################################################
@@ -59,7 +59,7 @@ sonata_admin:
                 icon:  '<i class="fa fa-shopping-bag"></i>'
                 on_top: true
                 items:
-                    - route: admin_lisem_silseedbatchbundle_seedbatch_list
+                    - route: admin_lisem_SeedBatchBundle_seedbatch_list
                       label: lisem.menu_label.seed_batches_list
 
             lisem.menu.plot:
@@ -86,7 +86,7 @@ sonata_admin:
                 on_top: true
                 items:
                     - label: lisem.menu_label.producers_list
-                      route: admin_sil_seed_batch_seedProducer_list
+                      route: admin_seed_batch_seedProducer_list
 
             # ##################################################################
             # PRODUCTS

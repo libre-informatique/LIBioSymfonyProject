@@ -1,4 +1,4 @@
-Sil\Bundle\VarietyBundle\Entity\VarietyDescription:
+VarietyBundle\Entity\VarietyDescription:
     type: entity
     table: lisem_variety_description
     inheritanceType: SINGLE_TABLE
@@ -6,12 +6,12 @@ Sil\Bundle\VarietyBundle\Entity\VarietyDescription:
         name: fieldset
         type: string
     discriminatorMap:
-        variety: Sil\Bundle\VarietyBundle\Entity\VarietyDescription
-        professional: Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionProfessional
-        amateur: Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionAmateur
-        production: Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionProduction
-        commercial: Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionCommercial
-        plant: Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionPlant
-        culture: Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionCulture
-        inner: Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionInner
-    repositoryClass: Sil\Bundle\VarietyBundle\Entity\Repository\VarietyDescriptionRepository
+        variety: VarietyBundle\Entity\VarietyDescription
+        professional: VarietyBundle\Entity\VarietyDescriptionProfessional
+        amateur: VarietyBundle\Entity\VarietyDescriptionAmateur
+        production: VarietyBundle\Entity\VarietyDescriptionProduction
+        commercial: VarietyBundle\Entity\VarietyDescriptionCommercial
+        plant: VarietyBundle\Entity\VarietyDescriptionPlant
+        culture: VarietyBundle\Entity\VarietyDescriptionCulture
+        inner: VarietyBundle\Entity\VarietyDescriptionInner
+    repositoryClass: VarietyBundle\Entity\Repository\VarietyDescriptionRepository

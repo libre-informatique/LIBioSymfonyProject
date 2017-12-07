@@ -289,7 +289,7 @@ final class ProductExampleFactory implements ExampleFactoryInterface
             ->setDefault('shipping_required', true)
 
             ->setDefault('variety', null)
-            ->setAllowedTypes('variety', ['null', "Sil\Bundle\VarietyBundle\Entity\Variety"])
+            ->setAllowedTypes('variety', ['null', "VarietyBundle\Entity\Variety"])
         ;
     }
 

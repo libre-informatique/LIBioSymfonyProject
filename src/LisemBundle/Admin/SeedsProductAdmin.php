@@ -13,7 +13,7 @@
 namespace LisemBundle\Admin;
 
 use Sil\Bundle\EcommerceBundle\Admin\ProductAdmin;
-use Sil\Bundle\VarietyBundle\Entity\Variety;
+use VarietyBundle\Entity\Variety;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Route\RouteCollection;
 use Sonata\DatagridBundle\ProxyQuery\ProxyQueryInterface;
@@ -142,8 +142,8 @@ class SeedsProductAdmin extends ProductAdmin
 
         if ($variety_id = $this->getRequest()->get('variety_id')) {
             $variety = $this->modelManager
-                ->getEntityManager('SilVarietyBundle:Variety')
-                ->getRepository('SilVarietyBundle:Variety')
+                ->getEntityManager('VarietyBundle:Variety')
+                ->getRepository('VarietyBundle:Variety')
                 ->find($variety_id);
             if (!$variety) {
                 throw new \Exception(sprintf('Unable to find Variety with id : %s', $variety_id));

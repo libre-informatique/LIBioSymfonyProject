@@ -1,4 +1,4 @@
-Sil\Bundle\SeedBatchBundle\Entity\SeedBatch:
+SeedBatchBundle\Entity\SeedBatch:
     type: mappedSuperclass
     table: lisem_seed_batch
     fields:
@@ -52,13 +52,13 @@ Sil\Bundle\SeedBatchBundle\Entity\SeedBatch:
 
     manyToOne:
         seedFarm:
-            targetEntity: Sil\Bundle\SeedBatchBundle\Entity\SeedFarm
+            targetEntity: SeedBatchBundle\Entity\SeedFarm
             inversedBy: seedBatches
             joinColumn:
                 name: seed_farm_id
                 referencedColumnName: id
         variety:
-            targetEntity: Sil\Bundle\VarietyBundle\Entity\VarietyInterface
+            targetEntity: VarietyBundle\Entity\VarietyInterface
             inversedBy: seedBatches
         producer:
             targetEntity: Sil\Bundle\CRMBundle\Entity\OrganismInterface
@@ -67,8 +67,21 @@ Sil\Bundle\SeedBatchBundle\Entity\SeedBatch:
                 name: producer_id
                 referencedColumnName: id
         plot:
-            targetEntity: Sil\Bundle\SeedBatchBundle\Entity\Plot
+            targetEntity: SeedBatchBundle\Entity\Plot
             inversedBy: seedBatches
             joinColumn:
                 name: plot_id
                 referencedColumnName: id
+
+    manyToMany:
+        productVariants:
+            targetEntity: Sil\Bundle\EcommerceBundle\Entity\ProductVariantInterface
+            inversedBy: seedBatches
+            joinTable:
+                name: lisem_seed_batch__product_variant
+                joinColumns:
+                    producVariant_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    seedBatch_id:
+                        referencedColumnName: id

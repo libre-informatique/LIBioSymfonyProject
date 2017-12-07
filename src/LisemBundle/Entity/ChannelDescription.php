@@ -12,7 +12,7 @@
 
 namespace LisemBundle\Entity;
 
-use Sil\Bundle\VarietyBundle\Entity\Association\HasVarietyTrait;
+use VarietyBundle\Entity\Association\HasVarietyTrait;
 use Blast\Bundle\BaseEntitiesBundle\Entity\Traits\BaseEntity;
 use Sylius\Component\Core\Model\ChannelInterface;
 

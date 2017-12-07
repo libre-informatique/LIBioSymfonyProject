@@ -1,15 +1,16 @@
 <?php
 
 /*
+ * This file is part of the Lisem Project.
  *
  * Copyright (C) 2015-2017 Libre Informatique
  *
- * This file is licenced under the GNU LGPL v3.
+ * This file is licenced under the GNU GPL v3.
  * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
-namespace Sil\Bundle\SeedBatchBundle\Entity;
+namespace SeedBatchBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Blast\Bundle\BaseEntitiesBundle\Entity\Traits\Addressable;
@@ -122,11 +123,11 @@ class CertifyingBody
     /**
      * Add certifications.
      *
-     * @param \Sil\Bundle\SeedBatchBundle\Entity\Certification $certifications
+     * @param \SeedBatchBundle\Entity\Certification $certifications
      *
      * @return Plot
      */
-    public function addCertification(\Sil\Bundle\SeedBatchBundle\Entity\Certification $certifications)
+    public function addCertification(\SeedBatchBundle\Entity\Certification $certifications)
     {
         $this->certifications[] = $certifications;
 
@@ -136,9 +137,9 @@ class CertifyingBody
     /**
      * Remove certification.
      *
-     * @param \Sil\Bundle\SeedBatchBundle\Entity\Certification $certification
+     * @param \SeedBatchBundle\Entity\Certification $certification
      */
-    public function removeCertification(\Sil\Bundle\SeedBatchBundle\Entity\Certification $certification)
+    public function removeCertification(\SeedBatchBundle\Entity\Certification $certification)
     {
         $this->certifications->removeElement($certification);
     }

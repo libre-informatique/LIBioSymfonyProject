@@ -1,15 +1,16 @@
 <?php
 
 /*
+ * This file is part of the Lisem Project.
  *
  * Copyright (C) 2015-2017 Libre Informatique
  *
- * This file is licenced under the GNU LGPL v3.
+ * This file is licenced under the GNU GPL v3.
  * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
-namespace Sil\Bundle\SeedBatchBundle\DependencyInjection;
+namespace SeedBatchBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -27,7 +28,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('sil_seed_batch');
+        $rootNode = $treeBuilder->root('seed_batch');
 
         // Here you should define the parameters that are allowed to
         // configure your bundle. See the documentation linked above for
@@ -37,10 +38,10 @@ class Configuration implements ConfigurationInterface
                 ->arrayNode('code_generator')
                     ->addDefaultsIfNotSet()
                     ->children()
-                        ->scalarNode('seed_batch')->defaultValue('Sil\Bundle\SeedBatchBundle\CodeGenerator\SeedBatchCodeGenerator')->end()
-                        ->scalarNode('seed_producer')->defaultValue('Sil\Bundle\SeedBatchBundle\CodeGenerator\SeedProducerCodeGenerator')->end()
-                        ->scalarNode('plot')->defaultValue('Sil\Bundle\SeedBatchBundle\CodeGenerator\PlotCodeGenerator')->end()
-                        ->scalarNode('seed_farm')->defaultValue('Sil\Bundle\SeedBatchBundle\CodeGenerator\SeedFarmCodeGenerator')->end()
+                        ->scalarNode('seed_batch')->defaultValue('SeedBatchBundle\CodeGenerator\SeedBatchCodeGenerator')->end()
+                        ->scalarNode('seed_producer')->defaultValue('SeedBatchBundle\CodeGenerator\SeedProducerCodeGenerator')->end()
+                        ->scalarNode('plot')->defaultValue('SeedBatchBundle\CodeGenerator\PlotCodeGenerator')->end()
+                        ->scalarNode('seed_farm')->defaultValue('SeedBatchBundle\CodeGenerator\SeedFarmCodeGenerator')->end()
                     ->end()
                 ->end()
             ->end()

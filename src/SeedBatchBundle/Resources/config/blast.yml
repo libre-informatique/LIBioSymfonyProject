@@ -7,7 +7,7 @@ parameters:
 # SEED BATCH
 ##############
 
-        Sil\Bundle\SeedBatchBundle\Entity\SeedBatch:
+        SeedBatchBundle\Entity\SeedBatch:
             Sonata\AdminBundle\Show\ShowMapper:
                 forceTabs: true
                 remove:
@@ -18,14 +18,14 @@ parameters:
                             code: ~
                             seedFarm: ~
                             variety:
-                                admin_code: sil_variety.admin.variety
+                                admin_code: variety.admin.variety
                             producer:
-                                admin_code: sil_seed_batch.admin.seed_producer
+                                admin_code: seed_batch.admin.seed_producer
                                 associated_property: producerToString
                             productionYear: ~
                             batchNumber: ~
                             plot:
-                                admin_code: sil_seed_batch.admin.plot
+                                admin_code: seed_batch.admin.plot
                             description: ~
                         form_group_germination_rate:
                             germinationRate: ~
@@ -64,15 +64,15 @@ parameters:
                                 property: name
                                 required: true
                                 _options:
-                                    admin_code: sil_variety.admin.variety
+                                    admin_code: variety.admin.variety
                                     translation_domain: messages
                             producer:
                                 type: Blast\Bundle\BaseEntitiesBundle\Form\Type\SearchableAutocompleteType
                                 property: fulltextName
-                                callback: [Sil\Bundle\SeedBatchBundle\Admin\SeedProducerAdmin, producerAutocompleteCallback]
+                                callback: [SeedBatchBundle\Admin\SeedProducerAdmin, producerAutocompleteCallback]
                                 required: true
                                 _options:
-                                    admin_code: sil_seed_batch.admin.seed_producer
+                                    admin_code: seed_batch.admin.seed_producer
                             productionYear:
                                 required: true
                             batchNumber:
@@ -81,10 +81,10 @@ parameters:
                             plot:
                                 type: sonata_type_model_autocomplete
                                 property: [name, code, producer.name]  # TODO: producer.name has no effect, WHY ???
-                                serviceCallback: [sil_seed_batch.admin.plot, autocompleteToString, to_string_callback]
+                                serviceCallback: [seed_batch.admin.plot, autocompleteToString, to_string_callback]
                                 required: true
                                 _options:
-                                    admin_code: sil_seed_batch.admin.plot
+                                    admin_code: seed_batch.admin.plot
                             description: ~
                         form_group_germination_rate:
                             germinationRate: ~
@@ -132,9 +132,9 @@ parameters:
                         identifier: true
                     seedFarm: ~
                     variety:
-                        admin_code: sil_variety.admin.variety
+                        admin_code: variety.admin.variety
                     producer:
-                        admin_code: sil_seed_batch.admin.seed_producer
+                        admin_code: seed_batch.admin.seed_producer
                     productionYear: ~
 
             Sonata\AdminBundle\Datagrid\DatagridMapper:
@@ -144,7 +144,7 @@ parameters:
                         type: doctrine_orm_model_autocomplete
                         field_options:
                             property: [name, code]
-                        admin_code: sil_variety.admin.variety
+                        admin_code: variety.admin.variety
                     seedFarm.name: ~
                     producer.name: ~
                     plot.name: ~
@@ -158,7 +158,7 @@ parameters:
 # SEED BATCH EMBEDDED
 #######################
 
-        Sil\Bundle\SeedBatchBundle\Admin\SeedBatchEmbeddedAdmin:
+        SeedBatchBundle\Admin\SeedBatchEmbeddedAdmin:
             Sonata\AdminBundle\Show\ShowMapper:
                 add: ~
             Sonata\AdminBundle\Form\FormMapper:
@@ -188,20 +188,20 @@ parameters:
                             code: ~
                             variety:
                                 _options:
-                                    admin_code: sil_variety.admin.variety
+                                    admin_code: variety.admin.variety
                             seedFarm:
                                 type: sonata_type_model
                             producer:
                                 type: sonata_type_model_autocomplete
                                 property: name
-                                callback: [Sil\Bundle\SeedBatchBundle\Admin\SeedProducerAdmin, producerAutocompleteCallback]
+                                callback: [SeedBatchBundle\Admin\SeedProducerAdmin, producerAutocompleteCallback]
                                 _options:
-                                    admin_code: sil_seed_batch.admin.seed_producer
+                                    admin_code: seed_batch.admin.seed_producer
                             productionYear: ~
                             batchNumber: ~
                             plot:
                                 _options:
-                                    admin_code: sil_seed_batch.admin.plot_embedded
+                                    admin_code: seed_batch.admin.plot_embedded
                             description: ~
                         form_group_germination_rate:
                             germinationRate: ~
@@ -264,7 +264,7 @@ parameters:
 # PLOT
 ########
 
-        Sil\Bundle\SeedBatchBundle\Entity\Plot:
+        SeedBatchBundle\Entity\Plot:
             Sonata\AdminBundle\Show\ShowMapper:
                 forceTabs: true
                 remove:
@@ -274,9 +274,9 @@ parameters:
                         '':
                             code: ~
                             producer:
-                                admin_code: sil_seed_batch.admin.seed_producer
+                                admin_code: seed_batch.admin.seed_producer
                             certifications:
-                                template: SilSeedBatchBundle:PlotAdmin:show_field_certifications.html.twig
+                                template: SeedBatchBundle:PlotAdmin:show_field_certifications.html.twig
                     _options:
                         tabsOrder: [form_group_general, form_group_specifics]
             Sonata\AdminBundle\Form\FormMapper:
@@ -292,9 +292,9 @@ parameters:
                                 type: sonata_type_model_autocomplete
                                 property: name
                                 required: true
-                                callback: [Sil\Bundle\SeedBatchBundle\Admin\SeedProducerAdmin, producerAutocompleteCallback]
+                                callback: [SeedBatchBundle\Admin\SeedProducerAdmin, producerAutocompleteCallback]
                                 _options:
-                                    admin_code: sil_seed_batch.admin.seed_producer
+                                    admin_code: seed_batch.admin.seed_producer
                             name: ~
                             code:
                                 type: Blast\Bundle\CoreBundle\Form\Type\EntityCodeType
@@ -325,7 +325,7 @@ parameters:
                         identifier: true
                     code: ~
                     producer:
-                        admin_code: sil_seed_batch.admin.seed_producer
+                        admin_code: seed_batch.admin.seed_producer
                     city: ~
                     _options:
                         fieldsOrder: [name, code, producer, city]
@@ -340,7 +340,7 @@ parameters:
 # PLOT (EMBEDDED)
 ##################
 
-        Sil\Bundle\SeedBatchBundle\Admin\PlotEmbeddedAdmin:
+        SeedBatchBundle\Admin\PlotEmbeddedAdmin:
             Sonata\AdminBundle\Show\ShowMapper:
                 add: ~
             Sonata\AdminBundle\Form\FormMapper:
@@ -389,7 +389,7 @@ parameters:
 # SEED FARM
 #############
 
-        Sil\Bundle\SeedBatchBundle\Entity\SeedFarm:
+        SeedBatchBundle\Entity\SeedFarm:
             Sonata\AdminBundle\Show\ShowMapper:
                 forceTabs: true
                 remove:
@@ -442,9 +442,9 @@ parameters:
 # ORGANISM
 ############
 
-        Sil\Bundle\SeedBatchBundle\Admin\OrganismAdmin:
+        SeedBatchBundle\Admin\OrganismAdmin:
             Sonata\AdminBundle\Show\ShowMapper:
-                titleTemplate: SilSeedBatchBundle:OrganismAdmin:show_title.html.twig
+                titleTemplate: SeedBatchBundle:OrganismAdmin:show_title.html.twig
                 add:
                     show_tab_general:
                         '':
@@ -464,11 +464,11 @@ parameters:
                     show_tab_plots:
                         '':
                             plots:
-                                admin_code: sil_seed_batch.admin.plot_embedded
+                                admin_code: seed_batch.admin.plot_embedded
                     show_tab_seedbatches:
                         '':
                             seedBatches:
-                                admin_code: sil_seed_batch.admin.seed_batch_embedded
+                                admin_code: seed_batch.admin.seed_batch_embedded
                     _options:
                         tabsOrder:
                             - show_tab_general
@@ -528,7 +528,7 @@ parameters:
                                 _options:
                                     edit: inline
                                     allow_delete: true
-                                    admin_code: sil_seed_batch.admin.plot_embedded
+                                    admin_code: seed_batch.admin.plot_embedded
                     form_tab_seedbatches:
                         '':
                             seedBatches:
@@ -543,7 +543,7 @@ parameters:
                                 _options:
                                     edit: inline
                                     allow_delete: true
-                                    admin_code: sil_seed_batch.admin.seed_batch_embedded
+                                    admin_code: seed_batch.admin.seed_batch_embedded
                     _options:
                         tabsOrder:
                             - form_tab_general
@@ -562,7 +562,7 @@ parameters:
 # SEED PRODUCER
 ################
 
-        Sil\Bundle\SeedBatchBundle\Admin\SeedProducerAdmin:
+        SeedBatchBundle\Admin\SeedProducerAdmin:
             Sonata\AdminBundle\Datagrid\ListMapper:
                 remove:
                     customerCode: ~
@@ -587,7 +587,7 @@ parameters:
 # CERTIFICATION
 ###############
 
-        Sil\Bundle\SeedBatchBundle\Entity\Certification:
+        SeedBatchBundle\Entity\Certification:
             # SHOW
             Sonata\AdminBundle\Show\ShowMapper:
                 remove:
@@ -653,9 +653,9 @@ parameters:
                     _actions: [duplicate]
                 add:
                     plot.producer:
-                        admin_code: sil_seed_batch.admin.seed_producer
+                        admin_code: seed_batch.admin.seed_producer
                     plot:
-                        admin_code: sil_seed_batch.admin.plot
+                        admin_code: seed_batch.admin.plot
                     certificationType: ~
                     certificationDate: ~
                     startDate: ~
@@ -665,9 +665,9 @@ parameters:
             Sonata\AdminBundle\Datagrid\DatagridMapper:
                 add:
                     plot.producer:
-                        admin_code: sil_seed_batch.admin.seed_producer
+                        admin_code: seed_batch.admin.seed_producer
                     plot:
-                        admin_code: sil_seed_batch.admin.plot
+                        admin_code: seed_batch.admin.plot
                     certificationType: ~
                     certificationDate: ~
                     startDate: ~
@@ -678,7 +678,7 @@ parameters:
 # CERTIFICATION TYPE
 ####################
 
-        Sil\Bundle\SeedBatchBundle\Entity\CertificationType:
+        SeedBatchBundle\Entity\CertificationType:
             # SHOW
             Sonata\AdminBundle\Show\ShowMapper:
                 remove:
@@ -734,7 +734,7 @@ parameters:
 # CERTIFYING BODY
 ####################
 
-        Sil\Bundle\SeedBatchBundle\Entity\CertifyingBody:
+        SeedBatchBundle\Entity\CertifyingBody:
             # SHOW
             Sonata\AdminBundle\Show\ShowMapper:
                 forceTabs: true

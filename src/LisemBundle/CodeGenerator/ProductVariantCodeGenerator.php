@@ -69,7 +69,7 @@ class ProductVariantCodeGenerator extends BaseCodeGenerator
             $packaging = $request->getCurrentRequest()->get(sprintf('%s_%s', $formName, 'packaging'), null);
 
             if ($seedBatch && $packaging) {
-                $batch = self::$em->getRepository('SilSeedBatchBundle:SeedBatch')->find($seedBatch);
+                $batch = self::$em->getRepository('SeedBatchBundle:SeedBatch')->find($seedBatch);
                 $packaging = self::$packagingRepo->find($packaging);
 
                 return sprintf('%s-%s', $batch->getCode(), $packaging->getCode());

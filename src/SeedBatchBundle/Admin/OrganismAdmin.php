@@ -1,15 +1,16 @@
 <?php
 
 /*
+ * This file is part of the Lisem Project.
  *
  * Copyright (C) 2015-2017 Libre Informatique
  *
- * This file is licenced under the GNU LGPL v3.
+ * This file is licenced under the GNU GPL v3.
  * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
-namespace Sil\Bundle\SeedBatchBundle\Admin;
+namespace SeedBatchBundle\Admin;
 
 use Sil\Bundle\CRMBundle\Entity\Organism;
 use Sil\Bundle\EmailCRMBundle\Admin\OrganismAdmin as BaseOrganismAdmin;
@@ -25,7 +26,7 @@ class OrganismAdmin extends BaseOrganismAdmin
     //  * @var string
     //  */
     // protected $translationLabelPrefix = 'sil.seed_batch.organism';
-    protected $baseRouteName = 'admin_sil_seed_batch_organism';
+    protected $baseRouteName = 'admin_seed_batch_organism';
     protected $baseRoutePattern = 'sil/seedbatch/organism';
 
     /**

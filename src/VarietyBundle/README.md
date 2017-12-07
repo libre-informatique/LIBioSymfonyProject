@@ -1,4 +1,4 @@
-# SymfonySilVarietyBundle
+# SymfonyVarietyBundle
 
 [![Build Status](https://travis-ci.org/libre-informatique/VarietyBundle.svg?branch=master)](https://travis-ci.org/libre-informatique/VarietyBundle)
 [![Coverage Status](https://coveralls.io/repos/github/libre-informatique/VarietyBundle/badge.svg?branch=master)](https://coveralls.io/github/libre-informatique/VarietyBundle?branch=master)
@@ -113,7 +113,7 @@ public function registerBundles()
             new Blast\Bundle\BaseEntitiesBundle\BlastBaseEntitiesBundle(),
             new Blast\Bundle\UtilsBundle\BlastUtilsBundle(),
             # bundle
-            new Sil\Bundle\VarietyBundle\SilVarietyBundle(),
+            new VarietyBundle\VarietyBundle(),
             new Sil\Bundle\MediaBundle\SilMediaBundle(),
             new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
             # sylius
@@ -149,7 +149,7 @@ src\AppBundle\Entity\LibreVarietyBundle\VarietyExtension.php
 ```php
 <?php
 
-namespace AppBundle\Entity\OuterExtension\SilVarietyBundle;
+namespace AppBundle\Entity\OuterExtension\VarietyBundle;
 
 trait VarietyExtension
 {

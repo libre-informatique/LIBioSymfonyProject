@@ -1,15 +1,16 @@
 <?php
 
 /*
+ * This file is part of the Lisem Project.
  *
  * Copyright (C) 2015-2017 Libre Informatique
  *
- * This file is licenced under the GNU LGPL v3.
+ * This file is licenced under the GNU GPL v3.
  * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
-namespace Sil\Bundle\SeedBatchBundle\Entity;
+namespace SeedBatchBundle\Entity;
 
 use Blast\Bundle\BaseEntitiesBundle\Entity\Traits\BaseEntity;
 use Blast\Bundle\BaseEntitiesBundle\Entity\Traits\Descriptible;
@@ -51,17 +52,17 @@ class Certification
     protected $url;
 
     /**
-     * @var \Sil\Bundle\SeedBatchBundle\Entity\CertificationType
+     * @var \SeedBatchBundle\Entity\CertificationType
      */
     protected $certificationType;
 
     /**
-     * @var \Sil\Bundle\SeedBatchBundle\Entity\CertifyingBody
+     * @var \SeedBatchBundle\Entity\CertifyingBody
      */
     protected $certifyingBody;
 
     /**
-     * @var \Sil\Bundle\SeedBatchBundle\Entity\Plot
+     * @var \SeedBatchBundle\Entity\Plot
      */
     protected $plot;
 
@@ -208,7 +209,7 @@ class Certification
     /**
      * Set certificationType.
      *
-     * @param \Sil\Bundle\SeedBatchBundle\Entity\CertificationType $certificationType
+     * @param \SeedBatchBundle\Entity\CertificationType $certificationType
      *
      * @return Certification
      */
@@ -222,7 +223,7 @@ class Certification
     /**
      * Get certificationType.
      *
-     * @return \Sil\Bundle\SeedBatchBundle\Entity\CertificationType
+     * @return \SeedBatchBundle\Entity\CertificationType
      */
     public function getCertificationType()
     {
@@ -232,11 +233,11 @@ class Certification
     /**
      * Set plot.
      *
-     * @param \Sil\Bundle\SeedBatchBundle\Entity\Plot $plot
+     * @param \SeedBatchBundle\Entity\Plot $plot
      *
      * @return Certification
      */
-    public function setPlot(\Sil\Bundle\SeedBatchBundle\Entity\Plot $plot = null)
+    public function setPlot(\SeedBatchBundle\Entity\Plot $plot = null)
     {
         $this->plot = $plot;
 
@@ -246,7 +247,7 @@ class Certification
     /**
      * Get plot.
      *
-     * @return \Sil\Bundle\SeedBatchBundle\Entity\Plot
+     * @return \SeedBatchBundle\Entity\Plot
      */
     public function getPlot()
     {
@@ -256,11 +257,11 @@ class Certification
     /**
      * Set certifyingBody.
      *
-     * @param \Sil\Bundle\SeedBatchBundle\Entity\CertifyingBody $certifyingBody
+     * @param \SeedBatchBundle\Entity\CertifyingBody $certifyingBody
      *
      * @return Certification
      */
-    public function setCertifyingBody(\Sil\Bundle\SeedBatchBundle\Entity\CertifyingBody $certifyingBody = null)
+    public function setCertifyingBody(\SeedBatchBundle\Entity\CertifyingBody $certifyingBody = null)
     {
         $this->certifyingBody = $certifyingBody;
 
@@ -270,7 +271,7 @@ class Certification
     /**
      * Get certifyingBody.
      *
-     * @return \Sil\Bundle\SeedBatchBundle\Entity\CertifyingBody
+     * @return \SeedBatchBundle\Entity\CertifyingBody
      */
     public function getCertifyingBody()
     {

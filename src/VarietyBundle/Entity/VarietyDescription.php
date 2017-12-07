@@ -1,15 +1,16 @@
 <?php
 
 /*
+ * This file is part of the Lisem Project.
  *
  * Copyright (C) 2015-2017 Libre Informatique
  *
- * This file is licenced under the GNU LGPL v3.
+ * This file is licenced under the GNU GPL v3.
  * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
-namespace Sil\Bundle\VarietyBundle\Entity;
+namespace VarietyBundle\Entity;
 
 /**
  * VarietyDescription.
@@ -24,14 +25,14 @@ class VarietyDescription extends GenericDescription
     const DESCRIPTION_PROFESSIONAL = 'professional';
 
     /**
-     * @var \Sil\Bundle\VarietyBundle\Entity\Variety
+     * @var \VarietyBundle\Entity\Variety
      */
     protected $variety;
 
     /**
      * Set variety.
      *
-     * @param \Sil\Bundle\VarietyBundle\Entity\Variety $variety
+     * @param \VarietyBundle\Entity\Variety $variety
      *
      * @return VarietyDescription
      */
@@ -45,7 +46,7 @@ class VarietyDescription extends GenericDescription
     /**
      * Get variety.
      *
-     * @return \Sil\Bundle\VarietyBundle\Entity\Variety
+     * @return \VarietyBundle\Entity\Variety
      */
     public function getVariety()
     {

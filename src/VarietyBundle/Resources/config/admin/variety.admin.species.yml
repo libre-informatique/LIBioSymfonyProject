@@ -1,0 +1,14 @@
+
+services:
+    variety.admin.species:
+        class: VarietyBundle\Admin\SpeciesAdmin
+        arguments: [~, "%variety.entity.species.class%", BlastCoreBundle:CRUD]
+        tags:
+            -
+                name: sonata.admin
+                manager_type: orm
+                group: admin
+                label: sil.variety.menu_label.species
+                label_translator_strategy: blast.resource.sonata.label_strategy.prefix
+        calls:
+            - [ setTemplate, [ edit, VarietyBundle:SpeciesAdmin:species_edit.html.twig ] ]

@@ -1,15 +1,16 @@
 <?php
 
 /*
+ * This file is part of the Lisem Project.
  *
  * Copyright (C) 2015-2017 Libre Informatique
  *
- * This file is licenced under the GNU LGPL v3.
+ * This file is licenced under the GNU GPL v3.
  * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
-namespace Sil\Bundle\SeedBatchBundle\Entity;
+namespace SeedBatchBundle\Entity;
 
 use Blast\Bundle\BaseEntitiesBundle\Entity\Traits\BaseEntity;
 use Blast\Bundle\BaseEntitiesBundle\Entity\Traits\Descriptible;
@@ -17,7 +18,8 @@ use Blast\Bundle\BaseEntitiesBundle\Entity\Traits\Loggable;
 use Blast\Bundle\BaseEntitiesBundle\Entity\Traits\Searchable;
 use Blast\Bundle\BaseEntitiesBundle\Entity\Traits\Timestampable;
 use Sil\Bundle\CRMBundle\Entity\OrganismInterface;
-use Sil\Bundle\VarietyBundle\Entity\VarietyInterface;
+use VarietyBundle\Entity\VarietyInterface;
+use Sil\Bundle\EcommerceBundle\Entity\Association\HasProductVariantsTrait;
 
 /**
  * SeedBatch.
@@ -29,6 +31,8 @@ class SeedBatch implements SeedBatchInterface
         Loggable,
         Descriptible,
         Searchable;
+
+    use HasProductVariantsTrait;
 
     /**
      * @var VarietyInterface
