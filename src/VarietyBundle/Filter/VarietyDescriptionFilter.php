@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Sil\Bundle\VarietyBundle\Filter;
+namespace VarietyBundle\Filter;
 
 use Doctrine\ORM\QueryBuilder;
-use Sil\Bundle\VarietyBundle\Form\Type\VarietyDescriptionFilterType;
+use VarietyBundle\Form\Type\VarietyDescriptionFilterType;
 use Sonata\AdminBundle\Datagrid\ProxyQueryInterface;
 use Sonata\DoctrineORMAdminBundle\Filter\Filter;
 

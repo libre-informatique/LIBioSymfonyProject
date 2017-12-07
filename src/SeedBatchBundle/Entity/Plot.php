@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Sil\Bundle\SeedBatchBundle\Entity;
+namespace SeedBatchBundle\Entity;
 
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;

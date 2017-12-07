@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace Sil\Bundle\VarietyBundle\Form\ChoiceLoader;
+namespace VarietyBundle\Form\ChoiceLoader;
 
 use Symfony\Component\Form\ChoiceList\ArrayChoiceList;
 use Symfony\Component\Form\ChoiceList\ChoiceListInterface;
 use Symfony\Component\Form\ChoiceList\Loader\ChoiceLoaderInterface;
 use Doctrine\ORM\EntityManager;
-use Sil\Bundle\VarietyBundle\Entity\VarietyDescription;
+use VarietyBundle\Entity\VarietyDescription;
 
 class VarietyDescriptionChoiceLoader implements ChoiceLoaderInterface
 {

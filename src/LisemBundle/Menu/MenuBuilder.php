@@ -90,9 +90,9 @@ class MenuBuilder
 
         // Varieties settings
         $submenu = $menu->addChild('lisem.menu_label.varieties_settings');
-        $submenu->addChild('lisem.menu_label.families_list', ['route' => 'admin_lisem_silvarietybundle_family_list']);
-        $submenu->addChild('lisem.menu_label.genuses_list', ['route' => 'admin_lisem_silvarietybundle_genus_list']);
-        $submenu->addChild('lisem.menu_label.plant_categories_list', ['route' => 'admin_sil_variety_plantcategory_list']);
+        $submenu->addChild('lisem.menu_label.families_list', ['route' => 'admin_lisem_VarietyBundle_family_list']);
+        $submenu->addChild('lisem.menu_label.genuses_list', ['route' => 'admin_lisem_VarietyBundle_genus_list']);
+        $submenu->addChild('lisem.menu_label.plant_categories_list', ['route' => 'admin_variety_plantcategory_list']);
 
         // Seed batches settings
         $submenu = $menu->addChild('lisem.menu_label.seed_batches_settings');

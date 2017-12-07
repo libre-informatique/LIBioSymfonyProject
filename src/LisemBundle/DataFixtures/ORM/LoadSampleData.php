@@ -16,10 +16,10 @@ use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Sil\Bundle\CRMBundle\Entity\City;
 use Sil\Bundle\CRMBundle\Entity\OrganismInterface;
-use Sil\Bundle\SeedBatchBundle\Entity\Plot;
-use Sil\Bundle\SeedBatchBundle\Entity\SeedBatch;
-use Sil\Bundle\SeedBatchBundle\Entity\SeedFarm;
-use Sil\Bundle\VarietyBundle\Entity\Variety;
+use SeedBatchBundle\Entity\Plot;
+use SeedBatchBundle\Entity\SeedBatch;
+use SeedBatchBundle\Entity\SeedFarm;
+use VarietyBundle\Entity\Variety;
 use Nelmio\Alice\Fixtures\Loader;
 use Nelmio\Alice\Persister\Doctrine as DoctrinePersister;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
@@ -130,8 +130,8 @@ class LoadSampleData extends AbstractFixture implements OrderedFixtureInterface,
         $customerCodeGenerator = $registry->getCodeGenerator($this->container->getParameter('sil_crm.entity.organism.class'), 'customerCode');
         $supplierCodeGenerator = $registry->getCodeGenerator($this->container->getParameter('sil_crm.entity.organism.class'), 'supplierCode');
         $producerCodeGenerator = $registry->getCodeGenerator($this->container->getParameter('sil_crm.entity.organism.class'), 'seedProducerCode');
-        $plotCodeGenerator = $registry->getCodeGenerator($this->container->getParameter('sil_seed_batch.entity.plot.class'), 'code');
-        $seedBatchCodeGenerator = $registry->getCodeGenerator($this->container->getParameter('sil_seed_batch.entity.seed_batch.class'), 'code');
+        $plotCodeGenerator = $registry->getCodeGenerator($this->container->getParameter('seed_batch.entity.plot.class'), 'code');
+        $seedBatchCodeGenerator = $registry->getCodeGenerator($this->container->getParameter('seed_batch.entity.seed_batch.class'), 'code');
         foreach ($objects as $object) {
             if ($object instanceof OrganismInterface) {
                 if ($object->isCustomer()) {

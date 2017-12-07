@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Sil\Bundle\VarietyBundle\Form\DataTransformer\Test\Unit;
+namespace VarietyBundle\Form\DataTransformer\Test\Unit;
 
 use PHPUnit\Framework\TestCase;
-use Sil\Bundle\VarietyBundle\Form\DataTransformer\SpeciesCodeTransformer;
+use VarietyBundle\Form\DataTransformer\SpeciesCodeTransformer;
 
 class SpeciesCodeTransformerTest extends TestCase
 {
@@ -31,7 +31,7 @@ class SpeciesCodeTransformerTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Form\DataTransformer\SpeciesCodeTransformer::transform
+     * @covers \VarietyBundle\Form\DataTransformer\SpeciesCodeTransformer::transform
      */
     public function testTransform()
     {
@@ -40,7 +40,7 @@ class SpeciesCodeTransformerTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Form\DataTransformer\SpeciesCodeTransformer::reverseTransform
+     * @covers \VarietyBundle\Form\DataTransformer\SpeciesCodeTransformer::reverseTransform
      */
     public function testReverseTransform()
     {

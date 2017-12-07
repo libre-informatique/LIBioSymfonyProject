@@ -11,7 +11,7 @@
 
 namespace LisemBundle\Admin;
 
-use Sil\Bundle\VarietyBundle\Admin\VarietyAdmin as BaseAdmin;
+use VarietyBundle\Admin\VarietyAdmin as BaseAdmin;
 use Sonata\AdminBundle\Route\RouteCollection;
 use LisemBundle\Entity\SilEcommerceBundle\Product;
 
@@ -22,7 +22,7 @@ use LisemBundle\Entity\SilEcommerceBundle\Product;
  */
 class VarietyAdmin extends BaseAdmin
 {
-    protected $baseRouteName = 'admin_sil_variety';
+    protected $baseRouteName = 'admin_variety';
     protected $baseRoutePattern = 'sil/variety';
 
     public function configureFormFields(\Sonata\AdminBundle\Form\FormMapper $mapper)

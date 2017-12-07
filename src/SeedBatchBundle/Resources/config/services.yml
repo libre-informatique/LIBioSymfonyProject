@@ -2,30 +2,30 @@ services:
 
 # ENTITY CODE GENERATORS
 
-    sil_seed_batch.code_generator.seed_producer:
-        class: Sil\Bundle\SeedBatchBundle\CodeGenerator\SeedProducerCodeGenerator
+    seed_batch.code_generator.seed_producer:
+        class: SeedBatchBundle\CodeGenerator\SeedProducerCodeGenerator
         factory:   ['@blast_core.code_generator_factory', create]
-        arguments: ['%sil_seed_batch.code_generator.seed_producer%', '@doctrine.orm.entity_manager', '%sil_crm.entity.organism.class%']
+        arguments: ['%seed_batch.code_generator.seed_producer%', '@doctrine.orm.entity_manager', '%sil_crm.entity.organism.class%']
         tags:
             - { name: blast.entity_code_generator }
 
-    sil_seed_batch.code_generator.plot:
-        class: Sil\Bundle\SeedBatchBundle\CodeGenerator\PlotCodeGenerator
+    seed_batch.code_generator.plot:
+        class: SeedBatchBundle\CodeGenerator\PlotCodeGenerator
         factory:   ['@blast_core.code_generator_factory', create]
-        arguments: ['%sil_seed_batch.code_generator.plot%', '@doctrine.orm.entity_manager', '%sil_seed_batch.entity.plot.class%']
+        arguments: ['%seed_batch.code_generator.plot%', '@doctrine.orm.entity_manager', '%seed_batch.entity.plot.class%']
         tags:
             - { name: blast.entity_code_generator }
 
-    sil_seed_batch.code_generator.seed_farm:
-        class: Sil\Bundle\SeedBatchBundle\CodeGenerator\SeedFarmCodeGenerator
+    seed_batch.code_generator.seed_farm:
+        class: SeedBatchBundle\CodeGenerator\SeedFarmCodeGenerator
         factory:   ['@blast_core.code_generator_factory', create]
-        arguments: ['%sil_seed_batch.code_generator.seed_farm%', '@doctrine.orm.entity_manager', '%sil_seed_batch.entity.seed_farm.class%']
+        arguments: ['%seed_batch.code_generator.seed_farm%', '@doctrine.orm.entity_manager', '%seed_batch.entity.seed_farm.class%']
         tags:
             - { name: blast.entity_code_generator }
 
-    sil_seed_batch.code_generator.seed_batch:
-        class: Sil\Bundle\SeedBatchBundle\CodeGenerator\SeedBatchCodeGenerator
+    seed_batch.code_generator.seed_batch:
+        class: SeedBatchBundle\CodeGenerator\SeedBatchCodeGenerator
         factory:   ['@blast_core.code_generator_factory', create]
-        arguments: ['%sil_seed_batch.code_generator.seed_batch%', '@doctrine.orm.entity_manager', '%sil_seed_batch.entity.seed_batch.class%']
+        arguments: ['%seed_batch.code_generator.seed_batch%', '@doctrine.orm.entity_manager', '%seed_batch.entity.seed_batch.class%']
         tags:
             - { name: blast.entity_code_generator }

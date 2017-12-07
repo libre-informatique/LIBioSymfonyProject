@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Sil\Bundle\SeedBatchBundle\Entity;
+namespace SeedBatchBundle\Entity;
 
 use Blast\Bundle\BaseEntitiesBundle\Entity\Traits\BaseEntity;
 use Blast\Bundle\BaseEntitiesBundle\Entity\Traits\Descriptible;

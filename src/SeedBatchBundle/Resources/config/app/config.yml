@@ -1,7 +1,7 @@
 blast_base_entities:
     entity_searchable_indexes:
         -
-            class: '%sil_seed_batch.entity.seed_batch.class%'
+            class: '%seed_batch.entity.seed_batch.class%'
             fields:
                 - variety
                 - producer

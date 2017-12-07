@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Sil\Bundle\SeedBatchBundle\Admin;
+namespace SeedBatchBundle\Admin;
 
 use Sonata\CoreBundle\Validator\ErrorElement;
 use Blast\Bundle\CoreBundle\Admin\CoreAdmin;
 use Blast\Bundle\CoreBundle\Admin\Traits\HandlesRelationsAdmin;
-use Sil\Bundle\SeedBatchBundle\Entity\Plot;
+use SeedBatchBundle\Entity\Plot;
 
 class PlotAdmin extends CoreAdmin
 {

@@ -43,7 +43,7 @@
                 <ul class="list-inline">
                 {% for seedbatch in variant.seedBatches %}
                     <li>
-                        <a href="{{ path('admin_sil_seed_batch_seedbatch_show', {'id':seedbatch.id})}}">
+                        <a href="{{ path('admin_seed_batch_seedbatch_show', {'id':seedbatch.id})}}">
                             <span class="label label-success">{{ seedbatch }}</span>
                         </a>
                     </li>

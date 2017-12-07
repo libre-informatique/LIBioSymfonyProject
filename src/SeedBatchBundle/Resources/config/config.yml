@@ -1,0 +1,3 @@
+imports:
+     - { resource: '@SeedBatchBundle/Resources/config/admin.yml' }
+     - { resource: '@SeedBatchBundle/Resources/config/services.yml' }

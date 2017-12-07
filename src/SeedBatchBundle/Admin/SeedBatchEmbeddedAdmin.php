@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Sil\Bundle\SeedBatchBundle\Admin;
+namespace SeedBatchBundle\Admin;
 
 use Blast\Bundle\CoreBundle\Admin\Traits\EmbeddedAdmin;
 
@@ -22,6 +22,6 @@ class SeedBatchEmbeddedAdmin extends SeedBatchAdmin
      */
     protected $translationLabelPrefix = 'sil.seed_batch.seed_farm';
 
-    protected $baseRouteName = 'admin_sil_seed_batch_seed_batch_embedded';
+    protected $baseRouteName = 'admin_seed_batch_seed_batch_embedded';
     protected $baseRoutePattern = 'sil/seedbatch/seedbatch_embedded';
 }

@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Sil\Bundle\VarietyBundle\Entity;
+namespace VarietyBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Blast\Bundle\BaseEntitiesBundle\Entity\Traits\Tree\NodeInterface;
@@ -82,11 +82,11 @@ class PlantCategory implements \JsonSerializable
     /**
      * Add variety.
      *
-     * @param \Sil\Bundle\VarietyBundle\Entity\Variety $variety
+     * @param \VarietyBundle\Entity\Variety $variety
      *
      * @return PlantCategory
      */
-    public function addVariety(\Sil\Bundle\VarietyBundle\Entity\Variety $variety)
+    public function addVariety(\VarietyBundle\Entity\Variety $variety)
     {
         $this->varieties[] = $variety;
 
@@ -96,11 +96,11 @@ class PlantCategory implements \JsonSerializable
     /**
      * Remove variety.
      *
-     * @param \Sil\Bundle\VarietyBundle\Entity\Variety $variety
+     * @param \VarietyBundle\Entity\Variety $variety
      *
      * @return bool tRUE if this collection contained the specified element, FALSE otherwise
      */
-    public function removeVariety(\Sil\Bundle\VarietyBundle\Entity\Variety $variety)
+    public function removeVariety(\VarietyBundle\Entity\Variety $variety)
     {
         return $this->varieties->removeElement($variety);
     }
@@ -118,11 +118,11 @@ class PlantCategory implements \JsonSerializable
     /**
      * Add species.
      *
-     * @param \Sil\Bundle\VarietyBundle\Entity\Species $species
+     * @param \VarietyBundle\Entity\Species $species
      *
      * @return PlantCategory
      */
-    public function addSpecies(\Sil\Bundle\VarietyBundle\Entity\Species $species)
+    public function addSpecies(\VarietyBundle\Entity\Species $species)
     {
         $this->species[] = $species;
 
@@ -132,11 +132,11 @@ class PlantCategory implements \JsonSerializable
     /**
      * Remove species.
      *
-     * @param \Sil\Bundle\VarietyBundle\Entity\Species $species
+     * @param \VarietyBundle\Entity\Species $species
      *
      * @return bool tRUE if this collection contained the specified element, FALSE otherwise
      */
-    public function removeSpecies(\Sil\Bundle\VarietyBundle\Entity\Species $species)
+    public function removeSpecies(\VarietyBundle\Entity\Species $species)
     {
         return $this->species->removeElement($species);
     }

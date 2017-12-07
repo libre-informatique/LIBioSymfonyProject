@@ -1,0 +1,14 @@
+
+services:
+    variety.admin.family:
+        class: VarietyBundle\Admin\FamilyAdmin
+        arguments: [~, "%variety.entity.family.class%", BlastCoreBundle:CRUD]
+        tags:
+            -
+                name: sonata.admin
+                manager_type: orm
+                group: admin
+                label: sil.variety.menu_label.family
+                label_translator_strategy: blast.resource.sonata.label_strategy.prefix
+        calls:
+            - [ setTemplate, [ edit, VarietyBundle:FamilyAdmin:family_edit.html.twig ] ]

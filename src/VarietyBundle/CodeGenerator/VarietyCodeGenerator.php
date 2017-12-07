@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Sil\Bundle\VarietyBundle\CodeGenerator;
+namespace VarietyBundle\CodeGenerator;
 
 use Doctrine\ORM\EntityManager;
 use Blast\Bundle\CoreBundle\CodeGenerator\CodeGeneratorInterface;
-use Sil\Bundle\VarietyBundle\Entity\Variety;
-use Sil\Bundle\VarietyBundle\Entity\VarietyInterface;
+use VarietyBundle\Entity\Variety;
+use VarietyBundle\Entity\VarietyInterface;
 use Blast\Bundle\CoreBundle\Exception\InvalidEntityCodeException;
 
 class VarietyCodeGenerator implements CodeGeneratorInterface

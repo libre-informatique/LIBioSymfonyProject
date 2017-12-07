@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Sil\Bundle\SeedBatchBundle\CodeGenerator;
+namespace SeedBatchBundle\CodeGenerator;
 
 use Doctrine\ORM\EntityManager;
 use Blast\Bundle\CoreBundle\CodeGenerator\CodeGeneratorInterface;
 use Blast\Bundle\CoreBundle\Exception\InvalidEntityCodeException;
-use Sil\Bundle\SeedBatchBundle\Entity\SeedFarm;
+use SeedBatchBundle\Entity\SeedFarm;
 
 class SeedFarmCodeGenerator implements CodeGeneratorInterface
 {

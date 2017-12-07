@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Sil\Bundle\VarietyBundle\Entity\Association;
+namespace VarietyBundle\Entity\Association;
 
-use Sil\Bundle\VarietyBundle\Entity\VarietyInterface;
+use VarietyBundle\Entity\VarietyInterface;
 
 trait HasVarietyTrait
 {

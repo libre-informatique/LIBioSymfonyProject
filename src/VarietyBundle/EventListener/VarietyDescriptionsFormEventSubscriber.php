@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace Sil\Bundle\VarietyBundle\EventListener;
+namespace VarietyBundle\EventListener;
 
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Blast\Bundle\CoreBundle\Admin\CoreAdmin;
-use Sil\Bundle\VarietyBundle\Entity\VarietyDescription;
+use VarietyBundle\Entity\VarietyDescription;
 use Doctrine\Common\Collections\ArrayCollection;
 
 class VarietyDescriptionsFormEventSubscriber implements EventSubscriberInterface

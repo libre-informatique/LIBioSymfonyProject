@@ -1,4 +1,4 @@
-Sil\Bundle\SeedBatchBundle\Entity\CertificationType:
+SeedBatchBundle\Entity\CertificationType:
     type: entity
     table: lisem_seed_batch_certification_type
     fields:

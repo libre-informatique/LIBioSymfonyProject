@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Sil\Bundle\SeedBatchBundle\Entity;
+namespace SeedBatchBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Blast\Bundle\BaseEntitiesBundle\Entity\Traits\Addressable;
@@ -122,11 +122,11 @@ class CertifyingBody
     /**
      * Add certifications.
      *
-     * @param \Sil\Bundle\SeedBatchBundle\Entity\Certification $certifications
+     * @param \SeedBatchBundle\Entity\Certification $certifications
      *
      * @return Plot
      */
-    public function addCertification(\Sil\Bundle\SeedBatchBundle\Entity\Certification $certifications)
+    public function addCertification(\SeedBatchBundle\Entity\Certification $certifications)
     {
         $this->certifications[] = $certifications;
 
@@ -136,9 +136,9 @@ class CertifyingBody
     /**
      * Remove certification.
      *
-     * @param \Sil\Bundle\SeedBatchBundle\Entity\Certification $certification
+     * @param \SeedBatchBundle\Entity\Certification $certification
      */
-    public function removeCertification(\Sil\Bundle\SeedBatchBundle\Entity\Certification $certification)
+    public function removeCertification(\SeedBatchBundle\Entity\Certification $certification)
     {
         $this->certifications->removeElement($certification);
     }

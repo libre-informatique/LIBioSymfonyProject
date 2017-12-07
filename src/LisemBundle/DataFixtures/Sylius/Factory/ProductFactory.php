@@ -12,7 +12,7 @@
 namespace LisemBundle\DataFixtures\Sylius\Factory;
 
 use LisemBundle\Entity\SilEcommerceBundle\Product;
-use Sil\Bundle\VarietyBundle\Entity\Variety;
+use VarietyBundle\Entity\Variety;
 use Sylius\Component\Product\Factory\ProductFactoryInterface;
 use Sylius\Component\Product\Repository\ProductOptionRepositoryInterface;
 use Sylius\Component\Product\Model\ProductInterface;

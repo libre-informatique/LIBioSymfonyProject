@@ -12,7 +12,7 @@
 namespace LisemBundle\DataFixtures\Sylius\Factory;
 
 use Doctrine\ORM\EntityManager;
-use Sil\Bundle\VarietyBundle\Entity\FamilyInterface;
+use VarietyBundle\Entity\FamilyInterface;
 use Sylius\Bundle\CoreBundle\Fixture\Factory\ExampleFactoryInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 

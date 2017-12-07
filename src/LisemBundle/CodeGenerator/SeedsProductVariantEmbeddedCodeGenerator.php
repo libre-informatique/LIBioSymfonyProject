@@ -45,7 +45,7 @@ class SeedsProductVariantEmbeddedCodeGenerator extends ProductVariantCodeGenerat
             $packaging = $variantData['packaging'];
 
             if ($seedBatch && $packaging) {
-                $batch = self::$em->getRepository('SilSeedBatchBundle:SeedBatch')->find($seedBatch);
+                $batch = self::$em->getRepository('SeedBatchBundle:SeedBatch')->find($seedBatch);
                 $packaging = self::getPackagingRepo()->find($packaging);
 
                 return sprintf('%s-%s', $batch->getCode(), $packaging->getCode());

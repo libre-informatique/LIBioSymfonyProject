@@ -14,10 +14,10 @@ namespace LisemBundle\Command;
 
 use Doctrine\ORM\EntityManager;
 use LisemBundle\Command\Configuration\CsvMappingConfiguration;
-use Sil\Bundle\VarietyBundle\Entity\Family;
-use Sil\Bundle\VarietyBundle\Entity\Genus;
-use Sil\Bundle\VarietyBundle\Entity\Species;
-use Sil\Bundle\VarietyBundle\Entity\Variety;
+use VarietyBundle\Entity\Family;
+use VarietyBundle\Entity\Genus;
+use VarietyBundle\Entity\Species;
+use VarietyBundle\Entity\Variety;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -153,7 +153,7 @@ EOT
      */
     protected function postDeserializeSpecies(Species $species)
     {
-        $codeGenerator = $this->getContainer()->get('sil_variety.code_generator.species');
+        $codeGenerator = $this->getContainer()->get('variety.code_generator.species');
         $code = $codeGenerator::generate($species, $this->speciesCodes);
         $this->speciesCodes[] = $code;
         $species->setCode($code);
@@ -166,7 +166,7 @@ EOT
     {
         $code = $variety->getCode();
         if (!$code) {
-            $codeGenerator = $this->getContainer()->get('sil_variety.code_generator.variety');
+            $codeGenerator = $this->getContainer()->get('variety.code_generator.variety');
             $code = $codeGenerator::generate($variety, $this->varietyCodes);
             $variety->setCode($code);
         }

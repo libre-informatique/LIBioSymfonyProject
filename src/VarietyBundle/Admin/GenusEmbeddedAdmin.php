@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Sil\Bundle\VarietyBundle\Admin;
+namespace VarietyBundle\Admin;
 
 use Blast\Bundle\CoreBundle\Admin\CoreAdmin;
 use Blast\Bundle\CoreBundle\Admin\Traits\EmbeddedAdmin;
@@ -23,7 +23,7 @@ class GenusEmbeddedAdmin extends CoreAdmin
      */
     protected $translationLabelPrefix = 'sil.variety.genus';
 
-    protected $baseRouteName = 'admin_sil_variety_genusembeddedadmin';
+    protected $baseRouteName = 'admin_variety_genusembeddedadmin';
     protected $baseRoutePattern = 'sil/variety/genusembedded';
 
     public function getExportFields()

@@ -1,4 +1,4 @@
-Sil\Bundle\VarietyBundle\Entity\Species:
+VarietyBundle\Entity\Species:
     constraints:
         - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity:
             fields: [code]

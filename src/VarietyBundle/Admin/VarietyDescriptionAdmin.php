@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Sil\Bundle\VarietyBundle\Admin;
+namespace VarietyBundle\Admin;
 
 use Blast\Bundle\CoreBundle\Admin\CoreAdmin;
 use Blast\Bundle\CoreBundle\Admin\Traits\EmbeddedAdmin;
@@ -30,7 +30,7 @@ class VarietyDescriptionAdmin extends CoreAdmin
      */
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $vd_config = $this->getConfigurationPool()->getContainer()->getParameter('sil_variety')['variety_descriptions'];
+        $vd_config = $this->getConfigurationPool()->getContainer()->getParameter('variety')['variety_descriptions'];
 
         if (!$this->subject) {
             $this->subject = $this->formFieldDescriptions['fieldset']->getAdmin()->getSubject();

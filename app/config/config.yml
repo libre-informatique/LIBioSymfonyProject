@@ -5,11 +5,17 @@ imports:
 
     # Platform Bundle
 
-     - { resource: "@PlatformBundle/Resources/config/config.yml" }
      - { resource: "@PlatformBundle/Resources/config/parameters.yml" }
+     - { resource: "@SeedBatchBundle/Resources/config/parameters.yml" }
+     - { resource: "@VarietyBundle/Resources/config/parameters.yml" }
+     - { resource: "@LisemBundle/Resources/config/parameters.yml" }
+
+     - { resource: "@PlatformBundle/Resources/config/config.yml" }
 
      - { resource: "@LisemBundle/Resources/config/config.yml" }
-     - { resource: "@LisemBundle/Resources/config/parameters.yml" }
+
+     - { resource: "@SeedBatchBundle/Resources/config/config.yml" }
+
 
 parameters:
     locale: fr_FR
@@ -107,15 +113,11 @@ doctrine:
                         prefix: Sil\Bundle\ManufacturingBundle\Domain\Entity
                     SilMediaBundle:
                         type: yml
-                    SilSeedBatchBundle:
-                        type: yml
                     SilSonataSyliusUserBundle:
                         type: yml
                     SilStockBundle:
                         type: yml
                         prefix: Sil\Bundle\StockBundle\Domain\Entity
-                    SilVarietyBundle:
-                        type: yml
 
                     # Platform
 
@@ -123,6 +125,10 @@ doctrine:
                         type: yml
 
                     # Lisem
+                    SeedBatchBundle:
+                        type: yml
+                    VarietyBundle:
+                        type: yml
 
                     LisemBundle:
                         type: yml

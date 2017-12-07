@@ -12,7 +12,7 @@
 
 namespace LisemBundle\Admin;
 
-use Sil\Bundle\SeedBatchBundle\Admin\OrganismAdmin as BaseOrganismAdmin;
+use SeedBatchBundle\Admin\OrganismAdmin as BaseOrganismAdmin;
 use Sil\Bundle\CRMBundle\Form\DataTransformer\CustomerCodeTransformer;
 use Sil\Bundle\CRMBundle\CodeGenerator\CustomerCodeGenerator;
 use Sonata\AdminBundle\Form\FormMapper;

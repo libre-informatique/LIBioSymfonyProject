@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Sil\Bundle\VarietyBundle\Twig;
+namespace VarietyBundle\Twig;
 
 use Symfony\Component\Translation\TranslatorInterface;
 use Symfony\Component\PropertyAccess\PropertyAccessor;
-use Sil\Bundle\VarietyBundle\Entity\Variety;
-use Sil\Bundle\VarietyBundle\Entity\VarietyDescription as VarietyDescriptionEntity;
+use VarietyBundle\Entity\Variety;
+use VarietyBundle\Entity\VarietyDescription as VarietyDescriptionEntity;
 
 class VarietyDescription extends \Twig_Extension
 {

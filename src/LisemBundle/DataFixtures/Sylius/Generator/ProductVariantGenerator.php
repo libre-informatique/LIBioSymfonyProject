@@ -12,7 +12,7 @@
 namespace LisemBundle\DataFixtures\Sylius\Generator;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Sil\Bundle\SeedBatchBundle\Entity\SeedBatchInterface;
+use SeedBatchBundle\Entity\SeedBatchInterface;
 use Sylius\Component\Product\Checker\ProductVariantsParityCheckerInterface;
 use Sylius\Component\Product\Factory\ProductVariantFactoryInterface;
 use Sylius\Component\Product\Generator\CartesianSetBuilder;

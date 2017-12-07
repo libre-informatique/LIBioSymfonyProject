@@ -12,8 +12,8 @@
 namespace LisemBundle\DataFixtures\Sylius\Factory;
 
 use Doctrine\ORM\EntityManager;
-use Sil\Bundle\VarietyBundle\Entity\GenusInterface;
-use Sil\Bundle\VarietyBundle\Entity\SpeciesInterface;
+use VarietyBundle\Entity\GenusInterface;
+use VarietyBundle\Entity\SpeciesInterface;
 use Sylius\Bundle\CoreBundle\Fixture\Factory\ExampleFactoryInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 

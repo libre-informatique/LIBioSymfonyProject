@@ -3,5 +3,5 @@ LisemBundle\Entity\SilEcommerceBundle\Product:
     table: sil_ecommerce_product
     manyToOne:
         variety:
-            targetEntity: Sil\Bundle\VarietyBundle\Entity\VarietyInterface
+            targetEntity: VarietyBundle\Entity\VarietyInterface
             inversedBy: products

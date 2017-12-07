@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Sil\Bundle\VarietyBundle\Entity;
+namespace VarietyBundle\Entity;
 
 /**
  * VarietyDescription.
@@ -24,14 +24,14 @@ class VarietyDescription extends GenericDescription
     const DESCRIPTION_PROFESSIONAL = 'professional';
 
     /**
-     * @var \Sil\Bundle\VarietyBundle\Entity\Variety
+     * @var \VarietyBundle\Entity\Variety
      */
     protected $variety;
 
     /**
      * Set variety.
      *
-     * @param \Sil\Bundle\VarietyBundle\Entity\Variety $variety
+     * @param \VarietyBundle\Entity\Variety $variety
      *
      * @return VarietyDescription
      */
@@ -45,7 +45,7 @@ class VarietyDescription extends GenericDescription
     /**
      * Get variety.
      *
-     * @return \Sil\Bundle\VarietyBundle\Entity\Variety
+     * @return \VarietyBundle\Entity\Variety
      */
     public function getVariety()
     {

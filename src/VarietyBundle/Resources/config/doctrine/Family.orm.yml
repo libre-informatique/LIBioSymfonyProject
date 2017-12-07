@@ -1,4 +1,4 @@
-Sil\Bundle\VarietyBundle\Entity\Family:
+VarietyBundle\Entity\Family:
     type: mappedSuperclass
     table: lisem_variety_family
     blast:
@@ -13,7 +13,7 @@ Sil\Bundle\VarietyBundle\Entity\Family:
 
     oneToMany:
         genuses:
-            targetEntity: Sil\Bundle\VarietyBundle\Entity\GenusInterface
+            targetEntity: VarietyBundle\Entity\GenusInterface
             mappedBy: family
             cascade: [ persist ]
 

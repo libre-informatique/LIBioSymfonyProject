@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace Sil\Bundle\VarietyBundle\Entity\Test\Unit;
+namespace VarietyBundle\Entity\Test\Unit;
 
 use PHPUnit\Framework\TestCase;
-use Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionAmateur;
-use Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionCommercial;
-use Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionCulture;
-use Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionPlant;
-use Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionProfessional;
+use VarietyBundle\Entity\VarietyDescriptionAmateur;
+use VarietyBundle\Entity\VarietyDescriptionCommercial;
+use VarietyBundle\Entity\VarietyDescriptionCulture;
+use VarietyBundle\Entity\VarietyDescriptionPlant;
+use VarietyBundle\Entity\VarietyDescriptionProfessional;
 
 class VarietyDescriptionAllTest extends TestCase
 {
@@ -43,7 +43,7 @@ class VarietyDescriptionAllTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionAmateur::getFieldset
+     * @covers \VarietyBundle\Entity\VarietyDescriptionAmateur::getFieldset
      */
     public function testGetFieldsetAmateur()
     {
@@ -52,7 +52,7 @@ class VarietyDescriptionAllTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionCommercial::getFieldset
+     * @covers \VarietyBundle\Entity\VarietyDescriptionCommercial::getFieldset
      */
     public function testGetFieldsetCommercial()
     {
@@ -61,7 +61,7 @@ class VarietyDescriptionAllTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionCulture::getFieldset
+     * @covers \VarietyBundle\Entity\VarietyDescriptionCulture::getFieldset
      */
     public function testGetFieldsetCulture()
     {
@@ -70,7 +70,7 @@ class VarietyDescriptionAllTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionPlant::getFieldset
+     * @covers \VarietyBundle\Entity\VarietyDescriptionPlant::getFieldset
      */
     public function testGetFieldsetPlant()
     {
@@ -79,7 +79,7 @@ class VarietyDescriptionAllTest extends TestCase
     }
 
     /**
-     * @covers \Sil\Bundle\VarietyBundle\Entity\VarietyDescriptionProfessional::getFieldset
+     * @covers \VarietyBundle\Entity\VarietyDescriptionProfessional::getFieldset
      */
     public function testGetFieldsetProfessional()
     {

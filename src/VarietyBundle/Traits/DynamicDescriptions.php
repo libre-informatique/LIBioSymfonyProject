@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Sil\Bundle\VarietyBundle\Traits;
+namespace VarietyBundle\Traits;
 
 use Sonata\AdminBundle\Form\FormMapper;
-use Sil\Bundle\VarietyBundle\EventListener\VarietyDescriptionsFormEventSubscriber;
+use VarietyBundle\EventListener\VarietyDescriptionsFormEventSubscriber;
 
 trait DynamicDescriptions
 {
@@ -22,7 +22,7 @@ trait DynamicDescriptions
     protected function configureDynamicDescriptions($formMapper)
     {
         // Manage dynamic descriptions according to configuration settings
-        $config = $this->getConfigurationPool()->getContainer()->getParameter('sil_variety')['variety_descriptions'];
+        $config = $this->getConfigurationPool()->getContainer()->getParameter('variety')['variety_descriptions'];
         $admin = $this;
 
         $formMapper->getFormBuilder()->addEventSubscriber(new VarietyDescriptionsFormEventSubscriber($admin, $config));
@@ -30,7 +30,7 @@ trait DynamicDescriptions
 
     protected function configureShowDescriptions($showMapper)
     {
-        $config = $this->getConfigurationPool()->getContainer()->getParameter('sil_variety')['variety_descriptions'];
+        $config = $this->getConfigurationPool()->getContainer()->getParameter('variety')['variety_descriptions'];
 
         foreach ($config as $fieldset => $fields) {
             if (!$this->getSubject()) {

@@ -2,3 +2,18 @@ doctrine_migrations:
     dir_name:           '%kernel.project_dir%/src/LisemBundle/Migrations'
     table_name:         lisem_migration_versions
     custom_template:    '%kernel.project_dir%/vendor/sil-project/platform/src/PlatformBundle/Resources/views/skeleton/migration_template.skeleton'
+
+doctrine:
+    orm:
+        resolve_target_entities:
+
+            Sil\Bundle\CRMBundle\Entity\OrganismInterface:       "%sil_crm.entity.organism.class%"
+            # VarietyBundle
+
+            VarietyBundle\Entity\FamilyInterface:                "%variety.entity.family.class%"
+            VarietyBundle\Entity\VarietyInterface:               "%variety.entity.variety.class%"
+            VarietyBundle\Entity\SpeciesInterface:               "%variety.entity.species.class%"
+            VarietyBundle\Entity\GenusInterface:                 "%variety.entity.genus.class%"
+            # SilSeedBatchBundle
+
+            SeedBatchBundle\Entity\SeedBatchInterface:           "%seed_batch.entity.seed_batch.class%"

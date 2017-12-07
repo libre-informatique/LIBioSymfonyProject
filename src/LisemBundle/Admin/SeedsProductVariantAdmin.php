@@ -57,7 +57,7 @@ class SeedsProductVariantAdmin extends ProductVariantAdmin
             },
             'translation_domain' => 'messages',
         ];
-        $fieldDescriptionOptions = ['admin_code' => 'sil_seed_batch.admin.seed_batch', 'translation_domain' => 'messages'];
+        $fieldDescriptionOptions = ['admin_code' => 'seed_batch.admin.seed_batch', 'translation_domain' => 'messages'];
         $mapper->add('seedBatches', 'sonata_type_model_autocomplete', $options, $fieldDescriptionOptions);
 
         $mapper->end()->end();

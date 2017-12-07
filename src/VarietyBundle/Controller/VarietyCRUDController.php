@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Sil\Bundle\VarietyBundle\Controller;
+namespace VarietyBundle\Controller;
 
 use Blast\Bundle\CoreBundle\Exception\InvalidEntityCodeException;
 use Blast\Bundle\UtilsBundle\Form\Type\CustomChoiceType;
 use Sil\Bundle\MediaBundle\Controller\CRUDController as BaseCRUDController;
-use Sil\Bundle\VarietyBundle\Entity\SpeciesInterface;
+use VarietyBundle\Entity\SpeciesInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -94,7 +94,7 @@ class VarietyCRUDController extends BaseCRUDController
         $fieldSet = $request->get('fieldset');
         $field = $request->get('field');
 
-        $config = $this->admin->getConfigurationPool()->getContainer()->getParameter('sil_variety');
+        $config = $this->admin->getConfigurationPool()->getContainer()->getParameter('variety');
         $fieldConfig = $config['variety_descriptions'][$fieldSet][$field];
         $choiceType = CustomChoiceType::class;
         $options = $fieldConfig['options'];
@@ -146,7 +146,7 @@ class VarietyCRUDController extends BaseCRUDController
         ;
 
         return $this->render(
-            'SilVarietyBundle:Form:filter_widget.html.twig',
+            'VarietyBundle:Form:filter_widget.html.twig',
             array(
                 'form' => $view,
             ),

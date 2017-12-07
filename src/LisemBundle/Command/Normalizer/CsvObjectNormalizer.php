@@ -14,10 +14,10 @@ namespace LisemBundle\Command\Normalizer;
 
 use LisemBundle\Command\NameConverter\CsvNameConverter;
 use Doctrine\ORM\EntityManager;
-use Sil\Bundle\VarietyBundle\Entity\Family;
-use Sil\Bundle\VarietyBundle\Entity\Genus;
-use Sil\Bundle\VarietyBundle\Entity\Species;
-use Sil\Bundle\VarietyBundle\Entity\Variety;
+use VarietyBundle\Entity\Family;
+use VarietyBundle\Entity\Genus;
+use VarietyBundle\Entity\Species;
+use VarietyBundle\Entity\Variety;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 
 /**

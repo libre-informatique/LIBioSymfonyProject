@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Sil\Bundle\SeedBatchBundle\Entity\Association;
+namespace SeedBatchBundle\Entity\Association;
 
-use Sil\Bundle\SeedBatchBundle\Entity\SeedBatchInterface;
+use SeedBatchBundle\Entity\SeedBatchInterface;
 
 trait HasSeedBatchTrait
 {

@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Sil\Bundle\SeedBatchBundle\Controller;
+namespace SeedBatchBundle\Controller;
 
 use Sil\Bundle\CRMBundle\Controller\OrganismAdminController as CRUDController;
 

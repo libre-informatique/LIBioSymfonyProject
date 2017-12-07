@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Sil\Bundle\SeedBatchBundle\Admin;
+namespace SeedBatchBundle\Admin;
 
 use Sil\Bundle\CRMBundle\Entity\Organism;
 use Sil\Bundle\EmailCRMBundle\Admin\OrganismAdmin as BaseOrganismAdmin;
@@ -25,7 +25,7 @@ class OrganismAdmin extends BaseOrganismAdmin
     //  * @var string
     //  */
     // protected $translationLabelPrefix = 'sil.seed_batch.organism';
-    protected $baseRouteName = 'admin_sil_seed_batch_organism';
+    protected $baseRouteName = 'admin_seed_batch_organism';
     protected $baseRoutePattern = 'sil/seedbatch/organism';
 
     /**

@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Sil\Bundle\VarietyBundle\Form\DataTransformer;
+namespace VarietyBundle\Form\DataTransformer;
 
 use Symfony\Component\Form\DataTransformerInterface;
 

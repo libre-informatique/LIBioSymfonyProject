@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace Sil\Bundle\VarietyBundle\Form\Type;
+namespace VarietyBundle\Form\Type;
 
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\OptionsResolver\Options;
 use Doctrine\ORM\EntityManager;
 use Blast\Bundle\CoreBundle\Form\AbstractType as BaseAbstractType;
-use Sil\Bundle\VarietyBundle\Form\ChoiceLoader\VarietyDescriptionChoiceLoader;
+use VarietyBundle\Form\ChoiceLoader\VarietyDescriptionChoiceLoader;
 
 class VarietyDescriptionType extends BaseAbstractType
 {
@@ -37,7 +37,7 @@ class VarietyDescriptionType extends BaseAbstractType
 
     public function getBlockPrefix()
     {
-        return 'sil_variety_description';
+        return 'variety_description';
     }
 
     public function configureOptions(OptionsResolver $resolver)

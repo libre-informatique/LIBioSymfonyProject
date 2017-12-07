@@ -1,4 +1,4 @@
-Sil\Bundle\VarietyBundle\Entity\Species:
+VarietyBundle\Entity\Species:
     properties:
         varieties:
             exclude: true

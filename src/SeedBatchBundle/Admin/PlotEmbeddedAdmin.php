@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Sil\Bundle\SeedBatchBundle\Admin;
+namespace SeedBatchBundle\Admin;
 
 use Sonata\AdminBundle\Form\FormMapper;
 
@@ -23,7 +23,7 @@ class PlotEmbeddedAdmin extends PlotAdmin
      * @var string
      */
     protected $translationLabelPrefix = 'sil.seed_batch.plot';
-    protected $baseRouteName = 'admin_sil_seed_batch_plot_embedded';
+    protected $baseRouteName = 'admin_seed_batch_plot_embedded';
     protected $baseRoutePattern = 'sil/seedbatch/plot_embedded';
 
     public function configureFormFields(FormMapper $mapper)

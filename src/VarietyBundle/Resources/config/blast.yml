@@ -4,7 +4,7 @@ parameters:
 # FAMILY
 ##########
 
-        Sil\Bundle\VarietyBundle\Entity\FamilyInterface:
+        VarietyBundle\Entity\FamilyInterface:
             Sonata\AdminBundle\Show\ShowMapper:
                 remove:
                     name: ~
@@ -19,7 +19,7 @@ parameters:
                             alias: ~
                             description: ~
                             genuses:
-                                admin_code: sil_variety.admin.genus
+                                admin_code: variety.admin.genus
                     form_group_specifics:
                         form_group_misc:
                             createdAt: ~
@@ -78,7 +78,7 @@ parameters:
                     #                 edit: inline
                     #                 inline: table
                     #                 allow_delete: false
-                    #                 admin_code: sil_variety.admin.genus_embedded
+                    #                 admin_code: variety.admin.genus_embedded
                     _options:
                         tabsOrder: [form_group_general, form_group_genuses]
                     _helper_links:
@@ -96,7 +96,7 @@ parameters:
                     latin_name: ~
                     alias: ~
                     genuses:
-                        admin_code: sil_variety.admin.genus
+                        admin_code: variety.admin.genus
                     _helper_links:
                         - url: https://framacalc.org/libio_validation_varietes
                           title: Framacalc de validation (Variétés)
@@ -110,7 +110,7 @@ parameters:
 # GENUS
 ##########
 
-        Sil\Bundle\VarietyBundle\Entity\GenusInterface:
+        VarietyBundle\Entity\GenusInterface:
             Sonata\AdminBundle\Show\ShowMapper:
                 remove: [description, createdAt, updatedAt]
                 add:
@@ -120,7 +120,7 @@ parameters:
                             alias: ~
                             description: ~
                             specieses:
-                                admin_code: sil_variety.admin.species
+                                admin_code: variety.admin.species
                     form_group_specifics:
                         form_group_misc:
                             createdAt: ~
@@ -183,7 +183,7 @@ parameters:
                     #                 edit: inline
                     #                 # inline: table
                     #                 allow_delete: false
-                    #                 admin_code: sil_variety.admin.species_embedded
+                    #                 admin_code: variety.admin.species_embedded
                     _options:
                         tabsOrder: [form_tab_general]
                     _helper_links:
@@ -202,7 +202,7 @@ parameters:
                     family: ~
                     description: ~
                     specieses:
-                        admin_code: sil_variety.admin.species
+                        admin_code: variety.admin.species
                     _options:
                         fieldsOrder:
                             - name
@@ -226,7 +226,7 @@ parameters:
 # PLANT CATEGORY
 #################
 
-        Sil\Bundle\VarietyBundle\Entity\PlantCategory:
+        VarietyBundle\Entity\PlantCategory:
             Sonata\AdminBundle\Show\ShowMapper:
                 _copy: Sonata\AdminBundle\Form\FormMapper
                 add:
@@ -255,7 +255,7 @@ parameters:
                                     width: 45
                             treeParent:
                                 type: Blast\Bundle\BaseEntitiesBundle\Form\Type\NestedTreeableType
-                                class: Sil\Bundle\VarietyBundle\Entity\PlantCategory
+                                class: VarietyBundle\Entity\PlantCategory
                                 required: false
                                 placeholder: ''
                     _helper_links:
@@ -279,7 +279,7 @@ parameters:
 # SPECIES
 ##########
 
-        Sil\Bundle\VarietyBundle\Entity\SpeciesInterface:
+        VarietyBundle\Entity\SpeciesInterface:
             Sonata\AdminBundle\Show\ShowMapper:
                 forceTabs: true
                 remove:
@@ -293,17 +293,17 @@ parameters:
                             latin_name: ~
                             alias: ~
                             genus:
-                                admin_code: sil_variety.admin.genus
+                                admin_code: variety.admin.genus
                             parent_species:
-                                admin_code: sil_variety.admin.species_embedded
+                                admin_code: variety.admin.species_embedded
                             subspecieses:
-                                admin_code: sil_variety.admin.species_embedded
+                                admin_code: variety.admin.species_embedded
                             plant_categories: ~
                             life_cycle:
                                 type: trans
                                 catalogue: varieties
                             varieties:
-                                admin_code: sil_variety.admin.variety
+                                admin_code: variety.admin.variety
                             description:
                                 template: BlastCoreBundle:CRUD:show_field_tinymce.html.twig
                             legal_germination_rate: ~
@@ -328,7 +328,7 @@ parameters:
                             genus:
                                 type: sonata_type_model
                                 _options:
-                                    admin_code: sil_variety.admin.genus
+                                    admin_code: variety.admin.genus
                                 attr:
                                     class: inline-block
                                     width: 50
@@ -337,7 +337,7 @@ parameters:
                                 property: name
                                 required: false
                                 _options:
-                                    admin_code: sil_variety.admin.species_embedded
+                                    admin_code: variety.admin.species_embedded
                                 attr:
                                     class: inline-block
                                     width: 50
@@ -368,7 +368,7 @@ parameters:
                                     width: 50
                             plant_categories:
                                 type: Blast\Bundle\BaseEntitiesBundle\Form\Type\NestedTreeableType
-                                class: Sil\Bundle\VarietyBundle\Entity\PlantCategory
+                                class: VarietyBundle\Entity\PlantCategory
                                 required: false
                                 multiple: true
                                 attr:
@@ -410,7 +410,7 @@ parameters:
                                     class: inline-block
                                     width: 50
                             life_cycle:
-                                type: Sil\Bundle\VarietyBundle\Form\Type\LifeCycleType
+                                type: VarietyBundle\Form\Type\LifeCycleType
                                 required: false
                                 attr:
                                     class: inline-block
@@ -475,7 +475,7 @@ parameters:
 # SPECIES EMBEDDED
 ###################
 
-        Sil\Bundle\VarietyBundle\Admin\SpeciesEmbeddedAdmin:
+        VarietyBundle\Admin\SpeciesEmbeddedAdmin:
             Sonata\AdminBundle\Show\ShowMapper:
                 add: ~
             Sonata\AdminBundle\Form\FormMapper:
@@ -502,7 +502,7 @@ parameters:
                             genus:
                                 type: sonata_type_model
                                 _options:
-                                    admin_code: sil_variety.admin.genus
+                                    admin_code: variety.admin.genus
                                 attr:
                                     class: new-line
                                     width: 30
@@ -511,7 +511,7 @@ parameters:
                                 property: name
                                 required: false
                                 _options:
-                                    admin_code: sil_variety.admin.species_embedded
+                                    admin_code: variety.admin.species_embedded
                                 attr:
                                     class: new-line
                                     width: 30
@@ -548,7 +548,7 @@ parameters:
 
                             plant_categories:
                                 type: Blast\Bundle\BaseEntitiesBundle\Form\Type\NestedTreeableType
-                                class: Sil\Bundle\VarietyBundle\Entity\PlantCategory
+                                class: VarietyBundle\Entity\PlantCategory
                                 required: false
                                 multiple: true
                                 attr:
@@ -568,7 +568,7 @@ parameters:
                                     class: new-line
                                     width: 30
                             life_cycle:
-                                type: Sil\Bundle\VarietyBundle\Form\Type\LifeCycleType
+                                type: VarietyBundle\Form\Type\LifeCycleType
                                 required: false
                                 attr:
                                     class: new-line
@@ -599,9 +599,9 @@ parameters:
 # VARIETY
 ###############
 
-        Sil\Bundle\VarietyBundle\Entity\VarietyInterface:
+        VarietyBundle\Entity\VarietyInterface:
             Sonata\AdminBundle\Show\ShowMapper:
-                titleTemplate: SilVarietyBundle:VarietyAdmin:show_title.html.twig
+                titleTemplate: VarietyBundle:VarietyAdmin:show_title.html.twig
                 forceTabs: true
                 remove:
                     description: ~
@@ -612,9 +612,9 @@ parameters:
                             name: ~
                             code: ~
                             species:
-                                admin_code: sil_variety.admin.species
+                                admin_code: variety.admin.species
                             parent:
-                                admin_code: sil_variety.admin.variety
+                                admin_code: variety.admin.variety
                             latin_name: ~
                             alias: ~
                             code: ~
@@ -673,7 +673,7 @@ parameters:
                     form_tab_strains:
                         '':
                             children:
-                                admin_code: sil_variety.admin.variety
+                                admin_code: variety.admin.variety
                     form_tab_images:
                         '':
                             images:
@@ -692,7 +692,7 @@ parameters:
                             - form_tab_strains
                             - form_tab_images
             Sonata\AdminBundle\Form\FormMapper:
-                titleTemplate: SilVarietyBundle:VarietyAdmin:edit_title.html.twig
+                titleTemplate: VarietyBundle:VarietyAdmin:edit_title.html.twig
                 remove:
                     description: ~
                     legal_germination_rate: ~
@@ -730,7 +730,7 @@ parameters:
                                     strain_disabled: true
                                     inherit: source
                                 _options:
-                                    admin_code: sil_variety.admin.species
+                                    admin_code: variety.admin.species
                             plant_type:
                                 type: Blast\Bundle\UtilsBundle\Form\Type\CustomChoiceType
                                 choices_field: plant_type
@@ -752,7 +752,7 @@ parameters:
                                     strain_field: true
                                     strain_disabled: true
                                 _options:
-                                    admin_code: sil_variety.admin.variety
+                                    admin_code: variety.admin.variety
                             name:
                                 type: Blast\Bundle\UtilsBundle\Form\Type\UniqueFieldType
                                 return_link: true
@@ -783,7 +783,7 @@ parameters:
                                     width: 50
                             plant_categories:
                                 type: Blast\Bundle\BaseEntitiesBundle\Form\Type\NestedTreeableType
-                                class: Sil\Bundle\VarietyBundle\Entity\PlantCategory
+                                class: VarietyBundle\Entity\PlantCategory
                                 required: false
                                 multiple: true
                                 attr:
@@ -846,7 +846,7 @@ parameters:
                                     class: new-line
                                     width: 100
                             life_cycle:
-                                type: Sil\Bundle\VarietyBundle\Form\Type\LifeCycleType
+                                type: VarietyBundle\Form\Type\LifeCycleType
                                 required: false
                                 attr:
                                     class: inline-block
@@ -1059,14 +1059,14 @@ parameters:
             Sonata\AdminBundle\Datagrid\DatagridMapper:
                 add:
                     species:
-                        admin_code: sil_variety.admin.species
+                        admin_code: variety.admin.species
                     name: ~
                     code: ~
                     latin_name: ~
                     code: ~
                     alias: ~
                     parent:
-                        admin_code: sil_variety.admin.variety
+                        admin_code: variety.admin.variety
                     plant_categories: ~
                     legal_germination_rate: ~
                     germination_rate: ~
@@ -1097,19 +1097,19 @@ parameters:
                     selection_criteria:
                         global_search: false
                     professional_descriptions:
-                        type: doctrine_orm_sil_variety_description
+                        type: doctrine_orm_variety_description
                     amateur_descriptions:
-                        type: doctrine_orm_sil_variety_description
+                        type: doctrine_orm_variety_description
                     production_descriptions:
-                        type: doctrine_orm_sil_variety_description
+                        type: doctrine_orm_variety_description
                     commercial_descriptions:
-                        type: doctrine_orm_sil_variety_description
+                        type: doctrine_orm_variety_description
                     plant_descriptions:
-                        type: doctrine_orm_sil_variety_description
+                        type: doctrine_orm_variety_description
                     culture_descriptions:
-                        type: doctrine_orm_sil_variety_description
+                        type: doctrine_orm_variety_description
                     inner_descriptions:
-                        type: doctrine_orm_sil_variety_description
+                        type: doctrine_orm_variety_description
 
             Sonata\AdminBundle\Datagrid\ListMapper:
                 remove:
@@ -1118,10 +1118,10 @@ parameters:
                 add:
                     name:
                         identifier: true
-                        template: SilVarietyBundle:VarietyAdmin:list_field_name.html.twig
+                        template: VarietyBundle:VarietyAdmin:list_field_name.html.twig
                     code:
                         identifier: true
-                        template: SilVarietyBundle:VarietyAdmin:list_field_code.html.twig
+                        template: VarietyBundle:VarietyAdmin:list_field_code.html.twig
                     latin_name: ~
                     is_strain:
                         type: boolean
@@ -1129,7 +1129,7 @@ parameters:
                         type: boolean
                     _actions:
                         strain:
-                            template: SilVarietyBundle:CRUD:list__action_strain.html.twig
+                            template: VarietyBundle:CRUD:list__action_strain.html.twig
                     _options:
                         fieldsOrder:
                             - code
@@ -1141,7 +1141,7 @@ parameters:
 # VARIETY DESCRIPTION
 #####################
 
-        Sil\Bundle\VarietyBundle\Entity\VarietyDescription:
+        VarietyBundle\Entity\VarietyDescription:
             Sonata\AdminBundle\Show\ShowMapper:
                 add:
 #                    field: ~

@@ -13,12 +13,12 @@ namespace LisemBundle\DataFixtures\Sylius\Factory;
 
 use Doctrine\ORM\EntityManager;
 use Sil\Bundle\CRMBundle\Entity\OrganismInterface;
-use Sil\Bundle\SeedBatchBundle\CodeGenerator\PlotCodeGenerator;
-use Sil\Bundle\SeedBatchBundle\CodeGenerator\SeedBatchCodeGenerator;
-use Sil\Bundle\SeedBatchBundle\CodeGenerator\SeedProducerCodeGenerator;
-use Sil\Bundle\SeedBatchBundle\Entity\Plot;
-use Sil\Bundle\SeedBatchBundle\Entity\SeedFarm;
-use Sil\Bundle\VarietyBundle\Entity\VarietyInterface;
+use SeedBatchBundle\CodeGenerator\PlotCodeGenerator;
+use SeedBatchBundle\CodeGenerator\SeedBatchCodeGenerator;
+use SeedBatchBundle\CodeGenerator\SeedProducerCodeGenerator;
+use SeedBatchBundle\Entity\Plot;
+use SeedBatchBundle\Entity\SeedFarm;
+use VarietyBundle\Entity\VarietyInterface;
 use Sylius\Bundle\CoreBundle\Fixture\Factory\ExampleFactoryInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 

@@ -13,7 +13,7 @@ namespace LisemBundle\Entity\SilEcommerceBundle;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Sil\Bundle\StockBundle\Domain\Entity\StockItemInterface;
-use Sil\Bundle\SeedBatchBundle\Entity\Association\HasSeedBatchesTrait;
+use SeedBatchBundle\Entity\Association\HasSeedBatchesTrait;
 use Sil\Bundle\EcommerceBundle\Entity\ProductVariant as BaseProductVariant;
 
 class ProductVariant extends BaseProductVariant

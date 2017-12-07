@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Sil\Bundle\VarietyBundle\Entity\Repository;
+namespace VarietyBundle\Entity\Repository;
 
 use Doctrine\ORM\EntityRepository;
 

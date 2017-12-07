@@ -16,7 +16,7 @@ use Sylius\Bundle\CoreBundle\Fixture\TaxonFixture;
 use Sylius\Bundle\FixturesBundle\Fixture\AbstractFixture;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Sil\Bundle\VarietyBundle\Entity\VarietyInterface;
+use VarietyBundle\Entity\VarietyInterface;
 
 /**
  * @author Kamil Kokot <kamil.kokot@lakion.com>

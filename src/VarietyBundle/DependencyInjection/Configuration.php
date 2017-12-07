@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Sil\Bundle\VarietyBundle\DependencyInjection;
+namespace VarietyBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -27,7 +27,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('sil_variety');
+        $rootNode = $treeBuilder->root('variety');
 
         // Here you should define the parameters that are allowed to
         // configure your bundle. See the documentation linked above for
@@ -37,8 +37,8 @@ class Configuration implements ConfigurationInterface
                 ->arrayNode('code_generator')
                     ->addDefaultsIfNotSet()
                     ->children()
-                        ->scalarNode('species')->defaultValue('Sil\Bundle\VarietyBundle\CodeGenerator\SpeciesCodeGenerator')->end()
-                        ->scalarNode('variety')->defaultValue('Sil\Bundle\VarietyBundle\CodeGenerator\VarietyCodeGenerator')->end()
+                        ->scalarNode('species')->defaultValue('VarietyBundle\CodeGenerator\SpeciesCodeGenerator')->end()
+                        ->scalarNode('variety')->defaultValue('VarietyBundle\CodeGenerator\VarietyCodeGenerator')->end()
                     ->end()
                 ->end()
                 ->arrayNode('variety_descriptions')

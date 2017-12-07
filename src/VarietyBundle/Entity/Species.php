@@ -1,15 +1,16 @@
 <?php
 
 /*
+ * This file is part of the Lisem Project.
  *
  * Copyright (C) 2015-2017 Libre Informatique
  *
- * This file is licenced under the GNU LGPL v3.
+ * This file is licenced under the GNU GPL v3.
  * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
-namespace Sil\Bundle\VarietyBundle\Entity;
+namespace VarietyBundle\Entity;
 
 use Blast\Bundle\BaseEntitiesBundle\Entity\Traits\BaseEntity;
 use Blast\Bundle\BaseEntitiesBundle\Entity\Traits\Descriptible;
@@ -17,6 +18,7 @@ use Blast\Bundle\BaseEntitiesBundle\Entity\Traits\Jsonable;
 use Blast\Bundle\BaseEntitiesBundle\Entity\Traits\Nameable;
 use Blast\Bundle\BaseEntitiesBundle\Entity\Traits\Timestampable;
 use Doctrine\Common\Collections\ArrayCollection;
+use Sil\Bundle\SonataSyliusUserBundle\Entity\Traits\Traceable;
 
 /**
  * Species.
@@ -27,7 +29,8 @@ class Species implements \JsonSerializable, SpeciesInterface
         Nameable,
         Timestampable,
         Descriptible,
-        Jsonable
+        Jsonable,
+        Traceable
     ;
 
     /**
@@ -86,12 +89,12 @@ class Species implements \JsonSerializable, SpeciesInterface
     protected $varieties;
 
     /**
-     * @var \Sil\Bundle\VarietyBundle\Entity\Genus
+     * @var \VarietyBundle\Entity\Genus
      */
     protected $genus;
 
     /**
-     * @var \Sil\Bundle\VarietyBundle\Entity\Species
+     * @var \VarietyBundle\Entity\Species
      */
     protected $parent_species;
 
@@ -361,11 +364,11 @@ class Species implements \JsonSerializable, SpeciesInterface
     /**
      * Set genus.
      *
-     * @param \Sil\Bundle\VarietyBundle\Entity\Genus $genus
+     * @param \VarietyBundle\Entity\Genus $genus
      *
      * @return Species
      */
-    public function setGenus(\Sil\Bundle\VarietyBundle\Entity\Genus $genus = null)
+    public function setGenus(\VarietyBundle\Entity\Genus $genus = null)
     {
         $this->genus = $genus;
 
@@ -375,7 +378,7 @@ class Species implements \JsonSerializable, SpeciesInterface
     /**
      * Get genus.
      *
-     * @return \Sil\Bundle\VarietyBundle\Entity\Genus
+     * @return \VarietyBundle\Entity\Genus
      */
     public function getGenus()
     {
@@ -385,11 +388,11 @@ class Species implements \JsonSerializable, SpeciesInterface
     /**
      * Add variety.
      *
-     * @param \Sil\Bundle\VarietyBundle\Entity\Variety $variety
+     * @param \VarietyBundle\Entity\Variety $variety
      *
      * @return Species
      */
-    public function addVariety(\Sil\Bundle\VarietyBundle\Entity\Variety $variety)
+    public function addVariety(\VarietyBundle\Entity\Variety $variety)
     {
         $variety->setSpecies($this);
         $this->varieties->add($variety);
@@ -400,11 +403,11 @@ class Species implements \JsonSerializable, SpeciesInterface
     /**
      * Remove variety.
      *
-     * @param \Sil\Bundle\VarietyBundle\Entity\Variety $variety
+     * @param \VarietyBundle\Entity\Variety $variety
      *
      * @return bool tRUE if this collection contained the specified element, FALSE otherwise
      */
-    public function removeVariety(\Sil\Bundle\VarietyBundle\Entity\Variety $variety)
+    public function removeVariety(\VarietyBundle\Entity\Variety $variety)
     {
         return $this->varieties->removeElement($variety);
     }
@@ -422,11 +425,11 @@ class Species implements \JsonSerializable, SpeciesInterface
     /**
      * Add subspecies.
      *
-     * @param \Sil\Bundle\VarietyBundle\Entity\Species $subspecies
+     * @param \VarietyBundle\Entity\Species $subspecies
      *
      * @return Species
      */
-    public function addSubspecies(\Sil\Bundle\VarietyBundle\Entity\Species $subspecies)
+    public function addSubspecies(\VarietyBundle\Entity\Species $subspecies)
     {
         $subspecies->setParentSpecies($this);
         $this->subspecieses[] = $subspecies;
@@ -437,11 +440,11 @@ class Species implements \JsonSerializable, SpeciesInterface
     /**
      * Remove subspecies.
      *
-     * @param \Sil\Bundle\VarietyBundle\Entity\Species $subspecies
+     * @param \VarietyBundle\Entity\Species $subspecies
      *
      * @return bool tRUE if this collection contained the specified element, FALSE otherwise
      */
-    public function removeSubspeciese(\Sil\Bundle\VarietyBundle\Entity\Species $subspecies)
+    public function removeSubspeciese(\VarietyBundle\Entity\Species $subspecies)
     {
         return $this->subspecieses->removeElement($subspecies);
     }
@@ -469,11 +472,11 @@ class Species implements \JsonSerializable, SpeciesInterface
     /**
      * Set parentSpecies.
      *
-     * @param \Sil\Bundle\VarietyBundle\Entity\Species $parentSpecies
+     * @param \VarietyBundle\Entity\Species $parentSpecies
      *
      * @return Species
      */
-    public function setParentSpecies(\Sil\Bundle\VarietyBundle\Entity\Species $parentSpecies = null)
+    public function setParentSpecies(\VarietyBundle\Entity\Species $parentSpecies = null)
     {
         $this->parent_species = $parentSpecies;
 
@@ -483,7 +486,7 @@ class Species implements \JsonSerializable, SpeciesInterface
     /**
      * Get parentSpecies.
      *
-     * @return \Sil\Bundle\VarietyBundle\Entity\Species
+     * @return \VarietyBundle\Entity\Species
      */
     public function getParentSpecies()
     {
@@ -514,11 +517,11 @@ class Species implements \JsonSerializable, SpeciesInterface
     /**
      * Add plantCategory.
      *
-     * @param \Sil\Bundle\VarietyBundle\Entity\PlantCategory $plantCategory
+     * @param \VarietyBundle\Entity\PlantCategory $plantCategory
      *
      * @return Variety
      */
-    public function addPlantCategory(\Sil\Bundle\VarietyBundle\Entity\PlantCategory $plantCategory)
+    public function addPlantCategory(\VarietyBundle\Entity\PlantCategory $plantCategory)
     {
         $this->plant_categories[] = $plantCategory;
 
@@ -528,11 +531,11 @@ class Species implements \JsonSerializable, SpeciesInterface
     /**
      * Remove plantCategory.
      *
-     * @param \Sil\Bundle\VarietyBundle\Entity\PlantCategory $plantCategory
+     * @param \VarietyBundle\Entity\PlantCategory $plantCategory
      *
      * @return bool tRUE if this collection contained the specified element, FALSE otherwise
      */
-    public function removePlantCategory(\Sil\Bundle\VarietyBundle\Entity\PlantCategory $plantCategory)
+    public function removePlantCategory(\VarietyBundle\Entity\PlantCategory $plantCategory)
     {
         return $this->plant_categories->removeElement($plantCategory);
     }

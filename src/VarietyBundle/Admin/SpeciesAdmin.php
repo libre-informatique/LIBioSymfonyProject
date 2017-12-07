@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Sil\Bundle\VarietyBundle\Admin;
+namespace VarietyBundle\Admin;
 
 use Sonata\CoreBundle\Validator\ErrorElement;
 use Blast\Bundle\CoreBundle\Admin\CoreAdmin;
-use Sil\Bundle\VarietyBundle\Entity\Species;
+use VarietyBundle\Entity\Species;
 
 class SpeciesAdmin extends CoreAdmin
 {
@@ -42,7 +42,7 @@ class SpeciesAdmin extends CoreAdmin
      */
     public function validateSpeciesCode(ErrorElement $errorElement, $object)
     {
-        $generator = $this->getConfigurationPool()->getContainer()->get('sil_variety.code_generator.species');
+        $generator = $this->getConfigurationPool()->getContainer()->get('variety.code_generator.species');
         if (!$generator->validate($object->getCode())) {
             $errorElement
                 ->with('code')

@@ -42,7 +42,7 @@ class StockOperationAdmin extends BaseStockOperationAdmin
             [
                 'choices'      => $parters,
                 'choice_label' => 'fulltextName',
-            ], ['admin_code' => 'sil_seed_batch.admin.organism']
+            ], ['admin_code' => 'seed_batch.admin.organism']
         );
     }
 

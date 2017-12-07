@@ -12,7 +12,7 @@
 # width: in %
 # height: in px
 
-sil_variety:
+variety:
     variety_descriptions:
 ########### CONSEILS PROS ##################
         professional:

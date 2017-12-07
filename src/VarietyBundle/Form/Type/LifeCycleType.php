@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Sil\Bundle\VarietyBundle\Form\Type;
+namespace VarietyBundle\Form\Type;
 
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Blast\Bundle\CoreBundle\Form\AbstractType as BaseAbstractType;
-use Sil\Bundle\VarietyBundle\Entity\LifeCycle;
+use VarietyBundle\Entity\LifeCycle;
 
 class LifeCycleType extends BaseAbstractType
 {

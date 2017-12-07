@@ -5,7 +5,9 @@
     "description": "LISem is an ERP specialized for seeds producers and craftsmen.",
     "autoload": {
         "psr-4": {
-            "LisemBundle\\": "src/LisemBundle/"
+            "LisemBundle\\": "src/LisemBundle/",
+            "SeedBatchBundle\\": "src/SeedBatchBundle/",
+            "VarietyBundle\\": "src/VarietyBundle/"
         },
         "classmap": [
             "app/AppKernel.php",

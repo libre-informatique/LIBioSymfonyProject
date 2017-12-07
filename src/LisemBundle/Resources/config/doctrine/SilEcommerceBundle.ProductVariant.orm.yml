@@ -3,5 +3,5 @@ LisemBundle\Entity\SilEcommerceBundle\ProductVariant:
     table: sil_ecommerce_product_variant
     manyToMany:
         seedBatches:
-            targetEntity: Sil\Bundle\SeedBatchBundle\Entity\SeedBatchInterface
+            targetEntity: SeedBatchBundle\Entity\SeedBatchInterface
             mappedBy: productVariants

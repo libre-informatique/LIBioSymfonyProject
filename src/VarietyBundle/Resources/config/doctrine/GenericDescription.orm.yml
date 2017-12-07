@@ -1,4 +1,4 @@
-Sil\Bundle\VarietyBundle\Entity\GenericDescription:
+VarietyBundle\Entity\GenericDescription:
     type: mappedSuperclass
     table: lisem_variety_description_generic
     fields:

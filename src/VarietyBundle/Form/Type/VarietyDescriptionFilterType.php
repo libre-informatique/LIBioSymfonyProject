@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Sil\Bundle\VarietyBundle\Form\Type;
+namespace VarietyBundle\Form\Type;
 
 use Blast\Bundle\CoreBundle\Form\AbstractType as BaseAbstractType;
 use Doctrine\ORM\EntityManager;
@@ -61,6 +61,6 @@ class VarietyDescriptionFilterType extends BaseAbstractType
 
     public function getBlockPrefix()
     {
-        return 'sil_variety_description_filter';
+        return 'variety_description_filter';
     }
 }

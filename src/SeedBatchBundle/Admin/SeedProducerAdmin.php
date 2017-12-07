@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Sil\Bundle\SeedBatchBundle\Admin;
+namespace SeedBatchBundle\Admin;
 
 use Sonata\AdminBundle\Admin\AbstractAdmin;
 
@@ -19,7 +19,7 @@ class SeedProducerAdmin extends OrganismAdmin
      * @var string
      */
     protected $translationLabelPrefix = 'sil.seed_batch.seed_producer';
-    protected $baseRouteName = 'admin_sil_seed_batch_seedProducer';
+    protected $baseRouteName = 'admin_seed_batch_seedProducer';
     protected $baseRoutePattern = 'sil/seedbatch/seed-producer';
 
     /**

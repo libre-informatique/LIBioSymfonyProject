@@ -1,4 +1,4 @@
-Sil\Bundle\SeedBatchBundle\Entity\SeedFarm:
+SeedBatchBundle\Entity\SeedFarm:
     type: entity
     table: lisem_seed_farm
     fields:
@@ -7,7 +7,7 @@ Sil\Bundle\SeedBatchBundle\Entity\SeedFarm:
 
     oneToMany:
         seedBatches:
-            targetEntity: Sil\Bundle\SeedBatchBundle\Entity\SeedBatch
+            targetEntity: SeedBatchBundle\Entity\SeedBatch
             mappedBy: seedFarm
 
     uniqueConstraints:
