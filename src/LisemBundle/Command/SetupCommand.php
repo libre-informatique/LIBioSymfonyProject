@@ -14,7 +14,6 @@ namespace LisemBundle\Command;
 
 use Doctrine\Common\DataFixtures\Purger\ORMPurger;
 use LisemBundle\Entity\SilEcommerceBundle\Product;
-use Sil\Bundle\SonataSyliusUserBundle\Entity\SonataUserInterface;
 use Sil\Bundle\CRMBundle\Entity\City;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\ArrayInput;
@@ -135,58 +134,20 @@ EOT
      * @param OutputInterface $output
      *
      * @return int
-     *
-     * @todo: factoryze : use sil user command
      */
     protected function setupUsers(OutputInterface $output)
     {
         $output->writeln(['', 'Setting up application users...']);
 
-        $em = $this->getContainer()->get('doctrine')->getEntityManager();
-        $repo = $em->getRepository(SonataUserInterface::class);
+        $command = $this->getApplication()->find('sil:user:fixture');
+        $commandInput = new ArrayInput(
+            [
+                '--no-interaction' => true,
+                '--fixture'        => 'lisem.user.datafixtures',
+            ]
+        );
 
-        $warn = false;
-        if (!$this->getContainer()->getParameter('lisem.user.datafixtures')) {
-            $warn = 'Parameter lisem.user.datafixtures is not defined.';
-        } else {
-            $users = $this->getContainer()->getParameter('lisem.user.datafixtures');
-            if (empty($users)) {
-                $warn = 'Parameter lisem.user.datafixtures is empty.';
-            }
-        }
-        if ($warn) {
-            $output->writeln(['<comment>', $warn, 'See app/config/parameters.yml.dist for an example.', '</comment>']);
-
-            return 1;
-        }
-
-        $created = false;
-        foreach ($users as $u) {
-            $output->write(sprintf('%s <%s>', $u['username'], $u['email']));
-            if (null !== $repo->findOneByUsername($u['email'])) {
-                $output->writeln(' <info>exists</info>');
-                continue;
-            }
-            $sonataUserClass = $this->getContainer()->getParameter('sil_sonata_sylius_user.entity.sonata_user.class');
-            $sonataUser = new $sonataUserClass();
-            $sonataUser->setUsername($u['email']);
-            $sonataUser->setUsernameCanonical($u['email']);
-            $sonataUser->setPlainPassword($u['password']);
-            $sonataUser->setEmail($u['email']);
-            $sonataUser->setEnabled(true);
-            $sonataUser->addRole('ROLE_SUPER_ADMIN');
-            $sonataUser->addRole('ROLE_ADMINISTRATION_ACCESS');
-            $sonataUser->setLocaleCode('fr_FR');
-            $em->persist($sonataUser);
-            $created = true;
-            $output->writeln(' <info>added</info>');
-        }
-
-        if ($created) {
-            $em->flush();
-        }
-
-        return 0;
+        return $command->run($commandInput, $output);
     }
 
     /**
