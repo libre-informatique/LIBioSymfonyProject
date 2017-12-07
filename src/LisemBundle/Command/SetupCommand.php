@@ -119,6 +119,8 @@ EOT
      * @param OutputInterface $output
      *
      * @return int
+     *
+     * @todo: remove this method as it is useless
      */
     protected function setupSylius(OutputInterface $output)
     {
@@ -133,6 +135,8 @@ EOT
      * @param OutputInterface $output
      *
      * @return int
+     *
+     * @todo: factoryze : use sil user command
      */
     protected function setupUsers(OutputInterface $output)
     {
@@ -321,6 +325,7 @@ EOT
      * @param OutputInterface $output
      *
      * @todo  Optimize the "clean" way of importing cities
+     * @todo Move this to crm
      */
     protected function setupCities(OutputInterface $output)
     {
@@ -363,6 +368,8 @@ EOT
 
     /**
      * @param OutputInterface $output
+     *
+     * @todo Move to sil standard setup
      */
     protected function purgeDatabase(OutputInterface $output)
     {
