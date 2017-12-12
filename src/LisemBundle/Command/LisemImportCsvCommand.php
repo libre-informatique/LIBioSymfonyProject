@@ -39,14 +39,15 @@ final class LisemImportCsvCommand extends ImportCsvCommand
     protected function configure()
     {
         $this
-        ->setName('lisem:import:csv')
-        ->setDescription('Import data from CSV files into LiSem.')
-        ->addArgument('dir', InputArgument::REQUIRED, 'The directory containing the CSV files.')
-        ->setHelp(<<<EOT
+            ->setName('lisem:import:csv')
+            ->setDescription('Import data from CSV files into LiSem.')
+            /* @todo Move Args as Option + Add Mapping file Path as Option*/
+            ->addArgument('dir', InputArgument::REQUIRED, 'The directory containing the CSV files.')
+            ->setHelp(<<<EOT
 The <info>%command.name%</info> command allows user to populate LiSem application with CSV data files.
 EOT
-        )
-        ;
+            )
+            ;
     }
 
     /**
@@ -70,6 +71,7 @@ EOT
      */
     protected function postDeserializeSpecies(Species $species)
     {
+        /** @todo: add code generator service in config */
         $codeGenerator = $this->getContainer()->get('variety.code_generator.species');
         $code = $codeGenerator::generate($species, $this->speciesCodes);
         $this->speciesCodes[] = $code;
@@ -81,6 +83,7 @@ EOT
      */
     protected function postDeserializeVariety(Variety $variety)
     {
+        /** @todo: add code generator service in config */
         $code = $variety->getCode();
         if (!$code) {
             $codeGenerator = $this->getContainer()->get('variety.code_generator.variety');
