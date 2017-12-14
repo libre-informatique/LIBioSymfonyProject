@@ -99,7 +99,7 @@ EOT
             $this->setupProductOptions($output);
             $this->setupData($output, ['lisem_requirements']);
             $this->setupSampleData($output);
-            $this->setupCities($output);
+            //$this->setupCities($output);
             $this->setupAssets($output);
         } else {
             $this->setupSylius($output);
@@ -107,7 +107,7 @@ EOT
             $this->setupCircles($output);
             $this->setupProductOptions($output);
             $this->setupData($output, ['lisem_requirements']);
-            $this->setupCities($output);
+            //$this->setupCities($output);
             $this->setupAssets($output);
         }
     }
