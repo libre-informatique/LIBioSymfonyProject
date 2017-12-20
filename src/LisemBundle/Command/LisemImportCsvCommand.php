@@ -55,41 +55,41 @@ EOT
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        /* @todo: should be in config and load in init, and this method will not be need */
-        $this->importClass = [
-            Family::class,
-            Genus::class,
-            Species::class,
-            Variety::class,
-        ];
+        // /* @todo: should be in config and load in init, and this method will not be need */
+        // $this->importClass = [
+        //     Family::class,
+        //     Genus::class,
+        //     Species::class,
+        //     Variety::class,
+        // ];
 
         parent::execute($input, $output);
     }
 
-    /**
-     * @param Species $species
-     */
-    protected function postDeserializeSpecies(Species $species)
-    {
-        /** @todo: add code generator service in config */
-        $codeGenerator = $this->getContainer()->get('variety.code_generator.species');
-        $code = $codeGenerator::generate($species, $this->speciesCodes);
-        $this->speciesCodes[] = $code;
-        $species->setCode($code);
-    }
+    // /**
+    //  * @param Species $species
+    //  */
+    // protected function postDeserializeSpecies(Species $species)
+    // {
+    //     /** @todo: add code generator service in config */
+    //     $codeGenerator = $this->getContainer()->get('variety.code_generator.species');
+    //     $code = $codeGenerator::generate($species, $this->speciesCodes);
+    //     $this->speciesCodes[] = $code;
+    //     $species->setCode($code);
+    // }
 
-    /**
-     * @param Variety $variety
-     */
-    protected function postDeserializeVariety(Variety $variety)
-    {
-        /** @todo: add code generator service in config */
-        $code = $variety->getCode();
-        if (!$code) {
-            $codeGenerator = $this->getContainer()->get('variety.code_generator.variety');
-            $code = $codeGenerator::generate($variety, $this->varietyCodes);
-            $variety->setCode($code);
-        }
-        $this->varietyCodes[] = $code;
-    }
+    // /**
+    //  * @param Variety $variety
+    //  */
+    // protected function postDeserializeVariety(Variety $variety)
+    // {
+    //     /** @todo: add code generator service in config */
+    //     $code = $variety->getCode();
+    //     if (!$code) {
+    //         $codeGenerator = $this->getContainer()->get('variety.code_generator.variety');
+    //         $code = $codeGenerator::generate($variety, $this->varietyCodes);
+    //         $variety->setCode($code);
+    //     }
+    //     $this->varietyCodes[] = $code;
+    // }
 }

@@ -30,7 +30,13 @@ bin/console doctrine:schema:create --no-interaction --em=session
 #bin/console doctrine:schema:validate --no-interaction
 
 # asset and data
-bin/console lisem:install:setup --with-samples --yes
+#bin/console lisem:install:setup --with-samples --yes
+bin/console lisem:install:setup --yes
+
+# Import City
+bin/console blast:import:csv -d vendor/sil-project/platform/src/Sil/Bundle/CRMBundle/Resources/import -m vendor/sil-project/platform/src/Sil/Bundle/CRMBundle/Resources/config/csv_import.yml
+
+
 bin/console blast:patchs:apply
 bin/console assets:install
 bin/console sylius:theme:assets:install # must be done after assets:install
