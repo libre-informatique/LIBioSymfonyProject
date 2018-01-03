@@ -93,7 +93,7 @@ sylius_customer:
     resources:
         customer:
             classes:
-                model: PlatformBundle\Entity\SilCRMBundle\Organism
+                model: LisemBundle\Entity\SilCRMBundle\Organism
         customer_group:
             classes:
                 model: Sil\Bundle\EcommerceBundle\Entity\CustomerGroup

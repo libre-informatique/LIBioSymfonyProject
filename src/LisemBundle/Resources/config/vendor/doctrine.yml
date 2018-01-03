@@ -6,15 +6,17 @@ doctrine_migrations:
 doctrine:
     orm:
         resolve_target_entities:
+            # Sil\Bundle\CRMBundle\Entity\OrganismInterface:                  "%sil.model.crm_organism.class%"
+            Sil\Bundle\CRMBundle\Entity\OrganismInterface:                  'LisemBundle\Entity\SilCRMBundle\Organism'
+            Sil\Bundle\CRMBundle\Entity\AddressInterface:                   'PlatformBundle\Entity\SilCRMBundle\Address'
 
-            Sil\Bundle\CRMBundle\Entity\OrganismInterface:       "%sil.model.crm_organism.class%"
-            # Sil\Bundle\CRMBundle\Entity\OrganismInterface:       'LisemBundle\Entity\SilCRMBundle\Organism'
+            Sil\Bundle\EmailBundle\Entity\EmailInterface:                   'PlatformBundle\Entity\SilEmailBundle\Email'
             # VarietyBundle
 
-            VarietyBundle\Entity\FamilyInterface:                "%variety.entity.family.class%"
-            VarietyBundle\Entity\VarietyInterface:               "%variety.entity.variety.class%"
-            VarietyBundle\Entity\SpeciesInterface:               "%variety.entity.species.class%"
-            VarietyBundle\Entity\GenusInterface:                 "%variety.entity.genus.class%"
+            VarietyBundle\Entity\FamilyInterface:                           "%variety.entity.family.class%"
+            VarietyBundle\Entity\VarietyInterface:                          "%variety.entity.variety.class%"
+            VarietyBundle\Entity\SpeciesInterface:                          "%variety.entity.species.class%"
+            VarietyBundle\Entity\GenusInterface:                            "%variety.entity.genus.class%"
             # SilSeedBatchBundle
 
-            SeedBatchBundle\Entity\SeedBatchInterface:           "%seed_batch.entity.seed_batch.class%"
+            SeedBatchBundle\Entity\SeedBatchInterface:                      "%seed_batch.entity.seed_batch.class%"

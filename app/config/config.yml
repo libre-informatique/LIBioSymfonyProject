@@ -2,26 +2,78 @@ imports:
 
     # Platform Bundle
 
-     - { resource: "@PlatformBundle/Resources/config/parameters.yml" }
-     - { resource: "@PlatformBundle/Resources/config/config.yml" }
+    - { resource: "@PlatformBundle/Resources/config/parameters.yml" }
+    # - { resource: "@PlatformBundle/Resources/config/config.yml" }
 
-     - { resource: "@SeedBatchBundle/Resources/config/parameters.yml" }
-     - { resource: "@SeedBatchBundle/Resources/config/config.yml" }
+    - { resource: "@PlatformBundle/Resources/config/admin.yml" }
 
-     - { resource: "@VarietyBundle/Resources/config/parameters.yml" }
+    # Vendors
 
-     - { resource: "@LisemBundle/Resources/config/parameters.yml" }
-     - { resource: "@LisemBundle/Resources/config/config.yml" }
+    - { resource: "@PlatformBundle/Resources/config/vendor/stof.yml" }
+    - { resource: "@PlatformBundle/Resources/config/vendor/sil.yml" }
+    - { resource: "@PlatformBundle/Resources/config/vendor/sonata.yml" }
+    - { resource: "@PlatformBundle/Resources/config/vendor/sylius.yml" }
+    - { resource: "@PlatformBundle/Resources/config/vendor/lexik.yml" }
+    - { resource: "@PlatformBundle/Resources/config/vendor/fos.yml" }
+    - { resource: "@PlatformBundle/Resources/config/vendor/doctrine.yml" }
+    - { resource: "@PlatformBundle/Resources/config/vendor/stfalcon.yml" }
 
-     - { resource: parameters.yml }
-     - { resource: security.yml }
+    # SIL Bundles
+
+    - { resource: "@SilSonataSyliusUserBundle/Resources/config/parameters.yml" }
+    - { resource: "@SilSonataSyliusUserBundle/Resources/config/app/config.yml" }
+
+    - { resource: "@SilEmailBundle/Resources/config/parameters.yml" }
+    - { resource: "@SilEmailBundle/Resources/config/app/config.yml" }
+
+    - { resource: "@SilEcommerceBundle/Resources/config/parameters.yml" }
+    - { resource: "@SilEcommerceBundle/Resources/config/app/config.yml" }
+
+    - { resource: "@SilCRMBundle/Resources/config/parameters.yml" }
+    - { resource: "@SilCRMBundle/Resources/config/app/config.yml" }
+
+    - { resource: "@SilMediaBundle/Resources/config/parameters.yml" }
+    - { resource: "@SilMediaBundle/Resources/config/app/config.yml" }
+
+    - { resource: "@SilSyliusPayboxBundle/Resources/config/parameters.yml" }
+    - { resource: "@SilSyliusPayboxBundle/Resources/config/app/config.yml" }
+
+    - { resource: "@SilUomBundle/Resources/config/app/config.yml" }
+
+    - { resource: "@SilStockBundle/Resources/config/parameters.yml" }
+    - { resource: "@SilStockBundle/Resources/config/app/config.yml" }
+    - { resource: "@SilStockBundle/Resources/config/services.yml" }
+
+    - { resource: "@SilManufacturingBundle/Resources/config/parameters.yml" }
+    - { resource: "@SilManufacturingBundle/Resources/config/app/config.yml" }
+    - { resource: "@SilManufacturingBundle/Resources/config/services.yml" }
+
+    # Blast
+
+    - { resource: "@PlatformBundle/Resources/config/vendor/blast/csv_import.yml" }
+    - { resource: "@PlatformBundle/Resources/config/vendor/blast/dashboard.yml" }
+    - { resource: "@PlatformBundle/Resources/config/vendor/blast/search.yml" }
+    - { resource: "@PlatformBundle/Resources/config/vendor/blast/base_entities.yml" }
+    - { resource: "@PlatformBundle/Resources/config/vendor/blast/menu.yml" }
+    - { resource: "@PlatformBundle/Resources/config/vendor/blast/resource.yml" }
+    - { resource: "@PlatformBundle/Resources/config/vendor/blast/utils.yml" }
+
+    - { resource: "@SeedBatchBundle/Resources/config/parameters.yml" }
+    - { resource: "@SeedBatchBundle/Resources/config/config.yml" }
+
+    - { resource: "@VarietyBundle/Resources/config/parameters.yml" }
+
+    - { resource: "@LisemBundle/Resources/config/parameters.yml" }
+    - { resource: "@LisemBundle/Resources/config/config.yml" }
+
+    - { resource: parameters.yml }
+    - { resource: security.yml }
 
 parameters:
     locale: fr_FR
     currency: EUR
 
 framework:
-    #esi: ~
     translator: { fallbacks: ['%locale%'] }
     secret: '%secret%'
     router:
@@ -30,7 +82,6 @@ framework:
     form: ~
     csrf_protection: ~
     validation: { enable_annotations: true }
-    #serializer: { enable_annotations: true }
     templating:
         engines: ['twig']
     default_locale: '%locale%'
@@ -129,7 +180,7 @@ doctrine:
                         type: annotation
                         prefix: Gedmo\Loggable\Entity
                         dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Loggable/Entity"
-                        alias: GedmoLoggable # (optional) it will default to the name set for the mappingmapping
+                        alias: GedmoLoggable
                         is_bundle: false
                 dql:
                     string_functions:
@@ -164,9 +215,3 @@ swiftmailer:
             spool: { type: db }
             delivery_addresses: "%mailer_delivery_addresses%"
             disable_delivery:  "%mailer_disable_delivery%"
-
-# bazinga_js_translation:
-#     locale_fallback: "%locale%"
-#     active_locales:
-#         - "%locale%"
-#     default_domain:       messages
