@@ -1,21 +1,20 @@
 imports:
-     - { resource: parameters.yml }
-     - { resource: security.yml }
-     - { resource: services.yml }
 
     # Platform Bundle
 
      - { resource: "@PlatformBundle/Resources/config/parameters.yml" }
-     - { resource: "@SeedBatchBundle/Resources/config/parameters.yml" }
-     - { resource: "@VarietyBundle/Resources/config/parameters.yml" }
-     - { resource: "@LisemBundle/Resources/config/parameters.yml" }
-
      - { resource: "@PlatformBundle/Resources/config/config.yml" }
 
-     - { resource: "@LisemBundle/Resources/config/config.yml" }
-
+     - { resource: "@SeedBatchBundle/Resources/config/parameters.yml" }
      - { resource: "@SeedBatchBundle/Resources/config/config.yml" }
 
+     - { resource: "@VarietyBundle/Resources/config/parameters.yml" }
+
+     - { resource: "@LisemBundle/Resources/config/parameters.yml" }
+     - { resource: "@LisemBundle/Resources/config/config.yml" }
+
+     - { resource: parameters.yml }
+     - { resource: security.yml }
 
 parameters:
     locale: fr_FR
@@ -88,8 +87,7 @@ doctrine:
         entity_managers:
             default:
                 connection: default
-                naming_strategy: blast.resource.doctrine.orm.naming_strategy.underscored_bundle_prefix
-                # naming_strategy: doctrine.orm.naming_strategy.underscore
+                naming_strategy: doctrine.orm.naming_strategy.underscore
                 auto_mapping: true
                 mappings:
 
@@ -108,29 +106,23 @@ doctrine:
                         type: yml
                     SilEmailCRMBundle:
                         type: yml
-                    SilManufacturingBundle:
-                        type: yml
-                        prefix: Sil\Bundle\ManufacturingBundle\Domain\Entity
+
                     SilMediaBundle:
                         type: yml
                     SilSonataSyliusUserBundle:
                         type: yml
+                    SilUomBundle:
+                        type: yml
                     SilStockBundle:
                         type: yml
                         prefix: Sil\Bundle\StockBundle\Domain\Entity
+                    SilManufacturingBundle:
+                        type: yml
+                        prefix: Sil\Bundle\ManufacturingBundle\Domain\Entity
 
                     # Platform
 
                     PlatformBundle:
-                        type: yml
-
-                    # Lisem
-                    SeedBatchBundle:
-                        type: yml
-                    VarietyBundle:
-                        type: yml
-
-                    LisemBundle:
                         type: yml
 
                     gedmo_loggable:
@@ -145,8 +137,7 @@ doctrine:
                         concat_ws: Oro\ORM\Query\AST\Functions\String\ConcatWs
             session:
                 connection: session
-                naming_strategy: blast.resource.doctrine.orm.naming_strategy.underscored_bundle_prefix
-                # naming_strategy: doctrine.orm.naming_strategy.underscore
+                naming_strategy: doctrine.orm.naming_strategy.underscore
                 auto_mapping: false # Only one entity manager can have auto_mappping set to true
                 mappings:
                     BlastDoctrineSessionBundle:

@@ -4,10 +4,10 @@ services:
         class: LisemBundle\Admin\StockOperationAdmin
         arguments: [~, "%sil_stock.entity.operation.class%", sil.stock.controller.operation]
         calls:
-            - [ setOperationCodeGenerator, ["@sil.stock.code_generator.operation"]]
-            - [ setMovementCodeGenerator, ["@sil.stock.code_generator.movement"]]
-            - [ setLocationRepository, ["@sil.stock.repository.location"]]
-            - [ setResourceRepository, ["@sil.stock.repository.operation"]]
+            - [ setOperationCodeGenerator, ["@sil.code_generator.stock_operation"]]
+            - [ setMovementCodeGenerator, ["@sil.code_generator.stock_movement"]]
+            - [ setLocationRepository, ["@sil.repository.stock_location"]]
+            - [ setResourceRepository, ["@sil.repository.stock_operation"]]
             - [ setTemplates, [{show: SilStockBundle:OperationAdmin:show.html.twig,edit: SilStockBundle:OperationAdmin:edit.html.twig,list: SilStockBundle:OperationAdmin:list.html.twig}]]
 
         tags:

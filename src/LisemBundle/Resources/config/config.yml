@@ -2,17 +2,20 @@ parameters:
     sonata.core.flashmessage.manager.class: Sil\Bundle\EcommerceBundle\Services\FlashManager
 
 imports:
-    - { resource: "parameters.yml"}
-    - { resource: "services.yml"}
-    - { resource: "admin.yml"}
-    - { resource: "sonata.yml"}
-    - { resource: "varieties.yml"}
-    - { resource: "sylius-fixtures.yml"}
 
-    - { resource: "@SilEcommerceBundle/Resources/config/app/state_machine.yml"}
-    - { resource: "state_machine.yml"}
+    - { resource: "@SilEcommerceBundle/Resources/config/app/state_machine.yml" }
 
-    - { resource: "vendor/doctrine.yml"}
+    - { resource: "@LisemBundle/Resources/config/parameters.yml" }
+    - { resource: "@LisemBundle/Resources/config/services.yml" }
+
+    - { resource: "@LisemBundle/Resources/config/vendor/blast/resource.yml" }
+    - { resource: "@LisemBundle/Resources/config/vendor/doctrine.yml" }
+
+    - { resource: "@LisemBundle/Resources/config/admin.yml" }
+    - { resource: "@LisemBundle/Resources/config/sonata.yml" }
+    - { resource: "@LisemBundle/Resources/config/varieties.yml" }
+    - { resource: "@LisemBundle/Resources/config/sylius-fixtures.yml" }
+    - { resource: "@LisemBundle/Resources/config/state_machine.yml" }
 
 sylius_theme:
     context: lisem.theme.context.channel_based

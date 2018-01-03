@@ -2,7 +2,7 @@
 services:
     seed_batch.admin.seed_producer:
         class: SeedBatchBundle\Admin\SeedProducerAdmin
-        arguments: [~, "%sil_crm.entity.organism.class%", SeedBatchBundle:OrganismAdmin]
+        arguments: [~, "%sil.model.crm_organism.class%", SeedBatchBundle:OrganismAdmin]
         tags:
             -
                 name: sonata.admin

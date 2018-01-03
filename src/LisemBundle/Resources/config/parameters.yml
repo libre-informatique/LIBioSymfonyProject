@@ -5,5 +5,3 @@ parameters:
     sil_ecommerce.entity.product_option_value.class:    LisemBundle\Entity\SilEcommerceBundle\ProductOptionValue
 
     lisem.entity.channel_description.class:             LisemBundle\Entity\ChannelDescription
-
-    sil_crm.entity.organism.class:                      LisemBundle\Entity\SilCRMBundle\Organism

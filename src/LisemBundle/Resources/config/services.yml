@@ -28,19 +28,19 @@ services:
 
 ### CUSTOM SIDEBAR MENUS ###
 
-    lisem.menu_builder:
-        class: LisemBundle\Menu\MenuBuilder
-        arguments: ["@knp_menu.factory"]
-        calls:
-            - [setTokenStorage, ['@security.token_storage']]
-            - [setAuthorizationChecker, ['@security.authorization_checker']]
-
-    lisem.sidebar_menu.paremeters:
-        class: Knp\Menu\MenuItem                                  # the service definition requires setting the class
-        factory: ["@lisem.menu_builder", createParametersSidebarMenu]
-        arguments: ["@request_stack"]
-        tags:
-            - { name: knp_menu.menu, alias: parameters_sidebar_menu }   # The alias is what is used to retrieve the menu
+    # lisem.menu_builder:
+    #     class: LisemBundle\Menu\MenuBuilder
+    #     arguments: ["@knp_menu.factory"]
+    #     calls:
+    #         - [setTokenStorage, ['@security.token_storage']]
+    #         - [setAuthorizationChecker, ['@security.authorization_checker']]
+    #
+    # lisem.sidebar_menu.paremeters:
+    #     class: Knp\Menu\MenuItem                                  # the service definition requires setting the class
+    #     factory: ["@lisem.menu_builder", createParametersSidebarMenu]
+    #     arguments: ["@request_stack"]
+    #     tags:
+    #         - { name: knp_menu.menu, alias: parameters_sidebar_menu }   # The alias is what is used to retrieve the menu
 
 ### BLAST CALLBACKS ###
 
@@ -108,7 +108,7 @@ services:
         calls:
             - [setSeedBatchClass, ["%seed_batch.entity.seed_batch.class%"]]
             - [setSeedFarmClass, ["%seed_batch.entity.seed_farm.class%"]]
-            - [setOrganismClass, ["%sil_crm.entity.organism.class%"]]
+            - [setOrganismClass, ["%sil.model.crm_organism.class%"]]
             - [setPlotClass, ["%seed_batch.entity.plot.class%"]]
 
     lisem.fixture.example_factory.product:
@@ -278,4 +278,4 @@ services:
     app.stock_handler:
         class: LisemBundle\Stock\StockHandler
         calls:
-            - [setStockOperationHandler, ['@sil.stock.domain_service.operation']]
+            - [setStockOperationHandler, ['@sil.domain_service.stock_operation']]

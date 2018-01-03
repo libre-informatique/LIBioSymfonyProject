@@ -5,7 +5,7 @@ services:
     seed_batch.code_generator.seed_producer:
         class: SeedBatchBundle\CodeGenerator\SeedProducerCodeGenerator
         factory:   ['@blast_core.code_generator_factory', create]
-        arguments: ['%seed_batch.code_generator.seed_producer%', '@doctrine.orm.entity_manager', '%sil_crm.entity.organism.class%']
+        arguments: ['%seed_batch.code_generator.seed_producer%', '@doctrine.orm.entity_manager', '%sil.model.crm_organism.class%']
         tags:
             - { name: blast.entity_code_generator }
 

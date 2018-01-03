@@ -2,7 +2,7 @@
 services:
     seed_batch.admin.organism:
         class: SeedBatchBundle\Admin\OrganismAdmin
-        arguments: [~, "%sil_crm.entity.organism.class%", SeedBatchBundle:OrganismAdmin]
+        arguments: [~, "%sil.model.crm_organism.class%", SeedBatchBundle:OrganismAdmin]
         tags:
             -
                 name: sonata.admin

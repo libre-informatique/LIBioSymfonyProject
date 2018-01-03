@@ -34,6 +34,11 @@ LisemBundle\Entity\SilCRMBundle\Organism:
             mappedBy: customer
             cascade: [ persist, remove ]
             orphanRemoval: true
+        organizations:
+            targetEntity: Sil\Bundle\CRMBundle\Entity\Position
+            mappedBy: individual
+            cascade: [ persist, remove ]
+            orphanRemoval: true
 
     oneToOne:
         user:

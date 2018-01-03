@@ -7,7 +7,8 @@ doctrine:
     orm:
         resolve_target_entities:
 
-            Sil\Bundle\CRMBundle\Entity\OrganismInterface:       "%sil_crm.entity.organism.class%"
+            Sil\Bundle\CRMBundle\Entity\OrganismInterface:       "%sil.model.crm_organism.class%"
+            # Sil\Bundle\CRMBundle\Entity\OrganismInterface:       'LisemBundle\Entity\SilCRMBundle\Organism'
             # VarietyBundle
 
             VarietyBundle\Entity\FamilyInterface:                "%variety.entity.family.class%"

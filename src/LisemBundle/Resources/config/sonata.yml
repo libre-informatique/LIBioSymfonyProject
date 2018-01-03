@@ -27,7 +27,7 @@ sonata_admin:
                 icon:  '<i class="fa fa-envelope-o"></i>'
                 on_top: true
                 items:
-                    - route: admin_platform_silemailbundle_email_list
+                    - route: admin_email_list
                       label: lisem.menu_label.emailing_list
 
             # ##################################################################

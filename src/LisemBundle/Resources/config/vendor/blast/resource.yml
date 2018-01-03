@@ -1,0 +1,17 @@
+blast_resource:
+    resources:
+        crm_organism:
+            classes:
+                model: LisemBundle\Entity\SilCRMBundle\Organism
+
+        crm_address:
+            classes:
+                model: PlatformBundle\Entity\SilCRMBundle\Address
+
+        email:
+            classes:
+                model: PlatformBundle\Entity\SilEmailBundle\Email
+
+        media_file:
+            classes:
+                model: PlatformBundle\Entity\SilMediaBundle\File
