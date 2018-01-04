@@ -1,8 +1,6 @@
 VarietyBundle\Entity\Variety:
     type: mappedSuperclass
     table: lisem_variety
-    blast:
-        loggable: true
     fields:
         latin_name:
             type:     string(255)

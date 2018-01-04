@@ -177,6 +177,16 @@ doctrine:
                     PlatformBundle:
                         type: yml
 
+
+                    VarietyBundle:
+                        type: yml
+
+                    SeedBatchBundle:
+                        type: yml
+
+                    LisemBundle:
+                        type: yml
+
                     gedmo_loggable:
                         type: annotation
                         prefix: Gedmo\Loggable\Entity
