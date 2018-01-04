@@ -587,6 +587,7 @@ class Version20171201152358 extends AbstractMigration implements ContainerAwareI
         $this->addSql('ALTER TABLE blast_custom_filter ADD CONSTRAINT FK_854D7261A76ED395 FOREIGN KEY (user_id) REFERENCES sil_user (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
         $this->addSql('ALTER TABLE sil_email__circle ADD CONSTRAINT FK_F39FD8C870EE2FF6 FOREIGN KEY (circle_id) REFERENCES sil_crm_circle (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
         $this->addSql('ALTER TABLE sil_email__circle ADD CONSTRAINT FK_F39FD8C8A832C1C9 FOREIGN KEY (email_id) REFERENCES sil_email (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
+        $this->addSql('ALTER TABLE sil_email__circle ADD PRIMARY KEY (email_id, circle_id)');
 
         $this->addSql('CREATE SEQUENCE blast_session_id_seq INCREMENT BY 1 MINVALUE 1 START 1');
         $this->addSql('CREATE TABLE blast_session (id INT NOT NULL, session_id VARCHAR(255) NOT NULL, data BYTEA DEFAULT NULL, created_at TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, expires_at TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, PRIMARY KEY(id))');

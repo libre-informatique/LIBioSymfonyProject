@@ -135,6 +135,7 @@ lisem:
     help:
         product_price: en Centimes
         packaging: ex. 5g / 20 graines / vrac
+
     menu_label:
         accounting: Gestion / Compta
         admin_settings: Application
@@ -180,8 +181,10 @@ lisem:
         phone_types_list: Types de téléphone
         plant_categories_list: Catégories de plantes
         plots_list: Liste des Parcelles
+        plots: Parcelles
         position_types_list: Types de fonctions
         producers_list: Liste des Producteurs
+        producers: Producteurs
         product_attributes: Attributs des articles
         product_options: Options des articles
         products: Articles
@@ -195,6 +198,7 @@ lisem:
         shop_settings: Boutique
         shop_user: Client boutique
         species_list: Liste des Espèces
+        species: Espèces
         tax_categories_list: Catégories de TVA
         tax_rates_list: Taux de TVA
         taxon_list: Catégories

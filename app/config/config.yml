@@ -62,6 +62,7 @@ imports:
     - { resource: "@SeedBatchBundle/Resources/config/config.yml" }
 
     - { resource: "@VarietyBundle/Resources/config/parameters.yml" }
+    - { resource: "@VarietyBundle/Resources/config/config.yml" }
 
     - { resource: "@LisemBundle/Resources/config/parameters.yml" }
     - { resource: "@LisemBundle/Resources/config/config.yml" }

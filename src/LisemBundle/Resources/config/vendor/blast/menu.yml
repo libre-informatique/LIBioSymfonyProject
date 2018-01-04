@@ -1,0 +1,157 @@
+blast_menu:
+
+    root:
+
+        # ##################################################################
+        # CRM
+        # ##################################################################
+
+        sil.crm.menu_label.crm:
+            display: false
+
+        lisem.menu_label.crm_contacts:
+            icon: address-card
+            route: admin_crm_organism_list
+            order: 10
+
+        sil.email.menu_label.emailing:
+            display: false
+
+        lisem.menu_label.crm_emailing:
+            icon: envelope-o
+            route: admin_email_list
+            order: 11
+
+        # ##################################################################
+        # VARIETIES
+        # ##################################################################
+
+        lisem.menu.species:
+            label: lisem.menu_label.species
+            icon:  pagelines
+            route: admin_variety_species_list
+            order: 12
+
+        lisem.menu.varieties:
+            label: lisem.menu_label.varieties
+            icon:  tree
+            route: admin_variety_variety_list
+            order: 13
+
+        # ##################################################################
+        # SEED BATCHES
+        # ##################################################################
+
+        lisem.menu.seedbatch:
+            label: lisem.menu_label.seed_batches
+            icon:  shopping-bag
+            route: admin_seedbatch_seedbatch_list
+            order: 14
+
+        lisem.menu.plot:
+            label: lisem.menu_label.plots
+            icon:  th
+            route: admin_seedbatch_plot_list
+            order: 15
+
+        lisem.menu.producers:
+            label: lisem.menu_label.producers
+            icon:  user-circle
+            route: admin_seed_batch_seedProducer_list
+            order: 16
+
+        # ##################################################################
+        # PRODUCTS
+        # ##################################################################
+
+        sil.ecommerce.menu_label.ecommerce:
+            children:
+
+                lisem.menu.seed_products:
+                    label: lisem.menu_label.products
+                    icon: shopping-cart
+                    route: admin_sil_seeds_product_list
+
+
+        sil.stock.menu_label.stock_management:
+            order: 30
+
+        sil.manufacturing.menu_label.manufacturing:
+            order: 40
+
+
+
+
+# TEMPORARILY DISABLED
+#
+# lisem.menu.germination_tests:
+#     label: lisem.menu_label.germination_tests
+#     icon:  '<i class="fa fa-eyedropper"></i>'
+#     on_top: true
+#     items:
+#         - label: lisem.menu_label.germination_tests
+#           route: lisem_not_implemented
+
+
+
+
+
+
+
+# TEMPORARILY DISABLED
+#
+# lisem.menu.packagings:
+#     label: lisem.menu_label.packagings
+#     icon:  '<i class="fa fa-archive"></i>'
+#     on_top: true
+#     items:
+#         - label: lisem.menu_label.packagings
+#           route: lisem_not_implemented
+
+# ##################################################################
+# PRODUCTS
+# ##################################################################
+
+# TEMPORARILY DISABLED
+#
+# lisem.menu.inventory:
+#     label: lisem.menu_label.inventory
+#     icon:  '<i class="fa fa-list"></i>'
+#     on_top: true
+#     items:
+#         - label: lisem.menu_label.inventory
+#           route: lisem_not_implemented
+#
+# lisem.menu.catalogs:
+#     label: lisem.menu_label.catalogs
+#     icon:  '<i class="fa fa-book"></i>'
+#     on_top: true
+#     items:
+#         - label: lisem.menu_label.catalogs
+#           route: lisem_not_implemented
+
+# ##################################################################
+# ORDERS
+# ##################################################################
+
+# sil.menu.stock:
+#     label: sil.menu_label.stock_management
+#     icon:  '<i class="fa fa-cubes"></i>'
+#     items:
+#         - label: sil.menu_label.items
+#           route: admin_stock_item_list
+#         - label: sil.menu_label.operations
+#           route: admin_stock_operation_list
+#         - label: sil.menu_label.movements
+#           route: admin_stock_movement_list
+#
+# sil.menu.manufacturing:
+#     label: sil.menu_label.manufacturing
+#     icon:  '<i class="fa fa-industry"></i>'
+#     items:
+#         - label: sil.menu_label.bom
+#           route: admin_manufacturing_bom_list
+
+# App settings:
+#     provider: parameters_sidebar_menu
+#     icon:     '<i class="fa fa-sliders"></i>'

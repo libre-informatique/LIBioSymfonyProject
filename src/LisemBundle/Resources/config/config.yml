@@ -9,6 +9,7 @@ imports:
     - { resource: "@LisemBundle/Resources/config/services.yml" }
 
     - { resource: "@LisemBundle/Resources/config/vendor/blast/resource.yml" }
+    - { resource: "@LisemBundle/Resources/config/vendor/blast/menu.yml" }
     - { resource: "@LisemBundle/Resources/config/vendor/doctrine.yml" }
 
     - { resource: "@LisemBundle/Resources/config/admin.yml" }
