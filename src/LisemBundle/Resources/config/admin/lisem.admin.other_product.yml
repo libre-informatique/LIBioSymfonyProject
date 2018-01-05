@@ -2,7 +2,7 @@
 services:
     lisem.admin.other_product:
         class: LisemBundle\Admin\OtherProductAdmin
-        arguments: [~, "%sil_ecommerce.entity.product.class%", SilEcommerceBundle:ProductCRUD]
+        arguments: [~, "%sil.model.ecommerce_product.class%", SilEcommerceBundle:ProductCRUD]
         tags:
             - name: sonata.admin
               manager_type: orm

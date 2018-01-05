@@ -24,7 +24,7 @@ var argv = require('yargs').argv;
 
 var rootPath = argv.rootPath;
 var shopRootPath = rootPath + 'shop/';
-var vendorPath = '../../../../vendor/sylius/sylius/src/Sylius/Bundle/';
+var vendorPath = '../../../../../../vendor/sylius/sylius/src/Sylius/Bundle/';
 var vendorShopPath = vendorPath + 'ShopBundle/';
 var vendorUiPath = vendorPath + 'UiBundle/';
 var nodeModulesPath = argv.nodeModulesPath;
@@ -101,10 +101,10 @@ gulp.task('shop-watch', function() {
     livereload.listen();
 
 //    var watcher = gulp.watch(paths.shop.js, ['shop-js']);
-//    
+//
 //    watcher.on('change', function(event) {
 //      console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
-//    });    
+//    });
     gulp.watch(paths.shop.js, ['shop-js']);
     gulp.watch(paths.shop.sass, ['shop-css']);
     gulp.watch(paths.shop.css, ['shop-css']);

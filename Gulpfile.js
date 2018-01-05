@@ -25,14 +25,14 @@ gulp.task('sylius-admin', function() {
 
 config_shop = [
     '--rootPath',
-    argv.rootPath || '../../../../web/assets/',
+    argv.rootPath || '../../../../../../web/assets/',
     '--nodeModulesPath',
-    '../../../../node_modules/'
+    '../../../../../../node_modules/'
 ];
 
 gulp.task('sylius-shop', function() {
     // original file : vendor/sylius/sylius/src/Sylius/Bundle/ShopBundle/Gulpfile.js
-    gulp.src('app/themes/LisemTheme/SyliusShopBundle/Gulpfile.js', { read: false })
+    gulp.src('src/LisemBundle/Resources/themes/LisemTheme/SyliusShopBundle/Gulpfile.js', { read: false })
         .pipe(chug({ args: config_shop }))
     ;
 });

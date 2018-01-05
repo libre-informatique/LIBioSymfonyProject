@@ -6,11 +6,6 @@ doctrine_migrations:
 doctrine:
     orm:
         resolve_target_entities:
-            # Sil\Bundle\CRMBundle\Entity\OrganismInterface:                  "%sil.model.crm_organism.class%"
-            Sil\Bundle\CRMBundle\Entity\OrganismInterface:                  'LisemBundle\Entity\SilCRMBundle\Organism'
-            Sil\Bundle\CRMBundle\Entity\AddressInterface:                   'PlatformBundle\Entity\SilCRMBundle\Address'
-
-            Sil\Bundle\EmailBundle\Entity\EmailInterface:                   'PlatformBundle\Entity\SilEmailBundle\Email'
             # VarietyBundle
 
             VarietyBundle\Entity\FamilyInterface:                           "%variety.entity.family.class%"

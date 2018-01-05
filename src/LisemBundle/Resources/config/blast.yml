@@ -920,6 +920,8 @@ parameters:
                         '':
                             code: ~
                             type: ~
+                            organisms:
+                                admin_code: sil_crm.admin.organism
                         form_group_members:
                             organismsCount:
                                 _options:
@@ -969,8 +971,11 @@ parameters:
             Sonata\AdminBundle\Datagrid\DatagridMapper:
                 remove:
                     owner: ~
+                    organisms: ~
                 add:
                     type: ~
+                    organisms:
+                        admin_code: sil_crm.admin.organism
 
 ###################
 # EMAILING

@@ -463,8 +463,14 @@ class Version20171201152358 extends AbstractMigration implements ContainerAwareI
         $this->addSql('CREATE TABLE sil_email__circle (circle_id UUID NOT NULL, email_id UUID NOT NULL, PRIMARY KEY(circle_id, email_id))');
         $this->addSql('CREATE INDEX IDX_F39FD8C870EE2FF6 ON sil_email__circle (circle_id)');
         $this->addSql('CREATE INDEX IDX_F39FD8C8A832C1C9 ON sil_email__circle (email_id)');
+        $this->addSql('CREATE TABLE sil_user_group (id UUID NOT NULL, name VARCHAR(255) NOT NULL, roles TEXT NOT NULL, PRIMARY KEY(id))');
+        $this->addSql('CREATE TABLE sil_user__group (user_id UUID NOT NULL, group_id UUID NOT NULL, PRIMARY KEY(user_id, group_id))');
+        $this->addSql('CREATE INDEX IDX_D1F2670BA76ED395 ON sil_user__group (user_id)');
+        $this->addSql('CREATE INDEX IDX_D1F2670BFE54D947 ON sil_user__group (group_id)');
 
         $this->addSql('COMMENT ON COLUMN sylius_admin_user.roles IS \'(DC2Type:array)\'');
+        $this->addSql('COMMENT ON COLUMN sil_user_group.roles IS \'(DC2Type:array)\'');
+
         $this->addSql('ALTER TABLE sil_stock_unit ADD CONSTRAINT FK_2EE60B6564D218E FOREIGN KEY (location_id) REFERENCES sil_stock_location (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
         $this->addSql('ALTER TABLE sil_stock_unit ADD CONSTRAINT FK_2EE60B65210D48FE FOREIGN KEY (qty_uom_id) REFERENCES sil_stock_uom (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
         $this->addSql('ALTER TABLE sil_stock_unit ADD CONSTRAINT FK_2EE60B65229E70A7 FOREIGN KEY (movement_id) REFERENCES sil_stock_movement (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
@@ -588,6 +594,8 @@ class Version20171201152358 extends AbstractMigration implements ContainerAwareI
         $this->addSql('ALTER TABLE sil_email__circle ADD CONSTRAINT FK_F39FD8C870EE2FF6 FOREIGN KEY (circle_id) REFERENCES sil_crm_circle (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
         $this->addSql('ALTER TABLE sil_email__circle ADD CONSTRAINT FK_F39FD8C8A832C1C9 FOREIGN KEY (email_id) REFERENCES sil_email (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
         $this->addSql('ALTER TABLE sil_email__circle ADD PRIMARY KEY (email_id, circle_id)');
+        $this->addSql('ALTER TABLE sil_user__group ADD CONSTRAINT FK_D1F2670BA76ED395 FOREIGN KEY (user_id) REFERENCES sil_user (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
+        $this->addSql('ALTER TABLE sil_user__group ADD CONSTRAINT FK_D1F2670BFE54D947 FOREIGN KEY (group_id) REFERENCES sil_user_group (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
 
         $this->addSql('CREATE SEQUENCE blast_session_id_seq INCREMENT BY 1 MINVALUE 1 START 1');
         $this->addSql('CREATE TABLE blast_session (id INT NOT NULL, session_id VARCHAR(255) NOT NULL, data BYTEA DEFAULT NULL, created_at TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, expires_at TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, PRIMARY KEY(id))');

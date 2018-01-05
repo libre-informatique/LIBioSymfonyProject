@@ -2,7 +2,7 @@
 services:
     lisem.admin.packaging:
         class: LisemBundle\Admin\PackagingAdmin
-        arguments: [~, "%sil_ecommerce.entity.product_option_value.class%", LisemBundle:PackagingCRUD ]
+        arguments: [~, "%sil.model.ecommerce_product_option_value.class%", LisemBundle:PackagingCRUD ]
         tags:
             - name: sonata.admin
               manager_type: orm

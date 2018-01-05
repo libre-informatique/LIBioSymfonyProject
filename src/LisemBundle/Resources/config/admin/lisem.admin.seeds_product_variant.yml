@@ -2,7 +2,7 @@
 services:
     lisem.admin.seeds_product_variant:
         class: LisemBundle\Admin\SeedsProductVariantAdmin
-        arguments: [~, "%sil_ecommerce.entity.product_variant.class%", SilEcommerceBundle:ProductVariantCRUD]
+        arguments: [~, "%sil.model.ecommerce_product_variant.class%", SilEcommerceBundle:ProductVariantCRUD]
         tags:
             - name: sonata.admin
               manager_type: orm

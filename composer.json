@@ -74,7 +74,7 @@
             "Sil\\Bundle\\EcommerceBundle\\Tools\\ComposerScriptHandler::installSyliusThemeAssets",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget",
-            "Blast\\Bundle\\CoreBundle\\Tools\\Patches\\Patcher::applyPatches"
+            "Blast\\Bundle\\PatcherBundle\\Composer\\Patcher::applyPatches"
         ],
         "post-install-cmd": [
             "@symfony-scripts",

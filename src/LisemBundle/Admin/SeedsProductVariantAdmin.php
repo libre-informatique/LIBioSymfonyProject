@@ -36,7 +36,7 @@ class SeedsProductVariantAdmin extends ProductVariantAdmin
         // packaging field
         $mapper->add('packaging', 'entity', [
             'query_builder'      => $this->optionValuesQueryBuilder(),
-            'class'              => $this->getConfigurationPool()->getContainer()->getParameter('sil_ecommerce.entity.product_option_value.class'),
+            'class'              => $this->getConfigurationPool()->getContainer()->getParameter('sil.model.ecommerce_product_option_value.class'),
             'multiple'           => false,
             'required'           => true,
             'choice_label'       => 'value',
