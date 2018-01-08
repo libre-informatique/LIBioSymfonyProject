@@ -242,7 +242,7 @@ variety:
                 show:
                     template: BlastCoreBundle:CRUD:show_field_tinymce.html.twig
                 options:
-                    help: 'sil.help.no_help'
+                    help: 'sil.variety.variety.form.help.no_help'
 ############# CONSEILS AMATEURS ####################
         amateur:
             possible_sowing_periods:
@@ -471,7 +471,7 @@ variety:
                 show:
                     template: BlastCoreBundle:CRUD:show_field_tinymce.html.twig
                 options:
-                    help: 'sil.help.no_help'
+                    help: 'sil.variety.variety.form.help.no_help'
 ########### MISE EN PRODUCTION ##################
         production:
             possible_sowing_periods:

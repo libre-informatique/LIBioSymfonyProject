@@ -134,7 +134,7 @@ class VarietyDescription extends \Twig_Extension
         $this->initFieldDescription($varietyDescription);
 
         if ($displayLabel) {
-            $help = $this->translator->trans('sil.help.' . $varietyDescription->getField(), [], 'messages');
+            $help = $this->translator->trans('sil.variety.variety.form.help.' . $varietyDescription->getField(), [], 'messages');
             $label = $this->translator->trans('sil_description_' . $this->varietyDescription->getFieldset() . '_' . $varietyDescription->getField(), [], 'messages');
 
             if ($help != ' ') {

@@ -811,13 +811,13 @@ parameters:
                                     class: new-line
                                     height: 200
                             legal_germination_rate:
-                                help: sil.help.legal_germination_rate
+                                help: sil.variety.variety.form.help.legal_germination_rate
                                 attr:
                                     class: inline-block
                                     inherit: target
                                     width: 33
                             germination_rate:
-                                help: sil.help.germination_rate
+                                help: sil.variety.variety.form.help.germination_rate
                                 attr:
                                     class: inline-block
                                     width: 33
@@ -828,13 +828,13 @@ parameters:
                                     width: 33
                                     inherit: target
                             seed_lifespan:
-                                help: sil.help.seed_lifespan
+                                help: sil.variety.variety.form.help.seed_lifespan
                                 attr:
                                     class: inline-block
                                     width: 50
                                     inherit: target
                             raise_duration:
-                                help: sil.help.raise_duration
+                                help: sil.variety.variety.form.help.raise_duration
                                 attr:
                                     class: inline-block
                                     width: 50
@@ -990,14 +990,14 @@ parameters:
                     form_tab_seeds_production:
                         '':
                             seedhead_yield:
-                                help: sil.help.seedhead_yield
+                                help: sil.variety.variety.form.help.seedhead_yield
                                 required: false
                                 attr:
                                     class: inline-block
                                     width: 50
                             area_per_kg:
                                 required: false
-                                help: sil.help.area_per_kg
+                                help: sil.variety.variety.form.help.area_per_kg
                                 attr:
                                     class: inline-block
                                     width: 50
@@ -1006,25 +1006,25 @@ parameters:
                                 attr:
                                     class: inline-block
                                     width: 50
-                                help: sil.help.seedheads_per_kg
+                                help: sil.variety.variety.form.help.seedheads_per_kg
                             base_seed_per_kg:
                                 required: false
                                 attr:
                                     class: inline-block
                                     width: 50
-                                help: sil.help.base_seed_per_kg
+                                help: sil.variety.variety.form.help.base_seed_per_kg
                         form_group_density:
                             distance_on_line:
                                 required: false
                                 type: integer
-                                help: sil.help.distance_on_line
+                                help: sil.variety.variety.form.help.distance_on_line
                                 attr:
                                     class: inline-block
                                     width: 50
                             distance_between_lines:
                                 required: false
                                 type: integer
-                                help: sil.help.distance_between_lines
+                                help: sil.variety.variety.form.help.distance_between_lines
                                 attr:
                                     class: inline-block
                                     width: 50
