@@ -572,7 +572,7 @@ parameters:
 # CRM ORGANISM
 #####################
 
-        SeedBatchBundle\Admin\OrganismAdmin:
+        Sil\Bundle\CRMBundle\Admin\OrganismAdmin:
             Sonata\AdminBundle\Show\ShowMapper:
                 titleTemplate: SeedBatchBundle:OrganismAdmin:show_title.html.twig
                 forceTabs: true
@@ -685,8 +685,8 @@ parameters:
                     _options:
                         tabsOrder:
                             - show_tab_general
-                            - show_tab_individuals
                             - show_tab_contactInformations
+                            - show_tab_individuals
                             - show_tab_emails
                             - show_tab_plots
                             - show_tab_seedbatches
@@ -831,8 +831,8 @@ parameters:
                     _options:
                         tabsOrder:
                             - form_tab_general
-                            - form_tab_individuals
                             - form_tab_contactInformations
+                            - form_tab_individuals
                             - form_tab_plots
                             - form_tab_seedbatches
                             - form_tab_info
@@ -870,9 +870,6 @@ parameters:
                     firstName: ~
                     lastName: ~
                     street: ~
-                    postCode: ~
-                    city: ~
-                    countryCode: ~
                     npai: ~
                     createdAt: ~
                     updatedAt: ~
@@ -886,26 +883,13 @@ parameters:
                                 type: text
                                 required: true
                             street: ~
-                            postCode:
-                                type: Sil\Bundle\CRMBundle\Form\Type\ZipCityType
-                                zip_field: postCode
-                                required: true
-                            city:
-                                type: Sil\Bundle\CRMBundle\Form\Type\ZipCityType
-                                zip_field: postCode
-                                required: true
-                            countryCode:
-                                type: country
-                                required: true
                             npai: ~
                             _options:
                                 fieldsOrder:
                                     - firstName
                                     - lastName
                                     - street
-                                    - postCode
-                                    - city
-                                    - countryCode
+                                    # - zip_city_country
                                     - npai
 
 ##########

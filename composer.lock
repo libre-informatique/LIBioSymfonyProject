@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "9e1ef43c47a495859b86601702d32f6f",
+    "content-hash": "68990b05b21266c162c91a5a02203a95",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -1636,21 +1636,21 @@
         },
         {
             "name": "friendsofsymfony/oauth2-php",
-            "version": "1.2.1",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/oauth2-php.git",
-                "reference": "fa2aecb1fca2a03fd5f9aca19fe9adb9dfff928c"
+                "reference": "486a6a5f70c3bfe8284a1e7e7b4b029b772d5b93"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/oauth2-php/zipball/fa2aecb1fca2a03fd5f9aca19fe9adb9dfff928c",
-                "reference": "fa2aecb1fca2a03fd5f9aca19fe9adb9dfff928c",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/oauth2-php/zipball/486a6a5f70c3bfe8284a1e7e7b4b029b772d5b93",
+                "reference": "486a6a5f70c3bfe8284a1e7e7b4b029b772d5b93",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2",
-                "symfony/http-foundation": "~2.0|~3.0"
+                "symfony/http-foundation": "~2.0|~3.0|~4.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "~4.0"
@@ -1686,7 +1686,7 @@
                 "oauth",
                 "oauth2"
             ],
-            "time": "2016-03-31T14:24:17+00:00"
+            "time": "2018-01-05T15:20:40+00:00"
         },
         {
             "name": "friendsofsymfony/rest-bundle",
@@ -3179,16 +3179,16 @@
         },
         {
             "name": "knplabs/gaufrette",
-            "version": "v0.4.0",
+            "version": "v0.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/Gaufrette.git",
-                "reference": "7cd2806ba1c2ea11cd125350363cd56b821c9e08"
+                "reference": "2f228650fd4cc50c3d3c1d6541546ffc169b2240"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/Gaufrette/zipball/7cd2806ba1c2ea11cd125350363cd56b821c9e08",
-                "reference": "7cd2806ba1c2ea11cd125350363cd56b821c9e08",
+                "url": "https://api.github.com/repos/KnpLabs/Gaufrette/zipball/2f228650fd4cc50c3d3c1d6541546ffc169b2240",
+                "reference": "2f228650fd4cc50c3d3c1d6541546ffc169b2240",
                 "shasum": ""
             },
             "require": {
@@ -3208,10 +3208,10 @@
                 "microsoft/azure-storage": "~0.15.0",
                 "microsoft/windowsazure": "~0.4",
                 "mikey179/vfsstream": "~1.2.0",
-                "mongodb/mongodb": "~1.1.4",
+                "mongodb/mongodb": "^1.1",
                 "phpseclib/phpseclib": "^2.0",
                 "phpspec/phpspec": "~2.4",
-                "phpunit/phpunit": "3.7.*",
+                "phpunit/phpunit": "^5.6.8",
                 "rackspace/php-opencloud": "^1.9.2"
             },
             "suggest": {
@@ -3235,7 +3235,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.4.x-dev"
+                    "dev-master": "0.5.x-dev"
                 }
             },
             "autoload": {
@@ -3257,7 +3257,7 @@
                     "homepage": "http://knplabs.com"
                 }
             ],
-            "description": "PHP5 library that provides a filesystem abstraction layer",
+            "description": "PHP library that provides a filesystem abstraction layer",
             "homepage": "http://knplabs.com",
             "keywords": [
                 "abstraction",
@@ -3265,7 +3265,7 @@
                 "filesystem",
                 "media"
             ],
-            "time": "2017-06-17T10:37:47+00:00"
+            "time": "2018-01-04T19:50:08+00:00"
         },
         {
             "name": "knplabs/knp-components",
@@ -6019,16 +6019,11 @@
         {
             "name": "sil-project/platform",
             "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/sil-project/Platform.git",
-                "reference": "678eb2c1a6996e898e2815fd3679bf8364db8cd8"
-            },
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/sil-project/Platform/zipball/678eb2c1a6996e898e2815fd3679bf8364db8cd8",
-                "reference": "678eb2c1a6996e898e2815fd3679bf8364db8cd8",
-                "shasum": ""
+                "type": "path",
+                "url": "/var/www/html/SIL",
+                "reference": "e04e7a4da96be8d086d72dd6eee533a8238543bd",
+                "shasum": null
             },
             "require": {
                 "doctrine/doctrine-bundle": "^1.6",
@@ -6099,12 +6094,38 @@
                     "Sil\\": "src/Sil"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "autoload-dev": {
+                "classmap": [
+                    "app/AppKernel.php",
+                    "app/AppCache.php"
+                ]
+            },
+            "scripts": {
+                "git-hook": [
+                    "ln -f -s ../../bin/git-script/pre-commit.sh .git/hooks/pre-commit",
+                    "git config branch.master.rebase true"
+                ],
+                "symfony-scripts": [
+                    "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+                    "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+                    "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+                    "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
+                    "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget",
+                    "Blast\\Bundle\\PatcherBundle\\Composer\\Patcher::applyPatches"
+                ],
+                "post-install-cmd": [
+                    "@symfony-scripts",
+                    "@git-hook"
+                ],
+                "post-update-cmd": [
+                    "@symfony-scripts",
+                    "@git-hook"
+                ]
+            },
             "license": [
                 "LGPL-3.0-only"
             ],
-            "description": "Platform Is The Sil Dev Platform.",
-            "time": "2018-01-05T10:49:39+00:00"
+            "description": "Platform Is The Sil Dev Platform."
         },
         {
             "name": "sonata-project/admin-bundle",
@@ -6207,16 +6228,16 @@
         },
         {
             "name": "sonata-project/block-bundle",
-            "version": "3.9.0",
+            "version": "3.9.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataBlockBundle.git",
-                "reference": "e068ba31f067ba1622cf89c4e105c366d1b53d1b"
+                "reference": "e27970611477203cf7c129ea90adc2ff0567f6df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataBlockBundle/zipball/e068ba31f067ba1622cf89c4e105c366d1b53d1b",
-                "reference": "e068ba31f067ba1622cf89c4e105c366d1b53d1b",
+                "url": "https://api.github.com/repos/sonata-project/SonataBlockBundle/zipball/e27970611477203cf7c129ea90adc2ff0567f6df",
+                "reference": "e27970611477203cf7c129ea90adc2ff0567f6df",
                 "shasum": ""
             },
             "require": {
@@ -6277,7 +6298,7 @@
                 "block",
                 "sonata"
             ],
-            "time": "2017-12-12T16:57:30+00:00"
+            "time": "2018-01-07T10:22:28+00:00"
         },
         {
             "name": "sonata-project/cache",
@@ -6350,16 +6371,16 @@
         },
         {
             "name": "sonata-project/core-bundle",
-            "version": "3.8.0",
+            "version": "3.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataCoreBundle.git",
-                "reference": "8e6bbe11c89a3ce540f3f3ce7c2f231c2f5a2d92"
+                "reference": "d6be7dd79a69dfeb63d75b4b0e4871d9cf4133a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataCoreBundle/zipball/8e6bbe11c89a3ce540f3f3ce7c2f231c2f5a2d92",
-                "reference": "8e6bbe11c89a3ce540f3f3ce7c2f231c2f5a2d92",
+                "url": "https://api.github.com/repos/sonata-project/SonataCoreBundle/zipball/d6be7dd79a69dfeb63d75b4b0e4871d9cf4133a0",
+                "reference": "d6be7dd79a69dfeb63d75b4b0e4871d9cf4133a0",
                 "shasum": ""
             },
             "require": {
@@ -6421,7 +6442,7 @@
             "keywords": [
                 "sonata"
             ],
-            "time": "2017-12-16T18:36:00+00:00"
+            "time": "2018-01-07T10:18:00+00:00"
         },
         {
             "name": "sonata-project/datagrid-bundle",
