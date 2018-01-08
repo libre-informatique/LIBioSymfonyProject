@@ -1,4 +1,7 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
-composer validate
-#--no-check-lock
+rm -f composer.lock
+
+composer validate --no-check-lock
+
+
