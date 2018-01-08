@@ -1,5 +1,5 @@
 VarietyBundle\Entity\Genus:
-    type: mappedSuperclass
+    type: entity
     table: lisem_variety_genus
     blast:
         loggable: true

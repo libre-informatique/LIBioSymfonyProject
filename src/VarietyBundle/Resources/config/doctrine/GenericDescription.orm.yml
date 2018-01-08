@@ -1,5 +1,5 @@
 VarietyBundle\Entity\GenericDescription:
-    type: mappedSuperclass
+    type: entity
     table: lisem_variety_description_generic
     fields:
         field:
