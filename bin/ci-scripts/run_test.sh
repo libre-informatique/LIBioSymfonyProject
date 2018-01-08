@@ -10,7 +10,7 @@ OUTPUTDIR=tests/_output
 rm -rf $OUTPUTDIR/*.png
 rm -rf $OUTPUTDIR/*.html
 
-CODECEPTCMD="bin/codecept run -d --steps --fail-fast --no-interaction"
+CODECEPTCMD="bin/codecept run -d --steps --no-exit --no-interaction"
 
 
 CODECEPTGROUP=$@
