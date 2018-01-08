@@ -1,5 +1,5 @@
 VarietyBundle\Entity\Family:
-    type: mappedSuperclass
+    type: entity
     table: lisem_variety_family
     blast:
         loggable: true
