@@ -59,6 +59,7 @@
         "nelmio/alice": "^2.2",
         "codeception/codeception": "^2.3",
         "lexik/translation-bundle": "^4.0",
+        "symfony/phpunit-bridge": "^3.3",
         "phpunit/phpunit": "^6.4"
     },
     "scripts": {
