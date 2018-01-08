@@ -26,7 +26,8 @@ parameters:
                             batchNumber: ~
                             plot:
                                 admin_code: seed_batch.admin.plot
-                            description: ~
+                            description:
+                                type: textarea
                         form_group_germination_rate:
                             germinationRate: ~
                             germinationDate: ~
@@ -85,7 +86,8 @@ parameters:
                                 required: true
                                 _options:
                                     admin_code: seed_batch.admin.plot
-                            description: ~
+                            description:
+                                type: textarea
                         form_group_germination_rate:
                             germinationRate: ~
                             germinationDate:
@@ -202,7 +204,8 @@ parameters:
                             plot:
                                 _options:
                                     admin_code: seed_batch.admin.plot_embedded
-                            description: ~
+                            description:
+                                type: textarea
                         form_group_germination_rate:
                             germinationRate: ~
                             germinationDate:
@@ -300,7 +303,8 @@ parameters:
                                 type: Blast\Bundle\CoreBundle\Form\Type\EntityCodeType
                                 attr:
                                     required: true
-                            description: ~
+                            description:
+                                type: textarea
 
                         _options:
                             groupsOrder: [form_group_general, form_group_main_address]
@@ -363,7 +367,8 @@ parameters:
                         form_group_plot:
                             name: ~
                             code: ~
-                            description: ~
+                            description:
+                                type: textarea
                             address: ~
                             zip: ~
                             city: ~
@@ -411,7 +416,8 @@ parameters:
                             name: ~
                             code:
                                 type: Blast\Bundle\CoreBundle\Form\Type\EntityCodeType
-                            description: ~
+                            description:
+                                type: textarea
                         _options:
                             groupsOrder: [form_group_general, form_group_main_address]
                     _options:
@@ -482,6 +488,8 @@ parameters:
                             - form_group_specifics
 
             Sonata\AdminBundle\Form\FormMapper:
+                remove:
+                    description: ~
                 add:
                     form_tab_general:
                         form_group_organism:
@@ -642,7 +650,8 @@ parameters:
                                 type: sonata_type_date_picker
                                 required: false
                             url: ~
-                            description: ~
+                            description:
+                                type: textarea
 
                     _options:
                         tabsOrder: [form_group_general, form_group_specifics]
@@ -690,7 +699,8 @@ parameters:
                             name: ~
                             code: ~
                             logo: ~
-                            description: ~
+                            description:
+                                type: html
                     _options:
                         tabsOrder: [main_tab, form_group_specifics]
             # FORM
