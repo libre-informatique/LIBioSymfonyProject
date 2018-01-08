@@ -16,16 +16,18 @@ CODECEPTCMD="bin/codecept run -d --steps --fail-fast --no-interaction"
 CODECEPTGROUP=$@
 if [ $# -eq 0 ]
 then
-   CODECEPTGROUP="login menu user crm" # variety ecommerce" # all"
+    CODECEPTGROUP="login menu user crm" # variety ecommerce" # all"
 fi
 
-
+CODECEPTGROUP="route"
 
 for i in $CODECEPTGROUP
 do
     # merge env http://codeception.com/docs/07-AdvancedUsage#Environments
-    $CODECEPTCMD -g $i --env=firefox,lisem
+    #$CODECEPTCMD -g $i --env=firefox,lisem
     #$CODECEPTCMD -g $i --env=chrome,lisem
+
+    $CODECEPTCMD -g $i --env=phpbrowser,lisem
 done
 
 
