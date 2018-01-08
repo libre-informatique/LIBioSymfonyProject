@@ -34,7 +34,7 @@ bin/console doctrine:schema:create --no-interaction --em=session
 bin/console lisem:install:setup --yes
 
 # Import City
-bin/console blast:import:csv -d vendor/sil-project/platform/src/Sil/Bundle/CRMBundle/Resources/import -m vendor/sil-project/platform/src/Sil/Bundle/CRMBundle/Resources/config/csv_import.yml
+bin/console blast:import:csv -d vendor/sil-project/platform/src/Sil/Bundle/CRMBundle/Resources/import/cities -m vendor/sil-project/platform/src/Sil/Bundle/CRMBundle/Resources/import/mapping.yml
 
 
 bin/console blast:patchs:apply
