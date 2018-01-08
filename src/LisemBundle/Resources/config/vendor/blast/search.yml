@@ -1,0 +1,21 @@
+fos_elastica:
+    indexes:
+        global:
+            types:
+                producer:
+                    properties:
+                        name: ~
+                        firstname: ~
+                        lastname: ~
+                        description: ~
+                        email: ~
+                        url: ~
+                    indexable_callback: 'isSeedProducer'
+                    persistence:
+                        driver: orm
+                        model: "%sil.model.crm_organism.class%"
+                        listener:
+                            defer: true
+                        finder: ~
+                        elastica_to_model_transformer:
+                            ignore_missing: true

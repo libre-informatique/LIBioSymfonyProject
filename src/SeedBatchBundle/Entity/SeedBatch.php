@@ -20,6 +20,7 @@ use Blast\Bundle\BaseEntitiesBundle\Entity\Traits\Timestampable;
 use Sil\Bundle\CRMBundle\Entity\OrganismInterface;
 use VarietyBundle\Entity\VarietyInterface;
 use Sil\Bundle\EcommerceBundle\Entity\Association\HasProductVariantsTrait;
+use Sil\Bundle\SonataSyliusUserBundle\Entity\Traits\Traceable;
 
 /**
  * SeedBatch.
@@ -30,7 +31,8 @@ class SeedBatch implements SeedBatchInterface
         Timestampable,
         Loggable,
         Descriptible,
-        Searchable;
+        Searchable,
+        Traceable;
 
     use HasProductVariantsTrait;
 

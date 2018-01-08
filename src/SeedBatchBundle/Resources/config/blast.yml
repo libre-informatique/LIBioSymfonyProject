@@ -68,12 +68,17 @@ parameters:
                                     admin_code: variety.admin.variety
                                     translation_domain: messages
                             producer:
-                                type: Blast\Bundle\BaseEntitiesBundle\Form\Type\SearchableAutocompleteType
-                                property: fulltextName
-                                callback: [SeedBatchBundle\Admin\SeedProducerAdmin, producerAutocompleteCallback]
+                                # type: Blast\Bundle\BaseEntitiesBundle\Form\Type\SearchableAutocompleteType
+                                # property: fulltextName
+                                # callback: [SeedBatchBundle\Admin\SeedProducerAdmin, producerAutocompleteCallback]
+                                # required: true
+                                # _options:
+                                #     admin_code: seed_batch.admin.seed_producer
+                                type: Blast\Bundle\SearchBundle\Form\Type\AutocompleteType
+                                elastic_type: producer
                                 required: true
                                 _options:
-                                    admin_code: seed_batch.admin.seed_producer
+                                    admin_code: sil_crm.admin.organism
                             productionYear:
                                 required: true
                             batchNumber:

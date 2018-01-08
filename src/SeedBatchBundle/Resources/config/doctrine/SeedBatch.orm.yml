@@ -1,5 +1,5 @@
 SeedBatchBundle\Entity\SeedBatch:
-    type: mappedSuperclass
+    type: entity
     table: lisem_seed_batch
     fields:
         code:
