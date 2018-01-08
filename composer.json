@@ -64,7 +64,8 @@
     "scripts": {
         "git-hook": [
             "ln -f -s ../../bin/git-script/pre-commit.sh .git/hooks/pre-commit",
-            "git config branch.master.rebase true"
+            "git config branch.master.rebase true",
+            "git config branch.wip-platform.rebase true"
         ],
         "symfony-scripts": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
