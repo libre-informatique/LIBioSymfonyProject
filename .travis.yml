@@ -7,13 +7,17 @@ php:
 
 services:
   - postgresql
-  
+  - elasticsearch
+
 sudo: required
 
 cache:
-  pip: true
   directories:
+    - $HOME/bin/
     - $HOME/.composer/cache/files
+    - $HOME/.npm/
+    - node_modules
+    
 
 env:
   global:
@@ -21,8 +25,6 @@ env:
     - SCRIPTS_FOLDER=bin/ci-scripts
     - SYMFONY_DEPRECATIONS_HELPER=weak
     - TARGET=test
-    - UPSTREAM_URL=https://github.com/libre-informatique/LISemSymfonyProject.git
-    - XMLLINT_INDENT="    "
 
 notifications:
   email:
@@ -39,14 +41,8 @@ matrix:
   allow_failures:
     - php: nightly
     - env: SYMFONY_DEPRECATIONS_HELPER=0
-    - env: SYMFONY=dev-master@dev
-    - env: SONATA_CORE=dev-master@dev
-    - env: SONATA_BLOCK=dev-master@dev
 
 before_install:
-    - git remote add upstream ${UPSTREAM_URL} && git fetch --all
-    - if [[ -x ${SCRIPTS_FOLDER}/check_relevant_${TARGET}.sh && "$TRAVIS_PULL_REQUEST" != "false" ]]; then export RELEVANT=$(${SCRIPTS_FOLDER}/check_relevant_${TARGET}.sh); fi;
-    - if [[ ! -z ${RELEVANT} ]];then exit 0; fi;
     - if [ -x ${SCRIPTS_FOLDER}/before_install_${TARGET}.sh ]; then ${SCRIPTS_FOLDER}/before_install_${TARGET}.sh; fi;
     - if [ -x ${SCRIPTS_FOLDER}/create_travis_database_${TARGET}.sh ]; then ${SCRIPTS_FOLDER}/create_travis_database_${TARGET}.sh; fi;
   
