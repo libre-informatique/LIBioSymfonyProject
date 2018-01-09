@@ -12,6 +12,9 @@ set -ev
 #  - postgresql
 # or here :  sudo /etc/init.d/postgresql start
 
+psql -w -c "DROP DATABASE IF EXISTS lisem;" -U postgres
+psql -w -c "DROP ROLE IF EXISTS lisem_user;" -U postgres
+
 # (we try to create a travis user)
 psql -c "CREATE USER lisem_user WITH PASSWORD 'lisem';" -U postgres
 psql -c 'ALTER ROLE lisem_user WITH CREATEDB;' -U postgres
