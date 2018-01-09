@@ -26,8 +26,7 @@ class StockOperationAdmin extends BaseStockOperationAdmin
      * @param OperationType $type
      * @param FormMapper    $mapper
      */
-    protected function createPartnerField($group, OperationType $type,
-        FormMapper $mapper)
+    protected function createPartnerField($group, OperationType $type, FormMapper $mapper)
     {
         $em = $this->getConfigurationPool()->getContainer()->get('doctrine.orm.entity_manager');
         $repository = $em->getRepository('SilCRMBundle:Organism');
@@ -42,7 +41,10 @@ class StockOperationAdmin extends BaseStockOperationAdmin
             [
                 'choices'      => $parters,
                 'choice_label' => 'fulltextName',
-            ], ['admin_code' => 'seed_batch.admin.organism']
+            ],
+            [
+                'admin_code' => 'seed_batch.admin.organism',
+            ]
         );
     }
 

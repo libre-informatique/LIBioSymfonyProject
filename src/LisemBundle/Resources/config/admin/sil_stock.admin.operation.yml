@@ -2,7 +2,7 @@
 services:
     sil_stock.admin.operation:
         class: LisemBundle\Admin\StockOperationAdmin
-        arguments: [~, "%sil.model.stock_operation.class%", sil.stock.controller.operation]
+        arguments: [~, "%sil.model.stock_operation.class%", SilStockBundle:OperationCRUD]
         calls:
             - [ setOperationCodeGenerator, ["@sil.code_generator.stock_operation"]]
             - [ setMovementCodeGenerator, ["@sil.code_generator.stock_movement"]]

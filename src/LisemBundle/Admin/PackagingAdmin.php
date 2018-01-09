@@ -13,7 +13,7 @@
 namespace LisemBundle\Admin;
 
 use Sil\Bundle\EcommerceBundle\Admin\ProductOptionValueAdmin;
-use Sil\Bundle\EcommerceBundle\Entity\Product;
+use LisemBundle\Entity\SilEcommerceBundle\Product;
 use Sonata\AdminBundle\Form\FormMapper;
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
