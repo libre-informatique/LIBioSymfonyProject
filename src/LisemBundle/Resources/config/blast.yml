@@ -445,7 +445,7 @@ parameters:
                         form_group_options:
                             optionValues:
                                 _options:
-                                    admin_code: sil_ecommerce_option_value.admin.product
+                                    admin_code: sil_ecommerce.admin.product_option_value
                         form_group_pricing:
                             taxCategory: ~
                             channelPricings:
@@ -488,7 +488,7 @@ parameters:
                         type: boolean
                     optionValues:
                         type: null
-                        admin_code: sil_ecommerce_option_value.admin.product
+                        admin_code: sil_ecommerce.admin.product_option_value
                     _options:
                         fieldsOrder:
                             - name
