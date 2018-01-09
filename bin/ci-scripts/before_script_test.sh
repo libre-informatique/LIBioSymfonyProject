@@ -31,7 +31,7 @@ fi
 
 set +e
 curl -s -X GET 'http://127.0.0.1:8064' > /dev/null 
-if [ $? -ne 0 ]
+if [ $? -eq 0 ]
 then
     bin/console server:stop
 fi
