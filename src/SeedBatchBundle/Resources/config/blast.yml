@@ -544,6 +544,9 @@ parameters:
                                     edit: inline
                                     allow_delete: true
                                     admin_code: seed_batch.admin.plot_embedded
+                        _options:
+                            countChildItems:
+                                - plots
                     form_tab_seedbatches:
                         '':
                             seedBatches:
@@ -559,6 +562,9 @@ parameters:
                                     edit: inline
                                     allow_delete: true
                                     admin_code: seed_batch.admin.seed_batch_embedded
+                        _options:
+                            countChildItems:
+                                - seedBatches
                     _options:
                         tabsOrder:
                             - form_tab_general
