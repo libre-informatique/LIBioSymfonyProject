@@ -434,6 +434,7 @@ parameters:
                     zip: ~
                     country: ~
                     city: ~
+                    name:: ~
                 add:
                     name:
                         identifier: true
@@ -494,7 +495,8 @@ parameters:
 
             Sonata\AdminBundle\Form\FormMapper:
                 remove:
-                    description: ~
+                    plots: ~
+                    seedBatches: ~
                 add:
                     form_tab_general:
                         form_group_organism:
@@ -508,22 +510,22 @@ parameters:
                                 only_not_new: true
                             _options:
                                 fieldsOrder:
-                                    - active
                                     - title
                                     - firstname
                                     - lastname
                                     - name
+                                    - circles
                                     - email
                                     - emailNpai
                                     - emailNoNewsletter
                                     - alert
-                                    - customer
+                                    - isCustomer
                                     - customerCode
-                                    - supplier
+                                    - isSupplier
                                     - supplierCode
                                     - seedProducer
                                     - seedProducerCode
-#                                    - circles
+                                    - active
 #                                    - category
 #                                    - description
 #                                    - url
@@ -733,6 +735,7 @@ parameters:
             Sonata\AdminBundle\Datagrid\ListMapper:
                 remove:
                     _actions: [duplicate]
+                    name: ~
                 add:
                     name: ~
                     code: ~
@@ -795,6 +798,7 @@ parameters:
                     city: ~
                     country: ~
                     createdAt: ~
+                    name: ~
                     _actions: [duplicate]
                 add:
                     name:

@@ -1,10 +1,9 @@
 
 VarietyBundle\Entity\VarietyDescriptionCommercial:
     type: entity
-    table: lisem_variety_description_commercial
     manyToOne:
         variety:
-            targetEntity: VarietyBundle\Entity\VarietyInterface
+            targetEntity: VarietyBundle\Entity\Variety
             inversedBy: commercial_descriptions
             joinColumn:
                 name: variety_id

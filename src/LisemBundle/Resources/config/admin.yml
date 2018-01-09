@@ -12,3 +12,4 @@ imports:
     - { resource: admin/sil_ecommerce.admin.customer.yml }
     - { resource: admin/sil_ecommerce.admin.payment_method.yml }
     - { resource: admin/sil_stock.admin.operation.yml }
+    - { resource: admin/sil_crm.admin.organism.yml }

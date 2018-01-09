@@ -13,5 +13,5 @@ VarietyBundle\Entity\PlantCategory:
             mappedBy: plant_categories
 
         varieties:
-            targetEntity: VarietyBundle\Entity\VarietyInterface
+            targetEntity: VarietyBundle\Entity\Variety
             mappedBy: plant_categories

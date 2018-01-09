@@ -63,7 +63,7 @@ VarietyBundle\Entity\Species:
 
     oneToMany:
         varieties:
-            targetEntity: VarietyBundle\Entity\VarietyInterface
+            targetEntity: VarietyBundle\Entity\Variety
             mappedBy: species
             cascade: [ persist ]
         subspecieses:

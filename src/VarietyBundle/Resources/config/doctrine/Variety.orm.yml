@@ -116,7 +116,7 @@ VarietyBundle\Entity\Variety:
             nullable: true
     oneToMany:
         children:
-            targetEntity: VarietyBundle\Entity\VarietyInterface
+            targetEntity: VarietyBundle\Entity\Variety
             mappedBy: parent
             cascade: [persist, remove]
         professional_descriptions:
@@ -198,7 +198,7 @@ VarietyBundle\Entity\Variety:
                         referencedColumnName: id
     manyToOne:
         parent:
-            targetEntity: VarietyBundle\Entity\VarietyInterface
+            targetEntity: VarietyBundle\Entity\Variety
             inversedBy: children
         species:
             targetEntity: VarietyBundle\Entity\SpeciesInterface

@@ -707,6 +707,7 @@ parameters:
                     active: ~
                     circles: ~
                     email: ~
+                    plots: ~
                 add:
                     form_tab_general:
                         form_group_organism:

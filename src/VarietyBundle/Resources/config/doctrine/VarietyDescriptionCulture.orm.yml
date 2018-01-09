@@ -1,9 +1,8 @@
 VarietyBundle\Entity\VarietyDescriptionCulture:
     type: entity
-    table: lisem_variety_description_culture
     manyToOne:
         variety:
-            targetEntity: VarietyBundle\Entity\VarietyInterface
+            targetEntity: VarietyBundle\Entity\Variety
             inversedBy: culture_descriptions
             joinColumn:
                 name: variety_id
