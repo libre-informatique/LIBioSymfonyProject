@@ -64,4 +64,4 @@ parameters:
 
     blast_search.elastic_search.hostname: localhost
     blast_search.elastic_search.port: 9200
-    blast_search.global_index_name: lisem
+    blast_search.global_index_alias: lisem
