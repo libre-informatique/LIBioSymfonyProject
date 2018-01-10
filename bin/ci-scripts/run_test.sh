@@ -21,12 +21,15 @@ fi
 
 for i in $CODECEPTGROUP
 do
-    $CODECEPTCMD --no-exit -g route --env=phpbrowser,lisem
-    
-    # merge env http://codeception.com/docs/07-AdvancedUsage#Environments
-    $CODECEPTCMD -g $i --env=firefox,lisem
-    #$CODECEPTCMD -g $i --env=chrome,lisem
 
+    if [ $i = 'route' ]
+    then
+        $CODECEPTCMD --no-exit -g route --env=phpbrowser,lisem
+    else        
+        # merge env http://codeception.com/docs/07-AdvancedUsage#Environments
+        $CODECEPTCMD -g $i --env=firefox,lisem
+        #$CODECEPTCMD -g $i --env=chrome,lisem
+    fi
 
 done
 
