@@ -2,7 +2,7 @@
 services:
     variety.admin.species:
         class: VarietyBundle\Admin\SpeciesAdmin
-        arguments: [~, "%variety.entity.species.class%", BlastCoreBundle:CRUD]
+        arguments: [~, "%lisem.model.variety_species.class%", BlastCoreBundle:CRUD]
         tags:
             -
                 name: sonata.admin

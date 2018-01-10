@@ -1,13 +1,13 @@
 parameters:
-    variety.entity.variety_description_plant.class:            VarietyBundle\Entity\VarietyDescriptionPlant
-    variety.entity.variety_description_professionnal.class:    VarietyBundle\Entity\VarietyDescriptionProfessional
-    variety.entity.variety_description_production.class:       VarietyBundle\Entity\VarietyDescriptionProduction
-    variety.entity.variety_description_amateur.class:          VarietyBundle\Entity\VarietyDescriptionAmateur
-    variety.entity.variety_description_culture.class:          VarietyBundle\Entity\VarietyDescriptionCulture
-    variety.entity.variety_description_inner.class:            VarietyBundle\Entity\VarietyDescriptionInner
-    variety.entity.variety_description_commercial.class:       VarietyBundle\Entity\VarietyDescriptionCommercial
-    variety.entity.plant_category.class:                       VarietyBundle\Entity\PlantCategory
-    variety.entity.family.class:                               VarietyBundle\Entity\Family
-    variety.entity.variety.class:                              VarietyBundle\Entity\Variety
-    variety.entity.species.class:                              VarietyBundle\Entity\Species
-    variety.entity.genus.class:                                VarietyBundle\Entity\Genus
+    lisem.model.variety_description_plant.class:            VarietyBundle\Entity\VarietyDescriptionPlant
+    lisem.model.variety_description_professionnal.class:    VarietyBundle\Entity\VarietyDescriptionProfessional
+    lisem.model.variety_description_production.class:       VarietyBundle\Entity\VarietyDescriptionProduction
+    lisem.model.variety_description_amateur.class:          VarietyBundle\Entity\VarietyDescriptionAmateur
+    lisem.model.variety_description_culture.class:          VarietyBundle\Entity\VarietyDescriptionCulture
+    lisem.model.variety_description_inner.class:            VarietyBundle\Entity\VarietyDescriptionInner
+    lisem.model.variety_description_commercial.class:       VarietyBundle\Entity\VarietyDescriptionCommercial
+    lisem.model.variety_plant_category.class:                       VarietyBundle\Entity\PlantCategory
+    lisem.model.variety_family.class:                               VarietyBundle\Entity\Family
+    lisem.model.variety.class:                              VarietyBundle\Entity\Variety
+    lisem.model.variety_species.class:                              VarietyBundle\Entity\Species
+    lisem.model.variety_genus.class:                                VarietyBundle\Entity\Genus

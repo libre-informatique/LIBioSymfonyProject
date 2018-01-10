@@ -428,6 +428,16 @@ class Variety implements VarietyInterface
     }
 
     /**
+     * Get full code.
+     *
+     * @return string
+     */
+    public function getFullCode()
+    {
+        return sprintf('%s%s', $this->getSpecies()->getCode(), $this->code);
+    }
+
+    /**
      * Set lifeCycle.
      *
      * @param string $lifeCycle
@@ -662,7 +672,7 @@ class Variety implements VarietyInterface
      *
      * @return Variety
      */
-    public function setParent(Variety $parent = null)
+    public function setParent(self $parent = null)
     {
         $this->parent = $parent;
 
@@ -686,7 +696,7 @@ class Variety implements VarietyInterface
      *
      * @return Variety
      */
-    public function addChild(Variety $child)
+    public function addChild(self $child)
     {
         $this->children[] = $child;
 
@@ -700,7 +710,7 @@ class Variety implements VarietyInterface
      *
      * @return bool tRUE if this collection contained the specified element, FALSE otherwise
      */
-    public function removeChild(Variety $child)
+    public function removeChild(self $child)
     {
         return $this->children->removeElement($child);
     }
@@ -1170,7 +1180,7 @@ class Variety implements VarietyInterface
      *
      * @return Strain
      */
-    public function setVariety(Variety $variety = null)
+    public function setVariety(self $variety = null)
     {
         $this->variety = $variety;
 

@@ -2,7 +2,7 @@
 services:
     variety.admin.variety_description_inner:
         class: VarietyBundle\Admin\VarietyDescriptionAdmin
-        arguments: [~, "%variety.entity.variety_description_inner.class%", BlastCoreBundle:CRUD]
+        arguments: [~, "%lisem.model.variety_description_inner.class%", BlastCoreBundle:CRUD]
         tags:
             -
                 name: sonata.admin

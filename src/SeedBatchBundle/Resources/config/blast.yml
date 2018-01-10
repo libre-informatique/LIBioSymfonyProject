@@ -64,12 +64,17 @@ parameters:
                                 type: sonata_type_model
                                 required: true
                             variety:
-                                type: sonata_type_model_autocomplete
-                                property: name
+                                type: Blast\Bundle\SearchBundle\Form\Type\AutocompleteType
+                                elastic_type: variety
                                 required: true
                                 _options:
-                                    admin_code: variety.admin.variety
-                                    translation_domain: messages
+                                    admin_code: lisem.admin.variety
+                                # type: sonata_type_model_autocomplete
+                                # property: name
+                                # required: true
+                                # _options:
+                                #     admin_code: variety.admin.variety
+                                #     translation_domain: messages
                             producer:
                                 # type: Blast\Bundle\BaseEntitiesBundle\Form\Type\SearchableAutocompleteType
                                 # property: fulltextName

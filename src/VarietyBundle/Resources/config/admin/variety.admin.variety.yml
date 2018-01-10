@@ -2,7 +2,7 @@
 services:
     variety.admin.variety:
         class: VarietyBundle\Admin\VarietyAdmin
-        arguments: [~, "%variety.entity.variety.class%", VarietyBundle:VarietyCRUD]
+        arguments: [~, "%lisem.model.variety.class%", VarietyBundle:VarietyCRUD]
         tags:
             -
                 name: sonata.admin

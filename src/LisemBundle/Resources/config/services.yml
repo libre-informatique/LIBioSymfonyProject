@@ -75,28 +75,28 @@ services:
         arguments:
             - "@doctrine.orm.entity_manager"
         calls:
-            - [ setEntityClass, ["%variety.entity.family.class%"]]
+            - [ setEntityClass, ["%lisem.model.variety_family.class%"]]
 
     lisem.fixture.example_factory.genus:
         class: LisemBundle\DataFixtures\Sylius\Factory\GenusExampleFactory
         arguments:
             - "@doctrine.orm.entity_manager"
         calls:
-            - [ setEntityClass, ["%variety.entity.genus.class%"]]
+            - [ setEntityClass, ["%lisem.model.variety_genus.class%"]]
 
     lisem.fixture.example_factory.species:
         class: LisemBundle\DataFixtures\Sylius\Factory\SpeciesExampleFactory
         arguments:
             - "@doctrine.orm.entity_manager"
         calls:
-            - [ setEntityClass, ["%variety.entity.species.class%"]]
+            - [ setEntityClass, ["%lisem.model.variety_species.class%"]]
 
     lisem.fixture.example_factory.variety:
         class: LisemBundle\DataFixtures\Sylius\Factory\VarietyExampleFactory
         arguments:
             - "@doctrine.orm.entity_manager"
         calls:
-            - [ setEntityClass, ["%variety.entity.variety.class%"]]
+            - [ setEntityClass, ["%lisem.model.variety.class%"]]
 
     lisem.fixture.example_factory.seed_batch:
         class: LisemBundle\DataFixtures\Sylius\Factory\SeedBatchExampleFactory

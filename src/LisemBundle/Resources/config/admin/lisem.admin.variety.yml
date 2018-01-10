@@ -2,7 +2,7 @@
 services:
     lisem.admin.variety:
         class: LisemBundle\Admin\VarietyAdmin
-        arguments: [~, "%variety.entity.variety.class%", LisemBundle:VarietyCRUD]
+        arguments: [~, "%lisem.model.variety.class%", LisemBundle:VarietyCRUD]
         tags:
             - name: sonata.admin
               manager_type: orm

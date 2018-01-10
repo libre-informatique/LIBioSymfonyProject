@@ -1,0 +1,38 @@
+{% extends 'BlastSearchBundle:Search/Results:result.html.twig' %}
+
+{% set resultUrl = path('admin_variety_show', {'id': result.id}) %}
+
+{% block search_url %}
+    {{ resultUrl }}
+{% endblock %}
+
+{% block search_title %}
+    {{ result.species.name|capitalize }} {{ result.name|capitalize }}
+{% endblock %}
+
+{% block search_main_text %}
+    {{ result.fullCode }} - {{ result.latinName }}<br/>
+    {{ result.description }}
+</br/>
+{% endblock %}
+
+{% block search_actions %}
+    <div class="btn-group">
+        <a class="btn btn-default" href="{{ resultUrl }}">
+            {{ 'action_show'|trans({}, 'SonataAdminBundle') }}
+        </a>
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="caret"></span>
+            <span class="sr-only">Toggle Dropdown</span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-right">
+            {# {% if is_granted('EDIT', result) %} #}
+            <li>
+                <a href="{{ path('admin_variety_edit', {'id': result.id}) }}">
+                    {{ 'action_edit'|trans({}, 'SonataAdminBundle') }}
+                </a>
+            </li>
+            {# {% endif %} #}
+        </ul>
+    </div>
+{% endblock %}

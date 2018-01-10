@@ -2,7 +2,7 @@
 services:
     variety.admin.family:
         class: VarietyBundle\Admin\FamilyAdmin
-        arguments: [~, "%variety.entity.family.class%", BlastCoreBundle:CRUD]
+        arguments: [~, "%lisem.model.variety_family.class%", BlastCoreBundle:CRUD]
         tags:
             -
                 name: sonata.admin

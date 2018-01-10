@@ -8,10 +8,10 @@ doctrine:
         resolve_target_entities:
             # VarietyBundle
 
-            VarietyBundle\Entity\FamilyInterface:                           "%variety.entity.family.class%"
-            VarietyBundle\Entity\VarietyInterface:                          "%variety.entity.variety.class%"
-            VarietyBundle\Entity\SpeciesInterface:                          "%variety.entity.species.class%"
-            VarietyBundle\Entity\GenusInterface:                            "%variety.entity.genus.class%"
+            VarietyBundle\Entity\FamilyInterface:                           "%lisem.model.variety_family.class%"
+            VarietyBundle\Entity\VarietyInterface:                          "%lisem.model.variety.class%"
+            VarietyBundle\Entity\SpeciesInterface:                          "%lisem.model.variety_species.class%"
+            VarietyBundle\Entity\GenusInterface:                            "%lisem.model.variety_genus.class%"
             # SilSeedBatchBundle
 
             SeedBatchBundle\Entity\SeedBatchInterface:                      "%seed_batch.entity.seed_batch.class%"
