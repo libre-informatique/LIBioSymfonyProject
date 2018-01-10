@@ -13,6 +13,8 @@
 namespace SeedBatchBundle\Admin;
 
 use Blast\Bundle\CoreBundle\Admin\CoreAdmin;
+use Sonata\AdminBundle\Form\FormMapper;
+use VarietyBundle\Entity\Variety;
 
 class SeedBatchAdmin extends CoreAdmin
 {
@@ -20,4 +22,18 @@ class SeedBatchAdmin extends CoreAdmin
      * @var string
      */
     protected $translationLabelPrefix = 'sil.seed_batch.seed_batch';
+
+    public function configureFormFields(FormMapper $mapper)
+    {
+        parent::configureFormFields($mapper);
+        $request = $this->getConfigurationPool()->getContainer()->get('request_stack')->getMasterRequest();
+
+        $varietyId = $request->get('variety', null);
+
+        if ($varietyId !== null) {
+            $varietyRepository = $this->getConfigurationPool()->getContainer()->get('doctrine')->getRepository(Variety::class);
+            $variety = $varietyRepository->find($varietyId);
+            $this->getSubject()->setVariety($variety);
+        }
+    }
 }

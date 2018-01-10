@@ -130,6 +130,8 @@ lisem:
         seedsproduct_list: Liste des articles (semences)
         variety_list: Liste des variétés
         available: Disponible
+        productionYear: Année de production
+        create_new_seed_batch: Créer un nouveau lot
 
 
     help:

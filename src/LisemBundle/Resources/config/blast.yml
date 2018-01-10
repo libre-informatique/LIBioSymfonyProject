@@ -49,6 +49,7 @@ parameters:
                     form_tab_seed_batches:
                         show_group_seed_batches:
                             seedBatches:
+                                template: LisemBundle:CRUD:show_field_seedBatches.html.twig
                                 admin_code: seed_batch.admin.seed_batch
                     _options:
                         tabsOrder:
@@ -202,7 +203,7 @@ parameters:
                     code:
                         identifier: true
                     variety:
-                        admin_code: variety.admin.variety
+                        admin_code: lisem.admin.variety
                     _options:
                         fieldsOrder: [name, code, variety, enabled]
 

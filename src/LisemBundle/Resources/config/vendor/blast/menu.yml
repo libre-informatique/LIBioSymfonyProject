@@ -35,7 +35,7 @@ blast_menu:
         lisem.menu.varieties:
             label: lisem.menu_label.varieties
             icon:  tree
-            route: admin_variety_variety_list
+            route: admin_variety_list
             order: 13
 
         # ##################################################################

@@ -19,7 +19,7 @@ parameters:
                             originalCode: ~
                             seedFarm: ~
                             variety:
-                                admin_code: variety.admin.variety
+                                admin_code: lisem.admin.variety
                             producer:
                                 admin_code: seed_batch.admin.seed_producer
                                 associated_property: producerToString
@@ -58,8 +58,14 @@ parameters:
                             code:
                                 type: Blast\Bundle\CoreBundle\Form\Type\EntityCodeType
                                 required: true
+                                attr:
+                                    class: inline-block
+                                    width: 50
                             originalCode:
                                 required: false
+                                attr:
+                                    class: new-line-after
+                                    width: 50
                             seedFarm:
                                 type: sonata_type_model
                                 required: true
@@ -69,19 +75,7 @@ parameters:
                                 required: true
                                 _options:
                                     admin_code: lisem.admin.variety
-                                # type: sonata_type_model_autocomplete
-                                # property: name
-                                # required: true
-                                # _options:
-                                #     admin_code: variety.admin.variety
-                                #     translation_domain: messages
                             producer:
-                                # type: Blast\Bundle\BaseEntitiesBundle\Form\Type\SearchableAutocompleteType
-                                # property: fulltextName
-                                # callback: [SeedBatchBundle\Admin\SeedProducerAdmin, producerAutocompleteCallback]
-                                # required: true
-                                # _options:
-                                #     admin_code: seed_batch.admin.seed_producer
                                 type: Blast\Bundle\SearchBundle\Form\Type\AutocompleteType
                                 elastic_type: producer
                                 required: true
@@ -147,7 +141,7 @@ parameters:
                         identifier: true
                     seedFarm: ~
                     variety:
-                        admin_code: variety.admin.variety
+                        admin_code: lisem.admin.variety
                     producer:
                         admin_code: seed_batch.admin.seed_producer
                     productionYear: ~
@@ -159,7 +153,7 @@ parameters:
                         type: doctrine_orm_model_autocomplete
                         field_options:
                             property: [name, code]
-                        admin_code: variety.admin.variety
+                        admin_code: lisem.admin.variety
                     seedFarm.name: ~
                     producer.name: ~
                     plot.name: ~
@@ -203,7 +197,7 @@ parameters:
                             code: ~
                             variety:
                                 _options:
-                                    admin_code: variety.admin.variety
+                                    admin_code: lisem.admin.variety
                             seedFarm:
                                 type: sonata_type_model
                             producer:

@@ -63,6 +63,7 @@ sil:
                     gross_delivered_weight: Poids brut livré
                     gross_producer_weight: Poids brut produit
                     net_screened_weight: Poids net trié
+                    original_code: Code original
                     plot: Parcelle
                     producer: Producteur
                     production_year: Année de production
@@ -87,6 +88,7 @@ sil:
                     gross_delivered_weight: Poids brut livré
                     gross_producer_weight: Poids brut produit
                     net_screened_weight: Poids net trié
+                    original_code: Code original
                     plot: Parcelle
                     producer: Producteur
                     production_year: Année de production

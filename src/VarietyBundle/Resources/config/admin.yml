@@ -4,7 +4,7 @@ imports:
     - { resource: "@VarietyBundle/Resources/config/admin/variety.admin.genus_embedded.yml" }
     - { resource: "@VarietyBundle/Resources/config/admin/variety.admin.species.yml" }
     - { resource: "@VarietyBundle/Resources/config/admin/variety.admin.species_embedded.yml" }
-    - { resource: "@VarietyBundle/Resources/config/admin/variety.admin.variety.yml" }
+    # - { resource: "@VarietyBundle/Resources/config/admin/variety.admin.variety.yml" }
     - { resource: "@VarietyBundle/Resources/config/admin/variety.admin.plant_category.yml" }
     - { resource: "@VarietyBundle/Resources/config/admin/variety.admin.variety_description_inner.yml" }
     - { resource: "@VarietyBundle/Resources/config/admin/variety.admin.variety_description_professional.yml" }

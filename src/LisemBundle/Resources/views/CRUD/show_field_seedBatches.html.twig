@@ -1,0 +1,45 @@
+
+{% block seedBatches %}
+
+<a href="{{ path('admin_seedbatch_seedbatch_create', {'variety': object.id}) }}" class="btn btn-success pull-right">
+    <i class="fa fa-plus-circle"></i> {{ 'lisem.lisembundle.create_new_seed_batch'|trans }}
+</a>
+
+<table class="table seedBatches">
+    <tbody>
+        <tr class="">
+            <th>
+                {{ 'lisem.lisembundle.seedbatch'|trans }}
+            </th>
+            <th>
+                {{ 'lisem.lisembundle.seedproducer'|trans }}
+            </th>
+            <th>
+                {{ 'lisem.lisembundle.productionYear'|trans }}
+            </th>
+            <th>
+                {{ 'action'|trans }}
+            </th>
+        </tr>
+    {% for seedBatch in value %}
+        <tr class="sonata-ba-view-container">
+            <th>
+                {{ seedBatch.code }}
+            </th>
+            <td>
+                {{ seedBatch.producer }}
+            </td>
+            <td>
+                {{ seedBatch.productionYear }}
+            </td>
+            <td>
+                <a href="{{path('admin_seedbatch_seedbatch_show', {'id':seedBatch.id }) }}">
+                    {{ 'link_action_show'|trans({}, 'SonataAdminBundle') }}
+                </a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

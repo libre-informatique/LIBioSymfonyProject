@@ -56,7 +56,7 @@ trait DynamicDescriptions
                 $name = $fieldset . '||' . $desc->getField();
                 $type = 'text';
                 $options = array();
-                $options['label'] = sprintf('sil_description_%s_%s', $fieldset, $field);
+                $options['label'] = sprintf('sil.variety.variety.form.description.%s.%s', $fieldset, $field);
 
                 if (isset($fields[$field]) && isset($fields[$field]['show'])) {
                     if (isset($fields[$field]['show']['type'])) {

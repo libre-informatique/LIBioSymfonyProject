@@ -303,7 +303,7 @@ parameters:
                                 type: trans
                                 catalogue: varieties
                             varieties:
-                                admin_code: variety.admin.variety
+                                admin_code: lisem.admin.variety
                             description:
                                 template: BlastCoreBundle:CRUD:show_field_tinymce.html.twig
                             legal_germination_rate: ~
@@ -614,7 +614,7 @@ parameters:
                             species:
                                 admin_code: variety.admin.species
                             parent:
-                                admin_code: variety.admin.variety
+                                admin_code: lisem.admin.variety
                             latin_name: ~
                             alias: ~
                             code: ~
@@ -673,7 +673,7 @@ parameters:
                     form_tab_strains:
                         '':
                             children:
-                                admin_code: variety.admin.variety
+                                admin_code: lisem.admin.variety
                     form_tab_images:
                         '':
                             images:
@@ -752,7 +752,7 @@ parameters:
                                     strain_field: true
                                     strain_disabled: true
                                 _options:
-                                    admin_code: variety.admin.variety
+                                    admin_code: lisem.admin.variety
                             name:
                                 type: Blast\Bundle\UtilsBundle\Form\Type\UniqueFieldType
                                 return_link: true
@@ -1066,7 +1066,7 @@ parameters:
                     code: ~
                     alias: ~
                     parent:
-                        admin_code: variety.admin.variety
+                        admin_code: lisem.admin.variety
                     plant_categories: ~
                     legal_germination_rate: ~
                     germination_rate: ~
