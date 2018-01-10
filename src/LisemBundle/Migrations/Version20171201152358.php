@@ -601,6 +601,8 @@ class Version20171201152358 extends AbstractMigration implements ContainerAwareI
         $this->addSql('CREATE TABLE blast_session (id INT NOT NULL, session_id VARCHAR(255) NOT NULL, data BYTEA DEFAULT NULL, created_at TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, expires_at TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, PRIMARY KEY(id))');
         $this->addSql('CREATE INDEX blast_session_session_id_index ON blast_session (session_id)');
 
+        $this->addSql('ALTER TABLE lisem_seed_batch ADD original_code VARCHAR(255) DEFAULT NULL');
+
         $this->addSql('ALTER TABLE sil_stock_batch DISABLE TRIGGER ALL');
         $this->addSql('DELETE FROM sil_stock_batch');
         $this->addSql('ALTER TABLE sil_stock_location DISABLE TRIGGER ALL');

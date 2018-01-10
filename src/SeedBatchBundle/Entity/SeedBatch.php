@@ -62,6 +62,11 @@ class SeedBatch implements SeedBatchInterface
     protected $code;
 
     /**
+     * @var string
+     */
+    protected $originalCode;
+
+    /**
      * @var int
      */
     protected $batchNumber;
@@ -153,6 +158,22 @@ class SeedBatch implements SeedBatchInterface
     public function getCode()
     {
         return $this->code;
+    }
+
+    /**
+     * @return string
+     */
+    public function getOriginalCode(): ?string
+    {
+        return $this->originalCode;
+    }
+
+    /**
+     * @param string $originalCode
+     */
+    public function setOriginalCode(string $originalCode = null): void
+    {
+        $this->originalCode = $originalCode;
     }
 
     /**

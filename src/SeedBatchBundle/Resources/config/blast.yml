@@ -16,6 +16,7 @@ parameters:
                     form_tab_general:
                         form_group_general:
                             code: ~
+                            originalCode: ~
                             seedFarm: ~
                             variety:
                                 admin_code: variety.admin.variety
@@ -57,6 +58,8 @@ parameters:
                             code:
                                 type: Blast\Bundle\CoreBundle\Form\Type\EntityCodeType
                                 required: true
+                            originalCode:
+                                required: false
                             seedFarm:
                                 type: sonata_type_model
                                 required: true
