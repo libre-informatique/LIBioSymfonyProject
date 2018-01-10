@@ -63,3 +63,5 @@ selenium.log
 /.php_cs.cache
 /.web-server-pid
 /npm-debug.log
+
+#/composer.lock
