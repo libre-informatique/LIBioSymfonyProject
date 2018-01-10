@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-# build only
-exit 0
-
 
 export SYMFONY_DEPRECATIONS_HELPER=weak
 export SILURL="/lisem"
@@ -13,7 +10,7 @@ OUTPUTDIR=tests/_output
 rm -rf $OUTPUTDIR/*.png
 rm -rf $OUTPUTDIR/*.html
 
-CODECEPTCMD="bin/codecept run -vvv --debug --steps --no-exit --no-interaction"
+CODECEPTCMD="bin/codecept run -vvv --debug --steps --no-interaction"
 
 
 CODECEPTGROUP=$@
@@ -30,10 +27,10 @@ do
     #$CODECEPTCMD -g $i --env=firefox,lisem
     #$CODECEPTCMD -g $i --env=chrome,lisem
 
-    $CODECEPTCMD -g $i --env=phpbrowser,lisem
+    $CODECEPTCMD --no-exit -g route --env=phpbrowser,lisem
 done
 
 
 # check output
 NBFAIL=$(find $OUTPUTDIR |grep fail|wc -w)
-exit $NBFAIL;
+#exit $NBFAIL;
