@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# build only
+exit 0
+
 
 export SYMFONY_DEPRECATIONS_HELPER=weak
 export SILURL="/lisem"
