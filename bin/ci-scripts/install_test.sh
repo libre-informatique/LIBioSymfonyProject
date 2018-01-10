@@ -31,13 +31,17 @@ bin/console doctrine:schema:create --no-interaction --em=session
 #bin/console doctrine:schema:update --force --no-interaction
 #bin/console doctrine:schema:validate --no-interaction
 
+bin/console fos:elastica:populate --no-interaction
+
+# Not needed as it is launch in composer install
+#bin/console blast:patchs:apply --no-interaction 
+
 # asset and data
 #bin/console lisem:install:setup --with-samples --yes
-bin/console lisem:install:setup --yes
+bin/console lisem:install:setup --yes --no-interaction
 
 # Import City
 bin/console blast:import:csv -d vendor/sil-project/platform/src/Sil/Bundle/CRMBundle/Resources/import/cities -m vendor/sil-project/platform/src/Sil/Bundle/CRMBundle/Resources/import/mapping.yml
-
 
 bin/console blast:patchs:apply
 bin/console assets:install
