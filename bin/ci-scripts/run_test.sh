@@ -19,8 +19,6 @@ then
     CODECEPTGROUP="login menu user crm" # variety ecommerce" # all"
 fi
 
-CODECEPTGROUP="route"
-
 for i in $CODECEPTGROUP
 do
     $CODECEPTCMD --no-exit -g route --env=phpbrowser,lisem
