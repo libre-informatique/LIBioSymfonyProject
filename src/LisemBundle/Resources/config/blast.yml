@@ -891,7 +891,9 @@ parameters:
                                     - firstName
                                     - lastName
                                     - street
-                                    # - zip_city_country
+                                    - postCode
+                                    - city
+                                    - countryCode
                                     - npai
 
 ##########
