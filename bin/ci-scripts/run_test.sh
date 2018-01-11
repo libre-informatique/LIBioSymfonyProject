@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+set -v
 
 export SYMFONY_DEPRECATIONS_HELPER=weak
 export SILURL="/lisem"
