@@ -31,7 +31,7 @@ bin/console doctrine:schema:create --no-interaction --em=session
 #bin/console doctrine:schema:update --force --no-interaction
 #bin/console doctrine:schema:validate --no-interaction
 
-bin/console fos:elastica:populate --no-reset --no-interaction
+#bin/console fos:elastica:populate --no-reset --no-interaction
 
 # Not needed as it is launch in composer install
 #bin/console blast:patchs:apply --no-interaction 
