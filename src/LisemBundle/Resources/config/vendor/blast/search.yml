@@ -21,7 +21,7 @@ fos_elastica:
                             ignore_missing: true
                 variety:
                     properties:
-                        name: ~
+                        name: { boost: 10 }
                         latinName: ~
                         species: ~
                         alias: ~

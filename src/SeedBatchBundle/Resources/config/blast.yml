@@ -294,15 +294,13 @@ parameters:
                     name: ~
                     vcard_uid: ~
                     description: ~
-
                 add:
                     form_tab_general:
                         form_group_general:
                             producer:
-                                type: sonata_type_model_autocomplete
-                                property: name
+                                type: Blast\Bundle\SearchBundle\Form\Type\AutocompleteType
+                                elastic_type: producer
                                 required: true
-                                callback: [SeedBatchBundle\Admin\SeedProducerAdmin, producerAutocompleteCallback]
                                 _options:
                                     admin_code: seed_batch.admin.seed_producer
                             name: ~
@@ -312,7 +310,6 @@ parameters:
                                     required: true
                             description:
                                 type: textarea
-
                         _options:
                             groupsOrder: [form_group_general, form_group_main_address]
                     form_tab_certifications:
