@@ -14,6 +14,7 @@ namespace LisemBundle\Admin;
 
 use Sil\Bundle\CRMBundle\Admin\OrganismAdmin as BaseOrganismAdmin;
 use Sonata\AdminBundle\Form\FormMapper;
+use Sonata\AdminBundle\Show\ShowMapper;
 
 class OrganismAdmin extends BaseOrganismAdmin
 {
@@ -35,16 +36,38 @@ class OrganismAdmin extends BaseOrganismAdmin
     /**
      * @param FormMapper $mapper
      */
-    protected function postConfigureFormFields(FormMapper $mapper)
+    protected function configureFormFields(FormMapper $mapper)
     {
+        parent::configureFormFields($mapper);
+
         $subject = $this->getSubject();
-        if (!$subject->isSeedProducer()) {
+
+        if ($subject && !$subject->isSeedProducer()) {
             $mapper
-            ->remove('seedProducer')
-            ->remove('seedProducerCode');
+                ->remove('seedProducer')
+                ->remove('seedProducerCode');
 
             $this->removeTab('form_tab_plots', $mapper);
             $this->removeTab('form_tab_seedbatches', $mapper);
+        }
+    }
+
+    /**
+     * @param ShowMapper $mapper
+     */
+    protected function configureShowFields(ShowMapper $mapper)
+    {
+        parent::configureShowFields($mapper);
+
+        $subject = $this->getSubject();
+
+        if ($subject && !$subject->isSeedProducer()) {
+            $mapper
+                ->remove('seedProducer')
+                ->remove('seedProducerCode');
+
+            $this->removeShowTab('show_tab_plots', $mapper);
+            $this->removeShowTab('show_tab_seedbatches', $mapper);
         }
     }
 }

@@ -241,6 +241,20 @@ sil:
                     updated_at: Mis à jour le
                     url: URL
                     zip: Code postal
+            show:
+                label:
+                    address: Adresse
+                    city: Ville
+                    code: Code
+                    country: Pays
+                    created_at: Créé le
+                    description: Description
+                    name: Nom
+                    npai: NPAI
+                    updated_at: Mis à jour le
+                    url: URL
+                    zip: Code postal
+
         seed_farm:
             breadcrumb:
                 link:

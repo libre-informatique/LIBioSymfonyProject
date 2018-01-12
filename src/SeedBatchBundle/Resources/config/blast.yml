@@ -567,7 +567,9 @@ parameters:
                     _options:
                         tabsOrder:
                             - form_tab_general
+                            - form_tab_contactInformations
                             - form_tab_individuals
+                            - form_tab_organizations
                             - form_tab_plots
                             - form_tab_seedbatches
                             - form_tab_info
@@ -772,15 +774,17 @@ parameters:
                     description: ~
                     vcard_uid: ~
                 add:
-                    form_group_general:
-                        '':
+                    form_tab_general:
+                        form_group_general:
                             name: ~
                             code: ~
                             description: ~
                             url:
                                 type: url
+                        _options:
+                            groupsOrder: [form_group_general, form_group_history]
                     _options:
-                        tabsOrder: [form_group_general, form_group_specifics]
+                        tabsOrder: [form_tab_general, form_tab_history]
             # FORM
             Sonata\AdminBundle\Form\FormMapper:
                 remove:

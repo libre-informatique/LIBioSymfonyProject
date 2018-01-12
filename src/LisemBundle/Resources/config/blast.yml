@@ -764,36 +764,6 @@ parameters:
                             url:
                                 type: text
                                 required: false
-                    form_tab_plots:
-                        '':
-                            plots:
-                                type: sonata_type_collection
-                                by_reference: false
-                                type_options:
-                                    required: true
-                                    btn_add: false
-                                required: true
-                                label: false
-                                only_not_new: true
-                                _options:
-                                    edit: inline
-                                    allow_delete: true
-                                    admin_code: seed_batch.admin.plot_embedded
-                    form_tab_seedbatches:
-                        '':
-                            seedBatches:
-                                type: sonata_type_collection
-                                by_reference: false
-                                type_options:
-                                    required: true
-                                    btn_add: false
-                                required: true
-                                label: false
-                                only_not_new: true
-                                _options:
-                                    edit: inline
-                                    allow_delete: true
-                                    admin_code: seed_batch.admin.seed_batch_embedded
                     form_tab_contactInformations:
                         _options:
                             countChildItems:
@@ -830,6 +800,36 @@ parameters:
                                 _options:
                                     edit: inline
                                     inline: table
+                    form_tab_plots:
+                        '':
+                            plots:
+                                type: sonata_type_collection
+                                by_reference: false
+                                type_options:
+                                    required: true
+                                    btn_add: false
+                                required: true
+                                label: false
+                                only_not_new: true
+                                _options:
+                                    edit: inline
+                                    allow_delete: true
+                                    admin_code: seed_batch.admin.plot_embedded
+                    form_tab_seedbatches:
+                        '':
+                            seedBatches:
+                                type: sonata_type_collection
+                                by_reference: false
+                                type_options:
+                                    required: true
+                                    btn_add: false
+                                required: true
+                                label: false
+                                only_not_new: true
+                                _options:
+                                    edit: inline
+                                    allow_delete: true
+                                    admin_code: seed_batch.admin.seed_batch_embedded
                     _options:
                         tabsOrder:
                             - form_tab_general
@@ -838,7 +838,6 @@ parameters:
                             - form_tab_plots
                             - form_tab_seedbatches
                             - form_tab_info
-                            - form_group_specifics
             Sonata\AdminBundle\Datagrid\DatagridMapper:
                 remove:
                     familyContact: ~

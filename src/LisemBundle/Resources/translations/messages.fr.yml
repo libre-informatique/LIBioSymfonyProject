@@ -214,6 +214,10 @@ lisem:
         seedbatch_settings: Lots
         seedbatch_certification_types: Types de certifications
         seedbatch_certification_bodies: Organismes certificateurs
+        variety_settings: Variétés
+        variety_families: Familles
+        variety_genuses: Genres
+        variety_plant_categories: Catégories de plante
     packaging_unit:
         grams: grammes
         seeds: graines

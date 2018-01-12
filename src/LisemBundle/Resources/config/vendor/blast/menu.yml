@@ -87,10 +87,34 @@ blast_menu:
 
     settings:
 
+        lisem.menu.variety_settings:
+            label: lisem.menu_label.variety_settings
+            icon: tree
+            order: 23
+            children:
+
+                lisem.menu.variety_families:
+                    label: lisem.menu_label.variety_families
+                    icon: pagelines
+                    route: admin_variety_family_list
+                    order: 10
+
+                lisem.menu.variety_genuses:
+                    label: lisem.menu_label.variety_genuses
+                    icon: universal-access
+                    route: admin_variety_genus_list
+                    order: 20
+
+                lisem.menu.variety_plant_categories:
+                    label: lisem.menu_label.variety_plant_categories
+                    icon: leaf
+                    route: admin_variety_plantcategory_list
+                    order: 30
+
         lisem.menu.seedbatch_settings:
             label: lisem.menu_label.seedbatch_settings
             icon: shopping-bag
-            order: 25
+            order: 27
             children:
 
                 lisem.menu.seedbatch_certification_types:

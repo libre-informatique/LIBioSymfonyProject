@@ -593,7 +593,6 @@ class Version20171201152358 extends AbstractMigration implements ContainerAwareI
         $this->addSql('ALTER TABLE blast_custom_filter ADD CONSTRAINT FK_854D7261A76ED395 FOREIGN KEY (user_id) REFERENCES sil_user (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
         $this->addSql('ALTER TABLE sil_email__circle ADD CONSTRAINT FK_F39FD8C870EE2FF6 FOREIGN KEY (circle_id) REFERENCES sil_crm_circle (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
         $this->addSql('ALTER TABLE sil_email__circle ADD CONSTRAINT FK_F39FD8C8A832C1C9 FOREIGN KEY (email_id) REFERENCES sil_email (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
-        $this->addSql('ALTER TABLE sil_email__circle ADD PRIMARY KEY (email_id, circle_id)');
         $this->addSql('ALTER TABLE sil_user__group ADD CONSTRAINT FK_D1F2670BA76ED395 FOREIGN KEY (user_id) REFERENCES sil_user (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
         $this->addSql('ALTER TABLE sil_user__group ADD CONSTRAINT FK_D1F2670BFE54D947 FOREIGN KEY (group_id) REFERENCES sil_user_group (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
 
@@ -1491,6 +1490,33 @@ class Version20171201152358 extends AbstractMigration implements ContainerAwareI
         $this->addSql('ALTER TABLE sylius_admin_api_refresh_token ADD CONSTRAINT FK_9160E3FAA76ED395 FOREIGN KEY (user_id) REFERENCES sylius_admin_user (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
         $this->addSql('ALTER TABLE sylius_admin_api_auth_code ADD CONSTRAINT FK_E366D848A76ED395 FOREIGN KEY (user_id) REFERENCES sylius_admin_user (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
         $this->addSql('COMMENT ON COLUMN sylius_gateway_config.config IS \'(DC2Type:json_array)\'');
+
+        $this->addSql('CREATE TABLE sil_uom (id UUID NOT NULL, uom_type_id UUID DEFAULT NULL, name VARCHAR(255) NOT NULL, factor NUMERIC(15, 5) NOT NULL, rounding INT NOT NULL, active BOOLEAN NOT NULL, PRIMARY KEY(id))');
+        $this->addSql('CREATE INDEX IDX_23E70ED4BD14C4D4 ON sil_uom (uom_type_id)');
+        $this->addSql('CREATE TABLE sil_uom_type (id UUID NOT NULL, name VARCHAR(64) NOT NULL, PRIMARY KEY(id))');
+        $this->addSql('CREATE UNIQUE INDEX UNIQ_5F5538DC5E237E06 ON sil_uom_type (name)');
+        $this->addSql('ALTER TABLE sil_uom ADD CONSTRAINT FK_23E70ED4BD14C4D4 FOREIGN KEY (uom_type_id) REFERENCES sil_uom_type (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
+        $this->addSql('ALTER TABLE sil_stock_movement DROP CONSTRAINT FK_78749426210D48FE');
+        $this->addSql('ALTER TABLE sil_stock_movement ADD CONSTRAINT FK_78749426210D48FE FOREIGN KEY (qty_uom_id) REFERENCES sil_uom (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
+        $this->addSql('ALTER TABLE sil_stock_unit DROP CONSTRAINT FK_2EE60B65210D48FE');
+        $this->addSql('ALTER TABLE sil_stock_unit ADD CONSTRAINT FK_2EE60B65210D48FE FOREIGN KEY (qty_uom_id) REFERENCES sil_uom (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
+        $this->addSql('ALTER TABLE sil_stock_item DROP CONSTRAINT FK_ED462228A103EEB1');
+        $this->addSql('ALTER TABLE sil_stock_item ADD CONSTRAINT FK_ED462228A103EEB1 FOREIGN KEY (uom_id) REFERENCES sil_uom (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
+        $this->addSql('ALTER TABLE sil_stock_operation ADD CONSTRAINT FK_E8D9ED2E9393F8FE FOREIGN KEY (partner_id) REFERENCES sil_stock_partner (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
+        $this->addSql('ALTER TABLE sil_manufacturing_bom_line DROP CONSTRAINT FK_1E754391210D48FE');
+        $this->addSql('ALTER TABLE sil_manufacturing_bom_line ADD CONSTRAINT FK_1E754391210D48FE FOREIGN KEY (qty_uom_id) REFERENCES sil_uom (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
+        $this->addSql('ALTER TABLE sil_manufacturing_bom DROP CONSTRAINT FK_6A250C85210D48FE');
+        $this->addSql('ALTER TABLE sil_manufacturing_bom ADD CONSTRAINT FK_6A250C85210D48FE FOREIGN KEY (qty_uom_id) REFERENCES sil_uom (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
+        $this->addSql('DROP INDEX sil_crm_phone_type_sort_rank');
+        $this->addSql('ALTER TABLE sil_crm_phone_type DROP sort_rank');
+        $this->addSql('ALTER TABLE sil_email__circle DROP CONSTRAINT sil_email__circle_pkey');
+        $this->addSql('ALTER TABLE sil_email__circle ADD PRIMARY KEY (email_id, circle_id)');
+        $this->addSql('ALTER TABLE lisem_seed_batch ADD created_by_id UUID DEFAULT NULL');
+        $this->addSql('ALTER TABLE lisem_seed_batch ADD updated_by_id UUID DEFAULT NULL');
+        $this->addSql('ALTER TABLE lisem_seed_batch ADD CONSTRAINT FK_B174DFF3B03A8386 FOREIGN KEY (created_by_id) REFERENCES sil_user (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
+        $this->addSql('ALTER TABLE lisem_seed_batch ADD CONSTRAINT FK_B174DFF3896DBBDE FOREIGN KEY (updated_by_id) REFERENCES sil_user (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
+        $this->addSql('CREATE INDEX IDX_B174DFF3B03A8386 ON lisem_seed_batch (created_by_id)');
+        $this->addSql('CREATE INDEX IDX_B174DFF3896DBBDE ON lisem_seed_batch (updated_by_id)');
     }
 
     public function down(Schema $schema)
