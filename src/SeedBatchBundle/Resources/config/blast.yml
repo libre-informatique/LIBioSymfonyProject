@@ -705,17 +705,22 @@ parameters:
                 remove:
                     name: ~
                     description: ~
+                    createdAt: ~
+                    updatedAt: ~
                 add:
-                    main_tab:
-                        main_group:
+                    '':
+                        '':
                             name: ~
                             code: ~
                             logo:
                                 template: SilMediaBundle:CRUD:show_image.html.twig
                             description:
                                 type: html
-                    _options:
-                        tabsOrder: [main_tab, form_group_specifics]
+                        form_group_history:
+                            createdAt: ~
+                            updatedAt: ~
+                        _options:
+                            groupsOrder: [main_group, form_group_history]
             # FORM
             Sonata\AdminBundle\Form\FormMapper:
                 remove:
@@ -736,7 +741,7 @@ parameters:
                                 type: textarea
                                 required: false
                     _options:
-                        tabsOrder: [main_tab, form_group_specifics]
+                        tabsOrder: [main_tab, form_tab_history]
             # LIST
             Sonata\AdminBundle\Datagrid\ListMapper:
                 remove:

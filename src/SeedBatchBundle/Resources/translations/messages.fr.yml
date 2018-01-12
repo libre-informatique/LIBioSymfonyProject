@@ -201,6 +201,46 @@ sil:
                     logo:  Logo
                     name: Nom
                     updated_at: Mis à jour le
+        certifying_body:
+            breadcrumb:
+                link:
+                    create: Nouvel organisme de certification
+                    list: Liste des organismes de certification
+            filter:
+                label:
+                    city: Ville
+                    code: Code
+                    country: Pays
+                    description: Description
+                    name: Nom
+                    zip: Code postal
+            form:
+                label:
+                    address: Adresse
+                    city: Ville
+                    code: Code
+                    country: Pays
+                    created_at: Créé le
+                    description: Description
+                    name: Nom
+                    npai: NPAI
+                    updated_at: Mis à jour le
+                    url: URL
+                    zip: Code postal
+            list:
+                label:
+                    certifyingbody: Organisme de certification
+                    address: Adresse
+                    city: Ville
+                    code: Code
+                    country: Pays
+                    created_at: Créé le
+                    description: Description
+                    name: Nom
+                    npai: NPAI
+                    updated_at: Mis à jour le
+                    url: URL
+                    zip: Code postal
         seed_farm:
             breadcrumb:
                 link:
