@@ -2,6 +2,7 @@
 set -ev
 
 mkdir --parents "${HOME}/bin"
+export PATH=$PATH:${HOME}/bin
 
 
 if [ "${WHORUN}" = travis  ]
