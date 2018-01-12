@@ -23,6 +23,9 @@ class SeedBatchAdmin extends CoreAdmin
      */
     protected $translationLabelPrefix = 'sil.seed_batch.seed_batch';
 
+    protected $baseRouteName = 'admin_seed_batch';
+    protected $baseRoutePattern = 'seed_batch';
+
     public function configureFormFields(FormMapper $mapper)
     {
         parent::configureFormFields($mapper);

@@ -24,8 +24,9 @@ class PlotEmbeddedAdmin extends PlotAdmin
      * @var string
      */
     protected $translationLabelPrefix = 'sil.seed_batch.plot';
+
     protected $baseRouteName = 'admin_seed_batch_plot_embedded';
-    protected $baseRoutePattern = 'sil/seedbatch/plot_embedded';
+    protected $baseRoutePattern = 'seed_batch/plot_embedded';
 
     public function configureFormFields(FormMapper $mapper)
     {

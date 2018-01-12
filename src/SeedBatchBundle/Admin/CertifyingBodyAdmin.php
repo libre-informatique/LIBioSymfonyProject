@@ -20,4 +20,7 @@ class CertifyingBodyAdmin extends CoreAdmin
      * @var string
      */
     protected $translationLabelPrefix = 'sil.seed_batch.certifying_body';
+
+    protected $baseRouteName = 'admin_seed_batch_certification_body';
+    protected $baseRoutePattern = 'seed_batch/certification_body';
 }

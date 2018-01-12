@@ -26,8 +26,11 @@ class OrganismAdmin extends BaseOrganismAdmin
     //  * @var string
     //  */
     // protected $translationLabelPrefix = 'sil.seed_batch.organism';
-    protected $baseRouteName = 'admin_seed_batch_organism';
-    protected $baseRoutePattern = 'sil/seedbatch/organism';
+    // protected $baseRouteName = 'admin_seed_batch_organism';
+    // protected $baseRoutePattern = 'sil/seedbatch/organism';
+
+    protected $baseRouteName = 'admin_crm_organism';
+    protected $baseRoutePattern = 'crm/organism';
 
     /**
      * @param DatagridMapper $mapper

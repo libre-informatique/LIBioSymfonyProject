@@ -20,8 +20,9 @@ class SeedProducerAdmin extends OrganismAdmin
      * @var string
      */
     protected $translationLabelPrefix = 'sil.seed_batch.seed_producer';
-    protected $baseRouteName = 'admin_seed_batch_seedProducer';
-    protected $baseRoutePattern = 'sil/seedbatch/seed-producer';
+
+    protected $baseRouteName = 'admin_seed_batch_seed_producer';
+    protected $baseRoutePattern = 'seed_batch/seed_producer';
 
     /**
      * The label class name  (used in the title/breadcrumb ...).

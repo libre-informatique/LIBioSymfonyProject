@@ -2,10 +2,10 @@ imports:
     - { resource: "@SeedBatchBundle/Resources/config/admin/seed_batch.admin.certification_type.yml" }
     - { resource: "@SeedBatchBundle/Resources/config/admin/seed_batch.admin.certification.yml" }
     - { resource: "@SeedBatchBundle/Resources/config/admin/seed_batch.admin.certifying_body.yml" }
-    - { resource: "@SeedBatchBundle/Resources/config/admin/seed_batch.admin.organism.yml" }
     - { resource: "@SeedBatchBundle/Resources/config/admin/seed_batch.admin.plot_embedded.yml" }
     - { resource: "@SeedBatchBundle/Resources/config/admin/seed_batch.admin.plot.yml" }
     - { resource: "@SeedBatchBundle/Resources/config/admin/seed_batch.admin.seed_batch_embedded.yml" }
     - { resource: "@SeedBatchBundle/Resources/config/admin/seed_batch.admin.seed_batch.yml" }
     - { resource: "@SeedBatchBundle/Resources/config/admin/seed_batch.admin.seedfarm.yml" }
     - { resource: "@SeedBatchBundle/Resources/config/admin/seed_batch.admin.seed_producer.yml" }
+    - { resource: "@SeedBatchBundle/Resources/config/admin/sil_crm.admin.organism.yml" }

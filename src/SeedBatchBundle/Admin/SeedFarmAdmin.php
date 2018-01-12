@@ -23,4 +23,7 @@ class SeedFarmAdmin extends CoreAdmin
      * @var string
      */
     protected $translationLabelPrefix = 'sil.seed_batch.seed_farm';
+
+    protected $baseRouteName = 'admin_seed_batch_seed_farm';
+    protected $baseRoutePattern = 'seed_batch/seed_farm';
 }

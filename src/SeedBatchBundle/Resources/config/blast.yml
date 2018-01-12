@@ -710,7 +710,8 @@ parameters:
                         main_group:
                             name: ~
                             code: ~
-                            logo: ~
+                            logo:
+                                template: SilMediaBundle:CRUD:show_image.html.twig
                             description:
                                 type: html
                     _options:

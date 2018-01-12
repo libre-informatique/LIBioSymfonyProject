@@ -1,6 +1,6 @@
 
 services:
-    seed_batch.admin.organism:
+    sil_crm.admin.organism:
         class: SeedBatchBundle\Admin\OrganismAdmin
         arguments: [~, "%sil.model.crm_organism.class%", SeedBatchBundle:OrganismAdmin]
         tags:

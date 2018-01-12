@@ -211,6 +211,9 @@ lisem:
         varieties_settings: Variétés
         varieties: Variétés
         zones_list: Zones géographiques
+        seedbatch_settings: Lots
+        seedbatch_certification_types: Types de certifications
+        seedbatch_certification_bodies: Organismes certificateurs
     packaging_unit:
         grams: grammes
         seeds: graines

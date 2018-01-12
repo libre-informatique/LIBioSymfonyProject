@@ -25,8 +25,9 @@ class SeedsProductVariantEmbeddedAdmin extends SeedsProductVariantAdmin
 {
     use EmbeddedAdmin;
 
-    protected $baseRouteName = 'admin_sil_seeds_productvariant_embedded';
-    protected $baseRoutePattern = 'sil/seeds_productvariant_embedded';
+    protected $baseRouteName = 'admin_seed_product_variant_embedded';
+    protected $baseRoutePattern = 'seed_product_variant_embedded';
+
     protected $classnameLabel = 'SeedsProductVariantEmbedded';
 
     protected $productAdminCode = 'lisem.admin.seeds_product_variant_embedded';

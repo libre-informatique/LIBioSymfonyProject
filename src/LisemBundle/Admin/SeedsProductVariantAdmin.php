@@ -23,8 +23,9 @@ use Sonata\CoreBundle\Validator\ErrorElement;
  */
 class SeedsProductVariantAdmin extends ProductVariantAdmin
 {
-    protected $baseRouteName = 'admin_sil_seeds_productvariant';
-    protected $baseRoutePattern = 'sil/seeds_productvariant';
+    protected $baseRouteName = 'admin_seed_product_variant';
+    protected $baseRoutePattern = 'seed_product_variant';
+
     protected $classnameLabel = 'SeedsProductVariant';
 
     protected $productAdminCode = 'lisem.admin.seeds_product';

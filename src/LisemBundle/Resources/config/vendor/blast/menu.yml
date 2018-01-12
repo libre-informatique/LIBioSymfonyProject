@@ -45,19 +45,19 @@ blast_menu:
         lisem.menu.seedbatch:
             label: lisem.menu_label.seed_batches
             icon:  shopping-bag
-            route: admin_seedbatch_seedbatch_list
+            route: admin_seed_batch_list
             order: 14
 
         lisem.menu.plot:
             label: lisem.menu_label.plots
             icon:  th
-            route: admin_seedbatch_plot_list
+            route: admin_seed_batch_plot_list
             order: 15
 
         lisem.menu.producers:
             label: lisem.menu_label.producers
             icon:  user-circle
-            route: admin_seed_batch_seedProducer_list
+            route: admin_seed_batch_seed_producer_list
             order: 16
 
         # ##################################################################
@@ -70,7 +70,7 @@ blast_menu:
                 lisem.menu.seed_products:
                     label: lisem.menu_label.seed_products_list
                     icon: shopping-cart
-                    route: admin_sil_seeds_product_list
+                    route: admin_seed_product_list
                     order: 5
 
                 sil.ecommerce.menu_label.products:
@@ -84,3 +84,23 @@ blast_menu:
 
         sil.manufacturing.menu_label.manufacturing:
             order: 40
+
+    settings:
+
+        lisem.menu.seedbatch_settings:
+            label: lisem.menu_label.seedbatch_settings
+            icon: shopping-bag
+            order: 25
+            children:
+
+                lisem.menu.seedbatch_certification_types:
+                    label: lisem.menu_label.seedbatch_certification_types
+                    icon: id-card-o
+                    route: admin_seed_batch_certification_type_list
+                    order: 10
+
+                lisem.menu.seedbatch_certification_bodies:
+                    label: lisem.menu_label.seedbatch_certification_bodies
+                    icon: university
+                    route: admin_seed_batch_certification_body_list
+                    order: 20

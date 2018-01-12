@@ -27,9 +27,10 @@ use Symfony\Component\Validator\Constraints\NotBlank;
  */
 class SeedsProductAdmin extends ProductAdmin
 {
-    protected $baseRouteName = 'admin_sil_seeds_product';
-    protected $baseRoutePattern = 'sil/seeds_product';
     protected $classnameLabel = 'SeedsProduct';
+
+    protected $baseRouteName = 'admin_seed_product';
+    protected $baseRoutePattern = 'seed_product';
 
     /**
      * @var Variety
