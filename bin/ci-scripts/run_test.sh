@@ -16,7 +16,7 @@ CODECEPTCMD="bin/codecept run -vvv --debug --steps --no-interaction --xml --html
 CODECEPTGROUP=$@
 if [ $# -eq 0 ]
 then
-    CODECEPTGROUP="login menu user crm variety ecommerce" # all"
+    CODECEPTGROUP="all"  #"login menu user crm variety ecommerce" # all"
 fi
 
 for i in $CODECEPTGROUP
