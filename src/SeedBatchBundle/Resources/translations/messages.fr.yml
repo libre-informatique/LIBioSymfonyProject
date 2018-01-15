@@ -229,6 +229,7 @@ sil:
                     zip: Code postal
             list:
                 label:
+                    action: Action
                     certifyingbody: Organisme de certification
                     address: Adresse
                     city: Ville
