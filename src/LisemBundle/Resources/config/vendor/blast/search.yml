@@ -21,7 +21,7 @@ fos_elastica:
                             ignore_missing: true
                 variety:
                     properties:
-                        name: { boost: 10 }
+                        name: ~
                         latinName: ~
                         species: ~
                         alias: ~
@@ -30,6 +30,21 @@ fos_elastica:
                     persistence:
                         driver: orm
                         model: "%lisem.model.variety.class%"
+                        listener:
+                            defer: true
+                        finder: ~
+                        elastica_to_model_transformer:
+                            ignore_missing: true
+                seedBatch:
+                    properties:
+                        variety: ~
+                        code: ~
+                        producer: ~
+                        originalCode: ~
+                        productionYear: ~
+                    persistence:
+                        driver: orm
+                        model: "%seed_batch.entity.seed_batch.class%"
                         listener:
                             defer: true
                         finder: ~

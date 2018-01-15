@@ -15,6 +15,8 @@ namespace LisemBundle\Admin;
 use Sil\Bundle\EcommerceBundle\Admin\ProductVariantAdmin;
 use LisemBundle\Entity\SilEcommerceBundle\Product;
 use Sonata\CoreBundle\Validator\ErrorElement;
+use Sonata\AdminBundle\Form\FormMapper;
+use Blast\Bundle\SearchBundle\Form\Type\AutocompleteType;
 
 /**
  * Sonata admin for product variants from seeds products.
@@ -30,7 +32,7 @@ class SeedsProductVariantAdmin extends ProductVariantAdmin
 
     protected $productAdminCode = 'lisem.admin.seeds_product';
 
-    public function configureFormFields(\Sonata\AdminBundle\Form\FormMapper $mapper)
+    public function configureFormFields(FormMapper $mapper)
     {
         $mapper->tab('form_tab_general')->with('form_group_general');
 
@@ -46,21 +48,15 @@ class SeedsProductVariantAdmin extends ProductVariantAdmin
 
         // seedBatch field
         $product = $this->getProduct();
-        $options = [
-            'multiple' => true,
-            'property' => 'code',
-            'required' => true,
-            'callback' => function ($admin, $property, $value) use ($product) {
-                $datagrid = $admin->getDatagrid();
-                $datagrid->setValue($property, null, $value);
-                if ($product && $variety = $product->getVariety) {
-                    $datagrid->setValue('variety', null, $variety);
-                }
-            },
-            'translation_domain' => 'messages',
-        ];
-        $fieldDescriptionOptions = ['admin_code' => 'seed_batch.admin.seed_batch', 'translation_domain' => 'messages'];
-        $mapper->add('seedBatches', 'sonata_type_model_autocomplete', $options, $fieldDescriptionOptions);
+
+        $mapper->add('seedBatches', AutocompleteType::class, [
+            'multiple'     => true,
+            'compound'     => true,
+            'elastic_type' => 'seedBatch',
+            'required'     => true,
+        ], [
+            'admin_code'         => 'seed_batch.admin.seed_batch',
+        ]);
 
         $mapper->end()->end();
 
@@ -73,6 +69,25 @@ class SeedsProductVariantAdmin extends ProductVariantAdmin
 
         if ($this->getSubject() && $this->getSubject()->getChannelPricings()->count() == 0) {
             $this->buildDefaultPricings($this->getSubject());
+        }
+    }
+
+    public function prePersist($object)
+    {
+        $this->updateSeedBatchCollections($object);
+    }
+
+    public function preUpdate($object)
+    {
+        $this->updateSeedBatchCollections($object);
+    }
+
+    protected function updateSeedBatchCollections($productVariant)
+    {
+        foreach ($productVariant->getSeedBatches() as $seedBatch) {
+            if (!$seedBatch->getProductVariants()->contains($productVariant)) {
+                $seedBatch->getProductVariants()->add($productVariant);
+            }
         }
     }
 

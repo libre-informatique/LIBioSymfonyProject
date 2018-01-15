@@ -15,6 +15,7 @@ namespace LisemBundle\Admin;
 use Sil\Bundle\EcommerceBundle\Entity\Product;
 use Blast\Bundle\CoreBundle\Admin\Traits\EmbeddedAdmin;
 use Sonata\CoreBundle\Validator\ErrorElement;
+use Sonata\AdminBundle\Form\FormMapper;
 
 /**
  * Sonata admin for product variants from seeds products.
@@ -32,7 +33,7 @@ class SeedsProductVariantEmbeddedAdmin extends SeedsProductVariantAdmin
 
     protected $productAdminCode = 'lisem.admin.seeds_product_variant_embedded';
 
-    public function configureFormFields(\Sonata\AdminBundle\Form\FormMapper $mapper)
+    public function configureFormFields(FormMapper $mapper)
     {
         parent::configureFormFields($mapper);
     }

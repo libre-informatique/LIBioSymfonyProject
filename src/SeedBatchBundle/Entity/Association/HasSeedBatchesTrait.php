@@ -69,6 +69,17 @@ trait HasSeedBatchesTrait
     }
 
     /**
+     * Get seedBatches.
+     */
+    public function setSeedBatches($seedBatches)
+    {
+        $this->initSeedBatches();
+        foreach ($seedBatches as $seedBatch) {
+            $this->seedBatches->add($seedBatch);
+        }
+    }
+
+    /**
      * initSeedBatches collection.
      */
     private function initSeedBatches(): void

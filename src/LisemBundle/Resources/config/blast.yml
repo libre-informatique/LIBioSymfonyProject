@@ -162,10 +162,10 @@ parameters:
                     form_tab_general:
                         form_group_general:
                             variety:
-                                type: sonata_type_model_autocomplete
-                                property: [name, code]
+                                type: Blast\Bundle\SearchBundle\Form\Type\AutocompleteType
+                                elastic_type: variety
+                                required: true
                                 attr:
-                                    readonly: ~
                                     class: inline-block
                                     width: 50
                                 _options:
