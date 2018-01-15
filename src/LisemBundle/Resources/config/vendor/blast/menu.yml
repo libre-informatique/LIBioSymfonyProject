@@ -64,16 +64,35 @@ blast_menu:
         # PRODUCTS
         # ##################################################################
 
+        lisem.menu_label.products:
+            icon: archive
+            order: 19
+
+            children:
+
+                lisem.menu_label.seed_products:
+                    label: lisem.menu_label.seed_products_list
+                    icon: tree
+                    route: admin_seed_product_list
+                    order: 5
+
+                sil.ecommerce.menu_label.products:
+                    icon: cubes
+                    route: admin_sil_other_product_list
+                    order: 10
+
         sil.ecommerce.menu_label.ecommerce:
             children:
 
                 lisem.menu.seed_products:
+                    display: false
                     label: lisem.menu_label.seed_products_list
                     icon: shopping-cart
                     route: admin_seed_product_list
                     order: 5
 
                 sil.ecommerce.menu_label.products:
+                    display: false
                     icon: cubes
                     route: admin_sil_other_product_list
                     order: 10
