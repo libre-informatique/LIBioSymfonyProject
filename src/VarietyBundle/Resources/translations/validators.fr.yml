@@ -1,4 +1,5 @@
-
 'A species cannot be both a sub-species and a parent species': 'Une espèce ne peut être à la fois une sous-espèce et une espèce parente.'
 'This code is already used by another species.': 'Ce code est déjà utilisé par une autre espèce.'
 'Wrong species code format': 'Mauvais format pour le code espèce'
+'The code must be at least {{ limit }} characters long': 'Le code doit contenir au moins {{ limit }} caractère'
+'The code cannot be longer than {{ limit }} characters': 'Le code ne doit pas être plus long que {{ limit }} caractères'

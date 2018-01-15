@@ -9,8 +9,6 @@ parameters:
                 remove:
                     name: ~
                     description: ~
-                    createdAt: ~
-                    updatedAt: ~
                 add:
                     form_group_general:
                         '':
@@ -20,14 +18,6 @@ parameters:
                             description: ~
                             genuses:
                                 admin_code: variety.admin.genus
-                    form_group_specifics:
-                        form_group_misc:
-                            createdAt: ~
-                            updatedAt: ~
-                            createdBy: ~
-                            updatedBy: ~
-                    _options:
-                        tabsOrder: [form_group_general, form_group_specifics]
                     _helper_links:
                         - url: https://framacalc.org/libio_validation_varietes
                           title: Framacalc de validation (Variétés)
@@ -112,7 +102,8 @@ parameters:
 
         VarietyBundle\Entity\GenusInterface:
             Sonata\AdminBundle\Show\ShowMapper:
-                remove: [description, createdAt, updatedAt]
+                remove:
+                    description: ~
                 add:
                     form_group_general:
                         '':
@@ -121,14 +112,8 @@ parameters:
                             description: ~
                             specieses:
                                 admin_code: variety.admin.species
-                    form_group_specifics:
-                        form_group_misc:
-                            createdAt: ~
-                            updatedAt: ~
-                            createdBy: ~
-                            updatedBy: ~
                     _options:
-                        tabsOrder: [form_group_general, form_group_specieses, form_group_specifics]
+                        tabsOrder: [form_group_general, form_group_specieses]
                     _helper_links:
                         - url: https://framacalc.org/libio_validation_varietes
                           title: Framacalc de validation (Variétés)
@@ -239,7 +224,7 @@ parameters:
                 remove:
                     name: ~
                 add:
-                    form_group_general:
+                    form_tab_general:
                         '':
                             name:
                                 type: Blast\Bundle\UtilsBundle\Form\Type\UniqueFieldType
@@ -253,11 +238,27 @@ parameters:
                                 attr:
                                     class: inline-block
                                     width: 45
+                                help: sil.variety.plant_category.form.help.code
+                                constraints:
+                                    -
+                                        class: Symfony\Component\Validator\Constraints\Length
+                                        arguments:
+                                            min: 1
+                                            max: 6
+                                            minMessage: 'The code must be at least {{ limit }} characters long'
+                                            maxMessage: 'The code cannot be longer than {{ limit }} characters'
+                                    # -
+                                    #     class: Symfony\Component\Validator\Constraints\NotBlank
                             treeParent:
                                 type: Blast\Bundle\BaseEntitiesBundle\Form\Type\NestedTreeableType
                                 class: VarietyBundle\Entity\PlantCategory
                                 required: false
                                 placeholder: ''
+                            _options:
+                                fieldsOrder:
+                                    - name
+                                    - code
+                                    - treeParent
                     _helper_links:
                         - url: https://framacalc.org/libio_validation_varietes
                           title: Framacalc de validation (Variétés)

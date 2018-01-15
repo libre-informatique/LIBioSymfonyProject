@@ -135,6 +135,8 @@ sil:
                     code: Code
                     name: Nom
                     tree_parent: Parent
+                help:
+                    code: Max 6 caractères
             list:
                 label:
                     action: Action
