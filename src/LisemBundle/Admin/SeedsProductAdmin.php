@@ -14,11 +14,9 @@ namespace LisemBundle\Admin;
 
 use Sil\Bundle\EcommerceBundle\Admin\ProductAdmin;
 use VarietyBundle\Entity\Variety;
-use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Route\RouteCollection;
 use Sonata\DatagridBundle\ProxyQuery\ProxyQueryInterface;
 use Sylius\Component\Product\Model\ProductInterface;
-use Symfony\Component\Validator\Constraints\NotBlank;
 
 /**
  * Sonata admin for seeds products.
@@ -36,53 +34,6 @@ class SeedsProductAdmin extends ProductAdmin
      * @var Variety
      */
     private $variety;
-
-    public function configureFormFields(FormMapper $mapper)
-    {
-        $variety = $this->getVariety();
-        $request = $this->getRequest();
-
-        $basicForm = false;
-        if (null !== $request->get('btn_create_for_variety')) {
-            $basicForm = true;
-        } elseif ($request->getMethod() == 'GET' && !$request->get($this->getIdParameter()) && !$variety) {
-            $basicForm = true;
-        }
-
-        parent::configureFormFields($mapper);
-
-        if ($basicForm) {
-            // First step creation form with just the Variety field
-            $mapper
-                ->tab('form_tab_general')
-                    ->with('form_group_general')
-                        ->add(
-                            'variety',
-                            'sonata_type_model_autocomplete',
-                            [
-                                'property'    => ['name', 'code'],
-                                'required'    => true,
-                                'constraints' => [new NotBlank()],
-                                'attr'        => [
-                                    'class' => 'inline-block',
-                                    'width' => 50,
-                                ],
-                            ],
-                            [
-                                'admin_code' => 'lisem.admin.variety',
-                            ]
-                        )
-                    ->end()
-                ->end()
-            ;
-
-            $this->removeTab(['form_tab_variants', 'form_tab_images'], $mapper);
-            // return;
-        }
-
-        // Regular edit/create form
-        // parent::configureFormFields($mapper);
-    }
 
     /**
      * @param string $context NEXT_MAJOR: remove this argument
