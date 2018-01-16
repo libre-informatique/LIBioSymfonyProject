@@ -1744,4 +1744,15 @@ class Variety implements VarietyInterface
     {
         $this->packagings = $packagings;
     }
+
+    public function __toString(): string
+    {
+        return sprintf(
+            '%s %s (%s%s)',
+            $this->getSpecies()->getName(),
+            $this->getName(),
+            $this->getSpecies()->getCode(),
+            $this->getCode()
+        );
+    }
 }
