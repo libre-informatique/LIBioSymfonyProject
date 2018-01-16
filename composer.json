@@ -1,6 +1,6 @@
 {
     "name": "libre-informatique/lisem-project",
-    "license": "GPL-3.0",
+    "license": "GPL-3.0-only",
     "type": "project",
     "description": "LISem is an ERP specialized for seeds producers and craftsmen.",
     "autoload": {
