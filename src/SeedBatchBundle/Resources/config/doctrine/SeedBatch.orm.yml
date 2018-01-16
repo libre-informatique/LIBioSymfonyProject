@@ -83,8 +83,8 @@ SeedBatchBundle\Entity\SeedBatch:
             joinTable:
                 name: lisem_seed_batch__product_variant
                 joinColumns:
-                    producVariant_id:
+                    seedBatch_id:
                         referencedColumnName: id
                 inverseJoinColumns:
-                    seedBatch_id:
+                    producVariant_id:
                         referencedColumnName: id
