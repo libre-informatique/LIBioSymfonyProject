@@ -187,7 +187,7 @@ parameters:
                                 label: false
                                 by_reference: true
                                 attr:
-                                    data-showFields: 'id,name,packaging,code,enabled'
+                                    data-showFields: 'id,name,packaging,code,seedBatches,enabled'
                                 type_options:
                                     btn_add: false
                                 _options:

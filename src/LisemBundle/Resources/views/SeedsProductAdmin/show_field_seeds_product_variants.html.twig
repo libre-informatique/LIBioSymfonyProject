@@ -7,10 +7,10 @@
         <thead>
             <tr>
                 <th>
-                    {{ 'sil.ecommercebundle.name'|trans }}
+                    {{ 'sil.ecommerce.product.form.label.name'|trans }}
                 </th>
                 <th>
-                    {{ 'sil.ecommercebundle.code'|trans }}
+                    {{ 'sil.ecommerce.product.form.label.code'|trans }}
                 </th>
                 <th>
                     {{ 'lisem.lisembundle.seedbatches'|trans }}
@@ -19,10 +19,10 @@
                     {{ 'lisem.lisembundle.packaging'|trans }}
                 </th>
                 <th>
-                    {{ 'sil.ecommercebundle.taxCategory'|trans }}
+                    {{ 'sil.ecommerce.product.form.label.taxCategory'|trans }}
                 </th>
                 <th class="text-right">
-                    {{ 'sil.ecommercebundle.prices'|trans }}
+                    {{ 'sil.ecommerce.product.form.label.prices'|trans }}
                 </th>
                 <th class="text-right">
                     <i class="fa fa-cogs"></i>
@@ -43,7 +43,7 @@
                 <ul class="list-inline">
                 {% for seedbatch in variant.seedBatches %}
                     <li>
-                        <a href="{{ path('admin_seed_batch_seedbatch_show', {'id':seedbatch.id})}}">
+                        <a href="{{ path('admin_seed_batch_show', {'id':seedbatch.id})}}">
                             <span class="label label-success">{{ seedbatch }}</span>
                         </a>
                     </li>

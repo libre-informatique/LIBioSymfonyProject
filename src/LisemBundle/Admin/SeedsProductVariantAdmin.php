@@ -50,12 +50,13 @@ class SeedsProductVariantAdmin extends ProductVariantAdmin
         $product = $this->getProduct();
 
         $mapper->add('seedBatches', AutocompleteType::class, [
-            'multiple'     => true,
-            'compound'     => true,
-            'elastic_type' => 'seedBatch',
-            'required'     => true,
+            'multiple'       => true,
+            'compound'       => true,
+            'elastic_type'   => 'seedBatch',
+            'elastic_filter' => 'variety|' . $product->getVariety()->getName(),
+            'required'       => true,
         ], [
-            'admin_code'   => 'seed_batch.admin.seed_batch',
+            'admin_code'     => 'seed_batch.admin.seed_batch',
         ]);
 
         $mapper->end()->end();

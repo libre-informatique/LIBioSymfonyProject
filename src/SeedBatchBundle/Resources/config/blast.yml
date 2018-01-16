@@ -43,10 +43,17 @@ parameters:
                             grossDeliveredWeight: ~
                             netScreenedWeight: ~
                             toScreenWeight: ~
+                    form_tab_sold:
+                        '':
+                            productVariants:
+                                label: false
+                                admin_code: lisem.admin.seeds_product_variant
+                                template:  SeedBatchBundle:CRUD:show_field_seedBatch_productVariants.html.twig
                     _options:
                         tabsOrder:
                             - form_tab_general
                             - form_tab_stocks
+                            - form_tab_sold
                             - form_tab_history
 
             Sonata\AdminBundle\Form\FormMapper:
@@ -95,6 +102,7 @@ parameters:
                                     admin_code: seed_batch.admin.plot
                             description:
                                 type: textarea
+                                required: false
                         form_group_germination_rate:
                             germinationRate: ~
                             germinationDate:
@@ -131,7 +139,7 @@ parameters:
                         tabsOrder:
                             - form_tab_general
                             - form_tab_stocks
-                            - form_tab_specifics
+                            - form_tab_history
 
             Sonata\AdminBundle\Datagrid\ListMapper:
                 remove:
@@ -145,6 +153,10 @@ parameters:
                     producer:
                         admin_code: seed_batch.admin.seed_producer
                     productionYear: ~
+                    productVariants:
+                        admin_code: lisem.admin.seeds_product_variant
+                        template: SeedBatchBundle:CRUD:list_field_isSold.html.twig
+                        label: sil.seed_batch.seed_batch.list.label.isSold
 
             Sonata\AdminBundle\Datagrid\DatagridMapper:
                 add:

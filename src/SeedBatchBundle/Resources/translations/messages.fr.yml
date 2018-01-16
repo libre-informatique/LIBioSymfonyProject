@@ -41,6 +41,7 @@ sil:
                     seed_farm: Artisan Semancier
                     seedbatch: Lot
                     variety: Variété
+                    isSold: Est en vente
             filter:
                 label:
                     code: Code
@@ -98,6 +99,11 @@ sil:
                     to_screen_weight: Poid restant à trier
                     updated_at: Mis à jour le
                     variety: Variété
+                    productVariants:
+                        product: Produit
+                        variant: Variante
+                        enabled: En vente
+                        action: Action
         organism:
             form:
                 placeholder:
@@ -518,6 +524,7 @@ form_tab_certifications: Certificats
 form_tab_plots: Parcelles
 form_tab_seedbatches: Lots
 form_tab_stocks: Stocks
+form_tab_sold: Vente
 
 show_tab_certifications: Certificats
 show_tab_plots: Parcelles

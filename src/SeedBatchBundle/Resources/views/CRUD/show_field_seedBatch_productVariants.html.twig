@@ -1,0 +1,60 @@
+{% extends 'BlastCoreBundle:CRUD:base_show_field.html.twig' %}
+
+{%- block field -%}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    {{ 'sil.seed_batch.seed_batch.show.label.productVariants.product'|trans }}
+                </th>
+                <th>
+                    {{ 'sil.seed_batch.seed_batch.show.label.productVariants.variant'|trans }}
+                </th>
+                <th>
+                    {{ 'sil.seed_batch.seed_batch.show.label.productVariants.enabled'|trans }}
+                </th>
+                <th class="text-right">
+                    <i class="fa fa-cogs"></i>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for productVariant in value %}
+            <tr>
+                <td>
+                    {{ productVariant.product.name }} ({{ productVariant.product.code }})
+                </td>
+                <td>
+                    {{ productVariant.name }} ({{ productVariant.code }})
+                </td>
+                <td>
+                    {{ productVariant.enabled }}
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <a
+                            class="btn btn-default"
+                            href="{{ path('admin_seed_product_show', { id: productVariant.product.id }) }}"
+                            title="{{ 'action_show'|trans({}, 'SonataAdminBundle') }}"
+                        >
+                            <i class="fa fa-eye"></i>
+                        </a>
+                        <a
+                            class="btn btn-default"
+                            href="{{ path('admin_seed_product_edit', { id: productVariant.product.id }) }}"
+                            title="{{ 'action_edit'|trans({}, 'SonataAdminBundle') }}">
+                            <i class="fa fa-pencil"></i>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="100%">
+
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{%- endblock -%}
