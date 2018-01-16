@@ -1517,6 +1517,12 @@ class Version20171201152358 extends AbstractMigration implements ContainerAwareI
         $this->addSql('ALTER TABLE lisem_seed_batch ADD CONSTRAINT FK_B174DFF3896DBBDE FOREIGN KEY (updated_by_id) REFERENCES sil_user (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
         $this->addSql('CREATE INDEX IDX_B174DFF3B03A8386 ON lisem_seed_batch (created_by_id)');
         $this->addSql('CREATE INDEX IDX_B174DFF3896DBBDE ON lisem_seed_batch (updated_by_id)');
+        $this->addSql('ALTER TABLE lisem_seed_batch__product_variant DROP CONSTRAINT lisem_seed_batch__product_variant_pkey');
+        $this->addSql('ALTER TABLE lisem_seed_batch__product_variant DROP CONSTRAINT FK_5AE6DF1F6B65DCB2');
+        $this->addSql('ALTER TABLE lisem_seed_batch__product_variant DROP CONSTRAINT FK_5AE6DF1F5009B3C8');
+        $this->addSql('ALTER TABLE lisem_seed_batch__product_variant ADD CONSTRAINT FK_5AE6DF1F6B65DCB2 FOREIGN KEY (producVariant_id) REFERENCES sil_ecommerce_product_variant (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
+        $this->addSql('ALTER TABLE lisem_seed_batch__product_variant ADD CONSTRAINT FK_5AE6DF1F5009B3C8 FOREIGN KEY (seedBatch_id) REFERENCES lisem_seed_batch (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
+        $this->addSql('ALTER TABLE lisem_seed_batch__product_variant ADD PRIMARY KEY (seedBatch_id, producVariant_id)');
     }
 
     public function down(Schema $schema)
