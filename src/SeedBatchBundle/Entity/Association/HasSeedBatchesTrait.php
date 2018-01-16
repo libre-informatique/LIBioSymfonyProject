@@ -14,9 +14,12 @@ namespace SeedBatchBundle\Entity\Association;
 
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
+use Blast\Bundle\CoreBundle\Doctrine\ORM\OwningSideRelationHandlerTrait;
 
 trait HasSeedBatchesTrait
 {
+    use OwningSideRelationHandlerTrait;
+
     /**
      * @var Collection
      */
@@ -33,27 +36,25 @@ trait HasSeedBatchesTrait
     {
         $this->initSeedBatches();
 
-        $this->seedBatches->add($seedBatch);
-
-        if (method_exists(get_class($this), 'setProducer')) {
-            $seedBatch->setProducer($this);
+        if (!$this->seedBatches->contains($seedBatch)) {
+            $this->seedBatches->add($seedBatch);
+            $this->updateRelation($seedBatch, 'add');
         }
 
         return $this;
     }
 
     /**
-     * Remove seed batch.
-     *
      * @param SeedBatch $seedBatch
-     *
-     * @return bool tRUE if this collection contained the specified element, FALSE otherwise
      */
     public function removeSeedBatch($seedBatch)
     {
         $this->initSeedBatches();
 
-        return $this->seedBatches->removeElement($seedBatch);
+        if ($this->seedBatches->contains($seedBatch)) {
+            $this->seedBatches->removeElement($seedBatch);
+            $this->updateRelation($seedBatch, 'remove');
+        }
     }
 
     /**
@@ -76,6 +77,7 @@ trait HasSeedBatchesTrait
         $this->initSeedBatches();
         foreach ($seedBatches as $seedBatch) {
             $this->seedBatches->add($seedBatch);
+            $this->updateRelation($seedBatch, 'add');
         }
     }
 
