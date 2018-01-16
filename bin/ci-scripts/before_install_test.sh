@@ -17,7 +17,8 @@ then
     #sudo apt-get install chromium-chromedriver
 fi
    
-composer self-update 1.5.6 --no-progress --stable
+#composer self-update 1.5.6 --no-progress --stable
+composer self-update --no-progress --stable
 #composer clear-cache
 
 if [ ! -x ${HOME}/bin/chromedriver ]
