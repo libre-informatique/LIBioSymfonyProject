@@ -55,7 +55,7 @@ class SeedsProductVariantAdmin extends ProductVariantAdmin
             'elastic_type' => 'seedBatch',
             'required'     => true,
         ], [
-            'admin_code'         => 'seed_batch.admin.seed_batch',
+            'admin_code'   => 'seed_batch.admin.seed_batch',
         ]);
 
         $mapper->end()->end();
@@ -69,25 +69,6 @@ class SeedsProductVariantAdmin extends ProductVariantAdmin
 
         if ($this->getSubject() && $this->getSubject()->getChannelPricings()->count() == 0) {
             $this->buildDefaultPricings($this->getSubject());
-        }
-    }
-
-    public function prePersist($object)
-    {
-        $this->updateSeedBatchCollections($object);
-    }
-
-    public function preUpdate($object)
-    {
-        $this->updateSeedBatchCollections($object);
-    }
-
-    protected function updateSeedBatchCollections($productVariant)
-    {
-        foreach ($productVariant->getSeedBatches() as $seedBatch) {
-            if (!$seedBatch->getProductVariants()->contains($productVariant)) {
-                $seedBatch->getProductVariants()->add($productVariant);
-            }
         }
     }
 
