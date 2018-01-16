@@ -310,6 +310,7 @@ parameters:
                     form_group_options: ~
                     onHand: ~
                     onHold: ~
+                    optionValues: ~
                     # tracked: ~
                 add:
                     form_tab_general:
@@ -332,6 +333,12 @@ parameters:
                                     - packaging
                                     - seedBatch
                                     - code
+                        form_group_options:
+                            optionValues:
+                                type: sonata_type_collection
+                                by_reference: false
+                                _options:
+                                    admin_code: lisem.admin.packaging
                         form_group_pricing:
                             taxCategory: ~
                             channelPricings:
@@ -445,6 +452,8 @@ parameters:
                                     - code
                         form_group_options:
                             optionValues:
+                                type: sonata_type_collection
+                                by_reference: false
                                 _options:
                                     admin_code: sil_ecommerce.admin.product_option_value
                         form_group_pricing:
