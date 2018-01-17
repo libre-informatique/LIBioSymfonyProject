@@ -65,3 +65,5 @@ selenium.log
 /npm-debug.log
 
 #/composer.lock
+
+.env
