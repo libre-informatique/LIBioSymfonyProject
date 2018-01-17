@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -v
+set -ev
 
 export SYMFONY_DEPRECATIONS_HELPER=weak
 export SILURL="/lisem"
@@ -35,5 +35,5 @@ done
 
 
 # check output
-NBFAIL=$(find $OUTPUTDIR |grep fail|wc -w)
+#NBFAIL=$(find $OUTPUTDIR |grep fail|wc -w)
 #exit $NBFAIL;
