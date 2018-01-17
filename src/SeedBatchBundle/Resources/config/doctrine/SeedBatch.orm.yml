@@ -80,6 +80,7 @@ SeedBatchBundle\Entity\SeedBatch:
         productVariants:
             targetEntity: Sil\Bundle\EcommerceBundle\Entity\ProductVariantInterface
             inversedBy: seedBatches
+            cascade: [persist]
             joinTable:
                 name: lisem_seed_batch__product_variant
                 joinColumns:

@@ -34,6 +34,7 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Webmozart\Assert\Assert;
+use VarietyBundle\Entity\Variety;
 
 /**
  * @author Kamil Kokot <kamil.kokot@lakion.com>
@@ -289,7 +290,7 @@ final class ProductExampleFactory implements ExampleFactoryInterface
             ->setDefault('shipping_required', true)
 
             ->setDefault('variety', null)
-            ->setAllowedTypes('variety', ['null', "VarietyBundle\Entity\Variety"])
+            ->setAllowedTypes('variety', ['null', Variety::class])
         ;
     }
 
@@ -339,32 +340,36 @@ final class ProductExampleFactory implements ExampleFactoryInterface
     {
         try {
             $this->variantGenerator->generate($product);
+            $i = 0;
+            /** @var ProductVariantInterface $productVariant */
+            foreach ($product->getVariants() as $productVariant) {
+                $this->updateVariantData($productVariant, $product, $options, $i);
+                ++$i;
+            }
         } catch (\InvalidArgumentException $exception) {
             if (!$product->getVariety()) {
                 /** @var ProductVariantInterface $productVariant */
-                $productVariant = $this->productVariantFactory->createNew();
-
+                $productVariant = $this->updateVariantData($this->productVariantFactory->createNew(), $product, $options);
                 $product->addVariant($productVariant);
             }
         }
+    }
 
-        $i = 0;
-        /** @var ProductVariantInterface $productVariant */
-        foreach ($product->getVariants() as $productVariant) {
-            $productVariant->setName($this->faker->word);
-            $code = $product->getVariety() ?
-                $this->productVariantCodeGenerator->generate($productVariant) :
-                sprintf('%s-variant-%d', $options['code'], $i);
-            $productVariant->setCode($code);
-            $productVariant->setOnHand($this->faker->randomNumber(1));
-            $productVariant->setShippingRequired($options['shipping_required']);
+    private function updateVariantData(ProductVariantInterface $productVariant, ProductInterface $product, array $options, $index = 0)
+    {
+        $productVariant->setName($this->faker->word);
+        $code = $product->getVariety() ?
+            $this->productVariantCodeGenerator->generate($productVariant) :
+            sprintf('%s-variant-%d', $options['code'], $index);
+        $productVariant->setCode($code);
+        $productVariant->setOnHand($this->faker->randomNumber(1));
+        $productVariant->setShippingRequired($options['shipping_required']);
 
-            foreach ($this->channelRepository->findAll() as $channel) {
-                $this->createChannelPricings($productVariant, $channel->getCode());
-            }
-
-            ++$i;
+        foreach ($this->channelRepository->findAll() as $channel) {
+            $this->createChannelPricings($productVariant, $channel->getCode());
         }
+
+        return $productVariant;
     }
 
     /**

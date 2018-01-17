@@ -12,6 +12,7 @@
 
 namespace LisemBundle\DataFixtures\Sylius\Generator;
 
+use Blast\Bundle\CoreBundle\CodeGenerator\CodeGeneratorInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 use SeedBatchBundle\Entity\SeedBatchInterface;
 use Sylius\Component\Product\Checker\ProductVariantsParityCheckerInterface;
@@ -20,6 +21,8 @@ use Sylius\Component\Product\Generator\CartesianSetBuilder;
 use Sylius\Component\Product\Generator\ProductVariantGeneratorInterface;
 use Sylius\Component\Product\Model\ProductInterface;
 use Sylius\Component\Product\Model\ProductVariantInterface;
+use Sylius\Component\Resource\Repository\RepositoryInterface;
+use Sylius\Component\Resource\Factory\FactoryInterface;
 use Webmozart\Assert\Assert;
 
 /**
@@ -45,6 +48,26 @@ final class ProductVariantGenerator implements ProductVariantGeneratorInterface
     private $variantsParityChecker;
 
     /**
+     * @var RepositoryInterface
+     */
+    private $channelRepository;
+
+    /**
+     * @var \Faker\Generator
+     */
+    private $faker;
+
+    /**
+     * @var CodeGeneratorInterface
+     */
+    private $productVariantCodeGenerator;
+
+    /**
+     * @var FactoryInterface
+     */
+    private $channelPricingFactory;
+
+    /**
      * @param ProductVariantFactoryInterface        $productVariantFactory
      * @param ProductVariantsParityCheckerInterface $variantsParityChecker
      */
@@ -55,6 +78,7 @@ final class ProductVariantGenerator implements ProductVariantGeneratorInterface
         $this->productVariantFactory = $productVariantFactory;
         $this->setBuilder = new CartesianSetBuilder();
         $this->variantsParityChecker = $variantsParityChecker;
+        $this->faker = \Faker\Factory::create();
     }
 
     /**
@@ -76,7 +100,7 @@ final class ProductVariantGenerator implements ProductVariantGeneratorInterface
                     }
                 );
             }
-            Assert::notEq(0, count($seedBatches), 'Cannot generate variants for a seeds product withouy seed batches');
+            Assert::notEq(0, count($seedBatches), 'Cannot generate variants for a seeds product without seed batches');
         }
 
         $optionSet = [];
@@ -88,19 +112,17 @@ final class ProductVariantGenerator implements ProductVariantGeneratorInterface
                 $optionMap[$value->getId()] = $value;
             }
         }
-        if ($seedBatches) {
-            $seedBatchSet = [];
-            foreach ($seedBatches as $seedBatch) {
-                $seedBatchSet[] = $seedBatch->getId();
-                $optionMap[$seedBatch->getId()] = $seedBatch;
-            }
-            $optionSet[] = $seedBatchSet;
-        }
 
         $permutations = $this->setBuilder->build($optionSet);
 
         foreach ($permutations as $permutation) {
             $variant = $this->createVariant($product, $optionMap, $permutation);
+
+            if ($seedBatches) {
+                foreach ($seedBatches as $seedBatch) {
+                    $variant->addSeedBatch($seedBatch);
+                }
+            }
 
             if (!$this->variantsParityChecker->checkParity($variant, $product)) {
                 $product->addVariant($variant);
@@ -118,10 +140,25 @@ final class ProductVariantGenerator implements ProductVariantGeneratorInterface
     private function createVariant(ProductInterface $product, array $optionMap, $permutation)
     {
         /** @var ProductVariantInterface $variant */
-        $variant = $this->productVariantFactory->createForProduct($product);
+        $variant = $this->updateVariantData($this->productVariantFactory->createForProduct($product), $product, $optionMap);
         $this->addOptionValue($variant, $optionMap, $permutation);
 
         return $variant;
+    }
+
+    private function updateVariantData(ProductVariantInterface $productVariant, ProductInterface $product, array $options, $index = 0)
+    {
+        $productVariant->setName($product->getVariety() ? $product->getVariety()->getName() : $product->getName());
+        $code = sprintf('%s-variant-%d', uniqid(), $index);
+        $productVariant->setCode($code);
+        $productVariant->setOnHand(0);
+        $productVariant->setShippingRequired(true);
+
+        foreach ($this->channelRepository->findAll() as $channel) {
+            $this->createChannelPricings($productVariant, $channel->getCode());
+        }
+
+        return $productVariant;
     }
 
     /**
@@ -144,5 +181,43 @@ final class ProductVariantGenerator implements ProductVariantGeneratorInterface
                 $variant->addOptionValue($optionMap[$id]);
             }
         }
+    }
+
+    /**
+     * @param ProductVariantInterface $productVariant
+     * @param string                  $channelCode
+     */
+    private function createChannelPricings(ProductVariantInterface $productVariant, $channelCode)
+    {
+        /** @var ChannelPricingInterface $channelPricing */
+        $channelPricing = $this->channelPricingFactory->createNew();
+        $channelPricing->setChannelCode($channelCode);
+        $channelPricing->setPrice($this->faker->randomNumber(3));
+
+        $productVariant->addChannelPricing($channelPricing);
+    }
+
+    /**
+     * @param RepositoryInterface $channelRepository
+     */
+    public function setChannelRepository(RepositoryInterface $channelRepository): void
+    {
+        $this->channelRepository = $channelRepository;
+    }
+
+    /**
+     * @param CodeGeneratorInterface $productVariantCodeGenerator
+     */
+    public function setProductVariantCodeGenerator(CodeGeneratorInterface $productVariantCodeGenerator): void
+    {
+        $this->productVariantCodeGenerator = $productVariantCodeGenerator;
+    }
+
+    /**
+     * @param FactoryInterface $channelPricingFactory
+     */
+    public function setChannelPricingFactory(FactoryInterface $channelPricingFactory): void
+    {
+        $this->channelPricingFactory = $channelPricingFactory;
     }
 }

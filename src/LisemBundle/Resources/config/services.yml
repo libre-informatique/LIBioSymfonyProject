@@ -59,6 +59,10 @@ services:
         arguments:
             - "@sylius.factory.product_variant"
             - "@lisem.checker.product_variants_parity"
+        calls:
+            - [setChannelRepository, ['@sylius.repository.channel']]
+            - [setProductVariantCodeGenerator, ['@sil_ecommerce.code_generator.product_variant']]
+            - [setChannelPricingFactory, ['@sylius.factory.channel_pricing']]
 
 ### SYLIUS FACTORIES ###
 
