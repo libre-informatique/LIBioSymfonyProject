@@ -18,7 +18,7 @@
 
 
                 {% if product.variety is defined and product.variety is not null %}
-                    {% set productLink = path('admin_seeds_product_edit', {'id': product.id}) %}
+                    {% set productLink = path('admin_seed_product_edit', {'id': product.id}) %}
                 {% else %}
                     {% set productLink = path('admin_sil_other_product_edit', {'id': product.id}) %}
                 {% endif %}
