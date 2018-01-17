@@ -24,25 +24,25 @@ npm install
 npm run gulp
 
 # database creation
-bin/console doctrine:schema:drop --force --no-interaction  --full-database      # --full-database drops default + session connections
-bin/console doctrine:database:create --if-not-exists --no-interaction
-bin/console doctrine:schema:create --no-interaction --em=default
-bin/console doctrine:schema:create --no-interaction --em=session
-#bin/console doctrine:schema:update --force --no-interaction
-#bin/console doctrine:schema:validate --no-interaction
+bin/console doctrine:schema:drop --force --no-interaction  --full-database --env=test     # --full-database drops default + session connections
+bin/console doctrine:database:create --if-not-exists --no-interaction --env=test 
+bin/console doctrine:schema:create --no-interaction --em=default --env=test 
+bin/console doctrine:schema:create --no-interaction --em=session --env=test 
+#bin/console doctrine:schema:update --force --no-interaction --env=test 
+#bin/console doctrine:schema:validate --no-interaction --env=test 
 
-#bin/console fos:elastica:populate --no-reset --no-interaction
+#bin/console fos:elastica:populate --no-reset --no-interaction --env=test 
 
 # Not needed as it is launch in composer install
-#bin/console blast:patchs:apply --no-interaction 
+#bin/console blast:patchs:apply --no-interaction  --env=test 
 
 # asset and data
-#bin/console lisem:install:setup --with-samples --yes
-bin/console lisem:install:setup --yes --no-interaction
+#bin/console lisem:install:setup --with-samples --yes --env=test 
+bin/console lisem:install:setup --yes --no-interaction --env=test 
 
 # Import City
-bin/console blast:import:csv -d vendor/sil-project/platform/src/Sil/Bundle/CRMBundle/Resources/import/cities -m vendor/sil-project/platform/src/Sil/Bundle/CRMBundle/Resources/import/mapping.yml
+bin/console blast:import:csv -d vendor/sil-project/platform/src/Sil/Bundle/CRMBundle/Resources/import/cities -m vendor/sil-project/platform/src/Sil/Bundle/CRMBundle/Resources/import/mapping.yml  --env=test 
 
-bin/console blast:patchs:apply
-bin/console assets:install
-bin/console sylius:theme:assets:install # must be done after assets:install
+bin/console blast:patchs:apply  --env=test 
+bin/console assets:install  --env=test 
+bin/console sylius:theme:assets:install  --env=test # must be done after assets:install 

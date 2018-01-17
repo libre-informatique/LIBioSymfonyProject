@@ -33,10 +33,10 @@ set +e
 curl -s -X GET 'http://127.0.0.1:8064' > /dev/null 
 if [ $? -eq 0 ]
 then
-    bin/console server:stop
+    bin/console server:stop --env=test
 fi
 
 # start server as prod for travis timeout on dev...
-bin/console cache:clear --no-interaction #--env=prod
-bin/console server:start --no-interaction 127.0.0.1:8064 #--env=prod
+bin/console cache:clear --no-interaction --env=test #--env=prod
+bin/console server:start --no-interaction 127.0.0.1:8064 --env=test #--env=prod
 
