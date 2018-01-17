@@ -37,8 +37,8 @@ bin/console doctrine:schema:create --no-interaction --em=session --env=test
 #bin/console blast:patchs:apply --no-interaction  --env=test 
 
 # asset and data
-#bin/console lisem:install:setup --with-samples --yes --env=test 
-bin/console lisem:install:setup --yes --no-interaction --env=test 
+bin/console lisem:install:setup --with-samples --yes --env=test 
+#bin/console lisem:install:setup --yes --no-interaction --env=test 
 
 # Import City
 bin/console blast:import:csv -d vendor/sil-project/platform/src/Sil/Bundle/CRMBundle/Resources/import/cities -m vendor/sil-project/platform/src/Sil/Bundle/CRMBundle/Resources/import/mapping.yml  --env=test 
