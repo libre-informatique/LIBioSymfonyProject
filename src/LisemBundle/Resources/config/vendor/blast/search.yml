@@ -37,7 +37,15 @@ fos_elastica:
                             ignore_missing: true
                 seedBatch:
                     properties:
-                        variety: ~
+                        variety:
+                            type: "object"
+                            properties:
+                                name: ~
+                                latinName: ~
+                                species: ~
+                                alias: ~
+                                fullCode: ~
+                                officialName: ~
                         code: ~
                         producer: ~
                         originalCode: ~

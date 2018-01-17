@@ -53,7 +53,7 @@ class SeedsProductVariantAdmin extends ProductVariantAdmin
             'multiple'       => true,
             'compound'       => true,
             'elastic_type'   => 'seedBatch',
-            'elastic_filter' => 'variety|' . $product->getVariety()->getName(),
+            'elastic_filter' => 'variety.fullCode|' . $product->getVariety()->getFullCode(),
             'required'       => true,
         ], [
             'admin_code'     => 'seed_batch.admin.seed_batch',
