@@ -1,11 +1,8 @@
 imports:
     - { resource: config_dev.yml }
-    - { resource: parameters_test.yml }
 
 framework:
     test: ~
-    session:
-        storage_id: session.storage.mock_file
     profiler:
         collect: false
 
@@ -16,15 +13,3 @@ web_profiler:
 swiftmailer:
     disable_delivery:  "%mailer_disable_delivery%"
 
-# Doctrine Configuration
-doctrine:
-    dbal:
-        driver:   pdo_pgsql
-        host:     "%database_host%"
-        port:     "%database_port%"
-        dbname:   "%database_name%"
-        user:     "%database_user%"
-        password: "%database_password%"
-        charset:  UTF8
-        types:
-            json: Sonata\Doctrine\Types\JsonType
