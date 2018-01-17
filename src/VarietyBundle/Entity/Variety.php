@@ -1747,12 +1747,22 @@ class Variety implements VarietyInterface
 
     public function __toString(): string
     {
-        return sprintf(
-            '%s %s (%s%s)',
-            $this->getSpecies()->getName(),
-            $this->getName(),
-            $this->getSpecies()->getCode(),
-            $this->getCode()
-        );
+        if ($this->getSpecies() !== null) {
+            $str = sprintf(
+                '%s %s (%s%s)',
+                $this->getSpecies()->getName(),
+                $this->getName(),
+                $this->getSpecies()->getCode(),
+                $this->getCode()
+            );
+        } else {
+            $str = sprintf(
+                '%s %s',
+                $this->getName(),
+                $this->getCode()
+            );
+        }
+
+        return $str;
     }
 }
