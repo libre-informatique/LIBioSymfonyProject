@@ -33,8 +33,7 @@
 
 # Assets and user uploads
 /web/*
-!/web/app_dev.php
-!/web/app.php
+!/web/app*.php
 
 # Build data
 /build/
