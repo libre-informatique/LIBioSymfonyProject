@@ -283,3 +283,15 @@ services:
         class: LisemBundle\Stock\StockHandler
         calls:
             - [setStockOperationHandler, ['@sil.domain_service.stock_operation']]
+
+# ECOMMERCE
+
+    sil_ecommerce.order.updater:
+        class: LisemBundle\Order\OrderUpdater
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@sylius.context.channel'
+            - '@sylius.factory.order_item'
+            - '@sylius.factory.order_item_unit'
+            - '@sm.factory'
+            - '@sylius.order_processing.order_processor.composite'
