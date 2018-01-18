@@ -87,6 +87,7 @@ parameters:
                     alias: ~
                     genuses:
                         admin_code: variety.admin.genus
+                        template: VarietyBundle:GenusAdmin:list_genuses.html.twig
                     _helper_links:
                         - url: https://framacalc.org/libio_validation_varietes
                           title: Framacalc de validation (Variétés)
