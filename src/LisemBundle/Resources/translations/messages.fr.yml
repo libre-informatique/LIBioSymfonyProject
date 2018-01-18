@@ -223,6 +223,39 @@ lisem:
         grams: grammes
         seeds: graines
 
+    email:
+        contactRequest:
+            title: Message de contact
+            message_from: Message de
+            message_content: Contenu du message
+        orderConfirmation:
+            title: Confirmation de votre commande
+            content: >
+                Votre commande N°%orderNumber% a été confirmée.
+                <br/>
+                Pour voir votre commande ou modifier votre mode de paiement, merci de vous rendre sur <a href="%url%">%url%</a>
+                <br/><br/>
+                Nous vous remercions pour votre confiance
+        passwordReset:
+            title: Réinitialisation du mot de passe
+            content: >
+                <h3>Bonjour %username%</h3>
+                Pour réinitialiser votre mot de passe, rendez-vous sur <a href="%url%">%url%</a>
+                <br/><br/>
+                Nous vous remercions pour votre confiance
+        userRegistration:
+            title: Inscription
+            content: >
+                Bienvenue sur notre boutique en ligne
+                <br/><br/>
+                Vous venez de vous inscrire avec succès !
+                <br/>
+                Merci %username%.
+        emailVerification:
+            title: Vérification de votre adresse email
+            content: >
+                Pour confirmer votre adresse email, rendez-vous sur <a href="%url%">%url%</a>
+
 sil:
     label:
         city: Ville

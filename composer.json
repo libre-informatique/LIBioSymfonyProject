@@ -51,7 +51,8 @@
         "symfony/monolog-bundle": "^3.0.2",
         "symfony/swiftmailer-bundle": "^3.0",
         "symfony/symfony": "^3.3",
-        "trappar/alice-generator-bundle": "^1.1"
+        "trappar/alice-generator-bundle": "^1.1",
+        "data-uri/twig-extension": "^1.0"
     },
     "require-dev": {
         "alexandresalome/doctrine-extra-bundle": "^0.3.0",
