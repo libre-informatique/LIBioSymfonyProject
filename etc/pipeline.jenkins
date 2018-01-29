@@ -22,7 +22,7 @@ pipeline {
         }
         stage ('Pre Fetch Vendor (Get Platform)') {
             steps {
-               sh "cd ${WORKSPACE} && composer install --no-ansi --no-interaction --no-scripts --prefer-dist"
+               sh "cd ${WORKSPACE} && rm -f composer.lock && composer install --no-ansi --no-interaction --no-scripts --prefer-dist"
             }
         }
 	stage ('Set Env') {
