@@ -1,6 +1,7 @@
 pipeline {
     agent {
         dockerfile {
+            /* @todo Should use the same as platform via our own registery */
             filename "etc/dockerfile.jenkins"
             args '--network=ci.network'
         }
