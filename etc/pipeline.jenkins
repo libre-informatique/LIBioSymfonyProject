@@ -9,6 +9,7 @@ pipeline {
 
     environment {
         RND = "${BUILD_NUMBER}_${BRANCH_NAME}"
+        ENABLE_UI = "yes"
     }
 
 
@@ -45,6 +46,7 @@ pipeline {
         stage ('Build Project') {
             steps {
                 sh "${WORKSPACE}/vendor/sil-project/platform//bin/ci-scripts/do_run.sh install_test.sh"
+                sh "bin/console lisem:install:setup --with-samples --yes --env=test"
             }
         }
         stage ('Start Project') {
