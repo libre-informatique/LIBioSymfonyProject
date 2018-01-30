@@ -66,6 +66,15 @@ pipeline {
                 sh "${WORKSPACE}/vendor/sil-project/platform//bin/ci-scripts/do_run.sh run_test.sh"
             }
 	}
+
+        stage ('Archive Gzip') {
+            steps {
+                sh 'tar -czf Lisem_${BRANCH_NAME}.tgz ./*'
+                archiveArtifacts artifacts: "Lisem_${BRANCH_NAME}.tgz", fingerprint: true
+            }
+        }
+
+
     }
 
     post {
