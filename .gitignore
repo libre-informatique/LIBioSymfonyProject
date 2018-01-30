@@ -63,6 +63,4 @@ selenium.log
 /.web-server-pid
 /npm-debug.log
 
-/composer.lock
-
 .env
