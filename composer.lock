@@ -6480,12 +6480,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sil-project/Platform.git",
-                "reference": "2634b25093f2fa95d06d12138bc0107ce618fae5"
+                "reference": "125e1c8ab53e145d318fbbd122b5cc7d2236329f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sil-project/Platform/zipball/2634b25093f2fa95d06d12138bc0107ce618fae5",
-                "reference": "2634b25093f2fa95d06d12138bc0107ce618fae5",
+                "url": "https://api.github.com/repos/sil-project/Platform/zipball/125e1c8ab53e145d318fbbd122b5cc7d2236329f",
+                "reference": "125e1c8ab53e145d318fbbd122b5cc7d2236329f",
                 "shasum": ""
             },
             "require": {
@@ -6566,7 +6566,7 @@
                 "LGPL-3.0-only"
             ],
             "description": "Platform Is The Sil Dev Platform.",
-            "time": "2018-01-31T13:08:39+00:00"
+            "time": "2018-01-31T14:40:28+00:00"
         },
         {
             "name": "sonata-project/admin-bundle",
