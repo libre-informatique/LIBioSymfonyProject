@@ -15,3 +15,11 @@ blast_resource:
         sil.media_file:
             classes:
                 model: PlatformBundle\Entity\SilMediaBundle\File
+
+        sil.product:
+            classes:
+                model:          LisemBundle\Entity\SilEcommerceBundle\Product
+
+        sil.product_variant:
+            classes:
+                model:          LisemBundle\Entity\SilEcommerceBundle\ProductVariant

@@ -12,7 +12,7 @@
 
 namespace LisemBundle\Admin;
 
-use Sil\Bundle\EcommerceBundle\Admin\ProductAdmin;
+use PlatformBundle\Admin\ProductAdmin;
 use VarietyBundle\Entity\Variety;
 use Sonata\AdminBundle\Route\RouteCollection;
 use Sonata\DatagridBundle\ProxyQuery\ProxyQueryInterface;

@@ -242,7 +242,7 @@ parameters:
                                 label: false
                                 by_reference: true
                                 attr:
-                                    data-showFields: 'id,name,code,optionValues'
+                                    data-showFields: 'id,name,code'
                                 type_options:
                                     btn_add: false
                                 _options:
@@ -262,6 +262,8 @@ parameters:
 # ########################
 
         LisemBundle\Admin\SeedsProductVariantAdmin:
+            form_theme:
+                - PlatformBundle:Form/SilEcommerceBundle:fields.html.twig
             # SHOW
             Sonata\AdminBundle\Show\ShowMapper:
                 remove:
@@ -311,7 +313,6 @@ parameters:
                     onHand: ~
                     onHold: ~
                     optionValues: ~
-                    # tracked: ~
                 add:
                     form_tab_general:
                         form_group_general:
@@ -350,6 +351,14 @@ parameters:
                                     admin_code: sil_ecommerce.admin.channel_pricing
                                     edit: inline
                                     inline: table
+                        form_group_stock:
+                            _options:
+                                fieldsOrder:
+                                    - tracked
+                                    - uom
+                                    - outputStrategy
+                                    - onHand
+                                    - onHold
                         _options:
                             groupsOrder:
                                 - form_group_general
@@ -404,6 +413,8 @@ parameters:
 ########################
 
         LisemBundle\Admin\OtherProductVariantAdmin:
+            form_theme:
+                - PlatformBundle:Form/SilEcommerceBundle:fields.html.twig
             # SHOW
             Sonata\AdminBundle\Show\ShowMapper:
                 remove:
@@ -423,7 +434,6 @@ parameters:
                     taxCategory: ~
                     onHand: ~
                     onHold: ~
-                    tracked: ~
                     width: ~
                     height: ~
                     depth: ~
@@ -467,12 +477,19 @@ parameters:
                                     admin_code: sil_ecommerce.admin.channel_pricing
                                     edit: inline
                                     inline: table
+                        form_group_stock:
+                            _options:
+                                fieldsOrder:
+                                    - tracked
+                                    - uom
+                                    - outputStrategy
+                                    - onHand
+                                    - onHold
                         _options:
                             groupsOrder:
                                 - form_group_general
                                 - form_group_options
                                 - form_group_pricing
-                                - form_group_properties
                                 - form_group_stock
             # LIST
             Sonata\AdminBundle\Datagrid\ListMapper:
@@ -505,7 +522,6 @@ parameters:
                             - tracked
                             - onHand
                             - onHold
-                            - optionValues
             # FILTER
             Sonata\AdminBundle\Datagrid\DatagridMapper:
                 add: ~

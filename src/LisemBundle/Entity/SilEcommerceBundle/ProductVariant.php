@@ -13,9 +13,9 @@
 namespace LisemBundle\Entity\SilEcommerceBundle;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Sil\Bundle\StockBundle\Domain\Entity\StockItemInterface;
+use Sil\Component\Stock\Model\StockItemInterface;
 use SeedBatchBundle\Entity\Association\HasSeedBatchesTrait;
-use Sil\Bundle\EcommerceBundle\Entity\ProductVariant as BaseProductVariant;
+use PlatformBundle\Entity\SilEcommerceBundle\ProductVariant as BaseProductVariant;
 
 class ProductVariant extends BaseProductVariant
 {

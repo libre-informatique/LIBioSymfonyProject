@@ -15,3 +15,5 @@ doctrine:
             # SilSeedBatchBundle
 
             SeedBatchBundle\Entity\SeedBatchInterface:                      "%seed_batch.entity.seed_batch.class%"
+
+            # Sil\Component\Stock\Model\StockItemInterface:                   "%sil.model.ecommerce_product_variant.class%"

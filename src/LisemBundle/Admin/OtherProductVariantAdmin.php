@@ -12,7 +12,7 @@
 
 namespace LisemBundle\Admin;
 
-use Sil\Bundle\EcommerceBundle\Admin\ProductVariantAdmin;
+use PlatformBundle\Admin\ProductVariantAdmin;
 
 /**
  * Sonata admin for product variants from non-seed products.

@@ -12,7 +12,7 @@
 
 namespace LisemBundle\Entity\SilEcommerceBundle;
 
-use Sil\Bundle\EcommerceBundle\Entity\Product as BaseProduct;
+use PlatformBundle\Entity\SilEcommerceBundle\Product as BaseProduct;
 use VarietyBundle\Entity\Association\HasVarietyTrait;
 
 class Product extends BaseProduct

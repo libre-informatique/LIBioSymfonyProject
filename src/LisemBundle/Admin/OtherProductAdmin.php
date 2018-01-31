@@ -12,7 +12,7 @@
 
 namespace LisemBundle\Admin;
 
-use Sil\Bundle\EcommerceBundle\Admin\ProductAdmin;
+use PlatformBundle\Admin\ProductAdmin;
 use Sylius\Component\Product\Model\ProductInterface;
 
 /**

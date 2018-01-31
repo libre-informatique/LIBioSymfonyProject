@@ -1,5 +1,5 @@
 LisemBundle\Entity\SilEcommerceBundle\Product:
-    type: entity
+    type: mappedSuperclass
     table: sil_ecommerce_product
     manyToOne:
         variety:

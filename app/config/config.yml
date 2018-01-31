@@ -166,14 +166,6 @@ doctrine:
                         type: yml
                     SilSonataSyliusUserBundle:
                         type: yml
-                    SilUomBundle:
-                        type: yml
-                    SilStockBundle:
-                        type: yml
-                        prefix: Sil\Bundle\StockBundle\Domain\Entity
-                    SilManufacturingBundle:
-                        type: yml
-                        prefix: Sil\Bundle\ManufacturingBundle\Domain\Entity
 
                     # Platform
 

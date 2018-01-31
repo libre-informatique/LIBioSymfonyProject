@@ -16,8 +16,8 @@ use Sil\Bundle\EcommerceBundle\Entity\OrderInterface;
 use Sylius\Component\Shipping\Model\ShipmentInterface;
 use Sil\Bundle\StockBundle\Domain\Service\OperationService;
 use Sil\Bundle\StockBundle\Domain\Service\MovementService;
-use Sil\Bundle\StockBundle\Domain\Entity\UomQty;
-use Sil\Bundle\StockBundle\Domain\Entity\Operation;
+use Sil\Component\Stock\Model\UomQty;
+use Sil\Component\Stock\Model\Operation;
 
 class StockHandler
 {
