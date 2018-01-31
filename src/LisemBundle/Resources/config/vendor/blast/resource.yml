@@ -2,19 +2,19 @@ blast_resource:
     resources:
         sil.crm_organism:
             classes:
-                model: LisemBundle\Entity\SilCRMBundle\Organism
+                model:          LisemBundle\Entity\SilCRMBundle\Organism
 
         sil.crm_address:
             classes:
-                model: PlatformBundle\Entity\SilCRMBundle\Address
+                model:          PlatformBundle\Entity\SilCRMBundle\Address
 
         sil.email:
             classes:
-                model: PlatformBundle\Entity\SilEmailBundle\Email
+                model:          PlatformBundle\Entity\SilEmailBundle\Email
 
         sil.media_file:
             classes:
-                model: PlatformBundle\Entity\SilMediaBundle\File
+                model:          PlatformBundle\Entity\SilMediaBundle\File
 
         sil.product:
             classes:
@@ -23,3 +23,11 @@ blast_resource:
         sil.product_variant:
             classes:
                 model:          LisemBundle\Entity\SilEcommerceBundle\ProductVariant
+
+        sil.crm_province:
+            classes:
+                model:              Sil\Bundle\CRMBundle\Entity\Province
+
+        sil.crm_country:
+            classes:
+                model:              Sil\Bundle\CRMBundle\Entity\Country

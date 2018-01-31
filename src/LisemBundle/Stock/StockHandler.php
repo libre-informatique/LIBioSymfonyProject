@@ -14,8 +14,8 @@ namespace LisemBundle\Stock;
 
 use Sil\Bundle\EcommerceBundle\Entity\OrderInterface;
 use Sylius\Component\Shipping\Model\ShipmentInterface;
-use Sil\Bundle\StockBundle\Domain\Service\OperationService;
-use Sil\Bundle\StockBundle\Domain\Service\MovementService;
+use Sil\Component\Stock\Service\OperationService;
+use Sil\Component\Stock\Service\MovementService;
 use Sil\Component\Stock\Model\UomQty;
 use Sil\Component\Stock\Model\Operation;
 
