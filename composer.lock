@@ -3938,16 +3938,16 @@
         },
         {
             "name": "league/uri-components",
-            "version": "1.6.0",
+            "version": "1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/uri-components.git",
-                "reference": "0af9cff1302a431cf404b3a1a8ac3febab642d8f"
+                "reference": "0a82a42327555f47929f56c7a2c89981ebe27e74"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/uri-components/zipball/0af9cff1302a431cf404b3a1a8ac3febab642d8f",
-                "reference": "0af9cff1302a431cf404b3a1a8ac3febab642d8f",
+                "url": "https://api.github.com/repos/thephpleague/uri-components/zipball/0a82a42327555f47929f56c7a2c89981ebe27e74",
+                "reference": "0a82a42327555f47929f56c7a2c89981ebe27e74",
                 "shasum": ""
             },
             "require": {
@@ -3955,7 +3955,7 @@
                 "ext-fileinfo": "*",
                 "ext-intl": "*",
                 "ext-mbstring": "*",
-                "league/uri-hostname-parser": "^1.0.4",
+                "league/uri-hostname-parser": "^1.1.0",
                 "php": ">=7.0"
             },
             "require-dev": {
@@ -4004,7 +4004,7 @@
                 "url",
                 "userinfo"
             ],
-            "time": "2017-12-05T11:49:24+00:00"
+            "time": "2018-01-31T12:09:52+00:00"
         },
         {
             "name": "league/uri-hostname-parser",
@@ -6480,12 +6480,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sil-project/Platform.git",
-                "reference": "8069b429a84926827efe57053c1436e8087422f7"
+                "reference": "2634b25093f2fa95d06d12138bc0107ce618fae5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sil-project/Platform/zipball/8069b429a84926827efe57053c1436e8087422f7",
-                "reference": "8069b429a84926827efe57053c1436e8087422f7",
+                "url": "https://api.github.com/repos/sil-project/Platform/zipball/2634b25093f2fa95d06d12138bc0107ce618fae5",
+                "reference": "2634b25093f2fa95d06d12138bc0107ce618fae5",
                 "shasum": ""
             },
             "require": {
@@ -6566,7 +6566,7 @@
                 "LGPL-3.0-only"
             ],
             "description": "Platform Is The Sil Dev Platform.",
-            "time": "2018-01-31T10:40:42+00:00"
+            "time": "2018-01-31T13:08:39+00:00"
         },
         {
             "name": "sonata-project/admin-bundle",
